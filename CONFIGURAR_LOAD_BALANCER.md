@@ -22,6 +22,7 @@ Configurar um Load Balancer HTTP(S) no Google Cloud Platform para servir o site 
 1. Acesse: https://console.cloud.google.com/net-services/load-balancing/backends/buckets?project=institucional-480905
 
 2. **OU** siga este caminho:
+
    - Menu lateral (☰) → **"Network Services"** → **"Load Balancing"**
    - Clique em **"Backend services"** ou **"Backends"**
    - Clique em **"CREATE BACKEND BUCKET"**
@@ -41,6 +42,7 @@ Configurar um Load Balancer HTTP(S) no Google Cloud Platform para servir o site 
 2. Clique em **"CREATE LOAD BALANCER"**
 
 3. Escolha o tipo:
+
    - Selecione **"HTTP(S) Load Balancing"** (primeira opção)
    - Clique em **"START CONFIGURATION"**
 
@@ -55,6 +57,7 @@ Configurar um Load Balancer HTTP(S) no Google Cloud Platform para servir o site 
 1. Na seção **"Frontend configuration"**:
 
    **Basic configuration:**
+
    - **Name:** `yoobe-co-frontend`
    - **Protocol:** Selecione **"HTTPS"**
    - **IP version:** **"IPv4"**
@@ -96,6 +99,7 @@ Configurar um Load Balancer HTTP(S) no Google Cloud Platform para servir o site 
 1. Na seção **"Host and path rules"**:
 
    - **Host:** Deixe em branco ou configure:
+
      - `yoobe.co`
      - `www.yoobe.co` (opcional)
 
@@ -122,9 +126,11 @@ Configurar um Load Balancer HTTP(S) no Google Cloud Platform para servir o site 
 Após criar o Load Balancer, você precisa apontar o DNS do domínio:
 
 1. **Obter o IP do Load Balancer:**
+
    - No console do Load Balancer, copie o **"IP address"** (ex: `34.102.136.180`)
 
 2. **Configurar DNS no seu provedor de domínio:**
+
    - Acesse o painel do seu registrador de domínio (onde você comprou `yoobe.co`)
    - Vá para as configurações de DNS
    - Adicione ou edite um registro **A**:
@@ -207,6 +213,7 @@ Após criar o Load Balancer, você precisa apontar o DNS do domínio:
 - **Certificado SSL:** Gratuito (Google-managed)
 
 **Alternativa mais barata:** Se o custo for um problema, você pode usar apenas a URL do Cloud Storage:
+
 - `https://storage.googleapis.com/yoobe.co/index.html` (gratuito)
 
 ---
