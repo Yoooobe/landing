@@ -9,6 +9,7 @@ curl -I http://yoobe.co
 ```
 
 **O que esperar:**
+
 - `200 OK` = Site está funcionando ✅
 - `301/302` = Redirecionamento (pode ser normal)
 - `403 Forbidden` = Problema de permissão ⚠️
@@ -28,6 +29,7 @@ curl -I https://yoobe.co
 ```
 
 **O que esperar:**
+
 - `200 OK` = Site está funcionando ✅
 - `301/302` = Redirecionamento (pode ser normal)
 - Erro de certificado = Normal se certificado ainda não estiver pronto
@@ -48,6 +50,7 @@ curl -v http://yoobe.co
 ```
 
 Isso mostrará:
+
 - Headers completos
 - Status code
 - Mensagens de erro detalhadas
@@ -63,10 +66,12 @@ curl -I -H "Host: yoobe.co" http://34.8.255.48
 ```
 
 **Se isso funcionar:**
+
 - ✅ Load Balancer está funcionando
 - ⚠️ Problema é apenas DNS local
 
 **Se isso não funcionar:**
+
 - ⚠️ Problema no Load Balancer ou backend
 
 ---
@@ -74,11 +79,13 @@ curl -I -H "Host: yoobe.co" http://34.8.255.48
 ## 🎯 Execute Estes Testes e Me Envie os Resultados
 
 1. **Teste HTTP:**
+
    ```bash
    curl -I http://yoobe.co
    ```
 
 2. **Teste HTTPS:**
+
    ```bash
    curl -I https://yoobe.co
    ```
