@@ -3,6 +3,7 @@
 ## ✅ Status Atual
 
 Ótimo! O bucket já está configurado como público:
+
 - ✅ Public access: "Access granted to public principals"
 - ✅ Public access prevention: "Not enabled"
 
@@ -28,11 +29,13 @@ Agora só falta configurar como site estático!
 ### **PASSO 2: Ativar Website Configuration**
 
 1. Na seção "Website configuration", você verá:
+
    - Status: Provavelmente "Not configured" ou "Disabled"
 
 2. Clique em **"Edit website configuration"** ou **"Enable"** ou **"Configure"**
 
 3. Na janela que abrir, configure:
+
    - **Main page (index page):** Digite: `index.html`
    - **Error page (404 page):** Deixe em branco OU digite: `404.html` (opcional)
 
@@ -119,6 +122,7 @@ Alguns buckets podem não ter essa opção diretamente. Nesse caso:
 ## 📝 Nota
 
 A Website configuration é útil para:
+
 - Definir uma página inicial padrão (`index.html`)
 - Definir uma página de erro 404 personalizada
 - Facilitar o acesso ao site
