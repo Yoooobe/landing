@@ -68,6 +68,7 @@ gcloud projects get-iam-policy institucional-480905 --flatten="bindings[].member
 ```
 
 Você precisa ter uma das seguintes roles:
+
 - **Owner**
 - **Editor**
 - **Compute Admin**
@@ -79,6 +80,7 @@ Você precisa ter uma das seguintes roles:
 ### **Opção 1: Solicitar Permissões**
 
 Se você não tem as permissões necessárias, peça ao administrador do projeto para adicionar:
+
 - Role: **Compute Admin** ou **Owner**
 - Seu email: (o que aparece em `gcloud config get-value account`)
 
