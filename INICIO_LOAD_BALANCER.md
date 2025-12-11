@@ -11,6 +11,7 @@ Você está na página de **"Load balancing"** e está tudo certo para começar!
 ### **PASSO 1: Clicar em "Create load balancer"**
 
 1. Na página atual, você verá um botão azul grande no centro:
+
    - **"Create load balancer"** ← **CLIQUE AQUI!**
 
 2. Uma nova página abrirá com as opções de tipos de Load Balancer
@@ -44,13 +45,16 @@ Na próxima tela, você verá opções de direção:
 ### **Criar Backend Bucket Agora:**
 
 1. **Opção A - Via Menu:**
+
    - No menu lateral esquerdo, clique em **"Backends"** (aba ao lado de "Load balancers")
    - Clique em **"CREATE BACKEND BUCKET"**
 
 2. **Opção B - Via Link Direto:**
+
    - Acesse: https://console.cloud.google.com/net-services/load-balancing/backends/buckets?project=institucional-480905
 
 3. Configure:
+
    - **Name:** `yoobe-co-backend`
    - **Bucket:** Selecione `yoobe.co` da lista
    - **Enable Cloud CDN:** Marque esta opção ✅
@@ -89,6 +93,7 @@ Após criar o Backend Bucket e voltar para criar o Load Balancer:
 ## 💡 Dica
 
 Se você já clicou em "Create load balancer", não tem problema! Você pode:
+
 - Criar o Backend Bucket em outra aba
 - Voltar para o Load Balancer depois
 - Ou cancelar e começar do início na ordem correta
