@@ -65,10 +65,10 @@ echo ""
 
 # Criar certificado SSL
 echo "🔒 Criando certificado SSL: $CERT_NAME"
-if gcloud compute ssl-certificates describe $CERT_NAME --global &>/dev/null; then
+if gcloud beta compute ssl-certificates describe $CERT_NAME --global &>/dev/null; then
     echo "⚠️  Certificado já existe, pulando criação..."
 else
-    gcloud compute ssl-certificates create $CERT_NAME \
+    gcloud beta compute ssl-certificates create $CERT_NAME \
         --domains=$DOMAIN,$WWW_DOMAIN \
         --global
     echo "✅ Certificado SSL criado!"
