@@ -39,6 +39,7 @@ nslookup yoobe.co
 ```
 
 **Agora deve mostrar:**
+
 ```
 Name:    yoobe.co
 Address: 34.8.255.48
@@ -51,12 +52,14 @@ Address: 34.8.255.48
 Após limpar o cache, tente acessar:
 
 1. **HTTP (pode funcionar imediatamente):**
+
    - `http://yoobe.co`
 
 2. **HTTPS (pode levar mais 1-2 horas para certificado SSL):**
    - `https://yoobe.co`
 
 **Se o certificado SSL ainda não foi provisionado:**
+
 - Você verá um aviso de segurança
 - Isso é normal, pode levar até 2 horas após o DNS propagar
 - O certificado será provisionado automaticamente pelo Google Cloud
@@ -80,15 +83,18 @@ Se quiser verificar o status do certificado SSL:
 ## 📋 Status Atual
 
 ### ✅ **Funcionando:**
+
 - ✅ DNS propagou globalmente
 - ✅ Google DNS mostra IP correto: `34.8.255.48`
 - ✅ Registro A configurado corretamente
 
 ### ⏳ **Em andamento:**
+
 - ⏳ Cache DNS local precisa ser limpo (execute os comandos acima)
 - ⏳ Certificado SSL sendo provisionado (1-2 horas)
 
 ### 🎯 **Próximos passos:**
+
 1. Limpar cache DNS local
 2. Verificar novamente com `nslookup yoobe.co`
 3. Testar acesso ao site
@@ -101,14 +107,17 @@ Se quiser verificar o status do certificado SSL:
 **O que fazer agora:**
 
 1. **Limpar cache DNS:**
+
    ```bash
    sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder
    ```
 
 2. **Verificar:**
+
    ```bash
    nslookup yoobe.co
    ```
+
    Deve mostrar: `34.8.255.48`
 
 3. **Testar site:**
