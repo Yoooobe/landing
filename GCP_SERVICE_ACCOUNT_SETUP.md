@@ -5,6 +5,7 @@
 ### **PASSO 1: Acessar a Página de Service Accounts**
 
 1. Abra seu navegador e acesse:
+
    ```
    https://console.cloud.google.com/iam-admin/serviceaccounts?project=institucional-480905
    ```
@@ -28,14 +29,17 @@
 ### **PASSO 3: Preencher Dados da Service Account**
 
 1. **Service account name:**
+
    - Digite: `github-actions-deploy`
    - (Este é apenas um nome identificador)
 
 2. **Service account ID:**
+
    - Será preenchido automaticamente baseado no nome
    - Você pode deixar como está ou personalizar
 
 3. **Service account description (opcional):**
+
    - Digite: `Service account para deploy automático via GitHub Actions`
    - (Campo opcional, mas recomendado)
 
@@ -48,12 +52,14 @@
 1. Na seção **"Grant this service account access to project"**, você verá um campo **"Select a role"**
 
 2. **Primeira permissão - Storage Admin:**
+
    - Clique no campo **"Select a role"**
    - Digite na busca: `Storage Admin`
    - Selecione a opção: **"Storage Admin"** (deve aparecer com ícone de bucket)
    - Clique em **"ADD ANOTHER ROLE"** (link abaixo do campo)
 
 3. **Segunda permissão - App Engine Deployer:**
+
    - No segundo campo **"Select a role"** que apareceu
    - Digite na busca: `App Engine Deployer`
    - Selecione a opção: **"App Engine Deployer"** (deve aparecer com ícone do App Engine)
@@ -65,6 +71,7 @@
 ### **PASSO 5: Conceder Acesso a Usuários (Opcional)**
 
 1. Na seção **"Grant users access to this service account"**, você pode:
+
    - **Deixar em branco** (não é necessário para GitHub Actions)
    - OU adicionar seu email se quiser acessar manualmente
 
@@ -75,15 +82,18 @@
 ### **PASSO 6: Criar e Baixar a Chave JSON**
 
 1. Você será redirecionado para a lista de Service Accounts
+
    - Procure pela service account que você acabou de criar: **"github-actions-deploy"**
    - Clique no **email da service account** (formato: `github-actions-deploy@institucional-480905.iam.gserviceaccount.com`)
 
 2. Na página de detalhes da service account:
+
    - Vá para a aba **"KEYS"** (no topo da página, ao lado de "PERMISSIONS", "MEMBERS", etc.)
    - Clique no botão **"+ ADD KEY"**
    - No menu que aparece, clique em **"Create new key"**
 
 3. Na janela popup que abrir:
+
    - Selecione o tipo: **"JSON"** (já deve estar selecionado por padrão)
    - Clique no botão **"CREATE"** (botão azul)
 
@@ -96,22 +106,25 @@
 ### **PASSO 7: Adicionar Secret no GitHub**
 
 1. Abra uma nova aba e acesse:
+
    ```
    https://github.com/Yoooobe/landing/settings/secrets/actions
    ```
 
 2. **OU** siga este caminho:
+
    - Acesse: https://github.com/Yoooobe/landing
    - Clique na aba **"Settings"** (no topo do repositório)
    - No menu lateral esquerdo, clique em **"Secrets and variables"**
    - Clique em **"Actions"**
 
 3. Na página de Secrets:
+
    - Clique no botão **"New repository secret"** (botão verde no canto superior direito)
 
 4. Preencher o secret:
    - **Name:** Digite exatamente: `GCP_SA_KEY`
-   - **Secret:** 
+   - **Secret:**
      - Abra o arquivo JSON que você baixou (use um editor de texto)
      - Selecione TODO o conteúdo do arquivo (Ctrl+A / Cmd+A)
      - Copie (Ctrl+C / Cmd+C)
@@ -123,6 +136,7 @@
 ### **PASSO 8: Verificar se Funcionou**
 
 1. Volte para a página do repositório:
+
    ```
    https://github.com/Yoooobe/landing
    ```
@@ -154,14 +168,17 @@
 ## 🆘 Troubleshooting
 
 ### Erro: "Permission denied"
+
 - Verifique se as permissões da service account estão corretas
 - Verifique se o projeto está correto: `institucional-480905`
 
 ### Erro: "Bucket not found"
+
 - O bucket `gs://yoobe.co/` precisa existir
 - Crie o bucket manualmente no Cloud Storage se necessário
 
 ### Erro: "Invalid JSON"
+
 - Certifique-se de copiar TODO o conteúdo do arquivo JSON
 - Não adicione quebras de linha extras
 - O JSON deve começar com `{` e terminar com `}`
@@ -171,5 +188,6 @@
 ## 📞 Precisa de Ajuda?
 
 Se encontrar algum problema, verifique:
+
 1. Os logs do GitHub Actions em: https://github.com/Yoooobe/landing/actions
 2. A documentação do Google Cloud: https://cloud.google.com/iam/docs/service-accounts
