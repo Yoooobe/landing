@@ -7,6 +7,7 @@
 1. Na página de **"PERMISSIONS"** do bucket `yoobe.co`
 
 2. Na seção **"Public access"** (card no topo esquerdo), você verá:
+
    - Status: **"Not public"**
    - Texto explicando que o acesso público está sendo prevenido
    - Botão azul: **"Remove Public Access Prevention"** ← **CLIQUE AQUI!**
@@ -22,6 +23,7 @@
 1. Após remover o Public Access Prevention, clique no botão **"+ Grant access"** (no topo da tabela de permissões)
 
 2. Na janela que abrir:
+
    - **New principals:** Digite: `allUsers`
    - **Select a role:** Escolha: **"Storage Object Viewer"**
 
@@ -42,6 +44,7 @@
 3. Clique em **"Edit website configuration"** ou **"Enable"**
 
 4. Configure:
+
    - **Main page (index page):** `index.html`
    - **Error page (404 page):** Deixe em branco
 
@@ -72,5 +75,6 @@ Agora você pode:
 ## 🎉 Pronto!
 
 Após isso, seu site estará disponível em:
+
 - https://yoobe.co
 - https://storage.googleapis.com/yoobe.co/index.html
