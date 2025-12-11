@@ -9,10 +9,12 @@
 2. Procure pelo workflow mais recente: **"Deploy to Google Cloud Storage"**
 
 3. **Status Verde (✓) com check:** ✅ Deploy concluído com sucesso!
+
    - Isso significa que o arquivo foi enviado para o Cloud Storage
    - Pode levar alguns minutos para aparecer no site devido ao cache
 
 4. **Status Amarelo (⏳):** Deploy ainda em andamento
+
    - Aguarde alguns minutos
 
 5. **Status Vermelho (✗):** Erro no deploy
@@ -55,18 +57,22 @@
 Se o deploy foi concluído mas o site ainda mostra a versão antiga:
 
 ### Opção 1: Hard Refresh no Navegador
+
 - **Windows/Linux:** `Ctrl + Shift + R` ou `Ctrl + F5`
 - **Mac:** `Cmd + Shift + R`
 
 ### Opção 2: Modo Anônimo
+
 - Abra uma janela anônima/privada
 - Acesse: https://yoobe.co
 
 ### Opção 3: Limpar Cache do Navegador
+
 - Vá nas configurações do navegador
 - Limpe o cache e cookies do site yoobe.co
 
 ### Opção 4: Aguardar
+
 - O CDN do Google Cloud atualiza automaticamente em até 15 minutos
 
 ---
