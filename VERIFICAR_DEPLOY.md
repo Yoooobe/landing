@@ -11,9 +11,11 @@
 3. Clique no workflow mais recente para ver os detalhes
 
 4. **Status Verde (✓):** Deploy realizado com sucesso! ✅
+
    - A página está disponível em: https://yoobe.co
 
 5. **Status Amarelo (⏳):** Deploy em andamento
+
    - Aguarde alguns minutos
 
 6. **Status Vermelho (✗):** Erro no deploy
@@ -27,6 +29,7 @@
 ### Erro: "Permission denied" ou "Access denied"
 
 **Solução:**
+
 - Verifique se o secret `GCP_SA_KEY` foi criado corretamente no GitHub
 - Verifique se o conteúdo do JSON foi copiado completamente
 - Verifique se as permissões da Service Account estão corretas:
@@ -36,6 +39,7 @@
 ### Erro: "Bucket not found: gs://yoobe.co/"
 
 **Solução:**
+
 1. Acesse: https://console.cloud.google.com/storage/browser?project=institucional-480905
 2. Verifique se o bucket `yoobe.co` existe
 3. Se não existir, crie o bucket:
@@ -47,6 +51,7 @@
 ### Erro: "Invalid JSON" ou "Malformed JSON"
 
 **Solução:**
+
 - O secret `GCP_SA_KEY` deve conter TODO o conteúdo do arquivo JSON
 - Certifique-se de copiar desde o `{` inicial até o `}` final
 - Não adicione espaços ou quebras de linha extras
