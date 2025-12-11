@@ -20,11 +20,13 @@
 ### **2. O Que Está Acontecendo**
 
 **Antes:**
+
 - Nameservers: Google Cloud DNS ✅
 - Registros MX: Google Cloud DNS ✅ (para emails)
 - Registro A: Não existe ainda ❌
 
 **Depois:**
+
 - Nameservers: Google Cloud DNS ✅ (mesmo)
 - Registros MX: Google Cloud DNS ✅ (mesmo, não mexemos)
 - Registro A: Google Cloud DNS ✅ (novo, adicionado)
@@ -53,6 +55,7 @@ ns-cloud-a4.googledomains.com
 - ❌ **NÃO mexa** nos nameservers
 
 **Por quê?**
+
 - Se mudar, os emails podem parar de funcionar
 - O subdomínio `catalogo.yoobe.co` pode parar de funcionar
 - Tudo que já está funcionando pode quebrar
@@ -64,11 +67,13 @@ ns-cloud-a4.googledomains.com
 Para garantir que os emails estão configurados:
 
 1. **No Google Cloud DNS:**
+
    - Acesse: https://console.cloud.google.com/net-services/dns/zones?project=institucional-480905
    - Clique na zona `yoobe-co-zone`
    - Procure por registros do tipo **MX**
 
 2. **Se existirem registros MX:**
+
    - ✅ Emails estão configurados
    - ✅ Não mexa neles
    - ✅ Continuarão funcionando
@@ -93,6 +98,7 @@ Para garantir que os emails estão configurados:
 ## 🎯 Resumo
 
 ### **Nameservers no name.com:**
+
 ```
 Deixe como está:
 - ns-cloud-a1.googledomains.com
@@ -102,11 +108,13 @@ Deixe como está:
 ```
 
 ### **Emails:**
+
 - ✅ **Vão continuar funcionando**
 - ✅ Registros MX não serão alterados
 - ✅ Nameservers não serão alterados
 
 ### **O Que Você Está Fazendo:**
+
 - ✅ Apenas **adicionando** um registro A novo
 - ✅ Não está **mudando** nada que já existe
 - ✅ Não está **deletando** nada
@@ -116,9 +124,11 @@ Deixe como está:
 ## 🚀 Próximo Passo
 
 1. **No name.com:**
+
    - Deixe os nameservers do Google Cloud como estão ✅
 
 2. **No Google Cloud DNS:**
+
    - Adicione o registro A: `yoobe.co` → `34.8.255.48` ✅
 
 3. **Aguarde propagação:**
