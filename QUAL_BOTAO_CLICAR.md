@@ -11,10 +11,12 @@
 Na tela do Google Cloud DNS, você vê 3 botões principais:
 
 1. **`+ Add standard`** ✅ **USE ESTE!**
+
    - Para adicionar registros DNS simples (A, CNAME, MX, TXT, etc.)
    - É o que você precisa para adicionar o registro A
 
 2. **`+ Add with routing policy`** ❌ Não use
+
    - Para políticas de roteamento avançadas
    - Não é necessário para seu caso
 
@@ -29,6 +31,7 @@ Na tela do Google Cloud DNS, você vê 3 botões principais:
 1. **Clique em `+ Add standard`**
 
 2. **Preencha o formulário:**
+
    - **DNS name:** deixe em branco OU `yoobe.co.`
    - **Resource record type:** selecione `A`
    - **TTL (seconds):** `3600`
