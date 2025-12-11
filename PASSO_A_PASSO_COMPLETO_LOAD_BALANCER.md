@@ -3,6 +3,7 @@
 ## 📋 Pré-requisitos
 
 Antes de começar, certifique-se de que:
+
 - ✅ Bucket `yoobe.co` existe e está público
 - ✅ Arquivo `index.html` está no bucket (ou você fará upload depois)
 
@@ -71,7 +72,7 @@ Antes de começar, certifique-se de que:
 
 ### **3.1 Nome do Load Balancer**
 
-1. No topo da página, no campo **"Load Balancer name *"**:
+1. No topo da página, no campo **"Load Balancer name \*"**:
    - Digite: `yoobe-co-lb`
 
 ### **3.2 Configurar Frontend IP e Port**
@@ -83,10 +84,12 @@ Na seção **"New Frontend IP and port"**:
 2. **Description:** (opcional) Deixe em branco
 
 3. **Protocol:** ⚠️ **SELECIONE "HTTPS"**
+
    - Clique no dropdown
    - Escolha: **"HTTPS (includes HTTP/2 and HTTP/3)"**
 
 4. **IP address:** ⚠️ **CRIAR IP ESTÁTICO**
+
    - Clique no dropdown
    - Clique em **"CREATE IP ADDRESS"**
    - Na janela:
@@ -99,7 +102,8 @@ Na seção **"New Frontend IP and port"**:
 5. **Port:** Digite: `443` (porta HTTPS)
 
 6. **Certificate:** ⚠️ **CRIAR CERTIFICADO SSL**
-   - Clique no dropdown **"Certificate *"**
+
+   - Clique no dropdown **"Certificate \*"**
    - Selecione **"Create a new certificate"**
    - Na janela que abrir:
      - **Name:** `yoobe-co-cert`
@@ -140,6 +144,7 @@ Na seção **"New Frontend IP and port"**:
 1. Na seção **"Host and path rules"**:
 
 2. **Host:** Deixe em branco OU digite:
+
    - `yoobe.co`
    - `www.yoobe.co` (se quiser suportar www)
 
@@ -156,6 +161,7 @@ Na seção **"New Frontend IP and port"**:
 ### **6.1 Revisar Configurações**
 
 1. Revise todas as configurações:
+
    - ✅ Load Balancer name: `yoobe-co-lb`
    - ✅ Frontend: HTTPS, Port 443, IP estático, Certificado SSL
    - ✅ Backend: `yoobe-co-backend`
@@ -190,12 +196,14 @@ Na seção **"New Frontend IP and port"**:
 2. Vá para as configurações de **DNS**
 
 3. Adicione ou edite um registro **A**:
+
    - **Type:** `A`
    - **Name:** `@` ou `yoobe.co` (ou deixe em branco)
    - **Value:** Cole o IP do Load Balancer
    - **TTL:** `3600` ou padrão
 
 4. (Opcional) Adicione um registro **CNAME** para www:
+
    - **Type:** `CNAME`
    - **Name:** `www`
    - **Value:** `yoobe.co`
@@ -244,15 +252,18 @@ Na seção **"New Frontend IP and port"**:
 ## 🆘 Troubleshooting
 
 ### Erro ao criar IP estático:
+
 - Verifique permissões de "Compute Admin" ou "Owner"
 - Tente criar o IP em outra aba primeiro
 
 ### Certificado não provisiona:
+
 - Verifique se o DNS está apontando corretamente para o IP
 - Aguarde até 1 hora
 - Verifique se o domínio está acessível publicamente
 
 ### Site não carrega:
+
 - Verifique se o DNS propagou: `nslookup yoobe.co`
 - Verifique se o Load Balancer está "Active"
 - Verifique se o arquivo `index.html` está no bucket
@@ -278,10 +289,12 @@ Na seção **"New Frontend IP and port"**:
 ## 💰 Lembrete sobre Custos
 
 O Load Balancer tem custos:
+
 - **~$18/mês** (fixo, mesmo sem tráfego)
 - **~$0.008-0.025 por GB** de dados processados
 
 Se preferir uma solução gratuita, use:
+
 - `https://storage.googleapis.com/yoobe.co/index.html`
 
 ---
@@ -289,6 +302,7 @@ Se preferir uma solução gratuita, use:
 ## 🎉 Pronto!
 
 Após seguir todos os passos e aguardar a propagação, seu site estará disponível em:
+
 - ✅ **https://yoobe.co**
 - ✅ **https://www.yoobe.co** (se configurou)
 
