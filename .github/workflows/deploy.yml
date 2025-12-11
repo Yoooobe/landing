@@ -20,10 +20,24 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
+      - name: Create bucket if not exists
+        run: |
+          if ! gsutil ls -b gs://yoobe.co/ 2>/dev/null; then
+            echo "Bucket não existe. Criando bucket..."
+            gsutil mb -p institucional-480905 -c STANDARD -l southamerica-east1 gs://yoobe.co/
+            echo "Bucket criado com sucesso!"
+          else
+            echo "Bucket já existe."
+          fi
+
+      - name: Configure bucket as website
+        run: |
+          gsutil web set -m index.html -e 404.html gs://yoobe.co/ || true
+
       - name: Deploy to Cloud Storage
         run: |
           gsutil -m cp -r index.html gs://yoobe.co/
-          gsutil web set -m index.html -e 404.html gs://yoobe.co/
+          gsutil -m setmeta -h "Content-Type:text/html" gs://yoobe.co/index.html
 
       - name: Invalidate CDN Cache
         run: |

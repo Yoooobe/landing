@@ -11,6 +11,7 @@ O bucket `yoobe.co` não existe no projeto `institucional-480905`. É necessári
 ### **PASSO 1: Acessar Cloud Storage**
 
 1. Abra seu navegador e acesse:
+
    ```
    https://console.cloud.google.com/storage/browser?project=institucional-480905
    ```
@@ -36,6 +37,7 @@ O bucket `yoobe.co` não existe no projeto `institucional-480905`. É necessári
 #### **3.1 Nome do Bucket**
 
 1. No campo **"Name your bucket"**:
+
    - Digite exatamente: `yoobe.co`
    - ⚠️ **IMPORTANTE:** O nome deve ser exatamente `yoobe.co` (sem espaços, sem maiúsculas)
 
@@ -44,6 +46,7 @@ O bucket `yoobe.co` não existe no projeto `institucional-480905`. É necessári
 #### **3.2 Escolher Localização**
 
 1. Na seção **"Choose where to store your data"**:
+
    - **Location type:** Selecione **"Region"** (recomendado) ou **"Multi-region"**
    - **Location:** Escolha uma região próxima (ex: `us-central1`, `southamerica-east1` para Brasil)
    - Para Brasil, recomendo: `southamerica-east1` (São Paulo)
@@ -53,6 +56,7 @@ O bucket `yoobe.co` não existe no projeto `institucional-480905`. É necessári
 #### **3.3 Escolher Classe de Armazenamento**
 
 1. Na seção **"Choose a default storage class for your data"**:
+
    - Selecione: **"Standard"** (recomendado para sites)
    - Ou pode escolher outra classe se preferir
 
@@ -61,6 +65,7 @@ O bucket `yoobe.co` não existe no projeto `institucional-480905`. É necessári
 #### **3.4 Escolher Controle de Acesso**
 
 1. Na seção **"Choose how to control access to objects"**:
+
    - Selecione: **"Uniform"** (mais simples) ou **"Fine-grained"** (mais controle)
    - Para site estático, **"Uniform"** é suficiente
 
@@ -69,6 +74,7 @@ O bucket `yoobe.co` não existe no projeto `institucional-480905`. É necessári
 #### **3.5 Proteção de Dados (Opcional)**
 
 1. Na seção **"Choose data protection"**:
+
    - Você pode deixar as opções padrão ou configurar conforme necessário
    - Para um site simples, pode deixar tudo desmarcado
 
@@ -96,6 +102,7 @@ O bucket `yoobe.co` não existe no projeto `institucional-480905`. É necessári
 #### **4.3 Configurar Páginas**
 
 1. Na janela que abrir, configure:
+
    - **Main page (index page):** Digite: `index.html`
    - **Error page (404 page):** Deixe em branco ou digite: `404.html` (opcional)
 
@@ -112,6 +119,7 @@ Se você quiser que o site seja acessível publicamente:
 2. Clique em **"GRANT ACCESS"** ou **"Add principal"**
 
 3. Configure:
+
    - **New principals:** Digite: `allUsers`
    - **Select a role:** Escolha: **"Storage Object Viewer"** ou **"Storage Legacy Bucket Reader"**
 
@@ -175,6 +183,7 @@ git push origin main
 ## 📞 Precisa de Ajuda?
 
 Se encontrar problemas:
+
 1. Verifique se está no projeto correto: `institucional-480905`
 2. Verifique suas permissões no projeto
 3. Consulte a documentação: https://cloud.google.com/storage/docs/creating-buckets
