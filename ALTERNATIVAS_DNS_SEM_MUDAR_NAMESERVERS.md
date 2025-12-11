@@ -25,6 +25,7 @@ Ou use um site: https://www.whatsmydns.net/#NS/yoobe.co
 ### **PASSO 2: Acessar o Painel do Provedor dos Nameservers**
 
 1. Identifique qual provedor está gerenciando os nameservers:
+
    - Se for Google Cloud DNS: acesse o console do GCP
    - Se for outro provedor: acesse o painel desse provedor
    - Se for um servidor próprio: acesse o painel de DNS desse servidor
@@ -36,12 +37,14 @@ Ou use um site: https://www.whatsmydns.net/#NS/yoobe.co
 No provedor dos nameservers atuais, adicione:
 
 1. **Registro A:**
+
    - **Tipo:** `A`
    - **Nome:** `yoobe.co` ou `@`
    - **Valor:** `34.8.255.48`
    - **TTL:** `3600`
 
 2. **Registro CNAME (opcional):**
+
    - **Tipo:** `CNAME`
    - **Nome:** `www`
    - **Valor:** `yoobe.co`
@@ -77,6 +80,7 @@ Se os nameservers atuais já são do Google Cloud:
 1. Na zona criada, clique em **"ADD RECORD SET"**
 
 2. Adicione registro A:
+
    - **DNS name:** `yoobe.co.` (com ponto no final)
    - **Resource record type:** `A`
    - **IPv4 address:** `34.8.255.48`
@@ -99,6 +103,7 @@ Se você não quer mexer em nada, pode simplesmente:
 1. **Deixar os nameservers como estão**
 
 2. **Adicionar apenas o registro A** no provedor atual dos nameservers:
+
    - `yoobe.co` → `34.8.255.48`
 
 3. Os outros serviços continuarão funcionando normalmente
@@ -140,16 +145,19 @@ Após descobrir os nameservers, identifique o provedor:
 ## ✅ Vantagens de Cada Opção
 
 ### **Opção 1: Configurar no Provedor Atual**
+
 - ✅ Não precisa mudar nada
 - ✅ Outros serviços continuam funcionando
 - ✅ Simples e rápido
 
 ### **Opção 2: Google Cloud DNS**
+
 - ✅ Integração com GCP
 - ✅ Mais controle
 - ✅ Pode gerenciar tudo em um lugar
 
 ### **Opção 3: Manter Como Está**
+
 - ✅ Zero mudanças
 - ✅ Apenas adiciona o registro necessário
 
@@ -160,6 +168,7 @@ Após descobrir os nameservers, identifique o provedor:
 **Use a Opção 1:** Configure o registro A diretamente no provedor que está gerenciando os nameservers atuais.
 
 Assim:
+
 - ✅ Não precisa mudar nameservers
 - ✅ Outros serviços continuam funcionando
 - ✅ Apenas adiciona o registro necessário para o Load Balancer
@@ -169,6 +178,7 @@ Assim:
 ## 📝 Próximos Passos
 
 1. **Descubra os nameservers atuais:**
+
    ```bash
    whois yoobe.co | grep -i "name server"
    ```
@@ -178,6 +188,7 @@ Assim:
 3. **Acesse o painel DNS desse provedor**
 
 4. **Adicione o registro A:**
+
    - `yoobe.co` → `34.8.255.48`
 
 5. **Aguarde propagação** (1-48 horas)
@@ -189,6 +200,7 @@ Assim:
 Se você me disser quais são os nameservers atuais, posso te ajudar a identificar exatamente onde configurar o DNS!
 
 Execute este comando e me mostre o resultado:
+
 ```bash
 whois yoobe.co | grep -i "name server"
 ```
