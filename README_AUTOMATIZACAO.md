@@ -13,17 +13,20 @@ Criei um script bash que configura **TUDO automaticamente** usando a CLI do Goog
 Se ainda não tem instalado:
 
 **macOS:**
+
 ```bash
 brew install google-cloud-sdk
 ```
 
 **Linux:**
+
 ```bash
 curl https://sdk.cloud.google.com | bash
 exec -l $SHELL
 ```
 
 **Windows:**
+
 - Baixe e instale: https://cloud.google.com/sdk/docs/install
 
 ### **2. Autenticar**
@@ -35,6 +38,7 @@ gcloud auth login
 ### **3. Verificar Permissões**
 
 Você precisa ter permissões de:
+
 - **Compute Admin** ou **Owner** no projeto `institucional-480905`
 
 ---
@@ -57,6 +61,7 @@ chmod +x setup-load-balancer.sh
 ### **PASSO 3: Aguardar Conclusão**
 
 O script irá:
+
 1. ✅ Verificar se o bucket existe
 2. ✅ Criar Backend Bucket
 3. ✅ Reservar IP estático
@@ -75,16 +80,19 @@ O script irá:
 O script `setup-load-balancer.sh` automatiza:
 
 1. **Backend Bucket:**
+
    - Nome: `yoobe-co-backend`
    - Bucket: `yoobe.co`
    - Cloud CDN: Habilitado
 
 2. **IP Estático:**
+
    - Nome: `yoobe-co-ip`
    - Tipo: Global IPv4
    - **O IP será exibido no final!**
 
 3. **Certificado SSL:**
+
    - Nome: `yoobe-co-cert`
    - Domínios: `yoobe.co` e `www.yoobe.co`
    - Tipo: Google-managed
@@ -121,6 +129,7 @@ O script `setup-load-balancer.sh` automatiza:
 ### Erro: "Permission denied"
 
 **Solução:**
+
 ```bash
 # Verificar permissões
 gcloud projects get-iam-policy institucional-480905
@@ -131,18 +140,21 @@ gcloud projects get-iam-policy institucional-480905
 ### Erro: "Bucket not found"
 
 **Solução:**
+
 - Crie o bucket `yoobe.co` primeiro no console
 - Ou ajuste o nome do bucket no script
 
 ### Erro: "Resource already exists"
 
 **Solução:**
+
 - O script detecta recursos existentes e pula a criação
 - Isso é normal e seguro!
 
 ### Erro: "gcloud: command not found"
 
 **Solução:**
+
 - Instale o Google Cloud SDK (veja pré-requisitos acima)
 - Ou use: `brew install google-cloud-sdk` (macOS)
 
@@ -170,10 +182,10 @@ gcloud compute forwarding-rules list --global
 
 ## 📊 Comparação: Manual vs Automático
 
-| Método | Tempo | Complexidade | Erros |
-|--------|-------|--------------|-------|
-| **Manual (Console)** | 30-60 min | Alta | Fácil errar |
-| **Automático (Script)** | 2-5 min | Baixa | Praticamente zero |
+| Método                  | Tempo     | Complexidade | Erros             |
+| ----------------------- | --------- | ------------ | ----------------- |
+| **Manual (Console)**    | 30-60 min | Alta         | Fácil errar       |
+| **Automático (Script)** | 2-5 min   | Baixa        | Praticamente zero |
 
 ---
 
