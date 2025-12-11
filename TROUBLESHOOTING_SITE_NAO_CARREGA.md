@@ -15,15 +15,18 @@ nslookup yoobe.co 8.8.8.8
 ```
 
 **Resultado esperado:**
+
 ```
 Address: 34.8.255.48
 ```
 
 **Se mostrar IP diferente ou erro:**
+
 - ⚠️ DNS ainda não propagou completamente
 - ⏳ Aguarde mais tempo (pode levar até 24 horas)
 
 **Se mostrar `34.8.255.48`:**
+
 - ✅ DNS está correto, continue para próximo passo
 
 ---
@@ -40,6 +43,7 @@ Address: 34.8.255.48
    - **Backend:** Deve mostrar `yoobe-co-backend`
 
 **Se Load Balancer não estiver ativo:**
+
 - ⚠️ Pode levar alguns minutos para ativar
 - ⏳ Aguarde 5-10 minutos e verifique novamente
 
@@ -55,11 +59,13 @@ Address: 34.8.255.48
    - **"Failed"**: Erro no provisionamento ⚠️
 
 **Se certificado estiver "Provisioning":**
+
 - ⏳ Isso é normal, pode levar 1-2 horas após DNS propagar
 - ⚠️ HTTPS pode não funcionar até o certificado estar pronto
 - ✅ HTTP deve funcionar mesmo assim
 
 **Se certificado estiver "Failed":**
+
 - ⚠️ Pode ser problema com DNS ainda não propagado
 - ⏳ Aguarde DNS propagar completamente e o certificado será reprovisionado
 
@@ -74,15 +80,18 @@ Teste se o bucket está acessível diretamente:
 2. Clique no arquivo `index.html`
 
 3. Verifique a URL pública:
+
    - Deve aparecer algo como: `https://storage.googleapis.com/yoobe.co/index.html`
 
 4. **Teste acessar essa URL diretamente no navegador**
 
 **Se a URL direta funcionar:**
+
 - ✅ Bucket está configurado corretamente
 - ⚠️ Problema pode ser no Load Balancer ou DNS
 
 **Se a URL direta não funcionar:**
+
 - ⚠️ Problema com permissões do bucket
 - ⚠️ Verifique se o bucket está realmente público
 
@@ -99,6 +108,7 @@ Teste se o bucket está acessível diretamente:
    - **Role:** `Storage Object Viewer` ou `Storage Legacy Bucket Reader`
 
 **Se não existir permissão pública:**
+
 - ⚠️ Isso é o problema!
 - ✅ Adicione permissão pública (veja próximo passo)
 
@@ -113,6 +123,7 @@ Se o bucket não tiver permissão pública:
 2. Clique em **"Grant Access"** ou **"Conceder acesso"**
 
 3. Preencha:
+
    - **New principals:** `allUsers`
    - **Role:** `Storage Object Viewer`
 
@@ -131,6 +142,7 @@ Se o bucket não tiver permissão pública:
    - **Cloud CDN:** `Enabled` ✅
 
 **Se algo estiver incorreto:**
+
 - ⚠️ Pode ser necessário recriar o backend bucket
 
 ---
@@ -148,10 +160,12 @@ curl -I https://yoobe.co
 ```
 
 **Resultado esperado:**
+
 - **HTTP:** Deve retornar `200 OK`
 - **HTTPS:** Pode retornar erro de certificado (normal se ainda não estiver pronto)
 
 **Se retornar erro:**
+
 - Anote a mensagem de erro
 - Isso ajudará a identificar o problema
 
@@ -162,12 +176,14 @@ curl -I https://yoobe.co
 1. Acesse: https://console.cloud.google.com/logs/query?project=institucional-480905
 
 2. Filtre por:
+
    - **Resource type:** `http_load_balancer`
    - **Load balancer:** `yoobe-co-lb-url-map`
 
 3. Verifique se há erros recentes
 
 **Se houver erros:**
+
 - Anote a mensagem de erro
 - Isso ajudará a identificar o problema
 
@@ -178,9 +194,11 @@ curl -I https://yoobe.co
 ### **Problema 1: DNS Ainda Não Propagou**
 
 **Sintoma:**
+
 - `nslookup yoobe.co 8.8.8.8` mostra IP antigo ou erro
 
 **Solução:**
+
 - ⏳ Aguarde até 24 horas para propagação completa
 - ✅ DNS global já mostra IP correto, mas pode levar tempo para todos os servidores atualizarem
 
@@ -189,9 +207,11 @@ curl -I https://yoobe.co
 ### **Problema 2: Certificado SSL Ainda Não Está Pronto**
 
 **Sintoma:**
+
 - HTTP não funciona OU HTTPS retorna erro de certificado
 
 **Solução:**
+
 - ⏳ Aguarde 1-2 horas após DNS propagar
 - ✅ Certificado será provisionado automaticamente
 - ⚠️ HTTP deve funcionar mesmo sem certificado SSL
@@ -201,10 +221,12 @@ curl -I https://yoobe.co
 ### **Problema 3: Bucket Não Está Público**
 
 **Sintoma:**
+
 - URL direta do bucket não funciona
 - Erro 403 Forbidden
 
 **Solução:**
+
 - ✅ Adicione permissão `allUsers` com role `Storage Object Viewer`
 - ✅ Verifique se "Public access prevention" está desabilitado
 
@@ -213,9 +235,11 @@ curl -I https://yoobe.co
 ### **Problema 4: Load Balancer Não Está Ativo**
 
 **Sintoma:**
+
 - Load Balancer mostra status diferente de "Active"
 
 **Solução:**
+
 - ⏳ Aguarde 5-10 minutos após criar
 - ⚠️ Se não ativar, pode haver erro na configuração
 
