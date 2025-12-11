@@ -13,6 +13,7 @@ O Load Balancer foi criado com sucesso! Agora só falta configurar o DNS.
 ### **PASSO 1: Acessar o Painel do Seu Registrador de Domínio**
 
 1. Acesse o site do seu registrador de domínio (onde você comprou `yoobe.co`)
+
    - Exemplos: GoDaddy, Namecheap, Google Domains, Registro.br, etc.
 
 2. Faça login na sua conta
@@ -24,6 +25,7 @@ O Load Balancer foi criado com sucesso! Agora só falta configurar o DNS.
 ### **PASSO 2: Adicionar Registro A**
 
 1. Procure por uma opção como:
+
    - **"Adicionar registro"**
    - **"Add record"**
    - **"Gerenciar DNS"**
@@ -32,7 +34,7 @@ O Load Balancer foi criado com sucesso! Agora só falta configurar o DNS.
 2. Adicione um novo registro **A**:
 
    - **Tipo:** `A` (ou "A Record")
-   - **Nome/Host:** 
+   - **Nome/Host:**
      - `@` OU
      - `yoobe.co` OU
      - Deixe em branco (depende do seu provedor)
@@ -151,6 +153,7 @@ Após o DNS propagar e o certificado estar ativo:
 ## 🎉 Pronto!
 
 Após configurar o DNS e aguardar a propagação, seu site estará disponível em:
+
 - ✅ **https://yoobe.co**
 - ✅ **https://www.yoobe.co**
 
