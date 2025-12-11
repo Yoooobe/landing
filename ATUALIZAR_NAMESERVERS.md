@@ -3,6 +3,7 @@
 ## ✅ Status Atual
 
 Os registros DNS estão **corretos**:
+
 - ✅ Registro A: `yoobe.co` → `34.8.255.48` ✅
 - ✅ Registro CNAME: `www.yoobe.co` → `yoobe.co` ✅
 
@@ -13,6 +14,7 @@ Os registros DNS estão **corretos**:
 ## ⚠️ Problema Identificado
 
 O aviso diz:
+
 > **"This domain is not using name.com nameservers. The domain name must use the default name.com nameservers for DNS changes to apply."**
 
 Isso significa que **os registros DNS não vão funcionar** até você atualizar os nameservers!
@@ -24,6 +26,7 @@ Isso significa que **os registros DNS não vão funcionar** até você atualizar
 ### **PASSO 1: Clicar em "Update Nameservers"**
 
 1. Na página de DNS do name.com, você verá um botão:
+
    - **"Update Nameservers"** (botão cinza escuro)
 
 2. Clique neste botão
@@ -35,6 +38,7 @@ Isso significa que **os registros DNS não vão funcionar** até você atualizar
 2. Selecione a opção: **"Use name.com nameservers"** ou **"Default nameservers"**
 
 3. Os nameservers padrão do name.com geralmente são algo como:
+
    - `ns1.name.com`
    - `ns2.name.com`
    - `ns3.name.com`
@@ -106,6 +110,7 @@ Deve mostrar o IP: `34.8.255.48`
 ## 💡 Por Que Isso é Necessário?
 
 Os nameservers controlam **onde** o DNS do domínio é gerenciado:
+
 - Se o domínio não está usando os nameservers do name.com, as mudanças feitas no painel do name.com não terão efeito
 - O DNS será resolvido pelos nameservers que estão configurados atualmente (que podem ser de outro provedor)
 
@@ -124,13 +129,16 @@ Os nameservers controlam **onde** o DNS do domínio é gerenciado:
 ## 🎯 Resumo
 
 **O que está correto:**
+
 - ✅ Registros DNS estão corretos
 - ✅ IP está correto: `34.8.255.48`
 
 **O que falta:**
+
 - ⚠️ Atualizar nameservers para name.com
 
 **Ação necessária:**
+
 - Clique em **"Update Nameservers"** e configure para usar os nameservers padrão do name.com
 
 Após isso, tudo funcionará! 🚀
