@@ -3,6 +3,7 @@
 ## ✅ Status Atual
 
 Perfeito! Você já selecionou:
+
 - ✅ **Application Load Balancer (HTTP/HTTPS)** ← Correto!
 
 ---
@@ -30,6 +31,7 @@ Perfeito! Você já selecionou:
 3. Clique em **"CREATE BACKEND BUCKET"**
 
 4. Configure:
+
    - **Name:** `yoobe-co-backend`
    - **Bucket:** Selecione `yoobe.co` da lista
    - **Enable Cloud CDN:** Marque ✅
@@ -58,6 +60,7 @@ Você pode continuar configurando o Load Balancer e criar o Backend Bucket depoi
 ## 💡 Dica
 
 Se você ainda não criou o Backend Bucket:
+
 - Crie agora em outra aba (é rápido, leva 30 segundos)
 - Depois volte para o Load Balancer
 - Isso evita ter que voltar depois
