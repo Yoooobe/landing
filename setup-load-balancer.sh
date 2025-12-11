@@ -34,10 +34,10 @@ echo "✅ Bucket encontrado!"
 # Criar Backend Bucket
 echo ""
 echo "🪣 Criando Backend Bucket: $BACKEND_BUCKET_NAME"
-if gcloud compute backend-buckets describe $BACKEND_BUCKET_NAME --global &>/dev/null; then
+if gcloud beta compute backend-buckets describe $BACKEND_BUCKET_NAME --global &>/dev/null; then
     echo "⚠️  Backend Bucket já existe, pulando criação..."
 else
-    gcloud compute backend-buckets create $BACKEND_BUCKET_NAME \
+    gcloud beta compute backend-buckets create $BACKEND_BUCKET_NAME \
         --gcs-bucket-name=$BUCKET_NAME \
         --enable-cdn \
         --global
