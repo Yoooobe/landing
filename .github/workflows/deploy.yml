@@ -1,0 +1,30 @@
+name: Deploy to Google Cloud Storage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup Google Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        project_id: institucional-480905
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        export_default_credentials: true
+        
+    - name: Deploy to Cloud Storage
+      run: |
+        gsutil -m cp -r index.html gs://yoobe.co/
+        gsutil web set -m index.html -e 404.html gs://yoobe.co/
+        
+    - name: Invalidate CDN Cache
+      run: |
+        gcloud compute url-maps invalidate-cdn-cache yoobe-co-url-map --path="/*" --project=institucional-480905 || true
