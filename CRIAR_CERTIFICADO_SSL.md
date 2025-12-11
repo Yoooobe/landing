@@ -3,6 +3,7 @@
 ## ✅ Status Atual
 
 Ótimo progresso! Você já configurou:
+
 - ✅ Load Balancer name: `yoobe-co-lb`
 - ✅ Protocol: HTTPS
 - ✅ IP estático: `yoobe-co-ip` (criado com sucesso!)
@@ -16,7 +17,7 @@ Agora só falta criar o **Certificado SSL**!
 
 ### **PASSO 1: Selecionar Campo Certificate**
 
-1. Na seção **"New Frontend IP and port"**, procure pelo campo **"Certificate *"** (com asterisco, obrigatório)
+1. Na seção **"New Frontend IP and port"**, procure pelo campo **"Certificate \*"** (com asterisco, obrigatório)
 
 2. Clique no dropdown do campo **"Certificate"**
 
@@ -25,6 +26,7 @@ Agora só falta criar o **Certificado SSL**!
 ### **PASSO 2: Criar Novo Certificado**
 
 1. No dropdown, você verá opções como:
+
    - "Create a new certificate"
    - Lista de certificados existentes (se houver)
 
@@ -37,18 +39,22 @@ Agora só falta criar o **Certificado SSL**!
 Uma janela popup ou nova página abrirá:
 
 1. **Name:**
+
    - Digite: `yoobe-co-cert`
 
 2. **Type:**
+
    - Selecione **"Google-managed certificate"** ou **"Google-managed SSL certificate"**
    - ⚠️ **IMPORTANTE:** Escolha o certificado gerenciado pelo Google (gratuito e automático)
 
 3. **Domain names:**
+
    - No campo de domínios, digite: `yoobe.co`
    - Clique em **"ADD DOMAIN"** ou **"+"** para adicionar mais domínios
    - Adicione também: `www.yoobe.co` (opcional, mas recomendado)
 
 4. **Outras opções:**
+
    - Deixe as outras configurações como padrão
 
 5. Clique em **"CREATE"** ou **"SAVE"**
@@ -83,6 +89,7 @@ Após criar o certificado, verifique:
 - ⚠️ Mas o site só funcionará após o certificado estar **"Active"** ou **"Provisioned"**
 
 Você pode verificar o status do certificado depois em:
+
 - Network Services → Load Balancing → Certificates
 
 ---
@@ -132,6 +139,7 @@ Após criar e selecionar o certificado:
 ## 💡 Dica
 
 **Anote o IP do Load Balancer** (`yoobe-co-ip`) - você precisará dele para:
+
 1. Configurar o DNS do domínio `yoobe.co`
 2. O certificado só será provisionado após o DNS estar configurado corretamente
 
@@ -140,6 +148,7 @@ Após criar e selecionar o certificado:
 ## 📝 Nota sobre DNS
 
 Para o certificado SSL funcionar:
+
 1. O DNS do domínio `yoobe.co` precisa apontar para o IP do Load Balancer
 2. Isso pode levar algumas horas para propagar
 3. Após o DNS propagar, o certificado será provisionado automaticamente
