@@ -3,6 +3,7 @@
 ## ⚠️ Problema Identificado
 
 O bucket `yoobe.co` foi criado, mas:
+
 - ❌ Está vazio (sem arquivo `index.html`)
 - ❌ Está como "Not public" (precisa ser público)
 - ❌ Não está configurado como site estático
@@ -20,11 +21,13 @@ O bucket `yoobe.co` foi criado, mas:
 3. Clique no botão **"GRANT ACCESS"** ou **"Add principal"** (botão azul)
 
 4. Na janela que abrir:
+
    - **New principals:** Digite: `allUsers`
    - **Select a role:** Escolha: **"Storage Object Viewer"**
    - Clique em **"SAVE"**
 
 5. Uma confirmação aparecerá avisando sobre acesso público:
+
    - Clique em **"ALLOW PUBLIC ACCESS"** para confirmar
 
 6. Agora o bucket deve mostrar **"Public"** em vez de "Not public"
@@ -40,6 +43,7 @@ O bucket `yoobe.co` foi criado, mas:
 3. Clique em **"Edit website configuration"** ou **"Enable"**
 
 4. Configure:
+
    - **Main page (index page):** Digite: `index.html`
    - **Error page (404 page):** Deixe em branco ou digite: `404.html` (opcional)
 
@@ -56,6 +60,7 @@ Enquanto o deploy automático não funciona, você pode fazer upload manual:
 2. Clique no botão **"UPLOAD"** (botão azul)
 
 3. Selecione o arquivo `index.html` do seu computador:
+
    - Localização: `/Users/genautech/landing/index.html`
 
 4. Clique em **"OPEN"** ou **"UPLOAD"**
