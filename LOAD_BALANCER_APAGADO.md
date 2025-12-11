@@ -5,10 +5,12 @@
 A página de Load Balancing está vazia, o que pode significar:
 
 1. **O Load Balancer nunca foi criado** (mais provável)
+
    - O processo de criação foi cancelado
    - Ou não foi finalizado (não clicou em "Create" no final)
 
 2. **O Load Balancer foi deletado**
+
    - Alguém ou algum processo removeu o Load Balancer
    - Ou você deletou sem querer
 
@@ -47,6 +49,7 @@ A página de Load Balancing está vazia, o que pode significar:
 Se o Load Balancer não foi criado ou foi apagado, você pode recriá-lo:
 
 1. **Verificar se o Backend Bucket ainda existe:**
+
    - Acesse a aba **"Backends"**
    - Procure por `yoobe-co-backend`
    - Se não existir, crie novamente
@@ -65,11 +68,13 @@ https://storage.googleapis.com/yoobe.co/index.html
 ```
 
 **Vantagens:**
+
 - ✅ Gratuito
 - ✅ Funciona imediatamente
 - ✅ Sem configuração complexa
 
 **Desvantagens:**
+
 - ❌ URL não é `https://yoobe.co` (tem `/index.html` no final)
 - ❌ Precisa fazer upload manual do arquivo
 
@@ -84,6 +89,7 @@ Baseado no histórico da conversa, é provável que:
 3. Ou o processo foi cancelado
 
 **Isso é normal!** O Load Balancer só é criado quando você:
+
 - Completa todas as etapas
 - Clica em **"Create"** ou **"Create load balancer"** na etapa final
 - Aguarda alguns minutos para ser provisionado
