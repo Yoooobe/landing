@@ -27,6 +27,7 @@ O mais importante: **teste diretamente no navegador!**
 1. Abra o navegador (Chrome, Safari, Firefox)
 
 2. Acesse:
+
    - `http://yoobe.co`
    - OU `https://yoobe.co`
 
@@ -49,6 +50,7 @@ sudo launchctl load /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
 ### **Método 2: Limpar Cache do Navegador**
 
 1. **Chrome:**
+
    - Cmd + Shift + Delete
    - Selecione "Cached images and files"
    - Clique em "Clear data"
@@ -61,6 +63,7 @@ sudo launchctl load /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist
 ### **Método 3: Usar Modo Anônimo/Privado**
 
 Teste o site em uma janela anônima/privada:
+
 - **Chrome:** Cmd + Shift + N
 - **Safari:** Cmd + Shift + N
 
@@ -94,12 +97,15 @@ Confirme que o DNS está correto globalmente:
 **Execute estes testes:**
 
 1. **Verificar DNS global:**
+
    ```bash
    nslookup yoobe.co 8.8.8.8
    ```
+
    Deve mostrar: `34.8.255.48` ✅
 
 2. **Testar no navegador:**
+
    - Abra: `http://yoobe.co`
    - Deve mostrar a página "Em Atualização" ✅
 
@@ -115,9 +121,11 @@ Confirme que o DNS está correto globalmente:
 Se mesmo no navegador não funcionar:
 
 1. **Verifique se o Load Balancer está ativo:**
+
    - https://console.cloud.google.com/net-services/loadbalancing/loadBalancers/list?project=institucional-480905
 
 2. **Verifique se o bucket está público:**
+
    - https://console.cloud.google.com/storage/browser/yoobe.co?project=institucional-480905
 
 3. **Verifique se o arquivo `index.html` está no bucket**
