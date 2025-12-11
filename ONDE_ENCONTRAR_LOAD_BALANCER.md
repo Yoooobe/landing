@@ -7,10 +7,12 @@
 1. Acesse: https://console.cloud.google.com
 
 2. No menu lateral esquerdo (☰), procure por:
+
    - **"Network Services"** (ou "Rede" em português)
    - Clique para expandir
 
 3. Dentro de "Network Services", clique em:
+
    - **"Load balancing"** ← Aqui está!
 
 4. Você verá a página de Load Balancing com as abas:
@@ -24,6 +26,7 @@
 ### **Método 2: Via Link Direto**
 
 Acesse diretamente:
+
 ```
 https://console.cloud.google.com/net-services/load-balancing/list?project=institucional-480905
 ```
@@ -61,6 +64,7 @@ Se você já estava criando um Load Balancer:
 1. Acesse: https://console.cloud.google.com/net-services/load-balancing/list?project=institucional-480905
 
 2. Procure pelo Load Balancer:
+
    - **Name:** `yoobe-co-lb` (ou o nome que você usou)
    - **Status:** Pode estar como "Creating..." ou "Active"
 
@@ -78,10 +82,12 @@ Se você já estava criando um Load Balancer:
 ### Possíveis Motivos:
 
 1. **Ainda não foi criado:**
+
    - Você pode ter cancelado o processo
    - Ou ainda está em criação (pode levar alguns minutos)
 
 2. **Projeto errado:**
+
    - Verifique se está no projeto: `institucional-480905`
    - No topo do console, confira o seletor de projetos
 
@@ -102,6 +108,7 @@ Se você já estava criando um Load Balancer:
 ## 💡 Dica Rápida
 
 **Caminho completo no menu:**
+
 ```
 Google Cloud Console
   → Network Services (menu lateral)
