@@ -17,6 +17,7 @@ O **"Path prefix rewrite"** adiciona um prefixo. Para substituir completamente o
 #### **Passo a Passo:**
 
 1. **Acesse o Load Balancer:**
+
    - https://console.cloud.google.com/net-services/loadbalancing/loadBalancers/list?project=institucional-480905
 
 2. **Clique em `yoobe-co-lb-url-map` → `Edit`**
@@ -26,11 +27,13 @@ O **"Path prefix rewrite"** adiciona um prefixo. Para substituir completamente o
 4. **Na regra padrão, expanda `Add-on action (URL rewrite)`**
 
 5. **Ajuste o `Path prefix rewrite`:**
+
    - **Tente primeiro:** Deixe vazio e salve
    - **Depois teste:** `curl -I --resolve yoobe.co:80:34.8.255.48 http://yoobe.co/`
    - **Se ainda não funcionar:** Configure como `/index.html` (com barra no início)
 
 6. **OU crie uma regra específica para `/`:**
+
    - Clique em **"Add path rule"**
    - **Paths:** `/` (exato)
    - **Action:** Route traffic to a single backend
@@ -58,6 +61,7 @@ gsutil web get gs://yoobe.co
 ```
 
 **Depois disso:**
+
 - Remova o URL rewrite do Load Balancer
 - O bucket servirá `index.html` automaticamente para `/`
 
@@ -96,6 +100,7 @@ curl -I --resolve yoobe.co:80:34.8.255.48 http://yoobe.co/index.html
 ```
 
 **Resultado esperado:**
+
 - `HTTP/1.1 200 OK`
 - `Content-Type: text/html`
 - Conteúdo do `index.html`
@@ -107,15 +112,19 @@ curl -I --resolve yoobe.co:80:34.8.255.48 http://yoobe.co/index.html
 Se ainda não funcionar, verifique:
 
 1. **O arquivo existe e está público:**
+
    ```bash
    curl -I https://storage.googleapis.com/yoobe.co/index.html
    ```
+
    Deve retornar `200 OK`
 
 2. **O backend bucket está correto:**
+
    - No Load Balancer → Backend → Verifique se `yoobe-co-backend` aponta para `yoobe.co`
 
 3. **O URL rewrite está configurado:**
+
    - No Load Balancer → Host and path rules → Verifique o "Path prefix rewrite"
 
 4. **Cache do CDN:**
