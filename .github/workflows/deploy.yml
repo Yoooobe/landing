@@ -38,6 +38,13 @@ jobs:
         run: |
           gsutil -m cp -r index.html gs://yoobe.co/
           gsutil -m setmeta -h "Content-Type:text/html" gs://yoobe.co/index.html
+          # Deploy logo se existir
+          if [ -f logo.png ]; then
+            echo "Fazendo upload da logo..."
+            gsutil -m cp logo.png gs://yoobe.co/
+            gsutil -m setmeta -h "Content-Type:image/png" gs://yoobe.co/logo.png
+            gsutil acl ch -u AllUsers:R gs://yoobe.co/logo.png || true
+          fi
 
       - name: Invalidate CDN Cache
         run: |
