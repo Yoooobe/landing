@@ -660,6 +660,53 @@
       </div>
     </section>
 
+    <!-- Spoiler Box com Novidades -->
+    <section class="spoiler-box" id="spoiler-novidades">
+      <div class="spoiler-header" onclick="toggleSpoiler()">
+        <h3>
+          <span>📢</span>
+          <span>Novidades e Atualizações</span>
+        </h3>
+        <span class="spoiler-icon">▼</span>
+      </div>
+      <div class="spoiler-content">
+        <div class="spoiler-content-inner">
+          <h4 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark);">
+            🎉 O Que Está Por Vir
+          </h4>
+          <ul style="list-style: none; padding: 0; color: var(--text-gray); line-height: 2;">
+            <li style="margin-bottom: 0.75rem;">✨ <strong>Nova Interface:</strong> Design completamente renovado e mais intuitivo</li>
+            <li style="margin-bottom: 0.75rem;">🚀 <strong>Performance:</strong> Plataforma 3x mais rápida e responsiva</li>
+            <li style="margin-bottom: 0.75rem;">🔒 <strong>Segurança:</strong> Novos protocolos de segurança e privacidade</li>
+            <li style="margin-bottom: 0.75rem;">📱 <strong>Mobile:</strong> Aplicativo mobile nativo em desenvolvimento</li>
+            <li style="margin-bottom: 0.75rem;">🤖 <strong>IA Integrada:</strong> Recursos de inteligência artificial para otimização</li>
+            <li style="margin-bottom: 0.75rem;">🌐 <strong>Integrações:</strong> Novas integrações com ferramentas populares</li>
+            <li style="margin-bottom: 0.75rem;">📊 <strong>Analytics:</strong> Dashboard de analytics aprimorado</li>
+            <li style="margin-bottom: 0.75rem;">💬 <strong>Suporte:</strong> Novo sistema de suporte ao cliente 24/7</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email Cadastro Section -->
+    <section class="email-form">
+      <h3>📧 Receba Novidades por Email</h3>
+      <p>Cadastre-se para ser notificado sobre todas as novidades e atualizações da plataforma!</p>
+      <form id="emailForm" onsubmit="handleEmailSubmit(event)">
+        <div class="form-group">
+          <input
+            type="email"
+            id="emailInput"
+            class="form-input"
+            placeholder="Seu melhor email"
+            required
+          />
+          <button type="submit" class="form-submit">Cadastrar</button>
+        </div>
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
       <h2>Não Perca as Novidades</h2>
@@ -692,5 +739,75 @@
         <p class="footer-text">© 2024 Yoobe. Todos os direitos reservados.</p>
       </div>
     </footer>
+
+    <script>
+      // Toggle Spoiler
+      function toggleSpoiler() {
+        const spoilerBox = document.getElementById('spoiler-novidades');
+        spoilerBox.classList.toggle('active');
+      }
+
+      // Email Form Handler
+      function handleEmailSubmit(event) {
+        event.preventDefault();
+        const emailInput = document.getElementById('emailInput');
+        const formMessage = document.getElementById('formMessage');
+        const email = emailInput.value.trim();
+
+        // Validação básica
+        if (!email || !email.includes('@')) {
+          formMessage.textContent = 'Por favor, insira um email válido.';
+          formMessage.className = 'form-message error';
+          return;
+        }
+
+        // Simular envio (aqui você pode integrar com um serviço de email)
+        formMessage.textContent = '✅ Email cadastrado com sucesso! Você receberá nossas novidades em breve.';
+        formMessage.className = 'form-message success';
+        emailInput.value = '';
+
+        // Aqui você pode adicionar integração com:
+        // - Google Sheets API
+        // - Mailchimp
+        // - SendGrid
+        // - Outro serviço de email marketing
+        
+        // Exemplo de integração futura:
+        // fetch('/api/subscribe', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify({ email: email })
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //   formMessage.textContent = '✅ Email cadastrado com sucesso!';
+        //   formMessage.className = 'form-message success';
+        // })
+        // .catch(error => {
+        //   formMessage.textContent = '❌ Erro ao cadastrar. Tente novamente.';
+        //   formMessage.className = 'form-message error';
+        // });
+
+        // Limpar mensagem após 5 segundos
+        setTimeout(() => {
+          formMessage.className = 'form-message';
+          formMessage.textContent = '';
+        }, 5000);
+      }
+
+      // Smooth scroll para âncoras
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    </script>
   </body>
 </html>
