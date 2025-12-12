@@ -26,7 +26,12 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
         min-height: 100vh;
-        background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 50%, #f3e8ff 100%);
+        background: linear-gradient(
+          135deg,
+          #dbeafe 0%,
+          #e0e7ff 50%,
+          #f3e8ff 100%
+        );
         color: var(--text-dark);
         line-height: 1.6;
       }
@@ -64,23 +69,25 @@
       .logo-circle {
         width: 48px;
         height: 48px;
-        background: var(--primary);
-        border-radius: 12px;
+        background: transparent;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
         transition: transform 0.3s ease;
+        overflow: hidden;
       }
 
       .logo-circle:hover {
         transform: scale(1.05);
       }
 
-      .logo-symbol {
-        width: 28px;
-        height: 28px;
-        fill: white;
+      .logo-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 50%;
       }
 
       .logo-text {
@@ -354,6 +361,158 @@
         font-size: 0.875rem;
       }
 
+      /* Spoiler Box */
+      .spoiler-box {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 2rem;
+      }
+
+      .spoiler-header {
+        background: white;
+        border-radius: 16px;
+        padding: 1.5rem 2rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .spoiler-header:hover {
+        border-color: var(--primary);
+        box-shadow: 0 8px 30px rgba(30, 64, 175, 0.15);
+      }
+
+      .spoiler-header h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .spoiler-icon {
+        font-size: 1.25rem;
+        transition: transform 0.3s ease;
+      }
+
+      .spoiler-box.active .spoiler-icon {
+        transform: rotate(180deg);
+      }
+
+      .spoiler-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.5s ease;
+        background: white;
+        border-radius: 0 0 16px 16px;
+        margin-top: -1rem;
+        padding: 0 2rem;
+      }
+
+      .spoiler-box.active .spoiler-content {
+        max-height: 2000px;
+        padding: 2rem;
+        margin-top: 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .spoiler-content-inner {
+        padding-top: 1rem;
+      }
+
+      /* Email Form */
+      .email-form {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-radius: 16px;
+        padding: 3rem 2rem;
+        margin-top: 3rem;
+        text-align: center;
+        color: white;
+      }
+
+      .email-form h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .email-form p {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+        opacity: 0.95;
+      }
+
+      .form-group {
+        display: flex;
+        gap: 1rem;
+        max-width: 500px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+
+      .form-input {
+        flex: 1;
+        min-width: 250px;
+        padding: 1rem 1.5rem;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+
+      .form-input:focus {
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+      }
+
+      .form-submit {
+        padding: 1rem 2rem;
+        background: white;
+        color: var(--primary);
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .form-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .form-submit:active {
+        transform: translateY(0);
+      }
+
+      .form-message {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        display: none;
+      }
+
+      .form-message.success {
+        background: rgba(34, 197, 94, 0.2);
+        color: #86efac;
+        display: block;
+      }
+
+      .form-message.error {
+        background: rgba(239, 68, 68, 0.2);
+        color: #fca5a5;
+        display: block;
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         .hero h1 {
@@ -413,31 +572,14 @@
       <nav>
         <a href="/" class="logo-container">
           <div class="logo-circle">
-            <svg
-              class="logo-symbol"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M8 6C8 6 9 5 12 5C15 5 16 6 16 6C16 6 16.5 7 16 8C15.5 9 15 9.5 15 10C15 10.5 15.5 11 16 12C16.5 13 16 14 16 14C16 14 15 15 12 15C9 15 8 14 8 14C8 14 7.5 13 8 12C8.5 11 9 10.5 9 10C9 9.5 8.5 9 8 8C7.5 7 8 6 8 6Z"
-                fill="white"
-              />
-              <circle cx="10" cy="8" r="1" fill="white" />
-              <circle cx="14" cy="8" r="1" fill="white" />
-              <path
-                d="M14 12C14 12 15 13 15 14C15 15 14 16 14 16"
-                stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                fill="none"
-              />
-            </svg>
+            <img src="logo.png" alt="Yoobe Logo" class="logo-img" />
           </div>
           <span class="logo-text">Yoobe</span>
         </a>
         <ul class="nav-menu">
-          <li><a href="https://catalogo.yoobe.co" target="_blank">Catálogo</a></li>
+          <li>
+            <a href="https://catalogo.yoobe.co" target="_blank">Catálogo</a>
+          </li>
           <li><a href="#novidades">Novidades</a></li>
           <li><a href="#contato">Contato</a></li>
           <li>
@@ -457,8 +599,8 @@
       </div>
       <h1>Estamos Melhorando para Você</h1>
       <p class="subtitle">
-        Estamos trabalhando duro para trazer uma experiência ainda melhor.
-        Em breve estaremos de volta com novidades incríveis!
+        Estamos trabalhando duro para trazer uma experiência ainda melhor. Em
+        breve estaremos de volta com novidades incríveis!
       </p>
     </section>
 
@@ -526,7 +668,10 @@
         catálogo e plataforma atual.
       </p>
       <div class="cta-buttons">
-        <a href="https://catalogo.yoobe.co" class="btn btn-primary" target="_blank"
+        <a
+          href="https://catalogo.yoobe.co"
+          class="btn btn-primary"
+          target="_blank"
           >Ver Catálogo</a
         >
         <a href="https://app.yoobe.co" class="btn btn-secondary" target="_blank"
@@ -544,9 +689,7 @@
           <a href="mailto:contato@yoobe.co">Contato</a>
           <a href="#novidades">Novidades</a>
         </div>
-        <p class="footer-text">
-          © 2024 Yoobe. Todos os direitos reservados.
-        </p>
+        <p class="footer-text">© 2024 Yoobe. Todos os direitos reservados.</p>
       </div>
     </footer>
   </body>

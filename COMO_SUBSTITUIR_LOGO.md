@@ -5,6 +5,7 @@
 Se você tem a logo em formato SVG, substitua o código SVG dentro do arquivo `index.html`:
 
 ### Localização no código:
+
 Procure por esta seção (linha ~140-155):
 
 ```html
@@ -19,6 +20,7 @@ Procure por esta seção (linha ~140-155):
 ```
 
 ### Como fazer:
+
 1. Abra sua logo SVG em um editor de texto
 2. Copie todo o conteúdo do SVG
 3. Cole no lugar do SVG atual no `index.html`
@@ -48,9 +50,9 @@ No arquivo `index.html`, substitua o SVG por:
 
 ```html
 <div class="logo-circle">
-  <img 
-    src="https://storage.googleapis.com/yoobe.co/logo.png" 
-    alt="Yoobe Logo" 
+  <img
+    src="https://storage.googleapis.com/yoobe.co/logo.png"
+    alt="Yoobe Logo"
     style="width: 28px; height: 28px; object-fit: contain;"
   />
 </div>
@@ -60,9 +62,9 @@ No arquivo `index.html`, substitua o SVG por:
 
 ```html
 <div class="logo-circle">
-  <img 
-    src="https://yoobe.co/logo.png" 
-    alt="Yoobe Logo" 
+  <img
+    src="https://yoobe.co/logo.png"
+    alt="Yoobe Logo"
     style="width: 28px; height: 28px; object-fit: contain;"
   />
 </div>
@@ -76,9 +78,9 @@ Se a logo está hospedada em outro lugar, use diretamente a URL:
 
 ```html
 <div class="logo-circle">
-  <img 
-    src="https://exemplo.com/logo.png" 
-    alt="Yoobe Logo" 
+  <img
+    src="https://exemplo.com/logo.png"
+    alt="Yoobe Logo"
     style="width: 28px; height: 28px; object-fit: contain;"
   />
 </div>
@@ -92,7 +94,7 @@ Se precisar ajustar o tamanho ou estilo da logo, modifique o CSS:
 
 ```css
 .logo-circle {
-  width: 48px;  /* Ajuste a largura */
+  width: 48px; /* Ajuste a largura */
   height: 48px; /* Ajuste a altura */
   border-radius: 12px; /* Ajuste o arredondamento */
   background: var(--primary); /* Ou remova para logo com fundo transparente */
@@ -100,7 +102,7 @@ Se precisar ajustar o tamanho ou estilo da logo, modifique o CSS:
 
 .logo-symbol,
 .logo-circle img {
-  width: 28px;  /* Ajuste o tamanho da logo */
+  width: 28px; /* Ajuste o tamanho da logo */
   height: 28px;
 }
 ```
