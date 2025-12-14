@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yoobe.co - Novidades em Janeiro!</title>
+    <link rel="icon" href="logo.png" type="image/png" />
     <style>
       * {
         margin: 0;
@@ -44,7 +45,7 @@
         position: sticky;
         top: 0;
         z-index: 100;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
       }
 
       nav {
@@ -61,14 +62,15 @@
       .logo-container {
         display: flex;
         align-items: center;
-        gap: 0.75rem;
+        gap: 1rem;
         text-decoration: none;
         color: var(--text-dark);
+        padding: 0.5rem 0;
       }
 
       .logo-circle {
-        width: 48px;
-        height: 48px;
+        width: 64px;
+        height: 64px;
         background: transparent;
         border-radius: 50%;
         display: flex;
@@ -77,6 +79,7 @@
         box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
         transition: transform 0.3s ease;
         overflow: hidden;
+        flex-shrink: 0;
       }
 
       .logo-circle:hover {
@@ -91,7 +94,7 @@
       }
 
       .logo-text {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         font-weight: 700;
         color: var(--text-dark);
       }
