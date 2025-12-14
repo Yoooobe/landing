@@ -98,10 +98,15 @@
 
       .nav-menu {
         display: flex;
-        gap: 2rem;
+        gap: 0.5rem;
         list-style: none;
         align-items: center;
         flex-wrap: wrap;
+        padding: 0.35rem 0.5rem;
+        border-radius: 999px;
+        border: 1px solid rgba(148, 163, 184, 0.35);
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
       }
 
       .nav-menu a {
@@ -109,27 +114,22 @@
         text-decoration: none;
         font-weight: 500;
         transition: color 0.3s ease;
-        padding: 0.5rem 0;
+        padding: 0.55rem 0.75rem;
         position: relative;
+        border-radius: 999px;
       }
 
       .nav-menu a:hover {
         color: var(--primary);
+        background: rgba(15, 23, 42, 0.04);
       }
 
       .nav-menu a::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--primary);
-        transition: width 0.3s ease;
+        content: none;
       }
 
       .nav-menu a:hover::after {
-        width: 100%;
+        content: none;
       }
 
       .nav-button {
@@ -153,6 +153,13 @@
         content: none;
       }
 
+      .cta-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-end;
+      }
+
       .nav-button.whatsapp {
         background: linear-gradient(135deg, #10b981, #22c55e);
         box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
@@ -167,6 +174,67 @@
         background: linear-gradient(135deg, #4338ca, #6d28d9, #db2777);
         transform: translateY(-2px);
         box-shadow: 0 14px 28px rgba(79, 70, 229, 0.28);
+      }
+
+      /* Info panels (API / Gamificação) */
+      .info-panels {
+        max-width: 1200px;
+        margin: 0 auto 3rem;
+        padding: 0 2rem;
+        display: grid;
+        gap: 1rem;
+      }
+
+      .info-card {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+      }
+
+      .info-card h3 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+      }
+
+      .info-card p {
+        color: var(--text-gray);
+      }
+
+      /* Spoiler feature cards (inside spoiler) */
+      .spoiler-cards {
+        display: grid;
+        gap: 0.75rem;
+        margin-top: 1.25rem;
+      }
+
+      @media (min-width: 768px) {
+        .spoiler-cards {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      .spoiler-card {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1rem;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+      }
+
+      .spoiler-card strong {
+        display: block;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 0.2rem;
+      }
+
+      .spoiler-card span {
+        color: var(--text-gray);
+        font-size: 0.95rem;
       }
 
       /* Hero Section */
@@ -481,6 +549,11 @@
           justify-content: center;
           margin-top: 1rem;
         }
+
+        .cta-stack {
+          width: 100%;
+          align-items: center;
+        }
       }
 
       @media (max-width: 480px) {
@@ -504,6 +577,10 @@
         .clients-section {
           padding: 0 1rem;
         }
+
+        .info-panels {
+          padding: 0 1rem;
+        }
       }
     </style>
   </head>
@@ -517,30 +594,32 @@
           </div>
           <span class="logo-text">Yoobe</span>
         </a>
-        <ul class="nav-menu">
-          <li>
-            <a href="https://catalogo.yoobe.co" target="_blank">Catálogo</a>
-          </li>
+        <ul class="nav-menu" aria-label="Navegação">
+          <li><a href="#api">API</a></li>
+          <li><a href="#gamificacao">Gamificação</a></li>
+          <li><a href="#solucao">Solução</a></li>
+          <li><a href="#clientes">Clientes</a></li>
           <li><a href="#contato">Contato</a></li>
-          <li>
-            <a
-              href="https://calendly.com/yoobeco/demo?month=2021-08"
-              class="nav-button"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Agendar Demo</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://wa.me/554187582060"
-              class="nav-button whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-              >WhatsApp</a
-            >
-          </li>
+          <li><a href="https://catalogo.yoobe.co" target="_blank" rel="noopener noreferrer">Catálogo</a></li>
+          <li><a href="mailto:vendas@yoobe.co">Fale conosco</a></li>
         </ul>
+
+        <div class="cta-stack">
+          <a
+            href="https://calendly.com/yoobeco/demo?month=2021-08"
+            class="nav-button"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Agendar Demo</a
+          >
+          <a
+            href="https://wa.me/554187582060"
+            class="nav-button whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WhatsApp</a
+          >
+        </div>
       </nav>
     </header>
 
@@ -578,6 +657,23 @@
             Organização e acompanhamento das entregas para times e clientes.
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="info-panels" aria-label="API e Gamificação">
+      <div class="info-card" id="api">
+        <h3>API</h3>
+        <p>
+          Integrações e automações seguem disponíveis — agende uma demo para entender
+          o cenário atual.
+        </p>
+      </div>
+      <div class="info-card" id="gamificacao">
+        <h3>Gamificação</h3>
+        <p>
+          Programas de engajamento com recompensas continuam no foco — a evolução
+          completa chega em janeiro.
+        </p>
       </div>
     </section>
 
@@ -626,12 +722,27 @@
               🗓️ <strong>Lançamento:</strong> janeiro (comunicaremos detalhes na sequência).
             </li>
           </ul>
+
+          <div class="spoiler-cards" aria-label="Prévia de recursos">
+            <div class="spoiler-card">
+              <strong>Dashboard</strong>
+              <span>Um novo visual para acompanhamento.</span>
+            </div>
+            <div class="spoiler-card">
+              <strong>Loja</strong>
+              <span>Experiência de resgate repensada.</span>
+            </div>
+            <div class="spoiler-card">
+              <strong>Produtos</strong>
+              <span>Gestão mais simples e rápida.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Clientes que usam a plataforma e a API -->
-    <section class="clients-section" aria-label="Clientes Yoobe">
+    <section class="clients-section" id="clientes" aria-label="Clientes Yoobe">
       <div class="clients-box">
         <h2>Clientes que já usam a Yoobe</h2>
         <p>
