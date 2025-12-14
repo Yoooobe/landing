@@ -133,14 +133,14 @@
       }
 
       .nav-button {
-        background: var(--primary);
+        background: linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
         color: white;
         padding: 0.75rem 1.5rem;
-        border-radius: 8px;
+        border-radius: 999px;
         text-decoration: none;
         font-weight: 600;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        box-shadow: 0 10px 24px rgba(79, 70, 229, 0.22);
       }
 
       .nav-button.whatsapp {
@@ -153,10 +153,10 @@
         box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
       }
 
-      .nav-button:hover {
-        background: var(--primary-dark);
+      .nav-button:not(.whatsapp):hover {
+        background: linear-gradient(135deg, #4338ca, #6d28d9, #db2777);
         transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(30, 64, 175, 0.4);
+        box-shadow: 0 14px 28px rgba(79, 70, 229, 0.28);
       }
 
       /* Hero Section */
@@ -530,6 +530,9 @@
             </li>
             <li style="margin-bottom: 0.75rem">
               🚀 <strong>Fluxos mais rápidos:</strong> processos mais simples do início ao fim.
+            </li>
+            <li style="margin-bottom: 0.75rem">
+              🎮 <strong>Gamificação via API:</strong> integrações para transformar pontos e conquistas em recompensas.
             </li>
             <li style="margin-bottom: 0.75rem">
               🗓️ <strong>Lançamento:</strong> janeiro (comunicaremos detalhes na sequência).
