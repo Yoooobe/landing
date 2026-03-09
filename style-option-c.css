@@ -1,0 +1,56 @@
+/* ═══════════ Option C — Product-led / Tech / Modular overrides ═══════════
+   Load after style.css. Uses same structure (header-pill, etc.) for script.js.
+*/
+:root {
+  --brand-orange: #0ea5e9;
+  --brand-orange-dark: #0284c7;
+  --brand-orange-light: #e0f2fe;
+  --gradient-orange: linear-gradient(135deg, #0ea5e9, #0284c7);
+  --gradient-text: linear-gradient(135deg, #0ea5e9, #06b6d4);
+  --gradient-hero: linear-gradient(160deg, #0c4a6e 0%, #0f172a 50%, #020617 100%);
+  --ds-primary: #0ea5e9;
+  --ds-accent: #0ea5e9;
+  --shadow-orange: 0 8px 24px rgba(14, 165, 233, 0.25);
+}
+
+.header-pill { border-color: rgba(14, 165, 233, 0.2); max-width: 1100px; padding: 0.6rem 1.25rem; }
+.header-pill .nav-container { gap: 1rem; flex-wrap: nowrap; }
+.header-pill .nav-menu { flex-shrink: 1; min-width: 0; }
+.header-pill .nav-menu a { white-space: nowrap; padding: 0.5rem 0.75rem; }
+.header-pill .nav-menu a:hover { color: var(--brand-orange); background: var(--brand-orange-light); }
+.header-pill .nav-ctas { flex-shrink: 0; }
+.nav-login-c {
+  color: var(--ds-text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.88rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-full);
+  transition: all 0.25s;
+}
+.nav-login-c:hover { color: var(--brand-orange); }
+.header-pill .btn-primary { white-space: nowrap; }
+@media (max-width: 1024px) {
+  .header-pill { width: 94%; padding: 0.5rem 1rem; }
+  .header-pill .nav-menu a { padding: 0.4rem 0.6rem; font-size: 0.82rem; }
+}
+.btn-primary, .btn-hero-primary { background: var(--gradient-orange); box-shadow: var(--shadow-orange); }
+.btn-primary:hover, .btn-hero-primary:hover { box-shadow: 0 12px 32px rgba(14, 165, 233, 0.35); }
+.text-gradient { background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; }
+.section-tag { color: var(--brand-orange); background: var(--brand-orange-light); }
+
+.hero-redesign { background: var(--gradient-hero); }
+.hero-redesign h1 .text-gradient { background: var(--gradient-text); -webkit-background-clip: text; background-clip: text; }
+
+.api-section { background: #0f172a; }
+.integrations-section { background: #f0f9ff; }
+.management-section { background: #fff; }
+.final-cta-section { background: linear-gradient(135deg, #0c4a6e, #0f172a); color: #fff; }
+.final-cta-section .btn-hero-primary { background: var(--gradient-orange); }
+.final-cta-section .btn-whatsapp-lg { background: #22c55e; }
+
+.integration-card { border: 1px solid rgba(14, 165, 233, 0.15); }
+.integration-card:hover { border-color: rgba(14, 165, 233, 0.3); box-shadow: 0 8px 24px rgba(14, 165, 233, 0.08); }
+.mgmt-card:hover { border-color: rgba(14, 165, 233, 0.25); }
+.pricing-card.pricing-popular { border-color: var(--brand-orange); box-shadow: var(--shadow-orange); }
+.pricing-card.pricing-popular .popular-badge { background: var(--gradient-orange); }

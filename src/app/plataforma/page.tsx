@@ -97,17 +97,22 @@ export default function PlataformaPage() {
             <ul className="space-y-4 pt-4">
               <li className="flex items-center gap-3 text-white/80">
                 <div className="w-6 h-6 rounded-full bg-yoobe-neon-pink/20 text-yoobe-neon-pink flex items-center justify-center text-xs">✓</div>
-                Checkout transparente de pontos
+                Checkout transparente de pontos (Wallet Pessoal)
               </li>
               <li className="flex items-center gap-3 text-white/80">
                 <div className="w-6 h-6 rounded-full bg-yoobe-neon-pink/20 text-yoobe-neon-pink flex items-center justify-center text-xs">✓</div>
-                Rastreamento logístico do prêmio
+                Rastreamento logístico do prêmio até a porta
               </li>
               <li className="flex items-center gap-3 text-white/80">
                 <div className="w-6 h-6 rounded-full bg-yoobe-neon-pink/20 text-yoobe-neon-pink flex items-center justify-center text-xs">✓</div>
-                Vitrine exclusiva e gamificada
+                Vitrine exclusiva e gamificada (White-label)
               </li>
             </ul>
+             <div className="pt-6">
+               <a href="https://catalogo.yoobe.co" target="_blank" rel="noopener noreferrer" className="inline-flex h-12 items-center justify-center rounded-md bg-yoobe-neon-pink px-8 font-medium text-white shadow-lg shadow-yoobe-neon-pink/20 transition-colors hover:bg-opacity-80">
+                 Acessar Catálogo Demo
+               </a>
+             </div>
           </div>
           
           <div className="relative h-[500px] w-full rounded-2xl overflow-hidden glass-panel-dark border border-white/10 group shadow-2xl">
@@ -115,25 +120,25 @@ export default function PlataformaPage() {
             
             {/* Mystery Overlay */}
             <div className="absolute inset-0 backdrop-blur-[2px] z-20 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-brand-navy-dark/80">
-              <a href="https://catalogo.yoobe.co" target="_blank" rel="noopener noreferrer" className="bg-yoobe-neon-pink text-white px-6 py-3 rounded hover:bg-yoobe-neon-pink/80 font-medium shadow-xl">
-                Acessar Catálogo Demo
+              <a href="https://catalogo.yoobe.co" target="_blank" rel="noopener noreferrer" className="bg-yoobe-neon-pink text-white px-6 py-3 rounded-full hover:bg-yoobe-neon-pink/80 font-bold shadow-[0_0_30px_rgba(239,71,111,0.4)] transition-all hover:scale-105">
+                Visitar a Loja Corporativa
               </a>
             </div>
             
             <div className="p-8 relative z-10 flex flex-col h-full gap-4">
                <div className="flex justify-between items-center mb-4">
-                <div className="text-white font-bold text-xl">Loja do Colaborador</div>
-                <div className="text-yoobe-neon-pink font-bold">12.500 Pts</div>
+                <div className="text-white font-bold text-xl">Minha Loja</div>
+                <div className="text-yoobe-neon-pink font-bold text-xl">12.500 <span className="text-sm">Pts</span></div>
                </div>
                <div className="grid grid-cols-2 gap-4 flex-1">
                  <div className="bg-white/5 rounded-xl border border-white/5 p-4 flex flex-col justify-between">
-                   <div className="w-16 h-16 bg-white/10 rounded-full mx-auto mt-4" />
-                   <div className="h-4 bg-white/20 w-3/4 mt-4 mx-auto rounded" />
+                   <div className="w-20 h-20 bg-white/10 rounded-lg mx-auto mt-2" />
+                   <div className="h-4 bg-white/20 w-3/4 mx-auto rounded" />
                    <div className="h-3 bg-yoobe-neon-pink/50 w-1/2 mx-auto rounded mt-2" />
                  </div>
                  <div className="bg-white/5 rounded-xl border border-white/5 p-4 flex flex-col justify-between">
-                   <div className="w-16 h-16 bg-white/10 rounded-full mx-auto mt-4" />
-                   <div className="h-4 bg-white/20 w-3/4 mt-4 mx-auto rounded" />
+                   <div className="w-20 h-20 bg-white/10 rounded-lg mx-auto mt-2" />
+                   <div className="h-4 bg-white/20 w-3/4 mx-auto rounded" />
                    <div className="h-3 bg-yoobe-neon-pink/50 w-1/2 mx-auto rounded mt-2" />
                  </div>
                </div>

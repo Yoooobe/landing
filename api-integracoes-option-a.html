@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API e Integrações — 4unik by Yoobe (Opção A)</title>
+  <meta name="description" content="API de gamificação, recompensas e operações. Integre campanhas, catálogo e logística via REST, webhooks e integrações prontas." />
+  <link rel="icon" href="logo-4unik-by-yoobe.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style-option-a.css" />
+</head>
+<body>
+
+<header class="header-a" id="top">
+  <div class="nav-container nav-container-a">
+    <a href="index-option-a.html" class="logo-link">
+      <img src="logo-4unik-by-yoobe.png" alt="4unik by Yoobe" class="logo-img" />
+    </a>
+    <button class="mobile-toggle" id="mobileToggleA" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links-a" id="navMenuA">
+      <li><a href="index-option-a.html#preview">Plataforma</a></li>
+      <li><a href="index-option-a.html#solucoes">Casos de uso</a></li>
+      <li><a href="api-integracoes-option-a.html">API</a></li>
+      <li><a href="index-option-a.html#planos">Planos</a></li>
+    </ul>
+    <div class="nav-ctas-a">
+      <a href="https://4unik.yoobe.me/" class="nav-login" target="_blank" rel="noopener">Entrar</a>
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn btn-primary btn-nav-cta" target="_blank" rel="noopener">Solicitar demo</a>
+    </div>
+  </div>
+</header>
+
+<section class="api-hero-a">
+  <div class="container">
+    <div class="hero-badge-a" data-aos="fade-down"><span class="badge-pulse"></span>Plataforma aberta para todos os clientes</div>
+    <h1 data-aos="fade-up">API de gamificação, <span class="text-gradient">recompensas</span> e operações</h1>
+    <p class="hero-desc" data-aos="fade-up">A infraestrutura de recompensas corporativas para integrar campanhas, catálogo, logística e experiência. API REST, webhooks e integrações prontas.</p>
+    <div class="hero-ctas-a" data-aos="fade-up">
+      <a href="#api" class="btn btn-hero-primary">Documentação e API</a>
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn btn-hero-secondary" target="_blank" rel="noopener">Solicitar Demonstração</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats-bar-a">
+  <div class="container stats-grid-a">
+    <div class="stat-item-a" data-aos="fade-up" data-aos-delay="100">
+      <span class="stat-icon-a">🏢</span>
+      <span class="stat-number-a" data-target="500">0</span><span class="stat-suffix-a">+</span>
+      <span class="stat-label-a">Empresas atendidas</span>
+    </div>
+    <div class="stat-item-a" data-aos="fade-up" data-aos-delay="200">
+      <span class="stat-icon-a">🚀</span>
+      <span class="stat-number-a" data-target="1000000">0</span><span class="stat-suffix-a">+</span>
+      <span class="stat-label-a">Premiações entregues</span>
+    </div>
+    <div class="stat-item-a" data-aos="fade-up" data-aos-delay="300">
+      <span class="stat-icon-a">🎁</span>
+      <span class="stat-number-a" data-target="5000">0</span><span class="stat-suffix-a">+</span>
+      <span class="stat-label-a">Produtos no catálogo</span>
+    </div>
+  </div>
+</section>
+
+<section class="api-block-a" id="api">
+  <div class="api-layout-a">
+    <div class="api-content-a" data-aos="fade-right">
+      <span class="section-tag">API & Integrações</span>
+      <h2>Conecte a <span class="text-gradient">4unik</span> a qualquer sistema</h2>
+      <p>API RESTful robusta para integrar gamificação e premiações ao seu ecossistema. Slack, Teams, HRISs, ERPs — conecte tudo.</p>
+      <ul>
+        <li><span class="check">✓</span> Webhooks em tempo real</li>
+        <li><span class="check">✓</span> Autenticação OAuth 2.0 / Bearer</li>
+        <li><span class="check">✓</span> SDK para Node.js & Python</li>
+        <li><span class="check">✓</span> Rate limiting inteligente</li>
+        <li><span class="check">✓</span> Sandbox para testes sem produção</li>
+        <li><span class="check">✓</span> Zapier e webhooks para Beehome, Humand e Workvivo</li>
+      </ul>
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Acesso à API</a>
+    </div>
+    <div class="api-code-a" data-aos="fade-left">
+      <div class="code-dots"><span></span><span></span><span></span></div>
+      <pre><code><span class="code-comment">// Criar premiação via API</span>
+<span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(
+  <span class="code-string">'https://api.4unik.co/v1/rewards'</span>,
+  {
+    method: <span class="code-string">'POST'</span>,
+    headers: {
+      <span class="code-string">'Authorization'</span>: <span class="code-string">`Bearer ${token}`</span>,
+      <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
+    },
+    body: JSON.stringify({
+      employee_id: <span class="code-string">'emp_482'</span>,
+      points: <span class="code-number">1500</span>,
+      reason: <span class="code-string">'Meta Q1 atingida'</span>
+    })
+  }
+);</code></pre>
+    </div>
+  </div>
+</section>
+
+<section class="integrations-block-a" id="integracoes">
+  <div class="section-header" data-aos="fade-up">
+    <span class="section-tag">Integrações Prontas</span>
+    <h2>Conectado às maiores <span class="text-gradient">plataformas</span></h2>
+    <p class="section-desc">Employee experience, comunicação interna e RH do mercado.</p>
+  </div>
+  <div class="integrations-grid-a">
+    <div class="integration-card-a" data-aos="fade-up" data-aos-delay="100">
+      <h3>Workvivo</h3>
+      <p>by Zoom. Gamificação e premiações no feed social dos colaboradores.</p>
+      <ul><li><span class="check">✓</span> Sincronização via API</li><li><span class="check">✓</span> Webhooks</li><li><span class="check">✓</span> SSO OAuth 2.0</li></ul>
+    </div>
+    <div class="integration-card-a" data-aos="fade-up" data-aos-delay="200">
+      <h3>Beehome</h3>
+      <p>Endomarketing e gestão de pessoas. Campanhas de reconhecimento e celebrações.</p>
+      <ul><li><span class="check">✓</span> Bearer Token</li><li><span class="check">✓</span> Timeline integrada</li><li><span class="check">✓</span> Celebrações automáticas</li></ul>
+    </div>
+    <div class="integration-card-a" data-aos="fade-up" data-aos-delay="300">
+      <h3>Humand</h3>
+      <p>Corporate Super App. API RESTful com Swagger e webhooks em tempo real.</p>
+      <ul><li><span class="check">✓</span> Swagger</li><li><span class="check">✓</span> SAP, Workday</li><li><span class="check">✓</span> Zapier</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="mgmt-block-a" id="plataforma-completa">
+  <div class="section-header" data-aos="fade-up">
+    <span class="section-tag">Plataforma como um todo</span>
+    <h2>Logística, estoque, campanhas e <span class="text-gradient">eventos</span></h2>
+  </div>
+  <div class="mgmt-grid-a">
+    <div class="mgmt-card-a" data-aos="fade-up" data-aos-delay="100"><div class="mgmt-icon">📦</div><h3>Logística Integrada</h3><p>Rastreamento e entregas em até 48h para todo o Brasil.</p></div>
+    <div class="mgmt-card-a" data-aos="fade-up" data-aos-delay="200"><div class="mgmt-icon">📊</div><h3>Estoque e Catálogo</h3><p>+5.000 produtos, centros de custo e orçamentos.</p></div>
+    <div class="mgmt-card-a" data-aos="fade-up" data-aos-delay="300"><div class="mgmt-icon">🎯</div><h3>Campanhas e Gamificação</h3><p>Pontuação peer-to-peer, badges e metas em pontos.</p></div>
+    <div class="mgmt-card-a" data-aos="fade-up" data-aos-delay="400"><div class="mgmt-icon">🎉</div><h3>Eventos e Kits</h3><p>Welcome kits, feiras e gifting corporativo.</p></div>
+    <div class="mgmt-card-a" data-aos="fade-up" data-aos-delay="500"><div class="mgmt-icon">🛍️</div><h3>Loja e Resgate</h3><p>Multi-moeda, pontos e produtos digitais.</p></div>
+    <div class="mgmt-card-a" data-aos="fade-up" data-aos-delay="600"><div class="mgmt-icon">🔒</div><h3>Gestão e Segurança</h3><p>SSO, LGPD, audit logs e permissões.</p></div>
+  </div>
+</section>
+
+<section class="final-cta-a">
+  <div class="container" data-aos="zoom-in">
+    <h2>Pronto para integrar?</h2>
+    <p>Solicite uma demonstração e conheça a API, o sandbox e as integrações prontas.</p>
+    <div class="final-cta-btns">
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Demonstração</a>
+      <a href="https://wa.me/554187582060" class="btn btn-whatsapp-lg" target="_blank" rel="noopener">Falar com Especialista</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-a">
+  <div class="container">
+    <div class="footer-grid-a">
+      <div class="footer-brand-a">
+        <img src="logo-4unik-by-yoobe.png" alt="4unik by Yoobe" class="footer-logo-a" />
+        <p>Plataforma SaaS que unifica gamificação corporativa, gestão de SLAs e catálogo premium.</p>
+      </div>
+      <div class="footer-col-a"><h4>A Plataforma</h4><ul><li><a href="index-option-a.html#preview">Painel</a></li><li><a href="index-option-a.html#solucoes">Casos de Uso</a></li></ul></div>
+      <div class="footer-col-a"><h4>Recursos</h4><ul><li><a href="api-integracoes-option-a.html">API & Dev</a></li><li><a href="https://catalogo.yoobe.co" target="_blank">Catálogo</a></li></ul></div>
+      <div class="footer-col-a"><h4>Contato</h4><ul><li><a href="mailto:vendas@yoobe.co">vendas@yoobe.co</a></li><li><a href="https://wa.me/554187582060" target="_blank">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom-a"><p>&copy; 2026 4unik by Yoobe.</p></div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({ duration: 600, once: true, offset: 60 });
+  var t = document.getElementById('mobileToggleA'), m = document.getElementById('navMenuA');
+  if (t && m) t.addEventListener('click', function() { m.classList.toggle('active'); });
+  var h = document.querySelector('.header-a');
+  if (h) window.addEventListener('scroll', function() { h.classList.toggle('scrolled', window.scrollY > 50); });
+  var counters = document.querySelectorAll('.stat-number-a');
+  function animate(el) {
+    var target = parseInt(el.dataset.target, 10), start = performance.now(), isM = target >= 1000000;
+    function tick(now) {
+      var p = Math.min((now - start) / 2000, 1), e = 1 - Math.pow(1 - p, 3), cur = Math.floor(e * target);
+      el.textContent = isM ? (cur/1e6).toFixed(1).replace('.0','') : cur;
+      if (p < 1) requestAnimationFrame(tick); else el.textContent = isM ? '1' : target;
+    }
+    requestAnimationFrame(tick);
+  }
+  var obs = new IntersectionObserver(function(entries) { entries.forEach(function(e) { if (e.isIntersecting) { animate(e.target); obs.unobserve(e.target); } }); }, { threshold: 0.5 });
+  counters.forEach(function(c) { obs.observe(c); });
+});
+</script>
+</body>
+</html>

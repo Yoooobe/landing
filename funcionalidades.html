@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funcionalidades e Recursos — 4unik by Yoobe</title>
+  <meta name="description" content="Explore todos os recursos da principal plataforma de gamificação e premiação corporativa. Entenda como o Admin, a Gamificação e a Loja interagem fluidamente." />
+  <link rel="icon" href="logo-4unik-by-yoobe.png" type="image/png" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* ═══════════ Base Styling (Hybrid/Clean) ═══════════ */
+    :root {
+      --brand-orange: #f97316;
+      --brand-purple: #8b5cf6;
+      --brand-green: #10b981;
+      --text-main: #1e293b;
+      --text-sub: #64748b;
+      --bg-body: #f8fafc;
+      --bg-card: #ffffff;
+      --radius: 12px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
+    body { background: var(--bg-body); color: var(--text-main); line-height: 1.6; }
+    
+    .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+    
+    /* ═══════════ Header Simples ═══════════ */
+    .top-nav {
+      background: #fff; border-bottom: 1px solid #e2e8f0; position: sticky; top:0; z-index:100;
+    }
+    .top-nav-inner {
+      max-width: 1000px; margin: 0 auto; padding: 1rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .top-nav a { text-decoration: none; color: var(--text-sub); font-weight: 500; margin-left: 1.5rem; transition:0.2s; }
+    .top-nav a:hover { color: var(--brand-orange); }
+    .top-nav .btn-back { background: var(--text-main); color: #fff; padding: 0.5rem 1rem; border-radius: 8px; }
+    
+    /* ═══════════ Hero da Página ═══════════ */
+    .feat-hero { text-align: center; padding: 5rem 0 3rem; }
+    .feat-hero h1 { font-size: 3.5rem; font-weight: 900; letter-spacing:-0.03em; margin-bottom: 1rem; }
+    .feat-hero p { font-size: 1.25rem; color: var(--text-sub); max-width: 700px; margin: 0 auto; }
+    
+    /* ═══════════ Seções de Funcionalidades ═══════════ */
+    .feature-section {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 4rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      border: 1px solid #e2e8f0;
+      scroll-margin-top: 100px;
+    }
+    .feat-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    .feat-icon {
+      width: 56px; height: 56px; display: flex; justify-content: center; align-items: center;
+      border-radius: 12px; font-size: 24px; color: #fff;
+    }
+    .feat-header h2 { font-size: 2.25rem; font-weight: 800; }
+    
+    /* Cores das Seções */
+    #gestao .feat-icon { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+    #gamificacao .feat-icon { background: linear-gradient(135deg, #f97316, #ea580c); }
+    #loja .feat-icon { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+    #seguranca .feat-icon { background: linear-gradient(135deg, #10b981, #059669); }
+    #api .feat-icon { background: linear-gradient(135deg, #f43f5e, #e11d48); }
+    
+    .feat-content p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    
+    .feat-card {
+      background: #f8fafc; padding: 1.5rem; border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+    .feat-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: #0f172a; }
+    .feat-card p { font-size: 0.95rem; color: var(--text-sub); margin:0; }
+    
+    /* Mini-mockups ilustrativos */
+    .infographic {
+       margin-top: 2rem; background: #0f172a; border-radius: var(--radius); overflow: hidden;
+       padding: 2rem; color: #fff;
+    }
+    .ig-title { font-size: 0.8rem; text-transform: uppercase; color: #94a3b8; letter-spacing: 1px; margin-bottom:1rem; }
+    
+    /* ═══════════ Responsive ═══════════ */
+    @media (max-width: 768px) {
+      .feat-hero h1 { font-size: 2.5rem; }
+      .feature-section { padding: 2rem; }
+      .feat-grid { grid-template-columns: 1fr; }
+      .top-nav-inner { flex-direction: column; gap:1rem; }
+      .top-nav a { margin-left: 0; margin-right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <div>
+      <img src="logo-4unik-by-yoobe.png" alt="4unik by Yoobe" style="height:48px; width:auto; object-fit:contain;" />
+    </div>
+    <div>
+      <a href="#gestao">Gestor</a>
+      <a href="#gamificacao">Gamificação</a>
+      <a href="#loja">LojaVIP</a>
+      <a href="#api">Dev/API</a>
+      <a href="api-integracoes.html">Página API & Integrações</a>
+      <a href="javascript:history.back()" class="btn-back">← Voltar</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="feat-hero">
+    <h1>Anatomia da Plataforma</h1>
+    <p>Explore as particularidades que fazem da 4unik a escolha número 1 em gamificação corporativa profunda para mais de 500 empresas no Brasil e América Latina.</p>
+  </header>
+
+  <!-- ════════════ SECTION: GESTOR (ADMIN) ════════════ -->
+  <section id="gestao" class="feature-section">
+    <div class="feat-header">
+      <div class="feat-icon">📊</div>
+      <h2>Painel do Gestor (Admin)</h2>
+    </div>
+    <div class="feat-content">
+      <p>O ambiente onde supervisores, RH e gestores orçamentais governam as regras do jogo. Inspirado em painéis de e-commerce e ERPs, mantendo visibilidade 100% sobre R$, prazos e entregas logísticas dos prêmios.</p>
+      
+      <div class="feat-grid">
+        <div class="feat-card">
+          <h4>Monitoramento de SLA's</h4>
+          <p>Saiba extamente onde está cada kit enviado para a casa dos funcionários corporativos com rastreio Last-Mile integrado D+1.</p>
+        </div>
+        <div class="feat-card">
+          <h4>Centros de Custo (Budgeting)</h4>
+          <p>Controle aprovações, segregue faturamentos por departamentos e emita relatórios unificados para o time financeiro sem planilhas soltas.</p>
+        </div>
+        <div class="feat-card">
+          <h4>Base de Usuários & Níveis</h4>
+          <p>Mapeie cargos, determine o balanço inicial de moedas, e aprove acessos granulares na hierarquia. Crie grupos operacionais e administrativos separados.</p>
+        </div>
+        <div class="feat-card">
+          <h4>Gráficos Visuais (BI)</h4>
+          <p>Identifique os itens mais resgatados do trimestre (Ex. Garrafas térmicas vs Mochilas). Monitore o índice de satisfação contínua da equipe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ SECTION: GAMIFICAÇÃO ════════════ -->
+  <section id="gamificacao" class="feature-section">
+    <div class="feat-header">
+      <div class="feat-icon">🎯</div>
+      <h2>Motor de Gamificação e Campanhas</h2>
+    </div>
+    <div class="feat-content">
+      <p>O coração do engajamento. Converta objetivos organizacionais pontuais ou contínuos (ex: venda do mês, cultura e feedbacks) em pontos dentro de um ciclo de recompensa comprovado psicologicamente.</p>
+      
+      <div class="feat-grid">
+        <div class="feat-card">
+          <h4>Campanhas Temporárias</h4>
+          <p>Defina o Início, o Fim e a Premiação X de uma "Campanha de Vendas Q3". O sistema calcula a conversão e aplica os Badges apropriados ao fim da meta.</p>
+        </div>
+        <div class="feat-card">
+          <h4>Pontuação Peer-to-Peer</h4>
+          <p>Permita que funcionários enviem frações de pontos de gratidão para colegas validando Valores da Empresa e cultura (Reconhecimento 360).</p>
+        </div>
+      </div>
+      
+      <!-- Infográfico simulado -->
+      <div class="infographic">
+        <div class="ig-title">Fluxo Lógico (Eventos Autônomos)</div>
+        <div style="display:flex; justify-content:space-between; align-items:center; text-align:center;">
+           <div>
+             <div style="font-size:2rem;">📤</div><div style="font-size:0.8rem;">Webhook CRM<br>(Target Hit)</div>
+           </div>
+           <div style="color:var(--brand-orange)">--- 500 Pts ---></div>
+           <div>
+             <div style="font-size:2rem;">⚙️</div><div style="font-size:0.8rem;">Motor 4unik<br>(Regras Validadas)</div>
+           </div>
+           <div style="color:var(--brand-purple)">--- Carteira ---></div>
+           <div>
+             <div style="font-size:2rem;">👤</div><div style="font-size:0.8rem;">Push App<br>(App/Email)</div>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ SECTION: LOJA (MEMBRO) ════════════ -->
+  <section id="loja" class="feature-section">
+    <div class="feat-header">
+      <div class="feat-icon">🛍️</div>
+      <h2>Catálogo Premium VIP (Loja)</h2>
+    </div>
+    <div class="feat-content">
+      <p>Esqueça gerenciar estoques ou comprar produtos que seus funcionários sequer querem. A Yoobe preenche automaticamente a loja com mais de 5.000 SWAGs de alta qualidade com a MARCA DA SUA EMPRESA e envios on-demand.</p>
+      
+      <div class="feat-grid">
+        <div class="feat-card">
+          <h4>Experiência B2C para B2B</h4>
+          <p>Filtros, categorias, mockups detalhados de produtos impressos, e checkouts velozes e transparentes no valor em "moedas" que sua empresa estipulou.</p>
+        </div>
+        <div class="feat-card">
+          <h4>Mix Físico & Digital</h4>
+          <p>Incorpore aos Swags os GiftCards p/ Ifood, Uber, Streaming ou Cartões Presente VISA, abrigando qualquer preferência das mais variadas gerações no trabalho.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- ════════════ SECTION: SEGURANCA ════════════ -->
+  <section id="seguranca" class="feature-section">
+    <div class="feat-header">
+      <div class="feat-icon">🔒</div>
+      <h2>Segurança, SSO Corporativo & LGPD</h2>
+    </div>
+    <div class="feat-content">
+      <p>Lidamos com dados da sua equipe de altíssima prioridade (endereços de entrega, CPFs, nomes de departamento). Nossa plataforma passa pelas mais estritas due-diligences de bancos e empresas Globais de tech.</p>
+      
+      <div class="feat-grid">
+        <div class="feat-card">
+          <h4>SAML / SSO Active Directory</h4>
+          <p>Integração com Microsoft Entra ID (Azure AD), Okta ou Google Workspace. Se um colaborador sai da empresa, o acesso é quebrado instantaneamente na plataforma.</p>
+        </div>
+        <div class="feat-card">
+          <h4>Criptografia e Logs (Audit Trail)</h4>
+          <p>Qualquer movimentação de moedas ou mudança de permissões do RH fica impressa de forma imutável nos logs de auditoria do sistema por 5 anos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ SECTION: API & TECH ════════════ -->
+  <section id="api" class="feature-section">
+    <div class="feat-header">
+      <div class="feat-icon">⚡</div>
+      <h2>API, Webhooks e Integração Tech</h2>
+    </div>
+    <div class="feat-content">
+      <p>Desenvolvedores e Times de Ops adoram a 4unik. Nossa plataforma se porta não só como um app fechado, mas como o "Motor Financeiro de Premiações" plugado nos seus sistemas existentes de RH ou Vendas (Workday, Salesforce, etc).</p>
+      
+      <div class="infographic" style="background:#1e1e24; color:#d4d4d8;">
+        <div class="ig-title">Exemplo Simplificado cURL (Credit Reward Endopoint)</div>
+        <pre style="font-family:monospace; font-size:0.85rem; line-height:1.4; color:#a3e635;">
+POST /v2/api/integrations/rewards HTTP/1.1
+Host: api.4unik.yoobe.co
+Authorization: Bearer sec_tok_4Uxxxxxxxxx
+
+{
+  "user_identifier": "colab@suaempresa.com",
+  "points_amount": 1000,
+  "campaign_internal_id": "meta_q4_vendas",
+  "trigger_notification": true
+}</pre>
+      </div>
+      
+      <div class="feat-grid">
+        <div class="feat-card">
+          <h4>Sandboxing Segura</h4>
+          <p>Acesse o ambiente `dev.4unik` para testar as movimentações de pontos, sincronismos de cargos e resgates simulados sem injetar dados reais em produção.</p>
+        </div>
+        <div class="feat-card">
+          <h4>Catálogos de Integração Rápida</h4>
+          <p>Mapeamentos prontos via Zapier Nativos ou Webhooks customizados para as plataformas mais populares (Beehome, Humand e Workvivo).</p>
+        </div>
+      </div>
+      <p style="margin-top:1.5rem;"><a href="api-integracoes.html" style="color:var(--brand-orange); font-weight:600;">Ver página completa de API e integrações →</a></p>
+    </div>
+  </section>
+
+</div>
+
+<footer style="background:#ffffff; border-top:1px solid #e2e8f0; padding:3rem 0; text-align:center; color:var(--text-sub);">
+  <p>4unik by Yoobe &copy; 2026. Todas as Features são baseadas na V2 Corporativa.</p>
+  <div style="margin-top:1rem;">
+    <a href="index-option-a.html" style="color:var(--brand-orange); font-weight:bold; text-decoration:none; margin:0 1rem;">Ver Layout Master (A)</a>
+    <a href="index-option-b.html" style="color:var(--brand-purple); font-weight:bold; text-decoration:none; margin:0 1rem;">Ver Layout Imersivo (B)</a>
+  </div>
+</footer>
+
+</body>
+</html>

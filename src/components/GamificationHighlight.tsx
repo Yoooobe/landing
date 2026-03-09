@@ -14,10 +14,10 @@ export default function GamificationHighlight() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center rounded-full border border-yoobe-purple/50 bg-yoobe-purple/10 px-4 py-1.5"
+              className="inline-flex items-center rounded-full border border-brand-orange/50 bg-brand-orange/10 px-4 py-1.5"
             >
-              <span className="text-sm font-semibold text-yoobe-purple">
-                Motor de Gamificação B2B
+              <span className="text-sm font-semibold text-brand-orange">
+                Motor de Gamificação
               </span>
             </motion.div>
 
@@ -28,14 +28,14 @@ export default function GamificationHighlight() {
               className="text-4xl md:text-5xl font-bold text-white leading-tight"
             >
               Sua lógica, nossa moeda.<br />
-              <span className="text-yoobe-purple">Resultados Imediatos.</span>
+              <span className="text-gradient">Resultados Imediatos.</span>
             </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-lg text-white/70 leading-relaxed"
+              className="text-lg text-white/70 leading-relaxed max-w-xl"
             >
               Você define as regras. Nós gerenciamos o ecossistema. Crie
               Achievements personalizados, leaderboards e acompanhe a
@@ -50,12 +50,16 @@ export default function GamificationHighlight() {
               className="space-y-4 text-white/80"
             >
               <li className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-yoobe-purple/20 flex items-center justify-center text-yoobe-purple">🎯</div>
-                <strong>Achievements Padrões ou Customizados</strong>
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-xl shadow-[0_0_15px_rgba(245,158,11,0.3)] border border-white/20">🏆</div>
+                <strong className="text-lg">Achievements Padrões ou Customizados</strong>
               </li>
               <li className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-full bg-yoobe-purple/20 flex items-center justify-center text-yoobe-purple">💎</div>
-                <strong>Gestão de Moeda Própria (Currency)</strong>
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-xl shadow-[0_0_15px_rgba(16,185,129,0.3)] border border-white/20">🎯</div>
+                <strong className="text-lg">Gestão de Moeda Própria (Currency)</strong>
+              </li>
+              <li className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-xl shadow-[0_0_15px_rgba(139,92,246,0.3)] border border-white/20">🚀</div>
+                <strong className="text-lg">Leaderboards e Missões</strong>
               </li>
             </motion.ul>
 
@@ -65,8 +69,7 @@ export default function GamificationHighlight() {
               viewport={{ once: true }}
               className="pt-6"
             >
-              {/* Mystery CTA to trigger Demo */}
-              <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="btn-b btn-glass-b hover:bg-white/10 text-white rounded-md px-8 py-3 font-medium transition-colors border border-white/20">
+              <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 bg-white/5 px-10 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10">
                 Ver Funcionamento na Prática
               </a>
             </motion.div>

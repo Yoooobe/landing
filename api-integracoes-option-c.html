@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API e Integrações — Yoobe | Reward Infrastructure</title>
+  <meta name="description" content="Reward Infrastructure API para gamificação e employee engagement. Integre catálogo, fulfillment e recompensas via REST, webhooks e integrações prontas." />
+  <meta property="og:title" content="API e Integrações — Yoobe | Reward Infrastructure" />
+  <meta property="og:description" content="Infraestrutura de recompensas para plataformas de gamificação. API, sandbox e integrações com Workvivo, Beehome, Humand." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://yoobe.co/api-integracoes" />
+  <link rel="icon" href="logo-4unik-by-yoobe.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-option-c.css" />
+</head>
+<body>
+
+<!-- ════════════ NAVIGATION (Pill) ════════════ -->
+<header class="header header-pill" id="top">
+  <nav class="nav-container">
+    <a href="index-option-c.html" class="logo-link">
+      <img src="logo-4unik-by-yoobe.png" alt="Yoobe — Reward Infrastructure" class="logo-img" />
+    </a>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="index-option-c.html#plataforma">Plataforma</a></li>
+      <li><a href="index-option-c.html#bento">Casos de uso</a></li>
+      <li><a href="api-integracoes-option-c.html">API</a></li>
+      <li><a href="https://catalogo.yoobe.co" target="_blank" rel="noopener">Catálogo</a></li>
+      <li><a href="index-option-c.html#planos">Planos</a></li>
+    </ul>
+    <div class="nav-ctas">
+      <a href="https://4unik.yoobe.me/" class="nav-login-c" target="_blank" rel="noopener">Entrar</a>
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn btn-primary" target="_blank" rel="noopener">Solicitar demo</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ════════════ HERO TÉCNICO ════════════ -->
+<section class="hero">
+  <div class="hero-bg-shapes">
+    <div class="hero-shape hero-shape-1"></div>
+    <div class="hero-shape hero-shape-2"></div>
+    <div class="hero-shape hero-shape-3"></div>
+  </div>
+  <div class="container hero-content">
+    <div class="hero-badge" data-aos="fade-down" data-aos-delay="100">
+      <span class="badge-dot"></span>
+      Reward Infrastructure
+    </div>
+    <h1 data-aos="fade-up" data-aos-delay="200">
+      API para <span class="text-gradient">recompensas</span> e fulfillment
+    </h1>
+    <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+      Infraestrutura de recompensas para plataformas de gamificação e employee engagement. Conecte catálogo, logística e resgate em dias — sem operar estoque.
+    </p>
+    <div class="hero-ctas" data-aos="fade-up" data-aos-delay="400">
+      <a href="#api" class="btn btn-hero-primary">Documentação e API</a>
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn btn-hero-secondary" target="_blank" rel="noopener">Solicitar Demonstração</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ STATS BAR ════════════ -->
+<section class="stats-bar">
+  <div class="container stats-grid">
+    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+      <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
+      <span class="stat-label">Empresas atendidas</span>
+    </div>
+    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+      <span class="stat-number" data-target="1000000">0</span><span class="stat-plus">+</span>
+      <span class="stat-label">Premiações entregues</span>
+    </div>
+    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+      <span class="stat-number" data-target="5000">0</span><span class="stat-plus">+</span>
+      <span class="stat-label">Produtos no catálogo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ API & INTEGRAÇÕES ════════════ -->
+<section class="api-section" id="api">
+  <div class="container">
+    <div class="api-layout">
+      <div class="api-content" data-aos="fade-right">
+        <span class="section-tag">API & Integrações</span>
+        <h2>Conecte a <span class="text-gradient">Yoobe</span> a qualquer sistema</h2>
+        <p>API RESTful para reward marketplace: sua plataforma gerencia a experiência, a Yoobe gerencia logística, catálogo e fulfillment. Slack, Teams, HRISs, ERPs — conecte tudo.</p>
+        <ul class="api-features">
+          <li><span class="check">✓</span> Webhooks em tempo real</li>
+          <li><span class="check">✓</span> Autenticação OAuth 2.0 / Bearer</li>
+          <li><span class="check">✓</span> SDK para Node.js & Python</li>
+          <li><span class="check">✓</span> Rate limiting inteligente</li>
+          <li><span class="check">✓</span> Sandbox para testes sem produção</li>
+          <li><span class="check">✓</span> Zapier e webhooks customizados para Beehome, Humand e Workvivo</li>
+        </ul>
+        <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn btn-primary" target="_blank" rel="noopener">Solicitar Acesso à API</a>
+      </div>
+      <div class="api-code" data-aos="fade-left">
+        <div class="code-window">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <pre><code><span class="code-comment">// Criar premiação via API</span>
+<span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(
+  <span class="code-string">'https://api.yoobe.co/v1/rewards'</span>,
+  {
+    method: <span class="code-string">'POST'</span>,
+    headers: {
+      <span class="code-string">'Authorization'</span>: <span class="code-string">`Bearer ${token}`</span>,
+      <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
+    },
+    body: JSON.stringify({
+      employee_id: <span class="code-string">'emp_482'</span>,
+      points: <span class="code-number">1500</span>,
+      reason: <span class="code-string">'Meta Q1 atingida'</span>
+    })
+  }
+);</code></pre>
+        </div>
+        <p style="margin-top:1rem; font-size:0.85rem; color:rgba(255,255,255,0.6);">Também: endpoint cURL para credit reward em <a href="funcionalidades.html#api" style="color:var(--brand-orange);">funcionalidades</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ INTEGRAÇÕES ENTERPRISE ════════════ -->
+<section class="integrations-section" id="integracoes">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Integrações Prontas</span>
+      <h2>Conectado às maiores <span class="text-gradient">plataformas</span> do mundo</h2>
+      <p class="section-desc">API integrada com as principais plataformas de employee experience, comunicação interna e RH do mercado.</p>
+    </div>
+    <div class="integrations-grid">
+      <div class="integration-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="integration-header">
+          <div class="integration-logo-circle">W</div>
+          <div>
+            <h3>Workvivo</h3>
+            <span class="integration-by">by Zoom</span>
+          </div>
+          <span class="integration-badge">API Pronta</span>
+        </div>
+        <p>Plataforma líder de comunicação interna e employee experience. Integre gamificação, reconhecimento e premiações diretamente ao feed social dos colaboradores.</p>
+        <ul class="integration-features">
+          <li><span class="check">✓</span> Sincronização de usuários via API</li>
+          <li><span class="check">✓</span> Webhooks para eventos em tempo real</li>
+          <li><span class="check">✓</span> SSO via OAuth 2.0</li>
+          <li><span class="check">✓</span> Notificações no feed Workvivo</li>
+          <li><span class="check">✓</span> Integração com Google/Microsoft 365</li>
+        </ul>
+      </div>
+      <div class="integration-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="integration-header">
+          <div class="integration-logo-circle">B</div>
+          <div>
+            <h3>Beehome</h3>
+            <span class="integration-by">Employee Experience</span>
+          </div>
+          <span class="integration-badge">API Pronta</span>
+        </div>
+        <p>Plataforma de endomarketing, comunicação e gestão de pessoas. Gamificação nativa com campanhas de reconhecimento e celebrações automáticas.</p>
+        <ul class="integration-features">
+          <li><span class="check">✓</span> Gestão de usuários via Bearer Token</li>
+          <li><span class="check">✓</span> Timeline e notificações integradas</li>
+          <li><span class="check">✓</span> Campanhas de reconhecimento</li>
+          <li><span class="check">✓</span> Celebrações de aniversários</li>
+          <li><span class="check">✓</span> Pesquisas e feedback integrados</li>
+        </ul>
+      </div>
+      <div class="integration-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="integration-header">
+          <div class="integration-logo-circle">H</div>
+          <div>
+            <h3>Humand</h3>
+            <span class="integration-by">Corporate Super App</span>
+          </div>
+          <span class="integration-badge">API Pronta</span>
+        </div>
+        <p>App corporativo completo com comunicação, RH, reconhecimento e processos. API RESTful documentada com Swagger e webhooks em tempo real.</p>
+        <ul class="integration-features">
+          <li><span class="check">✓</span> API RESTful com Swagger</li>
+          <li><span class="check">✓</span> Webhooks em tempo real</li>
+          <li><span class="check">✓</span> Recognition programs nativo</li>
+          <li><span class="check">✓</span> Integração SAP, Workday, SuccessFactors</li>
+          <li><span class="check">✓</span> Zapier para +5.000 apps</li>
+        </ul>
+      </div>
+    </div>
+    <div class="integrations-extra" data-aos="fade-up" data-aos-delay="400">
+      <span class="integrations-extra-label">Também integramos com:</span>
+      <div class="integrations-pills">
+        <span class="int-pill">Slack</span>
+        <span class="int-pill">Microsoft Teams</span>
+        <span class="int-pill">Workday</span>
+        <span class="int-pill">BambooHR</span>
+        <span class="int-pill">SAP SuccessFactors</span>
+        <span class="int-pill">Gupy</span>
+        <span class="int-pill">TOTVS</span>
+        <span class="int-pill">Zapier</span>
+        <span class="int-pill">Google Workspace</span>
+        <span class="int-pill">Microsoft 365</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ PLATAFORMA COMPLETA (módulos individualizados) ════════════ -->
+<section class="management-section" id="plataforma-completa">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-tag">Plataforma como um todo</span>
+      <h2>Logística, estoque, campanhas e <span class="text-gradient">eventos</span></h2>
+      <p class="section-desc">A API não é um add-on: faz parte de uma operação completa de recompensas, brindes corporativos e premiações.</p>
+    </div>
+    <div class="mgmt-grid">
+      <div class="mgmt-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="mgmt-icon">📦</div>
+        <h3>Logística Integrada</h3>
+        <p>Rastreamento de envios, armazenagem e entregas em até 48h para todo o Brasil. Rastreio last-mile e SLA de entrega em um painel único.</p>
+      </div>
+      <div class="mgmt-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="mgmt-icon">📊</div>
+        <h3>Estoque e Catálogo</h3>
+        <p>+5.000 produtos, controle de disponibilidade, centros de custo e orçamentos. Portal de fornecedores e mix físico e digital.</p>
+      </div>
+      <div class="mgmt-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="mgmt-icon">🎯</div>
+        <h3>Campanhas e Gamificação</h3>
+        <p>Campanhas temporárias, pontuação peer-to-peer, badges e conversão de metas em pontos. Motor de premiações plugado ao seu RH.</p>
+      </div>
+      <div class="mgmt-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="mgmt-icon">🎉</div>
+        <h3>Eventos e Kits</h3>
+        <p>Welcome kits, premiação, feiras e gifting corporativo. Kits personalizados com identidade da empresa e envio on-demand.</p>
+      </div>
+      <div class="mgmt-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="mgmt-icon">🛍️</div>
+        <h3>Loja e Resgate</h3>
+        <p>Loja multi-moeda, resgate com pontos, envio de presentes e produtos digitais. Experiência B2C para o colaborador.</p>
+      </div>
+      <div class="mgmt-card" data-aos="fade-up" data-aos-delay="600">
+        <div class="mgmt-icon">🔒</div>
+        <h3>Gestão e Segurança</h3>
+        <p>Dashboard analítico, SSO, LGPD, audit logs e permissões granulares. SAML/Active Directory, Okta e Google Workspace.</p>
+      </div>
+    </div>
+    <div class="section-header" style="margin-top:3rem;">
+      <a href="funcionalidades.html" class="btn btn-outline">Funcionalidades da plataforma</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ CTA FINAL ════════════ -->
+<section class="final-cta-section">
+  <div class="container" data-aos="zoom-in">
+    <h2>Pronto para integrar?</h2>
+    <p>Solicite uma demonstração e conheça a API, o sandbox e as integrações prontas com Workvivo, Beehome e Humand.</p>
+    <div class="final-cta-btns">
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn btn-hero-primary" target="_blank" rel="noopener">Solicitar Demonstração</a>
+      <a href="https://wa.me/554187582060" class="btn btn-whatsapp-lg" target="_blank" rel="noopener">Falar com Especialista</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="footer" id="contato">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="logo-4unik-by-yoobe.png" alt="Yoobe — Reward Infrastructure" class="footer-logo" />
+      <p>Reward Infrastructure para gamificação e employee engagement. API e fulfillment em um só lugar.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Plataforma</h4>
+      <ul>
+        <li><a href="gamificacao.html">Gamificação</a></li>
+        <li><a href="index-option-c.html#loja">Loja Corporativa</a></li>
+        <li><a href="#integracoes">Integrações</a></li>
+        <li><a href="#plataforma-completa">Operação & Logística</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="api-integracoes-option-c.html">API & Dev</a></li>
+        <li><a href="funcionalidades.html">Funcionalidades</a></li>
+        <li><a href="https://catalogo.yoobe.co" target="_blank" rel="noopener">Catálogo</a></li>
+        <li><a href="index-option-c.html#planos">Planos & Preços</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="mailto:vendas@yoobe.co">vendas@yoobe.co</a></li>
+        <li><a href="https://wa.me/554187582060" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://calendly.com/yoobeco/demo?month=2021-08" target="_blank" rel="noopener">Solicitar Demonstração</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 Yoobe. Reward Infrastructure Platform.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

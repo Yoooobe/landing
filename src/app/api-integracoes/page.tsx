@@ -39,9 +39,9 @@ const response = await fetch('https://api.yoobe.co/v1/points/issue', {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-bold text-white leading-tight"
+              className="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tight"
             >
-              Conecte seu software ao <span className="text-gradient">mundo físico.</span>
+              API para <span className="text-gradient">recompensas</span> e fulfillment
             </motion.h1>
             
             <motion.p
@@ -50,14 +50,14 @@ const response = await fetch('https://api.yoobe.co/v1/points/issue', {
               transition={{ delay: 0.1 }}
               className="text-xl text-white/70 leading-relaxed"
             >
-              Se você tem um SaaS, CRM, intranet ou LMS, transforme engajamento digital em prêmios físicos na casa do usuário com nossa REST API em horas.
+              Infraestrutura de recompensas para plataformas de gamificação e employee engagement. Conecte catálogo, logística e resgate em dias — sem operar estoque.
             </motion.p>
 
-            <div className="flex gap-4 pt-4">
-               <a href="#" className="btn-b btn-glass-b px-6 py-3 border border-white/20 rounded-md text-white hover:bg-white/10 hidden sm:inline-flex items-center gap-2 transition-colors">
-                 <Webhook className="w-4 h-4" /> Documentação API
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+               <a href="#api-docs" className="inline-flex h-14 items-center justify-center rounded-full bg-white px-10 font-bold text-brand-navy-dark shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all hover:bg-brand-orange hover:text-white hover:-translate-y-1 hover:shadow-[0_0_60px_rgba(249,115,22,0.4)] gap-2">
+                 <Webhook className="w-5 h-5" /> Documentação API
                </a>
-               <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="bg-brand-orange hover:bg-brand-orange-dark text-white px-6 py-3 rounded-md font-medium shadow-lg transition-colors">
+               <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 bg-white/5 px-10 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10">
                  Agendar Papo Técnico (CTO)
                </a>
             </div>
