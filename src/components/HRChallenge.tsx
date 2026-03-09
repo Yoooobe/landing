@@ -1,3 +1,4 @@
+"use client";
 import { motion } from "framer-motion";
 import { LineChart, Target, Gift, ShieldCheck } from "lucide-react";
 
