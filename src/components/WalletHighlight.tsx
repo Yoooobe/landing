@@ -1,0 +1,119 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+export default function WalletHighlight() {
+  return (
+    <section id="wallet" className="py-24 bg-brand-navy-dark border-t border-white/5 relative overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
+          
+          {/* Content Right */}
+          <div className="lg:w-1/2 space-y-8 z-10">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center rounded-full border border-green-500/50 bg-green-500/10 px-4 py-1.5"
+            >
+              <span className="text-sm font-semibold text-green-400">
+                Wallet e Centro de Custos
+              </span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-5xl font-bold text-white leading-tight"
+            >
+              Governança orçamentária para grandes times.
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-lg text-white/70 leading-relaxed"
+            >
+              Acabe com a dor de cabeça da prestação de contas dos "prêmios".
+              Distribua orçamentos reais para líderes gerenciarem as carteiras (Wallets) de seus times.
+              Um fluxo aprovatório 100% digital e compliance total com o financeiro.
+            </motion.p>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="pt-4"
+            >
+              <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="text-green-400 font-medium hover:text-green-300 transition-colors flex items-center gap-2">
+                Conhecer a funcionalidade de Carteiras →
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Abstract UI Mockup Left */}
+          <div className="lg:w-1/2 relative w-full h-[450px] z-10">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-green-500/20 blur-[100px] rounded-full z-0" />
+
+            {/* Wallet Dashboard Mock */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10 bg-brand-navy border border-white/10 rounded-2xl shadow-xl overflow-hidden h-full flex flex-col"
+            >
+              <div className="bg-brand-navy-dark px-6 py-4 border-b border-white/5 flex justify-between items-center">
+                 <h3 className="font-semibold text-white">Wallet Corporativa</h3>
+                 <div className="text-sm text-green-400 font-mono">Status: Ativo</div>
+              </div>
+              
+              <div className="p-6 flex-1 flex flex-col gap-6">
+                 <div className="flex justify-between pb-6 border-b border-white/5">
+                   <div>
+                     <div className="text-white/50 text-sm mb-1">Saldo Departamento (Vendas)</div>
+                     <div className="text-3xl font-bold text-white">R$ 14.500,00</div>
+                   </div>
+                   <div className="text-right">
+                     <div className="text-white/50 text-sm mb-1">Utilizado</div>
+                     <div className="text-lg font-medium text-brand-orange">R$ 5.500,00</div>
+                   </div>
+                 </div>
+
+                 {/* Simulated Chart/Bars */}
+                 <div className="space-y-4 flex-1">
+                   <div className="text-sm text-white/70 mb-2">Distribuição por Líderes</div>
+                   
+                   <div className="space-y-3">
+                     <div className="relative">
+                       <div className="flex justify-between text-xs text-white/50 mb-1">
+                         <span>João Silva (B2B)</span>
+                         <span>R$ 4.000 / R$ 5.000</span>
+                       </div>
+                       <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                         <motion.div initial={{ width: 0 }} whileInView={{ width: "80%" }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.5 }} className="h-full bg-green-400 rounded-full" />
+                       </div>
+                     </div>
+
+                     <div className="relative">
+                       <div className="flex justify-between text-xs text-white/50 mb-1">
+                         <span>Maria Santos (B2C)</span>
+                         <span>R$ 1.500 / R$ 5.000</span>
+                       </div>
+                       <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                         <motion.div initial={{ width: 0 }} whileInView={{ width: "30%" }} viewport={{ once: true }} transition={{ duration: 1, delay: 0.7 }} className="h-full bg-yoobe-neon-pink rounded-full" />
+                       </div>
+                     </div>
+                   </div>
+                 </div>
+              </div>
+            </motion.div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}
