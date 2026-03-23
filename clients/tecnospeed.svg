@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" role="img" aria-label="Tecnospeed">
+  <rect width="800" height="200" fill="#ffffff"/>
+  <text x="46%" y="58%" text-anchor="middle" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial" font-size="86" font-weight="800" fill="#1d4ed8">tecnospeed</text>
+  <g transform="translate(650 58)">
+    <path d="M0 40 L60 0 L60 30 L25 50 L60 70 L60 100 Z" fill="#2563eb" opacity="0.9"/>
+    <path d="M25 50 L85 10 L85 40 L55 58 L85 76 L85 106 Z" fill="#60a5fa" opacity="0.9"/>
+  </g>
+</svg>
