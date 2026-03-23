@@ -1,51 +1,50 @@
-name: Deploy to Google Cloud Storage
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build static export
+        run: npm run build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
   deploy:
     runs-on: ubuntu-latest
-
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Setup Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v1
-        with:
-          project_id: institucional-480905
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
-          export_default_credentials: true
-
-      - name: Create bucket if not exists
-        run: |
-          if ! gsutil ls -b gs://yoobe.co/ 2>/dev/null; then
-            echo "Bucket não existe. Criando bucket..."
-            gsutil mb -p institucional-480905 -c STANDARD -l southamerica-east1 gs://yoobe.co/
-            echo "Bucket criado com sucesso!"
-          else
-            echo "Bucket já existe."
-          fi
-
-      - name: Configure bucket as website
-        run: |
-          gsutil web set -m index.html -e 404.html gs://yoobe.co/ || true
-
-      - name: Deploy to Cloud Storage
-        run: |
-          gsutil -m cp -r index.html gs://yoobe.co/
-          gsutil -m setmeta -h "Content-Type:text/html" gs://yoobe.co/index.html
-          # Deploy logo se existir
-          if [ -f logo.png ]; then
-            echo "Fazendo upload da logo..."
-            gsutil -m cp logo.png gs://yoobe.co/
-            gsutil -m setmeta -h "Content-Type:image/png" gs://yoobe.co/logo.png
-            gsutil acl ch -u AllUsers:R gs://yoobe.co/logo.png || true
-          fi
-
-      - name: Invalidate CDN Cache
-        run: |
-          gcloud compute url-maps invalidate-cdn-cache yoobe-co-url-map --path="/*" --project=institucional-480905 || true
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

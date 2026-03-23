@@ -1,5 +1,6 @@
 "use client";
 
+import { withBasePath } from "@/lib/basePath";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ChevronDown, Layers, Gamepad2, Brain, Gift, Network, Trophy, Menu, X } from "lucide-react";
@@ -41,7 +42,7 @@ export default function Header() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 z-10 shrink-0">
-            <img src="/logo-4unik-by-yoobe.png" alt="4unik by Yoobe" className="h-[48px] w-auto drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]" />
+            <img src={withBasePath("/logo-4unik-by-yoobe.png")} alt="4unik by Yoobe" className="h-[48px] w-auto drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]" />
           </Link>
 
           {/* Desktop Nav */}

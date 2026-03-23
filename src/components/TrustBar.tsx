@@ -1,15 +1,15 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { withBasePath } from "@/lib/basePath";
 
 export default function TrustBar() {
   const logos = [
-    { src: "/clients/yampi.png", alt: "Yampi" },
-    { src: "/clients/prio.png", alt: "PRIO" },
-    { src: "/clients/hapvida.png", alt: "Hapvida" },
-    { src: "/clients/join.svg", alt: "Join" },
-    { src: "/clients/tecnospeed.svg", alt: "Tecnospeed" },
-    { src: "/clients/boticario.png", alt: "O Boticário" }
+    { src: withBasePath("/clients/yampi.png"), alt: "Yampi" },
+    { src: withBasePath("/clients/prio.png"), alt: "PRIO" },
+    { src: withBasePath("/clients/hapvida.png"), alt: "Hapvida" },
+    { src: withBasePath("/clients/join.svg"), alt: "Join" },
+    { src: withBasePath("/clients/tecnospeed.svg"), alt: "Tecnospeed" },
+    { src: withBasePath("/clients/boticario.png"), alt: "O Boticário" }
   ];
 
   return (

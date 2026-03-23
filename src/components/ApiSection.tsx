@@ -1,5 +1,6 @@
 "use client";
 
+import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
 
 export default function ApiSection() {
@@ -25,7 +26,7 @@ export default function ApiSection() {
               <li className="flex items-center text-white/80"><span className="text-blue-400 mr-3">✓</span> Ambiente de testes seguro</li>
             </ul>
             <div className="flex flex-wrap gap-4">
-              <a href="/api-integracoes" className="inline-flex h-14 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-bold text-white hover:bg-white/5 transition-colors font-sans">
+              <a href={withBasePath("/api-integracoes")} className="inline-flex h-14 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-bold text-white hover:bg-white/5 transition-colors font-sans">
                 Documentação e API para Devs
               </a>
               <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center justify-center rounded-xl bg-blue-500 px-8 font-bold text-white hover:bg-blue-600 transition-colors font-sans shadow-[0_0_20px_rgba(59,130,246,0.3)]">

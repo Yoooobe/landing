@@ -1,5 +1,6 @@
 "use client";
 
+import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Trophy, Package, LayoutDashboard } from "lucide-react";
 
@@ -28,7 +29,7 @@ export default function BentoFeatures() {
           
           {/* Mega Card: Painel do Gestor */}
           <motion.a 
-            href="/plataforma"
+            href={withBasePath("/plataforma")}
             whileHover={{ y: -5 }}
             className="md:col-span-2 group relative overflow-hidden rounded-3xl glass-panel-dark border border-white/5 p-8 flex flex-col justify-between"
           >
@@ -70,7 +71,7 @@ export default function BentoFeatures() {
 
           {/* Gamification Engine */}
           <motion.a 
-            href="/gamificacao"
+            href={withBasePath("/gamificacao")}
             whileHover={{ y: -5 }}
             className="group relative overflow-hidden rounded-3xl glass-panel-dark border border-white/5 p-8 flex flex-col justify-between"
           >
@@ -89,7 +90,7 @@ export default function BentoFeatures() {
 
           {/* Loja e Catálogo */}
           <motion.a 
-            href="/plataforma#loja"
+            href={`${withBasePath("/plataforma")}#loja`}
             whileHover={{ y: -5 }}
             className="group relative overflow-hidden rounded-3xl glass-panel-dark border border-white/5 p-8 flex flex-col justify-between"
           >
@@ -107,7 +108,7 @@ export default function BentoFeatures() {
 
           {/* Segurança & LGPD */}
           <motion.a 
-            href="/api-integracoes"
+            href={withBasePath("/api-integracoes")}
             whileHover={{ y: -5 }}
             className="md:col-span-2 group relative overflow-hidden rounded-3xl glass-panel-dark border border-white/5 p-8 flex items-center justify-between"
           >
