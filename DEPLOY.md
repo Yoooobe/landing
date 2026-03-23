@@ -30,6 +30,8 @@ Enquanto isso, use o deploy **sem Actions**, abaixo.
 
    Isso roda `next build` (export estático) e envia o conteúdo de `out/` para a branch **`gh-pages`**.
 
+   O script usa a flag **`-t` (`--dotfiles`)** do `gh-pages` para incluir o arquivo **`.nojekyll`** na raiz do deploy. Sem isso, o GitHub Pages (Jekyll) **ignora pastas que começam com `_`**, e a pasta **`_next/`** (CSS/JS do Next) some — o site carrega sem estilo (CSS “quebrado”).
+
 4. Aguarde 1–2 minutos e teste `https://yoooobe.github.io/landing/` (ou hard refresh).
 
 **Nota:** não use as duas origens ao mesmo tempo de forma conflitante. Com **branch `gh-pages`**, não é necessário o workflow de Actions para publicar o site.

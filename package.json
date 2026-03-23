@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy:gh-pages": "npm run build && gh-pages -d out -m \"chore: deploy static export to gh-pages\""
+    "deploy:gh-pages": "npm run build && gh-pages -d out -t -m \"chore: deploy static export to gh-pages\""
   },
   "dependencies": {
     "@base-ui/react": "^1.2.0",
