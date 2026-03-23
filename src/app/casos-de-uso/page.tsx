@@ -1,75 +1,30 @@
-"use client";
-
-import { motion } from "framer-motion";
+import CasosHero from "@/components/CasosHero";
+import CaseStudiesGrid from "@/components/CaseStudiesGrid";
 
 export default function CasosDeUsoPage() {
-  const cases = [
-    {
-      title: "Reconhecimento de Pares (Peer-to-Peer)",
-      description: "Colaboradores distribuem pontos entre si baseados nos valores da empresa. A Yoobe liquida as recompensas.",
-      icon: "👥",
-      color: "border-brand-orange/50 bg-brand-orange/5"
-    },
-    {
-      title: "Aceleração de B2B Vendas (SPIFFs)",
-      description: "Esqueça pagar prêmios por fora e lidar com complexidade tributária. Gamifique campanhas de vendas e entregue via Wallet Yoobe.",
-      icon: "📈",
-      color: "border-green-500/50 bg-green-500/5"
-    },
-    {
-      title: "Onboarding Tematizado",
-      description: "Kits de boas-vindas acionados automaticamente via API quando o novo talento preenche a documentação pelo sistema de admissão.",
-      icon: "🎁",
-      color: "border-yoobe-purple/50 bg-yoobe-purple/5"
-    },
-    {
-      title: "Batalhas de Engajamento",
-      description: "Integração direta de pontuações via dashboards B2B recompensando departamentos produtivos em ciclos quinzenais.",
-      icon: "⚔️",
-      color: "border-yoobe-neon-pink/50 bg-yoobe-neon-pink/5"
-    }
-  ];
-
   return (
-    <div className="pt-24 pb-20 overflow-hidden relative min-h-screen">
-      <div className="container mx-auto px-4 md:px-6">
-        
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
-          >
-            Nenhuma campanha é <span className="text-brand-orange">complexa demais.</span>
-          </motion.h1>
-          <p className="text-xl text-white/70">
-            A infraestrutura abstrata da Yoobe serve qualquer arquitetura.
+    <div className="bg-brand-navy-dark text-white min-h-screen">
+      <CasosHero />
+      <CaseStudiesGrid />
+      
+      {/* Final Short CTA */}
+      <section className="py-24 text-center border-t border-white/5 bg-[#0f172a] relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-orange/10 to-transparent opacity-50"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="text-3xl lg:text-5xl font-black text-white mb-6 font-heading">Pronto para ser o nosso próximo case?</h2>
+          <p className="text-lg text-white/60 mb-10 max-w-2xl mx-auto">
+            A infraestrutura abstrata da Yoobe resolve desde engajamento de call centers até treinamento de engenheiros de software.
           </p>
+          <a
+            href="https://calendly.com/yoobeco/demo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-14 items-center justify-center rounded-2xl bg-brand-orange px-10 font-bold text-white shadow-[0_0_30px_rgba(249,115,22,0.4)] hover:bg-[#ff512f] transition-all text-lg hover:scale-105"
+          >
+            Discutir Meu Caso de Uso
+          </a>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {cases.map((c, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className={`p-8 rounded-2xl glass-panel-dark border ${c.color} hover:-translate-y-1 transition-transform`}
-            >
-              <div className="text-4xl mb-4">{c.icon}</div>
-              <h3 className="text-2xl font-bold text-white mb-3">{c.title}</h3>
-              <p className="text-white/70 leading-relaxed">{c.description}</p>
-            </motion.div>
-          ))}
-        </div>
-        
-        <div className="mt-20 text-center">
-           <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="btn-b btn-primary-b bg-brand-orange hover:bg-brand-orange-dark text-white px-8 py-3 rounded-lg font-bold shadow-lg shadow-brand-orange/20">
-             Discutir meu Caso de Uso Específico
-           </a>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }

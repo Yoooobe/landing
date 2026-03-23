@@ -57,7 +57,7 @@ export default function HRChallenge() {
           <div className="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-wider text-white bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">
             Visão Geral
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-[3rem] font-extrabold text-white mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-[3rem] font-black text-white mb-6 tracking-tight font-heading">
             Tudo o que sua operação precisa.
           </h2>
         </div>
@@ -77,7 +77,7 @@ export default function HRChallenge() {
               >
                 {metric.icon}
               </div>
-              <h3 className="text-[1.4rem] font-bold text-white mb-2 leading-tight">
+              <h3 className="text-[1.4rem] font-bold text-white mb-2 leading-tight font-heading">
                 {metric.title}
               </h3>
               <p className="text-[0.95rem] text-white/60 leading-relaxed max-w-[90%] flex-1">

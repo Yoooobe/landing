@@ -80,7 +80,7 @@ export default function Hero() {
              className="absolute top-0 left-[10%] bg-brand-navy-dark/70 backdrop-blur-xl border border-white/10 border-t-2 border-t-green-500 rounded-2xl p-6 shadow-2xl"
           >
             <div className="text-xs text-white/60 uppercase tracking-widest mb-1">Pedidos Hoje</div>
-            <div className="text-3xl font-black text-white">148</div>
+            <div className="text-3xl font-bold text-white">148</div>
             <div className="mt-2 text-xs bg-green-500/15 text-green-400 px-2 py-1 rounded inline-block">↑ 12% vs last week</div>
           </motion.div>
 
@@ -91,7 +91,7 @@ export default function Hero() {
              className="absolute top-[40px] right-[10%] bg-brand-navy-dark/70 backdrop-blur-xl border border-white/10 border-t-2 border-t-brand-orange rounded-2xl p-6 shadow-2xl"
           >
             <div className="text-xs text-white/60 uppercase tracking-widest mb-1">Faturamento</div>
-            <div className="text-3xl font-black text-white">R$ 54k</div>
+            <div className="text-3xl font-bold text-white">R$ 54k</div>
             <div className="mt-2 text-xs bg-brand-orange/15 text-brand-orange px-2 py-1 rounded inline-block">↑ 8% no mês</div>
           </motion.div>
 
@@ -102,7 +102,7 @@ export default function Hero() {
              className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-brand-navy-dark/70 backdrop-blur-xl border border-white/10 border-t-2 border-t-yoobe-purple rounded-2xl p-6 shadow-2xl"
           >
             <div className="text-xs text-white/60 uppercase tracking-widest mb-1">Pontos Trocados</div>
-            <div className="text-3xl font-black text-white">45.000</div>
+            <div className="text-3xl font-bold text-white">45.000</div>
             <div className="mt-2 text-xs bg-yoobe-purple/15 text-yoobe-purple px-2 py-1 rounded inline-block">Alto Volume</div>
           </motion.div>
         </motion.div>

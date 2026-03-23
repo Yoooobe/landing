@@ -25,7 +25,7 @@ export default function WalletHighlight() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold text-white leading-tight"
+              className="text-4xl md:text-5xl font-black text-white leading-tight"
             >
               Governança orçamentária para grandes times.
             </motion.h2>

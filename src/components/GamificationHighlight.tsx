@@ -25,7 +25,7 @@ export default function GamificationHighlight() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-5xl font-bold text-white leading-tight"
+              className="text-4xl md:text-5xl font-black text-white leading-tight"
             >
               Sua lógica, nossa moeda.<br />
               <span className="text-gradient">Resultados Imediatos.</span>

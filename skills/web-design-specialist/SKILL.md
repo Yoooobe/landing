@@ -98,3 +98,23 @@ triggers:
 - [ ] Schema.org structured data (Organization + SoftwareApplication)
 - [ ] Alt text on all images
 - [ ] `lang="pt-BR"` attribute
+
+## Estrutura da Landing Page 4unik by Yoobe (Conversão SaaS B2B)
+
+"Atue como um Web Designer especialista em conversão SaaS B2B. Crie a estrutura de blocos para a landing page da 4unik by Yoobe, utilizando a seguinte hierarquia:
+Hero Section: Título principal focado em unificar gamificação e loja corporativa + CTA para 'Solicitar Demonstração'
+.
+Social Proof (Prova Social): Logos de empresas parceiras, como Grupo Boticário e Softplan
+.
+Como Funciona: Seção detalhando os 4 passos da operação: Integre, Configure, Engaje e Acompanhe
+.
+Pilares da Plataforma: Grid visual destacando Gamificação, Loja VIP, Dashboard de Gestão, Integrações e API
+.
+Catálogo & Logística: Destaque para os mais de 5.000 produtos reais e rastreio de envios para todo o Brasil
+.
+Depoimentos: Depoimentos de clientes destacando resultados, como o aumento de engajamento e redução de turnover
+.
+Planos e Preços: Tabela comparativa clara com os recursos dos planos Starter, Pro e Enterprise
+.
+CTA Final: Última chamada forte para falar com um especialista
+."
