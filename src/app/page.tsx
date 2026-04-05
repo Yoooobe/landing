@@ -19,7 +19,7 @@ import ClientsSection from "@/components/ClientsSection";
 
 export default function Home() {
   return (
-    <div className="bg-brand-navy-dark text-white min-h-screen font-sans selection:bg-brand-orange/30">
+    <div className="min-h-screen bg-surface-deep font-sans text-white selection:bg-brand-orange/30">
       <HomeHero />
       <TrustBar />
       <BentoFeatures />
@@ -40,7 +40,7 @@ export default function Home() {
       <ClientsSection />
       
       {/* Final CTA Section */}
-      <section className="py-24 bg-gradient-to-b from-brand-navy-dark to-black border-t border-white/5 text-center">
+      <section className="section-gradient-bg border-t border-white/5 py-24 text-center">
         <div className="container mx-auto px-4 md:px-6 max-w-3xl">
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
             Pronto para transformar o reconhecimento na sua empresa?

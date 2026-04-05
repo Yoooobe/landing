@@ -16,10 +16,10 @@ export default function AdminDashboardHighlight() {
             viewport={{ once: true }}
             className="w-full lg:w-[60%] order-2 lg:order-1 relative"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-brand-orange to-red-600 rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative bg-[#0d1117] border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+            <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-r from-brand-orange via-unik-blue to-demo-cyan opacity-20 blur transition duration-1000 group-hover:opacity-40 group-hover:duration-200"></div>
+            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-surface-page shadow-2xl">
               {/* Fake Browser Title Bar */}
-              <div className="h-10 bg-[#161b22] border-b border-white/5 flex items-center px-4 gap-2">
+              <div className="flex h-10 items-center gap-2 border-b border-white/5 bg-surface-elevated px-4">
                 <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
@@ -28,7 +28,7 @@ export default function AdminDashboardHighlight() {
               
               <div className="flex">
                 {/* Sidebar */}
-                <div className="w-16 md:w-48 bg-[#161b22] border-r border-white/5 p-4 flex flex-col gap-4">
+                <div className="flex w-16 flex-col gap-4 border-r border-white/5 bg-surface-elevated p-4 md:w-48">
                   <div className="hidden md:block text-[10px] font-bold text-white/30 uppercase mt-2">Visão Geral</div>
                   <div className="h-8 md:h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center md:justify-start md:px-3 text-white/80 gap-3">
                     <LayoutDashboard className="w-4 h-4 text-brand-orange" />
@@ -55,7 +55,7 @@ export default function AdminDashboardHighlight() {
                   </div>
                   
                   {/* Graph Placeholder using CSS */}
-                  <div className="h-40 w-full bg-[#161b22] rounded-xl border border-white/5 flex items-end justify-between p-4 gap-2 mb-6">
+                  <div className="mb-6 flex h-40 w-full items-end justify-between gap-2 rounded-xl border border-white/5 bg-surface-elevated p-4">
                      {[40, 70, 45, 90, 65, 80, 50, 100, 75, 85, 60, 95].map((height, i) => (
                        <div key={i} className="w-full relative group">
                          <div 
@@ -68,12 +68,12 @@ export default function AdminDashboardHighlight() {
                   
                   {/* Stats Bottom */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-[#161b22] rounded-xl border border-white/5 p-4">
+                    <div className="rounded-xl border border-white/5 bg-surface-elevated p-4">
                       <div className="text-[10px] text-white/40 uppercase font-bold mb-1">Custo Logístico (SLA)</div>
                       <div className="text-xl font-bold text-white">R$ 12.450</div>
                       <div className="text-[10px] text-green-400 mt-1">↓ 4.2% vs mês anterior</div>
                     </div>
-                    <div className="bg-[#161b22] rounded-xl border border-white/5 p-4">
+                    <div className="rounded-xl border border-white/5 bg-surface-elevated p-4">
                       <div className="text-[10px] text-white/40 uppercase font-bold mb-1">Nível de Serviço</div>
                       <div className="text-xl font-bold text-white">99.8%</div>
                       <div className="text-[10px] text-white/50 mt-1">Entregas no prazo</div>
@@ -89,14 +89,14 @@ export default function AdminDashboardHighlight() {
             <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-white/70 text-sm font-semibold mb-4 font-sans">
               Painel do Gestor (Admin)
             </span>
-            <h2 className="text-3xl lg:text-5xl font-black text-white mb-6 font-heading">Governe as regras do <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple to-brand-orange">jogo</span>.</h2>
+            <h2 className="text-3xl lg:text-5xl font-black text-white mb-6 font-heading">Governe as regras do <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple via-unik-blue-soft to-brand-orange">jogo</span>.</h2>
             <p className="text-lg text-white/60 leading-relaxed mb-8 font-sans">
               O ambiente onde supervisores, RH e gestores orçamentais governam as regras. Inspirado em painéis de e-commerce e ERPs, mantendo visibilidade 100% sobre R$, prazos e entregas logísticas dos prêmios.
             </p>
             <ul className="space-y-6 font-sans">
               <li className="flex items-start gap-4">
-                <div className="min-w-8 min-h-8 w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center mt-1">
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                <div className="min-w-8 min-h-8 w-8 h-8 rounded-full bg-unik-blue/20 flex items-center justify-center mt-1">
+                  <div className="w-2 h-2 rounded-full bg-unik-blue"></div>
                 </div>
                 <div>
                   <h4 className="text-white font-bold text-lg font-heading">Monitoramento de SLA&apos;s</h4>

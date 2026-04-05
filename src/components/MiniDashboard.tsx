@@ -1,6 +1,6 @@
 "use client";
 
-import { withBasePath } from "@/lib/basePath";
+import UnikWordmark from "@/components/UnikWordmark";
 import { motion } from "framer-motion";
 
 export default function MiniDashboard() {
@@ -31,7 +31,7 @@ export default function MiniDashboard() {
           {/* Header */}
           <div className="flex items-center justify-between px-6 py-4 border-b border-white/5 bg-[#141b2d]">
             <div className="text-lg font-bold text-white flex items-center gap-2">
-              <img src={withBasePath("/logo-4unik-by-yoobe.png")} alt="Yoobe" className="h-6" />
+              <UnikWordmark variant="compact" />
             </div>
             <div className="flex items-center gap-3">
               <span className="text-xs font-medium text-white/50">Admin Empresa</span>

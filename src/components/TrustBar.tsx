@@ -13,7 +13,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="py-12 bg-[#0a0f18] border-t border-white/5 border-b">
+    <section className="border-b border-t border-white/5 bg-surface-page py-12">
       <div className="container mx-auto px-4 text-center">
         <p className="text-sm font-bold tracking-widest text-white/40 uppercase mb-8">Empresas que confiam na Yoobe</p>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">

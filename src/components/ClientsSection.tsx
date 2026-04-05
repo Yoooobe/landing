@@ -23,7 +23,11 @@ export default function ClientsSection() {
             Quem confia na Yoobe
           </div>
           <h2 className="text-3xl md:text-5xl font-black mb-6 font-heading">
-            Empresas que já <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-red-500">transformaram</span> seu RH
+            Empresas que já{" "}
+            <span className="bg-gradient-to-r from-brand-orange via-unik-blue-soft to-demo-cyan bg-clip-text text-transparent">
+              transformaram
+            </span>{" "}
+            seu RH
           </h2>
           <p className="text-lg text-white/50 max-w-2xl mx-auto font-sans leading-relaxed">
             De startups a grandes corporações, ajudamos equipes de RH a criar programas de reconhecimento que funcionam.
@@ -38,7 +42,7 @@ export default function ClientsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.4 }}
-              className="bg-[#141b2d] border border-white/5 p-6 rounded-2xl flex items-center justify-center min-h-[120px] group"
+              className="group flex min-h-[120px] items-center justify-center rounded-2xl border border-white/5 bg-surface-elevated p-6"
               title={logo.alt}
             >
               <img 

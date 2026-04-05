@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Motor de Gamificação | 4unik by Yoobe",
+  title: "Motor de Gamificação | 4unik",
 };
 
 export default function MotorGamificacaoPage() {

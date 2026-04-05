@@ -51,8 +51,8 @@ export default function GamificationFlow() {
   ];
 
   return (
-    <section className="py-24 bg-[#050a10] border-t border-white/5 relative overflow-hidden">
-      <div className="absolute left-1/2 top-0 w-px h-full bg-gradient-to-b from-transparent via-yoobe-purple/50 to-transparent hidden md:block"></div>
+    <section className="relative overflow-hidden border-t border-white/5 bg-surface-deep py-24">
+      <div className="absolute left-1/2 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-demo-cyan/30 to-transparent md:block"></div>
 
       <div className="container mx-auto px-4 max-w-5xl relative z-10">
         <div className="text-center mb-20 max-w-3xl mx-auto">
@@ -60,7 +60,11 @@ export default function GamificationFlow() {
             Como Funciona na Prática
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
-            Do setup ao <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple to-fuchsia-600">engajamento</span> em 4 etapas
+            Do setup ao{" "}
+            <span className="bg-gradient-to-r from-yoobe-purple via-unik-blue-soft to-demo-cyan bg-clip-text text-transparent">
+              engajamento
+            </span>{" "}
+            em 4 etapas
           </h2>
           <p className="text-lg text-white/60 font-sans">
             Implementação simples, resultado imediato. A plataforma se adapta à sua cultura e processos.
@@ -75,9 +79,9 @@ export default function GamificationFlow() {
               
               {/* Content Card */}
               <div className="w-full md:w-5/12 flex-shrink-0">
-                <div className="bg-[#121824] border border-white/10 p-8 rounded-2xl hover:border-yoobe-purple/30 transition-all hover:bg-[#161d2b] group">
-                  <div className="flex items-center gap-3 mb-6">
-                    <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple to-fuchsia-500 font-mono">
+                <div className="group rounded-2xl border border-white/10 bg-surface-panel p-8 transition-all hover:border-demo-cyan/25 hover:bg-surface-elevated">
+                  <div className="mb-6 flex items-center gap-3">
+                    <span className="bg-gradient-to-r from-yoobe-purple to-demo-cyan bg-clip-text font-mono text-3xl font-bold text-transparent">
                       {step.num}
                     </span>
                     <span className="px-3 py-1 bg-white/5 rounded-full text-xs font-semibold text-white/70">
@@ -105,8 +109,8 @@ export default function GamificationFlow() {
               {step.align === "right" && <div className="hidden md:block w-5/12"></div>}
 
               {/* Timeline Center Dot (Desktop only) */}
-              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-[#121824] border-[4px] border-[#050a10] shadow-[0_0_0_2px_rgba(139,92,246,0.5)] z-20 hidden md:block">
-                <div className="w-full h-full rounded-full bg-yoobe-purple animate-pulse"></div>
+              <div className="absolute left-1/2 top-1/2 z-20 hidden h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border-[4px] border-surface-deep bg-surface-panel shadow-[0_0_0_2px_rgba(34,211,238,0.35)] md:block">
+                <div className="h-full w-full animate-pulse rounded-full bg-gradient-to-br from-yoobe-purple to-demo-cyan"></div>
               </div>
             </div>
           ))}

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Package } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Logística Integrada | 4unik by Yoobe",
+  title: "Logística Integrada | 4unik",
 };
 
 export default function LogisticaIntegradaPage() {

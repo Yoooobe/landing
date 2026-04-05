@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 
 export default function HomeHero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden bg-brand-navy-dark">
-      {/* Background Effects */}
+    <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-brand-navy-dark pt-24 pb-20">
+      {/* Background Effects — 4unik (azul) + demo (ciano) + Yoobe */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-orange/20 rounded-full blur-[120px] mix-blend-screen animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/4 w-[500px] h-[500px] bg-yoobe-purple/20 rounded-full blur-[150px] mix-blend-screen"></div>
-        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-brand-navy-dark to-transparent z-10"></div>
+        <div className="absolute top-1/4 left-1/4 h-96 w-96 animate-pulse rounded-full bg-brand-orange/15 blur-[120px] mix-blend-screen"></div>
+        <div className="absolute top-1/3 right-1/4 h-[500px] w-[500px] rounded-full bg-unik-blue/20 blur-[150px] mix-blend-screen"></div>
+        <div className="absolute bottom-1/4 left-1/3 h-80 w-80 rounded-full bg-demo-cyan/10 blur-[100px] mix-blend-screen"></div>
+        <div className="absolute bottom-0 left-0 right-0 z-10 h-1/2 bg-gradient-to-t from-brand-navy-dark to-transparent"></div>
         
         {/* Abstract Network SVG */}
         <svg className="absolute inset-0 w-full h-full opacity-20 pointer-events-none" style={{ zIndex: 1 }}>
@@ -45,7 +46,9 @@ export default function HomeHero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-6 tracking-tight font-heading"
           >
-            <strong>4unik</strong> conecta <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-[#ff512f] to-[#f09819]">engajamento,</span><br />
+            <strong className="text-unik-blue-soft">4unik</strong> conecta{" "}
+            <span className="text-gradient-hero">engajamento,</span>
+            <br />
             <span className="text-4xl md:text-6xl text-white/90">recompensas e logística</span>
           </motion.h1>
 

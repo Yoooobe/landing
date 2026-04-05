@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Blog | 4unik by Yoobe",
+  title: "Blog | 4unik",
   description: "Insights, tendências e guias sobre employee engagement, gamificação e logística de premiações corporativas.",
 };
 

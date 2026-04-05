@@ -1,5 +1,6 @@
 "use client";
 
+import GamificationDemoStrip from "@/components/GamificationDemoStrip";
 import { motion } from "framer-motion";
 
 export default function GamificationSummary() {
@@ -11,21 +12,23 @@ export default function GamificationSummary() {
   ];
 
   return (
-    <section id="gamificacao" className="py-24 bg-brand-navy-dark relative border-t border-white/5">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16 relative z-10 text-white">
-          <div className="inline-block px-3 py-1 mb-4 rounded-full border border-yoobe-purple/30 bg-yoobe-purple/10 text-yoobe-purple text-sm font-bold tracking-wide uppercase">
+    <section id="gamificacao" className="section-gradient-bg relative border-t border-white/5 py-24">
+      <div className="container mx-auto max-w-6xl px-4">
+        <div className="relative z-10 mb-16 text-center text-white">
+          <div className="mb-4 inline-block rounded-full border border-yoobe-purple/30 bg-yoobe-purple/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-yoobe-purple">
             Gamificação Corporativa
           </div>
-          <h2 className="text-3xl md:text-5xl font-black mb-6 font-heading">
-            Gamificação que <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple to-yoobe-neon-pink">engaja</span>. A Yoobe executa.
+          <h2 className="mb-6 font-heading text-3xl font-black md:text-5xl">
+            Gamificação que <span className="text-gradient">engaja</span>. A Yoobe executa.
           </h2>
-          <p className="text-lg text-white/50 max-w-2xl mx-auto font-sans leading-relaxed">
+          <p className="mx-auto max-w-2xl text-lg leading-relaxed text-white/50 font-sans">
             83% dos colaboradores se sentem mais motivados com gamificação. Pontos, rankings, missões e prêmios reais — tudo em uma plataforma integrada.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 relative z-10">
+        <GamificationDemoStrip />
+
+        <div className="relative z-10 mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {cards.map((item, i) => (
             <motion.div 
               key={i}
@@ -33,7 +36,7 @@ export default function GamificationSummary() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white/5 border border-white/10 p-6 rounded-3xl hover:-translate-y-2 transition-transform"
+              className="rounded-3xl border border-white/10 bg-surface-elevated/80 p-6 backdrop-blur-sm transition-transform hover:-translate-y-2 hover:border-unik-blue/25"
             >
               <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-2xl mb-4">
                 {item.icon}

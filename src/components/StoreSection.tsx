@@ -38,7 +38,7 @@ export default function StoreSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-[#141b2d] border border-white/5 p-8 rounded-3xl"
+              className="rounded-3xl border border-white/5 bg-surface-elevated p-8"
             >
               <div className="text-4xl mb-4">{item.emoji}</div>
               <h3 className="text-xl font-bold text-white mb-3 font-heading">{item.title}</h3>

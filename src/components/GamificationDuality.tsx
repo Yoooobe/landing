@@ -4,10 +4,10 @@ import { motion } from "framer-motion";
 
 export default function GamificationDuality() {
   return (
-    <section className="py-24 bg-[#0d1424] relative border-t border-white/5 overflow-hidden">
+    <section className="relative overflow-hidden border-t border-white/5 bg-surface-page py-24">
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-yoobe-neon-pink/5 to-transparent pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-1/2 h-full bg-gradient-to-r from-blue-500/5 to-transparent pointer-events-none"></div>
+      <div className="pointer-events-none absolute top-0 right-0 h-full w-1/2 bg-gradient-to-l from-yoobe-neon-pink/5 to-transparent"></div>
+      <div className="pointer-events-none absolute bottom-0 left-0 h-full w-1/2 bg-gradient-to-r from-unik-blue/10 to-transparent"></div>
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="text-center mb-16">
@@ -15,7 +15,10 @@ export default function GamificationDuality() {
             Como Funciona
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
-            Dois caminhos para <br className="hidden md:block"/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yoobe-neon-pink">engajar seu time</span>
+            Dois caminhos para <br className="hidden md:block" />
+            <span className="bg-gradient-to-r from-brand-orange via-unik-blue-soft to-yoobe-neon-pink bg-clip-text text-transparent">
+              engajar seu time
+            </span>
           </h2>
           <p className="text-xl text-white/60 max-w-2xl mx-auto font-sans">
             Você não precisa se adaptar a nós. A Yoobe se adapta ao momento da sua empresa, seja com uma plataforma pronta ou trabalhando nos bastidores.
@@ -43,7 +46,7 @@ export default function GamificationDuality() {
             </p>
 
             {/* SVG Visual */}
-            <div className="w-full aspect-[4/3] bg-[#0d1424] border border-white/5 rounded-2xl relative overflow-hidden mb-8 shadow-inner flex flex-col justify-end">
+            <div className="relative mb-8 flex aspect-[4/3] w-full flex-col justify-end overflow-hidden rounded-2xl border border-white/5 bg-surface-page shadow-inner">
               {/* Leaderboard Mockup */}
               <div className="p-4 space-y-3 relative z-10 w-full">
                 {/* 1st Place */}
@@ -102,13 +105,15 @@ export default function GamificationDuality() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 bg-white/[0.03] border border-white/10 rounded-3xl p-8 lg:p-12 relative overflow-hidden group hover:border-blue-500/30 hover:bg-white/[0.04] transition-all"
+            className="group relative flex-1 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-8 transition-all hover:border-unik-blue/30 hover:bg-white/[0.04] lg:p-12"
           >
             {/* Ambient background glow */}
-            <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-blue-500/20 rounded-full blur-[80px] group-hover:bg-blue-500/30 transition-all pointer-events-none"></div>
+            <div className="pointer-events-none absolute -bottom-32 -left-32 h-64 w-64 rounded-full bg-unik-blue/20 blur-[80px] transition-all group-hover:bg-unik-blue/30"></div>
             
-            <h3 className="text-2xl font-black text-white mb-4 font-heading flex items-center gap-3">
-              <span className="bg-blue-500/20 text-blue-400 w-10 h-10 rounded-xl flex items-center justify-center">🔌</span>
+            <h3 className="mb-4 flex items-center gap-3 font-heading text-2xl font-black text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-unik-blue/20 text-unik-blue-soft">
+                🔌
+              </span>
               Integração Invisível
             </h3>
             <p className="text-white/60 font-sans mb-8 min-h-[50px]">
@@ -116,39 +121,45 @@ export default function GamificationDuality() {
             </p>
 
             {/* SVG Visual */}
-            <div className="w-full aspect-[4/3] bg-[#0d1424] border border-white/5 rounded-2xl relative overflow-hidden mb-8 shadow-inner flex items-center justify-center">
+            <div className="relative mb-8 flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-2xl border border-white/5 bg-surface-page shadow-inner">
               
               {/* Nodes Mockup */}
               <div className="relative w-full h-full p-8 flex items-center justify-center">
                 {/* Lines */}
                 <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
-                  <path d="M 50 150 C 150 150, 100 150, 200 150" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" strokeDasharray="4 4" className="group-hover:stroke-blue-500/50 transition-colors" />
-                  <path d="M 50 50 C 150 50, 150 150, 200 150" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" strokeDasharray="4 4" className="group-hover:stroke-blue-500/50 transition-colors" />
-                  <path d="M 50 250 C 150 250, 150 150, 200 150" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" strokeDasharray="4 4" className="group-hover:stroke-blue-500/50 transition-colors" />
+                  <path d="M 50 150 C 150 150, 100 150, 200 150" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" strokeDasharray="4 4" className="transition-colors group-hover:stroke-unik-blue/50" />
+                  <path d="M 50 50 C 150 50, 150 150, 200 150" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" strokeDasharray="4 4" className="transition-colors group-hover:stroke-unik-blue/50" />
+                  <path d="M 50 250 C 150 250, 150 150, 200 150" stroke="rgba(255,255,255,0.1)" strokeWidth="2" fill="none" strokeDasharray="4 4" className="transition-colors group-hover:stroke-unik-blue/50" />
                   
                   {/* Traffic pulses */}
-                  <circle cx="0" cy="0" r="3" fill="#3B82F6" className="animate-[float_2s_linear_infinite] group-hover:fill-yoobe-neon-pink">
+                  <circle cx="0" cy="0" r="3" fill="var(--color-unik-blue)" className="animate-[float_2s_linear_infinite] group-hover:fill-yoobe-neon-pink">
                     <animateMotion dur="2s" repeatCount="indefinite" path="M 50 150 C 150 150, 100 150, 200 150" />
                   </circle>
-                  <circle cx="0" cy="0" r="3" fill="#3B82F6" className="animate-[float_2s_linear_infinite_0.5s]">
+                  <circle cx="0" cy="0" r="3" fill="var(--color-unik-blue)" className="animate-[float_2s_linear_infinite_0.5s]">
                     <animateMotion dur="2.5s" repeatCount="indefinite" path="M 50 50 C 150 50, 150 150, 200 150" />
                   </circle>
                 </svg>
 
                 {/* Left Nodes */}
                 <div className="absolute left-6 top-0 bottom-0 flex flex-col justify-around py-4 z-10 w-16">
-                  <div className="w-12 h-12 bg-[#141b2d] rounded-xl border border-white/10 flex items-center justify-center text-white/50 shadow-lg group-hover:scale-110 transition-transform">W</div>
-                  <div className="w-12 h-12 bg-[#141b2d] rounded-xl border border-white/10 flex items-center justify-center text-white/50 shadow-lg group-hover:scale-110 transition-transform delay-75">B</div>
-                  <div className="w-12 h-12 bg-[#141b2d] rounded-xl border border-white/10 flex items-center justify-center text-white/50 shadow-lg group-hover:scale-110 transition-transform delay-150">H</div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-surface-elevated text-white/50 shadow-lg transition-transform group-hover:scale-110">
+                    W
+                  </div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-surface-elevated text-white/50 shadow-lg transition-transform delay-75 group-hover:scale-110">
+                    B
+                  </div>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-surface-elevated text-white/50 shadow-lg transition-transform delay-150 group-hover:scale-110">
+                    H
+                  </div>
                 </div>
 
                 {/* Center Yoobe Node */}
-                <div className="w-24 h-24 bg-[#0F172A] rounded-2xl border-2 border-brand-orange shadow-[0_0_30px_rgba(249,115,22,0.3)] flex items-center justify-center z-10 relative group-hover:shadow-[0_0_40px_rgba(59,130,246,0.4)] group-hover:border-blue-500 transition-all duration-500">
-                  <span className="text-white font-black text-3xl font-heading absolute">Y.</span>
+                <div className="relative z-10 flex h-24 w-24 items-center justify-center rounded-2xl border-2 border-brand-orange bg-brand-navy shadow-[0_0_30px_rgba(249,115,22,0.3)] transition-all duration-500 group-hover:border-unik-blue group-hover:shadow-[0_0_40px_rgba(37,99,235,0.35)]">
+                  <span className="absolute font-heading text-3xl font-black text-white">Y.</span>
                   
                   {/* Circular scanning effect */}
-                  <div className="absolute inset-0 rounded-2xl border border-white/0 overflow-hidden">
-                    <div className="w-[150%] h-[150%] absolute -top-[25%] -left-[25%] bg-[conic-gradient(from_0deg_at_50%_50%,rgba(59,130,246,0)_0%,rgba(59,130,246,0.3)_50%,rgba(59,130,246,0)_100%)] animate-[spin_4s_linear_infinite] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <div className="absolute inset-0 overflow-hidden rounded-2xl border border-white/0">
+                    <div className="absolute -top-[25%] -left-[25%] h-[150%] w-[150%] bg-[conic-gradient(from_0deg_at_50%_50%,rgba(37,99,235,0)_0%,rgba(37,99,235,0.28)_50%,rgba(37,99,235,0)_100%)] opacity-0 transition-opacity animate-[spin_4s_linear_infinite] group-hover:opacity-100"></div>
                   </div>
                 </div>
               </div>

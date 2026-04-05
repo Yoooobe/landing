@@ -1,3 +1,4 @@
+import UnikWordmark from "@/components/UnikWordmark";
 import Link from "next/link";
 
 export default function Footer() {
@@ -6,8 +7,8 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
-            <div className="text-xl font-bold tracking-tight text-white mb-4">
-              4unik<span className="font-normal text-white/50"> by Yoobe</span>
+            <div className="mb-3">
+              <UnikWordmark variant="footer" className="opacity-95" />
             </div>
             <p className="text-sm mb-6 max-w-xs">
               Infraestrutura de recompensas corporativa. Motor de gamificação e catálogo integrado em uma plataforma SaaS premium para líderes e desenvolvedores.
@@ -41,7 +42,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs">
-          <p>&copy; {new Date().getFullYear()} Yoobe. Reward Infrastructure Platform.</p>
+          <p>&copy; {new Date().getFullYear()} 4unik. Plataforma de recompensas corporativas.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="#" className="hover:text-white transition-colors">Privacidade</Link>
             <Link href="#" className="hover:text-white transition-colors">Termos de Uso</Link>

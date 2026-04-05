@@ -6,7 +6,7 @@ import { ArrowRight, ShieldCheck, Trophy, Package, LayoutDashboard } from "lucid
 
 export default function BentoFeatures() {
   return (
-    <section id="platform" className="py-24 bg-brand-navy-dark relative overflow-hidden">
+    <section id="platform" className="section-gradient-bg relative overflow-hidden py-24">
       {/* Ambient background glow */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-orange/10 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-yoobe-purple/10 rounded-full blur-[120px] pointer-events-none"></div>
@@ -113,10 +113,12 @@ export default function BentoFeatures() {
             className="md:col-span-2 group relative overflow-hidden rounded-3xl glass-panel-dark border border-white/5 p-8 flex items-center justify-between"
           >
             <div className="relative z-10 max-w-sm">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-4">
-                <ShieldCheck className="text-white w-6 h-6" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-unik-blue to-demo-cyan-deep">
+                <ShieldCheck className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors font-heading">Conecta com Suas Ferramentas</h3>
+              <h3 className="mb-2 text-2xl font-bold text-white transition-colors group-hover:text-demo-cyan font-heading">
+                Conecta com Suas Ferramentas
+              </h3>
               <p className="text-white/60 text-sm leading-relaxed mb-4 font-sans">
                 Sem atrito para o time de TI. Integração simplificada com os sistemas que sua empresa já usa todos os dias, como Slack, Teams e Workday.
               </p>
@@ -126,13 +128,13 @@ export default function BentoFeatures() {
             </div>
             
             {/* Terminal mock */}
-            <div className="hidden sm:block relative w-1/2 h-full bg-[#0d1117] rounded-xl border border-white/10 p-4 font-mono text-[10px] text-white/70 overflow-hidden group-hover:border-blue-500/50 transition-colors">
+            <div className="relative hidden h-full w-1/2 overflow-hidden rounded-xl border border-white/10 bg-surface-page p-4 font-mono text-[10px] text-white/70 transition-colors group-hover:border-unik-blue/50 sm:block">
               <div className="flex gap-1.5 mb-3">
                 <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                 <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
                 <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
               </div>
-              <div className="text-blue-400">POST <span className="text-white">/v1/rewards/grant</span></div>
+              <div className="text-demo-cyan">POST <span className="text-white">/v1/rewards/grant</span></div>
               <div className="text-gray-400 mt-1">{"{"}</div>
               <div className="ml-4"><span className="text-purple-400">&quot;user_id&quot;</span>: <span className="text-green-300">&quot;emp_98231&quot;</span>,</div>
               <div className="ml-4"><span className="text-purple-400">&quot;points&quot;</span>: <span className="text-orange-300">500</span>,</div>

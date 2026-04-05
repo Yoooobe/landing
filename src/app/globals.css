@@ -47,19 +47,35 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* Brand Colors */
+  /* Brand Colors — base alinhada a tom institucional (4unik) + acentos Yoobe / demo */
   --color-brand-orange: #f98f16;
-  --color-brand-orange-dark: #EA580C;
-  --color-brand-orange-light: #FFF7ED;
-  --color-brand-navy: #0a0a0b;
-  --color-brand-navy-dark: #050505;
-  --color-brand-charcoal: #141415;
-  --color-brand-cream: #F5F3EF;
-  --color-brand-warm-gray: #78716C;
-  
-  --color-yoobe-blue: #23225A;
-  --color-yoobe-neon-pink: #EF476F;
-  --color-yoobe-purple: #8338EC;
+  --color-brand-orange-dark: #ea580c;
+  --color-brand-orange-light: #fff7ed;
+  /* Navy com matiz azul (menos preto puro) */
+  --color-brand-navy: #0f172a;
+  --color-brand-navy-dark: #030712;
+  --color-brand-charcoal: #1e293b;
+  --color-brand-cream: #f5f3ef;
+  --color-brand-warm-gray: #78716c;
+
+  --color-yoobe-blue: #1e3a5f;
+  --color-yoobe-neon-pink: #ef476f;
+  --color-yoobe-purple: #8338ec;
+
+  /* Tom 4unik (institucional) — confiança / links */
+  --color-unik-blue: #2563eb;
+  --color-unik-blue-deep: #1d4ed8;
+  --color-unik-blue-soft: #60a5fa;
+
+  /* Demo membro / gamificação */
+  --color-demo-cyan: #22d3ee;
+  --color-demo-cyan-deep: #06b6d4;
+
+  /* Superfícies (substitui hex soltos #0a0f18, #121824, #141b2d) */
+  --color-surface-page: #0c1324;
+  --color-surface-elevated: #141b2d;
+  --color-surface-panel: #121824;
+  --color-surface-deep: #050a10;
 }
 
 :root {
@@ -151,14 +167,17 @@
 }
 
 @utility glass-panel-dark {
-  @apply bg-[#0a0a0b]/75 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)];
+  @apply bg-surface-panel/85 backdrop-blur-2xl border border-unik-blue/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.45),0_0_0_1px_rgba(37,99,235,0.08)];
 }
 @utility glass-panel-light {
   @apply bg-white/60 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
 }
 @utility section-gradient-bg {
-  @apply bg-gradient-to-br from-[#050505] via-[#0a0a0b] to-black;
+  @apply bg-gradient-to-br from-[#030712] via-[#0c1a2e] to-[#0f172a];
 }
 @utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-orange to-[#fcd34d];
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-orange via-unik-blue-soft to-demo-cyan;
+}
+@utility text-gradient-hero {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-orange via-unik-blue to-demo-cyan;
 }

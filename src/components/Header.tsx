@@ -1,9 +1,10 @@
 "use client";
 
+import UnikWordmark from "@/components/UnikWordmark";
 import { withBasePath } from "@/lib/basePath";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { ChevronDown, Layers, Gamepad2, Brain, Gift, Network, Trophy, Menu, X } from "lucide-react";
+import { ChevronDown, Layers, Gamepad2, Brain, Gift, Network, Trophy, Menu, X, Sparkles } from "lucide-react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,9 +41,12 @@ export default function Header() {
               : "bg-transparent border border-transparent"
           }`}
         >
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 z-10 shrink-0">
-            <img src={withBasePath("/logo-4unik-by-yoobe.png")} alt="4unik by Yoobe" className="h-[48px] w-auto drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]" />
+          {/* Logo — wordmark 4unik */}
+          <Link href="/" className="z-10 flex min-w-0 shrink-0 items-center">
+            <UnikWordmark
+              variant="header"
+              className="shrink-0 drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]"
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -56,9 +60,9 @@ export default function Header() {
               
               {/* Dropdown Content */}
               <div className="absolute left-0 top-full pt-3 opacity-0 translate-y-3 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50">
-                <div className="relative w-[340px] p-2 rounded-2xl bg-[#0a0f1d]/95 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl">
+                <div className="relative w-[340px] p-2 rounded-2xl bg-surface-page/95 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl">
                   {/* Triangle indicator */}
-                  <div className="absolute -top-1.5 left-8 w-3 h-3 bg-[#0a0f1d] border-t border-l border-white/10 rotate-45"></div>
+                  <div className="absolute -top-1.5 left-8 w-3 h-3 bg-surface-page border-t border-l border-white/10 rotate-45"></div>
                   
                   <div className="flex flex-col gap-1 relative z-10">
                     <Link href="/plataforma" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item">
@@ -108,9 +112,9 @@ export default function Header() {
               </button>
               
               <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 translate-y-3 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50">
-                <div className="relative w-[300px] p-2 rounded-2xl bg-[#0a0f1d]/95 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl">
+                <div className="relative w-[300px] p-2 rounded-2xl bg-surface-page/95 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl">
                   {/* Triangle indicator */}
-                  <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#0a0f1d] border-t border-l border-white/10 rotate-45"></div>
+                  <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-surface-page border-t border-l border-white/10 rotate-45"></div>
 
                   <div className="flex flex-col gap-1 relative z-10">
                     <Link href="/casos-de-uso" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item">
@@ -144,9 +148,9 @@ export default function Header() {
               </button>
               
               <div className="absolute right-0 top-full pt-3 opacity-0 translate-y-3 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50">
-                <div className="relative w-[300px] p-2 rounded-2xl bg-[#0a0f1d]/95 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl">
+                <div className="relative w-[300px] p-2 rounded-2xl bg-surface-page/95 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl">
                   {/* Triangle indicator */}
-                  <div className="absolute -top-1.5 right-8 w-3 h-3 bg-[#0a0f1d] border-t border-l border-white/10 rotate-45"></div>
+                  <div className="absolute -top-1.5 right-8 w-3 h-3 bg-surface-page border-t border-l border-white/10 rotate-45"></div>
                   
                   <div className="flex flex-col gap-1 relative z-10">
                     <Link href="/api-integracoes" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item">
@@ -156,6 +160,15 @@ export default function Header() {
                       <div>
                         <div className="text-white font-medium mb-0.5">API & Integrações</div>
                         <div className="text-white/50 text-xs leading-relaxed">Conecte a Yoobe ao seu ecossistema.</div>
+                      </div>
+                    </Link>
+                    <Link href={withBasePath("/workvivo/")} className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                      <div className="mt-0.5 bg-fuchsia-500/10 p-2.5 rounded-lg text-fuchsia-400 group-hover/item:scale-110 transition-transform">
+                        <Sparkles className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="text-white font-medium mb-0.5">Workvivo × Yoobe</div>
+                        <div className="text-white/50 text-xs leading-relaxed">Add-on de recompensas para a Workvivo.</div>
                       </div>
                     </Link>
                   </div>
@@ -196,7 +209,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div 
-        className={`fixed inset-0 bg-[#060a12]/95 backdrop-blur-xl z-40 lg:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-40 bg-surface-deep/95 backdrop-blur-xl lg:hidden transition-all duration-300 ${
           isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
         style={{ top: "80px" }} // Offset for header
@@ -245,6 +258,10 @@ export default function Header() {
               <Link href="/api-integracoes" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white py-2">
                 <Network className="w-5 h-5 text-emerald-400" />
                 <span className="font-medium text-lg">API & Integrações</span>
+              </Link>
+              <Link href={withBasePath("/workvivo/")} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white py-2">
+                <Sparkles className="w-5 h-5 text-fuchsia-400" />
+                <span className="font-medium text-lg">Workvivo × Yoobe</span>
               </Link>
             </div>
             

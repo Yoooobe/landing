@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, ShoppingBag } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Loja e Resgate | 4unik by Yoobe",
+  title: "Loja e Resgate | 4unik",
 };
 
 export default function LojaResgatePage() {
