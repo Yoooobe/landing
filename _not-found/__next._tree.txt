@@ -1,4 +1,4 @@
 :HL["/landing/_next/static/chunks/14mjizer2-2cj.css","style"]
 :HL["/landing/_next/static/chunks/0rl6g907ur95c.css","style"]
 :HL["/landing/brand/4unik-wordmark.png","image",{"imageSrcSet":"/landing/brand/4unik-wordmark.png 1x, /landing/brand/4unik-wordmark@2x.png 2x"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"wi9BHLQjfB78mfhrEJOFe"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"JPl9WjW4XGItRmSItPcEP"}
