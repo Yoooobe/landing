@@ -19,3 +19,4 @@ npx gh-pages -d out -t -m "chore: deploy static export ($(date -u +%Y-%m-%dT%H:%
 
 echo "==> Feito. Em GitHub: Settings → Pages → Source = branch gh-pages, pasta / (root)."
 echo "    Site: https://yoooobe.github.io/landing/ (pode levar 1–2 min)"
+echo "    (URL canônica em produção: ver src/lib/site.ts e src/lib/basePath.ts)"

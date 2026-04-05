@@ -54,7 +54,7 @@ export default function WorkvivoLanding({ locale, apiHub = false }: Props) {
             <div className="flex items-center gap-2 text-sm text-white/50">
               <span className="hidden sm:inline">{c.langLabel}</span>
               <Link
-                href={withBasePath(c.otherLocalePath)}
+                href={c.otherLocalePath}
                 className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-white/90 hover:bg-white/10 transition-colors"
               >
                 {c.otherLocaleLabel}
@@ -311,7 +311,7 @@ export default function WorkvivoLanding({ locale, apiHub = false }: Props) {
                 <span className="text-white/60"> — {c.pathB.whenText}</span>
               </div>
               <Link
-                href={withBasePath("/api-integracoes/")}
+                href="/api-integracoes/"
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
               >
                 {c.apiLearnMore}
@@ -379,7 +379,7 @@ export default function WorkvivoLanding({ locale, apiHub = false }: Props) {
             </h3>
             <p className="text-sm text-white/60 mb-4">{c.costsReferenceBody}</p>
             <Link
-              href={withBasePath("/#planos")}
+              href="/#planos"
               className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300"
             >
               {c.costsReferenceLink}

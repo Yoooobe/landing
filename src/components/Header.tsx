@@ -1,7 +1,6 @@
 "use client";
 
 import UnikWordmark from "@/components/UnikWordmark";
-import { withBasePath } from "@/lib/basePath";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ChevronDown, Layers, Gamepad2, Brain, Gift, Network, Trophy, Menu, X, Sparkles } from "lucide-react";
@@ -162,7 +161,7 @@ export default function Header() {
                         <div className="text-white/50 text-xs leading-relaxed">Conecte a Yoobe ao seu ecossistema.</div>
                       </div>
                     </Link>
-                    <Link href={withBasePath("/api-integracoes/workvivo/")} className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                    <Link href="/api-integracoes/workvivo/" className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item">
                       <div className="mt-0.5 bg-fuchsia-500/10 p-2.5 rounded-lg text-fuchsia-400 group-hover/item:scale-110 transition-transform">
                         <Sparkles className="w-5 h-5" />
                       </div>
@@ -259,7 +258,7 @@ export default function Header() {
                 <Network className="w-5 h-5 text-emerald-400" />
                 <span className="font-medium text-lg">Visão geral da API</span>
               </Link>
-              <Link href={withBasePath("/api-integracoes/workvivo/")} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white py-2">
+              <Link href="/api-integracoes/workvivo/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white py-2">
                 <Sparkles className="w-5 h-5 text-fuchsia-400" />
                 <span className="font-medium text-lg">Workvivo × Yoobe</span>
               </Link>

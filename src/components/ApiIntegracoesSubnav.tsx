@@ -1,6 +1,6 @@
 "use client";
 
-import { BASE_PATH, withBasePath } from "@/lib/basePath";
+import { BASE_PATH } from "@/lib/basePath";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -27,9 +27,9 @@ export default function ApiIntegracoesSubnav() {
   const isEn = pathNorm.startsWith("/en/");
   const t = isEn ? copy.en : copy.pt;
 
-  const baseOverview = withBasePath("/api-integracoes/");
-  const baseWorkvivoPt = withBasePath("/api-integracoes/workvivo/");
-  const baseWorkvivoEn = withBasePath("/en/api-integracoes/workvivo/");
+  const baseOverview = "/api-integracoes/";
+  const baseWorkvivoPt = "/api-integracoes/workvivo/";
+  const baseWorkvivoEn = "/en/api-integracoes/workvivo/";
 
   const onOverview =
     pathNorm === "/api-integracoes" ||

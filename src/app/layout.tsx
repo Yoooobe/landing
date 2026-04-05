@@ -1,11 +1,10 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { getGoogleAnalyticsMeasurementId, siteMetadataBase, SITE_URL } from "@/lib/site";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-
-const PRODUCTION_URL = "https://yoooobe.github.io/landing";
 
 const jakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -13,14 +12,14 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(PRODUCTION_URL),
+  metadataBase: siteMetadataBase(),
   title: "Yoobe — Reward Infrastructure | Gamificação e Recompensas",
   description: "Infraestrutura de recompensas para plataformas de gamificação e employee engagement. API, catálogo e fulfillment em um só lugar.",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    url: PRODUCTION_URL,
+    url: SITE_URL,
     title: "Yoobe — Reward Infrastructure | Gamificação e Recompensas",
     description:
       "Infraestrutura de recompensas para plataformas de gamificação e employee engagement. API, catálogo e fulfillment em um só lugar.",
@@ -32,15 +31,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = getGoogleAnalyticsMeasurementId();
+
   return (
-    <html lang="pt-BR" className={`dark scroll-smooth ${jakarta.variable}`}>
+    <html
+      lang="pt-BR"
+      className={`dark scroll-smooth ${jakarta.variable}`}
+      suppressHydrationWarning
+    >
       <body
         className={`font-sans antialiased min-h-screen flex flex-col bg-brand-navy-dark text-white selection:bg-brand-orange/30`}
+        suppressHydrationWarning
       >
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'} />
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>
     </html>
   );

@@ -1,6 +1,6 @@
 /**
- * GitHub Pages project URL: https://yoooobe.github.io/landing/
- * Must stay in sync with `basePath` in `next.config.ts`.
+ * Path do repositório no GitHub Pages. Deve coincidir com `basePath` em `next.config.ts`
+ * e com `SITE_URL` em `src/lib/site.ts`.
  */
 export const BASE_PATH = "/landing" as const;
 

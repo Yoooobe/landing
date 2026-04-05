@@ -4,25 +4,25 @@ import { siteMetadataBase } from "@/lib/site";
 
 export const metadata: Metadata = {
   metadataBase: siteMetadataBase(),
-  title: "API e Integrações | 4unik",
+  title: "API & Integrations | 4unik",
   description:
-    "API REST, webhooks e integrações para recompensas corporativas, catálogo e fulfillment na plataforma 4unik.",
+    "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment — aligned with the 4unik platform.",
   alternates: {
-    canonical: "/api-integracoes/",
+    canonical: "/en/api-integracoes/",
     languages: {
       "pt-BR": "/api-integracoes/",
       en: "/en/api-integracoes/",
     },
   },
   openGraph: {
-    title: "API e Integrações | 4unik",
+    title: "API & Integrations | 4unik",
     description:
-      "API REST, webhooks e integrações para recompensas corporativas, catálogo e fulfillment.",
-    url: "/api-integracoes/",
-    locale: "pt_BR",
+      "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment.",
+    url: "/en/api-integracoes/",
+    locale: "en_US",
   },
 };
 
-export default function ApiIntegracoesPage() {
+export default function EnApiIntegracoesOverviewPage() {
   return <ApiIntegracoesPageSections />;
 }
