@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[43769,["/landing/_next/static/chunks/0c2lv.60c7dh_.js","/landing/_next/static/chunks/0qyvupregmt2n.js","/landing/_next/static/chunks/0zi2v82qk6g6s.js"],"default"]
-3:I[97367,["/landing/_next/static/chunks/0c2lv.60c7dh_.js","/landing/_next/static/chunks/0qyvupregmt2n.js"],"OutletBoundary"]
+2:I[43769,["/landing/_next/static/chunks/15kc40srjq5mf.js","/landing/_next/static/chunks/0qyvupregmt2n.js","/landing/_next/static/chunks/0zi2v82qk6g6s.js"],"default"]
+3:I[97367,["/landing/_next/static/chunks/15kc40srjq5mf.js","/landing/_next/static/chunks/0qyvupregmt2n.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"href":"/api-integracoes/workvivo/","message":"Redirecionando para API e integrações · Workvivo × Yoobe…"}],[["$","script","script-0",{"src":"/landing/_next/static/chunks/0zi2v82qk6g6s.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"JPl9WjW4XGItRmSItPcEP"}
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"href":"/api-integracoes/workvivo/","message":"Redirecionando para API e integrações · Workvivo × Yoobe…"}],[["$","script","script-0",{"src":"/landing/_next/static/chunks/0zi2v82qk6g6s.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"3iFbl0Zdfmi6_9MET55r9"}
 5:null
