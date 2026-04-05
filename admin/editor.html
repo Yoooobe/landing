@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoobe Admin - Editor</title>
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      :root {
+        --primary: #4f46e5;
+        --primary-light: #eef2ff;
+        --sidebar-bg: #0f172a;
+        --sidebar-text: #94a3b8;
+        --sidebar-active: #e2e8f0;
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --success: #10b981;
+        --success-bg: #ecfdf5;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        display: flex;
+        min-height: 100vh;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 260px;
+        background: var(--sidebar-bg);
+        color: var(--sidebar-text);
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 100;
+      }
+      .sidebar-brand {
+        padding: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .sidebar-brand img { width: 40px; height: 40px; border-radius: 50%; }
+      .sidebar-brand span { font-size: 1.25rem; font-weight: 800; color: #fff; }
+      .sidebar-nav { flex: 1; padding: 1rem 0; overflow-y: auto; }
+      .sidebar-nav a {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.75rem 1.5rem;
+        color: var(--sidebar-text);
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.15s;
+        border-left: 3px solid transparent;
+      }
+      .sidebar-nav a:hover { background: rgba(255,255,255,0.05); color: #fff; }
+      .sidebar-nav a.active {
+        background: rgba(79,70,229,0.15);
+        color: #fff;
+        border-left-color: var(--primary);
+      }
+      .sidebar-nav .nav-icon { font-size: 1.1rem; width: 22px; text-align: center; }
+      .sidebar-footer {
+        padding: 1rem 1.5rem;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      }
+      .sidebar-footer a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--sidebar-text);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+      .sidebar-footer a:hover { color: #fff; }
+
+      /* Main */
+      .main { flex: 1; margin-left: 260px; }
+      .topbar {
+        background: var(--card);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+      }
+      .topbar h2 { font-size: 1.25rem; font-weight: 700; }
+      .topbar-actions { display: flex; gap: 0.75rem; align-items: center; }
+      .content-area { padding: 2rem; max-width: 1200px; }
+
+      /* Cards */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.75rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      }
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.25rem;
+      }
+      .card-header h3 { font-size: 1.1rem; font-weight: 700; }
+      .card-header .badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 999px;
+        font-weight: 600;
+      }
+      .badge-info { background: var(--primary-light); color: var(--primary); }
+      .badge-success { background: var(--success-bg); color: var(--success); }
+
+      /* Forms */
+      .form-row { margin-bottom: 1.25rem; }
+      .form-row label {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        margin-bottom: 0.4rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+      .form-row input, .form-row textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        border: 2px solid var(--border);
+        border-radius: 10px;
+        font-size: 0.95rem;
+        color: var(--text);
+        transition: border-color 0.2s;
+        outline: none;
+        font-family: inherit;
+      }
+      .form-row input:focus, .form-row textarea:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(79,70,229,0.08);
+      }
+      .form-row textarea { resize: vertical; min-height: 80px; }
+
+      /* Buttons */
+      .btn {
+        padding: 0.65rem 1.25rem;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: all 0.15s;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .btn-primary { background: var(--primary); color: #fff; }
+      .btn-primary:hover { background: #4338ca; transform: translateY(-1px); }
+      .btn-success { background: var(--success); color: #fff; }
+      .btn-success:hover { background: #059669; }
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--border);
+        color: var(--text-muted);
+      }
+      .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+      .btn-danger { background: var(--danger); color: #fff; }
+      .btn-danger:hover { background: #dc2626; }
+      .btn-sm { padding: 0.45rem 0.85rem; font-size: 0.8rem; }
+
+      /* Stats grid */
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .stat-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 1.25rem;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      }
+      .stat-card .stat-label {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+      }
+      .stat-card .stat-value {
+        font-size: 1.75rem;
+        font-weight: 800;
+        color: var(--text);
+        margin-top: 0.25rem;
+      }
+      .stat-card .stat-icon { font-size: 1.5rem; float: right; }
+
+      /* Table */
+      .table-wrap { overflow-x: auto; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td {
+        text-align: left;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid var(--border);
+        font-size: 0.9rem;
+      }
+      th { font-weight: 600; color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; }
+
+      /* Preview */
+      .preview-frame {
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+      }
+      .preview-frame iframe { width: 100%; height: 500px; border: none; }
+
+      /* Toast */
+      .toast {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--text);
+        color: #fff;
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        font-weight: 600;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        transform: translateY(120px);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+      }
+      .toast.visible { transform: translateY(0); }
+      .toast.success { background: var(--success); }
+      .toast.error { background: var(--danger); }
+
+      /* Section panel tabs */
+      .panel-tabs {
+        display: flex;
+        gap: 0;
+        border-bottom: 2px solid var(--border);
+        margin-bottom: 1.5rem;
+      }
+      .panel-tab {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -2px;
+        transition: all 0.15s;
+      }
+      .panel-tab:hover { color: var(--text); }
+      .panel-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+      .panel-content { display: none; }
+      .panel-content.active { display: block; }
+
+      /* Code editor */
+      .code-editor {
+        width: 100%;
+        min-height: 400px;
+        font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+        font-size: 0.85rem;
+        padding: 1rem;
+        border: 2px solid var(--border);
+        border-radius: 10px;
+        background: #1e1e2e;
+        color: #cdd6f4;
+        resize: vertical;
+        outline: none;
+        line-height: 1.6;
+        tab-size: 2;
+      }
+      .code-editor:focus { border-color: var(--primary); }
+
+      @media (max-width: 768px) {
+        .sidebar { display: none; }
+        .main { margin-left: 0; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="/logo.png" alt="Yoobe" />
+        <span>Yoobe</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="active" data-section="dashboard" onclick="showSection('dashboard', this)">
+          <span class="nav-icon">📊</span> Dashboard
+        </a>
+        <a href="#" data-section="editor" onclick="showSection('editor', this)">
+          <span class="nav-icon">✏️</span> Editor de Conteúdo
+        </a>
+        <a href="#" data-section="code" onclick="showSection('code', this)">
+          <span class="nav-icon">💻</span> Editor HTML
+        </a>
+        <a href="#" data-section="preview" onclick="showSection('preview', this)">
+          <span class="nav-icon">👁️</span> Pré-visualização
+        </a>
+        <a href="#" data-section="backups" onclick="showSection('backups', this)">
+          <span class="nav-icon">💾</span> Backups
+        </a>
+        <a href="#" data-section="logos" onclick="showSection('logos', this)">
+          <span class="nav-icon">🖼️</span> Logos de Clientes
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="/admin/logout">
+          <span>🚪</span> Sair
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div class="topbar">
+        <h2 id="sectionTitle">Dashboard</h2>
+        <div class="topbar-actions">
+          <a href="/" target="_blank" class="btn btn-outline btn-sm">Ver Site →</a>
+          <span id="userBadge" style="font-size:0.85rem; color:var(--text-muted)"></span>
+        </div>
+      </div>
+
+      <div class="content-area">
+
+        <!-- DASHBOARD -->
+        <div id="sec-dashboard" class="section-panel active">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <span class="stat-icon">📄</span>
+              <div class="stat-label">Página</div>
+              <div class="stat-value">Landing</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">🏢</span>
+              <div class="stat-label">Clientes exibidos</div>
+              <div class="stat-value" id="statClients">8</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">💾</span>
+              <div class="stat-label">Backups</div>
+              <div class="stat-value" id="statBackups">0</div>
+            </div>
+            <div class="stat-card">
+              <span class="stat-icon">🌐</span>
+              <div class="stat-label">Porta</div>
+              <div class="stat-value">3001</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3>Resumo do Editor</h3>
+              <span class="badge badge-info">v1.0</span>
+            </div>
+            <div style="color:var(--text-muted); line-height: 1.8">
+              <p><strong>O Editor e Gestor da Landing Page Yoobe</strong> permite:</p>
+              <ul style="margin: 1rem 0; padding-left: 1.5rem;">
+                <li><strong>Editor de Conteúdo</strong> — Edite título, subtítulo, badge e rodapé da landing page através de campos de formulário, sem precisar mexer em código.</li>
+                <li><strong>Editor HTML</strong> — Acesso direto ao código-fonte da página para edições avançadas. Ideal para desenvolvedores.</li>
+                <li><strong>Pré-visualização</strong> — Veja a landing page em tempo real dentro do painel, antes de publicar alterações.</li>
+                <li><strong>Sistema de Backups</strong> — Cada edição gera um backup automático. É possível restaurar versões anteriores a qualquer momento.</li>
+                <li><strong>Upload de Logos</strong> — Envie logos de clientes diretamente pelo painel, sem necessidade de acesso ao servidor.</li>
+                <li><strong>Autenticação</strong> — Acesso protegido por login (usuário e senha) com sessão segura.</li>
+              </ul>
+              <p style="margin-top: 1rem;">
+                <strong>Acesso:</strong> <code>http://localhost:3001/admin</code><br>
+                <strong>Login padrão:</strong> usuário <code>admin</code> / senha <code>yoobe2025</code><br>
+                <strong>Site público:</strong> <code>http://localhost:3001</code>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- EDITOR DE CONTEÚDO -->
+        <div id="sec-editor" class="section-panel" style="display:none">
+          <div class="card">
+            <div class="card-header">
+              <h3>Editar Conteúdo da Landing Page</h3>
+              <span class="badge badge-success">Editável</span>
+            </div>
+
+            <form id="contentForm">
+              <div class="form-row">
+                <label>Título da página (tag title)</label>
+                <input type="text" id="f-pageTitle" />
+              </div>
+              <div class="form-row">
+                <label>Badge de status (banner topo)</label>
+                <input type="text" id="f-statusBadge" />
+              </div>
+              <div class="form-row">
+                <label>Título principal (Hero H1)</label>
+                <input type="text" id="f-heroTitle" />
+              </div>
+              <div class="form-row">
+                <label>Subtítulo (Hero)</label>
+                <textarea id="f-heroSubtitle" rows="3"></textarea>
+              </div>
+              <div class="form-row">
+                <label>Texto do rodapé</label>
+                <input type="text" id="f-footerText" />
+              </div>
+
+              <div style="display:flex; gap:0.75rem; margin-top:0.5rem;">
+                <button type="button" class="btn btn-primary" onclick="saveContentField('page','title', document.getElementById('f-pageTitle').value)">Salvar Título</button>
+                <button type="button" class="btn btn-primary" onclick="saveContentField('hero','badge', document.getElementById('f-statusBadge').value)">Salvar Badge</button>
+                <button type="button" class="btn btn-primary" onclick="saveContentField('hero','title', document.getElementById('f-heroTitle').value)">Salvar Hero</button>
+                <button type="button" class="btn btn-primary" onclick="saveContentField('hero','subtitle', document.getElementById('f-heroSubtitle').value)">Salvar Subtítulo</button>
+                <button type="button" class="btn btn-primary" onclick="saveContentField('footer','text', document.getElementById('f-footerText').value)">Salvar Rodapé</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- EDITOR HTML -->
+        <div id="sec-code" class="section-panel" style="display:none">
+          <div class="card">
+            <div class="card-header">
+              <h3>Editor HTML Completo</h3>
+              <div>
+                <button class="btn btn-outline btn-sm" onclick="loadHtml()">↻ Recarregar</button>
+                <button class="btn btn-primary btn-sm" onclick="saveHtml()">💾 Salvar HTML</button>
+              </div>
+            </div>
+            <textarea id="htmlEditor" class="code-editor" spellcheck="false"></textarea>
+          </div>
+        </div>
+
+        <!-- PRÉ-VISUALIZAÇÃO -->
+        <div id="sec-preview" class="section-panel" style="display:none">
+          <div class="card">
+            <div class="card-header">
+              <h3>Pré-visualização da Landing Page</h3>
+              <button class="btn btn-outline btn-sm" onclick="refreshPreview()">↻ Atualizar</button>
+            </div>
+            <div class="preview-frame">
+              <iframe id="previewFrame" src="/"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- BACKUPS -->
+        <div id="sec-backups" class="section-panel" style="display:none">
+          <div class="card">
+            <div class="card-header">
+              <h3>Backups Automáticos</h3>
+              <button class="btn btn-outline btn-sm" onclick="loadBackups()">↻ Atualizar</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Arquivo</th>
+                    <th>Tamanho</th>
+                    <th>Data</th>
+                    <th>Ação</th>
+                  </tr>
+                </thead>
+                <tbody id="backupsList">
+                  <tr><td colspan="4" style="color:var(--text-muted); text-align:center; padding:2rem;">Nenhum backup ainda. Edite a página para gerar backups automáticos.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOGOS -->
+        <div id="sec-logos" class="section-panel" style="display:none">
+          <div class="card">
+            <div class="card-header">
+              <h3>Upload de Logo de Cliente</h3>
+              <span class="badge badge-info">PNG / SVG</span>
+            </div>
+            <div class="form-row">
+              <label>Nome do arquivo (ex: empresa.png)</label>
+              <input type="text" id="logoFilename" placeholder="nome-empresa.png" />
+            </div>
+            <div class="form-row">
+              <label>Selecionar imagem</label>
+              <input type="file" id="logoFile" accept="image/*" style="padding:0.5rem;" />
+            </div>
+            <button class="btn btn-success" onclick="uploadLogo()">⬆️ Enviar Logo</button>
+            <div id="logoPreview" style="margin-top:1rem;"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+      // Navigation
+      function showSection(name, el) {
+        document.querySelectorAll('.section-panel').forEach(p => p.style.display = 'none');
+        document.getElementById('sec-' + name).style.display = 'block';
+        document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+        if (el) el.classList.add('active');
+        const titles = {
+          dashboard: 'Dashboard',
+          editor: 'Editor de Conteúdo',
+          code: 'Editor HTML',
+          preview: 'Pré-visualização',
+          backups: 'Backups',
+          logos: 'Logos de Clientes'
+        };
+        document.getElementById('sectionTitle').textContent = titles[name] || name;
+        if (name === 'editor') loadContent();
+        if (name === 'code') loadHtml();
+        if (name === 'preview') refreshPreview();
+        if (name === 'backups') loadBackups();
+      }
+
+      // Toast
+      function showToast(msg, type) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.className = 'toast visible ' + (type || '');
+        setTimeout(() => t.className = 'toast', 3000);
+      }
+
+      // Load structured content
+      async function loadContent() {
+        try {
+          const res = await fetch('/api/content');
+          const data = await res.json();
+          if (data.success) {
+            document.getElementById('f-pageTitle').value = data.content.pageTitle || '';
+            document.getElementById('f-statusBadge').value = data.content.statusBadge || '';
+            document.getElementById('f-heroTitle').value = data.content.heroTitle || '';
+            document.getElementById('f-heroSubtitle').value = data.content.heroSubtitle || '';
+            document.getElementById('f-footerText').value = data.content.footerText || '';
+          }
+        } catch(e) { showToast('Erro ao carregar conteúdo', 'error'); }
+      }
+
+      // Save individual content field
+      async function saveContentField(section, field, value) {
+        try {
+          const res = await fetch('/api/content', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ section, field, value })
+          });
+          const data = await res.json();
+          if (data.success) {
+            showToast('Conteúdo salvo com sucesso!', 'success');
+          } else {
+            showToast(data.message || 'Erro ao salvar', 'error');
+          }
+        } catch(e) { showToast('Erro de conexão', 'error'); }
+      }
+
+      // Load raw HTML
+      async function loadHtml() {
+        try {
+          const res = await fetch('/api/landing');
+          const data = await res.json();
+          if (data.success) {
+            document.getElementById('htmlEditor').value = data.html;
+          }
+        } catch(e) { showToast('Erro ao carregar HTML', 'error'); }
+      }
+
+      // Save raw HTML
+      async function saveHtml() {
+        try {
+          const html = document.getElementById('htmlEditor').value;
+          const res = await fetch('/api/landing', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ html })
+          });
+          const data = await res.json();
+          if (data.success) {
+            showToast('HTML salvo com sucesso!', 'success');
+          } else {
+            showToast(data.message || 'Erro ao salvar', 'error');
+          }
+        } catch(e) { showToast('Erro de conexão', 'error'); }
+      }
+
+      // Preview
+      function refreshPreview() {
+        const f = document.getElementById('previewFrame');
+        f.src = '/?t=' + Date.now();
+      }
+
+      // Backups
+      async function loadBackups() {
+        try {
+          const res = await fetch('/api/backups');
+          const data = await res.json();
+          const tbody = document.getElementById('backupsList');
+          if (data.success && data.backups.length > 0) {
+            document.getElementById('statBackups').textContent = data.backups.length;
+            tbody.innerHTML = data.backups.map(b => `
+              <tr>
+                <td style="font-family:monospace; font-size:0.85rem">${b.name}</td>
+                <td>${(b.size / 1024).toFixed(1)} KB</td>
+                <td>${new Date(b.date).toLocaleString('pt-BR')}</td>
+                <td><button class="btn btn-outline btn-sm" onclick="restoreBackup('${b.name}')">Restaurar</button></td>
+              </tr>
+            `).join('');
+          } else {
+            tbody.innerHTML = '<tr><td colspan="4" style="color:var(--text-muted); text-align:center; padding:2rem;">Nenhum backup ainda.</td></tr>';
+          }
+        } catch(e) { showToast('Erro ao listar backups', 'error'); }
+      }
+
+      // Restore backup
+      async function restoreBackup(name) {
+        if (!confirm('Restaurar backup "' + name + '"? A versão atual será salva antes.')) return;
+        try {
+          const res = await fetch('/api/backups/restore', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name })
+          });
+          const data = await res.json();
+          if (data.success) {
+            showToast('Backup restaurado!', 'success');
+            loadBackups();
+          } else {
+            showToast(data.message || 'Erro', 'error');
+          }
+        } catch(e) { showToast('Erro de conexão', 'error'); }
+      }
+
+      // Upload logo
+      async function uploadLogo() {
+        const filename = document.getElementById('logoFilename').value.trim();
+        const fileInput = document.getElementById('logoFile');
+        if (!filename) { showToast('Informe o nome do arquivo', 'error'); return; }
+        if (!fileInput.files.length) { showToast('Selecione uma imagem', 'error'); return; }
+
+        const reader = new FileReader();
+        reader.onload = async function(e) {
+          try {
+            const res = await fetch('/api/upload-logo', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ filename, data: e.target.result })
+            });
+            const data = await res.json();
+            if (data.success) {
+              showToast('Logo enviada com sucesso!', 'success');
+              document.getElementById('logoPreview').innerHTML =
+                '<img src="/' + data.path + '?t=' + Date.now() + '" style="max-height:80px; margin-top:0.5rem; border-radius:8px; border:1px solid var(--border);" />';
+            } else {
+              showToast(data.message || 'Erro', 'error');
+            }
+          } catch(err) { showToast('Erro de conexão', 'error'); }
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+      }
+
+      // Init
+      fetch('/admin/session')
+        .then(r => r.json())
+        .then(d => {
+          if (d.username) document.getElementById('userBadge').textContent = '👤 ' + d.username;
+        })
+        .catch(() => {});
+    </script>
+  </body>
+</html>
