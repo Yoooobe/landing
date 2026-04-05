@@ -28,9 +28,17 @@ Enquanto isso, use o deploy **sem Actions**, abaixo.
    npm run deploy:gh-pages
    ```
 
-   Isso roda `next build` (export estático) e envia o conteúdo de `out/` para a branch **`gh-pages`**.
+   Isso executa `scripts/deploy-gh-pages.sh`: `next build` (export para `out/`), garante **`.nojekyll`** e publica **`out/`** na branch **`gh-pages`** via pacote `gh-pages` (flag **`-t`** = incluir dotfiles).
 
-   O script usa a flag **`-t` (`--dotfiles`)** do `gh-pages` para incluir o arquivo **`.nojekyll`** na raiz do deploy. Sem isso, o GitHub Pages (Jekyll) **ignora pastas que começam com `_`**, e a pasta **`_next/`** (CSS/JS do Next) some — o site carrega sem estilo (CSS “quebrado”).
+   Sem **`.nojekyll`**, o Jekyll do Pages **ignora pastas com `_`**, e **`_next/`** some — o site fica sem CSS/JS.
+
+   **Alternativa só com Git** (sem depender do binário `gh-pages` no PATH, só `git`):
+
+   ```bash
+   bash scripts/deploy-gh-pages-git-only.sh
+   ```
+
+   **Atalho** (equivalente ao antigo): `npm run deploy:gh-pages:quick`
 
 4. Aguarde 1–2 minutos e teste `https://yoooobe.github.io/landing/` (ou hard refresh).
 
