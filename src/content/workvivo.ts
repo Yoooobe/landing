@@ -2,14 +2,14 @@ export type WorkvivoLocale = "pt" | "en";
 
 export const workvivoMeta = {
   pt: {
-    title: "Workvivo × Yoobe — Add-on de Recompensas | 4unik",
+    title: "Workvivo × Yoobe — Add-on de Recompensas (API) | 4unik",
     description:
-      "Integre recompensas reais à Workvivo com a Yoobe: loja corporativa, pontos e automação. Plataforma global com integração na Europa, EUA e América Latina. Fulfillment ou API + ERP.",
+      "Integração de recompensas Workvivo com a Yoobe: loja corporativa, pontos e automação, alinhada à API e ao ecossistema de integrações. Cobertura global — Europa, EUA e América Latina. Fulfillment Yoobe ou conexão via API/ERP.",
   },
   en: {
-    title: "Workvivo × Yoobe — Rewards Add-on | 4unik",
+    title: "Workvivo × Yoobe — Rewards Add-on (API) | 4unik",
     description:
-      "Connect real-world rewards to Workvivo with Yoobe: corporate store, points, and automation. Global platform with integrations across Europe, the US, and Latin America. Fulfillment or API + ERP.",
+      "Workvivo rewards integration with Yoobe: corporate store, points, and automation, aligned with the API and integrations ecosystem. Global coverage — Europe, US, and Latin America. Yoobe fulfillment or API/ERP connection.",
   },
 } as const;
 
@@ -73,12 +73,12 @@ export type WorkvivoCopy = {
 export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
   pt: {
     langLabel: "Idioma",
-    otherLocalePath: "/en/workvivo/",
+    otherLocalePath: "/en/api-integracoes/workvivo/",
     otherLocaleLabel: "English",
-    heroBadge: "Add-on de Recompensas Workvivo",
+    heroBadge: "API e integrações · Add-on Workvivo",
     heroTitle: "Recompensas reais para cada momento na Workvivo",
     heroSubtitle:
-      "Incentive a interação digital com recompensas no mundo real. Cada reconhecimento, atualização e comentário na Workvivo pode virar pontos — e seus colaboradores trocam por produtos que amam, com loja corporativa e processo de checkout integrados.",
+      "Solução dentro do hub de API e integrações da Yoobe: conecte o programa na Workvivo à nossa infraestrutura de pontos, catálogo e entregas. Cada reconhecimento, atualização e comentário pode virar pontos — com loja corporativa, checkout e, quando fizer sentido, integração via API ao seu ERP ou logística.",
     tagline: "Reconheça. Recompense. Retenha.",
     partnersLabel: "Referências do ecossistema",
     partnersCaption:
@@ -205,16 +205,16 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     finalTitle: "Pronto para ligar recompensas reais à Workvivo?",
     finalSubtitle:
       "Agende uma conversa e veja como encaixar a Yoobe no seu programa — na Europa, nos EUA ou na América Latina.",
-    apiLearnMore: "Ver API e integrações",
+    apiLearnMore: "Hub da API e integrações",
   },
   en: {
     langLabel: "Language",
-    otherLocalePath: "/workvivo/",
+    otherLocalePath: "/api-integracoes/workvivo/",
     otherLocaleLabel: "Português",
-    heroBadge: "Workvivo Rewards Add-on",
+    heroBadge: "API & integrations · Workvivo add-on",
     heroTitle: "Real-world rewards for every Workvivo moment",
     heroSubtitle:
-      "Drive digital engagement with real-world rewards. Every recognition, update, and comment on Workvivo can earn points — and employees redeem for products they love, with a corporate store and checkout flow built in.",
+      "Part of Yoobe’s API and integrations hub: connect your Workvivo program to our points, catalog, and delivery infrastructure. Every recognition, update, and comment can earn points — with a corporate store, checkout, and optional API integration to your ERP or logistics stack.",
     tagline: "Recognize. Reward. Retain.",
     partnersLabel: "Ecosystem references",
     partnersCaption:
@@ -341,6 +341,6 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     finalTitle: "Ready to connect real rewards to Workvivo?",
     finalSubtitle:
       "Book a conversation and see how Yoobe fits your program — in Europe, the US, or Latin America.",
-    apiLearnMore: "API & integrations",
+    apiLearnMore: "API & integrations hub",
   },
 };

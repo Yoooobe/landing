@@ -18,7 +18,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
   `.trim();
 
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden bg-[#0d1424] border-t border-white/5">
+    <section className="relative pt-12 pb-20 md:pt-14 overflow-hidden bg-[#0d1424] border-t border-white/5">
       {/* Developer Grid Background */}
       <div className="absolute inset-0 z-0 opacity-20">
          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBoLTQweiBNMzkuNSAwSDQwdjQwaC0uNXoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] bg-repeat"></div>

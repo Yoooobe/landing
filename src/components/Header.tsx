@@ -141,10 +141,10 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Desenvolvedores Dropdown */}
+            {/* API e integrações */}
             <div className="relative group">
               <button className="flex items-center gap-1.5 text-white/70 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full transition-all">
-                Developers <ChevronDown className="w-3.5 h-3.5 opacity-70 transition-transform group-hover:rotate-180" />
+                API <ChevronDown className="w-3.5 h-3.5 opacity-70 transition-transform group-hover:rotate-180" />
               </button>
               
               <div className="absolute right-0 top-full pt-3 opacity-0 translate-y-3 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50">
@@ -162,13 +162,13 @@ export default function Header() {
                         <div className="text-white/50 text-xs leading-relaxed">Conecte a Yoobe ao seu ecossistema.</div>
                       </div>
                     </Link>
-                    <Link href={withBasePath("/workvivo/")} className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item">
+                    <Link href={withBasePath("/api-integracoes/workvivo/")} className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item">
                       <div className="mt-0.5 bg-fuchsia-500/10 p-2.5 rounded-lg text-fuchsia-400 group-hover/item:scale-110 transition-transform">
                         <Sparkles className="w-5 h-5" />
                       </div>
                       <div>
                         <div className="text-white font-medium mb-0.5">Workvivo × Yoobe</div>
-                        <div className="text-white/50 text-xs leading-relaxed">Add-on de recompensas para a Workvivo.</div>
+                        <div className="text-white/50 text-xs leading-relaxed">Add-on na área de API — recompensas e loja.</div>
                       </div>
                     </Link>
                   </div>
@@ -252,14 +252,14 @@ export default function Header() {
 
             <div className="w-full h-px bg-white/10 my-2"></div>
 
-            {/* Developers Section */}
+            {/* API e integrações */}
             <div className="flex flex-col gap-3">
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wider mb-2">Developers</div>
+              <div className="text-white/40 text-xs font-semibold uppercase tracking-wider mb-2">API e integrações</div>
               <Link href="/api-integracoes" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white py-2">
                 <Network className="w-5 h-5 text-emerald-400" />
-                <span className="font-medium text-lg">API & Integrações</span>
+                <span className="font-medium text-lg">Visão geral da API</span>
               </Link>
-              <Link href={withBasePath("/workvivo/")} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white py-2">
+              <Link href={withBasePath("/api-integracoes/workvivo/")} onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3 text-white/80 hover:text-white py-2">
                 <Sparkles className="w-5 h-5 text-fuchsia-400" />
                 <span className="font-medium text-lg">Workvivo × Yoobe</span>
               </Link>

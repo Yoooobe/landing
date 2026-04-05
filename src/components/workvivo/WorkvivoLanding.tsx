@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { withBasePath } from "@/lib/basePath";
 import YoobeMark from "@/components/YoobeMark";
+import { cn } from "@/lib/utils";
 import {
   type WorkvivoLocale,
   workvivoContent,
@@ -22,15 +23,24 @@ const WHATSAPP = "https://wa.me/554187582060";
 
 type Props = {
   locale: WorkvivoLocale;
+  /** Quando true, a página está sob /api-integracoes (subnav já ocupa o topo). */
+  apiHub?: boolean;
 };
 
-export default function WorkvivoLanding({ locale }: Props) {
+export default function WorkvivoLanding({ locale, apiHub = false }: Props) {
   const c = workvivoContent[locale];
 
   return (
     <div className="min-h-screen bg-brand-navy-dark text-white">
       {/* Hero */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-20 overflow-hidden border-b border-white/5">
+      <section
+        className={cn(
+          "relative overflow-hidden border-b border-white/5",
+          apiHub
+            ? "pt-8 pb-12 md:pt-10 md:pb-16"
+            : "pt-28 pb-16 md:pt-36 md:pb-20",
+        )}
+      >
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-[min(90vw,560px)] h-[560px] bg-yoobe-purple/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-0 right-0 w-[min(80vw,480px)] h-[480px] bg-brand-orange/10 rounded-full blur-[100px]" />
