@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-The server starts at `http://localhost:3000`. The landing page is served at `/` and the admin panel at `/admin`.
+The server starts at `http://localhost:3000`. The landing page is served at `/landing/` and the admin panel at `/admin`.
 
 ### Admin credentials
 

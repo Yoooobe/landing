@@ -363,12 +363,23 @@ function updateContent(html, section, field, value) {
   return html;
 }
 
-// --- Static ---
+// --- Landing page route ---
 
-app.use(express.static(__dirname, { index: "index.html" }));
+app.get("/landing", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/landing/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+// --- Static assets ---
+
+app.use(express.static(__dirname));
 
 app.listen(PORT, () => {
   console.log(`Yoobe server rodando em http://localhost:${PORT}`);
+  console.log(`Landing Page: http://localhost:${PORT}/landing/`);
   console.log(`Admin/Editor: http://localhost:${PORT}/admin`);
   console.log(`Login: http://localhost:${PORT}/admin/login`);
 });

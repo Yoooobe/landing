@@ -124,7 +124,7 @@
       <div class="topbar">
         <h2 id="secTitle">Dashboard</h2>
         <div class="topbar-r">
-          <a href="/" target="_blank" class="btn btn-o btn-sm">Ver Site →</a>
+          <a href="/landing/" target="_blank" class="btn btn-o btn-sm">Ver Site →</a>
           <span id="uBadge" style="font-size:.8rem;color:var(--mut)"></span>
         </div>
       </div>
@@ -155,7 +155,7 @@
               </ul>
               <p style="margin-top:.75rem">
                 <strong>Login:</strong> <code>admin</code> / <code>yoobe2025</code> &nbsp;|&nbsp;
-                <strong>Site:</strong> <code>http://localhost:3000</code> &nbsp;|&nbsp;
+                <strong>Site:</strong> <code>http://localhost:3000/landing/</code> &nbsp;|&nbsp;
                 <strong>Admin:</strong> <code>http://localhost:3000/admin</code>
               </p>
             </div>
@@ -261,7 +261,7 @@
         <div id="s-preview" class="sec">
           <div class="card">
             <div class="card-h"><h3>Pré-visualização da Landing Page</h3><button class="btn btn-o btn-sm" onclick="refreshPrev()">↻ Atualizar</button></div>
-            <div class="preview-f"><iframe id="prevFrame" src="/"></iframe></div>
+            <div class="preview-f"><iframe id="prevFrame" src="/landing/"></iframe></div>
           </div>
         </div>
 
@@ -406,7 +406,7 @@
         try{const r=await fetch('/api/landing',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({html:document.getElementById('htmlEd').value})});const d=await r.json();d.success?toast('HTML salvo!','ok'):toast(d.message,'er')}catch(e){toast('Erro','er')}
       }
 
-      function refreshPrev(){document.getElementById('prevFrame').src='/?t='+Date.now()}
+      function refreshPrev(){document.getElementById('prevFrame').src='/landing/?t='+Date.now()}
 
       async function loadBk(){
         try{
