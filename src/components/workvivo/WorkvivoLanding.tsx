@@ -1,3 +1,6 @@
+"use client";
+
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -28,6 +31,7 @@ type Props = {
 };
 
 export default function WorkvivoLanding({ locale, apiHub = false }: Props) {
+  const { path } = useLocaleMessages();
   const c = workvivoContent[locale];
 
   return (
@@ -311,7 +315,7 @@ export default function WorkvivoLanding({ locale, apiHub = false }: Props) {
                 <span className="text-white/60"> — {c.pathB.whenText}</span>
               </div>
               <Link
-                href="/api-integracoes/"
+                href={path("/api-integracoes/")}
                 className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 hover:text-cyan-300"
               >
                 {c.apiLearnMore}
@@ -379,7 +383,7 @@ export default function WorkvivoLanding({ locale, apiHub = false }: Props) {
             </h3>
             <p className="text-sm text-white/60 mb-4">{c.costsReferenceBody}</p>
             <Link
-              href="/#planos"
+              href={path("/#planos")}
               className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300"
             >
               {c.costsReferenceLink}

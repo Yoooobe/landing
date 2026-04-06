@@ -1,9 +1,14 @@
+"use client";
+
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import Link from "next/link";
 
 /**
  * Posiciona esta landing como complemento técnico ao site institucional 4unik.com.br.
  */
 export default function FourUnikComplementStrip() {
+  const { m } = useLocaleMessages();
+  const u = m.home.fourUnik;
   return (
     <section
       className="relative border-y border-white/10 bg-white/[0.03] py-8"
@@ -16,14 +21,12 @@ export default function FourUnikComplementStrip() {
               id="fourunik-complement-heading"
               className="text-xs font-semibold uppercase tracking-wider text-brand-orange"
             >
-              Complemento ao 4unik institucional
+              {u.kicker}
             </p>
             <p className="mt-2 text-sm leading-relaxed text-white/75 md:text-base">
-              Em{" "}
-              <span className="font-medium text-white">4unik.com.br</span> você encontra o panorama de
-              benefícios corporativos, logística de recompensas e presença da marca.{" "}
-              <span className="text-white/90">Aqui</span> aprofundamos a plataforma: gamificação, API,
-              integrações, catálogo e operação para RH e squads técnicos.
+              {u.bodyBefore}{" "}
+              <span className="font-medium text-white">{u.brand}</span> {u.bodyMid}{" "}
+              <span className="text-white/90">{u.here}</span> {u.bodyAfter}
             </p>
           </div>
           <Link
@@ -32,7 +35,7 @@ export default function FourUnikComplementStrip() {
             rel="noopener noreferrer"
             className="shrink-0 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:border-brand-orange/50 hover:bg-white/10"
           >
-            Ver oferta completa no site 4unik
+            {u.cta}
           </Link>
         </div>
       </div>

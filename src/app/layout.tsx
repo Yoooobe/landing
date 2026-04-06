@@ -1,5 +1,4 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import AppShell from "@/components/AppShell";
 import { getGoogleAnalyticsMeasurementId, siteMetadataBase, SITE_URL } from "@/lib/site";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
@@ -43,9 +42,7 @@ export default function RootLayout({
         className={`font-sans antialiased min-h-screen flex flex-col bg-brand-navy-dark text-white selection:bg-brand-orange/30`}
         suppressHydrationWarning
       >
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AppShell>{children}</AppShell>
         {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>
     </html>

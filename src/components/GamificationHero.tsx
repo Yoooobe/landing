@@ -1,106 +1,103 @@
 "use client";
 
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
 import { Trophy, Star, Zap } from "lucide-react";
 
 export default function GamificationHero() {
+  const { m } = useLocaleMessages();
+  const h = m.gamificacao.hero;
+
   return (
-    <section className="relative pt-32 pb-24 overflow-hidden bg-brand-navy-dark">
-      {/* Dynamic Background */}
+    <section className="relative overflow-hidden bg-brand-navy-dark pb-24 pt-32">
       <div className="absolute inset-0 z-0">
-         <div className="absolute top-1/4 left-1/3 w-[800px] h-[800px] bg-yoobe-purple/15 rounded-full blur-[150px] mix-blend-screen animate-pulse"></div>
-         <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] bg-yoobe-neon-pink/10 rounded-full blur-[120px] mix-blend-screen"></div>
-         {/* Tech Grid Background lines */}
-         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBoLTQweiBNMzkuNSAwSDQwdjQwaC0uNXoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMSkiLz48L3N2Zz4=')] bg-repeat"></div>
-      
-         {/* Floating Gamification Widgets */}
-         <motion.div 
-           initial={{ opacity: 0, scale: 0.8, x: -50 }}
-           animate={{ opacity: 1, scale: 1, x: 0 }}
-           transition={{ delay: 0.5, duration: 0.8 }}
-           className="absolute top-[20%] left-[10%] hidden lg:flex items-center gap-3 p-4 rounded-2xl glass-panel-dark"
-           style={{ animation: "float 6s ease-in-out infinite" }}
-         >
-           <div className="w-10 h-10 rounded-full bg-yoobe-neon-pink/20 flex items-center justify-center border border-yoobe-neon-pink/30">
-             <Trophy className="w-5 h-5 text-yoobe-neon-pink" />
-           </div>
-           <div>
-             <div className="text-white font-bold font-heading text-sm">Level 42 Achieved</div>
-             <div className="text-white/50 text-xs font-sans">Top 5% performer</div>
-           </div>
-         </motion.div>
+        <div className="absolute left-1/3 top-1/4 h-[800px] w-[800px] animate-pulse rounded-full bg-yoobe-purple/15 blur-[150px] mix-blend-screen"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] h-[600px] w-[600px] rounded-full bg-yoobe-neon-pink/10 blur-[120px] mix-blend-screen"></div>
+        <div
+          className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBoLTQweiBNMzkuNSAwSDQwdjQwaC0uNXoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMSkiLz48L3N2Zz4=')] bg-repeat"
+        ></div>
 
-         <motion.div 
-           initial={{ opacity: 0, scale: 0.8, x: 50 }}
-           animate={{ opacity: 1, scale: 1, x: 0 }}
-           transition={{ delay: 0.7, duration: 0.8 }}
-           className="absolute top-[40%] right-[10%] hidden lg:flex flex-col gap-2 p-5 rounded-3xl glass-panel-dark w-48"
-           style={{ animation: "float 8s ease-in-out infinite 1s" }}
-         >
-           <div className="flex justify-between items-center w-full">
-             <div className="text-brand-orange font-bold text-xl font-heading">+500 pts</div>
-             <Star className="w-5 h-5 text-brand-orange fill-brand-orange" />
-           </div>
-           <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden mt-1">
-             <div className="bg-brand-orange w-[75%] h-full rounded-full"></div>
-           </div>
-           <div className="text-white/40 text-[10px] mt-1 font-sans">Campaign Goal Progress</div>
-         </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: -50 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="absolute left-[10%] top-[20%] hidden items-center gap-3 rounded-2xl p-4 glass-panel-dark lg:flex"
+          style={{ animation: "float 6s ease-in-out infinite" }}
+        >
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-yoobe-neon-pink/30 bg-yoobe-neon-pink/20">
+            <Trophy className="h-5 w-5 text-yoobe-neon-pink" />
+          </div>
+          <div>
+            <div className="font-heading text-sm font-bold text-white">{h.floatLevel}</div>
+            <div className="font-sans text-xs text-white/50">{h.floatLevelSub}</div>
+          </div>
+        </motion.div>
 
-         <motion.div 
-           initial={{ opacity: 0, y: 50 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ delay: 0.9, duration: 0.8 }}
-           className="absolute bottom-[20%] left-[20%] hidden lg:flex items-center justify-center w-14 h-14 rounded-full glass-panel-dark border-brand-orange/30 shadow-[0_0_30px_rgba(249,115,22,0.2)]"
-           style={{ animation: "float 5s ease-in-out infinite 0.5s" }}
-         >
-           <Zap className="w-6 h-6 text-brand-orange" />
-         </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, x: 50 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ delay: 0.7, duration: 0.8 }}
+          className="absolute right-[10%] top-[40%] hidden w-48 flex-col gap-2 rounded-3xl p-5 glass-panel-dark lg:flex"
+          style={{ animation: "float 8s ease-in-out infinite 1s" }}
+        >
+          <div className="flex w-full items-center justify-between">
+            <div className="font-heading text-xl font-bold text-brand-orange">+500 pts</div>
+            <Star className="h-5 w-5 fill-brand-orange text-brand-orange" />
+          </div>
+          <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
+            <div className="h-full w-[75%] rounded-full bg-brand-orange"></div>
+          </div>
+          <div className="mt-1 font-sans text-[10px] text-white/40">{h.floatProgress}</div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.9, duration: 0.8 }}
+          className="absolute bottom-[20%] left-[20%] hidden h-14 w-14 items-center justify-center rounded-full border-brand-orange/30 glass-panel-dark shadow-[0_0_30px_rgba(249,115,22,0.2)] lg:flex"
+          style={{ animation: "float 5s ease-in-out infinite 0.5s" }}
+        >
+          <Zap className="h-6 w-6 text-brand-orange" />
+        </motion.div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
+        <div className="mx-auto max-w-4xl text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-yoobe-purple/30 bg-yoobe-purple/10 backdrop-blur-sm mb-6 shadow-[0_0_20px_rgba(139,92,246,0.3)]"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-yoobe-purple/30 bg-yoobe-purple/10 px-4 py-1.5 shadow-[0_0_20px_rgba(139,92,246,0.3)] backdrop-blur-sm"
           >
-              <span className="text-yoobe-purple text-xs font-bold uppercase tracking-wider font-sans">Motor de Gamificação Corporativa</span>
+            <span className="font-sans text-xs font-bold uppercase tracking-wider text-yoobe-purple">{h.badge}</span>
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-6 tracking-tight font-heading"
+            className="mb-6 font-heading text-5xl font-black leading-[1.1] tracking-tight text-white md:text-7xl lg:text-8xl"
           >
-            Engajamento <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple via-fuchsia-500 to-yoobe-neon-pink">
-              Estratégico.
-            </span>
-            <br /><span className="text-3xl md:text-4xl text-white/70">Orientado a Resultados.</span>
+            {h.titleLine1} <br />
+            <span className="bg-gradient-to-r from-yoobe-purple via-fuchsia-500 to-yoobe-neon-pink bg-clip-text text-transparent">{h.titleGradient}</span>
+            <br />
+            <span className="text-3xl text-white/70 md:text-4xl">{h.titleLine2}</span>
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/60 mb-10 max-w-2xl mx-auto font-light leading-relaxed font-sans"
+            className="mx-auto mb-10 max-w-2xl font-sans text-xl font-light leading-relaxed text-white/60 md:text-2xl"
           >
-            Sistema completo: pontos, rankings individuais ou por equipe, missões baseadas em metas e OKRs, badges de conquista e segmentação por tags (presencial, híbrido, regional).
+            {h.sub}
           </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex justify-center"
-          >
-             <a
+
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex justify-center">
+            <a
               href="#mechanics"
-              className="px-8 py-4 rounded-full bg-white text-yoobe-purple font-bold text-lg hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.15)] flex items-center gap-2 font-sans"
+              className="flex items-center gap-2 rounded-full bg-white px-8 py-4 font-sans text-lg font-bold text-yoobe-purple shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all hover:scale-105"
             >
-              Conhecer as 6 Mecânicas ↓
+              {h.cta}
             </a>
           </motion.div>
         </div>

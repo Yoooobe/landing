@@ -1,8 +1,11 @@
 "use client";
 
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
 
 export default function HomeHero() {
+  const { m } = useLocaleMessages();
+  const h = m.home.hero;
   return (
     <section className="relative flex min-h-[90vh] items-center overflow-hidden bg-brand-navy-dark pt-24 pb-20">
       {/* Background Effects — 4unik (azul) + demo (ciano) + Yoobe */}
@@ -37,7 +40,7 @@ export default function HomeHero() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-brand-orange animate-ping"></span>
-            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">Plataforma de Engajamento Corporativo</span>
+            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">{h.badge}</span>
           </motion.div>
 
           <motion.h1
@@ -46,10 +49,10 @@ export default function HomeHero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] mb-6 tracking-tight font-heading"
           >
-            <strong className="text-unik-blue-soft">4unik</strong> conecta{" "}
-            <span className="text-gradient-hero">engajamento,</span>
+            <strong className="text-unik-blue-soft">{h.brand}</strong> {h.afterBrand}{" "}
+            <span className="text-gradient-hero">{h.line1b}</span>
             <br />
-            <span className="text-4xl md:text-6xl text-white/90">recompensas e logística</span>
+            <span className="text-4xl md:text-6xl text-white/90">{h.line2}</span>
           </motion.h1>
 
           <motion.p
@@ -58,7 +61,7 @@ export default function HomeHero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-lg md:text-2xl text-white/60 mb-12 max-w-2xl mx-auto font-light leading-relaxed font-sans"
           >
-            A plataforma que transforma o dia a dia do seu time. Crie campanhas, gamifique resultados e entregue prêmios físicos na porta da casa de cada colaborador, sem dar dor de cabeça para o RH.
+            {h.sub}
           </motion.p>
 
           <motion.div
@@ -73,13 +76,13 @@ export default function HomeHero() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-brand-navy-dark font-bold text-lg hover:bg-brand-orange hover:text-white transition-all shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(249,115,22,0.4)]"
             >
-              Agendar Demonstração
+              {h.ctaDemo}
             </a>
             <a
               href="#platform"
               className="w-full sm:w-auto px-8 py-4 rounded-full border border-white/20 text-white font-medium text-lg hover:bg-white/10 transition-all backdrop-blur-sm"
             >
-              Explorar Benefícios
+              {h.ctaExplore}
             </a>
           </motion.div>
         </div>
@@ -92,9 +95,9 @@ export default function HomeHero() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="absolute left-[10%] -top-4 glass-panel-dark px-6 py-4 rounded-2xl flex flex-col gap-1 transform -rotate-2 hover:rotate-0 transition-all cursor-default"
           >
-            <span className="text-xs text-brand-orange font-bold uppercase tracking-wider">Adesão do Time</span>
+            <span className="text-xs text-brand-orange font-bold uppercase tracking-wider">{h.floatAdhesion}</span>
             <span className="text-3xl font-bold text-white">92%</span>
-            <span className="text-[10px] text-green-400">↑ Média nos primeiros 30 dias</span>
+            <span className="text-[10px] text-green-400">{h.floatAdhesionSub}</span>
           </motion.div>
 
           <motion.div
@@ -103,9 +106,9 @@ export default function HomeHero() {
             transition={{ delay: 0.8, duration: 0.8 }}
             className="absolute right-[10%] top-6 glass-panel-dark px-6 py-4 rounded-2xl flex flex-col gap-1 transform rotate-3 hover:rotate-0 transition-all z-10 cursor-default"
           >
-            <span className="text-xs text-yoobe-neon-pink font-bold uppercase tracking-wider">Trabalho Manual do RH</span>
+            <span className="text-xs text-yoobe-neon-pink font-bold uppercase tracking-wider">{h.floatRh}</span>
             <span className="text-3xl font-bold text-white">0%</span>
-            <span className="text-[10px] text-white/50">Nós cuidamos da logística</span>
+            <span className="text-[10px] text-white/50">{h.floatRhSub}</span>
           </motion.div>
           
           <motion.div
@@ -114,9 +117,9 @@ export default function HomeHero() {
             transition={{ delay: 1.0, duration: 0.8 }}
             className="absolute left-[40%] top-12 glass-panel-dark px-6 py-4 rounded-2xl flex flex-col gap-1 transform -rotate-1 hover:rotate-0 transition-all cursor-default"
           >
-            <span className="text-xs text-blue-400 font-bold uppercase tracking-wider">Satisfação (eNPS)</span>
+            <span className="text-xs text-blue-400 font-bold uppercase tracking-wider">{h.floatEnps}</span>
             <span className="text-3xl font-bold text-white">+42 pts</span>
-            <span className="text-[10px] text-green-400">Impacto direto no clima</span>
+            <span className="text-[10px] text-green-400">{h.floatEnpsSub}</span>
           </motion.div>
         </div>
       </div>

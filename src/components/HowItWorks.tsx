@@ -1,24 +1,26 @@
 "use client";
 
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
 
 export default function HowItWorks() {
-  const steps = [
-    { num: "01", title: "Conecte", desc: "Integre com a sua intranet ou ative o painel da Yoobe. Tudo pronto em alguns dias." },
-    { num: "02", title: "Configure", desc: "Defina os benefícios, crie regras de pontuação e molde o catálogo à sua cultura." },
-    { num: "03", title: "Engaje", desc: "Seu time ganha pontos por bater metas, realizar missões e indicar talentos." },
-    { num: "04", title: "Entregue", desc: "Eles escolhem o prêmio, nós embalamos e entregamos na porta de casa." }
-  ];
+  const { m } = useLocaleMessages();
+  const h = m.landingMore.howItWorks;
+  const steps = h.steps;
 
   return (
     <section className="py-24 bg-[#0d1424] relative border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-20 relative z-10 text-white">
           <div className="inline-block px-3 py-1 mb-4 rounded-full border border-yoobe-neon-pink/30 bg-yoobe-neon-pink/10 text-yoobe-neon-pink text-sm font-bold tracking-wide uppercase">
-            Como funciona
+            {h.badge}
           </div>
           <h2 className="text-3xl md:text-5xl font-black mb-6 font-heading">
-            4 passos para <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-neon-pink to-orange-500">transformar</span> seu RH
+            {h.titleBefore}{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-neon-pink to-orange-500">
+              {h.titleGradient}
+            </span>
+            {h.titleAfter}
           </h2>
         </div>
 
@@ -112,13 +114,13 @@ export default function HowItWorks() {
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-orange to-yoobe-neon-pink flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.5)] mb-4">
                     <span className="text-white font-black text-2xl font-heading">Y.</span>
                   </div>
-                  <h4 className="text-white font-bold font-heading text-lg mb-1">Infrastructure</h4>
-                  <p className="text-white/50 text-xs font-sans text-center mb-6">Motor de Gamificação & Regras</p>
+                  <h4 className="text-white font-bold font-heading text-lg mb-1">{h.mockInfrastructure}</h4>
+                  <p className="text-white/50 text-xs font-sans text-center mb-6">{h.mockEngine}</p>
                   
                   {/* Internal logic mockup */}
                   <div className="w-full space-y-3">
                     <div className="flex justify-between items-center text-xs">
-                      <span className="text-white/70">Engine de Pontos</span>
+                      <span className="text-white/70">{h.mockPoints}</span>
                       <span className="text-green-400 font-mono">OK</span>
                     </div>
                     <div className="w-full bg-white/5 rounded-full h-1.5">
@@ -126,7 +128,7 @@ export default function HowItWorks() {
                     </div>
                     
                     <div className="flex justify-between items-center text-xs pt-2 border-t border-white/5">
-                      <span className="text-white/70">Webhook API</span>
+                      <span className="text-white/70">{h.mockWebhook}</span>
                       <span className="text-yoobe-purple font-mono">SYNC</span>
                     </div>
                   </div>
@@ -138,17 +140,17 @@ export default function HowItWorks() {
                 <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex flex-col gap-3 shadow-lg transform rotate-2 hover:rotate-0 transition-transform">
                   <div className="flex justify-between items-center">
                     <div className="w-8 h-8 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange text-sm">🛒</div>
-                    <span className="text-[10px] text-white/50 uppercase tracking-wider font-bold">5.000+ Itens</span>
+                    <span className="text-[10px] text-white/50 uppercase tracking-wider font-bold">{h.mockItems}</span>
                   </div>
                   <div className="w-full h-12 rounded-lg bg-gradient-to-br from-white/5 to-white/0 border border-white/5 flex items-center justify-center text-xs text-white/40">
-                    Catálogo Físico e Digital
+                    {h.mockCatalog}
                   </div>
                 </div>
                 
                 <div className="bg-[#141b2d] border border-white/10 rounded-2xl p-4 flex flex-col gap-3 shadow-lg transform -rotate-1 hover:rotate-0 transition-transform">
                   <div className="flex items-center gap-2 mb-1">
                     <div className="w-2 h-2 rounded-full bg-yoobe-neon-pink animate-pulse"></div>
-                    <span className="text-xs text-white/70 font-bold">ROI Dashboard</span>
+                    <span className="text-xs text-white/70 font-bold">{h.mockRoi}</span>
                   </div>
                   <div className="flex items-end gap-1 h-8">
                     <div className="w-1/4 bg-yoobe-purple/40 h-1/3 rounded-t-sm"></div>

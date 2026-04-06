@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A Plataforma Definitiva de Reconhecimento | 4unik by Yoobe</title>
-  <meta name="description" content="Acabe com o trabalho manual do RH. Plataforma de gamificação, loja VIP corporativa, integrações nativas e API robusta." />
+  <title>API e Integrações — Yoobe | Reward Infrastructure</title>
+  <meta name="description" content="Reward Infrastructure API para gamificação e employee engagement. Integre catálogo, fulfillment e recompensas via REST, webhooks e integrações prontas." />
   <link rel="icon" href="logo-4unik-by-yoobe.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,71 +12,23 @@
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="style-option-b.css" />
   <style>
-    /* Styling expansions for the new sections */
-    .bento-visual img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
-    .hero-b-alternate { padding: 10rem 0 6rem; text-align: center; background: var(--gradient-bg); position: relative; overflow: hidden; }
-    .hero-b-alternate::after {
-      content: ''; position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-      background-size: 40px 40px; mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-      -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%); pointer-events: none; z-index: 1;
-    }
-    .hero-b-alternate .container { position: relative; z-index: 2; }
-    .section-spacing { padding: 6rem 0; border-top: 1px solid var(--border-subtle); background: var(--bg-darker); }
-    .section-spacing-alt { padding: 6rem 0; background: var(--bg-card); border-top: 1px solid var(--border-subtle); }
-    
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-    .grid-2-reverse .content-block { order: 2; }
-    .grid-2-reverse .visual-block { order: 1; }
-    
-    .content-block h2 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.1; color: #fff;}
-    .content-block p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.7; }
-    .feature-list { list-style: none; margin-bottom: 2rem; }
-    .feature-list li { margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.75rem; color: var(--text-primary); }
-    .feature-list li .check { color: var(--brand-orange); font-weight: bold; }
-    
-    .visual-block { background: var(--bg-card-hover); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-neon); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center;}
-    
     .endpoint-item { background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-sm); padding: 1rem; margin-bottom: 0.75rem; font-family: monospace; font-size: 0.9rem; }
     .endpoint-method { color: var(--brand-orange); font-weight: bold; margin-right: 0.5rem; }
     .endpoint-path { color: #86efac; }
     .endpoint-desc { display: block; margin-top: 0.5rem; color: var(--text-secondary); font-family: 'Inter', sans-serif; font-size: 0.85rem; }
-    
-    .store-mockup { background: #fff; border-radius: var(--radius-md); padding: 1rem; }
-    .store-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.5rem; margin-bottom: 1rem; }
-    .store-balance { background: #fef08a; color: #854d0e; padding: 0.25rem 0.75rem; border-radius: var(--radius-pill); font-weight: bold; font-size: 0.85rem; }
-    .store-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .store-item { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-md); padding: 0.75rem; text-align: center; }
-    .store-item-img { width: 100%; height: 80px; background: #e2e8f0; border-radius: var(--radius-sm); margin-bottom: 0.5rem; }
-    .store-item-title { font-size: 0.75rem; color: #0f172a; font-weight: 600; }
-    .store-item-pts { font-size: 0.75rem; color: var(--brand-orange); font-weight: bold; }
-
-    /* Pricing Section */
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1100px; margin: 3rem auto 0; padding: 0 2rem; }
-    .pricing-card { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem 2rem; display: flex; flex-direction: column; transition: transform 0.3s; position: relative;}
-    .pricing-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
-    .pricing-card.popular { border-color: var(--brand-orange); position: relative; box-shadow: var(--shadow-neon); }
-    .pricing-badge { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); background: var(--brand-orange); color: #fff; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: var(--radius-pill); }
-    .pricing-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; color: #fff;}
-    .pricing-price { font-size: 2.5rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--text-primary); }
-    .pricing-price span { font-size: 1rem; color: var(--text-secondary); font-weight: 400; }
-    .pricing-features { flex-grow: 1; list-style: none; margin-bottom: 2rem; }
-    .pricing-features li { margin-bottom: 0.8rem; font-size: 0.95rem; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 0.5rem; }
-    .pricing-features li::before { content: '✓'; color: var(--p-green); font-weight: bold; margin-top:2px; }
-    
-    /* Gamification Badges */
-    .gamification-visual { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem; }
-    .g-badge { background: rgba(255,255,255,0.05); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; width: calc(50% - 0.5rem); }
-    .g-badge-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-    .g-badge-title { font-weight: bold; font-size: 0.9rem; color: #fff; }
-    .g-badge-desc { font-size: 0.75rem; color: var(--text-tertiary); margin-top: 0.25rem;}
-    
+    .section-spacing { padding: 6rem 0; border-top: 1px solid var(--border-subtle); background: var(--bg-darker); }
+    .section-spacing-alt { padding: 6rem 0; background: var(--bg-card); border-top: 1px solid var(--border-subtle); }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    .content-block h2 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.1; color: #fff; }
+    .content-block p { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1.5rem; line-height: 1.7; }
+    .feature-list { list-style: none; margin-bottom: 2rem; }
+    .feature-list li { margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.75rem; color: var(--text-primary); }
+    .feature-list li .check { color: var(--brand-orange); font-weight: bold; }
+    .visual-block { background: var(--bg-card-hover); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow-neon); position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
+    .int-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .int-pill { background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: var(--radius-pill); border: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: var(--text-secondary); }
     @media (max-width: 900px) {
       .grid-2 { grid-template-columns: 1fr; gap: 3rem; }
-      .grid-2-reverse .content-block { order: 1; }
-      .grid-2-reverse .visual-block { order: 2; }
-      .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
-      .hero-b-alternate h1 { font-size: 3rem; }
     }
   </style>
 </head>
@@ -86,293 +38,205 @@
   <div class="nav-container-b">
     <a href="index-option-b.html" class="logo-link"><img src="logo-4unik-by-yoobe.png" alt="Yoobe — Reward Infrastructure" class="logo-b" /></a>
     <ul class="nav-links-b">
-      <li><a href="#plataforma">Gestão</a></li>
-      <li><a href="#gamificacao">Gamificação</a></li>
-      <li><a href="#loja">Loja VIP</a></li>
-      <li><a href="#api">API & Dev</a></li>
-      <li><a href="#planos">Planos</a></li>
+      <li><a href="index-option-b.html#bento">Plataforma</a></li>
+      <li><a href="index-option-b.html#roi">Casos de uso</a></li>
+      <li><a href="api-integracoes-option-b.html">API</a></li>
+      <li><a href="https://catalogo.yoobe.co" target="_blank" rel="noopener">Catálogo</a></li>
+      <li><a href="index-option-b.html#planos">Planos</a></li>
     </ul>
     <div class="nav-ctas-b">
       <a href="https://4unik.yoobe.me/" class="nav-login-b" target="_blank" rel="noopener">Entrar</a>
-      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn-b btn-primary-b btn-nav-cta-b" target="_blank" rel="noopener">Agendar Demo</a>
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn-b btn-primary-b btn-nav-cta-b" target="_blank" rel="noopener">Solicitar demo</a>
     </div>
   </div>
 </header>
 
-<section class="hero-b-alternate">
+<!-- ════════════ HERO ════════════ -->
+<section class="api-hero-b">
   <div class="container">
-    <div class="section-tag-b" data-aos="fade-down">Plataforma Completa</div>
-    <h1 data-aos="fade-up">Zere o trabalho manual do <span class="text-gradient">seu RH</span></h1>
-    <p class="hero-desc-b" data-aos="fade-up" data-aos-delay="100">
-      A 4unik by Yoobe é a plataforma ideal para automatizar todo o ciclo de engajamento, gamificação e reconhecimento corporativo — sem planilhas e sem gerenciar estoque.
-    </p>
-    <div class="hero-ctas-wrap" data-aos="fade-up" data-aos-delay="200">
-      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn-b btn-primary-b" style="padding: 1rem 2rem;">Transformar meu RH</a>
-      <a href="#api" class="btn-b btn-glass-b">Ver Documentação da API</a>
+    <div class="section-tag-b" data-aos="fade-down">Reward Infrastructure</div>
+    <h1 data-aos="fade-up">API para <span class="text-gradient">recompensas</span> e fulfillment</h1>
+    <p class="hero-desc-b" data-aos="fade-up">Infraestrutura de recompensas para plataformas de gamificação e employee engagement. Conecte catálogo, logística e resgate em dias — sem operar estoque.</p>
+    <div class="hero-ctas-wrap" data-aos="fade-up">
+      <a href="#api" class="btn-b btn-primary-b" style="padding: 1rem 2rem;">Documentação e API</a>
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn-b btn-glass-b" target="_blank" rel="noopener">Solicitar Demo</a>
     </div>
   </div>
 </section>
 
-<section class="stats-bar-b" style="padding-top: 0; padding-bottom: 4rem;">
-  <div class="stat-item-b" data-aos="fade-up"><span class="stat-num-b">5.000+</span><span class="stat-label-b">Produtos no Catálogo VIP</span></div>
-  <div class="stat-item-b" data-aos="fade-up" data-aos-delay="100"><span class="stat-num-b">83%</span><span class="stat-label-b">Mais Motivação em Equipes</span></div>
-  <div class="stat-item-b" data-aos="fade-up" data-aos-delay="200"><span class="stat-num-b">Zero</span><span class="stat-label-b">Burocracia de Logística</span></div>
+<!-- ════════════ STATS ════════════ -->
+<section class="stats-bar-b">
+  <div class="stat-item-b" data-aos="fade-up"><span class="stat-num-b">500+</span><span class="stat-label-b">Empresas atendidas</span></div>
+  <div class="stat-item-b" data-aos="fade-up" data-aos-delay="100"><span class="stat-num-b">1M+</span><span class="stat-label-b">Premiações entregues</span></div>
+  <div class="stat-item-b" data-aos="fade-up" data-aos-delay="200"><span class="stat-num-b">5.000+</span><span class="stat-label-b">Produtos no catálogo</span></div>
 </section>
 
-<!-- BLOCO 1: PLATAFORMA E GESTÃO -->
-<section class="section-spacing" id="plataforma">
+<!-- ════════════ API & INTEGRAÇÕES ════════════ -->
+<section class="section-spacing" id="api">
+  <div class="grid-2">
+    <div class="content-block" data-aos="fade-right">
+      <span class="section-tag-b">API & Integrações</span>
+      <h2>Conecte a <span class="text-gradient">Yoobe</span> a qualquer sistema</h2>
+      <p>API RESTful para reward marketplace: sua plataforma gerencia a experiência, a Yoobe gerencia logística, catálogo e fulfillment.</p>
+      <ul class="feature-list">
+        <li><span class="check">✓</span> Webhooks em tempo real</li>
+        <li><span class="check">✓</span> OAuth 2.0 / Bearer</li>
+        <li><span class="check">✓</span> SDK Node.js & Python</li>
+        <li><span class="check">✓</span> Sandbox para testes</li>
+        <li><span class="check">✓</span> Rate limiting inteligente</li>
+      </ul>
+      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn-b btn-primary-b" target="_blank" rel="noopener">Solicitar Acesso à API</a>
+    </div>
+    <div class="visual-block" data-aos="fade-left">
+      <div class="api-code-b">
+        <div class="code-dots"><span></span><span></span><span></span></div>
+        <pre><code><span class="code-comment">// Criar premiação via API</span>
+<span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(
+  <span class="code-string">'https://api.yoobe.co/v1/rewards'</span>,
+  {
+    method: <span class="code-string">'POST'</span>,
+    headers: {
+      <span class="code-string">'Authorization'</span>: <span class="code-string">`Bearer ${token}`</span>,
+      <span class="code-string">'Content-Type'</span>: <span class="code-string">'application/json'</span>
+    },
+    body: JSON.stringify({
+      employee_id: <span class="code-string">'emp_482'</span>,
+      points: <span class="code-number">1500</span>,
+      reason: <span class="code-string">'Meta Q1 atingida'</span>
+    })
+  }
+);</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ ENDPOINTS ════════════ -->
+<section class="section-spacing-alt" id="endpoints">
+  <div class="container" style="text-align:center; margin-bottom: 3rem;">
+    <span class="section-tag-b" data-aos="fade-up">Endpoints</span>
+    <h2 data-aos="fade-up" data-aos-delay="100">Reward Marketplace <span class="text-gradient">API</span></h2>
+    <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="200">
+      Endpoints simples para integrar catálogo, resgate e fulfillment. Integração em dias, não meses.
+    </p>
+  </div>
   <div class="grid-2">
     <div class="visual-block" data-aos="fade-right">
-      <div style="background:#111; padding:1.5rem; border-radius:var(--radius-md); border:1px solid #333;">
-        <h3 style="color:#fff; margin-bottom:1rem; font-size:1.1rem;">Painel de Gestão e ROI</h3>
-        <div style="display:flex; justify-content:space-between; margin-bottom:1rem;">
-          <div style="background:#222; padding:1rem; border-radius:var(--radius-sm); width:48%;">
-            <span style="color:var(--text-tertiary); font-size:0.8rem; display:block;">Orçamento Aprovado</span>
-            <span style="color:var(--p-green); font-size:1.5rem; font-weight:bold;">R$ 45.000</span>
-          </div>
-          <div style="background:#222; padding:1rem; border-radius:var(--radius-sm); width:48%;">
-            <span style="color:var(--text-tertiary); font-size:0.8rem; display:block;">eNPS da Equipe</span>
-            <span style="color:#fcd34d; font-size:1.5rem; font-weight:bold;">+ 74</span>
-          </div>
-        </div>
-        <div style="background:#222; padding:1rem; border-radius:var(--radius-sm);">
-          <span style="color:var(--text-tertiary); font-size:0.8rem; display:block; margin-bottom:0.5rem;">Pedidos Entregues (Tempo Real)</span>
-          <div style="height:8px; background:#333; border-radius:4px; overflow:hidden;">
-            <div style="width:85%; height:100%; background:var(--brand-orange);"></div>
-          </div>
-        </div>
+      <div class="endpoint-item">
+        <span class="endpoint-method">GET</span><span class="endpoint-path">/catalog</span>
+        <span class="endpoint-desc">Catálogo completo de recompensas com filtros por país, categoria e valor.</span>
+      </div>
+      <div class="endpoint-item">
+        <span class="endpoint-method" style="color:#3b82f6;">POST</span><span class="endpoint-path">/redeem</span>
+        <span class="endpoint-desc">Processa resgate de recompensa. A Yoobe gerencia fulfillment e envio.</span>
+      </div>
+      <div class="endpoint-item">
+        <span class="endpoint-method" style="color:#3b82f6;">POST</span><span class="endpoint-path">/orders</span>
+        <span class="endpoint-desc">Cria pedidos em batch para kits corporativos e campanhas.</span>
+      </div>
+      <div class="endpoint-item">
+        <span class="endpoint-method">GET</span><span class="endpoint-path">/order-status</span>
+        <span class="endpoint-desc">Rastreamento em tempo real do fulfillment e status de entrega.</span>
       </div>
     </div>
     <div class="content-block" data-aos="fade-left">
-      <span class="section-tag-b">Plataforma e Gestão</span>
-      <h2>Assuma o controle total do seu programa program de reconhecimento.</h2>
-      <p>Em uma única tela, o setor de People & Culture monitora faturamento, aprova orçamentos e comprova o ROI do programa em tempo real. Transforme dados soltos em decisões estratégicas.</p>
+      <h2>Integração em <span class="text-gradient">dias</span></h2>
+      <p>Sua plataforma gerencia a experiência do colaborador. A Yoobe gerencia tudo o que acontece depois: logística, estoque, fulfillment e suporte pós-venda.</p>
       <ul class="feature-list">
-        <li><span class="check">✓</span> <strong>Dashboard Analítico:</strong> Acompanhe métricas vitais como eNPS e taxas de engajamento do seu time.</li>
-        <li><span class="check">✓</span> <strong>Controle Logístico 360:</strong> Rastreamento completo de brindes e pacotes para todo o Brasil.</li>
-        <li><span class="check">✓</span> <strong>Integração com ERP:</strong> Exportação de dados e faturamento simplificado para a contabilidade da empresa.</li>
+        <li><span class="check">✓</span> <strong>Sem operação de logística</strong> — a Yoobe gerencia por você</li>
+        <li><span class="check">✓</span> <strong>Sem gestão de fornecedores</strong> — catálogo pronto com 5.000+ itens</li>
+        <li><span class="check">✓</span> <strong>Sem risco de estoque</strong> — inventory on-demand</li>
+        <li><span class="check">✓</span> <strong>Fulfillment global</strong> — entregas em todo o Brasil</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- BLOCO 2: GAMIFICAÇÃO -->
-<section class="section-spacing-alt" id="gamificacao">
-  <div class="grid-2 grid-2-reverse">
-    <div class="visual-block" data-aos="fade-left">
-      <div class="gamification-visual">
-        <div class="g-badge">
-          <div class="g-badge-icon">🏆</div>
-          <div class="g-badge-title">Leaderboards</div>
-          <div class="g-badge-desc">Placares ao vivo justos</div>
-        </div>
-        <div class="g-badge">
-          <div class="g-badge-icon">🎯</div>
-          <div class="g-badge-title">Missões e OKRs</div>
-          <div class="g-badge-desc">Cumpra e desbloqueie</div>
-        </div>
-        <div class="g-badge">
-          <div class="g-badge-icon">🏅</div>
-          <div class="g-badge-title">Badges digitais</div>
-          <div class="g-badge-desc">Insígnias de progressão</div>
-        </div>
-        <div class="g-badge">
-          <div class="g-badge-icon">💎</div>
-          <div class="g-badge-title">Pontos flexíveis</div>
-          <div class="g-badge-desc">Saldo virtual p/ troca</div>
-        </div>
-      </div>
+<!-- ════════════ INTEGRAÇÕES ════════════ -->
+<section class="integrations-block-b" id="integracoes">
+  <div class="section-header-b" data-aos="fade-up">
+    <span class="section-tag-b">Integrações Prontas</span>
+    <h2>Conectado às maiores <span class="text-gradient">plataformas</span></h2>
+  </div>
+  <div class="integrations-grid-b">
+    <div class="integration-card-b" data-aos="fade-up" data-aos-delay="100">
+      <h3>Workvivo</h3>
+      <p>by Zoom. Gamificação no feed social corporativo.</p>
+      <ul><li><span class="check">✓</span> API & Webhooks</li><li><span class="check">✓</span> SSO OAuth 2.0</li></ul>
     </div>
-    <div class="content-block" data-aos="fade-right">
-      <span class="section-tag-b">Motor de Gamificação</span>
-      <h2>Engajamento que vira resultado real.</h2>
-      <p>Badges e rankings funcionam como os principais motivadores visuais. Crie campanhas baseadas em metas, distribua pontos para a equipe e motive comportamentos positivos — 83% dos colaboradores se sentem mais motivados com a nossa plataforma.</p>
-      <ul class="feature-list">
-        <li><span class="check">✓</span> <strong>Rankings (Leaderboards):</strong> Sistemas configuráveis de pontuação individuais ou por equipe.</li>
-        <li><span class="check">✓</span> <strong>Badges de Conquista:</strong> Certificações digitais e trilhas de progressão claras.</li>
-        <li><span class="check">✓</span> <strong>Missões por OKRs:</strong> Desafios com prazo que geram liberação automática de premiações.</li>
-      </ul>
+    <div class="integration-card-b" data-aos="fade-up" data-aos-delay="200">
+      <h3>Beehome</h3>
+      <p>Endomarketing e pessoas. Campanhas e celebrações.</p>
+      <ul><li><span class="check">✓</span> Bearer Token</li><li><span class="check">✓</span> Timeline integrada</li></ul>
+    </div>
+    <div class="integration-card-b" data-aos="fade-up" data-aos-delay="300">
+      <h3>Humand</h3>
+      <p>Corporate Super App. Swagger e webhooks.</p>
+      <ul><li><span class="check">✓</span> SAP, Workday</li><li><span class="check">✓</span> Zapier</li></ul>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:2rem;" data-aos="fade-up">
+    <div class="int-pills" style="justify-content:center;">
+      <span class="int-pill">Slack</span>
+      <span class="int-pill">Microsoft Teams</span>
+      <span class="int-pill">BambooHR</span>
+      <span class="int-pill">SAP SuccessFactors</span>
+      <span class="int-pill">Gupy</span>
+      <span class="int-pill">TOTVS</span>
+      <span class="int-pill">Zapier</span>
+      <span class="int-pill">Google Workspace</span>
     </div>
   </div>
 </section>
 
-<!-- BLOCO 3: LOJA CORPORATIVA VIP -->
-<section class="section-spacing" id="loja">
-  <div class="grid-2">
-    <div class="visual-block" data-aos="fade-right">
-      <div class="store-mockup">
-        <div class="store-header">
-          <span style="font-weight:800; color:#0f172a;">Loja VIP</span>
-          <div class="store-balance">Seu saldo: 8.500 pts</div>
-        </div>
-        <div class="store-grid">
-          <div class="store-item">
-            <div class="store-item-img" style="background: url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&h=150&fit=crop') center/cover;"></div>
-            <div class="store-item-title">Fone Noise Cancelling</div>
-            <div class="store-item-pts">7.000 pts</div>
-          </div>
-          <div class="store-item">
-            <div class="store-item-img" style="background: url('https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=200&h=150&fit=crop') center/cover;"></div>
-            <div class="store-item-title">Welcome Kit Luxo</div>
-            <div class="store-item-pts">4.500 pts</div>
-          </div>
-        </div>
-        <div style="background:#f97316; color:#fff; text-align:center; padding:0.5rem; border-radius:0.5rem; margin-top:1rem; font-weight:600; font-size:0.8rem;">Checkout Transparente</div>
-      </div>
-    </div>
-    <div class="content-block" data-aos="fade-left">
-      <span class="section-tag-b">Loja, Catálogo e Kits</span>
-      <h2>A experiência VIP de e-commerce da sua empresa.</h2>
-      <p>Os pontos que os colaboradores conquistaram são utilizados em um catálogo premium com mais de 5.000 produtos reais, indo desde experiências digitais até welcome kits pesonalizados (SWAGs).</p>
-      <ul class="feature-list">
-        <li><span class="check">✓</span> <strong>Checkout Transparente:</strong> Resgate fluido e sem atrito dentro do próprio ambiente corporativo.</li>
-        <li><span class="check">✓</span> <strong>Rastreio Completo:</strong> Entrega direto na casa do talento com mapa de trajeto.</li>
-        <li><span class="check">✓</span> <strong>Nossa responsabilidade:</strong> A 4unik cuida 100% da logística, inventário e suporte pós-venda garantindo Zero Burocracia para você.</li>
-      </ul>
-    </div>
+<!-- ════════════ PLATAFORMA COMPLETA ════════════ -->
+<section class="mgmt-block-b" id="plataforma-completa">
+  <div class="section-header-b" data-aos="fade-up">
+    <span class="section-tag-b">Plataforma como um todo</span>
+    <h2>Logística, estoque, campanhas e <span class="text-gradient">eventos</span></h2>
+  </div>
+  <div class="mgmt-grid-b">
+    <div class="mgmt-card-b" data-aos="fade-up" data-aos-delay="100"><div class="mgmt-icon-b">📦</div><h3>Logística</h3><p>Rastreamento e entregas 48h.</p></div>
+    <div class="mgmt-card-b" data-aos="fade-up" data-aos-delay="200"><div class="mgmt-icon-b">📊</div><h3>Estoque e Catálogo</h3><p>+5.000 produtos.</p></div>
+    <div class="mgmt-card-b" data-aos="fade-up" data-aos-delay="300"><div class="mgmt-icon-b">🎯</div><h3>Campanhas</h3><p>Badges e metas em pontos.</p></div>
+    <div class="mgmt-card-b" data-aos="fade-up" data-aos-delay="400"><div class="mgmt-icon-b">🎉</div><h3>Eventos e Kits</h3><p>Welcome kits e gifting.</p></div>
+    <div class="mgmt-card-b" data-aos="fade-up" data-aos-delay="500"><div class="mgmt-icon-b">🛍️</div><h3>Loja e Resgate</h3><p>Multi-moeda e digital.</p></div>
+    <div class="mgmt-card-b" data-aos="fade-up" data-aos-delay="600"><div class="mgmt-icon-b">🔒</div><h3>Gestão e Segurança</h3><p>SSO, LGPD, audit logs.</p></div>
   </div>
 </section>
 
-<!-- BLOCO 4: API, WEBHOOKS E INTEGRAÇÕES NATIVAS -->
-<section class="section-spacing-alt" id="api">
-  <div class="container" style="text-align:center; margin-bottom: 4rem;">
-    <span class="section-tag-b" data-aos="fade-up">Para Desenvolvedores & Tech</span>
-    <h2 data-aos="fade-up" data-aos-delay="100">API RESTful e <span class="text-gradient">Integrações Nativas</span></h2>
-    <p class="section-desc-b" data-aos="fade-up" data-aos-delay="200">
-      Além das integrações no-code com os maiores hubs corporativos, fornecemos SDKs, sandbox e webhooks em tempo real para conectar a infraestrutura da 4unik onde a sua empresa precisar.
-    </p>
-  </div>
-  
-  <div class="grid-2">
-    <div class="content-block" data-aos="fade-right">
-      <h3>Conexões Nativas</h3>
-      <p>Ecossistemas prontos e parcerias globais para ativação com poucos cliques.</p>
-      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom: 2rem;">
-        <span style="background:rgba(255,255,255,0.05); padding:0.5rem 1rem; border-radius:var(--radius-pill); border:1px solid rgba(255,255,255,0.1); font-size:0.85rem;">Slack</span>
-        <span style="background:rgba(255,255,255,0.05); padding:0.5rem 1rem; border-radius:var(--radius-pill); border:1px solid rgba(255,255,255,0.1); font-size:0.85rem;">Microsoft Teams</span>
-        <span style="background:rgba(255,255,255,0.05); padding:0.5rem 1rem; border-radius:var(--radius-pill); border:1px solid rgba(255,255,255,0.1); font-size:0.85rem;">Workvivo</span>
-        <span style="background:rgba(255,255,255,0.05); padding:0.5rem 1rem; border-radius:var(--radius-pill); border:1px solid rgba(255,255,255,0.1); font-size:0.85rem;">Beehome</span>
-        <span style="background:rgba(255,255,255,0.05); padding:0.5rem 1rem; border-radius:var(--radius-pill); border:1px solid rgba(255,255,255,0.1); font-size:0.85rem;">Humand</span>
-      </div>
-      
-      <h3>Para Alta Performance</h3>
-      <ul class="feature-list" style="margin-top:1rem;">
-        <li><span class="check">✓</span> <strong>GraphQL e Bulk Operations.</strong></li>
-        <li><span class="check">✓</span> Rate limit inteligente: <strong>400 req/min</strong>.</li>
-        <li><span class="check">✓</span> Autenticação via <strong>OAuth 2.0</strong> seguro.</li>
-      </ul>
-    </div>
-    
-    <div class="visual-block" data-aos="fade-left">
-      <div class="endpoint-item">
-        <span class="endpoint-method">GET</span><span class="endpoint-path">/products</span>
-        <span class="endpoint-desc">Retorna a lista de prêmios detalhados (nome, imagem, categoria e pontos).</span>
-      </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method" style="color:#a855f7;">GET/POST</span><span class="endpoint-path">/inventory</span>
-        <span class="endpoint-desc">Consulta e reserva de itens do estoque em tempo real para integrações.</span>
-      </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method" style="color:#3b82f6;">POST</span><span class="endpoint-path">/checkout</span>
-        <span class="endpoint-desc">Processa checkout automático injetando o resgate na nossa logística.</span>
-      </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method">GET</span><span class="endpoint-path">/redemptions</span>
-        <span class="endpoint-desc">Histórico e relatórios globais de usuários, resgates e status de envios.</span>
-      </div>
-      <div class="endpoint-item">
-        <span class="endpoint-method" style="color:#3b82f6;">POST</span><span class="endpoint-path">/gamification/integration</span>
-        <span class="endpoint-desc">Sincroniza pontuações e perfis entre a 4unik e motores de gamificação de terceiros.</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BLOCO 5: PLANOS E PRICING -->
-<section class="section-spacing" id="planos">
-  <div class="container" style="text-align:center;">
-    <span class="section-tag-b" data-aos="fade-down">Nossos Planos</span>
-    <h2 data-aos="fade-up">Escolha o nível da sua <span class="text-gradient">experiência</span></h2>
-    <p class="section-desc-b" data-aos="fade-up" data-aos-delay="100">Transparência para acompanhar o crescimento da sua empresa.</p>
-  </div>
-  
-  <div class="pricing-grid">
-    <!-- Starter -->
-    <div class="pricing-card" data-aos="fade-up" data-aos-delay="100">
-      <h3 class="pricing-title">Starter</h3>
-      <div class="pricing-price">R$ 990<span>/mês</span></div>
-      <ul class="pricing-features">
-        <li>Até 100 usuários engajados</li>
-        <li>Acesso à Loja VIP</li>
-        <li>Dashboard de Gestão Padrão</li>
-        <li>Mecânicas básicas de Gamificação</li>
-        <li>Suporte em horário comercial</li>
-      </ul>
-      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn-b btn-outline-b" target="_blank">Começar agora</a>
-    </div>
-    
-    <!-- Pro (Popular) -->
-    <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="200">
-      <div class="pricing-badge">🔥 Mais Popular</div>
-      <h3 class="pricing-title">Pro</h3>
-      <div class="pricing-price">R$ 2.490<span>/mês</span></div>
-      <ul class="pricing-features">
-        <li><strong>Até 500 usuários</strong></li>
-        <li>Acesso total à API RESTful & Webhooks</li>
-        <li>Gamificação Avançada (Missões/OKRs)</li>
-        <li>Catálogo Premium Completo + Kits</li>
-        <li>Integrações nativas liberadas</li>
-      </ul>
-      <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn-b btn-primary-b" target="_blank">Escolher Pro</a>
-    </div>
-    
-    <!-- Enterprise -->
-    <div class="pricing-card" data-aos="fade-up" data-aos-delay="300">
-      <h3 class="pricing-title">Enterprise</h3>
-      <div class="pricing-price">Sob consulta</div>
-      <ul class="pricing-features">
-        <li>Usuários <strong>Ilimitados</strong></li>
-        <li>Integrações 100% customizadas</li>
-        <li>Gerente de Conta (CSM Dedicado)</li>
-        <li>Operações de grande volume (Bulk)</li>
-        <li>Suporte VIP e SLAs avançados</li>
-      </ul>
-      <a href="https://wa.me/554187582060" class="btn-b btn-outline-b" target="_blank">Falar com Sales</a>
-    </div>
-  </div>
-</section>
-
-<!-- CTA FINAL -->
+<!-- ════════════ CTA FINAL ════════════ -->
 <section class="final-cta-b">
   <div class="container" data-aos="zoom-in">
-    <h2>Revolucione o engajamento do seu time hoje.</h2>
-    <p>Agende uma demonstração gratuita e entenda como a 4unik abstrai todo o caos operacional.</p>
-    <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn-b btn-primary-b" target="_blank" rel="noopener">Agendar Demonstração Privada</a>
-    <a href="https://wa.me/554187582060" class="btn-b btn-glass-b" target="_blank" rel="noopener">Falar via WhatsApp</a>
+    <h2>Pronto para integrar?</h2>
+    <p>Solicite uma demonstração e conheça a API, o sandbox e as integrações prontas.</p>
+    <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn-b btn-primary-b" target="_blank" rel="noopener">Solicitar Demonstração</a>
+    <a href="https://wa.me/554187582060" class="btn-b btn-glass-b" target="_blank" rel="noopener">Falar com Especialista</a>
   </div>
 </section>
 
+<!-- ════════════ FOOTER ════════════ -->
 <footer class="footer-b">
   <div class="container">
     <div class="footer-b-flex">
       <div>
         <img src="logo-4unik-by-yoobe.png" alt="Yoobe — Reward Infrastructure" class="ft-logo" />
-        <p style="color:var(--text-tertiary); max-width:300px; font-size:0.85rem;">A infraestrutura de recompensas número um para times corporativos, RHs e tecnologia.</p>
+        <p style="color:var(--text-tertiary); max-width:300px; font-size:0.85rem;">Reward Infrastructure para gamificação e employee engagement. API e fulfillment em um só lugar.</p>
       </div>
       <div class="ft-links">
-        <div class="ft-col"><h4>4unik Platform</h4><a href="#gestao">Dashboard de Gestão</a><a href="#gamificacao">Gamificação</a><a href="#loja">Loja & Kits</a></div>
-        <div class="ft-col"><h4>Desenvolvedores</h4><a href="#api">API Reference</a><a href="#api">Webhooks</a><a href="#planos">Planos & Preços</a></div>
-        <div class="ft-col"><h4>Contato</h4><a href="https://calendly.com/yoobeco/demo?month=2021-08" target="_blank" rel="noopener">Demo Ao Vivo</a><a href="https://wa.me/554187582060" target="_blank" rel="noopener">Suporte Sales</a></div>
+        <div class="ft-col"><h4>Plataforma</h4><a href="index-option-b.html#bento">Features</a><a href="index-option-b.html#roi">Casos de uso</a></div>
+        <div class="ft-col"><h4>Dev</h4><a href="api-integracoes-option-b.html">API & Integrações</a><a href="https://catalogo.yoobe.co" target="_blank" rel="noopener">Catálogo</a></div>
+        <div class="ft-col"><h4>Contato</h4><a href="https://calendly.com/yoobeco/demo?month=2021-08" target="_blank" rel="noopener">Demo</a><a href="https://wa.me/554187582060" target="_blank" rel="noopener">WhatsApp</a></div>
       </div>
     </div>
-    <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top:1.5rem; font-size:0.8rem; color:var(--text-tertiary);">&copy; 2026 4unik by Yoobe. Todos os direitos reservados.</div>
+    <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top:1.5rem; font-size:0.8rem; color:var(--text-tertiary);">&copy; 2026 Yoobe. Reward Infrastructure Platform.</div>
   </div>
 </footer>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  AOS.init({ duration: 800, once: true, offset: 50 });
+  AOS.init({ duration: 800, once: true, offset: 80 });
   var h = document.getElementById('header-pill');
   if (h) window.addEventListener('scroll', function() { h.classList.toggle('scrolled', window.scrollY > 80); });
 });

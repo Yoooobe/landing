@@ -1,8 +1,12 @@
 "use client";
 
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
 
 export default function GamificationDuality() {
+  const { m } = useLocaleMessages();
+  const d = m.landingMore.duality;
+
   return (
     <section className="relative overflow-hidden border-t border-white/5 bg-surface-page py-24">
       {/* Background Decor */}
@@ -12,17 +16,15 @@ export default function GamificationDuality() {
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="text-center mb-16">
           <span className="inline-block px-3 py-1 mb-4 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-sm font-bold tracking-wide uppercase">
-            Como Funciona
+            {d.badge}
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
-            Dois caminhos para <br className="hidden md:block" />
+            {d.titleBefore} <br className="hidden md:block" />
             <span className="bg-gradient-to-r from-brand-orange via-unik-blue-soft to-yoobe-neon-pink bg-clip-text text-transparent">
-              engajar seu time
+              {d.titleGradient}
             </span>
           </h2>
-          <p className="text-xl text-white/60 max-w-2xl mx-auto font-sans">
-            Você não precisa se adaptar a nós. A Yoobe se adapta ao momento da sua empresa, seja com uma plataforma pronta ou trabalhando nos bastidores.
-          </p>
+          <p className="text-xl text-white/60 max-w-2xl mx-auto font-sans">{d.sub}</p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
@@ -39,11 +41,9 @@ export default function GamificationDuality() {
             
             <h3 className="text-2xl font-black text-white mb-4 font-heading flex items-center gap-3">
               <span className="bg-yoobe-neon-pink/20 text-yoobe-neon-pink w-10 h-10 rounded-xl flex items-center justify-center">🎯</span>
-              Tudo Pronto pra Usar
+              {d.sideA.title}
             </h3>
-            <p className="text-white/60 font-sans mb-8 min-h-[50px]">
-              Nossa plataforma completa com portal do colaborador. Crie missões, distribua pontos e libere o catálogo de prêmios no primeiro dia.
-            </p>
+            <p className="text-white/60 font-sans mb-8 min-h-[50px]">{d.sideA.body}</p>
 
             {/* SVG Visual */}
             <div className="relative mb-8 flex aspect-[4/3] w-full flex-col justify-end overflow-hidden rounded-2xl border border-white/5 bg-surface-page shadow-inner">
@@ -94,9 +94,11 @@ export default function GamificationDuality() {
             </div>
 
             <ul className="space-y-3 font-sans text-sm text-white/70">
-              <li className="flex gap-2 items-start"><span className="text-yoobe-neon-pink">✓</span> Portal do colaborador com a sua marca</li>
-              <li className="flex gap-2 items-start"><span className="text-yoobe-neon-pink">✓</span> Campanhas divertidas e painel do gestor</li>
-              <li className="flex gap-2 items-start"><span className="text-yoobe-neon-pink">✓</span> App não obrigatório, funciona no navegador</li>
+              {d.sideA.bullets.map((line) => (
+                <li key={line} className="flex gap-2 items-start">
+                  <span className="text-yoobe-neon-pink">✓</span> {line}
+                </li>
+              ))}
             </ul>
           </motion.div>
 
@@ -114,11 +116,9 @@ export default function GamificationDuality() {
               <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-unik-blue/20 text-unik-blue-soft">
                 🔌
               </span>
-              Integração Invisível
+              {d.sideB.title}
             </h3>
-            <p className="text-white/60 font-sans mb-8 min-h-[50px]">
-              Já tem uma intranet que o time ama? Excelente. Nós conectamos nossa loja e logística lá dentro, sem ninguém perceber que mudou de sistema.
-            </p>
+            <p className="text-white/60 font-sans mb-8 min-h-[50px]">{d.sideB.body}</p>
 
             {/* SVG Visual */}
             <div className="relative mb-8 flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-2xl border border-white/5 bg-surface-page shadow-inner">
@@ -166,9 +166,11 @@ export default function GamificationDuality() {
             </div>
 
             <ul className="space-y-3 font-sans text-sm text-white/70">
-              <li className="flex gap-2 items-start"><span className="text-blue-400">✓</span> O colaborador não precisa criar outra senha</li>
-              <li className="flex gap-2 items-start"><span className="text-blue-400">✓</span> Recompensas aparecem direto nas ferramentas de trabalho</li>
-              <li className="flex gap-2 items-start"><span className="text-blue-400">✓</span> Operamos a loja e a entrega em &quot;silêncio&quot; por trás</li>
+              {d.sideB.bullets.map((line) => (
+                <li key={line} className="flex gap-2 items-start">
+                  <span className="text-blue-400">✓</span> {line}
+                </li>
+              ))}
             </ul>
           </motion.div>
 

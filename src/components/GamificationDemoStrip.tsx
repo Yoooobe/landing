@@ -1,14 +1,18 @@
 "use client";
 
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+
 /**
  * Faixa inspirada na UI de membro (demo): pontos, missões e progresso —
  * acento demo-cyan + hierarquia institucional (unik-blue).
  */
 export default function GamificationDemoStrip() {
+  const { m } = useLocaleMessages();
+  const d = m.demoStrip;
   const items = [
-    { label: "Pontos", value: "12.4k", accent: "text-demo-cyan" },
-    { label: "Missões ativas", value: "08", accent: "text-unik-blue-soft" },
-    { label: "Nível", value: "Gold II", accent: "text-brand-orange" },
+    { label: d.points, value: "12.4k", accent: "text-demo-cyan" },
+    { label: d.missions, value: "08", accent: "text-unik-blue-soft" },
+    { label: d.level, value: d.levelValue, accent: "text-brand-orange" },
   ];
 
   return (
@@ -19,9 +23,7 @@ export default function GamificationDemoStrip() {
           className="flex min-w-[140px] flex-1 items-center justify-between gap-4 rounded-2xl border border-demo-cyan/20 bg-surface-panel/80 px-4 py-3 shadow-[0_0_24px_-4px_rgba(34,211,238,0.15)] backdrop-blur-sm sm:min-w-[160px]"
         >
           <div className="text-left">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-white/45">
-              {item.label}
-            </p>
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-white/45">{item.label}</p>
             <p className={`font-heading text-lg font-black ${item.accent}`}>{item.value}</p>
           </div>
           <div

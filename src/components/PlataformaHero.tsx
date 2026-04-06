@@ -1,9 +1,12 @@
 "use client";
 
 import UnikWordmark from "@/components/UnikWordmark";
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
 
 export default function PlataformaHero() {
+  const { m } = useLocaleMessages();
+  const h = m.plataforma.hero;
   return (
     <section className="relative pt-32 pb-24 overflow-hidden bg-brand-navy-dark">
       {/* Abstract Grid & Glow */}
@@ -25,7 +28,7 @@ export default function PlataformaHero() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-orange/20 bg-brand-orange/10 backdrop-blur-sm mb-6"
           >
              <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
-             <span className="text-brand-orange text-xs font-bold uppercase tracking-wider font-sans">Controle Total da Operação</span>
+             <span className="text-brand-orange text-xs font-bold uppercase tracking-wider font-sans">{h.badge}</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -33,9 +36,9 @@ export default function PlataformaHero() {
             transition={{ delay: 0.1 }}
             className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tight font-heading"
           >
-            Visibilidade total. <br />
+            {h.titleLine1} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-red-500">
-              Decisões mais rápidas.
+              {h.titleGradient}
             </span>
           </motion.h1>
           <motion.p
@@ -44,7 +47,7 @@ export default function PlataformaHero() {
             transition={{ delay: 0.2 }}
             className="text-xl text-white/60 mb-10 max-w-2xl mx-auto font-light font-sans"
           >
-            Dashboard analítico em tempo real com métricas de eNPS, ROI e taxas de resgate. Aprovação de orçamentos, importação em massa e exportação direta para o ERP — com conformidade total à LGPD.
+            {h.sub}
           </motion.p>
         </div>
       </div>
