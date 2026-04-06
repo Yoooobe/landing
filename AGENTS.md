@@ -1,6 +1,6 @@
 ## Cursor Cloud specific instructions
 
-This is the **Yoobe.co Landing Page** with an integrated **admin editor/manager** built on Node.js/Express, served on **port 3001**.
+This is the **Yoobe.co Landing Page** with an integrated **admin editor/manager** built on Node.js/Express, served on **port 3000**.
 
 ### Running locally
 
@@ -9,11 +9,11 @@ npm install
 npm run dev
 ```
 
-The server starts at `http://localhost:3001`. The landing page is served at `/` and the admin panel at `/admin`.
+The server starts at `http://localhost:3000`. The landing page is served at `/` and the admin panel at `/admin`.
 
 ### Admin credentials
 
-- **URL:** `http://localhost:3001/admin`
+- **URL:** `http://localhost:3000/admin`
 - **User:** `admin`
 - **Password:** `yoobe2025`
 - Override with env vars `ADMIN_USER` and `ADMIN_PASS`.
@@ -22,7 +22,7 @@ The server starts at `http://localhost:3001`. The landing page is served at `/` 
 
 | Component | Description |
 |---|---|
-| `server.js` | Express server (port 3001) with auth, API routes, static serving |
+| `server.js` | Express server (port 3000) with auth, API routes, static serving |
 | `index.html` | The landing page (HTML + inline CSS/JS) |
 | `admin/login.html` | Admin login page |
 | `admin/editor.html` | Admin panel with dashboard, content editor, HTML editor, preview, backups, logo upload |
@@ -40,6 +40,8 @@ The server starts at `http://localhost:3001`. The landing page is served at `/` 
 | GET | `/api/backups` | List recent backups |
 | POST | `/api/backups/restore` | Restore a backup |
 | POST | `/api/upload-logo` | Upload a client logo image |
+| GET | `/api/clients` | List client logo files on disk |
+| DELETE | `/api/clients/:filename` | Remove a client logo file |
 
 ### Deployment
 
