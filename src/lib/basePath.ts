@@ -4,6 +4,10 @@
  */
 export const BASE_PATH = "/landing" as const;
 
+/**
+ * Prefixa caminhos para que assets e links públicos funcionem tanto no dev local
+ * quanto na produção com o mesmo `basePath`.
+ */
 export function withBasePath(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${BASE_PATH}${normalized}`;

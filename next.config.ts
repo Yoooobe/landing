@@ -1,13 +1,39 @@
 import type { NextConfig } from "next";
 import { BASE_PATH } from "./src/lib/basePath";
 
+/**
+ * Mantemos `basePath` também em desenvolvimento para espelhar as URLs finais do
+ * GitHub Pages e evitar drift entre `/landing/*` local e produção.
+ *
+ * Apenas `output: "export"` continua restrito à produção para não limitar a
+ * navegação dinâmica do Studio durante o desenvolvimento.
+ */
+const dev = process.env.NODE_ENV === "development";
+
 const nextConfig: NextConfig = {
-  output: "export",
+  ...(dev ? {} : { output: "export" }),
   basePath: BASE_PATH,
   assetPrefix: BASE_PATH,
+  ...(dev
+    ? {
+        async redirects() {
+          return [
+            {
+              source: "/",
+              destination: `${BASE_PATH}/`,
+              permanent: false,
+              basePath: false,
+            },
+          ];
+        },
+      }
+    : {}),
   trailingSlash: true,
   images: {
     unoptimized: true,
+  },
+  compiler: {
+    styledComponents: true,
   },
 };
 
