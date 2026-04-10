@@ -1,0 +1,8 @@
+User-Agent: *
+Allow: /landing/
+Disallow: /landing/studio/
+Disallow: /landing/workvivo/
+Disallow: /landing/en/workvivo/
+
+Sitemap: https://yoooobe.github.io/landing/sitemap.xml
+Host: https://yoooobe.github.io

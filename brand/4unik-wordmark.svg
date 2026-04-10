@@ -1,0 +1,12 @@
+<svg width="187" height="55" viewBox="0 0 187 55" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">4Unik wordmark</title>
+  <desc id="desc">4Unik brand wordmark in orange, white and blue on a navy background.</desc>
+  <rect width="187" height="55" rx="12" fill="#07111F"/>
+  <circle cx="24" cy="28" r="10" fill="#F97316"/>
+  <path d="M38 16H45L51 33L57 16H64L53.5 42H48.5L38 16Z" fill="white"/>
+  <path d="M70 16H77V42H70V16Z" fill="white"/>
+  <path d="M84 16H91V29L102 16H110L99.5 28.5L111 42H102.5L91 28.5V42H84V16Z" fill="white"/>
+  <path d="M116 16H123V35.5H135V42H116V16Z" fill="white"/>
+  <path d="M141 16H148V42H141V16Z" fill="#8FD3FF"/>
+  <path d="M155 16H162V25.5L171.5 16H180L168 28L180 42H171.5L162 31.5V42H155V16Z" fill="#8FD3FF"/>
+</svg>

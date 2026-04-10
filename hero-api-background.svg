@@ -1,0 +1,47 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="apiGlowBlue" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1052 248) rotate(90) scale(190 222)">
+      <stop stop-color="#38BDF8" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="apiGlowViolet" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(856 576) rotate(90) scale(176 218)">
+      <stop stop-color="#8B5CF6" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="apiStroke" x1="432" y1="252" x2="1168" y2="662" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67E8F9" stop-opacity="0.34"/>
+      <stop offset="0.52" stop-color="#A78BFA" stop-opacity="0.46"/>
+      <stop offset="1" stop-color="#FB923C" stop-opacity="0.34"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="1052" cy="248" r="190" fill="url(#apiGlowBlue)"/>
+  <circle cx="856" cy="576" r="176" fill="url(#apiGlowViolet)"/>
+
+  <rect x="774" y="286" width="348" height="250" rx="30" stroke="url(#apiStroke)" stroke-width="5" opacity="0.82"/>
+  <path d="M806 334H1002" stroke="#E2E8F0" stroke-opacity="0.26" stroke-width="5" stroke-linecap="round"/>
+  <path d="M806 376H948" stroke="#E2E8F0" stroke-opacity="0.2" stroke-width="5" stroke-linecap="round"/>
+  <path d="M806 418H1044" stroke="#E2E8F0" stroke-opacity="0.2" stroke-width="5" stroke-linecap="round"/>
+  <rect x="806" y="454" width="126" height="40" rx="20" stroke="#67E8F9" stroke-opacity="0.48" stroke-width="4"/>
+  <rect x="952" y="454" width="136" height="40" rx="20" stroke="#A78BFA" stroke-opacity="0.5" stroke-width="4"/>
+
+  <path d="M430 256H544C590 256 628 294 628 340V376" stroke="url(#apiStroke)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M628 376V468C628 514 666 552 712 552H838" stroke="url(#apiStroke)" stroke-width="5" stroke-linecap="round" stroke-dasharray="3 16"/>
+  <path d="M1116 404H1180C1226 404 1264 442 1264 488V638" stroke="url(#apiStroke)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M932 600H1110C1154 600 1190 564 1190 520V484" stroke="url(#apiStroke)" stroke-width="5" stroke-linecap="round" stroke-dasharray="6 18"/>
+
+  <g opacity="0.74">
+    <circle cx="430" cy="256" r="13" fill="#67E8F9"/>
+    <circle cx="628" cy="376" r="11" fill="#A78BFA"/>
+    <circle cx="838" cy="552" r="12" fill="#FB923C"/>
+    <circle cx="1116" cy="404" r="13" fill="#C4B5FD"/>
+    <circle cx="1264" cy="638" r="14" fill="#67E8F9"/>
+  </g>
+
+  <g opacity="0.48">
+    <rect x="494" y="582" width="170" height="112" rx="22" stroke="#E2E8F0" stroke-opacity="0.26" stroke-width="4"/>
+    <path d="M528 618H626" stroke="#E2E8F0" stroke-opacity="0.22" stroke-width="4" stroke-linecap="round"/>
+    <path d="M528 650H600" stroke="#E2E8F0" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="624" cy="650" r="10" fill="#FB923C" fill-opacity="0.48"/>
+  </g>
+</svg>

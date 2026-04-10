@@ -1,0 +1,7 @@
+1:"$Sreact.fragment"
+2:I[726627,["/landing/_next/static/chunks/0n.o3zqq0e06m.js","/landing/_next/static/chunks/0gi_0v1jew_z_.js","/landing/_next/static/chunks/0jc.e_1nn1st7.js","/landing/_next/static/chunks/0t8y7umr.1s1y.js","/landing/_next/static/chunks/0id8_ern02q96.js","/landing/_next/static/chunks/06tv0kxtd5c93.js"],"LocaleMessagesProvider"]
+3:I[288311,["/landing/_next/static/chunks/0n.o3zqq0e06m.js","/landing/_next/static/chunks/0gi_0v1jew_z_.js","/landing/_next/static/chunks/0jc.e_1nn1st7.js","/landing/_next/static/chunks/0t8y7umr.1s1y.js","/landing/_next/static/chunks/0id8_ern02q96.js","/landing/_next/static/chunks/06tv0kxtd5c93.js"],"default"]
+4:I[897367,["/landing/_next/static/chunks/0x.73w57rn4ou.js","/landing/_next/static/chunks/10jru~51blz40.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"locale":"pt","children":["$","$L3",null,{"variant":"logistica"}]}],[["$","script","script-0",{"src":"/landing/_next/static/chunks/06tv0kxtd5c93.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"ZhZFqlogngaCsA48rLF-Y"}
+6:null

@@ -1,0 +1,46 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="featAmber" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(980 318) rotate(90) scale(200 260)">
+      <stop stop-color="#F97316" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="featViolet" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 600) rotate(90) scale(170 210)">
+      <stop stop-color="#8B5CF6" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="featStroke" x1="460" y1="246" x2="1174" y2="682" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CBD5E1" stop-opacity="0.5"/>
+      <stop offset="0.55" stop-color="#FDBA74" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#C4B5FD" stop-opacity="0.45"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="980" cy="318" r="200" fill="url(#featAmber)"/>
+  <circle cx="1180" cy="600" r="170" fill="url(#featViolet)"/>
+
+  <rect x="764" y="258" width="334" height="210" rx="30" fill="#FFFFFF" fill-opacity="0.5" stroke="url(#featStroke)" stroke-width="4"/>
+  <rect x="800" y="298" width="132" height="56" rx="18" stroke="#CBD5E1" stroke-opacity="0.7" stroke-width="4"/>
+  <rect x="950" y="298" width="112" height="56" rx="18" stroke="#FDBA74" stroke-opacity="0.66" stroke-width="4"/>
+  <path d="M800 394H1054" stroke="#CBD5E1" stroke-opacity="0.5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M800 426H986" stroke="#CBD5E1" stroke-opacity="0.36" stroke-width="4" stroke-linecap="round"/>
+
+  <rect x="548" y="506" width="192" height="126" rx="28" fill="#FFFFFF" fill-opacity="0.52" stroke="#CBD5E1" stroke-opacity="0.54" stroke-width="4"/>
+  <path d="M590 548H664" stroke="#8B5CF6" stroke-opacity="0.58" stroke-width="4" stroke-linecap="round"/>
+  <path d="M590 582H696" stroke="#CBD5E1" stroke-opacity="0.42" stroke-width="4" stroke-linecap="round"/>
+  <path d="M590 612H672" stroke="#CBD5E1" stroke-opacity="0.32" stroke-width="4" stroke-linecap="round"/>
+
+  <path d="M426 272L484 242L542 272V338L484 372L426 338V272Z" stroke="#F97316" stroke-opacity="0.44" stroke-width="4"/>
+  <path d="M426 272L484 306L542 272" stroke="#F97316" stroke-opacity="0.38" stroke-width="4"/>
+  <path d="M484 306V372" stroke="#F97316" stroke-opacity="0.34" stroke-width="4"/>
+
+  <circle cx="1130" cy="500" r="46" stroke="#8B5CF6" stroke-opacity="0.42" stroke-width="4"/>
+  <circle cx="1130" cy="500" r="22" stroke="#8B5CF6" stroke-opacity="0.28" stroke-width="4"/>
+  <circle cx="1130" cy="500" r="8" fill="#8B5CF6" fill-opacity="0.38"/>
+
+  <path d="M426 648C540 594 654 582 804 602C932 620 1016 610 1148 552" stroke="url(#featStroke)" stroke-width="5" stroke-linecap="round" stroke-dasharray="3 18" opacity="0.48"/>
+  <g opacity="0.58">
+    <circle cx="426" cy="648" r="9" fill="#F97316"/>
+    <circle cx="804" cy="602" r="10" fill="#CBD5E1"/>
+    <circle cx="1148" cy="552" r="11" fill="#8B5CF6"/>
+  </g>
+</svg>
