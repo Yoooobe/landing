@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,713431,t=>{"use strict";var e=t.i(271645),o=t.i(618566);t.s(["default",0,function(){let t=(0,o.useRouter)();return(0,e.useEffect)(()=>{t.replace("/plataforma/motor-gamificacao/")},[t]),null}])}]);
