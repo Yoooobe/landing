@@ -23,6 +23,8 @@ The site is served at `http://localhost:3000/landing/` when using the default ca
 | Build (static export) | `npm run build` (requires Sanity env vars) |
 | Deploy (GH Pages) | `npm run deploy:gh-pages` |
 
+Configuração do Pages no GitHub (fonte branch vs Actions, Desktop, CLI, billing): [`docs/github-pages-setup.md`](docs/github-pages-setup.md).
+
 **CI (`.github/workflows/deploy.yml`):** o primeiro passo útil após `npm ci` imprime avisos se **faturação / minutos de Actions** bloquearem o GitHub (mensagem típica: *account locked due to a billing issue*). O passo **Verify Sanity secrets** falha só com `your-project-id` ou `xxx`; `placeholder` gera aviso e permite o build. Detalhes em `docs/cms.md`.
 
 ### Gotchas
