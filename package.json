@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "generate:llms": "npx tsx scripts/generate-llms-txt.ts",
-    "build": "npm run generate:llms && next build",
+    "build": "npm run generate:llms && next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "seed:sanity": "node scripts/seed-sanity-content.mjs",

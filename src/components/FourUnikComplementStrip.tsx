@@ -3,6 +3,7 @@
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,7 +28,13 @@ export default function FourUnikComplementStrip({
       aria-labelledby="fourunik-complement-heading"
     >
       <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-6 rounded-2xl border border-white/10 bg-brand-navy-dark/60 px-6 py-6 backdrop-blur-sm md:flex-row md:items-center md:justify-between md:gap-8">
+        <motion.div
+          className="flex flex-col gap-6 rounded-2xl border border-white/10 bg-brand-navy-dark/60 px-6 py-6 backdrop-blur-sm md:flex-row md:items-center md:justify-between md:gap-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="flex-1">
             <p
               id="fourunik-complement-heading"
@@ -62,7 +69,7 @@ export default function FourUnikComplementStrip({
           >
             {u.cta}
           </Link>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

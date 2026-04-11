@@ -1249,7 +1249,8 @@ async function resolveMarketingPage(
 
   const fallback = await buildFallbackMarketingPage(locale, slug);
   if (!fallback) {
-    return page;
+    // Sem fallback editorial: `content` vazio não é renderizável — não devolver doc vazio.
+    return null;
   }
   if (!page) {
     return fallback;

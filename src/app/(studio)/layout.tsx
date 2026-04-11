@@ -1,4 +1,5 @@
 import { jakarta, ROOT_BODY_CLASSNAME } from "@/components/site-settings/rootLayoutTheme";
+import { htmlLangForLocale } from "@/lib/locale";
 import "../globals.css";
 
 export default function StudioRootLayout({
@@ -8,7 +9,7 @@ export default function StudioRootLayout({
 }>) {
   return (
     <html
-      lang="pt-BR"
+      lang={htmlLangForLocale("pt")}
       className={`dark scroll-smooth ${jakarta.variable}`}
       suppressHydrationWarning
     >

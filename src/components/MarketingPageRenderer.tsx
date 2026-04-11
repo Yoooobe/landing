@@ -70,6 +70,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import LeadCaptureForm, { type LeadFormVariant } from "@/components/LeadCaptureForm";
+import MarketingPageEmptyState from "@/components/MarketingPageEmptyState";
 import { PRIMARY_CONTACT_SECTION_ID } from "@/lib/contactAnchor";
 
 type SupportData = {
@@ -1010,7 +1011,7 @@ export default function MarketingPageRenderer({
   supportData = {},
 }: Props) {
   if (!page?.content?.length) {
-    return null;
+    return <MarketingPageEmptyState locale={locale} />;
   }
 
   const pageSlug = page.slug || "page";
@@ -1031,7 +1032,7 @@ export default function MarketingPageRenderer({
     .filter((entry) => entry.node !== null);
 
   if (!renderedBlocks.length) {
-    return null;
+    return <MarketingPageEmptyState locale={locale} />;
   }
 
   return (

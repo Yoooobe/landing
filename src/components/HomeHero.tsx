@@ -5,7 +5,11 @@ import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
 import UnikWordmark from "@/components/UnikWordmark";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { BASE_PATH, withBasePath } from "@/lib/basePath";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import {
+  getSanityImageUrl,
+  SANITY_HOME_HERO_MAIN_WIDTH,
+  SANITY_HOME_HERO_SUPPORTING_WIDTH,
+} from "@/sanity/lib/image";
 import type { HeroBlockDoc, ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
@@ -45,17 +49,17 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
   };
   const exploreHref = resolvePublicHref(h.ctaExploreHref?.trim(), defaultExploreHref);
   const platformImageUrl = getSanityImageUrl(h.platformImage, {
-    width: 1040,
+    width: SANITY_HOME_HERO_MAIN_WIDTH,
     fit: "crop",
     quality: 82,
   });
   const supportingImageUrl = getSanityImageUrl(h.supportingImage, {
-    width: 640,
+    width: SANITY_HOME_HERO_SUPPORTING_WIDTH,
     fit: "crop",
     quality: 80,
   });
   const cmsHeroImageUrl = getSanityImageUrl(cmsHero?.image, {
-    width: 920,
+    width: SANITY_HOME_HERO_MAIN_WIDTH,
     fit: "crop",
     quality: 82,
   });
@@ -242,8 +246,8 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
                   <Image
                     src={mainVisualUrl}
                     alt={mainVisualAlt}
-                    width={1040}
-                    height={840}
+                    width={1120}
+                    height={905}
                     sizes="(min-width: 1280px) 560px, (min-width: 1024px) 46vw, 92vw"
                     className="h-full w-full rounded-[1.4rem] object-cover"
                     priority
@@ -301,9 +305,9 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
                 <Image
                   src={supportingImageUrl}
                   alt={h.supportingImage?.alt?.trim() || `${h.brand} supporting mockup`}
-                  width={640}
+                  width={SANITY_HOME_HERO_SUPPORTING_WIDTH}
                   height={520}
-                  sizes="(min-width: 1024px) 320px, 60vw"
+                  sizes="(min-width: 1024px) 260px, 45vw"
                   className="h-full w-full rounded-[1.2rem] object-cover"
                   decoding="async"
                   loading="lazy"

@@ -5,6 +5,7 @@ import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { primaryContactSectionIdAttr } from "@/lib/contactAnchor";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function HomeFinalCta({
@@ -31,12 +32,31 @@ export default function HomeFinalCta({
     >
       <div className="container mx-auto max-w-5xl px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] lg:items-start">
-          <div className="text-center lg:text-left">
+          <motion.div
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <h2 className="mb-6 font-heading text-3xl font-black text-white md:text-5xl">{c.title}</h2>
             <p className="mb-0 font-sans text-xl text-white/70">{c.body}</p>
-          </div>
-          <LeadCaptureForm variant="home" source="home-footer" className="w-full max-lg:mx-auto max-lg:max-w-md" />
-          <div className="border-t border-white/10 pt-8 text-center lg:col-span-2 lg:text-left">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+            transition={{ delay: 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <LeadCaptureForm variant="home" source="home-footer" className="w-full max-lg:mx-auto max-lg:max-w-md" />
+          </motion.div>
+          <motion.div
+            className="border-t border-white/10 pt-8 text-center lg:col-span-2 lg:text-left"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+            transition={{ delay: 0.12, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          >
             <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/45">{lf.altCalendly}</p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
               <a
@@ -56,10 +76,16 @@ export default function HomeFinalCta({
                 {c.whatsapp}
               </a>
             </div>
-          </div>
+          </motion.div>
         </div>
         {sectionImageUrl ? (
-          <div className="mx-auto mt-12 w-full max-w-[400px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-xl backdrop-blur-sm lg:max-w-2xl">
+          <motion.div
+            className="mx-auto mt-12 w-full max-w-[400px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-xl backdrop-blur-sm lg:max-w-2xl"
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <Image
               src={sectionImageUrl}
               alt={c.sectionImage?.alt?.trim() || c.title || "Imagem do CTA final"}
@@ -69,7 +95,7 @@ export default function HomeFinalCta({
               className="h-full w-full rounded-[1.4rem] object-cover"
               unoptimized
             />
-          </div>
+          </motion.div>
         ) : null}
       </div>
     </section>

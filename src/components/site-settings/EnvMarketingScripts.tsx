@@ -1,6 +1,9 @@
 "use client";
 
-import { useSiteSettings } from "@/contexts/SiteSettingsContext";
+/**
+ * GTM, Meta Pixel e LinkedIn apenas a partir de `NEXT_PUBLIC_*` — não depende de
+ * `SiteSettingsProvider` nem de fetch ao Sanity, para injeção mais cedo no paint.
+ */
 import {
   getGoogleTagManagerIdFromEnv,
   getLinkedinPartnerIdFromEnv,
@@ -9,20 +12,10 @@ import {
 import Script from "next/script";
 import { useMemo } from "react";
 
-/**
- * GTM / Pixel / LinkedIn a partir de `siteSettings` quando **não** há variável
- * `NEXT_PUBLIC_*` correspondente — evita duplicar tags com [`EnvMarketingScripts`](./EnvMarketingScripts.tsx).
- */
-export default function MarketingScripts() {
-  const { sanity } = useSiteSettings();
-
-  const gtmEnv = getGoogleTagManagerIdFromEnv();
-  const pixelEnv = getMetaPixelIdFromEnv();
-  const linkedinEnv = getLinkedinPartnerIdFromEnv();
-
-  const gtm = !gtmEnv ? sanity?.gtmContainerId?.trim() : undefined;
-  const pixel = !pixelEnv ? sanity?.metaPixelId?.trim() : undefined;
-  const linkedin = !linkedinEnv ? sanity?.linkedinPartnerId?.trim() : undefined;
+export default function EnvMarketingScripts() {
+  const gtm = getGoogleTagManagerIdFromEnv();
+  const pixel = getMetaPixelIdFromEnv();
+  const linkedin = getLinkedinPartnerIdFromEnv();
 
   const gtmScript = useMemo(() => {
     if (!gtm || !/^GTM-[A-Z0-9]+$/i.test(gtm)) return null;
@@ -64,7 +57,7 @@ fbq('track', 'PageView');`;
   return (
     <>
       {gtmScript ? (
-        <Script id="gtm-sanity" strategy="afterInteractive">
+        <Script id="gtm-env" strategy="afterInteractive">
           {gtmScript}
         </Script>
       ) : null}
@@ -80,12 +73,12 @@ fbq('track', 'PageView');`;
         </noscript>
       ) : null}
       {fbScript ? (
-        <Script id="fb-pixel-sanity" strategy="afterInteractive">
+        <Script id="fb-pixel-env" strategy="afterInteractive">
           {fbScript}
         </Script>
       ) : null}
       {linkedinScript ? (
-        <Script id="linkedin-insight-sanity" strategy="afterInteractive">
+        <Script id="linkedin-insight-env" strategy="afterInteractive">
           {linkedinScript}
         </Script>
       ) : null}

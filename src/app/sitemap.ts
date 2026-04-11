@@ -11,13 +11,14 @@ type RoutePair = {
   changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
 };
 
-type SingleRoute = {
-  path: string;
-  priority: number;
-  changeFrequency: NonNullable<MetadataRoute.Sitemap[number]["changeFrequency"]>;
-};
-
-/** Pares PT/EN que devem aparecer no sitemap com hreflang recíproco. */
+/**
+ * URLs canónicas indexáveis (pares PT/EN + hreflang).
+ *
+ * - Não listar `/gamificacao/` nem `/en/gamificacao/`: redireccionam no cliente para
+ *   `/plataforma/motor-gamificacao/` (conteúdo unificado); a URL de motor é a canónica para SEO.
+ * - Rotas stub, workvivo legacy ou `noindex` não entram aqui (ver `src/app/robots.ts`: só
+ *   `disallow` explícito do Studio).
+ */
 const routePairs: RoutePair[] = [
   { pt: "/", en: "/en/", priority: 1, changeFrequency: "weekly" },
   { pt: "/api-integracoes/", en: "/en/api-integracoes/", priority: 0.9, changeFrequency: "weekly" },
@@ -27,7 +28,6 @@ const routePairs: RoutePair[] = [
     priority: 0.8,
     changeFrequency: "monthly",
   },
-  { pt: "/gamificacao/", en: "/en/gamificacao/", priority: 0.9, changeFrequency: "weekly" },
   { pt: "/plataforma/", en: "/en/plataforma/", priority: 0.9, changeFrequency: "weekly" },
   { pt: "/inteligencia/", en: "/en/inteligencia/", priority: 0.85, changeFrequency: "weekly" },
   { pt: "/casos-de-uso/", en: "/en/casos-de-uso/", priority: 0.85, changeFrequency: "weekly" },
@@ -35,8 +35,8 @@ const routePairs: RoutePair[] = [
   {
     pt: "/plataforma/motor-gamificacao/",
     en: "/en/plataforma/motor-gamificacao/",
-    priority: 0.55,
-    changeFrequency: "monthly",
+    priority: 0.9,
+    changeFrequency: "weekly",
   },
   {
     pt: "/plataforma/controle-carteiras/",
@@ -56,17 +56,6 @@ const routePairs: RoutePair[] = [
     priority: 0.5,
     changeFrequency: "monthly",
   },
-];
-
-/**
- * Rotas únicas sem par de idioma — excluídas de sitemap por design
- * (logistica-integrada é stub; workvivo/* são redirecionamentos noindex).
- */
-const _excludedRoutes: SingleRoute[] = [
-  { path: "/plataforma/logistica-integrada/", priority: 0.2, changeFrequency: "monthly" },
-  { path: "/en/plataforma/logistica-integrada/", priority: 0.2, changeFrequency: "monthly" },
-  { path: "/workvivo/", priority: 0.2, changeFrequency: "monthly" },
-  { path: "/en/workvivo/", priority: 0.2, changeFrequency: "monthly" },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

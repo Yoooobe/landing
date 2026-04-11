@@ -2,6 +2,14 @@ import { BASE_PATH } from "@/lib/basePath";
 
 export type Locale = "pt" | "en";
 
+/**
+ * Tag BCP 47 para `<html lang>`. Usar só no servidor (`LocaleRootLayout` / layouts de rota);
+ * evita depender de correção pós-hidratação no cliente.
+ */
+export function htmlLangForLocale(locale: Locale): "pt-BR" | "en" {
+  return locale === "en" ? "en" : "pt-BR";
+}
+
 /** Pathname do Next (inclui `basePath` quando configurado). */
 export function localeFromPathname(pathname: string | null | undefined): Locale {
   if (!pathname) return "pt";

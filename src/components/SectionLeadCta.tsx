@@ -4,6 +4,7 @@ import LeadCaptureForm from "@/components/LeadCaptureForm";
 import type { LeadFormVariant } from "@/components/LeadCaptureForm";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
+import { motion } from "framer-motion";
 
 export type SectionLeadCtaZone = "afterPlatform" | "afterCampaigns" | "afterOperations";
 
@@ -37,7 +38,13 @@ export default function SectionLeadCta({ homeContent, zone, variant = "home" }: 
     >
       <div className="container mx-auto max-w-5xl px-4 md:px-6">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,400px)] lg:items-start">
-          <div className="text-center lg:text-left">
+          <motion.div
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
             <h2
               id={`section-lead-heading-${block.source}`}
               className="mb-4 font-heading text-2xl font-black text-white md:text-4xl"
@@ -66,12 +73,19 @@ export default function SectionLeadCta({ homeContent, zone, variant = "home" }: 
                 {c.whatsapp}
               </a>
             </div>
-          </div>
-          <LeadCaptureForm
-            variant={variant}
-            source={block.source}
-            className="w-full max-lg:mx-auto max-lg:max-w-md"
-          />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "0px 0px -8% 0px" }}
+            transition={{ delay: 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <LeadCaptureForm
+              variant={variant}
+              source={block.source}
+              className="w-full max-lg:mx-auto max-lg:max-w-md"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

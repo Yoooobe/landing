@@ -2,7 +2,7 @@ import BlogPostContent from "@/components/BlogPostContent";
 import JsonLdScript from "@/components/seo/JsonLdScript";
 import { LocaleMessagesProvider } from "@/contexts/LocaleMessagesContext";
 import { buildBlogPostingJsonLd, buildBreadcrumbListJsonLd } from "@/lib/jsonLd";
-import { pageAbsoluteUrl, siteMetadataBase } from "@/lib/site";
+import { pageAbsoluteUrl, siteMetadataBase, SITE_NAME } from "@/lib/site";
 import {
   getBlogPostBySlug,
   getBlogStaticSlugs,
@@ -34,6 +34,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const imageUrl = getSanityImageUrl(post.seo?.openGraphImage || post.coverImage);
+  const defaultOgImage = pageAbsoluteUrl("/og/4unik-default.svg");
+  const ogImages = imageUrl
+    ? [{ url: imageUrl }]
+    : [{ url: defaultOgImage, width: 1200, height: 630, alt: `${SITE_NAME} social preview` }];
   const hasPortugueseAlternate = await hasBlogPostWithSlug("pt", post.slug);
 
   return {
@@ -57,14 +61,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: post.seo?.metaDescription || post.excerpt,
       url: `/en/blog/${post.slug}/`,
       locale: "en_US",
-      images: imageUrl ? [{ url: imageUrl }] : undefined,
+      images: ogImages,
       publishedTime: post.publishedAt,
     },
     twitter: {
-      card: imageUrl ? "summary_large_image" : "summary",
+      card: "summary_large_image",
       title: post.seo?.metaTitle || post.title,
       description: post.seo?.metaDescription || post.excerpt,
-      images: imageUrl ? [imageUrl] : undefined,
+      images: imageUrl ? [imageUrl] : [defaultOgImage],
     },
   };
 }

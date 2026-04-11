@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { motion } from "framer-motion";
 import { Link2, Shield, TrendingUp } from "lucide-react";
 
 const ICONS = [Link2, Shield, TrendingUp] as const;
@@ -19,9 +20,13 @@ export default function EnterpriseTrustStrip() {
           {s.items.map((item, i) => {
             const Icon = ICONS[i] ?? Link2;
             return (
-              <li
+              <motion.li
                 key={item.title}
                 className="flex gap-4 rounded-2xl border border-white/5 bg-white/3 p-4 md:flex-col md:items-start"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+                transition={{ delay: i * 0.09, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-brand-orange">
                   <Icon className="h-5 w-5" aria-hidden />
@@ -30,7 +35,7 @@ export default function EnterpriseTrustStrip() {
                   <h2 className="font-heading text-base font-bold text-white">{item.title}</h2>
                   <p className="mt-1 text-sm leading-relaxed text-white/55">{item.body}</p>
                 </div>
-              </li>
+              </motion.li>
             );
           })}
         </ul>

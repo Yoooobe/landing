@@ -1,4 +1,5 @@
 import LocaleRootLayout from "@/components/site-settings/LocaleRootLayout";
+import { htmlLangForLocale } from "@/lib/locale";
 import { buildRootLayoutMetadata } from "@/lib/seo/routeMetadata";
 import { getMarketingHomeSeo } from "@/sanity/lib/marketingPages";
 import type { Metadata } from "next";
@@ -17,7 +18,7 @@ export default async function PtRootLayout({
   const homeSeo = await getMarketingHomeSeo("pt");
 
   return (
-    <LocaleRootLayout lang="pt-BR" seoDescription={homeSeo.description}>
+    <LocaleRootLayout lang={htmlLangForLocale("pt")} seoDescription={homeSeo.description}>
       {children}
     </LocaleRootLayout>
   );

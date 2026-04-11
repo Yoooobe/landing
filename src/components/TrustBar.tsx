@@ -6,6 +6,7 @@ import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { withBasePath } from "@/lib/basePath";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useMemo } from "react";
 
@@ -55,10 +56,25 @@ export default function TrustBar() {
   return (
     <section className="border-b border-t border-white/5 bg-surface-page py-12">
       <div className="container mx-auto px-4 text-center">
-        <p className="text-sm font-bold tracking-widest text-white/40 uppercase mb-8">{m.home.trust.title}</p>
+        <motion.p
+          className="text-sm font-bold tracking-widest text-white/40 uppercase mb-8"
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {m.home.trust.title}
+        </motion.p>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
           {logos.map((logo, i) => (
-            <div key={i} className="h-8 md:h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity">
+            <motion.div
+              key={`${logo.src}-${i}`}
+              className="h-8 md:h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -12% 0px" }}
+              transition={{ delay: i * 0.05, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            >
               {logo.href ? (
                 isExternalShellHref(resolveShellHref(logo.href, locale)) ? (
                   <a
@@ -76,7 +92,7 @@ export default function TrustBar() {
               ) : (
                 <img src={logo.src} alt={logo.alt} loading="lazy" className="h-auto max-h-full max-w-[min(100%,8rem)] object-contain md:max-w-36" />
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

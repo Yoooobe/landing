@@ -1,4 +1,5 @@
 import LocaleRootLayout from "@/components/site-settings/LocaleRootLayout";
+import { htmlLangForLocale } from "@/lib/locale";
 import { buildEnSegmentLayoutMetadata } from "@/lib/seo/routeMetadata";
 import { getMarketingHomeSeo } from "@/sanity/lib/marketingPages";
 import type { Metadata } from "next";
@@ -17,7 +18,7 @@ export default async function EnRootLayout({
   const homeSeo = await getMarketingHomeSeo("en");
 
   return (
-    <LocaleRootLayout lang="en" seoDescription={homeSeo.description}>
+    <LocaleRootLayout lang={htmlLangForLocale("en")} seoDescription={homeSeo.description}>
       {children}
     </LocaleRootLayout>
   );

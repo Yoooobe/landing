@@ -22,6 +22,9 @@ mcps/**/node_modules/
 /build
 
 # misc
+# clone acidental / artefacto local (não versionar)
+/landing/
+
 .DS_Store
 *.pem
 
