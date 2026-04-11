@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import groq from "groq";
 
 export const routeMirrorByIdQuery = groq`
   *[_id == $id][0]{

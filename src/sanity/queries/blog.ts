@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import groq from "groq";
 import type { BlogPostDoc, BlogPostListItem } from "@/sanity/lib/types";
 
 export const blogPostListQuery = groq`

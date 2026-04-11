@@ -1,7 +1,7 @@
 "use client";
 
 import { isSanityConfigured } from "@/sanity/env";
-import { VisualEditing } from "next-sanity";
+import VisualEditing from "next-sanity/visual-editing/client-component";
 
 /**
  * O overlay visual fica ligado em dev para apoiar o Presentation Tool sem

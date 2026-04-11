@@ -1,7 +1,7 @@
 import type { Locale } from "@/lib/locale";
 import { getSanityClient } from "@/sanity/lib/client";
 import type { ApiIntegracoesShowcaseMediaDoc } from "@/sanity/lib/types";
-import { groq } from "next-sanity";
+import groq from "groq";
 
 const imageFields = `{
   alt,

@@ -1,4 +1,4 @@
-import { createClient, type SanityClient } from "next-sanity";
+import { createClient, type SanityClient } from "@sanity/client";
 import { apiVersion, dataset, isSanityConfigured, projectId } from "../env";
 
 /** Cliente só quando `NEXT_PUBLIC_SANITY_*` estão definidos; caso contrário `null`. */

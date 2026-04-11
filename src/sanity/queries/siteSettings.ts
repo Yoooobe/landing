@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import groq from "groq";
 import type { SiteSettingsDoc } from "@/sanity/lib/types";
 
 export const siteSettingsQuery = groq`

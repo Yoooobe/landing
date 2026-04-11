@@ -1,4 +1,4 @@
-import { createClient } from "next-sanity";
+import { createClient } from "@sanity/client";
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/locale";
 import { buildRoutePageMetadata, type PageSeoCopy } from "@/lib/seo/routeMetadata";

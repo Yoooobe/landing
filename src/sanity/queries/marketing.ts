@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import groq from "groq";
 import type { MarketingPageDoc, MarketingStrategyDoc } from "@/sanity/lib/types";
 
 const marketingPageProjection = groq`

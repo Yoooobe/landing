@@ -1,6 +1,6 @@
 import { BASE_PATH } from "@/lib/basePath";
 import type { Locale } from "@/lib/locale";
-import { groq } from "next-sanity";
+import groq from "groq";
 import { enHome } from "@/messages/segments/en-home";
 import { ptHome } from "@/messages/segments/pt-home";
 import { getSanityClient } from "@/sanity/lib/client";
