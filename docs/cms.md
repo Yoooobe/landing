@@ -751,7 +751,7 @@ O PAT precisa de scope `repo` ou permissão equivalente.
 
 Secrets recomendados em **Settings → Secrets and variables → Actions**:
 
-- `NEXT_PUBLIC_SANITY_PROJECT_ID` — **obrigatório** o ID real do projeto (ex. `hin8ivz0`). Não uses o texto literal `your-project-id` nem placeholders do `.env.example`.
+- `NEXT_PUBLIC_SANITY_PROJECT_ID` — **recomendado** o ID real do projeto (ex. `hin8ivz0`). No CI, o workflow **rejeita** os textos literais `your-project-id` e `xxx`. O valor `placeholder` é aceite com **aviso** (build corre; o Studio em produção pode falhar). Vazio também gera aviso.
 - `NEXT_PUBLIC_SANITY_DATASET` — normalmente `production`
 - opcional: `NEXT_PUBLIC_SANITY_API_VERSION`
 - opcional: `NEXT_PUBLIC_GA_ID`
@@ -766,7 +766,7 @@ Depois de criar ou alterar secrets, faz **re-run** do workflow *Deploy to GitHub
 
 Após um push a `main` ou um *Run workflow* bem-sucedido:
 
-1. **Actions:** o job *Deploy to GitHub Pages* terminou sem erro.
+1. **Actions:** o job *Deploy to GitHub Pages* terminou sem erro. Se o run nem começar ou aparecer bloqueio de **billing** / minutos de Actions, resolve em [Billing da conta](https://github.com/settings/billing) ou da organização (não é um erro do repositório).
 2. **Smoke HTTP:** abre `https://yoooobe.github.io/landing/` e `https://yoooobe.github.io/landing/en/` (respostas 200).
 3. **Assets:** confirma que `/landing/favicon.ico` e `/landing/brand/` respondem (favicon e marca).
 4. **Studio (opcional):** se o Sanity estiver configurado no CI, testa `https://yoooobe.github.io/landing/studio/` e login.

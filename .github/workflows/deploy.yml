@@ -1,3 +1,14 @@
+# Deploy estático (out/) para GitHub Pages.
+#
+# Troubleshooting quando NADA corre ou o job nem inicia:
+# - Mensagem do GitHub: "account locked" / "billing" → limite ou bloqueio de faturação.
+#   Conta: https://github.com/settings/billing — Organização: Settings → Billing do org.
+#   Isto não é controlado por este ficheiro; Actions precisam de minutos/plano válido.
+#
+# Troubleshooting quando o build falha no passo "Verify Sanity secrets":
+# - Ver mensagem no log; valores literais de exemplo (your-project-id, xxx) bloqueiam o deploy.
+# - "placeholder" gera aviso mas permite o build (Studio em produção pode não funcionar).
+
 name: Deploy to GitHub Pages
 
 on:
@@ -41,15 +52,22 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Verify Sanity secrets (evita Studio em produção com ID errado)
+      - name: Preflight (billing / Actions)
+        run: |
+          echo "::notice::Se o workflow não arranca ou o GitHub mostra 'locked due to a billing issue', trata-se de faturação ou minutos de Actions esgotados — https://github.com/settings/billing (conta) ou Billing da organização. Sem isso, nenhum passo deste job corre."
+          echo "::notice::Documentação Sanity/CI: docs/cms.md (secrets e checklist pós-deploy)."
+
+      - name: Verify Sanity secrets
         env:
           ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
         run: |
           if [ -z "${ID}" ]; then
-            echo "::warning::Secret NEXT_PUBLIC_SANITY_PROJECT_ID está vazio. O build não embute o ID real — o Studio em https://yoooobe.github.io pode falhar. Defina em Settings → Secrets → Actions."
-          elif [ "${ID}" = "your-project-id" ] || [ "${ID}" = "placeholder" ] || [ "${ID}" = "xxx" ]; then
-            echo "::error::NEXT_PUBLIC_SANITY_PROJECT_ID não pode ser texto de exemplo (${ID}). Use o ID real do projeto em sanity.io/manage."
+            echo "::warning::NEXT_PUBLIC_SANITY_PROJECT_ID está vazio. O export não embute ID real — o Studio em produção pode falhar. Defina em Settings → Secrets → Actions (ver docs/cms.md)."
+          elif [ "${ID}" = "your-project-id" ] || [ "${ID}" = "xxx" ]; then
+            echo "::error::NEXT_PUBLIC_SANITY_PROJECT_ID não pode ser texto de exemplo (${ID}). Obtém o ID real em https://www.sanity.io/manage e grava o secret em Settings → Secrets → Actions."
             exit 1
+          elif [ "${ID}" = "placeholder" ]; then
+            echo "::warning::NEXT_PUBLIC_SANITY_PROJECT_ID=placeholder — build segue (alinhado a dev local), mas o Studio em https://yoooobe.github.io/landing/studio/ pode não autenticar. Para produção, usa o ID real do projeto Sanity."
           else
             echo "NEXT_PUBLIC_SANITY_PROJECT_ID definido (valor não mostrado)."
           fi

@@ -23,6 +23,8 @@ The site is served at `http://localhost:3000/landing/` when using the default ca
 | Build (static export) | `npm run build` (requires Sanity env vars) |
 | Deploy (GH Pages) | `npm run deploy:gh-pages` |
 
+**CI (`.github/workflows/deploy.yml`):** o primeiro passo útil após `npm ci` imprime avisos se **faturação / minutos de Actions** bloquearem o GitHub (mensagem típica: *account locked due to a billing issue*). O passo **Verify Sanity secrets** falha só com `your-project-id` ou `xxx`; `placeholder` gera aviso e permite o build. Detalhes em `docs/cms.md`.
+
 ### Gotchas
 
 - **Sanity env vars required**: `NEXT_PUBLIC_SANITY_DATASET` and `NEXT_PUBLIC_SANITY_PROJECT_ID` must be set for both `npm run dev` and `npm run build`. Without them, the `/studio` route crashes. Use `production` and `placeholder` as dummy values for local dev if real credentials aren't available.
