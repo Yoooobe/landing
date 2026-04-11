@@ -1,0 +1,4 @@
+{
+  "defaultSiteUrl": "https://yoooobe.github.io/landing",
+  "note": "Fallback quando NEXT_PUBLIC_SITE_URL não está definido. robots.txt, sitemap, metadados e llms.txt derivam da mesma regra de parsing (ver src/lib/parsePublicSiteUrl.ts). Para produção, prefira definir NEXT_PUBLIC_SITE_URL no CI; altere defaultSiteUrl aqui se quiser mudar o fallback do repositório."
+}

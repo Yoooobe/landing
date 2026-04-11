@@ -7,10 +7,12 @@ import { structureTool } from "sanity/structure";
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { dataset, projectId } from "./src/sanity/env";
 import { SITE_URL } from "./src/lib/site";
+import { SITE_ORIGIN } from "./src/lib/publicSite";
 import { schema } from "./src/sanity/schemaTypes";
 import { resolve } from "./src/sanity/presentation/resolve";
 import { structure } from "./src/sanity/structure";
 import { BASE_PATH } from "./src/lib/basePath";
+import { nanoBananaImageAssetSource } from "./src/sanity/assetSources/nanoBananaImageSource";
 
 const studioBasePath = `${BASE_PATH}/studio`;
 const previewInitialUrl =
@@ -32,7 +34,12 @@ export default defineConfig({
       previewUrl: {
         initial: previewInitialUrl,
       },
-      allowOrigins: ["http://localhost:*", "https://yoooobe.github.io"],
+      allowOrigins: ["http://localhost:*", SITE_ORIGIN],
     }),
   ],
+  form: {
+    image: {
+      assetSources: (prev) => [nanoBananaImageAssetSource, ...prev],
+    },
+  },
 })

@@ -9,12 +9,12 @@ const copy = {
   pt: {
     sectionLabel: "API e integrações",
     overview: "Visão geral da API",
-    workvivo: "Workvivo × Yoobe",
+    workvivo: "Workvivo × 4Unik",
   },
   en: {
     sectionLabel: "API & integrations",
     overview: "API overview",
-    workvivo: "Workvivo × Yoobe",
+    workvivo: "Workvivo × 4Unik",
   },
 };
 
@@ -27,7 +27,7 @@ export default function ApiIntegracoesSubnav() {
   const isEn = pathNorm.startsWith("/en/");
   const t = isEn ? copy.en : copy.pt;
 
-  const baseOverview = "/api-integracoes/";
+  const baseOverview = isEn ? "/en/api-integracoes/" : "/api-integracoes/";
   const baseWorkvivoPt = "/api-integracoes/workvivo/";
   const baseWorkvivoEn = "/en/api-integracoes/workvivo/";
 

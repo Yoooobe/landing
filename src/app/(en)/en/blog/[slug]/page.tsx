@@ -1,9 +1,14 @@
 import BlogPostContent from "@/components/BlogPostContent";
 import JsonLdScript from "@/components/seo/JsonLdScript";
 import { LocaleMessagesProvider } from "@/contexts/LocaleMessagesContext";
-import { buildBlogPostingJsonLd } from "@/lib/jsonLd";
+import { buildBlogPostingJsonLd, buildBreadcrumbListJsonLd } from "@/lib/jsonLd";
 import { pageAbsoluteUrl, siteMetadataBase } from "@/lib/site";
-import { getBlogPostBySlug, getBlogStaticSlugs, hasBlogPostWithSlug } from "@/sanity/lib/blog";
+import {
+  getBlogPostBySlug,
+  getBlogStaticSlugs,
+  getRelatedBlogPosts,
+  hasBlogPostWithSlug,
+} from "@/sanity/lib/blog";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -71,12 +76,19 @@ export default async function BlogPostPageEn({ params }: Props) {
   if (!post) notFound();
 
   const pageUrl = pageAbsoluteUrl(`/en/blog/${post.slug}/`);
+  const relatedPosts = await getRelatedBlogPosts("en", post.slug, post.category, 3);
+  const breadcrumbLd = buildBreadcrumbListJsonLd([
+    { name: "Home", path: "/en/" },
+    { name: "Blog", path: "/en/blog/" },
+    { name: post.title, path: `/en/blog/${post.slug}/` },
+  ]);
 
   return (
     <>
       <JsonLdScript data={{ ...buildBlogPostingJsonLd(pageUrl, post, "en") }} />
+      <JsonLdScript data={{ ...breadcrumbLd }} />
       <LocaleMessagesProvider locale="en">
-        <BlogPostContent post={post} />
+        <BlogPostContent post={post} relatedPosts={relatedPosts} />
       </LocaleMessagesProvider>
     </>
   );

@@ -1,6 +1,3 @@
-const fs = require('fs');
-const https = require('https');
-
 const API_KEY = 'fc-85398e4099b742ff95c2d9bcd2519198';
 const urls = [
   'https://stripe.com',
@@ -11,7 +8,7 @@ const urls = [
   'https://4unik.yoobe.me'
 ];
 
-async function scrapeUrlText(url) {
+async function scrapeUrlText(url, https) {
   return new Promise((resolve, reject) => {
     const data = JSON.stringify({
       url: url,
@@ -59,11 +56,15 @@ async function scrapeUrlText(url) {
 }
 
 async function main() {
-  const results = {};
+  const [{ default: fs }, https] = await Promise.all([
+    import('node:fs'),
+    import('node:https'),
+  ]);
+
   for (const url of urls) {
     console.log(`Scraping ${url}...`);
     try {
-      const markdown = await scrapeUrlText(url);
+      const markdown = await scrapeUrlText(url, https);
       const filename = url.replace(/https?:\/\//, '').replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.md';
       fs.writeFileSync(`/Users/genautech/landing/scrapings/${filename}`, markdown || 'No content');
       console.log(`Saved to ${filename}`);

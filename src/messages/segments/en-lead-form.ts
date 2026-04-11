@@ -1,0 +1,30 @@
+export const enLeadForm = {
+  nameLabel: "Full name",
+  namePlaceholder: "Your name",
+  emailLabel: "Work email",
+  emailPlaceholder: "you@company.com",
+  companyLabel: "Company",
+  companyPlaceholder: "Company name",
+  phoneLabel: "Phone (optional)",
+  phonePlaceholder: "Include country/area code",
+  messageLabel: "Message (optional)",
+  messagePlaceholder: "Tell us briefly what you need",
+  consentLabel:
+    "I agree to be contacted for commercial follow-up, in line with the privacy policy.",
+  submit: "Request contact",
+  submitting: "Sending…",
+  successTitle: "We received your request",
+  successBody: "Our team will get back to you shortly.",
+  errorGeneric: "We could not send your request. Try again or use the demo link.",
+  errorConfig:
+    "Form delivery is not configured in this environment. Please use scheduling or WhatsApp.",
+  altCalendly: "Or book a demo",
+  altTechnical: "Or book a technical call",
+  altWhatsapp: "Or message us on WhatsApp",
+  fieldErrors: {
+    name: "Please enter your name (at least 2 characters).",
+    email: "Please enter a valid email.",
+    company: "Please enter your company name.",
+    consent: "You need to accept to continue.",
+  },
+} as const;

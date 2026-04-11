@@ -1,149 +1,189 @@
 "use client";
 
+import { MemberStoreHomeMockup } from "@/components/PlatformMockupScreens";
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { getSanityImageUrl } from "@/sanity/lib/image";
+import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Trophy, Package, LayoutDashboard } from "lucide-react";
+import Image from "next/image";
 
-export default function BentoFeatures() {
+export default function BentoFeatures({
+  homeContent = null,
+}: {
+  homeContent?: ResolvedHomeContent | null;
+}) {
+  const { m, path } = useLocaleMessages();
+  const b = m.bento;
+  const primaryCardImageUrl = getSanityImageUrl(
+    homeContent?.showcaseMedia?.bento?.primaryCardImage,
+  );
+  const storeCardImageUrl = getSanityImageUrl(
+    homeContent?.showcaseMedia?.bento?.storeCardImage,
+  );
+
   return (
     <section id="platform" className="section-gradient-bg relative overflow-hidden py-24">
-      {/* Ambient background glow */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-orange/10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-[500px] h-[500px] bg-yoobe-purple/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 h-96 w-96 rounded-full bg-brand-orange/10 blur-[100px] pointer-events-none"></div>
+      <div className="pointer-events-none absolute bottom-1/4 left-1/4 h-[500px] w-[500px] rounded-full bg-yoobe-purple/10 blur-[120px]"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block px-3 py-1 mb-4 rounded-full border border-yoobe-purple/30 bg-yoobe-purple/10 text-yoobe-purple text-sm font-bold tracking-wide uppercase">
-            Visão Geral
+      <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-16 text-center">
+          <div className="mb-4 inline-block rounded-full border border-yoobe-purple/30 bg-yoobe-purple/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-yoobe-purple">
+            {b.badge}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
-            O hub central para inspirar e <br className="hidden md:block"/> recompensar quem faz acontecer.
+          <h2 className="mb-6 font-heading text-3xl font-black text-white md:text-5xl">
+            {b.titleLine1} <br className="hidden md:block" />
+            {b.titleLine2}
           </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Da criação de pequenos desafios de vendas até a entrega do prêmio físico na casa do colaborador. Tudo no mesmo lugar, sem planilhas intermináveis.
-          </p>
+          <p className="mx-auto max-w-2xl text-lg text-white/60">{b.sub}</p>
         </div>
 
-        {/* Bento Grid layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[320px]">
-          
-          {/* Mega Card: Painel do Gestor */}
-          <motion.a 
-            href={withBasePath("/plataforma")}
+        <div className="grid auto-rows-[320px] grid-cols-1 gap-6 md:grid-cols-3">
+          <motion.a
+            href={withBasePath(path("/plataforma"))}
             whileHover={{ y: -5 }}
-            className="md:col-span-2 group relative overflow-hidden rounded-3xl glass-panel-dark border border-white/5 p-8 flex flex-col justify-between"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/5 glass-panel-dark p-8 md:col-span-2"
           >
             <div className="relative z-10 max-w-sm">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-orange to-red-500 flex items-center justify-center mb-4">
-                <LayoutDashboard className="text-white w-6 h-6" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-brand-orange to-red-500">
+                <LayoutDashboard className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-brand-orange transition-colors font-heading">Você no Controle</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6 font-sans">
-                Esqueça o vai-e-vem de aprovações. Defina orçamentos, acompanhe o engajamento geral e libere relatórios automáticos para o financeiro.
-              </p>
-              <div className="flex items-center text-brand-orange font-semibold text-sm font-sans">
-                Conheça o painel <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              <h3 className="mb-2 font-heading text-2xl font-bold text-white transition-colors group-hover:text-brand-orange">{b.card1.title}</h3>
+              <p className="mb-6 font-sans text-sm leading-relaxed text-white/60">{b.card1.body}</p>
+              <div className="flex items-center font-sans text-sm font-semibold text-brand-orange">
+                {b.card1.cta} <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>
             </div>
-            
-            {/* UI Mockup Placeholder in Bento */}
-            <div className="absolute top-1/2 right-[-5%] w-3/5 h-full rounded-tl-2xl bg-brand-charcoal/80 border-t border-l border-white/10 shadow-2xl p-4 overflow-hidden transform translate-y-[-20%] group-hover:translate-y-[-25%] group-hover:scale-105 transition-all duration-500">
-              <div className="flex justify-between items-center mb-4">
-                <div className="text-xs font-bold text-white font-sans">Overview Mensal</div>
-                <div className="text-[10px] text-white/50 bg-white/5 px-2 py-1 rounded font-sans">Out 2026</div>
-              </div>
-              <div className="space-y-3">
-                <div className="w-full h-12 bg-white/5 rounded-lg border border-white/5 flex items-center px-4 justify-between">
-                  <div className="text-[10px] text-white/40 uppercase font-sans">Faturamento</div>
-                  <div className="text-sm font-bold text-white font-sans">R$ 142.050,00</div>
+
+            <div className="absolute top-1/2 right-[-5%] h-full w-3/5 translate-y-[-20%] transform overflow-hidden rounded-tl-2xl border-l border-t border-white/10 bg-brand-charcoal/80 p-4 shadow-2xl transition-all duration-500 group-hover:translate-y-[-25%] group-hover:scale-105">
+              {primaryCardImageUrl ? (
+                <div className="relative h-full w-full overflow-hidden rounded-xl border border-white/10">
+                  <Image
+                    src={primaryCardImageUrl}
+                    alt={
+                      homeContent?.showcaseMedia?.bento?.primaryCardImage?.alt?.trim() ||
+                      b.card1.title
+                    }
+                    fill
+                    sizes="(min-width: 768px) 32vw, 100vw"
+                    className="object-cover"
+                    unoptimized
+                  />
                 </div>
-                <div className="w-full h-12 bg-white/5 rounded-lg border border-white/5 flex items-center px-4 justify-between">
-                  <div className="text-[10px] text-white/40 uppercase font-sans">Resgates</div>
-                  <div className="text-sm font-bold text-white font-sans">3.402 itens</div>
-                </div>
-                <div className="w-full h-12 bg-white/5 rounded-lg border border-white/5 flex items-center px-4 justify-between">
-                  <div className="text-[10px] text-white/40 uppercase font-sans">SLA Dentro do prazo</div>
-                  <div className="text-sm font-bold text-green-400 font-sans">99.1%</div>
-                </div>
-              </div>
+              ) : (
+                <>
+                  <div className="mb-4 flex items-center justify-between">
+                    <div className="font-sans text-xs font-bold text-white">{b.mockMonth}</div>
+                    <div className="rounded bg-white/5 px-2 py-1 font-sans text-[10px] text-white/50">{b.mockDate}</div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex h-12 w-full items-center justify-between rounded-lg border border-white/5 bg-white/5 px-4">
+                      <div className="font-sans text-[10px] uppercase text-white/40">{b.mockRev}</div>
+                      <div className="font-sans text-sm font-bold text-white">R$ 142.050,00</div>
+                    </div>
+                    <div className="flex h-12 w-full items-center justify-between rounded-lg border border-white/5 bg-white/5 px-4">
+                      <div className="font-sans text-[10px] uppercase text-white/40">{b.mockRed}</div>
+                      <div className="font-sans text-sm font-bold text-white">3.402 itens</div>
+                    </div>
+                    <div className="flex h-12 w-full items-center justify-between rounded-lg border border-white/5 bg-white/5 px-4">
+                      <div className="font-sans text-[10px] uppercase text-white/40">{b.mockSla}</div>
+                      <div className="font-sans text-sm font-bold text-green-400">99.1%</div>
+                    </div>
+                  </div>
+                </>
+              )}
             </div>
           </motion.a>
 
-          {/* Gamification Engine */}
-          <motion.a 
-            href={withBasePath("/gamificacao")}
+          <motion.a
+            href={withBasePath(path("/gamificacao"))}
             whileHover={{ y: -5 }}
-            className="group relative overflow-hidden rounded-3xl glass-panel-dark border border-white/5 p-8 flex flex-col justify-between"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/5 glass-panel-dark p-8"
           >
             <div className="relative z-10">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-yoobe-purple to-pink-500 flex items-center justify-center mb-4">
-                <Trophy className="text-white w-6 h-6" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-yoobe-purple to-pink-500">
+                <Trophy className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yoobe-neon-pink transition-colors font-heading">Campanhas Divertidas</h3>
-              <p className="text-white/60 text-sm leading-relaxed font-sans">
-                Crie missões baseadas nas metas da empresa. Distribua pontos, crie rankings saudáveis e reconheça quem se destaca na operação.
-              </p>
+              <h3 className="mb-2 font-heading text-xl font-bold text-white transition-colors group-hover:text-yoobe-neon-pink">{b.card2.title}</h3>
+              <p className="font-sans text-sm leading-relaxed text-white/60">{b.card2.body}</p>
             </div>
-            {/* Visual Dots */}
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-yoobe-purple/20 rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-yoobe-purple/20 blur-2xl"></div>
           </motion.a>
 
-          {/* Loja e Catálogo */}
-          <motion.a 
-            href={`${withBasePath("/plataforma")}#loja`}
+          <motion.a
+            href={`${withBasePath(path("/plataforma"))}#loja`}
             whileHover={{ y: -5 }}
-            className="group relative overflow-hidden rounded-3xl glass-panel-dark border border-white/5 p-8 flex flex-col justify-between"
+            className="group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/5 glass-panel-dark p-8"
           >
             <div className="relative z-10">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-600 flex items-center justify-center mb-4">
-                <Package className="text-white w-6 h-6" />
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-green-400 to-emerald-600">
+                <Package className="h-6 w-6 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors font-heading">Eles Escolhem o Prêmio</h3>
-              <p className="text-white/60 text-sm leading-relaxed font-sans">
-                Catálogo enorme onde o time troca seus pontos. E o melhor: nós fazemos a entrega porta a porta para o Brasil todo.
-              </p>
+              <h3 className="mb-2 font-heading text-xl font-bold text-white transition-colors group-hover:text-green-400">{b.card3.title}</h3>
+              <p className="font-sans text-sm leading-relaxed text-white/60">{b.card3.body}</p>
             </div>
-            <div className="absolute right-4 bottom-4 w-24 h-24 bg-[url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=200&q=80')] bg-cover bg-center rounded-xl opacity-40 group-hover:opacity-100 transition-opacity border border-white/10"></div>
+            <div className="absolute bottom-4 right-4 h-24 w-24 overflow-hidden rounded-xl border border-white/10 transition-opacity group-hover:opacity-100">
+              {storeCardImageUrl ? (
+                <Image
+                  src={storeCardImageUrl}
+                  alt={
+                    homeContent?.showcaseMedia?.bento?.storeCardImage?.alt?.trim() ||
+                    b.card3.title
+                  }
+                  fill
+                  sizes="96px"
+                  className="object-cover"
+                  unoptimized
+                />
+              ) : (
+                <div className="h-full w-full overflow-hidden opacity-80 transition-opacity group-hover:opacity-100">
+                  <MemberStoreHomeMockup />
+                </div>
+              )}
+            </div>
           </motion.a>
 
-          {/* Segurança & LGPD */}
-          <motion.a 
-            href={withBasePath("/api-integracoes")}
+          <motion.a
+            href={withBasePath(path("/api-integracoes"))}
             whileHover={{ y: -5 }}
-            className="md:col-span-2 group relative overflow-hidden rounded-3xl glass-panel-dark border border-white/5 p-8 flex items-center justify-between"
+            className="group relative flex items-center justify-between overflow-hidden rounded-3xl border border-white/5 glass-panel-dark p-8 md:col-span-2"
           >
             <div className="relative z-10 max-w-sm">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-unik-blue to-demo-cyan-deep">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-unik-blue to-demo-cyan-deep">
                 <ShieldCheck className="h-6 w-6 text-white" />
               </div>
-              <h3 className="mb-2 text-2xl font-bold text-white transition-colors group-hover:text-demo-cyan font-heading">
-                Conecta com Suas Ferramentas
-              </h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-4 font-sans">
-                Sem atrito para o time de TI. Integração simplificada com os sistemas que sua empresa já usa todos os dias, como Slack, Teams e Workday.
-              </p>
-              <div className="flex items-center text-blue-400 font-semibold text-sm font-sans">
-                Documentação <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+              <h3 className="mb-2 font-heading text-2xl font-bold text-white transition-colors group-hover:text-demo-cyan">{b.card4.title}</h3>
+              <p className="mb-4 font-sans text-sm leading-relaxed text-white/60">{b.card4.body}</p>
+              <div className="flex items-center font-sans text-sm font-semibold text-blue-400">
+                {b.card4.cta} <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>
             </div>
-            
-            {/* Terminal mock */}
+
             <div className="relative hidden h-full w-1/2 overflow-hidden rounded-xl border border-white/10 bg-surface-page p-4 font-mono text-[10px] text-white/70 transition-colors group-hover:border-unik-blue/50 sm:block">
-              <div className="flex gap-1.5 mb-3">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+              <div className="mb-3 flex gap-1.5">
+                <div className="h-2.5 w-2.5 rounded-full bg-red-500"></div>
+                <div className="h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
+                <div className="h-2.5 w-2.5 rounded-full bg-green-500"></div>
               </div>
-              <div className="text-demo-cyan">POST <span className="text-white">/v1/rewards/grant</span></div>
-              <div className="text-gray-400 mt-1">{"{"}</div>
-              <div className="ml-4"><span className="text-purple-400">&quot;user_id&quot;</span>: <span className="text-green-300">&quot;emp_98231&quot;</span>,</div>
-              <div className="ml-4"><span className="text-purple-400">&quot;points&quot;</span>: <span className="text-orange-300">500</span>,</div>
-              <div className="ml-4"><span className="text-purple-400">&quot;reason&quot;</span>: <span className="text-green-300">&quot;Q3 Sales Target Achieved&quot;</span></div>
+              <div className="text-demo-cyan">
+                POST <span className="text-white">/v1/rewards/grant</span>
+              </div>
+              <div className="mt-1 text-gray-400">{"{"}</div>
+              <div className="ml-4">
+                <span className="text-purple-400">&quot;user_id&quot;</span>: <span className="text-green-300">&quot;emp_98231&quot;</span>,
+              </div>
+              <div className="ml-4">
+                <span className="text-purple-400">&quot;points&quot;</span>: <span className="text-orange-300">500</span>,
+              </div>
+              <div className="ml-4">
+                <span className="text-purple-400">&quot;reason&quot;</span>: <span className="text-green-300">&quot;Q3 Sales Target Achieved&quot;</span>
+              </div>
               <div className="text-gray-400">{"}"}</div>
-              <div className="text-green-500 mt-3">200 OK — Reward granted securely.</div>
+              <div className="mt-3 text-green-500">200 OK — Reward granted securely.</div>
             </div>
           </motion.a>
-
         </div>
       </div>
     </section>

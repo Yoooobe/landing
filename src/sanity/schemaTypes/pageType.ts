@@ -2,8 +2,10 @@ import {defineField, defineType} from 'sanity'
 
 export const pageType = defineType({
   name: 'page',
-  title: 'Páginas da Landing Page',
+  title: 'Páginas da Landing Page (legado)',
   type: 'document',
+  description:
+    'Modelo legado mantido apenas para compatibilidade durante a migração da landing para `marketingPage`.',
   fields: [
     defineField({
       name: 'title',

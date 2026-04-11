@@ -1,14 +1,11 @@
 "use client";
 
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
 
 export default function StatsBar() {
-  const stats = [
-    { value: "500", suffix: "+", label: "Empresas atendidas" },
-    { value: "1M", suffix: "+", label: "Premiações entregues" },
-    { value: "98", suffix: "%", label: "Satisfação dos clientes" },
-    { value: "5000", suffix: "+", label: "Produtos no catálogo" }
-  ];
+  const { m } = useLocaleMessages();
+  const stats = [...m.statsBar.items];
 
   return (
     <section className="py-20 bg-black border-y border-white/5 relative overflow-hidden">

@@ -12,7 +12,7 @@ triggers:
 
 # Web Design Specialist — Premium Landing Pages
 
-## Design System: 4unik by Yoobe
+## Design System: 4unik V3
 
 ### Color Palette
 | Token | Hex | Usage |
@@ -99,9 +99,9 @@ triggers:
 - [ ] Alt text on all images
 - [ ] `lang="pt-BR"` attribute
 
-## Estrutura da Landing Page 4unik by Yoobe (Conversão SaaS B2B)
+## Estrutura da Landing Page 4unik V3 (Conversão SaaS B2B)
 
-"Atue como um Web Designer especialista em conversão SaaS B2B. Crie a estrutura de blocos para a landing page da 4unik by Yoobe, utilizando a seguinte hierarquia:
+"Atue como um Web Designer especialista em conversão SaaS B2B. Crie a estrutura de blocos para a landing page da 4unik V3, utilizando a seguinte hierarquia:
 Hero Section: Título principal focado em unificar gamificação e loja corporativa + CTA para 'Solicitar Demonstração'
 .
 Social Proof (Prova Social): Logos de empresas parceiras, como Grupo Boticário e Softplan

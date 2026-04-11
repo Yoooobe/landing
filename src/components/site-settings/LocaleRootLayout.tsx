@@ -2,6 +2,7 @@ import AppShell from "@/components/AppShell";
 import AppProviders from "@/components/site-settings/AppProviders";
 import MarketingVisualEditing from "@/components/site-settings/MarketingVisualEditing";
 import JsonLdScript from "@/components/seo/JsonLdScript";
+import ThirdPartyChatLoader from "@/components/ThirdPartyChatLoader";
 import { buildOrganizationJsonLd, buildWebsiteJsonLd } from "@/lib/jsonLd";
 import {
   jakarta,
@@ -32,6 +33,7 @@ export default function LocaleRootLayout({
         <AppProviders>
           <AppShell>{children}</AppShell>
           <MarketingVisualEditing />
+          <ThirdPartyChatLoader />
         </AppProviders>
       </body>
     </html>

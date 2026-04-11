@@ -1,8 +1,12 @@
 "use client";
 
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
 
 export default function CasosHero() {
+  const { m } = useLocaleMessages();
+  const h = m.casosPage.hero;
+
   return (
     <section className="relative pt-32 pb-20 overflow-hidden bg-brand-navy-dark">
       {/* Dynamic Background */}
@@ -17,7 +21,7 @@ export default function CasosHero() {
           animate={{ opacity: 1, scale: 1 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-green-500/30 bg-green-500/10 backdrop-blur-sm mb-6 shadow-[0_0_20px_rgba(34,197,94,0.3)]"
         >
-          <span className="text-green-400 text-xs font-bold uppercase tracking-wider">Estudos de Caso Global</span>
+          <span className="text-green-400 text-xs font-bold uppercase tracking-wider">{h.badge}</span>
         </motion.div>
         
         <motion.h1
@@ -26,7 +30,11 @@ export default function CasosHero() {
           transition={{ delay: 0.1 }}
           className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tight max-w-5xl mx-auto"
         >
-          Resultados reais de <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">gigantes</span> do mercado.
+          {h.titleBefore}{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
+            {h.titleGradient}
+          </span>
+          {h.titleAfter}
         </motion.h1>
         
         <motion.p
@@ -35,7 +43,7 @@ export default function CasosHero() {
            transition={{ delay: 0.2 }}
            className="text-xl text-white/60 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
         >
-          Veja como SAP, Deloitte, IBM, Microsoft e CaLLogix utilizaram infraestruturas de gamificação para resolver problemas complexos de RH, vendas e comunidade.
+          {h.sub}
         </motion.p>
       </div>
     </section>

@@ -1,43 +1,72 @@
 "use client";
 
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { getSanityImageUrl } from "@/sanity/lib/image";
+import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-export default function ManagementSection() {
-  const features = [
-    { icon: "📊", title: "Dashboard Analítico", desc: "Métricas de engajamento, eNPS, taxa de resgate e ROI do programa em tempo real." },
-    { icon: "📦", title: "Logística Integrada", desc: "Rastreamento de envios, gestão de estoque e entregas em até 48h para todo o Brasil." },
-    { icon: "👥", title: "Gestão de Colaboradores", desc: "Importação em massa, segmentação por área/filial e controle de saldos individualizado." },
-    { icon: "🔒", title: "Segurança & Compliance", desc: "LGPD compliant, SSO, audit logs e controle granular de permissões por perfil." }
-  ];
+const ICONS = ["📊", "📦", "👥", "🔒"] as const;
+
+export default function ManagementSection({
+  homeContent = null,
+}: {
+  homeContent?: ResolvedHomeContent | null;
+}) {
+  const { m } = useLocaleMessages();
+  const man = m.managementSection;
+  const features = man.features.map((item, i) => {
+    const visual = homeContent?.showcaseMedia?.managementSection?.featureCards?.[i];
+    return {
+      ...item,
+      icon: visual?.emoji || ICONS[i],
+      image: visual?.image || null,
+      imageUrl: getSanityImageUrl(visual?.image),
+    };
+  });
 
   return (
-    <section id="gestao" className="py-24 bg-brand-navy-dark relative border-t border-white/5">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16 relative z-10 text-white">
-          <div className="inline-block px-3 py-1 mb-4 rounded-full border border-blue-400/30 bg-blue-400/10 text-blue-400 text-sm font-bold tracking-wide uppercase">
-            Plataforma de Gestão
+    <section id="gestao" className="relative border-t border-white/5 bg-brand-navy-dark py-24">
+      <div className="container relative z-10 mx-auto max-w-6xl px-4">
+        <div className="relative z-10 mb-16 text-center text-white">
+          <div className="mb-4 inline-block rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-blue-400">
+            {man.badge}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black mb-6 font-heading">
-            Do pedido à <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">entrega</span>, tudo sob controle
+          <h2 className="mb-6 font-heading text-3xl font-black md:text-5xl">
+            {man.titleBefore} <span className="bg-linear-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">{man.titleGradient}</span>
+            {man.titleAfter}
           </h2>
-          <p className="text-lg text-white/50 max-w-2xl mx-auto font-sans leading-relaxed">
-            Dashboard completo para gerenciar premiações, acompanhar envios e gerar relatórios em tempo real.
-          </p>
+          <p className="mx-auto max-w-2xl font-sans text-lg leading-relaxed text-white/50">{man.sub}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+        <div className="relative z-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {features.map((item, i) => (
-            <motion.div 
-              key={i}
+            <motion.div
+              key={item.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors"
+              className="rounded-3xl border border-white/10 bg-white/5 p-8 transition-colors hover:bg-white/10"
             >
-              <div className="text-4xl mb-6">{item.icon}</div>
-              <h3 className="text-xl font-bold text-white mb-3 font-heading">{item.title}</h3>
-              <p className="text-sm text-white/60 font-sans leading-relaxed">{item.desc}</p>
+              <div className="mb-6">
+                {item.imageUrl ? (
+                  <div className="relative h-20 w-20 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                    <Image
+                      src={item.imageUrl}
+                      alt={item.image?.alt?.trim() || item.title}
+                      fill
+                      sizes="80px"
+                      className="object-cover"
+                      unoptimized
+                    />
+                  </div>
+                ) : (
+                  <div className="text-4xl">{item.icon}</div>
+                )}
+              </div>
+              <h3 className="mb-3 font-heading text-xl font-bold text-white">{item.title}</h3>
+              <p className="font-sans text-sm leading-relaxed text-white/60">{item.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -1,5 +1,11 @@
+import JsonLdScript from "@/components/seo/JsonLdScript";
 import MarketingPageScreen from "@/components/MarketingPageScreen";
-import { buildMarketingPageMetadata } from "@/sanity/lib/marketingPages";
+import { buildBreadcrumbListJsonLd, buildFaqPageJsonLd } from "@/lib/jsonLd";
+import { pageAbsoluteUrl } from "@/lib/site";
+import {
+  buildMarketingPageMetadata,
+  getMarketingPageFaqItems,
+} from "@/sanity/lib/marketingPages";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -15,5 +21,19 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function EnApiIntegracoesOverviewPage() {
-  return <MarketingPageScreen locale="en" slug="api-integracoes" />;
+  const faqItems = await getMarketingPageFaqItems("en", "api-integracoes");
+  const pageUrl = pageAbsoluteUrl("/en/api-integracoes/");
+  const faqLd = faqItems.length > 0 ? buildFaqPageJsonLd(pageUrl, faqItems) : null;
+  const breadcrumbLd = buildBreadcrumbListJsonLd([
+    { name: "Home", path: "/en/" },
+    { name: "API & Integrations", path: "/en/api-integracoes/" },
+  ]);
+
+  return (
+    <>
+      <JsonLdScript data={{ ...breadcrumbLd }} />
+      {faqLd ? <JsonLdScript data={{ ...faqLd }} /> : null}
+      <MarketingPageScreen locale="en" slug="api-integracoes" />
+    </>
+  );
 }

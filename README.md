@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Lead capture (production)
+
+Static export cannot rely on internal API routes for lead submission. Set `NEXT_PUBLIC_LEADS_INGEST_URL` to an HTTPS endpoint that accepts JSON POST with CORS. See [docs/leads-ingest.md](docs/leads-ingest.md).
+
 ## Getting Started
 
 First, run the development server:

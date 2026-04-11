@@ -1,77 +1,57 @@
-export default function GamificationDeepUsecases() {
-  const cases = [
-    {
-      icon: "🎉",
-      title: "Welcome Kits & Onboarding",
-      desc: "Impressione desde o primeiro dia. Trilhas de onboarding gamificadas, welcome kits premium e missões de integração que reduzem o turnover nos primeiros 45 dias.",
-      hook: "A primeira impressão define a jornada",
-    },
-    {
-      icon: "🎂",
-      title: "Aniversários & Marcos",
-      desc: "Celebre cada ano de dedicação automaticamente. Pontos bônus, badges de tempo de casa e presentes personalizados que mostram que cada colaborador importa.",
-      hook: "Cada ano merece ser celebrado",
-    },
-    {
-      icon: "🎯",
-      title: "Metas, OKRs & Vendas",
-      desc: "Equipes de vendas gamificadas atingem cotas 78% mais rápido. Leaderboards de performance, missões trimestrais e premiações por resultado.",
-      hook: "Performance reconhecida, performance repetida",
-    },
-    {
-      icon: "🤝",
-      title: "Peer Recognition",
-      desc: "Reconhecimento entre colegas é a forma mais autêntica de valorização. Sistema de kudos, cartões de reconhecimento e pontos entre pares.",
-      hook: "Quem melhor reconhece é quem convive",
-    },
-    {
-      icon: "📚",
-      title: "Treinamentos & Capacitação",
-      desc: "Transforme treinamentos em experiências. Trilhas de aprendizado com pontos, certificações digitais e competições de conhecimento.",
-      hook: "Aprender pode ser divertido",
-    },
-    {
-      icon: "🎪",
-      title: "Eventos & Feiras",
-      desc: "Engaje participantes com QR codes, check-ins gamificados, missões durante o evento e swags como recompensa. Gere buzz e dados.",
-      hook: "Transforme eventos em experiências",
-    },
-  ];
+"use client";
 
+import Image from "next/image";
+import type { ImageWithEmojiDoc, ResolvedGamificacaoContent } from "@/sanity/lib/types";
+import { getSanityImageUrl } from "@/sanity/lib/image";
+
+export default function GamificationDeepUsecases({
+  content: u,
+  showcaseItems,
+}: {
+  content: ResolvedGamificacaoContent["deepUsecases"];
+  showcaseItems?: ImageWithEmojiDoc[];
+}) {
   return (
-    <section className="py-24 bg-[#0a0f18] relative overflow-hidden border-t border-white/5">
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-white/70 text-sm font-semibold mb-4">
-            Casos de Uso
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
-            Gamificação para cada <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple to-fuchsia-600">momento</span>
+    <section className="relative overflow-hidden border-t border-white/5 bg-[#0a0f18] py-24">
+      <div className="container relative z-10 mx-auto max-w-6xl px-4">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70">{u.badge}</span>
+          <h2 className="mb-6 font-heading text-3xl font-black text-white md:text-5xl">
+            {u.titleBefore}{" "}
+            <span className="bg-linear-to-r from-yoobe-purple to-fuchsia-600 bg-clip-text text-transparent">{u.titleGradient}</span>
+            {u.titleAfter ? ` ${u.titleAfter}` : ""}
           </h2>
-          <p className="text-lg text-white/60">
-            Da integração de novos colaboradores a campanhas de vendas, a gamificação se adapta a cada necessidade.
-          </p>
+          <p className="text-lg text-white/60">{u.sub}</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cases.map((c, idx) => (
-            <div key={idx} className="bg-[#121824] border border-white/10 p-8 rounded-2xl hover:border-yoobe-purple/50 transition-all hover:bg-[linear-gradient(135deg,#121824_0%,#1a1025_100%)] group">
-              <div className="text-4xl mb-4 group-hover:-translate-y-1 transition-transform">
-                {c.icon}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {u.items.map((item, idx) => {
+            const cardShowcase = showcaseItems?.[idx];
+            const cardImageUrl = getSanityImageUrl(cardShowcase?.image);
+            return (
+            <div
+              key={idx}
+              className="group rounded-2xl border border-white/10 bg-surface-panel p-8 transition-all hover:border-yoobe-purple/50 hover:bg-[linear-gradient(135deg,#121824_0%,#1a1025_100%)]"
+            >
+              <div className="mb-4 text-4xl transition-transform group-hover:-translate-y-1">
+                {cardImageUrl ? (
+                  <div className="relative h-12 w-12 overflow-hidden rounded-xl">
+                    <Image src={cardImageUrl} alt={cardShowcase?.image?.alt || item.title} fill className="object-cover" unoptimized />
+                  </div>
+                ) : cardShowcase?.emoji ? (
+                  <span>{cardShowcase.emoji}</span>
+                ) : (
+                  item.icon
+                )}
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 group-hover:text-yoobe-purple transition-colors">
-                {c.title}
-              </h3>
-              <p className="text-white/60 mb-6 text-sm leading-relaxed">
-                {c.desc}
-              </p>
+              <h3 className="mb-3 text-xl font-bold text-white transition-colors group-hover:text-yoobe-purple">{item.title}</h3>
+              <p className="mb-6 text-sm leading-relaxed text-white/60">{item.desc}</p>
               <div className="mt-auto border-t border-white/5 pt-4">
-                <span className="text-yoobe-purple text-xs font-semibold italic">
-                  "{c.hook}"
-                </span>
+                <span className="text-xs font-semibold italic text-yoobe-purple">&quot;{item.hook}&quot;</span>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

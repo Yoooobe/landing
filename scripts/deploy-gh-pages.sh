@@ -18,5 +18,5 @@ echo "==> Publicando out/ na branch gh-pages (inclui dotfiles: .nojekyll)"
 npx gh-pages -d out -t -m "chore: deploy static export ($(date -u +%Y-%m-%dT%H:%MZ))"
 
 echo "==> Feito. Em GitHub: Settings → Pages → Source = branch gh-pages, pasta / (root)."
-echo "    Site: https://yoooobe.github.io/landing/ (pode levar 1–2 min)"
-echo "    (URL canônica em produção: ver src/lib/site.ts e src/lib/basePath.ts)"
+echo "    Site: https://yoooobe.github.io/landing/ (pode levar 1–2 min; override: NEXT_PUBLIC_SITE_URL)"
+echo "    (URL canónica: ver docs/site-url-migration.md e src/lib/publicSite.ts)"

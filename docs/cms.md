@@ -1,6 +1,6 @@
 # Sanity CMS — passos operacionais
 
-Site em export estático (`output: "export"`), `basePath`: `/landing` (ver `src/lib/basePath.ts`). Em desenvolvimento, **`http://localhost:3000/`** redireciona para **`/landing/`**; a landing em produção é **`https://yoooobe.github.io/landing/`**.
+Site em export estático (`output: "export"`). O `basePath` deriva de **`NEXT_PUBLIC_SITE_URL`** (ver [`src/lib/publicSite.ts`](../src/lib/publicSite.ts) e [`src/lib/parsePublicSiteUrl.ts`](../src/lib/parsePublicSiteUrl.ts); fallback em [`config/public-site.json`](../config/public-site.json)). Em desenvolvimento com o fallback, **`http://localhost:3000/`** redireciona para **`/landing/`**; migração de domínio: [`site-url-migration.md`](site-url-migration.md).
 
 **yoobe.co:** o domínio institucional **yoobe.co** e os HTML estáticos na raiz do repositório que o referenciam (canonical, OG, etc.) são um contexto à parte. Este fluxo de build e deploy **não** os altera; o export Next continua a ser servido em **GitHub Pages** na URL acima.
 
@@ -15,6 +15,14 @@ Importante:
 - GitHub Pages não suporta um login/senha próprios do app com proteção real de rota.
 - O controlo de acesso do admin fica do lado do Sanity.
 - Para dar acesso a alguém, convida o utilizador no projeto Sanity com a role adequada.
+
+### Geração de imagens — Nano Banana (Studio)
+
+Nos campos de **imagem** (incluindo o hero das landing pages em blocos `heroBlock`), o menu contextual do asset pode incluir a fonte **«Gerar com Nano Banana»**: abre um diálogo com prompt; opcionalmente chama um backend e faz upload do ficheiro para o dataset.
+
+- **Variável:** `SANITY_STUDIO_NANO_BANANA_URL` — URL HTTPS do teu serviço (exposta no cliente via `env` em `next.config.ts`). Não uses chaves secretas nesta variável; autentica no servidor.
+- **Contrato sugerido:** `POST` JSON `{ "prompt": string }`; resposta `image/png` / `image/jpeg` **ou** JSON com `imageBase64` / `base64` / `image` (base64 ou data URL). Detalhes e avisos estão no comentário de [`src/sanity/assetSources/nanoBananaImageSource.tsx`](../src/sanity/assetSources/nanoBananaImageSource.tsx).
+- Sem URL configurada, o botão **Gerar e aplicar** mostra um aviso a indicar que falta configurar a variável e fazer rebuild.
 
 ## 2. Estrutura editorial no Studio
 
@@ -31,6 +39,29 @@ O painel esquerdo do Studio está organizado em:
 - **Mídia de showcase da plataforma**
 - **Mídia de showcase — Gamificação**
 - **Mídia de showcase — API e Integrações**
+- **Mídia de showcase — Workvivo**
+
+### Matriz Studio: miniatura, Presentation e par PT/EN
+
+O `basePath` do site e do Studio segue **`NEXT_PUBLIC_SITE_URL`** (ver [`src/lib/publicSite.ts`](../src/lib/publicSite.ts)); o link «versão EN/PT» no campo **Idioma** usa [`withBasePath("/studio")`](../src/lib/basePath.ts) (ex.: `/landing/studio` no fallback GitHub Pages).
+
+| Tipo | Vista **Miniatura** (iframe, só `localhost`) | Presentation (Visual Editing) | Link para documento no outro idioma |
+| --- | --- | --- | --- |
+| `siteSettings` | — | Mensagem (efeito global) | — |
+| `blogPost` | Sim (slug + locale → `/blog/…` ou `/en/blog/…`) | Post + índice do blog | — |
+| `marketingPage` | Sim | URL da landing | Sim (mesmo `slug`) |
+| `marketingStrategy` | — | Mensagem | — |
+| `contentMirror` | — | Mensagem | — |
+| `page` | — | Mensagem (legado) | — |
+| `menu` | — | Mensagem | — |
+| `logoCollection` | — | Mensagem | — |
+| `homeShowcaseMedia` | Sim (home) | URL `/` | Sim (mesmo `mediaKey` + `locale`) |
+| `platformShowcaseMedia` | Sim | URL `/plataforma/` | Sim (mesmo `pageKey`) |
+| `gamificacaoShowcaseMedia` | Sim | URL `/gamificacao/` | Sim (mesmo `mediaKey` + `locale`) |
+| `apiIntegracoesShowcaseMedia` | Sim | URL `/api-integracoes/` | Sim (mesmo `mediaKey` + `locale`) |
+| `workvivoShowcaseMedia` | Sim | URL Workvivo | Sim (mesmo `mediaKey`) |
+
+Documentos de showcase **home / gamificação / API** incluem o campo **Idioma** (`locale`) para emparelhar PT/EN no editor; pedidos ao Sanity preferem o documento com `locale` coincidente e fazem fallback para conteúdo legado sem `locale` quando existir.
 
 ### Configurações do site
 
@@ -331,6 +362,8 @@ Hoje esse documento alimenta principalmente:
 - previews centrais das integrações `Workvivo` e `Beehome`
 - mockup técnico da seção `HowItWorks`
 
+**Fallbacks em JSX:** quando não há URL válida de asset, vários blocos continuam a renderizar mockups construídos em código (por exemplo `PlatformMockupScreens`, carrosséis de ecrãs). Isto é intencional: o Studio não duplica esses mockups como imagens fixas.
+
 Fluxo recomendado:
 
 - atualize o documento `Mídia de showcase da home` para trocar mockups e screenshots
@@ -347,13 +380,39 @@ Neste primeiro passo ele controla:
 - o mockup principal da seção `PlataformaStore`
 - um painel visual editorial da seção `LogisticsFulfillment`
 - um painel visual editorial da seção `SecurityEnterprise`
-- arrays de até 4 cards por seção de funcionalidades (`gestaoFeatureCards`, `gamificacaoFeatureCards`, `lojaFeatureCards`, `apiFeatureCards`) — cada card aceita emoji de fallback e imagem substituta
+- até dois thumbnails opcionais na secção **Motor de Gamificação** (`gamificacaoFeatureCards[]`, alinhados aos dois cards de copy em `PlataformaGamificationEngine`)
+- o roadmap de IA na rota `/plataforma/` reutiliza o mesmo espelho editorial da home (`ResolvedHomeContent` / `homeShowcaseMedia`) via `AiRoadmap` — as imagens por fase passam a coincidir com a home quando o documento de home está preenchido
+
+**Matriz campo → componente (plataforma):**
+
+| Campo no `platformShowcaseMedia` | Onde aparece no site |
+| --- | --- |
+| `adminDashboardImage` | `AdminDashboardHighlight` |
+| `storeMockupImage` | `PlataformaStore` |
+| `logisticsPanelImage` | `LogisticsFulfillment` |
+| `securityPanelImage` | `SecurityEnterprise` |
+| `gamificacaoFeatureCards` (até 2 entradas usadas) | Miniaturas dos dois cards em `PlataformaGamificationEngine` |
+| `gestaoFeatureCards`, `lojaFeatureCards`, `apiFeatureCards` | Ainda **sem** consumidor dedicado no UI; os dados já vêm no GROQ e o Studio pode preparar arte antecipadamente. Próximo passo natural seria ligar a grelhas equivalentes (por exemplo sub-cards de gestão/loja/API) quando essas secções tiverem o mesmo padrão visual que a grelha de gamificação. |
 
 Fluxo recomendado:
 
 - atualize `Mídia de showcase da plataforma` quando quiser trocar o mockup editorial do painel do gestor, da loja ou os painéis visuais de logística e segurança
 - mantenha um documento por idioma (`pt` e `en`) caso a arte contenha labels ou textos localizados
-- se a imagem nao estiver preenchida, o frontend continua renderizando o mockup JSX legado automaticamente
+- se a imagem nao estiver preenchida, o frontend continua renderizando o mockup JSX legado automaticamente (carrossel de campanhas na gamificação, etc.)
+
+### Mídia de showcase — Workvivo
+
+Tipo editorial: **workvivoShowcaseMedia**
+
+Documento por idioma com `mediaKey` (predefinido `workvivo-default` no seed) para emparelhar PT/EN no Studio. Campos de imagem: hero, comunicações, intelligence, frontline, shoutout e (opcional) segundo ecrã de feed para shoutouts.
+
+| Campo | Uso no site |
+| --- | --- |
+| `heroImage` … `frontlineImage` | Grelha de screenshots na landing Workvivo |
+| `shoutoutImage` | Bloco de destaque shoutout |
+| `feedShoutoutImage` | Figura adicional quando preenchida |
+
+A rota pública é `/landing/api-integracoes/workvivo/` (e equivalente EN). Se um campo estiver vazio, mantém-se o ficheiro estático em `public/workvivo/` como fallback.
 
 ### Mídia de showcase — Gamificação
 
@@ -516,6 +575,7 @@ Conteúdo que entra no export estático e exige rebuild/redeploy:
 - SEO das páginas do blog
 - `sitemap.xml`
 - `robots.txt`
+- `public/llms.txt` (gerado por `npm run generate:llms` antes do build; mesma base URL que sitemap/robots)
 - landing pages e páginas estratégicas ligadas ao build
 
 Regra prática: se o conteúdo é usado para gerar HTML/metadata estáticos, publica no Sanity e depois faz rebuild.
@@ -524,7 +584,7 @@ Regra prática: se o conteúdo é usado para gerar HTML/metadata estáticos, pub
 
 Fonte central:
 
-- `src/lib/site.ts` define a origem pública, `SITE_URL` com `basePath` e os helpers de URL absoluta
+- `src/lib/parsePublicSiteUrl.ts` + `src/lib/publicSite.ts` + `src/lib/site.ts` definem a origem pública, `SITE_URL` com `basePath` e os helpers de URL absoluta (`NEXT_PUBLIC_SITE_URL` em build ou fallback em `config/public-site.json`)
 - `src/lib/seo/routeMetadata.ts` é o builder principal de `canonical`, `hreflang`, Open Graph e Twitter
 - `src/lib/jsonLd.ts` concentra `Organization`, `WebSite`, `FAQPage` e `BlogPosting`
 - `src/app/sitemap.ts` e `src/app/robots.ts` geram os artefatos de crawling no export estático

@@ -29,7 +29,7 @@ Keep landing improvements moving in small, low-conflict background loops while p
 2. `implementation` picks only the top `ready` item.
 3. `verification` runs targeted lint plus a full static build.
 4. `visual-check` validates the affected PT/EN routes.
-5. After a merge to `main`, confirm the **Deploy to GitHub Pages** workflow succeeded on GitHub Actions, then smoke-test `https://yoooobe.github.io/landing/` and `/landing/en/` (and `/landing/studio/` if Sanity is configured).
+5. After a merge to `main`, confirm the **Deploy to GitHub Pages** workflow succeeded on GitHub Actions, then smoke-test `https://yoooobe.github.io/landing/` and `/landing/en/`, `/landing/blog/`, `robots.txt`, and `llms.txt` (and `/landing/studio/` if Sanity is configured). HTML estático na raiz do repo (ex.: `index.html`) não é publicado por este workflow; links para o blog nesses ficheiros devem usar a URL do export Next (ver [site-url-migration.md](site-url-migration.md#ficheiros-html-legacy-na-raiz-do-repo)).
 6. Move to the next backlog item only after the previous one is verified.
 
 ## Verification Commands

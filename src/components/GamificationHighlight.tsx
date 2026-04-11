@@ -39,7 +39,7 @@ export default function GamificationHighlight() {
             >
               Você define as regras. Nós gerenciamos o ecossistema. Crie
               Achievements personalizados, leaderboards e acompanhe a
-              emissão de <strong>Yoobes</strong> (sua moeda ou a nossa) 
+              emissão de <strong>4Unik Coins</strong> (sua moeda ou a nossa) 
               em tempo real no dashboard do gestor.
             </motion.p>
 

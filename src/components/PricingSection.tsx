@@ -1,108 +1,121 @@
 "use client";
 
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
 
 export default function PricingSection() {
-  return (
-    <section id="planos" className="py-24 bg-brand-navy-dark relative border-t border-white/5 overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-orange/5 rounded-full blur-[120px] pointer-events-none"></div>
+  const { m } = useLocaleMessages();
+  const p = m.pricing;
 
-      <div className="container mx-auto px-4 max-w-6xl relative z-10">
-        <div className="text-center mb-16 relative z-10 text-white">
-          <div className="inline-block px-3 py-1 mb-4 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-sm font-bold tracking-wide uppercase">
-            Planos & Preços
+  return (
+    <section id="planos" className="relative overflow-hidden border-t border-white/5 bg-brand-navy-dark py-24">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[400px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange/5 blur-[120px]"></div>
+
+      <div className="container relative z-10 mx-auto max-w-6xl px-4">
+        <div className="relative z-10 mb-16 text-center text-white">
+          <div className="mb-4 inline-block rounded-full border border-green-500/30 bg-green-500/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-green-400">
+            {p.badge}
           </div>
-          <h2 className="text-3xl md:text-5xl font-black mb-6 font-heading">
-            Escolha o plano ideal para sua <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-500">empresa</span>
+          <h2 className="mb-6 font-heading text-3xl font-black md:text-5xl">
+            {p.titleBefore} <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">{p.titleGradient}</span>
           </h2>
-          <p className="text-lg text-white/50 max-w-2xl mx-auto font-sans leading-relaxed">
-            Sem taxa de setup. Sem surpresas. Escale conforme cresce.
-          </p>
+          <p className="mx-auto max-w-2xl font-sans text-lg leading-relaxed text-white/50">{p.sub}</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative z-10">
-          {/* Starter Plan */}
-          <motion.div 
+        <div className="relative z-10 grid gap-8 md:grid-cols-3">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-[#141b2d] border border-white/10 p-8 rounded-3xl flex flex-col"
+            className="flex flex-col rounded-3xl border border-white/10 bg-[#141b2d] p-8"
           >
-            <h3 className="text-2xl font-bold text-white mb-2 font-heading">Starter</h3>
-            <p className="text-white/50 text-sm mb-6 font-sans">Para até 100 colaboradores</p>
+            <h3 className="mb-2 font-heading text-2xl font-bold text-white">{p.starter.name}</h3>
+            <p className="mb-6 font-sans text-sm text-white/50">{p.starter.blurb}</p>
             <div className="mb-6">
-              <span className="text-2xl font-bold text-white/70">R$</span>
-              <span className="text-5xl font-black text-white tracking-tight"> 990</span>
-              <span className="text-white/50 text-sm">/mês</span>
+              <span className="text-2xl font-bold text-white/70">{p.currency}</span>
+              <span className="text-5xl font-black tracking-tight text-white"> {p.starter.price}</span>
+              <span className="text-sm text-white/50">{p.starter.period}</span>
             </div>
-            <ul className="space-y-4 mb-8 font-sans flex-1">
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Até 100 colaboradores</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Gamificação completa (pontos, badges, missões)</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Dashboard analítico (eNPS, ROI, resgate)</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Catálogo com +5.000 produtos</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Envios para todo o Brasil</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Suporte por email</li>
+            <ul className="mb-8 flex-1 space-y-4 font-sans">
+              {p.starter.bullets.map((line) => (
+                <li key={line} className="flex items-center text-white/80">
+                  <span className="mr-3 text-green-400">✓</span>
+                  {line}
+                </li>
+              ))}
             </ul>
-            <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="w-full text-center py-4 rounded-xl border border-white/20 bg-transparent font-bold text-white hover:bg-white/5 transition-colors font-sans block mt-auto">
-              Começar agora
+            <a
+              href="https://calendly.com/yoobeco/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
+            >
+              {p.starter.cta}
             </a>
           </motion.div>
 
-          {/* Pro Plan */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-gradient-to-b from-[#1a233a] to-[#141b2d] border border-brand-orange p-8 rounded-3xl flex flex-col relative transform md:-translate-y-4 shadow-[0_0_40px_rgba(249,115,22,0.15)]"
+            className="relative flex flex-col rounded-3xl border border-brand-orange bg-gradient-to-b from-[#1a233a] to-[#141b2d] p-8 shadow-[0_0_40px_rgba(249,115,22,0.15)] md:-translate-y-4"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-brand-orange text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">
-              Mais Popular
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
+              {p.popular}
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2 font-heading">Pro</h3>
-            <p className="text-white/50 text-sm mb-6 font-sans">Até 500 colaboradores com API e Kits</p>
+            <h3 className="mb-2 font-heading text-2xl font-bold text-white">{p.pro.name}</h3>
+            <p className="mb-6 font-sans text-sm text-white/50">{p.pro.blurb}</p>
             <div className="mb-6">
-              <span className="text-2xl font-bold text-white/70">R$</span>
-              <span className="text-5xl font-black text-white tracking-tight"> 2.490</span>
-              <span className="text-white/50 text-sm">/mês</span>
+              <span className="text-2xl font-bold text-white/70">{p.currency}</span>
+              <span className="text-5xl font-black tracking-tight text-white"> {p.pro.price}</span>
+              <span className="text-sm text-white/50">{p.pro.period}</span>
             </div>
-            <ul className="space-y-4 mb-8 font-sans flex-1">
-              <li className="flex items-center text-white/80"><span className="text-brand-orange mr-3">✓</span> Até 500 colaboradores</li>
-              <li className="flex items-center text-white/80"><span className="text-brand-orange mr-3">✓</span> Gamificação + leaderboards + OKRs</li>
-              <li className="flex items-center text-white/80"><span className="text-brand-orange mr-3">✓</span> API + Webhooks em tempo real</li>
-              <li className="flex items-center text-white/80"><span className="text-brand-orange mr-3">✓</span> SDK (Node.js e Python)</li>
-              <li className="flex items-center text-white/80"><span className="text-brand-orange mr-3">✓</span> Welcome Kits e experiências temáticas</li>
-              <li className="flex items-center text-white/80"><span className="text-brand-orange mr-3">✓</span> Suporte prioritário</li>
+            <ul className="mb-8 flex-1 space-y-4 font-sans">
+              {p.pro.bullets.map((line) => (
+                <li key={line} className="flex items-center text-white/80">
+                  <span className="mr-3 text-brand-orange">✓</span>
+                  {line}
+                </li>
+              ))}
             </ul>
-            <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="w-full text-center py-4 rounded-xl bg-brand-orange font-bold text-white hover:bg-brand-orange-dark transition-colors font-sans block mt-auto">
-              Escolher Pro
+            <a
+              href="https://calendly.com/yoobeco/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto block w-full rounded-xl bg-brand-orange py-4 text-center font-bold text-white transition-colors hover:bg-brand-orange-dark font-sans"
+            >
+              {p.pro.cta}
             </a>
           </motion.div>
 
-          {/* Enterprise Plan */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="bg-[#141b2d] border border-white/10 p-8 rounded-3xl flex flex-col"
+            className="flex flex-col rounded-3xl border border-white/10 bg-[#141b2d] p-8"
           >
-            <h3 className="text-2xl font-bold text-white mb-2 font-heading">Enterprise</h3>
-            <p className="text-white/50 text-sm mb-6 font-sans">Ilimitado, SLA dedicado e integrações customizadas</p>
+            <h3 className="mb-2 font-heading text-2xl font-bold text-white">{p.enterprise.name}</h3>
+            <p className="mb-6 font-sans text-sm text-white/50">{p.enterprise.blurb}</p>
             <div className="mb-6">
-              <span className="text-4xl font-black text-white tracking-tight">Sob consulta</span>
+              <span className="text-4xl font-black tracking-tight text-white">{p.enterprise.priceLabel}</span>
             </div>
-            <ul className="space-y-4 mb-8 font-sans flex-1">
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Colaboradores ilimitados</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Tudo do Pro</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> SSO (SAML) + Conformidade LGPD</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> SLA dedicado</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Account manager</li>
-              <li className="flex items-center text-white/80"><span className="text-green-400 mr-3">✓</span> Integrações customizadas</li>
+            <ul className="mb-8 flex-1 space-y-4 font-sans">
+              {p.enterprise.bullets.map((line) => (
+                <li key={line} className="flex items-center text-white/80">
+                  <span className="mr-3 text-green-400">✓</span>
+                  {line}
+                </li>
+              ))}
             </ul>
-            <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="w-full text-center py-4 rounded-xl border border-white/20 bg-transparent font-bold text-white hover:bg-white/5 transition-colors font-sans block mt-auto">
-              Falar com Especialista
+            <a
+              href="https://calendly.com/yoobeco/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
+            >
+              {p.enterprise.cta}
             </a>
           </motion.div>
         </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildRoutePageMetadata } from "@/lib/seo/routeMetadata";
 import WorkvivoLanding from "@/components/workvivo/WorkvivoLanding";
 import { workvivoContent, workvivoMeta } from "@/content/workvivo";
+import { getWorkvivoShowcaseMedia } from "@/sanity/lib/workvivoShowcase";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildRoutePageMetadata(workvivoMeta.pt, {
@@ -16,11 +17,13 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function WorkvivoApiPage() {
+  const showcaseMedia = await getWorkvivoShowcaseMedia("pt");
   return (
     <WorkvivoLanding
       locale="pt"
       apiHub
       content={workvivoContent.pt}
+      showcaseMedia={showcaseMedia}
     />
   );
 }

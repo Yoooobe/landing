@@ -1,11 +1,14 @@
-import PlataformaSubpageStub from "@/components/PlataformaSubpageStub";
+import PlatformFeaturePage from "@/components/PlatformFeaturePage";
 import { LocaleMessagesProvider } from "@/contexts/LocaleMessagesContext";
-import { getPlataformaStubSeo } from "@/lib/publicRouteFallbacks";
+import { ptPlatformFeaturePages } from "@/content/platformFeaturePages";
 import { buildRoutePageMetadata } from "@/lib/seo/routeMetadata";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildRoutePageMetadata(getPlataformaStubSeo("pt", "loja"), {
+  const { seo } = ptPlatformFeaturePages.loja;
+  return buildRoutePageMetadata(
+    { title: seo.title, description: seo.description },
+    {
       canonicalPath: "/plataforma/loja-resgate/",
       languages: {
         "pt-BR": "/plataforma/loja-resgate/",
@@ -13,17 +16,14 @@ export async function generateMetadata(): Promise<Metadata> {
       },
       openGraphPath: "/plataforma/loja-resgate/",
       ogLocale: "pt_BR",
-      robots: {
-        index: false,
-        follow: true,
-      },
-    });
+    },
+  );
 }
 
 export default async function LojaResgatePage() {
   return (
     <LocaleMessagesProvider locale="pt">
-      <PlataformaSubpageStub variant="loja" />
+      <PlatformFeaturePage content={ptPlatformFeaturePages.loja} />
     </LocaleMessagesProvider>
   );
 }

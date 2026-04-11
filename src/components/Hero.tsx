@@ -40,7 +40,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl md:text-2xl text-white/70 max-w-3xl leading-relaxed"
           >
-            Infraestrutura de recompensas para plataformas de gamificação e employee engagement. Sua plataforma gerencia a experiência; a Yoobe gerencia catálogo, logística e fulfillment.
+            Infraestrutura de recompensas para plataformas de gamificação e employee engagement. Sua plataforma gerencia a experiência; a 4Unik gerencia catálogo, logística e fulfillment.
           </motion.p>
 
           <motion.div

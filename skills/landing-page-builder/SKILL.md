@@ -27,10 +27,16 @@ Detect mode from user intent. If they share a URL or existing copy, switch to Au
 ## Core Architecture & Stack
 Always adhere to the following technological guidelines when building pages:
 
-- **Next.js 14**, **Tailwind CSS**, **shadcn/ui**
+- **Next.js 16** (este repo), **Tailwind CSS**, **shadcn/ui**
 - **Framer Motion**, **Lucide Icons**, **Magic UI**, **Aceternity UI**
 - Emulate modern SaaS patterns (Linear, Stripe, Vercel)
 - Implement heavy glassmorphism, animated stat counters, and interactive feature grids.
+
+## 4Unik landing (este repositório): SEO / AEO em sincronia
+
+- Não definir `title`/`description` isolados em `page.tsx` quando existir campo **`seo`** no segmento em `src/messages/segments/` — usar `buildRoutePageMetadata` de `src/lib/seo/routeMetadata.ts`.
+- FAQs e JSON-LD: o mesmo array `faq.items` alimenta UI e `buildFaqPageJsonLd`; alterar perguntas/respostas num sítio só (segmento).
+- Posicionamento de marca: seguir `skills/4unik-ai-discovery/SKILL.md`. Para mapa de ficheiros, o MCP `4unik-marketing` expõe **`get_content_sync_registry`**.
 
 ## Required Inputs
 

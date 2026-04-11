@@ -1,19 +1,11 @@
-import MarketingPageWithFaq from "@/components/MarketingPageWithFaq";
-import { buildMarketingPageMetadata } from "@/sanity/lib/marketingPages";
-import type { Metadata } from "next";
+"use client";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return buildMarketingPageMetadata("en", "gamificacao", {
-    canonicalPath: "/en/gamificacao/",
-    languages: {
-      "pt-BR": "/gamificacao/",
-      en: "/en/gamificacao/",
-    },
-    openGraphPath: "/en/gamificacao/",
-    ogLocale: "en_US",
-  });
-}
-
-export default async function EnGamificacaoPage() {
-  return <MarketingPageWithFaq locale="en" slug="gamificacao" pagePath="/en/gamificacao/" />;
+export default function EnGamificacaoRedirect() {
+  const router = useRouter();
+  useEffect(() => {
+    router.replace("/en/plataforma/motor-gamificacao/");
+  }, [router]);
+  return null;
 }

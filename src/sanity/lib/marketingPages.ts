@@ -2,16 +2,22 @@ import { createClient } from "next-sanity";
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/locale";
 import { buildRoutePageMetadata, type PageSeoCopy } from "@/lib/seo/routeMetadata";
+import { enGamificacaoPage } from "@/messages/segments/en-gamificacao-page";
 import { ptCasosPage } from "@/messages/segments/pt-casos-page";
 import { enCasosPage } from "@/messages/segments/en-casos-page";
 import { enCasos } from "@/messages/segments/en-casos";
+import { ptGamificacaoPage } from "@/messages/segments/pt-gamificacao-page";
 import { ptInteligenciaPage } from "@/messages/segments/pt-inteligencia-page";
 import { enInteligenciaPage } from "@/messages/segments/en-inteligencia-page";
 import { ptCasos } from "@/messages/segments/pt-casos";
 import { ptLandingMore } from "@/messages/segments/pt-landing-more";
 import { enLandingMore } from "@/messages/segments/en-landing-more";
+import { ptRest } from "@/messages/segments/pt-rest";
+import { enRest } from "@/messages/segments/en-rest";
 import { ptPlataforma } from "@/messages/segments/pt-plataforma";
 import { enPlataforma } from "@/messages/segments/en-plataforma";
+import { ptStatsBentoTabsWhy } from "@/messages/segments/pt-stats-bento-tabs-why";
+import { enStatsBentoTabsWhy } from "@/messages/segments/en-stats-bento-tabs-why";
 import { BASE_PATH } from "@/lib/basePath";
 import {
   apiVersion,
@@ -24,8 +30,7 @@ import { getResolvedGamificacaoContent } from "@/sanity/lib/gamificacao";
 import { getResolvedHomeContent } from "@/sanity/lib/home";
 import { getPlatformShowcaseMedia } from "@/sanity/lib/platformShowcase";
 import type {
-  LegacySectionBlockDoc,
-  LegacySectionKey,
+  LogoCollectionDoc,
   MarketingPageDoc,
   PlatformShowcaseMediaDoc,
   ResolvedApiIntegracoesContent,
@@ -100,6 +105,10 @@ function inteligenciaBlocks(locale: Locale): MarketingPageDoc["content"] {
       primaryHref: "https://calendly.com/yoobeco/demo",
     },
   ];
+}
+
+function joinTitle(...parts: Array<string | undefined>): string {
+  return parts.filter(Boolean).join(" ").replace(/\s+/g, " ").trim();
 }
 
 function apiIntegracoesBlocks(
@@ -182,6 +191,634 @@ function apiIntegracoesBlocks(
       description: content.finalCta.description,
       primaryLabel: content.finalCta.buttonLabel,
       primaryHref: content.finalCta.buttonHref,
+    },
+  ];
+}
+
+function fallbackLogoCollection(
+  collectionKey: "trustBar" | "clientsGrid",
+): LogoCollectionDoc {
+  const items =
+    collectionKey === "trustBar"
+      ? [
+          { name: "Yampi", href: undefined, logoPath: `${BASE_PATH}/clients/yampi.svg` },
+          { name: "PRIO", href: undefined, logoPath: `${BASE_PATH}/clients/prio.svg` },
+          { name: "Hapvida", href: undefined, logoPath: `${BASE_PATH}/clients/hapvida.png` },
+          { name: "Join RH", href: undefined, logoPath: `${BASE_PATH}/clients/join.png` },
+          { name: "Tecnospeed", href: undefined, logoPath: `${BASE_PATH}/clients/tecnospeed.svg` },
+          { name: "O Boticario", href: undefined, logoPath: `${BASE_PATH}/clients/boticario.png` },
+        ]
+      : [
+          { name: "Yampi", href: undefined, logoPath: `${BASE_PATH}/clients/yampi.svg` },
+          { name: "PRIO", href: undefined, logoPath: `${BASE_PATH}/clients/prio.svg` },
+          { name: "Hapvida", href: undefined, logoPath: `${BASE_PATH}/clients/hapvida.png` },
+          { name: "Join RH", href: undefined, logoPath: `${BASE_PATH}/clients/join.png` },
+          { name: "Tecnospeed", href: undefined, logoPath: `${BASE_PATH}/clients/tecnospeed.svg` },
+          { name: "O Boticario", href: undefined, logoPath: `${BASE_PATH}/clients/boticario.png` },
+          { name: "W1 Consultoria", href: undefined, logoPath: `${BASE_PATH}/clients/w1-consultoria.svg` },
+          { name: "Contabilizei", href: undefined, logoPath: `${BASE_PATH}/clients/contabilizei.svg` },
+        ];
+
+  return {
+    _id: `fallback-logo-collection.${collectionKey}`,
+    title: collectionKey === "trustBar" ? "Trust bar" : "Clients grid",
+    collectionKey,
+    items: items.map((item) => ({
+      name: item.name,
+      href: item.href,
+      logo: {
+        alt: item.name,
+        asset: {
+          url: item.logoPath,
+        },
+      },
+    })),
+  };
+}
+
+function homeBlocks(
+  locale: Locale,
+  homeContent: ResolvedHomeContent,
+): MarketingPageDoc["content"] {
+  const isEn = locale === "en";
+  const stats = isEn ? enStatsBentoTabsWhy : ptStatsBentoTabsWhy;
+  const landingMore = isEn ? enLandingMore : ptLandingMore;
+  const rest = isEn ? enRest : ptRest;
+  const showcase = homeContent.showcaseMedia;
+
+  return [
+    {
+      _key: "hero",
+      _type: "heroBlock",
+      headline: joinTitle(
+        homeContent.hero.brand,
+        homeContent.hero.afterBrand,
+        homeContent.hero.line1b,
+        homeContent.hero.line2,
+      ),
+      subheadline: homeContent.hero.sub,
+      ctaText: homeContent.hero.ctaDemo,
+      ctaLink: homeContent.hero.ctaDemoHref,
+      image: showcase?.bento?.primaryCardImage,
+    },
+    {
+      _key: "4unik-context",
+      _type: "splitContentBlock",
+      eyebrow: homeContent.fourUnik.kicker,
+      title: homeContent.fourUnik.brand,
+      body: portableTextParagraph(
+        "4unik-context-body",
+        joinTitle(
+          homeContent.fourUnik.bodyBefore,
+          homeContent.fourUnik.brand,
+          homeContent.fourUnik.bodyMid,
+          homeContent.fourUnik.here,
+          homeContent.fourUnik.bodyAfter,
+        ),
+      ),
+      primaryLabel: homeContent.fourUnik.cta,
+      primaryHref: homeContent.fourUnik.ctaHref,
+      imageSide: "right",
+    },
+    {
+      _key: "trust-bar",
+      _type: "logoStripBlock",
+      displayStyle: "compact",
+      title: homeContent.trust.title,
+      collection: fallbackLogoCollection("trustBar"),
+    },
+    {
+      _key: "bento-overview",
+      _type: "featureGridBlock",
+      eyebrow: stats.bento.badge,
+      title: joinTitle(stats.bento.titleLine1, stats.bento.titleLine2),
+      description: stats.bento.sub,
+      columns: "2",
+      image: showcase?.bento?.primaryCardImage,
+      items: [
+        {
+          title: stats.bento.card1.title,
+          description: stats.bento.card1.body,
+          icon: "bar-chart-3",
+          href: `${BASE_PATH}${locale === "en" ? "/en/plataforma" : "/plataforma"}`,
+        },
+        {
+          title: stats.bento.card2.title,
+          description: stats.bento.card2.body,
+          icon: "target",
+          href: `${BASE_PATH}${locale === "en" ? "/en/gamificacao" : "/gamificacao"}`,
+        },
+        {
+          title: stats.bento.card3.title,
+          description: stats.bento.card3.body,
+          icon: "store",
+          href: `${BASE_PATH}${locale === "en" ? "/en/plataforma/loja-resgate" : "/plataforma/loja-resgate"}`,
+        },
+        {
+          title: stats.bento.card4.title,
+          description: stats.bento.card4.body,
+          icon: "link-2",
+          href: `${BASE_PATH}${locale === "en" ? "/en/api-integracoes" : "/api-integracoes"}`,
+        },
+      ],
+    },
+    {
+      _key: "platform-management",
+      _type: "splitContentBlock",
+      eyebrow: stats.platformTabs.badge,
+      title: stats.platformTabs.gestao.title,
+      body: portableTextParagraph("platform-management-body", stats.platformTabs.gestao.body),
+      bullets: [...stats.platformTabs.gestao.bullets],
+      primaryLabel: stats.platformTabs.gestao.cta,
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/plataforma" : "/plataforma"}`,
+      image: showcase?.platformTabs?.managementImage,
+      imageSide: "right",
+    },
+    {
+      _key: "platform-store",
+      _type: "splitContentBlock",
+      eyebrow: stats.platformTabs.badge,
+      title: stats.platformTabs.loja.title,
+      body: portableTextParagraph("platform-store-body", stats.platformTabs.loja.body),
+      bullets: [...stats.platformTabs.loja.bullets],
+      primaryLabel: stats.platformTabs.loja.cta,
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/plataforma/loja-resgate" : "/plataforma/loja-resgate"}`,
+      image: showcase?.platformTabs?.storeImage,
+      imageSide: "left",
+    },
+    {
+      _key: "platform-campaigns",
+      _type: "splitContentBlock",
+      eyebrow: stats.platformTabs.badge,
+      title: stats.platformTabs.campanhas.title,
+      body: portableTextParagraph("platform-campaigns-body", stats.platformTabs.campanhas.body),
+      bullets: [...stats.platformTabs.campanhas.bullets],
+      primaryLabel: stats.platformTabs.campanhas.cta,
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/gamificacao" : "/gamificacao"}`,
+      image: showcase?.platformTabs?.campaignsImage,
+      imageSide: "right",
+    },
+    {
+      _key: "stats",
+      _type: "statsBlock",
+      title: isEn ? "Operational metrics already visible in the platform" : "Metricas operacionais visiveis na plataforma",
+      items: stats.statsBar.items.map((item) => ({
+        value: `${item.value}${item.suffix}`.trim(),
+        label: item.label,
+      })),
+    },
+    {
+      _key: "why-4unik",
+      _type: "featureGridBlock",
+      eyebrow: stats.why.badge,
+      title: joinTitle(stats.why.titleBefore, stats.why.titleGradient),
+      description: stats.why.sub,
+      columns: "3",
+      items: stats.why.cards.map((item, index) => ({
+        title: item.title,
+        description: item.desc,
+        icon: ["target", "sparkles", "bar-chart-3"][index] || "sparkles",
+      })),
+    },
+    {
+      _key: "gamification-summary",
+      _type: "featureGridBlock",
+      eyebrow: stats.gamificationSummary.badge,
+      title: joinTitle(
+        stats.gamificationSummary.titleBefore,
+        stats.gamificationSummary.titleGradient,
+        stats.gamificationSummary.titleAfter,
+      ),
+      description: stats.gamificationSummary.sub,
+      columns: "2",
+      items: stats.gamificationSummary.cards.map((item, index) => ({
+        title: item.title,
+        description: item.desc,
+        icon: ["coins", "target", "sparkles", "store"][index] || "sparkles",
+      })),
+    },
+    {
+      _key: "ready-to-use",
+      _type: "splitContentBlock",
+      eyebrow: landingMore.duality.badge,
+      title: landingMore.duality.sideA.title,
+      body: portableTextParagraph("ready-to-use-body", landingMore.duality.sideA.body),
+      bullets: [...landingMore.duality.sideA.bullets],
+      primaryLabel: isEn ? "See the platform" : "Ver a plataforma",
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/plataforma" : "/plataforma"}`,
+      imageSide: "right",
+    },
+    {
+      _key: "invisible-integration",
+      _type: "splitContentBlock",
+      eyebrow: landingMore.duality.badge,
+      title: landingMore.duality.sideB.title,
+      body: portableTextParagraph("invisible-integration-body", landingMore.duality.sideB.body),
+      bullets: [...landingMore.duality.sideB.bullets],
+      primaryLabel: isEn ? "Explore integrations" : "Explorar integracoes",
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/api-integracoes" : "/api-integracoes"}`,
+      imageSide: "left",
+    },
+    {
+      _key: "enterprise-hapvida",
+      _type: "splitContentBlock",
+      eyebrow: landingMore.enterpriseCases.badge,
+      title: `Hapvida · ${landingMore.enterpriseCases.hapvida.tag2}`,
+      body: portableTextParagraph(
+        "enterprise-hapvida-body",
+        joinTitle(
+          landingMore.enterpriseCases.hapvida.bodyBefore,
+          landingMore.enterpriseCases.hapvida.bodyStrong,
+          landingMore.enterpriseCases.hapvida.bodyAfter,
+        ),
+      ),
+      bullets: [...landingMore.enterpriseCases.hapvida.bullets],
+      image: showcase?.enterpriseCases?.hapvidaCaseImage,
+      imageSide: "right",
+    },
+    {
+      _key: "enterprise-prio",
+      _type: "splitContentBlock",
+      eyebrow: landingMore.enterpriseCases.badge,
+      title: `PRIO · ${landingMore.enterpriseCases.prio.tag2}`,
+      body: portableTextParagraph(
+        "enterprise-prio-body",
+        joinTitle(
+          landingMore.enterpriseCases.prio.bodyBefore,
+          landingMore.enterpriseCases.prio.bodyStrong,
+          landingMore.enterpriseCases.prio.bodyAfter,
+        ),
+      ),
+      bullets: [...landingMore.enterpriseCases.prio.bullets],
+      image: showcase?.enterpriseCases?.prioCaseImage,
+      imageSide: "left",
+    },
+    {
+      _key: "integration-workvivo",
+      _type: "splitContentBlock",
+      eyebrow: landingMore.dedicatedIntegrations.badge,
+      title: landingMore.dedicatedIntegrations.workvivo.title,
+      body: portableTextParagraph(
+        "integration-workvivo-body",
+        landingMore.dedicatedIntegrations.workvivo.body,
+      ),
+      bullets: [...landingMore.dedicatedIntegrations.workvivo.bullets],
+      primaryLabel: isEn ? "See Workvivo integration" : "Ver integracao Workvivo",
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/api-integracoes/workvivo" : "/api-integracoes/workvivo"}`,
+      image: showcase?.dedicatedIntegrations?.workvivo?.previewImage,
+      imageSide: "right",
+    },
+    {
+      _key: "integration-beehome",
+      _type: "splitContentBlock",
+      eyebrow: landingMore.dedicatedIntegrations.badge,
+      title: landingMore.dedicatedIntegrations.beehome.title,
+      body: portableTextParagraph(
+        "integration-beehome-body",
+        landingMore.dedicatedIntegrations.beehome.body,
+      ),
+      bullets: [...landingMore.dedicatedIntegrations.beehome.bullets],
+      primaryLabel: isEn ? "Talk to engineering" : "Falar com engenharia",
+      primaryHref: "https://calendly.com/yoobeco/demo",
+      image: showcase?.dedicatedIntegrations?.beehome?.previewImage,
+      imageSide: "left",
+    },
+    {
+      _key: "store-usecases",
+      _type: "featureGridBlock",
+      eyebrow: rest.storeSection.badge,
+      title: joinTitle(
+        rest.storeSection.titleBefore,
+        rest.storeSection.titleGradient,
+        rest.storeSection.titleAfter,
+      ),
+      description: rest.storeSection.sub,
+      columns: "2",
+      items: rest.storeSection.usecases.map((item, index) => ({
+        title: item.title,
+        description: item.desc,
+        icon: ["package", "sparkles", "shield", "zap"][index] || "sparkles",
+      })),
+    },
+    {
+      _key: "api-section",
+      _type: "splitContentBlock",
+      eyebrow: rest.apiSection.badge,
+      title: joinTitle(
+        rest.apiSection.titleBefore,
+        rest.apiSection.titleBrand,
+        rest.apiSection.titleAfter,
+      ),
+      body: portableTextParagraph("api-section-body", rest.apiSection.sub),
+      bullets: [...rest.apiSection.bullets],
+      primaryLabel: rest.apiSection.ctaDocs,
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/api-integracoes" : "/api-integracoes"}`,
+      secondaryLabel: rest.apiSection.ctaApi,
+      secondaryHref: "https://calendly.com/yoobeco/demo",
+      imageSide: "right",
+    },
+    {
+      _key: "ai-roadmap",
+      _type: "featureGridBlock",
+      eyebrow: landingMore.aiRoadmap.badge,
+      title: joinTitle(
+        landingMore.aiRoadmap.titleBefore,
+        landingMore.aiRoadmap.titleGradient,
+        landingMore.aiRoadmap.titleAfter,
+      ),
+      columns: "4",
+      items: landingMore.aiRoadmap.stages.map((stage, index) => ({
+        eyebrow: stage.status,
+        title: stage.title,
+        description: stage.items.join(" • "),
+        icon: ["brain-circuit", "store", "zap", "bar-chart-3"][index] || "sparkles",
+      })),
+    },
+    {
+      _key: "management-features",
+      _type: "featureGridBlock",
+      eyebrow: rest.managementSection.badge,
+      title: joinTitle(
+        rest.managementSection.titleBefore,
+        rest.managementSection.titleGradient,
+        rest.managementSection.titleAfter,
+      ),
+      description: rest.managementSection.sub,
+      columns: "2",
+      items: rest.managementSection.features.map((item, index) => ({
+        title: item.title,
+        description: item.desc,
+        icon: ["bar-chart-3", "package", "target", "shield"][index] || "sparkles",
+      })),
+    },
+    {
+      _key: "how-it-works",
+      _type: "featureGridBlock",
+      eyebrow: landingMore.howItWorks.badge,
+      title: joinTitle(
+        landingMore.howItWorks.titleBefore,
+        landingMore.howItWorks.titleGradient,
+        landingMore.howItWorks.titleAfter,
+      ),
+      columns: "4",
+      image: showcase?.howItWorks?.architectureImage,
+      items: landingMore.howItWorks.steps.map((step, index) => ({
+        eyebrow: step.num,
+        title: step.title,
+        description: step.desc,
+        icon: ["link-2", "target", "coins", "package"][index] || "sparkles",
+      })),
+    },
+    {
+      _key: "pricing",
+      _type: "featureGridBlock",
+      eyebrow: rest.pricing.badge,
+      title: joinTitle(rest.pricing.titleBefore, rest.pricing.titleGradient),
+      description: rest.pricing.sub,
+      columns: "3",
+      items: [
+        {
+          eyebrow: rest.pricing.starter.blurb,
+          title: `${rest.pricing.starter.name} · ${rest.pricing.currency}${rest.pricing.starter.price}${rest.pricing.starter.period}`,
+          description: rest.pricing.starter.bullets.join(" • "),
+          icon: "sparkles",
+        },
+        {
+          eyebrow: rest.pricing.popular,
+          title: `${rest.pricing.pro.name} · ${rest.pricing.currency}${rest.pricing.pro.price}${rest.pricing.pro.period}`,
+          description: rest.pricing.pro.bullets.join(" • "),
+          icon: "zap",
+        },
+        {
+          eyebrow: rest.pricing.enterprise.blurb,
+          title: `${rest.pricing.enterprise.name} · ${rest.pricing.enterprise.priceLabel}`,
+          description: rest.pricing.enterprise.bullets.join(" • "),
+          icon: "shield",
+        },
+      ],
+    },
+    {
+      _key: "testimonials",
+      _type: "testimonialBlock",
+      title: joinTitle(rest.testimonials.titleBefore, rest.testimonials.titleGradient),
+      items: rest.testimonials.items.map((item) => ({
+        quote: item.text.replace(/^"|"$/g, ""),
+        author: item.author,
+        role: item.role,
+        company: item.company,
+      })),
+    },
+    {
+      _key: "clients-grid",
+      _type: "logoStripBlock",
+      displayStyle: "grid",
+      sectionId: "clientes",
+      eyebrow: rest.clients.badge,
+      title: joinTitle(
+        rest.clients.titleBefore,
+        rest.clients.titleGradient,
+        rest.clients.titleAfter,
+      ),
+      description: rest.clients.sub,
+      collection: fallbackLogoCollection("clientsGrid"),
+    },
+    {
+      _key: "final-cta",
+      _type: "ctaBlock",
+      eyebrow: isEn ? "Next step" : "Proximo passo",
+      title: homeContent.finalCta.title,
+      description: homeContent.finalCta.body,
+      primaryLabel: homeContent.finalCta.demo,
+      primaryHref: homeContent.finalCta.demoHref,
+      secondaryLabel: homeContent.finalCta.whatsapp,
+      secondaryHref: homeContent.finalCta.whatsappHref,
+    },
+  ];
+}
+
+function gamificacaoBlocks(
+  locale: Locale,
+  content: ResolvedGamificacaoContent,
+): MarketingPageDoc["content"] {
+  const isEn = locale === "en";
+  const pageFaq = isEn ? enGamificacaoPage.faq : ptGamificacaoPage.faq;
+
+  return [
+    {
+      _key: "hero",
+      _type: "heroBlock",
+      headline: joinTitle(
+        content.hero.titleLine1,
+        content.hero.titleGradient,
+        content.hero.titleLine2,
+      ),
+      subheadline: content.hero.sub,
+      ctaText: content.hero.cta,
+      ctaLink: content.hero.ctaHref,
+    },
+    {
+      _key: "problem",
+      _type: "featureGridBlock",
+      eyebrow: content.problem.badge,
+      title: joinTitle(
+        content.problem.title,
+        content.problem.titleGradient,
+        content.problem.titleAfter,
+      ),
+      columns: "2",
+      items: content.problem.cards.map((item, index) => ({
+        eyebrow: item.stat,
+        title: item.title,
+        description: `${item.body} ${item.cite}`.trim(),
+        icon: ["target", "bar-chart-3", "message-square", "shield"][index] || "target",
+      })),
+    },
+    {
+      _key: "mechanics",
+      _type: "featureGridBlock",
+      eyebrow: content.mechanics.badge,
+      title: joinTitle(
+        content.mechanics.titleBefore,
+        content.mechanics.titleGradient,
+        content.mechanics.titleAfter,
+      ),
+      description: content.mechanics.sub,
+      columns: "2",
+      items: content.mechanics.items.map((item, index) => ({
+        eyebrow: item.badge,
+        title: item.title,
+        description: `${item.description} ${item.features.join(" • ")}`.trim(),
+        icon: ["coins", "target", "sparkles", "zap"][index] || "coins",
+      })),
+    },
+    {
+      _key: "flow",
+      _type: "featureGridBlock",
+      eyebrow: content.flow.badge,
+      title: joinTitle(
+        content.flow.titleBefore,
+        content.flow.titleGradient,
+        content.flow.titleAfter,
+      ),
+      description: content.flow.sub,
+      columns: "2",
+      items: content.flow.steps.map((step, index) => ({
+        eyebrow: `${step.num} · ${step.role}`,
+        title: step.title,
+        description: `${step.desc} ${step.features.map((feature) => feature.text).join(" • ")}`.trim(),
+        icon: ["message-square", "zap", "target", "coins"][index] || "sparkles",
+      })),
+    },
+    {
+      _key: "cases",
+      _type: "caseStudyGridBlock",
+      title: joinTitle(
+        content.cases.titleBefore,
+        content.cases.titleGradient,
+        content.cases.titleAfter,
+      ),
+      challengeLabel: content.cases.challengeLabel,
+      resultsLabel: content.cases.solutionLabel,
+      items: content.cases.items.map((item) => ({
+        company: item.company,
+        industry: item.industry,
+        title: item.title,
+        description: `${item.desc} ${item.solution}`.trim(),
+        challenge: item.challenge,
+        metrics: item.metrics.map((metric) => ({
+          value: metric.value,
+          label: metric.label,
+        })),
+      })),
+    },
+    {
+      _key: "trends",
+      _type: "featureGridBlock",
+      eyebrow: content.trends.badge,
+      title: joinTitle(
+        content.trends.titleBefore,
+        content.trends.titleGradient,
+        content.trends.titleAfter,
+      ),
+      description: `${content.trends.sub} ${content.trends.banner2025} ${content.trends.value2025} • ${content.trends.banner2033} ${content.trends.value2033} • CAGR ${content.trends.cagr}`.trim(),
+      columns: "3",
+      items: content.trends.items.map((item, index) => ({
+        eyebrow: item.tag,
+        title: item.title,
+        description: item.desc,
+        icon: ["bar-chart-3", "sparkles", "globe-2", "target"][index] || "bar-chart-3",
+      })),
+    },
+    {
+      _key: "stats",
+      _type: "statsBlock",
+      title: joinTitle(
+        content.stats.titleBefore,
+        content.stats.titleGradient,
+        content.stats.titleAfter,
+      ),
+      items: content.stats.items.map((item) => ({
+        value: `${item.value}${item.suffix}`.trim(),
+        label: item.desc,
+      })),
+    },
+    {
+      _key: "kpis",
+      _type: "featureGridBlock",
+      eyebrow: content.kpis.badge,
+      title: joinTitle(
+        content.kpis.titleBefore,
+        content.kpis.titleGradient,
+        content.kpis.titleAfter,
+      ),
+      description: content.kpis.sub,
+      columns: "3",
+      items: content.kpis.items.map((item, index) => ({
+        eyebrow: item.subtitle,
+        title: item.title,
+        description: item.desc,
+        icon: ["bar-chart-3", "target", "coins", "sparkles", "zap", "globe-2"][index] || "bar-chart-3",
+      })),
+    },
+    {
+      _key: "deep-usecases",
+      _type: "featureGridBlock",
+      eyebrow: content.deepUsecases.badge,
+      title: joinTitle(
+        content.deepUsecases.titleBefore,
+        content.deepUsecases.titleGradient,
+        content.deepUsecases.titleAfter,
+      ),
+      description: content.deepUsecases.sub,
+      columns: "3",
+      items: content.deepUsecases.items.map((item, index) => ({
+        eyebrow: item.hook,
+        title: item.title,
+        description: item.desc,
+        icon: item.icon || ["sparkles", "coins", "target", "message-square", "brain-circuit", "globe-2"][index] || "sparkles",
+      })),
+    },
+    {
+      _key: "faq",
+      _type: "faqBlock",
+      title: joinTitle(
+        pageFaq.titleBefore,
+        pageFaq.titleGradient,
+        pageFaq.titleAfter,
+      ),
+      items: content.faq.items.map((item) => ({
+        question: item.q,
+        answer: item.a,
+      })),
+    },
+    {
+      _key: "cta",
+      _type: "ctaBlock",
+      eyebrow: isEn ? "Next step" : "Proximo passo",
+      title: content.finalCta.title,
+      description: content.finalCta.body,
+      primaryLabel: content.finalCta.cta,
+      primaryHref: content.finalCta.ctaHref,
     },
   ];
 }
@@ -394,10 +1031,9 @@ function plataformaBlocks(locale: Locale): MarketingPageDoc["content"] {
 }
 
 type MarketingPageSupportData = {
-  apiIntegracoesContent?: ResolvedApiIntegracoesContent;
-  gamificacaoContent?: ResolvedGamificacaoContent;
-  homeContent?: ResolvedHomeContent;
   platformShowcaseMedia?: PlatformShowcaseMediaDoc | null;
+  /** Same mirror as the home AI roadmap; used on `/plataforma/` for `AiRoadmap`. */
+  homeContent?: ResolvedHomeContent | null;
 };
 
 type MetadataOptions = {
@@ -434,14 +1070,6 @@ function createMarketingClient(stega: boolean) {
         }
       : false,
   });
-}
-
-function legacySections(...sections: readonly LegacySectionKey[]): LegacySectionBlockDoc[] {
-  return sections.map((section) => ({
-    _key: section,
-    _type: "legacySectionBlock",
-    section,
-  }));
 }
 
 async function fetchMarketingPage(
@@ -500,34 +1128,13 @@ async function buildFallbackMarketingPage(
         locale,
         summary:
           locale === "en"
-            ? "Fallback marketing page that preserves the current home layout while editorial ownership moves into Sanity."
-            : "Pagina de fallback que preserva a home atual enquanto a gestao editorial migra para o Sanity.",
+            ? "Fallback marketing page for the main home flow, already promoted to native marketing blocks."
+            : "Pagina de fallback da home principal, ja promovida para blocos nativos de marketing.",
         seo: {
           metaTitle: homeContent.seo.title,
           metaDescription: homeContent.seo.description,
         },
-        content: legacySections(
-          "homeHero",
-          "homeFourUnik",
-          "homeTrustBar",
-          "homeBentoFeatures",
-          "homePlatformTabs",
-          "homeStatsBar",
-          "homeWhySection",
-          "homeGamificationSummary",
-          "homeGamificationDuality",
-          "homeEnterpriseCases",
-          "homeDedicatedIntegrations",
-          "homeStoreSection",
-          "homeApiSection",
-          "homeAiRoadmap",
-          "homeManagementSection",
-          "homeHowItWorks",
-          "homePricingSection",
-          "homeTestimonialsSection",
-          "homeClientsSection",
-          "homeFinalCta",
-        ),
+        content: homeBlocks(locale, homeContent),
       };
     }
     case "api-integracoes": {
@@ -565,19 +1172,7 @@ async function buildFallbackMarketingPage(
           metaTitle: content.seo.title,
           metaDescription: content.seo.description,
         },
-        content: legacySections(
-          "gamificacaoHero",
-          "gamificacaoProblem",
-          "gamificacaoMechanics",
-          "gamificacaoFlow",
-          "gamificacaoCases",
-          "gamificacaoTrends",
-          "gamificacaoStats",
-          "gamificacaoKpis",
-          "gamificacaoDeepUsecases",
-          "gamificacaoFaq",
-          "gamificacaoCta",
-        ),
+        content: gamificacaoBlocks(locale, content),
       };
     }
     case "plataforma": {
@@ -727,12 +1322,13 @@ export async function getMarketingPageSupportData(
   slug: string,
 ): Promise<MarketingPageSupportData> {
   switch (slug) {
-    case "home":
-      return { homeContent: await getResolvedHomeContent(locale) };
-    case "gamificacao":
-      return { gamificacaoContent: await getResolvedGamificacaoContent(locale) };
-    case "plataforma":
-      return { platformShowcaseMedia: await getPlatformShowcaseMedia(locale) };
+    case "plataforma": {
+      const [platformShowcaseMedia, homeContent] = await Promise.all([
+        getPlatformShowcaseMedia(locale),
+        getResolvedHomeContent(locale),
+      ]);
+      return { platformShowcaseMedia, homeContent };
+    }
     default:
       return {};
   }

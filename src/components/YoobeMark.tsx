@@ -1,7 +1,5 @@
-import { withBasePath } from "@/lib/basePath";
-
 /**
- * Logo Yoobe (PNG oficial) com anel na paleta atual (`yoobe-blue`).
+ * Badge textual para a marca Yoobe sem depender de asset externo.
  */
 type YoobeMarkProps = {
   className?: string;
@@ -15,15 +13,13 @@ export default function YoobeMark({
   title,
 }: YoobeMarkProps) {
   return (
-    <img
-      src={withBasePath("/partners/yoobe-mark.png")}
-      alt={ariaLabel}
+    <span
+      role="img"
+      aria-label={ariaLabel}
       title={title}
-      width={96}
-      height={96}
-      className={`rounded-full object-cover shadow-[0_0_24px_rgba(30,58,95,0.45)] ring-2 ring-yoobe-blue/40 ${className}`}
-      loading="lazy"
-      decoding="async"
-    />
+      className={`inline-flex items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.28),rgba(255,255,255,0.08)_35%,rgba(11,92,255,0.22)_100%)] text-[0.7rem] font-black uppercase tracking-[0.16em] text-white shadow-[0_0_24px_rgba(30,58,95,0.45)] ring-2 ring-yoobe-blue/40 ${className}`}
+    >
+      Y.
+    </span>
   );
 }

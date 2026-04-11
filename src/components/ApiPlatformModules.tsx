@@ -1,66 +1,67 @@
 "use client";
 
+import Image from "next/image";
 import { Package, LineChart, Target, Gift, ShoppingBag, Lock } from "lucide-react";
+import type { ImageWithEmojiDoc, ResolvedApiIntegracoesContent } from "@/sanity/lib/types";
+import { getSanityImageUrl } from "@/sanity/lib/image";
 
-export default function ApiPlatformModules() {
-  const modules = [
-    {
-      icon: <Package className="w-8 h-8 text-blue-400" />,
-      title: "Logística Integrada",
-      desc: "Rastreamento de envios, armazenagem e entregas em até 48h para todo o Brasil. Rastreio last-mile e SLA de entrega em um painel único.",
-    },
-    {
-      icon: <LineChart className="w-8 h-8 text-green-400" />,
-      title: "Estoque e Catálogo",
-      desc: "+5.000 produtos, controle de disponibilidade, centros de custo e orçamentos. Portal de fornecedores e mix físico e digital.",
-    },
-    {
-      icon: <Target className="w-8 h-8 text-yoobe-neon-pink" />,
-      title: "Campanhas e Gamificação",
-      desc: "Campanhas temporárias, pontuação peer-to-peer, badges e conversão de metas em pontos. Motor de premiações plugado ao seu RH.",
-    },
-    {
-      icon: <Gift className="w-8 h-8 text-brand-orange" />,
-      title: "Eventos e Kits",
-      desc: "Welcome kits, premiação, feiras e gifting corporativo. Kits personalizados com identidade da empresa e envio on-demand.",
-    },
-    {
-      icon: <ShoppingBag className="w-8 h-8 text-cyan-400" />,
-      title: "Loja e Resgate",
-      desc: "Loja multi-moeda, resgate com pontos, envio de presentes e produtos digitais. Experiência B2C para o colaborador.",
-    },
-    {
-      icon: <Lock className="w-8 h-8 text-yoobe-purple" />,
-      title: "Gestão e Segurança",
-      desc: "Dashboard analítico, SSO, LGPD, audit logs e permissões granulares. SAML/Active Directory, Okta e Google Workspace.",
-    },
-  ];
+const iconMap = {
+  package: <Package className="w-8 h-8 text-blue-400" />,
+  lineChart: <LineChart className="w-8 h-8 text-green-400" />,
+  target: <Target className="w-8 h-8 text-yoobe-neon-pink" />,
+  gift: <Gift className="w-8 h-8 text-brand-orange" />,
+  shoppingBag: <ShoppingBag className="w-8 h-8 text-cyan-400" />,
+  lock: <Lock className="w-8 h-8 text-yoobe-purple" />,
+} as const;
 
+export default function ApiPlatformModules({
+  content,
+  showcaseItems,
+}: {
+  content: ResolvedApiIntegracoesContent["modules"];
+  showcaseItems?: ImageWithEmojiDoc[];
+}) {
+  const modules = content.items.map((item) => ({
+    ...item,
+    iconNode: iconMap[item.icon as keyof typeof iconMap] ?? iconMap.package,
+  }));
   return (
     <section className="py-24 bg-[#0d1424] relative text-center overflow-hidden border-t border-white/5">
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="mb-16">
           <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-white/70 text-sm font-semibold mb-4">
-            Plataforma como um todo
+            {content.badge}
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
-            Logística, estoque, campanhas e <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple to-fuchsia-600">eventos</span>
+            {content.titleBefore} <span className="bg-linear-to-r from-yoobe-purple to-fuchsia-600 bg-clip-text text-transparent">{content.titleGradient}</span>{content.titleAfter ? ` ${content.titleAfter}` : ""}
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto font-sans">
-            A API não é um add-on. Ela faz parte de uma operação SaaS complète de recompensas, brindes corporativos e premiações.
+            {content.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {modules.map((m, i) => (
-            <div key={i} className="bg-[#121824] border border-white/10 p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-300 text-left group">
+          {modules.map((m, i) => {
+            const cardShowcase = showcaseItems?.[i];
+            const cardImageUrl = getSanityImageUrl(cardShowcase?.image);
+            return (
+            <div key={i} className="group rounded-3xl border border-white/10 bg-surface-panel p-8 text-left transition-transform duration-300 hover:-translate-y-2">
               <div className="mb-6 bg-white/5 p-4 rounded-2xl w-fit group-hover:scale-110 transition-transform">
-                {m.icon}
+                {cardImageUrl ? (
+                  <div className="relative h-8 w-8 overflow-hidden rounded-lg">
+                    <Image src={cardImageUrl} alt={cardShowcase?.image?.alt || m.title} fill className="object-cover" unoptimized />
+                  </div>
+                ) : cardShowcase?.emoji ? (
+                  <span className="text-2xl leading-none">{cardShowcase.emoji}</span>
+                ) : (
+                  m.iconNode
+                )}
               </div>
               <h3 className="text-xl font-bold text-white mb-3 font-heading">{m.title}</h3>
-              <p className="text-white/50 text-sm leading-relaxed font-sans">{m.desc}</p>
+              <p className="text-white/50 text-sm leading-relaxed font-sans">{m.description}</p>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

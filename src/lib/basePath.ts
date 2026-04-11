@@ -1,8 +1,10 @@
 /**
- * Path do repositório no GitHub Pages. Deve coincidir com `basePath` em `next.config.ts`
- * e com `SITE_URL` em `src/lib/site.ts`.
+ * `BASE_PATH` vem de `NEXT_PUBLIC_SITE_URL` — ver [`publicSite.ts`](./publicSite.ts).
+ * Mantém-se este módulo para imports existentes (`withBasePath`, `next.config`).
  */
-export const BASE_PATH = "/landing" as const;
+import { BASE_PATH } from "./publicSite";
+
+export { BASE_PATH };
 
 /**
  * Prefixa caminhos para que assets e links públicos funcionem tanto no dev local
@@ -10,5 +12,8 @@ export const BASE_PATH = "/landing" as const;
  */
 export function withBasePath(path: string): string {
   const normalized = path.startsWith("/") ? path : `/${path}`;
+  if (!BASE_PATH) {
+    return normalized;
+  }
   return `${BASE_PATH}${normalized}`;
 }

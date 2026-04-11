@@ -21,7 +21,7 @@ export default function AiFeatureMockups() {
             Veja a inteligência em ação
           </h2>
           <p className="text-xl text-white/70">
-            Descubra como os assistentes agênticos da Yoobe vão transformar horas de planejamento operacional em segundos de orquestração.
+            Descubra como os assistentes agênticos da 4Unik vão transformar horas de planejamento operacional em segundos de orquestração.
           </p>
         </div>
 
@@ -254,7 +254,7 @@ function KitBuilderMockup() {
             </div>
             <div>
               <div className="text-white font-bold text-sm mb-1">Embalagem Premium Preta</div>
-              <div className="text-xs text-white/50">Fita lacre laranja Yoobe</div>
+              <div className="text-xs text-white/50">Fita lacre laranja 4Unik</div>
             </div>
           </div>
         </div>

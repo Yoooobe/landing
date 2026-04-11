@@ -1,27 +1,86 @@
 import { BASE_PATH } from "./basePath";
+import { SITE_URL } from "./publicSite";
+
+export { SITE_ORIGIN, SITE_URL } from "./publicSite";
+
+const ABSOLUTE_URL_PATTERN = /^https?:\/\//i;
+const FILE_PATH_PATTERN = /\/[^/?#]+\.[^/?#]+$/;
+
+export const SITE_NAME = "4Unik" as const;
 
 /**
- * Origem pública do GitHub Pages (sem path do repositório).
- * Deve coincidir com a org/user do Pages.
+ * URL absoluta de uma rota do site (inclui `BASE_PATH`, ex.: `/casos-de-uso/`).
  */
-export const SITE_ORIGIN = "https://yoooobe.github.io" as const;
+export function normalizeSitePath(path: string): string {
+  if (!path || path === "/") {
+    return "/";
+  }
+
+  const normalized = path.startsWith("/") ? path : `/${path}`;
+  if (FILE_PATH_PATTERN.test(normalized)) {
+    return normalized;
+  }
+  return normalized.endsWith("/") ? normalized : `${normalized}/`;
+}
+
+export function pageAbsoluteUrl(path: string): string {
+  if (ABSOLUTE_URL_PATTERN.test(path)) {
+    return path;
+  }
+
+  const normalized = normalizeSitePath(path);
+  const base = `${SITE_URL}/`;
+  /** Paths like `/blog/x/` must resolve under `SITE_URL` (incl. basePath), not site origin root. */
+  const relative = normalized === "/" ? "" : normalized.startsWith("/") ? normalized.slice(1) : normalized;
+  return new URL(relative, base).href;
+}
 
 /**
- * URL base do site em produção (inclui `BASE_PATH` do repositório).
- * Manter alinhado com `BASE_PATH` em basePath.ts e com o deploy em scripts/deploy-gh-pages.sh.
+ * Base para metadata Next.js (OG, ícones, canonical relativos).
+ *
+ * Em desenvolvimento usa o host local (com `BASE_PATH`) para que `icons`, OG e
+ * URLs derivadas não apontem só para produção — caso contrário o browser pede
+ * favicon em `yoooobe.github.io` enquanto a app corre em `localhost`.
  */
-export const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}` as const;
+export function siteMetadataBase(): URL {
+  if (process.env.VERCEL_URL) {
+    return new URL(`https://${process.env.VERCEL_URL}${BASE_PATH}/`);
+  }
+  if (process.env.NODE_ENV !== "production") {
+    const port = process.env.PORT ?? "3000";
+    return new URL(`http://127.0.0.1:${port}${BASE_PATH}/`);
+  }
+  return new URL(`${SITE_URL}/`);
+}
 
 /**
- * Base para metadata Next.js (OG, canonical relativos).
+ * IDs de analytics/ads a partir de variáveis de ambiente.
+ * Sempre têm prioridade sobre o documento `siteSettings` em runtime.
  */
-export const siteMetadataBase = () => new URL(`${SITE_URL}/`);
-
-/** GA4 Measurement ID; só retorna quando configurado (evita enviar hits com placeholder). */
-export function getGoogleAnalyticsMeasurementId(): string | undefined {
-  const id = process.env.NEXT_PUBLIC_GA_ID?.trim();
-  if (!id || id === "G-XXXXXXXXXX" || !/^G-[A-Z0-9]+$/i.test(id)) {
+function readEnvValue(
+  key: string,
+  placeholder: string | undefined,
+  pattern: RegExp,
+): string | undefined {
+  const raw = process.env[key]?.trim();
+  if (!raw || raw === placeholder || !pattern.test(raw)) {
     return undefined;
   }
-  return id;
+  return raw;
+}
+
+export function getGoogleAnalyticsIdFromEnv(): string | undefined {
+  return readEnvValue("NEXT_PUBLIC_GA_ID", "G-XXXXXXXXXX", /^G-[A-Z0-9]+$/i);
+}
+
+export function getGoogleTagManagerIdFromEnv(): string | undefined {
+  return readEnvValue("NEXT_PUBLIC_GTM_ID", undefined, /^GTM-[A-Z0-9]+$/i);
+}
+
+export function getMetaPixelIdFromEnv(): string | undefined {
+  return readEnvValue("NEXT_PUBLIC_META_PIXEL_ID", undefined, /^\d+$/);
+}
+
+export function getLinkedinPartnerIdFromEnv(): string | undefined {
+  return readEnvValue("NEXT_PUBLIC_LINKEDIN_PARTNER_ID", undefined, /^[a-zA-Z0-9_-]+$/);
 }

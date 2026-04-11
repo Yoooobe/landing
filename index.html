@@ -1,18 +1,19 @@
 <!DOCTYPE html>
+<!-- Legacy: HTML estático na raiz do repo, fora do export Next.js. URLs absolutas (OG, etc.) não usam NEXT_PUBLIC_SITE_URL; atualizar manualmente na mudança de domínio. Ver docs/site-url-migration.md -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4unik by Yoobe — Plataforma de Gamificação e Premiações Corporativas</title>
-  <meta name="description" content="Transforme reconhecimento em resultados. Plataforma completa de gamificação, loja corporativa e gestão de premiações para RH. +500 empresas confiam na 4unik by Yoobe." />
-  <meta property="og:title" content="4unik by Yoobe — Gamificação e Premiações Corporativas" />
+  <title>4unik V3 — Plataforma de Gamificação e Premiações Corporativas</title>
+  <meta name="description" content="Transforme reconhecimento em resultados. Plataforma completa de gamificação, loja corporativa e gestão de premiações para RH. +500 empresas confiam na 4unik V3." />
+  <meta property="og:title" content="4unik V3 — Gamificação e Premiações Corporativas" />
   <meta property="og:description" content="Plataforma completa de gamificação, loja corporativa e gestão de premiações para empresas." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yoobe.co" />
-  <meta property="og:image" content="https://yoobe.co/logo-4unik-by-yoobe.png" />
+  <meta property="og:image" content="https://yoooobe.github.io/landing/brand/4unik-wordmark@2x.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://yoobe.co" />
-  <link rel="icon" href="logo-4unik-by-yoobe.png" type="image/png" />
+  <link rel="icon" href="brand/4unik-mark.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -22,7 +23,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "4unik by Yoobe",
+    "name": "4unik V3",
     "url": "https://yoobe.co",
     "description": "Plataforma de gamificação e premiações corporativas",
     "contactPoint": { "@type": "ContactPoint", "email": "vendas@yoobe.co", "contactType": "sales" }
@@ -35,7 +36,7 @@
 <header class="header header-pill" id="top">
   <nav class="nav-container">
     <a href="/" class="logo-link">
-      <img src="logo-4unik-by-yoobe.png" alt="4unik by Yoobe" class="logo-img" />
+      <img src="brand/4unik-wordmark@2x.png" alt="4unik V3" class="logo-img" />
     </a>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -48,6 +49,7 @@
       <li><a href="#gestao">Gestão</a></li>
       <li><a href="#planos">Planos</a></li>
       <li><a href="api-integracoes.html">API & Dev</a></li>
+      <li><a href="https://yoooobe.github.io/landing/blog/" target="_blank" rel="noopener">Blog</a></li>
       <li><a href="https://catalogo.yoobe.co" target="_blank" rel="noopener">Catálogo</a></li>
     </ul>
     <div class="nav-ctas">
@@ -61,19 +63,39 @@
 </header>
 
 <!-- ════════════ HERO (Dark premium) ════════════ -->
-<section class="hero hero-redesign">
+<section class="hero hero-redesign hero-theme-section hero-theme-home">
+  <div class="hero-theme-backdrop" aria-hidden="true">
+    <div class="hero-theme-grid"></div>
+    <div class="hero-theme-lines"></div>
+    <div class="hero-theme-rings"></div>
+    <div class="hero-theme-orb hero-theme-orb-a"></div>
+    <div class="hero-theme-orb hero-theme-orb-b"></div>
+    <div class="hero-theme-asset hero-theme-asset-primary">
+      <img src="hero-home-rewards-background.svg" alt="" />
+    </div>
+    <div class="hero-theme-asset hero-theme-asset-secondary">
+      <img src="hero-home-rewards-background.svg" alt="" />
+    </div>
+    <div class="hero-theme-particles">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
   <div class="container">
     <div class="hero-split">
       <div class="hero-left">
         <div class="hero-brand-wrap" data-aos="fade-down" data-aos-delay="100">
-          <img src="logo-4unik-by-yoobe.png" alt="4unik by Yoobe" class="hero-logo" />
+          <img src="brand/4unik-wordmark@2x.png" alt="4unik V3" class="hero-logo" />
           <span class="hero-badge">
             <span class="badge-dot"></span>
             Plataforma aberta para todos os clientes
           </span>
         </div>
         <h1 data-aos="fade-up" data-aos-delay="200">
-          <strong>4unik</strong> <span class="text-gradient">by Yoobe</span><br />
+          <strong>4unik</strong> <span class="text-gradient">by 4Unik</span><br />
           Reconhecimento em resultados reais
         </h1>
         <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
@@ -144,10 +166,10 @@
 <section class="trust-bar-redesign">
   <div class="trust-title">Empresas que confiam na 4unik</div>
   <div class="trust-logos">
-    <div class="trust-logo"><img src="clients/yampi.png" alt="Yampi" /></div>
-    <div class="trust-logo"><img src="clients/prio.png" alt="PRIO" /></div>
+    <div class="trust-logo"><img src="clients/yampi.svg" alt="Yampi" /></div>
+    <div class="trust-logo"><img src="clients/prio.svg" alt="PRIO" /></div>
     <div class="trust-logo"><img src="clients/hapvida.png" alt="Hapvida" /></div>
-    <div class="trust-logo"><img src="clients/join.svg" alt="Join" /></div>
+    <div class="trust-logo"><img src="clients/join.png" alt="Join" /></div>
     <div class="trust-logo"><img src="clients/tecnospeed.svg" alt="Tecnospeed" /></div>
     <div class="trust-logo"><img src="clients/boticario.png" alt="O Boticário" /></div>
   </div>
@@ -235,7 +257,7 @@
         <div class="panel-layout">
           <div class="panel-info">
             <h3>Uma Loja Corporativa VIP</h3>
-            <p>Os colaboradores trocam pontos por milhares de produtos do Catálogo Premium Yoobe ou parceiros. Saldo visível, filtros e track & trace.</p>
+            <p>Os colaboradores trocam pontos por milhares de produtos do Catálogo Premium 4Unik ou parceiros. Saldo visível, filtros e track & trace.</p>
             <ul class="panel-features">
               <li><div class="feat-check">✓</div> Saldo de Moedas sempre visível</li>
               <li><div class="feat-check">✓</div> Filtros por valor e categorias</li>
@@ -736,10 +758,10 @@
       <p class="section-desc">De startups a grandes corporações, ajudamos equipes de RH a criar programas de reconhecimento que funcionam.</p>
     </div>
     <div class="logos-grid" data-aos="fade-up" data-aos-delay="200">
-      <div class="logo-card" title="Yampi"><img src="clients/yampi.png" alt="Yampi" loading="lazy" decoding="async" /></div>
-      <div class="logo-card" title="PRIO"><img src="clients/prio.png" alt="PRIO" loading="lazy" decoding="async" /></div>
+      <div class="logo-card" title="Yampi"><img src="clients/yampi.svg" alt="Yampi" loading="lazy" decoding="async" /></div>
+      <div class="logo-card" title="PRIO"><img src="clients/prio.svg" alt="PRIO" loading="lazy" decoding="async" /></div>
       <div class="logo-card" title="Hapvida"><img src="clients/hapvida.png" alt="Hapvida" loading="lazy" decoding="async" /></div>
-      <div class="logo-card" title="Join"><img src="clients/join.svg" alt="Join" loading="lazy" decoding="async" /></div>
+      <div class="logo-card" title="Join"><img src="clients/join.png" alt="Join" loading="lazy" decoding="async" /></div>
       <div class="logo-card" title="Tecnospeed"><img src="clients/tecnospeed.svg" alt="Tecnospeed" loading="lazy" decoding="async" /></div>
       <div class="logo-card" title="O Boticário"><img src="clients/boticario.png" alt="O Boticário" loading="lazy" decoding="async" /></div>
       <div class="logo-card" title="W1 Consultoria"><img src="clients/w1-consultoria.svg" alt="W1 Consultoria" loading="lazy" decoding="async" /></div>
@@ -752,7 +774,7 @@
 <section class="final-cta-section">
   <div class="container" data-aos="zoom-in">
     <h2>Pronto para transformar o reconhecimento na sua empresa?</h2>
-    <p>Solicite uma demonstração e veja como a 4unik by Yoobe eleva o engajamento e a retenção do seu time.</p>
+    <p>Solicite uma demonstração e veja como a 4unik V3 eleva o engajamento e a retenção do seu time.</p>
     <div class="final-cta-btns">
       <a href="https://calendly.com/yoobeco/demo?month=2021-08" class="btn btn-hero-primary" target="_blank" rel="noopener" id="cta-final-demo">Solicitar Demonstração</a>
       <a href="https://wa.me/554187582060" class="btn btn-whatsapp-lg" target="_blank" rel="noopener" id="cta-final-whatsapp">Falar com Especialista</a>
@@ -764,7 +786,7 @@
 <footer class="footer" id="contato">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <img src="logo-4unik-by-yoobe.png" alt="4unik by Yoobe" class="footer-logo" />
+      <img src="brand/4unik-wordmark@2x.png" alt="4unik V3" class="footer-logo" />
       <p>Plataforma completa de gamificação, loja corporativa e gestão de premiações para empresas.</p>
     </div>
     <div class="footer-col">
@@ -779,6 +801,7 @@
     <div class="footer-col">
       <h4>Recursos</h4>
       <ul>
+        <li><a href="https://yoooobe.github.io/landing/blog/" target="_blank" rel="noopener">Blog Engaja, time!</a></li>
         <li><a href="api-integracoes.html">API & Dev</a></li>
         <li><a href="https://catalogo.yoobe.co" target="_blank" rel="noopener">Catálogo</a></li>
         <li><a href="https://catalogo.yoobe.co/kits" target="_blank" rel="noopener">Monte seu Kit</a></li>
@@ -796,12 +819,12 @@
   </div>
   <div class="footer-bottom">
     <div class="container">
-      <p>&copy; 2026 4unik by Yoobe. Todos os direitos reservados.</p>
+      <p>&copy; 2026 4unik V3. Todos os direitos reservados.</p>
     </div>
   </div>
 </footer>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="script.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

@@ -26,12 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ── Animated Counters ──
   const counters = document.querySelectorAll('.stat-number[data-target]');
-  const formatNum = n => {
-    if (n >= 1000000) return (n / 1000000).toFixed(0) + 'M';
-    if (n >= 1000) return (n / 1000).toFixed(0).replace(/\.0$/, '') + (n >= 1000 ? '' : '');
-    return n.toString();
-  };
-
   const animateCounter = el => {
     const target = parseInt(el.dataset.target, 10);
     const duration = 2000;

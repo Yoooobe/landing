@@ -4,6 +4,17 @@ on:
   push:
     branches:
       - main
+  # Redeploy após publicar no Sanity (hero e conteúdo em build estático).
+  workflow_dispatch:
+    inputs:
+      note:
+        description: "Nota opcional (ex.: após publicar no Sanity)"
+        required: false
+        type: string
+  # Dispara com: POST /repos/{owner}/{repo}/dispatches (event_type sanity-publish). Requer PAT com scope repo.
+  repository_dispatch:
+    types:
+      - sanity-publish
 
 permissions:
   contents: read
@@ -30,7 +41,26 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Verify Sanity secrets (evita Studio em produção com ID errado)
+        env:
+          ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+        run: |
+          if [ -z "${ID}" ]; then
+            echo "::warning::Secret NEXT_PUBLIC_SANITY_PROJECT_ID está vazio. O build não embute o ID real — o Studio em https://yoooobe.github.io pode falhar. Defina em Settings → Secrets → Actions."
+          elif [ "${ID}" = "your-project-id" ] || [ "${ID}" = "placeholder" ] || [ "${ID}" = "xxx" ]; then
+            echo "::error::NEXT_PUBLIC_SANITY_PROJECT_ID não pode ser texto de exemplo (${ID}). Use o ID real do projeto em sanity.io/manage."
+            exit 1
+          else
+            echo "NEXT_PUBLIC_SANITY_PROJECT_ID definido (valor não mostrado)."
+          fi
+
       - name: Build static export
+        env:
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          NEXT_PUBLIC_SANITY_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
+          NEXT_PUBLIC_SANITY_API_VERSION: ${{ secrets.NEXT_PUBLIC_SANITY_API_VERSION }}
+          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
         run: npm run build
 
       - name: Upload artifact

@@ -1,4 +1,4 @@
-# Referência de cores (4unik + demo Yoobe)
+# Referência de cores (4unik + demo 4Unik)
 
 Valores iniciais alinhados ao plano de produto. Para extrair hex exatos dos sites ao vivo:
 

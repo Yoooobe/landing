@@ -1,0 +1,30 @@
+export const ptLeadForm = {
+  nameLabel: "Nome completo",
+  namePlaceholder: "Seu nome",
+  emailLabel: "E-mail corporativo",
+  emailPlaceholder: "nome@empresa.com.br",
+  companyLabel: "Empresa",
+  companyPlaceholder: "Nome da empresa",
+  phoneLabel: "Telefone (opcional)",
+  phonePlaceholder: "DDD + número",
+  messageLabel: "Mensagem (opcional)",
+  messagePlaceholder: "Conte-nos brevemente o que busca",
+  consentLabel:
+    "Autorizo o uso dos meus dados para contato comercial, conforme a política de privacidade.",
+  submit: "Enviar pedido de contato",
+  submitting: "A enviar…",
+  successTitle: "Recebemos o seu pedido",
+  successBody: "A nossa equipa entrará em contacto em breve.",
+  errorGeneric: "Não foi possível enviar. Tente novamente ou use o link de demonstração.",
+  errorConfig:
+    "O envio de formulário ainda não está configurado neste ambiente. Use o agendamento ou WhatsApp.",
+  altCalendly: "Ou agende uma demonstração",
+  altTechnical: "Ou agende uma conversa técnica",
+  altWhatsapp: "Ou fale connosco no WhatsApp",
+  fieldErrors: {
+    name: "Indique o seu nome (mínimo 2 caracteres).",
+    email: "Indique um e-mail válido.",
+    company: "Indique a empresa.",
+    consent: "É necessário aceitar para continuar.",
+  },
+} as const;

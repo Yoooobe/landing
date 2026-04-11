@@ -1,0 +1,214 @@
+import { groq } from "next-sanity";
+import type { GamificacaoPayloadDoc } from "@/sanity/lib/types";
+
+const imageFields = `{
+  alt,
+  asset->{
+    _ref,
+    url
+  }
+}`;
+
+export const gamificacaoMirrorByIdQuery = groq`
+  *[_id == $id][0]{
+    gamificacaoPayload{
+      seo{
+        title,
+        description,
+        openGraphDescription
+      },
+      hero{
+        floatLevel,
+        floatLevelSub,
+        floatProgress,
+        badge,
+        titleLine1,
+        titleGradient,
+        titleLine2,
+        sub,
+        cta,
+        ctaHref
+      },
+      problem{
+        badge,
+        title,
+        titleGradient,
+        titleAfter,
+        cards[]{
+          stat,
+          title,
+          body,
+          cite
+        }
+      },
+      mechanics{
+        badge,
+        titleBefore,
+        titleGradient,
+        titleAfter,
+        sub,
+        items[]{
+          id,
+          badge,
+          title,
+          description,
+          features
+        }
+      },
+      flow{
+        badge,
+        titleBefore,
+        titleGradient,
+        titleAfter,
+        sub,
+        steps[]{
+          num,
+          role,
+          title,
+          desc,
+          features[]{
+            icon,
+            text
+          },
+          align
+        }
+      },
+      cases{
+        badge,
+        titleBefore,
+        titleGradient,
+        titleAfter,
+        sub,
+        challengeLabel,
+        solutionLabel,
+        items[]{
+          id,
+          company,
+          industry,
+          title,
+          desc,
+          challenge,
+          solution,
+          metrics[]{
+            value,
+            label
+          }
+        }
+      },
+      trends{
+        badge,
+        titleBefore,
+        titleGradient,
+        titleAfter,
+        sub,
+        banner2025,
+        banner2033,
+        cagr,
+        value2025,
+        value2033,
+        items[]{
+          icon,
+          title,
+          desc,
+          tag,
+          tagStyle
+        }
+      },
+      stats{
+        badge,
+        titleBefore,
+        titleGradient,
+        titleAfter,
+        items[]{
+          value,
+          suffix,
+          desc
+        }
+      },
+      kpis{
+        badge,
+        titleBefore,
+        titleGradient,
+        titleAfter,
+        sub,
+        items[]{
+          title,
+          subtitle,
+          desc
+        }
+      },
+      deepUsecases{
+        badge,
+        titleBefore,
+        titleGradient,
+        titleAfter,
+        sub,
+        items[]{
+          icon,
+          title,
+          desc,
+          hook
+        }
+      },
+      faq{
+        badge,
+        titleBefore,
+        titleGradient,
+        titleAfter,
+        items[]{
+          q,
+          a
+        }
+      },
+      finalCta{
+        title,
+        body,
+        cta,
+        ctaHref
+      },
+      "showcaseMedia": showcaseMedia->{
+        _id,
+        title,
+        mediaKey,
+        hero{
+          showcaseImage ${imageFields}
+        },
+        mechanics{
+          items[]{
+            emoji,
+            image ${imageFields}
+          }
+        },
+        cases{
+          items[]{
+            company,
+            logoImage ${imageFields},
+            featuredImage ${imageFields}
+          }
+        },
+        trends{
+          items[]{
+            emoji,
+            image ${imageFields}
+          }
+        },
+        kpis{
+          items[]{
+            emoji,
+            image ${imageFields}
+          }
+        },
+        deepUsecases{
+          items[]{
+            emoji,
+            image ${imageFields}
+          }
+        }
+      }
+    }
+  }
+`;
+
+export type GamificacaoMirrorQueryResult = {
+  gamificacaoPayload?: GamificacaoPayloadDoc | null;
+} | null;

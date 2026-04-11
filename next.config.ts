@@ -12,6 +12,10 @@ const dev = process.env.NODE_ENV === "development";
 
 const nextConfig: NextConfig = {
   ...(dev ? {} : { output: "export" }),
+  /** Expõe ao bundle do Studio (cliente) a URL opcional do gerador Nano Banana. */
+  env: {
+    SANITY_STUDIO_NANO_BANANA_URL: process.env.SANITY_STUDIO_NANO_BANANA_URL ?? "",
+  },
   basePath: BASE_PATH,
   assetPrefix: BASE_PATH,
   ...(dev
