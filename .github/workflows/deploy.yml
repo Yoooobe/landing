@@ -79,6 +79,8 @@ jobs:
           NEXT_PUBLIC_SANITY_DATASET: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
           NEXT_PUBLIC_SANITY_API_VERSION: ${{ secrets.NEXT_PUBLIC_SANITY_API_VERSION }}
           NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+          # Nano Banana (Studio): URL pública do gerador; embutida no bundle em build-time (ver next.config.ts)
+          SANITY_STUDIO_NANO_BANANA_URL: ${{ secrets.SANITY_STUDIO_NANO_BANANA_URL }}
         run: npm run build
 
       - name: Upload artifact

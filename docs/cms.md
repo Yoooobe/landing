@@ -21,6 +21,8 @@ Importante:
 Nos campos de **imagem** (incluindo o hero das landing pages em blocos `heroBlock`), o menu contextual do asset pode incluir a fonte **«Gerar com Nano Banana»**: abre um diálogo com prompt; opcionalmente chama um backend e faz upload do ficheiro para o dataset.
 
 - **Variável:** `SANITY_STUDIO_NANO_BANANA_URL` — URL HTTPS do teu serviço (exposta no cliente via `env` em `next.config.ts`). Não uses chaves secretas nesta variável; autentica no servidor.
+- **Produção (GitHub Actions):** o valor tem de existir **no momento do `npm run build`**. Adiciona o secret **`SANITY_STUDIO_NANO_BANANA_URL`** em **Settings → Secrets and variables → Actions** (mesmo sítio que `NEXT_PUBLIC_SANITY_*`); o workflow [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) injeta-o no passo *Build static export*. Sem este secret, o Studio em `https://…/landing/studio/` mostra o aviso a pedir configuração mesmo que localmente tenhas `.env.local`.
+- **Local:** define `SANITY_STUDIO_NANO_BANANA_URL` em `.env.local` e reinicia `npm run dev`.
 - **Contrato sugerido:** `POST` JSON `{ "prompt": string }`; resposta `image/png` / `image/jpeg` **ou** JSON com `imageBase64` / `base64` / `image` (base64 ou data URL). Detalhes e avisos estão no comentário de [`src/sanity/assetSources/nanoBananaImageSource.tsx`](../src/sanity/assetSources/nanoBananaImageSource.tsx).
 - **Fluxo no Studio:** geração em duas fases — **pré-visualização** (blob local) e **Aplicar ao campo** (upload para o Sanity). Há **presets** de prompt, **Regenerar** com o mesmo texto e pedido cancelável (`AbortController` se o backend suportar cancelamento HTTP).
 - **Segurança:** o endpoint configurado na variável é chamado a partir do browser dos editores; trata-o como URL pública. A API real deve validar pedidos, aplicar **rate limit**, manter **chaves de fornecedores de IA só no servidor** e configurar **CORS** apenas para as origens do Studio (localhost e o domínio onde o site é servido).
@@ -767,6 +769,7 @@ Secrets recomendados em **Settings → Secrets and variables → Actions**:
 - `NEXT_PUBLIC_SANITY_DATASET` — normalmente `production`
 - opcional: `NEXT_PUBLIC_SANITY_API_VERSION`
 - opcional: `NEXT_PUBLIC_GA_ID`
+- opcional: `SANITY_STUDIO_NANO_BANANA_URL` — URL do gerador de imagens para o Nano Banana no Studio (embutida no build; ver secção «Nano Banana» acima)
 
 Sem `NEXT_PUBLIC_SANITY_PROJECT_ID` / dataset no CI, o export estático **não** embute o projeto Sanity no bundle do Studio em produção — podes ver erros de rede ou URLs com `your-project-id` / falha a abrir o Studio em `https://yoooobe.github.io/landing/studio/`.
 
