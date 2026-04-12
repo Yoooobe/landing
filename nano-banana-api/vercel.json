@@ -3,5 +3,15 @@
   "framework": null,
   "installCommand": "npm install",
   "buildCommand": null,
-  "outputDirectory": null
+  "outputDirectory": null,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/generate"
+    },
+    {
+      "source": "/api",
+      "destination": "/api/generate"
+    }
+  ]
 }

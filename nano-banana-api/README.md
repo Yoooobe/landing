@@ -2,6 +2,8 @@
 
 Endpoint HTTPS compatível com o Sanity Studio da landing [`../`](../): **POST** JSON `{ "prompt": string }` → JSON `{ imageBase64, mimeType }` via **Gemini API** (modelo [`gemini-2.5-flash-image`](https://ai.google.dev/gemini-api/docs/image-generation)), usando o SDK oficial [`@google/genai`](https://github.com/googleapis/js-genai).
 
+**URL no Studio:** o ideal é `https://<projeto>.vercel.app/api/generate`. O `vercel.json` inclui *rewrites* de `/` e `/api` para `/api/generate`, para evitar **404 NOT_FOUND** se o secret tiver só o domínio (sem path).
+
 ## 1. Requisitos
 
 - Chave **Gemini API** em [Google AI Studio](https://aistudio.google.com/apikey) (ou a variável `GOOGLE_API_KEY` com o mesmo valor, [suportada pelo SDK](https://github.com/googleapis/js-genai/blob/main/codegen_instructions.md)).

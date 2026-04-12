@@ -30,7 +30,7 @@ function setCors(req: VercelRequest, res: VercelResponse): void {
   const origin = req.headers.origin as string | undefined;
   const value = origin && allowed.includes(origin) ? origin : allowed[0] ?? "*";
   res.setHeader("Access-Control-Allow-Origin", value);
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.setHeader("Vary", "Origin");
 }
@@ -78,6 +78,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   if (req.method === "OPTIONS") {
     res.status(204).end();
+    return;
+  }
+
+  if (req.method === "GET") {
+    res.status(200).json({
+      service: "nano-banana-api",
+      usage: 'POST JSON { "prompt": "your image description" } with Content-Type: application/json',
+      hint:
+        "If SANITY_STUDIO_NANO_BANANA_URL is only the domain, add /api/generate — or rely on rewrites from / and /api.",
+    });
     return;
   }
 
