@@ -5,11 +5,17 @@
  */
 
 const SKIP_BELOW_BYTES = 80_000;
-const FIRST_MAX_EDGE = 1920;
-const FIRST_JPEG_QUALITY = 0.85;
 const TARGET_MAX_BYTES = 500_000;
-const SECOND_MAX_EDGE = 1280;
-const SECOND_JPEG_QUALITY = 0.72;
+
+/** Passos sucessivos até ficar abaixo do alvo ou ficar o menor JPEG possível (evita 502 com ficheiros > ~500KB). */
+const JPEG_PASSES: readonly { maxEdge: number; quality: number }[] = [
+  { maxEdge: 1920, quality: 0.85 },
+  { maxEdge: 1280, quality: 0.72 },
+  { maxEdge: 1024, quality: 0.65 },
+  { maxEdge: 768, quality: 0.58 },
+  { maxEdge: 640, quality: 0.52 },
+  { maxEdge: 512, quality: 0.48 },
+];
 
 function drawToJpegBlob(
   bitmap: ImageBitmap,
@@ -53,14 +59,21 @@ export async function shrinkImageBlobForUpload(blob: Blob): Promise<Blob> {
   }
 
   try {
-    let out = await drawToJpegBlob(bitmap, FIRST_MAX_EDGE, FIRST_JPEG_QUALITY);
-    if (out && out.size > TARGET_MAX_BYTES) {
-      const second = await drawToJpegBlob(bitmap, SECOND_MAX_EDGE, SECOND_JPEG_QUALITY);
-      if (second) out = second;
+    let best: Blob | null = null;
+
+    for (let passIndex = 0; passIndex < JPEG_PASSES.length; passIndex++) {
+      const { maxEdge, quality } = JPEG_PASSES[passIndex];
+      const out = await drawToJpegBlob(bitmap, maxEdge, quality);
+
+      if (!out || out.size === 0) continue;
+      if (!best || out.size < best.size) best = out;
+      if (out.size <= TARGET_MAX_BYTES) {
+        return out;
+      }
     }
 
-    if (out && out.size > 0) {
-      return out;
+    if (best && best.size > 0) {
+      return best;
     }
     return blob;
   } finally {
