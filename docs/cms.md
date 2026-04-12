@@ -27,6 +27,7 @@ Nos campos de **imagem** (incluindo o hero das landing pages em blocos `heroBloc
 - **Contrato sugerido:** `POST` JSON `{ "prompt": string }`; resposta `image/png` / `image/jpeg` **ou** JSON com `imageBase64` / `base64` / `image` (base64 ou data URL). Detalhes e avisos estão no comentário de [`src/sanity/assetSources/nanoBananaImageSource.tsx`](../src/sanity/assetSources/nanoBananaImageSource.tsx).
 - **Fluxo no Studio:** geração em duas fases — **pré-visualização** (blob local) e **Aplicar ao campo** (upload para o Sanity). Há **presets** de prompt, **Regenerar** com o mesmo texto e pedido cancelável (`AbortController` se o backend suportar cancelamento HTTP).
 - **Segurança:** o endpoint configurado na variável é chamado a partir do browser dos editores; trata-o como URL pública. A API real deve validar pedidos, aplicar **rate limit**, manter **chaves de fornecedores de IA só no servidor** e configurar **CORS** apenas para as origens do Studio (localhost e o domínio onde o site é servido).
+- **Smoke test (API, sem login no Studio):** na raiz do repo, `npm run smoke:nano-banana` — faz `POST` com `Origin: https://yoooobe.github.io` (igual ao GitHub Pages) para `SANITY_STUDIO_NANO_BANANA_URL` ou o default documentado no [`scripts/smoke-nano-banana.mjs`](../scripts/smoke-nano-banana.mjs).
 - Sem URL configurada, o diálogo mostra um aviso a indicar que falta configurar a variável e fazer rebuild.
 
 ### Ícones Lucide e SVG opcional — `featureGridBlock`
