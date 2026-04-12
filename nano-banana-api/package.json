@@ -1,0 +1,15 @@
+{
+  "name": "nano-banana-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "HTTPS endpoint for Sanity Studio «Nano Banana» — OpenAI DALL-E 3",
+  "scripts": {
+    "vercel-build": "echo ok"
+  },
+  "dependencies": {
+    "@vercel/node": "^5.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  }
+}
