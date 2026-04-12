@@ -6,7 +6,7 @@ Objetivo: ícones **outline** coerentes com a landing (navy, stroke ~2, escala 2
 
 | Família | Repositório | Licença típica | Nota |
 |--------|----------------|-----------------|------|
-| **Lucide** | [lucide-icons/lucide](https://github.com/lucide-icons/lucide) | ISC | **Em uso** — manifest em [`src/config/marketing-icon-manifest.ts`](../src/config/marketing-icon-manifest.ts) + registry em [`src/lib/marketing-icon-registry.tsx`](../src/lib/marketing-icon-registry.tsx). |
+| **Lucide** | [lucide-icons/lucide](https://github.com/lucide-icons/lucide) | ISC | **Em uso** — constante `MARKETING_ICON_CATALOG_LICENSE` no manifest + registry em [`src/lib/marketing-icon-registry.tsx`](../src/lib/marketing-icon-registry.tsx). |
 | Heroicons (outline) | [tailwindlabs/heroicons](https://github.com/tailwindlabs/heroicons) | MIT | Segunda família possível; exige pacote + mapa paralelo e alteração de schema. |
 | Phosphor | [phosphor-icons/core](https://github.com/phosphor-icons/core) | MIT | Escolher um peso (regular/light) e documentar no guia visual. |
 | Tabler | [tabler/tabler-icons](https://github.com/tabler/tabler-icons) | MIT | Outline consistente; whitelist no bundle. |
