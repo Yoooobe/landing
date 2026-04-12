@@ -770,7 +770,7 @@ Secrets recomendados em **Settings → Secrets and variables → Actions**:
 - `NEXT_PUBLIC_SANITY_DATASET` — normalmente `production`
 - opcional: `NEXT_PUBLIC_SANITY_API_VERSION`
 - opcional: `NEXT_PUBLIC_GA_ID`
-- opcional: `SANITY_STUDIO_NANO_BANANA_URL` — URL do gerador de imagens para o Nano Banana no Studio (embutida no build; ver secção «Nano Banana» acima)
+- opcional: `SANITY_STUDIO_NANO_BANANA_URL` — URL do gerador de imagens para o Nano Banana no Studio (embutida no build; ver secção «Nano Banana» acima). Exemplo de endpoint Vercel: `https://nano-banana-api-pi.vercel.app/api/generate` (confirma o alias público no projeto; evita URLs com *Deployment Protection* que bloqueiam o browser no GitHub Pages).
 
 Sem `NEXT_PUBLIC_SANITY_PROJECT_ID` / dataset no CI, o export estático **não** embute o projeto Sanity no bundle do Studio em produção — podes ver erros de rede ou URLs com `your-project-id` / falha a abrir o Studio em `https://yoooobe.github.io/landing/studio/`.
 

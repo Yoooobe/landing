@@ -45,13 +45,17 @@ vercel env add ALLOWED_ORIGINS production
 vercel --prod
 ```
 
-No fim, copia a URL de produção, por exemplo `https://nano-banana-api-xxxxx.vercel.app`.
+No fim, o CLI mostra um URL de *deployment*; no dashboard vês também **aliases** de produção.
 
-O endpoint do Nano Banana na landing deve ser **exactamente**:
+**URL a usar no Sanity / GitHub (público, sem login Vercel):** confirma no Dashboard → *Domains* ou com `vercel inspect <url-do-último-deploy>` a linha **Aliases**. Para o projeto `nano-banana-api` na equipa `yoobe-devs-s-team`, o alias **`https://nano-banana-api-pi.vercel.app`** costuma ser o acessível a partir do browser público (outros aliases `*-yoobe-devs-s-team.vercel.app` podem ter **Deployment Protection** / SSO e bloquear o `fetch` desde o GitHub Pages).
+
+Endpoint completo:
 
 ```text
-https://<teu-projeto>.vercel.app/api/generate
+https://nano-banana-api-pi.vercel.app/api/generate
 ```
+
+(Substitui se o teu alias for outro.)
 
 ## 5. Ligar à landing
 
@@ -84,5 +88,5 @@ No Dashboard do projeto → **Settings → General → Root Directory** = `nano-
 
 ## Custos e limites
 
-- Faturação OpenAI: [preços Images](https://openai.com/pricing).
-- Conteúdo sujeito às políticas da API; prompts rejeitados devolvem erro 502 com detalhe da OpenAI.
+- Faturação OpenAI: [preços Images](https://openai.com/pricing). Se a API devolver `billing_hard_limit_reached`, aumenta o limite ou o saldo na conta OpenAI.
+- Conteúdo sujeito às políticas da API; prompts rejeitados devolvem erro com detalhe da OpenAI.
