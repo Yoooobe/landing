@@ -2,11 +2,12 @@
   "name": "nano-banana-api",
   "private": true,
   "version": "1.0.0",
-  "description": "HTTPS endpoint for Sanity Studio «Nano Banana» — OpenAI DALL-E 3",
+  "description": "HTTPS endpoint for Sanity Studio «Nano Banana» — Gemini image (gemini-2.5-flash-image)",
   "scripts": {
     "vercel-build": "echo ok"
   },
   "dependencies": {
+    "@google/genai": "^1.49.0",
     "@vercel/node": "^5.5.0"
   },
   "devDependencies": {

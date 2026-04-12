@@ -1,11 +1,16 @@
 # Nano Banana API
 
-Endpoint HTTPS compatível com o Sanity Studio da landing [`../`](../): **POST** JSON `{ "prompt": string }` → JSON `{ imageBase64, mimeType }` (OpenAI **DALL·E 3**).
+Endpoint HTTPS compatível com o Sanity Studio da landing [`../`](../): **POST** JSON `{ "prompt": string }` → JSON `{ imageBase64, mimeType }` via **Gemini API** (modelo [`gemini-2.5-flash-image`](https://ai.google.dev/gemini-api/docs/image-generation)), usando o SDK oficial [`@google/genai`](https://github.com/googleapis/js-genai).
 
 ## 1. Requisitos
 
-- Conta [OpenAI](https://platform.openai.com/) com API key e créditos para Images.
+- Chave **Gemini API** em [Google AI Studio](https://aistudio.google.com/apikey) (ou a variável `GOOGLE_API_KEY` com o mesmo valor, [suportada pelo SDK](https://github.com/googleapis/js-genai/blob/main/codegen_instructions.md)).
 - [Vercel CLI](https://vercel.com/docs/cli) recente (`npm i -g vercel@latest`).
+
+Documentação relevante:
+
+- [Image generation (Gemini API)](https://ai.google.dev/gemini-api/docs/image-generation)
+- [JavaScript/TypeScript — `@google/genai`](https://github.com/googleapis/js-genai/blob/main/codegen_instructions.md)
 
 ## 2. Projeto Vercel **separado** do site Next.js
 
@@ -21,16 +26,20 @@ vercel
 
 Responde **N**o a “link to existing” e cria um projeto novo, por exemplo **`nano-banana-api`** (nome à tua escolha).
 
-## 3. Variável `OPENAI_API_KEY` (CLI 50+)
+## 3. Variável `GEMINI_API_KEY` (CLI 50+)
 
 A CLI exige o **ambiente** no comando:
 
 ```bash
-vercel env add OPENAI_API_KEY production
+vercel env add GEMINI_API_KEY production
 ```
 
-Quando pedir o valor, cola a chave (`sk-...`) e confirma.  
-(Alternativa: [Vercel Dashboard](https://vercel.com/) → o projeto **nano-banana-api** → **Settings → Environment Variables** → `OPENAI_API_KEY` → Production.)
+Quando pedir o valor, cola a chave da Google AI Studio e confirma.  
+(Alternativa: [Vercel Dashboard](https://vercel.com/) → o projeto **nano-banana-api** → **Settings → Environment Variables** → `GEMINI_API_KEY` → Production.)
+
+Podes usar em alternativa **`GOOGLE_API_KEY`** com o mesmo valor (o código aceita qualquer uma das duas).
+
+**Migração a partir de OpenAI:** remove ou deixa de usar `OPENAI_API_KEY` neste serviço; o handler já não a lê.
 
 Opcional:
 
@@ -78,7 +87,7 @@ Deves ver JSON com `imageBase64`.
 
 ```bash
 cp .env.example .env.local
-# edita OPENAI_API_KEY em .env.local
+# edita GEMINI_API_KEY em .env.local
 vercel dev
 ```
 
@@ -88,5 +97,5 @@ No Dashboard do projeto → **Settings → General → Root Directory** = `nano-
 
 ## Custos e limites
 
-- Faturação OpenAI: [preços Images](https://openai.com/pricing). Se a API devolver `billing_hard_limit_reached`, aumenta o limite ou o saldo na conta OpenAI.
-- Conteúdo sujeito às políticas da API; prompts rejeitados devolvem erro com detalhe da OpenAI.
+- Faturação e quotas: [Gemini API pricing](https://ai.google.dev/pricing) e documentação do produto.
+- Conteúdo sujeito às políticas de segurança do modelo; prompts bloqueados devolvem `400` com `Prompt blocked`.
