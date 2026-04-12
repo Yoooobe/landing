@@ -1,5 +1,7 @@
 # Sanity CMS — passos operacionais
 
+**Configuração local:** modelo em [`.env.example`](../.env.example) — `npm run env:init` cria `.env.local`; `npm run env:check` confirma ID/dataset. Os mesmos nomes (sem o prefixo de ficheiro) devem existir como **Secrets** no GitHub para o [deploy](../.github/workflows/deploy.yml).
+
 Site em export estático (`output: "export"`). O `basePath` deriva de **`NEXT_PUBLIC_SITE_URL`** (ver [`src/lib/publicSite.ts`](../src/lib/publicSite.ts) e [`src/lib/parsePublicSiteUrl.ts`](../src/lib/parsePublicSiteUrl.ts); fallback em [`config/public-site.json`](../config/public-site.json)). Em desenvolvimento com o fallback, **`http://localhost:3000/`** redireciona para **`/landing/`**; migração de domínio: [`site-url-migration.md`](site-url-migration.md).
 
 **yoobe.co:** o domínio institucional **yoobe.co** e os HTML estáticos na raiz do repositório que o referenciam (canonical, OG, etc.) são um contexto à parte. Este fluxo de build e deploy **não** os altera; o export Next continua a ser servido em **GitHub Pages** na URL acima.

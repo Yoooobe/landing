@@ -10,6 +10,8 @@
     "lint": "eslint",
     "seed:sanity": "node scripts/seed-sanity-content.mjs",
     "sanity:cors": "sanity cors add http://localhost:3000 && sanity cors add http://127.0.0.1:3000",
+    "env:init": "node scripts/init-env-local.mjs",
+    "env:check": "node scripts/check-local-env.mjs",
     "smoke:nano-banana": "node scripts/smoke-nano-banana.mjs",
     "deploy:gh-pages": "bash scripts/deploy-gh-pages.sh",
     "deploy:gh-pages:quick": "npm run build && gh-pages -d out -t -m \"chore: deploy static export to gh-pages\""
