@@ -83,7 +83,9 @@ curl -sS -X POST 'https://<teu-projeto>.vercel.app/api/generate' \
   -d '{"prompt":"A minimal orange icon on dark blue"}' | head -c 200
 ```
 
-Deves ver JSON com `imageBase64`.
+Copia **só** as linhas do bloco acima: se colares texto explicativo na mesma linha depois de `head`, o terminal parte o comando (`head: … No such file`). O resultado deve começar por `{"mimeType":` e `imageBase64`. Com `| head -c …` o `curl` pode mostrar aviso `(56)` ao fechar o pipe cedo — é normal.
+
+Para ver só o código HTTP: `curl -sS -o /dev/null -w '%{http_code}\n' -X POST '…' -H 'Content-Type: application/json' -d '{"prompt":"…"}'`.
 
 ## 7. Desenvolvimento local (`vercel dev`)
 
