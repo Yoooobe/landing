@@ -26,6 +26,8 @@ import { Sparkles } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useClient } from "sanity";
 
+import { shrinkImageBlobForUpload } from "./shrinkImageBlobForUpload";
+
 const STUDIO_API_VERSION = "2024-01-01";
 
 const PROMPT_PRESETS = [
@@ -70,6 +72,17 @@ function base64ToBlob(base64: string, mimeFallback: string): Blob {
     bytes[i] = binary.charCodeAt(i);
   }
   return new Blob([bytes], { type: mime });
+}
+
+function formatSanityUploadError(e: unknown): string {
+  if (!(e instanceof Error)) return "Falha ao enviar a imagem.";
+  const any = e as Error & { statusCode?: number; response?: { statusCode?: number } };
+  const code = any.statusCode ?? any.response?.statusCode;
+  const msg = e.message;
+  if (code === 502 || /502|upstream|invalid response/i.test(msg)) {
+    return "Erro 502 ao enviar para o Sanity (imagem muito grande ou instabilidade de rede). A app comprime imagens grandes antes do envio — tenta outra vez. Se persistir, usa proporção mais baixa ou verifica NEXT_PUBLIC_SANITY_DATASET no build.";
+  }
+  return msg;
 }
 
 async function parseImageResponse(res: Response): Promise<Blob> {
@@ -204,10 +217,11 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
 
     setLoading(true);
     try {
-      const ext =
-        previewBlob.type.includes("jpeg") || previewBlob.type.includes("jpg") ? "jpg" : "png";
-      const file = new File([previewBlob], `nano-banana-${Date.now()}.${ext}`, {
-        type: previewBlob.type || "image/png",
+      const optimized = await shrinkImageBlobForUpload(previewBlob);
+      const useJpeg = optimized.type === "image/jpeg" || optimized.type === "image/jpg";
+      const ext = useJpeg ? "jpg" : "png";
+      const file = new File([optimized], `nano-banana-${Date.now()}.${ext}`, {
+        type: optimized.type || "image/png",
       });
       const uploaded = await client.assets.upload("image", file);
       const id = uploaded?._id;
@@ -223,10 +237,11 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
         description: "O asset foi associado ao campo.",
       });
     } catch (e) {
+      const description = formatSanityUploadError(e);
       toast.push({
         status: "error",
         title: "Nano Banana",
-        description: e instanceof Error ? e.message : "Falha ao enviar a imagem.",
+        description,
       });
     } finally {
       setLoading(false);
