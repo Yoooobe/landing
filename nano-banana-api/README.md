@@ -1,6 +1,6 @@
 # Nano Banana API
 
-Endpoint HTTPS compatível com o Sanity Studio da landing [`../`](../): **POST** JSON `{ "prompt": string }` → JSON `{ imageBase64, mimeType }` via **Gemini API** (modelo [`gemini-2.5-flash-image`](https://ai.google.dev/gemini-api/docs/image-generation)), usando o SDK oficial [`@google/genai`](https://github.com/googleapis/js-genai).
+Endpoint HTTPS compatível com o Sanity Studio da landing [`../`](../): **POST** JSON `{ "prompt": string, "aspectRatio"?: string, "style"?: string }` → JSON `{ imageBase64, mimeType }` via **Gemini API** (modelo [`gemini-2.5-flash-image`](https://ai.google.dev/gemini-api/docs/image-generation)), usando o SDK oficial [`@google/genai`](https://github.com/googleapis/js-genai). `aspectRatio` deve ser um dos valores expostos por **GET** `/api/generate` (`aspectRatios`). `style` é concatenado ao prompt no servidor. **Rate limit:** 60 pedidos/minuto por IP (por instância serverless).
 
 **URL no Studio:** o ideal é `https://<projeto>.vercel.app/api/generate`. O `vercel.json` inclui *rewrites* de `/` e `/api` para `/api/generate`, para evitar **404 NOT_FOUND** se o secret tiver só o domínio (sem path).
 

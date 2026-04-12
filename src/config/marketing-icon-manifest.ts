@@ -2,8 +2,13 @@
  * Single source of truth for marketing feature-card icons (Lucide).
  * Add entries here, then register the matching export in `marketing-icon-registry.tsx`.
  *
- * Repositories (MIT): https://github.com/lucide-icons/lucide
+ * License: all current entries use **Lucide** (ISC) — https://github.com/lucide-icons/lucide/blob/main/LICENSE
+ * Future families (Heroicons, etc.) need their own `family` + registry branch and license line.
+ * Curadoria e famílias candidatas: [`docs/icon-libraries.md`](../../docs/icon-libraries.md).
  */
+export const MARKETING_ICON_CATALOG_LICENSE =
+  "Lucide icons — ISC License (https://github.com/lucide-icons/lucide)";
+
 export type MarketingIconFamily = "lucide";
 
 export type MarketingIconEntry = {

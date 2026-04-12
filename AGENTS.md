@@ -36,21 +36,25 @@ Configuração do Pages no GitHub (fonte branch vs Actions, Desktop, CLI, billin
 - **Optional chat widget**: set `NEXT_PUBLIC_CHAT_SCRIPT_URL` to a third-party script URL (e.g. Intercom/Crisp). Loaded lazily after paint; no server required for static export.
 - **AEO / assistentes**: `npm run build` runs `generate:llms` — regenerates `public/llms.txt` via `scripts/generate-llms-txt.ts` using `src/lib/parsePublicSiteUrl.ts` (same URLs as `robots.txt` / `sitemap.xml`). Override with **`NEXT_PUBLIC_SITE_URL`** at build time, or edit **`config/public-site.json`** for the repo fallback. See `docs/aeo-ai-visibility.md`. `pageAbsoluteUrl` in `src/lib/site.ts` resolves absolute URLs from the same canonical base.
 - **Lint has pre-existing errors**: `npm run lint` exits with code 1 due to pre-existing lint errors in the codebase (unescaped entities, unused vars, etc.). This is expected.
-- **No automated tests**: The project has no test framework or test files.
+- **Tests:** `npm run test:svg` — sanitização mínima de SVG (`scripts/run-svg-sanitize-tests.ts`). Não há suite completa de testes E2E no repo.
 - **`.npmrc` config**: Uses `legacy-peer-deps=true` and a custom cache dir `/tmp/landing-cache`.
 - **`next-app/` directory**: Empty placeholder package at root — not used; ignore it.
 
 ### Curadoria de ícones (marketing / `featureGridBlock`)
 
-Novos ícones para a grade de features **não** se adicionam só no Studio: a lista visível vem do manifest em [`src/config/marketing-icon-manifest.ts`](src/config/marketing-icon-manifest.ts) e cada entrada precisa de um import correspondente em [`src/lib/marketing-icon-registry.tsx`](src/lib/marketing-icon-registry.tsx) (Lucide, MIT — [repositório oficial](https://github.com/lucide-icons/lucide)).
+Novos ícones para a grade de features **não** se adicionam só no Studio: a lista visível vem do manifest em [`src/config/marketing-icon-manifest.ts`](src/config/marketing-icon-manifest.ts) e cada entrada precisa de um import correspondente em [`src/lib/marketing-icon-registry.tsx`](src/lib/marketing-icon-registry.tsx) (Lucide, ISC — [repositório oficial](https://github.com/lucide-icons/lucide)).
+
+Referência de famílias candidatas, licenças e limitações: [`docs/icon-libraries.md`](docs/icon-libraries.md).
 
 **Fluxo recomendado com agentes (Cursor, etc.):**
 
-1. Escolher o nome do export Lucide (PascalCase) e confirmar que existe na versão `lucide-react` do projeto.
-2. Acrescentar uma linha ao manifest (`id` em kebab-case estável, `title` legível).
-3. Importar o componente em `marketing-icon-registry.tsx` e mapeá-lo em `LUCIDE_BY_EXPORT`.
-4. Correr `npx tsc --noEmit` e `npm run build` (com env Sanity de placeholder se necessário).
+1. Pesquisar apenas **repositórios oficiais** ou com licença explícita (MIT/ISC); nunca copiar SVG de URLs aleatórias sem licença.
+2. Escolher o nome do export Lucide (PascalCase) e confirmar que existe na versão `lucide-react` do projeto (`npm ls lucide-react`).
+3. Acrescentar uma linha ao manifest (`id` em kebab-case estável, `title` legível).
+4. Importar o componente em `marketing-icon-registry.tsx` e mapeá-lo em `LUCIDE_BY_EXPORT`.
+5. Correr `npx tsc --noEmit`, `npm run test:svg` e `npm run build` (com env Sanity de placeholder se necessário).
+6. **Revisão humana** obrigatória antes de merge: contraste, peso do traço alinhado à landing, e coerência com o resto da secção.
 
-**SVG personalizado:** preferir o manifest; upload de `.svg` no CMS é para exceções e passa por sanitização no site — não introduzir SVG não confiável sem revisão.
+**SVG personalizado:** preferir o manifest; upload de `.svg` no CMS é para exceções e passa por sanitização no site (`npm run test:svg`) — não introduzir SVG não confiável sem revisão.
 
 **Outras bibliotecas** (Heroicons, Phosphor, etc.): exigem decisão de produto (bundle, estilo) e um segundo mapa de família; não misturar silenciosamente com Lucide sem alterar o schema e o renderer.

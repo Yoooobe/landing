@@ -10,6 +10,8 @@
  *
  * ## Contrato HTTP (mínimo)
  * - **Request:** `POST` com `Content-Type: application/json` e corpo `{ "prompt": string }`.
+ * - **Opcional:** `aspectRatio` (ex.: `16:9`, `1:1`) e `style` (texto curto com pistas visuais) — ver backend
+ *   [`nano-banana-api/api/generate.ts`](../../../nano-banana-api/api/generate.ts).
  * - **Response (opção A):** corpo binário `image/png` ou `image/jpeg` (ou outro tipo em `Content-Type`).
  * - **Response (opção B):** JSON com um destes campos (primeiro encontrado é usado):
  *   - `imageBase64`, `base64`, ou `image` — string base64 pura ou data URL `data:image/...;base64,...`.
@@ -19,7 +21,7 @@
  * campo passa a referenciar o novo documento de asset.
  */
 import type { AssetFromSource, AssetSource, AssetSourceComponentProps } from "@sanity/types";
-import { Box, Button, Dialog, Flex, Stack, Text, TextArea, useToast } from "@sanity/ui";
+import { Box, Button, Dialog, Flex, Stack, Text, TextArea, TextInput, useToast } from "@sanity/ui";
 import { Sparkles } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useClient } from "sanity";
@@ -32,6 +34,22 @@ const PROMPT_PRESETS = [
   "Ilustração minimalista de integração entre sistemas (setas, nós)",
   "Equipa a colaborar à volta de um ecrã, estilo flat, fundo escuro",
 ] as const;
+
+/** Alinhado a `NANO_BANANA_ASPECT_RATIOS` no backend nano-banana-api. */
+const ASPECT_RATIOS = [
+  "1:1",
+  "2:3",
+  "3:2",
+  "3:4",
+  "4:3",
+  "4:5",
+  "5:4",
+  "9:16",
+  "16:9",
+  "21:9",
+] as const;
+
+const FETCH_TIMEOUT_MS = 120_000;
 
 function NanoBananaIcon() {
   return <Sparkles size={18} strokeWidth={2} aria-hidden />;
@@ -77,6 +95,8 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
   const client = useClient({ apiVersion: STUDIO_API_VERSION });
   const toast = useToast();
   const [prompt, setPrompt] = useState("");
+  const [aspectRatio, setAspectRatio] = useState<string>("1:1");
+  const [styleHints, setStyleHints] = useState("");
   const [loading, setLoading] = useState(false);
   const [previewBlob, setPreviewBlob] = useState<Blob | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -125,6 +145,7 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
     abortRef.current?.abort();
     const ac = new AbortController();
     abortRef.current = ac;
+    const timeoutId = window.setTimeout(() => ac.abort(), FETCH_TIMEOUT_MS);
 
     setLoading(true);
     clearPreview();
@@ -132,7 +153,11 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ prompt: prompt.trim() }),
+        body: JSON.stringify({
+          prompt: prompt.trim(),
+          ...(aspectRatio ? { aspectRatio } : {}),
+          ...(styleHints.trim() ? { style: styleHints.trim() } : {}),
+        }),
         signal: ac.signal,
       });
       if (!res.ok) {
@@ -148,16 +173,24 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
         description: "Confirma para enviar ao Sanity ou regenera com o mesmo prompt.",
       });
     } catch (e) {
-      if (e instanceof Error && e.name === "AbortError") return;
+      if (e instanceof Error && e.name === "AbortError") {
+        toast.push({
+          status: "warning",
+          title: "Nano Banana",
+          description: "Pedido interrompido (cancelamento ou tempo máximo de 2 minutos).",
+        });
+        return;
+      }
       toast.push({
         status: "error",
         title: "Nano Banana",
         description: e instanceof Error ? e.message : "Falha ao gerar a imagem.",
       });
     } finally {
+      clearTimeout(timeoutId);
       setLoading(false);
     }
-  }, [clearPreview, endpoint, notifyNotConfigured, prompt, toast]);
+  }, [aspectRatio, clearPreview, endpoint, notifyNotConfigured, prompt, styleHints, toast]);
 
   const handleApply = useCallback(async () => {
     if (!previewBlob) {
@@ -228,6 +261,47 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
               />
             ))}
           </Flex>
+          <Box>
+            <Text size={1} weight="semibold">
+              Proporção
+            </Text>
+            <Box marginTop={2}>
+              <select
+                value={aspectRatio}
+                onChange={(e) => setAspectRatio(e.target.value)}
+                disabled={loading}
+                style={{
+                  width: "100%",
+                  maxWidth: 280,
+                  padding: "0.5rem 0.75rem",
+                  borderRadius: 6,
+                  border: "1px solid rgba(255,255,255,0.15)",
+                  background: "rgba(0,0,0,0.35)",
+                  color: "inherit",
+                  fontSize: 14,
+                }}
+              >
+                {ASPECT_RATIOS.map((ar) => (
+                  <option key={ar} value={ar}>
+                    {ar}
+                  </option>
+                ))}
+              </select>
+            </Box>
+          </Box>
+          <Box>
+            <Text size={1} weight="semibold">
+              Pistas de estilo (opcional)
+            </Text>
+            <Box marginTop={2}>
+              <TextInput
+                value={styleHints}
+                onChange={(event) => setStyleHints(event.currentTarget.value)}
+                placeholder="Ex.: flat, navy e laranja, pouco detalhe…"
+                disabled={loading}
+              />
+            </Box>
+          </Box>
           <TextArea
             rows={5}
             value={prompt}

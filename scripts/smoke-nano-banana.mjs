@@ -16,6 +16,7 @@ const origin = "https://yoooobe.github.io";
 
 const body = JSON.stringify({
   prompt: "Smoke test: minimal flat blue square icon on dark background",
+  aspectRatio: "1:1",
 });
 
 const res = await fetch(endpoint, {

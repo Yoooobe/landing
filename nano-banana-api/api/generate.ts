@@ -8,12 +8,52 @@ import { GoogleGenAI, Modality, type GenerateContentResponse } from "@google/gen
  */
 const IMAGE_MODEL = "gemini-2.5-flash-image";
 
+/** Supported by ImageConfig.aspectRatio (Gemini generateContent). */
+export const NANO_BANANA_ASPECT_RATIOS = [
+  "1:1",
+  "2:3",
+  "3:2",
+  "3:4",
+  "4:3",
+  "4:5",
+  "5:4",
+  "9:16",
+  "16:9",
+  "21:9",
+] as const;
+
+export type NanoBananaAspectRatio = (typeof NANO_BANANA_ASPECT_RATIOS)[number];
+
 /** Origins allowed to call this API from the browser (Sanity Studio). */
 const DEFAULT_ORIGINS = [
   "https://yoooobe.github.io",
   "http://localhost:3000",
   "http://127.0.0.1:3000",
 ];
+
+/** Best-effort rate limit per IP (per serverless instance). */
+const RATE_WINDOW_MS = 60_000;
+const RATE_MAX = 60;
+const rateBuckets = new Map<string, { count: number; reset: number }>();
+
+function getClientIp(req: VercelRequest): string {
+  const xf = req.headers["x-forwarded-for"];
+  if (typeof xf === "string" && xf.trim()) {
+    return xf.split(",")[0]?.trim() ?? "unknown";
+  }
+  return (req.socket?.remoteAddress as string | undefined) ?? "unknown";
+}
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  let b = rateBuckets.get(ip);
+  if (!b || now > b.reset) {
+    b = { count: 0, reset: now + RATE_WINDOW_MS };
+    rateBuckets.set(ip, b);
+  }
+  b.count += 1;
+  return b.count > RATE_MAX;
+}
 
 function getGeminiApiKey(): string | undefined {
   return process.env.GEMINI_API_KEY?.trim() || process.env.GOOGLE_API_KEY?.trim();
@@ -35,17 +75,37 @@ function setCors(req: VercelRequest, res: VercelResponse): void {
   res.setHeader("Vary", "Origin");
 }
 
-function parseBody(req: VercelRequest): { prompt?: string } {
+export type GenerateBody = {
+  prompt?: string;
+  /** Optional; must be one of NANO_BANANA_ASPECT_RATIOS when set. */
+  aspectRatio?: string;
+  /** Optional style hints (appended to the prompt server-side). */
+  style?: string;
+};
+
+function parseBody(req: VercelRequest): GenerateBody {
   const b = req.body;
   if (b == null) return {};
   if (typeof b === "string") {
     try {
-      return JSON.parse(b) as { prompt?: string };
+      return JSON.parse(b) as GenerateBody;
     } catch {
       return {};
     }
   }
-  return b as { prompt?: string };
+  return b as GenerateBody;
+}
+
+function normalizeAspectRatio(raw: string | undefined): NanoBananaAspectRatio | undefined {
+  if (!raw || typeof raw !== "string") return undefined;
+  const v = raw.trim() as NanoBananaAspectRatio;
+  return (NANO_BANANA_ASPECT_RATIOS as readonly string[]).includes(v) ? v : undefined;
+}
+
+function buildContents(prompt: string, style: string | undefined): string {
+  const base = prompt.trim().slice(0, 32_000);
+  if (!style?.trim()) return base;
+  return `${base}\n\nStyle / visual hints: ${style.trim().slice(0, 2000)}`;
 }
 
 function extractImageFromResponse(response: GenerateContentResponse): {
@@ -84,7 +144,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   if (req.method === "GET") {
     res.status(200).json({
       service: "nano-banana-api",
-      usage: 'POST JSON { "prompt": "your image description" } with Content-Type: application/json',
+      usage:
+        'POST JSON { "prompt": string, "aspectRatio"?: string, "style"?: string } with Content-Type: application/json',
+      aspectRatios: [...NANO_BANANA_ASPECT_RATIOS],
       hint:
         "If SANITY_STUDIO_NANO_BANANA_URL is only the domain, add /api/generate — or rely on rewrites from / and /api.",
     });
@@ -93,6 +155,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   if (req.method !== "POST") {
     res.status(405).json({ error: "Method not allowed" });
+    return;
+  }
+
+  const ip = getClientIp(req);
+  if (isRateLimited(ip)) {
+    res.status(429).json({
+      error: "Too many requests",
+      detail: "Rate limit exceeded; try again in a minute.",
+    });
     return;
   }
 
@@ -105,20 +176,32 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     return;
   }
 
-  const { prompt } = parseBody(req);
+  const body = parseBody(req);
+  const { prompt, style } = body;
   if (!prompt || typeof prompt !== "string" || !prompt.trim()) {
     res.status(400).json({ error: "Missing prompt" });
     return;
   }
 
+  const aspectRatio = normalizeAspectRatio(body.aspectRatio);
+  if (body.aspectRatio != null && body.aspectRatio !== "" && !aspectRatio) {
+    res.status(400).json({
+      error: "Invalid aspectRatio",
+      detail: `Use one of: ${NANO_BANANA_ASPECT_RATIOS.join(", ")}`,
+    });
+    return;
+  }
+
+  const contents = buildContents(prompt, typeof style === "string" ? style : undefined);
   const ai = new GoogleGenAI({ apiKey });
 
   try {
     const geminiResponse = await ai.models.generateContent({
       model: IMAGE_MODEL,
-      contents: prompt.trim().slice(0, 32_000),
+      contents,
       config: {
         responseModalities: [Modality.IMAGE],
+        ...(aspectRatio ? { imageConfig: { aspectRatio } } : {}),
       },
     });
 
