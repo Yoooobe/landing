@@ -21,10 +21,17 @@
 import type { AssetFromSource, AssetSource, AssetSourceComponentProps } from "@sanity/types";
 import { Box, Button, Dialog, Flex, Stack, Text, TextArea, useToast } from "@sanity/ui";
 import { Sparkles } from "lucide-react";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useClient } from "sanity";
 
 const STUDIO_API_VERSION = "2024-01-01";
+
+const PROMPT_PRESETS = [
+  "Hero escuro com diagrama de API e código TypeScript",
+  "Mockup de dashboard analytics em tons navy e laranja",
+  "Ilustração minimalista de integração entre sistemas (setas, nós)",
+  "Equipa a colaborar à volta de um ecrã, estilo flat, fundo escuro",
+] as const;
 
 function NanoBananaIcon() {
   return <Sparkles size={18} strokeWidth={2} aria-hidden />;
@@ -71,8 +78,18 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
   const toast = useToast();
   const [prompt, setPrompt] = useState("");
   const [loading, setLoading] = useState(false);
+  const [previewBlob, setPreviewBlob] = useState<Blob | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const abortRef = useRef<AbortController | null>(null);
 
   const endpoint = getNanoBananaEndpoint();
+
+  useEffect(() => {
+    return () => {
+      abortRef.current?.abort();
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+    };
+  }, [previewUrl]);
 
   const notifyNotConfigured = useCallback(() => {
     toast.push({
@@ -83,7 +100,15 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
     });
   }, [toast]);
 
-  const handleGenerate = useCallback(async () => {
+  const clearPreview = useCallback(() => {
+    setPreviewBlob(null);
+    setPreviewUrl((prev) => {
+      if (prev) URL.revokeObjectURL(prev);
+      return null;
+    });
+  }, []);
+
+  const runGenerate = useCallback(async () => {
     if (!endpoint) {
       notifyNotConfigured();
       return;
@@ -97,20 +122,59 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
       return;
     }
 
+    abortRef.current?.abort();
+    const ac = new AbortController();
+    abortRef.current = ac;
+
     setLoading(true);
+    clearPreview();
     try {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: prompt.trim() }),
+        signal: ac.signal,
       });
       if (!res.ok) {
         throw new Error(`${res.status} ${res.statusText}`);
       }
       const blob = await parseImageResponse(res);
-      const ext = blob.type.includes("jpeg") || blob.type.includes("jpg") ? "jpg" : "png";
-      const file = new File([blob], `nano-banana-${Date.now()}.${ext}`, {
-        type: blob.type || "image/png",
+      const url = URL.createObjectURL(blob);
+      setPreviewBlob(blob);
+      setPreviewUrl(url);
+      toast.push({
+        status: "success",
+        title: "Pré-visualização pronta",
+        description: "Confirma para enviar ao Sanity ou regenera com o mesmo prompt.",
+      });
+    } catch (e) {
+      if (e instanceof Error && e.name === "AbortError") return;
+      toast.push({
+        status: "error",
+        title: "Nano Banana",
+        description: e instanceof Error ? e.message : "Falha ao gerar a imagem.",
+      });
+    } finally {
+      setLoading(false);
+    }
+  }, [clearPreview, endpoint, notifyNotConfigured, prompt, toast]);
+
+  const handleApply = useCallback(async () => {
+    if (!previewBlob) {
+      toast.push({
+        status: "error",
+        title: "Sem imagem",
+        description: "Gera uma pré-visualização antes de aplicar.",
+      });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const ext =
+        previewBlob.type.includes("jpeg") || previewBlob.type.includes("jpg") ? "jpg" : "png";
+      const file = new File([previewBlob], `nano-banana-${Date.now()}.${ext}`, {
+        type: previewBlob.type || "image/png",
       });
       const uploaded = await client.assets.upload("image", file);
       const id = uploaded?._id;
@@ -129,12 +193,12 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
       toast.push({
         status: "error",
         title: "Nano Banana",
-        description: e instanceof Error ? e.message : "Falha ao gerar ou enviar a imagem.",
+        description: e instanceof Error ? e.message : "Falha ao enviar a imagem.",
       });
     } finally {
       setLoading(false);
     }
-  }, [client, endpoint, notifyNotConfigured, onClose, onSelect, prompt, toast]);
+  }, [client, onClose, onSelect, previewBlob, toast]);
 
   return (
     <Dialog
@@ -147,23 +211,61 @@ function NanoBananaAssetSourceDialog(props: AssetSourceComponentProps) {
       <Box padding={4}>
         <Stack space={4}>
           <Text size={1}>
-            Descreva a imagem. Com endpoint configurado, o Studio envia um POST JSON com o campo{" "}
-            <code>prompt</code> para a variável <code>SANITY_STUDIO_NANO_BANANA_URL</code>.
+            Descreve a imagem. Com endpoint configurado, o Studio envia um POST JSON com o campo{" "}
+            <code>prompt</code> para <code>SANITY_STUDIO_NANO_BANANA_URL</code>. Podes pré-visualizar
+            antes de aplicar ao campo.
           </Text>
+          <Flex gap={2} wrap="wrap">
+            {PROMPT_PRESETS.map((p) => (
+              <Button
+                key={p}
+                mode="ghost"
+                fontSize={1}
+                padding={2}
+                text={p.length > 42 ? `${p.slice(0, 40)}…` : p}
+                disabled={loading}
+                onClick={() => setPrompt(p)}
+              />
+            ))}
+          </Flex>
           <TextArea
             rows={5}
             value={prompt}
             onChange={(event) => setPrompt(event.currentTarget.value)}
             placeholder="Ex.: Hero escuro com diagrama de API e código TypeScript…"
           />
+          {previewUrl ? (
+            <Box>
+              <Text size={1} weight="semibold">
+                Pré-visualização
+              </Text>
+              <Box marginTop={3} style={{ borderRadius: 8, overflow: "hidden", maxHeight: 280 }}>
+                {/* eslint-disable-next-line @next/next/no-img-element -- blob preview in Studio only */}
+                <img
+                  src={previewUrl}
+                  alt="Pré-visualização gerada"
+                  style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+                />
+              </Box>
+            </Box>
+          ) : null}
           <Flex gap={3} wrap="wrap">
             <Button
               tone="primary"
-              text="Gerar e aplicar"
+              text={previewUrl ? "Regenerar" : "Gerar pré-visualização"}
               loading={loading}
               disabled={loading}
-              onClick={handleGenerate}
+              onClick={() => void runGenerate()}
             />
+            {previewUrl ? (
+              <Button
+                tone="positive"
+                text="Aplicar ao campo"
+                loading={loading}
+                disabled={loading}
+                onClick={() => void handleApply()}
+              />
+            ) : null}
             <Button mode="ghost" type="button" text="Cancelar" disabled={loading} onClick={onClose} />
             {!endpoint ? (
               <Button mode="ghost" type="button" text="Como configurar" onClick={notifyNotConfigured} />

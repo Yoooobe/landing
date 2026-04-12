@@ -22,7 +22,18 @@ Nos campos de **imagem** (incluindo o hero das landing pages em blocos `heroBloc
 
 - **Variável:** `SANITY_STUDIO_NANO_BANANA_URL` — URL HTTPS do teu serviço (exposta no cliente via `env` em `next.config.ts`). Não uses chaves secretas nesta variável; autentica no servidor.
 - **Contrato sugerido:** `POST` JSON `{ "prompt": string }`; resposta `image/png` / `image/jpeg` **ou** JSON com `imageBase64` / `base64` / `image` (base64 ou data URL). Detalhes e avisos estão no comentário de [`src/sanity/assetSources/nanoBananaImageSource.tsx`](../src/sanity/assetSources/nanoBananaImageSource.tsx).
-- Sem URL configurada, o botão **Gerar e aplicar** mostra um aviso a indicar que falta configurar a variável e fazer rebuild.
+- **Fluxo no Studio:** geração em duas fases — **pré-visualização** (blob local) e **Aplicar ao campo** (upload para o Sanity). Há **presets** de prompt, **Regenerar** com o mesmo texto e pedido cancelável (`AbortController` se o backend suportar cancelamento HTTP).
+- **Segurança:** o endpoint configurado na variável é chamado a partir do browser dos editores; trata-o como URL pública. A API real deve validar pedidos, aplicar **rate limit**, manter **chaves de fornecedores de IA só no servidor** e configurar **CORS** apenas para as origens do Studio (localhost e o domínio onde o site é servido).
+- Sem URL configurada, o diálogo mostra um aviso a indicar que falta configurar a variável e fazer rebuild.
+
+### Ícones Lucide e SVG opcional — `featureGridBlock`
+
+No bloco **Sessão: Grade de Features**, cada card tem:
+
+- **Ícone (Lucide):** lista curada em [`src/config/marketing-icon-manifest.ts`](../src/config/marketing-icon-manifest.ts), escolha visual no Studio via [`IconPickerInput`](../src/sanity/components/IconPickerInput.tsx). O site resolve o ícone em [`marketing-icon-registry.tsx`](../src/lib/marketing-icon-registry.tsx) (imports explícitos para *tree-shaking*).
+- **SVG personalizado (opcional):** ficheiro `image/svg+xml` que **substitui** o Lucide quando preenchido. O SVG é obtido pela URL do asset no build (`customSvgUrl` na query GROQ) e **sanitizado** com DOMPurify (`isomorphic-dompurify`) antes de renderizar — ver [`sanitize-svg.ts`](../src/lib/sanitize-svg.ts).
+
+Para acrescentar novos ícones Lucide ao catálogo: edita o manifest, regista o mesmo export em `marketing-icon-registry.tsx` e segue a governança em [`AGENTS.md`](../AGENTS.md) (secção de curadoria).
 
 ## 2. Estrutura editorial no Studio
 
@@ -323,7 +334,7 @@ Isto substitui a necessidade de um campo HTML solto para a maioria dos casos.
 Blocos nativos disponíveis no Studio:
 
 - `heroBlock`
-- `featureGridBlock`
+- `featureGridBlock` (picker de ícones Lucide + SVG opcional por card — ver secção «Ícones Lucide e SVG opcional» acima)
 - `splitContentBlock`
 - `logoStripBlock`
 - `richTextSection`
@@ -751,6 +762,7 @@ O PAT precisa de scope `repo` ou permissão equivalente.
 
 Secrets recomendados em **Settings → Secrets and variables → Actions**:
 
+- **Nome do secret = nome da variável de ambiente** (ex.: `NEXT_PUBLIC_SANITY_PROJECT_ID`). O **valor** é o Project ID (ex.: `hin8ivz0`). Não cries um secret chamado `hin8ivz0` — o workflow só lê chaves com o nome exacto abaixo; caso contrário o build fica sem ID/dataset embutidos.
 - `NEXT_PUBLIC_SANITY_PROJECT_ID` — **recomendado** o ID real do projeto (ex. `hin8ivz0`). No CI, o workflow **rejeita** os textos literais `your-project-id` e `xxx`. O valor `placeholder` é aceite com **aviso** (build corre; o Studio em produção pode falhar). Vazio também gera aviso.
 - `NEXT_PUBLIC_SANITY_DATASET` — normalmente `production`
 - opcional: `NEXT_PUBLIC_SANITY_API_VERSION`
@@ -759,6 +771,10 @@ Secrets recomendados em **Settings → Secrets and variables → Actions**:
 Sem `NEXT_PUBLIC_SANITY_PROJECT_ID` / dataset no CI, o export estático **não** embute o projeto Sanity no bundle do Studio em produção — podes ver erros de rede ou URLs com `your-project-id` / falha a abrir o Studio em `https://yoooobe.github.io/landing/studio/`.
 
 **CORS em produção:** no Sanity → API → CORS origins, adiciona `https://yoooobe.github.io` (origem sem path). Sem isto, o Studio no GitHub Pages pode falhar após login.
+
+**CORS em desenvolvimento:** inclui `http://localhost:3000` e `http://127.0.0.1:3000` (ou o script `npm run sanity:cors` com CLI autenticado).
+
+**Local (mesmo projeto que produção):** copia [`.env.example`](../.env.example) para `.env.local` na raiz do repo, preenche `NEXT_PUBLIC_SANITY_PROJECT_ID` com o ID real (não uses `placeholder` se quiseres ver o Studio ligado) e `NEXT_PUBLIC_SANITY_DATASET=production`, guarda e **reinicia** `npm run dev`. Abre `http://localhost:3000/landing/studio/` (ou a URL que o `NEXT_PUBLIC_SITE_URL` definir).
 
 Depois de criar ou alterar secrets, faz **re-run** do workflow *Deploy to GitHub Pages* (ou push para `main`).
 

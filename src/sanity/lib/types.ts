@@ -205,6 +205,8 @@ export type FeatureGridItemDoc = {
   title?: string;
   description?: string;
   icon?: string;
+  /** Resolved in GROQ: Sanity CDN URL for uploaded SVG */
+  customSvgUrl?: string | null;
   href?: string;
 };
 

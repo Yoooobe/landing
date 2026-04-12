@@ -51,27 +51,15 @@ import type {
   StatsBlockDoc,
   TestimonialBlockDoc,
 } from "@/sanity/lib/types";
-import {
-  ArrowUpRight,
-  BarChart3,
-  BrainCircuit,
-  Coins,
-  Globe2,
-  Link2,
-  MessageSquare,
-  Package,
-  Shield,
-  Sparkles,
-  Store,
-  Target,
-  Zap,
-} from "lucide-react";
+import { ArrowUpRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import LeadCaptureForm, { type LeadFormVariant } from "@/components/LeadCaptureForm";
 import MarketingPageEmptyState from "@/components/MarketingPageEmptyState";
+import FeatureGridMarketingBlock from "@/components/marketing/FeatureGridMarketingBlock";
 import { PRIMARY_CONTACT_SECTION_ID } from "@/lib/contactAnchor";
+import { marketingExtraAnchorIds, marketingSectionId } from "@/lib/marketing-section-ids";
 
 type SupportData = {
   platformShowcaseMedia?: import("@/sanity/lib/types").PlatformShowcaseMediaDoc | null;
@@ -84,57 +72,8 @@ type Props = {
   supportData?: SupportData;
 };
 
-const featureIconMap = {
-  sparkles: Sparkles,
-  zap: Zap,
-  shield: Shield,
-  target: Target,
-  "bar-chart-3": BarChart3,
-  "brain-circuit": BrainCircuit,
-  package: Package,
-  store: Store,
-  coins: Coins,
-  "globe-2": Globe2,
-  "message-square": MessageSquare,
-  "link-2": Link2,
-} as const;
-
 function isExternalHref(href: string): boolean {
   return /^(?:[a-z]+:)?\/\//i.test(href) || href.startsWith("mailto:") || href.startsWith("tel:");
-}
-
-function marketingSectionId(key: string | undefined): string | undefined {
-  switch (key) {
-    case "bento-overview":
-      return "platform";
-    case "platform-management":
-      return "gestao";
-    case "platform-store":
-      return "loja";
-    case "gamification-summary":
-      return "gamificacao";
-    case "pricing":
-      return "planos";
-    case "mechanics":
-      return "mechanics";
-    case "admin-dashboard":
-      return "gestor";
-    case "gamification-engine-intro":
-      return "gamificacao";
-    case "store-intro":
-      return "loja";
-    default:
-      return undefined;
-  }
-}
-
-function marketingExtraAnchorIds(key: string | undefined): string[] {
-  switch (key) {
-    case "store-intro":
-      return ["wallet"];
-    default:
-      return [];
-  }
 }
 
 function GenericHeroBlock({ block }: { block: Extract<MarketingPageContentBlock, { _type: "heroBlock" }> }) {
@@ -225,85 +164,6 @@ function GenericRichTextSection({ block }: { block: RichTextSectionDoc }) {
             />
           </div>
         ) : null}
-      </div>
-    </section>
-  );
-}
-
-function GenericFeatureGridBlock({ block }: { block: FeatureGridBlockDoc }) {
-  const imageUrl = getSanityImageUrl(block.image);
-  const sectionId = marketingSectionId(block._key);
-  const columnsClass =
-    block.columns === "2"
-      ? "md:grid-cols-2"
-      : block.columns === "4"
-        ? "md:grid-cols-2 xl:grid-cols-4"
-        : "md:grid-cols-2 xl:grid-cols-3";
-
-  return (
-    <section id={sectionId} className="border-b border-white/5 bg-brand-navy-dark py-20">
-      <div className="container mx-auto max-w-6xl px-4 md:px-6">
-        {(block.eyebrow || block.title || block.description) && (
-          <div className="mx-auto mb-12 max-w-3xl text-center">
-            {block.eyebrow ? (
-              <div className="mb-4 inline-flex rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70">
-                {block.eyebrow}
-              </div>
-            ) : null}
-            {block.title ? (
-              <h2 className="font-heading text-3xl font-black text-white md:text-5xl">
-                {block.title}
-              </h2>
-            ) : null}
-            {block.description ? (
-              <p className="mt-5 text-lg leading-8 text-white/65">{block.description}</p>
-            ) : null}
-          </div>
-        )}
-        {imageUrl ? (
-          <div className="mb-10 overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-xl">
-            <Image
-              src={imageUrl}
-              alt={block.image?.alt?.trim() || block.title || "Imagem da seção"}
-              width={1440}
-              height={900}
-              className="h-full w-full rounded-[1.4rem] object-cover"
-              sizes="(min-width: 1024px) 960px, 100vw"
-              unoptimized
-            />
-          </div>
-        ) : null}
-        <div className={`grid gap-6 ${columnsClass}`}>
-          {(block.items || []).map((item, index) => {
-            const Icon = featureIconMap[item.icon as keyof typeof featureIconMap] || Sparkles;
-            const cardContent = (
-              <div className="h-full rounded-3xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-brand-orange/30">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-brand-orange/20 bg-brand-orange/10">
-                  <Icon className="h-6 w-6 text-brand-orange" />
-                </div>
-                {item.eyebrow ? (
-                  <div className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/45">
-                    {item.eyebrow}
-                  </div>
-                ) : null}
-                <h3 className="font-heading text-2xl font-bold text-white">{item.title}</h3>
-                {item.description ? (
-                  <p className="mt-4 text-base leading-7 text-white/65">{item.description}</p>
-                ) : null}
-              </div>
-            );
-
-            if (item.href) {
-              return (
-                <a key={`${item.title || "feature"}-${index}`} href={item.href} className="block">
-                  {cardContent}
-                </a>
-              );
-            }
-
-            return <div key={`${item.title || "feature"}-${index}`}>{cardContent}</div>;
-          })}
-        </div>
       </div>
     </section>
   );
@@ -975,7 +835,7 @@ function renderBlock(
     case "heroBlock":
       return <GenericHeroBlock block={block} />;
     case "featureGridBlock":
-      return <GenericFeatureGridBlock block={block} />;
+      return <FeatureGridMarketingBlock block={block} />;
     case "caseStudyGridBlock":
       return <GenericCaseStudyGridBlock block={block} />;
     case "splitContentBlock":

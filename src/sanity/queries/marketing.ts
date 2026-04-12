@@ -27,6 +27,13 @@ const marketingPageProjection = groq`
         }
       }
     },
+    _type == "featureGridBlock" => {
+      ...,
+      items[]{
+        ...,
+        "customSvgUrl": customSvg.asset->url
+      }
+    },
     markDefs[]{
       ...,
       _key,

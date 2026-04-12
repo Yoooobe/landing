@@ -39,3 +39,18 @@ Configuração do Pages no GitHub (fonte branch vs Actions, Desktop, CLI, billin
 - **No automated tests**: The project has no test framework or test files.
 - **`.npmrc` config**: Uses `legacy-peer-deps=true` and a custom cache dir `/tmp/landing-cache`.
 - **`next-app/` directory**: Empty placeholder package at root — not used; ignore it.
+
+### Curadoria de ícones (marketing / `featureGridBlock`)
+
+Novos ícones para a grade de features **não** se adicionam só no Studio: a lista visível vem do manifest em [`src/config/marketing-icon-manifest.ts`](src/config/marketing-icon-manifest.ts) e cada entrada precisa de um import correspondente em [`src/lib/marketing-icon-registry.tsx`](src/lib/marketing-icon-registry.tsx) (Lucide, MIT — [repositório oficial](https://github.com/lucide-icons/lucide)).
+
+**Fluxo recomendado com agentes (Cursor, etc.):**
+
+1. Escolher o nome do export Lucide (PascalCase) e confirmar que existe na versão `lucide-react` do projeto.
+2. Acrescentar uma linha ao manifest (`id` em kebab-case estável, `title` legível).
+3. Importar o componente em `marketing-icon-registry.tsx` e mapeá-lo em `LUCIDE_BY_EXPORT`.
+4. Correr `npx tsc --noEmit` e `npm run build` (com env Sanity de placeholder se necessário).
+
+**SVG personalizado:** preferir o manifest; upload de `.svg` no CMS é para exceções e passa por sanitização no site — não introduzir SVG não confiável sem revisão.
+
+**Outras bibliotecas** (Heroicons, Phosphor, etc.): exigem decisão de produto (bundle, estilo) e um segundo mapa de família; não misturar silenciosamente com Lucide sem alterar o schema e o renderer.

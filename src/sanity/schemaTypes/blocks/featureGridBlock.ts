@@ -1,19 +1,15 @@
+import {
+  DEFAULT_MARKETING_ICON_ID,
+  isMarketingIconId,
+  MARKETING_ICON_MANIFEST,
+} from "@/config/marketing-icon-manifest";
+import { IconPickerInput } from "@/sanity/components/IconPickerInput";
 import { defineField, defineType } from "sanity";
 
-const iconOptions = [
-  { title: "Sparkles", value: "sparkles" },
-  { title: "Zap", value: "zap" },
-  { title: "Shield", value: "shield" },
-  { title: "Target", value: "target" },
-  { title: "Bar chart", value: "bar-chart-3" },
-  { title: "Brain circuit", value: "brain-circuit" },
-  { title: "Package", value: "package" },
-  { title: "Store", value: "store" },
-  { title: "Coins", value: "coins" },
-  { title: "Globe", value: "globe-2" },
-  { title: "Message square", value: "message-square" },
-  { title: "Link", value: "link-2" },
-] as const;
+const iconListOptions = MARKETING_ICON_MANIFEST.map((e) => ({
+  title: e.title,
+  value: e.id,
+}));
 
 export const featureGridBlock = defineType({
   name: "featureGridBlock",
@@ -95,10 +91,28 @@ export const featureGridBlock = defineType({
             }),
             defineField({
               name: "icon",
-              title: "Ícone",
+              title: "Ícone (Lucide)",
               type: "string",
+              initialValue: DEFAULT_MARKETING_ICON_ID,
               options: {
-                list: [...iconOptions],
+                list: iconListOptions,
+                layout: "dropdown",
+              },
+              components: { input: IconPickerInput },
+              validation: (Rule) =>
+                Rule.custom((val) => {
+                  if (val == null || val === "") return true;
+                  return isMarketingIconId(String(val)) || "Ícone não está no manifest aprovado";
+                }),
+            }),
+            defineField({
+              name: "customSvg",
+              title: "SVG personalizado (opcional)",
+              description:
+                "Se carregar um ficheiro .svg, ele substitui o ícone Lucide no site. O SVG é sanitizado automaticamente.",
+              type: "file",
+              options: {
+                accept: "image/svg+xml",
               },
             }),
             defineField({
