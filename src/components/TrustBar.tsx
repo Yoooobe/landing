@@ -39,7 +39,7 @@ export default function TrustBar() {
 
     const mapped = items
       .map((item) => {
-        const src = getSanityImageUrl(item.logo);
+        const src = getSanityImageUrl(item.logo, { width: 320, fit: "max", quality: 90 });
         if (!src) return null;
 
         return {

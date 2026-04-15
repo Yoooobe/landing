@@ -8,7 +8,7 @@ import Image from "next/image";
 type ItemWithSvg = FeatureGridItemDoc & { inlineSvg?: string | null };
 
 export default async function FeatureGridMarketingBlock({ block }: { block: FeatureGridBlockDoc }) {
-  const imageUrl = getSanityImageUrl(block.image);
+  const imageUrl = getSanityImageUrl(block.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
   const sectionId = marketingSectionId(block._key);
   const columnsClass =
     block.columns === "2"

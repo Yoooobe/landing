@@ -27,7 +27,7 @@ export default function GamificationDeepUsecases({
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {u.items.map((item, idx) => {
             const cardShowcase = showcaseItems?.[idx];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image);
+            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
             <div
               key={idx}

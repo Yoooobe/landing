@@ -2,9 +2,9 @@
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
-import { Link2, Shield, TrendingUp } from "lucide-react";
+import { Globe, Link2, Shield, TrendingUp } from "lucide-react";
 
-const ICONS = [Link2, Shield, TrendingUp] as const;
+const ICONS = [Link2, Shield, TrendingUp, Globe] as const;
 
 export default function EnterpriseTrustStrip() {
   const { m } = useLocaleMessages();
@@ -16,7 +16,7 @@ export default function EnterpriseTrustStrip() {
       className="border-y border-white/5 bg-[#0a1220]/90 py-6"
     >
       <div className="container mx-auto max-w-6xl px-4">
-        <ul className="grid gap-6 md:grid-cols-3">
+        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {s.items.map((item, i) => {
             const Icon = ICONS[i] ?? Link2;
             return (

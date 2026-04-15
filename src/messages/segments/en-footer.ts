@@ -19,4 +19,5 @@ export const enFooter = {
   legal: "Privacy",
   terms: "Terms of use",
   copyright: "4Unik. Corporate rewards platform.",
+  backedBy: "Invested by",
 } as const;

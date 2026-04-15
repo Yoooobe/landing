@@ -15,6 +15,8 @@ const fallbackByLocale: Record<Locale, ResolvedApiIntegracoesContent> = {
       title: "API para recompensas, fulfillment e experiência corporativa",
       description:
         "API RESTful com Webhooks em tempo real, Sandbox para testes e SDKs para Node.js e Python. Endpoints dedicados para produtos, estoque, checkout e histórico de resgates.",
+      visualCaption:
+        "Integre sua intranet ou plataforma de engajamento com a 4unik e automatize envio de prêmios, presentes ou produtos de forma única.",
       primaryCtaLabel: "Ler a Documentação",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Falar com Engenharia",
@@ -194,6 +196,8 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       title: "API for rewards, fulfillment, and corporate experiences",
       description:
         "REST API with real-time webhooks, a testing sandbox, and SDKs for Node.js and Python. Dedicated endpoints for products, inventory, checkout, and redemption history.",
+      visualCaption:
+        "Connect your intranet or engagement platform with 4Unik and automate sending rewards, gifts, or products in a uniquely integrated way.",
       primaryCtaLabel: "Read documentation",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Talk to engineering",

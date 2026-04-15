@@ -230,13 +230,6 @@ export default function Header() {
             icon: "gamification",
           },
           {
-            label: m.nav.intelligence.title,
-            description: m.nav.intelligence.desc,
-            href: "/inteligencia",
-            badge: m.nav.intelligence.badge,
-            icon: "intelligence",
-          },
-          {
             label: m.nav.cases.title,
             description: m.nav.cases.desc,
             href: "/casos-de-uso",
@@ -259,12 +252,6 @@ export default function Header() {
             description: m.nav.apiHub.desc,
             href: "/api-integracoes",
             icon: "api",
-          },
-          {
-            label: m.nav.workvivo.title,
-            description: m.nav.workvivo.desc,
-            href: "/api-integracoes/workvivo/",
-            icon: "workvivo",
           },
         ],
       },

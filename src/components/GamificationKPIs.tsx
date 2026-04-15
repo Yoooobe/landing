@@ -34,7 +34,7 @@ export default function GamificationKPIs({
           {k.items.map((kpi, idx) => {
             const Icon = KPI_ICONS[idx];
             const cardShowcase = showcaseItems?.[idx];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image);
+            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
               <div key={kpi.title} className="group rounded-2xl border border-white/10 bg-surface-panel p-8 transition-colors hover:bg-[#161d2b]">
                 <div className="mb-6 flex items-start justify-between">

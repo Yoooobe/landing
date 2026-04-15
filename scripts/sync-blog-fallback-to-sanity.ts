@@ -1,17 +1,23 @@
 #!/usr/bin/env npx tsx
 /**
- * Sincroniza o conteúdo editorial de `src/lib/blogFallback.ts` para documentos
- * `blogPost` existentes no Sanity (match por `slug.current` + `locale`).
+ * Empurra o conteúdo de `src/lib/blogFallback.ts` para o Sanity.
  *
- * Requer escrita no dataset:
- *   NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET,
- *   SANITY_API_TOKEN ou SANITY_API_WRITE_TOKEN (ver docs/cms.md)
+ * Modo por defeito (**novos documentos landing**): cria/atualiza apenas documentos com
+ * `_id` `blogPost.landing.{locale}.fb-{1–7}` e `slug` público derivado do título (`…-fbN`).
+ * Não faz patch a outros `blogPost` (preserva CTAs, imagens e copy melhorada no Studio).
+ *
+ * Modo legado (`--legacy-numeric`): comportamento antigo — `slug.current` igual a `"1"`…`"7"`,
+ * patch ou `blogPost.sync.*` (pode sobrescrever corpo inteiro).
+ *
+ * Requer: NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET,
+ * SANITY_API_TOKEN ou SANITY_API_WRITE_TOKEN (ver docs/cms.md)
  *
  * Uso:
  *   npx tsx scripts/sync-blog-fallback-to-sanity.ts --dry-run
  *   npx tsx scripts/sync-blog-fallback-to-sanity.ts
  *   npx tsx scripts/sync-blog-fallback-to-sanity.ts --locale pt
- *   npx tsx scripts/sync-blog-fallback-to-sanity.ts --patch-only   # só atualiza slugs 1–7 já existentes; não cria
+ *   npx tsx scripts/sync-blog-fallback-to-sanity.ts --legacy-numeric
+ *   npx tsx scripts/sync-blog-fallback-to-sanity.ts --legacy-numeric --patch-only
  *   npx tsx scripts/sync-blog-fallback-to-sanity.ts --skip-cover
  */
 
@@ -48,9 +54,8 @@ loadEnvLocal();
 
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry-run");
-/** Por defeito cria documentos com slug 1–7 se ainda não existirem (o seed antigo usa outros slugs). */
-const PATCH_ONLY = args.includes("--patch-only");
-const CREATE_MISSING = !PATCH_ONLY;
+const LEGACY_NUMERIC = args.includes("--legacy-numeric");
+const LEGACY_PATCH_ONLY = args.includes("--patch-only");
 const SKIP_COVER = args.includes("--skip-cover");
 const localeIdx = args.indexOf("--locale");
 const LOCALE_FILTER =
@@ -67,6 +72,48 @@ const PLACEHOLDER_IDS = new Set(["", "placeholder", "your-project-id", "xxx", "c
 
 function isPlaceholderProject(id: string) {
   return !id || PLACEHOLDER_IDS.has(id.toLowerCase());
+}
+
+/** Mesma regra que `scripts/generate-blog-posts.mjs` / Studio slug. */
+function buildSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .slice(0, 80);
+}
+
+function landingDocumentId(locale: Locale, numericSlug: string): string {
+  return `blogPost.landing.${locale}.fb-${numericSlug}`;
+}
+
+function proposedPublicSlug(post: BlogPostDoc): string {
+  const base = buildSlug(post.title);
+  const suffix = `-fb${post.slug}`;
+  return `${base}${suffix}`.slice(0, 96);
+}
+
+async function ensureUniqueSlug(
+  client: SanityClient,
+  locale: Locale,
+  preferred: string,
+  ownDocumentId: string,
+): Promise<string> {
+  let candidate = preferred.replace(/-+$/, "") || "post";
+  let n = 0;
+  while (true) {
+    const row = await client.fetch<{ _id?: string } | null>(
+      groq`*[_type == "blogPost" && locale == $locale && slug.current == $slug && _id != $ownId][0]{ _id }`,
+      { locale, slug: candidate, ownId: ownDocumentId },
+    );
+    if (!row?._id) return candidate;
+    n += 1;
+    candidate = `${preferred}-${n}`.slice(0, 96);
+  }
 }
 
 async function uploadCoverFromUrl(
@@ -90,7 +137,7 @@ const postIdBySlugQuery = groq`
   *[_type == "blogPost" && locale == $locale && slug.current == $slug][0]{ _id }
 `;
 
-async function resolveDocumentId(
+async function resolveDocumentIdBySlug(
   client: SanityClient,
   locale: Locale,
   slug: string,
@@ -124,8 +171,10 @@ async function main() {
     console.log("\n[DRY-RUN] Sem credenciais Sanity — apenas contagens do fallback:\n");
     for (const locale of locales) {
       for (const post of getFallbackBlogPosts(locale)) {
+        const landId = landingDocumentId(locale, post.slug);
+        const pub = proposedPublicSlug(post);
         console.log(
-          `   [${locale}] slug ${post.slug} — body ${post.body?.length ?? 0} blocos — ${post.title.slice(0, 56)}…`,
+          `   [${locale}] fallback slug ${post.slug} — body ${post.body?.length ?? 0} blocos — landing _id ${landId} — slug público ~ ${pub}`,
         );
       }
     }
@@ -159,19 +208,34 @@ async function main() {
       ? [LOCALE_FILTER]
       : ["pt", "en"];
 
+  const modeLabel = LEGACY_NUMERIC
+    ? LEGACY_PATCH_ONLY
+      ? "legado: só patch slug 1–7"
+      : "legado: patch/criar slug 1–7 (blogPost.sync.*)"
+    : "novos documentos landing (blogPost.landing.* — não altera outros posts)";
+
   console.log(
-    `\nSincronizar blog fallback → Sanity (${DATASET})${DRY ? " [DRY-RUN]" : ""}${SKIP_COVER ? " [sem capa]" : ""}${PATCH_ONLY ? " [só patch]" : " [criar slug 1–7 se faltar]"}\n`,
+    `\nSincronizar blog fallback → Sanity (${DATASET})${DRY ? " [DRY-RUN]" : ""}${SKIP_COVER ? " [sem capa]" : ""}\n   Modo: ${modeLabel}\n`,
   );
-  if (!DRY && CREATE_MISSING) {
+
+  if (!DRY && !LEGACY_NUMERIC) {
     console.log(
-      "   Nota: posts do seed (`sanity-seed-data`) usam slugs longos; estes são slugs numéricos 1–7 do fallback (documentos distintos).\n",
+      "   Documentos alvo: blogPost.landing.{pt|en}.fb-1 … fb-7. Slug público: título + sufixo -fbN. Posts já no CMS (seed, edições manuais) não são modificados.\n",
     );
   }
+
+  if (!DRY && LEGACY_NUMERIC) {
+    console.log(
+      "   Aviso: modo legado pode substituir o corpo inteiro dos posts com slug 1–7.\n",
+    );
+  }
+
+  const legacyCreateMissing = !LEGACY_PATCH_ONLY;
 
   for (const locale of locales) {
     const posts = getFallbackBlogPosts(locale);
     for (const post of posts) {
-      const label = `[${locale}] ${post.slug} — ${post.title.slice(0, 50)}…`;
+      const label = `[${locale}] fb-${post.slug} — ${post.title.slice(0, 50)}…`;
 
       let coverImage: BlogPostDoc["coverImage"] | undefined;
       if (!SKIP_COVER) {
@@ -181,7 +245,7 @@ async function main() {
             coverImage = await uploadCoverFromUrl(
               client,
               url,
-              `blog-${locale}-${post.slug}-cover.jpg`,
+              `blog-${locale}-fb-${post.slug}-cover.jpg`,
               post.coverImage?.alt || post.title,
             );
           } catch (e) {
@@ -192,20 +256,46 @@ async function main() {
 
       const payload = buildPatchPayload(post, coverImage);
 
-      if (DRY) {
-        console.log(`   [dry-run] ${label} — patch: body ${payload.body?.length ?? 0} blocos`);
+      if (!LEGACY_NUMERIC) {
+        const docId = landingDocumentId(locale, post.slug);
+        const preferredSlug = proposedPublicSlug(post);
+
+        if (DRY) {
+          console.log(
+            `   [dry-run] ${label} → _id ${docId} — slug ~ ${preferredSlug} — body ${payload.body?.length ?? 0} blocos`,
+          );
+          continue;
+        }
+
+        const slugCurrent = await ensureUniqueSlug(client, locale, preferredSlug, docId);
+        await client.createOrReplace({
+          _id: docId,
+          _type: "blogPost",
+          locale,
+          slug: { _type: "slug", current: slugCurrent },
+          publishedAt: post.publishedAt,
+          aiGenerated: false,
+          ...payload,
+        });
+        console.log(`   ✅ Landing ${docId} — slug público: ${slugCurrent} — ${label}`);
         continue;
       }
 
-      const existingId = await resolveDocumentId(client, locale, post.slug);
+      // ── Legacy: slug numérico 1–7 ─────────────────────────────────────
+      if (DRY) {
+        console.log(`   [dry-run] [legado] ${label} — patch slug "${post.slug}" — body ${payload.body?.length ?? 0} blocos`);
+        continue;
+      }
+
+      const existingId = await resolveDocumentIdBySlug(client, locale, post.slug);
 
       if (existingId) {
         await client.patch(existingId).set(payload).commit();
-        console.log(`   ✅ Atualizado ${existingId} — ${label}`);
+        console.log(`   ✅ [legado] Atualizado ${existingId} — ${label}`);
         continue;
       }
 
-      if (CREATE_MISSING) {
+      if (legacyCreateMissing) {
         const newId = `blogPost.sync.${locale}.${post.slug}`;
         await client.createOrReplace({
           _id: newId,
@@ -216,12 +306,12 @@ async function main() {
           aiGenerated: false,
           ...payload,
         });
-        console.log(`   ✅ Criado ${newId} — ${label}`);
+        console.log(`   ✅ [legado] Criado ${newId} — ${label}`);
         continue;
       }
 
       console.warn(
-        `   ⏭️  Sem documento para slug "${post.slug}" (${locale}) e --patch-only está ativo — não criado.`,
+        `   ⏭️  [legado] Sem documento para slug "${post.slug}" (${locale}) e --patch-only — ignorado.`,
       );
     }
   }

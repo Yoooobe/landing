@@ -706,6 +706,8 @@ export type ApiIntegracoesPayloadDoc = {
     badge?: string;
     title?: string;
     description?: string;
+    /** Legenda ao lado do mock (código + UI); ex.: integração intranet / engajamento. */
+    visualCaption?: string;
     primaryCtaLabel?: string;
     primaryCtaHref?: string;
     secondaryCtaLabel?: string;
@@ -755,6 +757,8 @@ export type ResolvedApiIntegracoesContent = {
     badge: string;
     title: string;
     description: string;
+    /** Texto junto ao hero visual (direita), não substitui o título H1. */
+    visualCaption: string;
     primaryCtaLabel: string;
     primaryCtaHref: string;
     secondaryCtaLabel: string;

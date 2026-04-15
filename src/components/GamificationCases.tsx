@@ -57,7 +57,7 @@ export default function GamificationCases({
                 <div className="mb-6 flex items-center gap-3">
                   {(() => {
                     const sc = getShowcaseForCase(item.id);
-                    const logoUrl = getSanityImageUrl(sc?.logoImage);
+                    const logoUrl = getSanityImageUrl(sc?.logoImage, { width: 320, fit: "max", quality: 90 });
                     return logoUrl ? (
                       <div className="relative h-10 w-auto overflow-hidden rounded">
                         <Image src={logoUrl} alt={sc?.logoImage?.alt || item.company} width={120} height={40} className="h-10 w-auto object-contain" unoptimized />

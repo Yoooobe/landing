@@ -16,6 +16,7 @@
     "test:svg": "npx tsx scripts/run-svg-sanitize-tests.ts",
     "validate:blog-ctas": "npx tsx scripts/validate-blog-landing-ctas.ts",
     "generate:blog-posts": "npx tsx scripts/generate-blog-posts.ts",
+    "blog:image-presets": "npx tsx scripts/blog-image-presets.ts",
     "smoke:nano-banana": "node scripts/smoke-nano-banana.mjs",
     "deploy:gh-pages": "bash scripts/deploy-gh-pages.sh",
     "deploy:gh-pages:quick": "npm run build && gh-pages -d out -t -m \"chore: deploy static export to gh-pages\""

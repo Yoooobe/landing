@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
+import BlogContentImage from "@/components/BlogContentImage";
 import BlogInlineCta from "@/components/BlogInlineCta";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import { getBlogImageUrl } from "@/lib/blogImageUrl";
 import type {
   BlogCtaBlock,
   BlogPostBodyItem,
@@ -83,18 +83,11 @@ export default function PortableTextContent({ blocks = [] }: Props) {
     const item = blocks[index];
 
     if (item._type === "image") {
-      const url = getSanityImageUrl({ asset: item.asset ?? undefined, alt: item.alt });
+      const url = getBlogImageUrl({ asset: item.asset ?? undefined, alt: item.alt }, "inlineFigure");
       groups.push(
-        <figure
-          key={item._key || `img-${index}`}
-          className="my-8 overflow-hidden rounded-2xl border border-white/10"
-        >
+        <figure key={item._key || `img-${index}`} className="my-8">
           {url ? (
-            <img
-              src={url}
-              alt={item.alt || ""}
-              className="h-auto max-h-[480px] w-full object-cover"
-            />
+            <BlogContentImage src={url} alt={item.alt || ""} layout="inlineFigure" />
           ) : null}
         </figure>,
       );

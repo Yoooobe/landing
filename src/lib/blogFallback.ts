@@ -51,6 +51,7 @@ type BodySpecLine =
   | { type: "p"; text: string }
   | { type: "ul"; items: string[] }
   | { type: "rich"; segments: Array<{ text: string; href?: string }> }
+  | { type: "image"; alt: string; asset: { url: string } }
   | ({ type: "blogCta" } & BodySpecCta);
 
 function blockH2(text: string, key: string): PortableTextBlock {
@@ -135,6 +136,13 @@ function buildBody(spec: BodySpecLine[]): BlogPostBodyItem[] {
           ? { alt: line.featureImage.alt, asset: { url: line.featureImage.asset.url } }
           : undefined,
       });
+    } else if (line.type === "image") {
+      out.push({
+        _key: key,
+        _type: "image",
+        alt: line.alt,
+        asset: { url: line.asset.url },
+      });
     } else if (line.type === "h2") {
       out.push(blockH2(line.text, key));
     } else if (line.type === "h3") {
@@ -183,6 +191,11 @@ const ptSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "Gamificação em RH não é crachá aleatório. O que funciona é ligar objetivos de negócio a comportamentos visíveis, missões recorrentes e recompensas na loja 4unik — para que colaboradores sintam progresso e líderes vejam dados." },
+      {
+        type: "image",
+        alt: "Painel com campanhas, missões e visão de participação na plataforma 4unik",
+        asset: { url: IMG.dashboard },
+      },
       CTA_1_PT[0],
       { type: "h2", text: "Por que a 4unik foi feita para o RH moderno" },
       { type: "p", text: "A plataforma reúne motor de gamificação (pontos, níveis, missões), ranking opcional por equipe, catálogo de recompensas e logística — tudo com painéis para acompanhar adesão e impacto, sem depender de planilhas paralelas." },
@@ -238,6 +251,11 @@ const ptSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "Eventos são janelas curtas de atenção. A 4unik ajuda a transformar cada estação (stand, palestra, desafio) em pontos acumuláveis, com QR Codes para registrar participação e leaderboard opcional para dinamizar o dia." },
+      {
+        type: "image",
+        alt: "Equipe em dinâmica de grupo durante evento corporativo",
+        asset: { url: IMG.salesTeam },
+      },
       CTA_2_PT[0],
       { type: "h2", text: "Fluxo típico em uma convenção" },
       { type: "ul", items: [
@@ -292,6 +310,11 @@ const ptSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "Campanhas de vendas falham quando só o topo do ranking ganha atenção. Na 4unik, você combina metas em missões (diárias/semanais), reconhecimento por comportamento (qualidade do cadastro, trabalho em equipe) e prêmios escalonados na loja." },
+      {
+        type: "image",
+        alt: "Métricas e acompanhamento de campanha em tela de gestão",
+        asset: { url: IMG.analytics },
+      },
       CTA_3_PT[0],
       { type: "h2", text: "Regras que o time entende" },
       { type: "ul", items: [
@@ -342,6 +365,11 @@ const ptSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "O primeiro contato físico com a empresa educa sobre cultura. Somado a missões na 4unik (conhecer o mentor, concluir treinamentos, primeira 1:1), você cria ritmo sem sobrecarregar o RH." },
+      {
+        type: "image",
+        alt: "Colaboradores em ambiente acolhedor — cultura e integração",
+        asset: { url: IMG.teamRh },
+      },
       CTA_4_PT[0],
       { type: "h2", text: "Missões sugeridas para os primeiros 30 dias" },
       { type: "ul", items: [
@@ -394,6 +422,11 @@ const ptSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "OKRs definem o ‘onde’. A gamificação ajuda no ‘como’, quebrando resultados em entregas semanais visíveis. Na 4unik, cada KR pode inspirar uma ou mais missões com pontos proporcionais ao esforço ou impacto." },
+      {
+        type: "image",
+        alt: "Dados e indicadores para acompanhar metas e ritmo de entregas",
+        asset: { url: IMG.analytics },
+      },
       CTA_5_PT[0],
       { type: "h2", text: "Evite armadilhas comuns" },
       { type: "ul", items: [
@@ -443,6 +476,11 @@ const ptSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "Programas de engajamento precisam de números que falem a linguagem da diretoria: participação, frequência de reconhecimento, resgates e, quando possível, correlação com retenção e produtividade." },
+      {
+        type: "image",
+        alt: "Visualização de métricas e tendências para apresentar resultados de RH",
+        asset: { url: IMG.dashboard },
+      },
       CTA_6_PT[0],
       { type: "h2", text: "O que acompanhar na 4unik" },
       { type: "ul", items: [
@@ -493,6 +531,11 @@ const ptSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "Avaliação de desempenho pontual mal sustenta mudança de comportamento. Quando o reconhecimento e as missões fazem parte da rotina — via 4unik — líderes e pares reforçam o que a empresa valoriza, sem esperar o ciclo formal." },
+      {
+        type: "image",
+        alt: "Conversa estratégica entre RH e liderança sobre cultura e performance",
+        asset: { url: IMG.eventStage },
+      },
       CTA_7_PT[0],
       { type: "h2", text: "Papel da liderança" },
       { type: "p", text: "Treine gestores para usar o sistema de forma justa: critérios claros, frequência saudável e foco em desenvolvimento, não só ranking. A plataforma é ferramenta; a cultura vem da conversa." },
@@ -545,6 +588,11 @@ const enSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "HR gamification is not random badges. It works when business goals tie to visible behaviors, recurring missions and rewards in the 4unik store — so employees feel progress and leaders see data." },
+      {
+        type: "image",
+        alt: "Campaign and participation overview in the 4unik platform",
+        asset: { url: IMG.dashboard },
+      },
       CTA_1_EN[0],
       { type: "h2", text: "Why 4unik fits modern HR" },
       { type: "p", text: "The platform combines a gamification engine (points, levels, missions), optional team rankings, a rewards catalog and fulfillment — with dashboards for adoption and impact, without parallel spreadsheets." },
@@ -599,6 +647,11 @@ const enSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "Events are short attention windows. 4unik turns each touchpoint into earnable points, with QR codes for attendance and optional leaderboards to energize the day." },
+      {
+        type: "image",
+        alt: "Team energy during a corporate kickoff or workshop",
+        asset: { url: IMG.salesTeam },
+      },
       CTA_2_EN[0],
       { type: "h2", text: "A typical conference flow" },
       { type: "ul", items: [
@@ -653,6 +706,11 @@ const enSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "Sales campaigns fail when only the top of the leaderboard gets airtime. On 4unik you pair revenue missions with behavior recognition and tiered prizes in the store." },
+      {
+        type: "image",
+        alt: "Analytics screen tracking campaign adoption and performance",
+        asset: { url: IMG.analytics },
+      },
       CTA_3_EN[0],
       { type: "h2", text: "Rules people understand" },
       { type: "ul", items: [
@@ -702,6 +760,11 @@ const enSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "First physical touch teaches culture. Add 4unik missions (mentor coffee, training, first 1:1) for rhythm without HR overload." },
+      {
+        type: "image",
+        alt: "Welcoming team environment for new hires",
+        asset: { url: IMG.teamRh },
+      },
       CTA_4_EN[0],
       { type: "h2", text: "Suggested first-30-day missions" },
       { type: "ul", items: [
@@ -754,6 +817,11 @@ const enSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "OKRs set the ‘where’. Gamification helps with the ‘how’, breaking outcomes into visible weekly deliveries. On 4unik, each KR can inspire missions with points tied to effort or impact." },
+      {
+        type: "image",
+        alt: "Business metrics dashboard aligned to goals and check-ins",
+        asset: { url: IMG.analytics },
+      },
       CTA_5_EN[0],
       { type: "h2", text: "Common pitfalls" },
       { type: "ul", items: [
@@ -803,6 +871,11 @@ const enSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "Engagement programs need numbers leadership understands: participation, recognition frequency, redemptions and, where possible, links to retention and productivity." },
+      {
+        type: "image",
+        alt: "Engagement and adoption metrics ready for leadership reviews",
+        asset: { url: IMG.dashboard },
+      },
       CTA_6_EN[0],
       { type: "h2", text: "What to track on 4unik" },
       { type: "ul", items: [
@@ -852,6 +925,11 @@ const enSeed: readonly SeedPost[] = [
     },
     bodySpec: [
       { type: "p", text: "Annual reviews alone rarely shift behavior. When recognition and missions are routine — via 4unik — peers and leaders reinforce what the company values without waiting for the formal cycle." },
+      {
+        type: "image",
+        alt: "Leadership and HR discussing culture on stage at a company event",
+        asset: { url: IMG.eventStage },
+      },
       CTA_7_EN[0],
       { type: "h2", text: "Leadership’s role" },
       { type: "p", text: "Train managers to use the system fairly: clear criteria, healthy frequency and focus on development, not only rank. The platform is a tool; culture comes from conversation." },

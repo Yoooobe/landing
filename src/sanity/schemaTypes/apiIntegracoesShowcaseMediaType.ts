@@ -95,7 +95,12 @@ export const apiIntegracoesShowcaseMediaType = defineType({
         imageField(
           "showcaseImage",
           "Diagrama / screenshot do hero",
-          "Imagem ou diagrama exibido à direita do hero da página de API e Integrações (substitui a janela de código animada).",
+          [
+            "Screenshot ou diagrama largo exibido à direita do hero de `/api-integracoes/`.",
+            "Formato recomendado: proporção ~2,86:1 (ex.: 1024×358 ou 2048×716 px) — alinhado ao fallback estático `public/screens/api-integracoes-hero-request.png`.",
+            "PNG ou WebP; evitar retratos ou quadrados para não ficar com barras vazias laterais.",
+            "Se vazio, o site usa o ficheiro local de fallback no build.",
+          ].join(" "),
         ),
       ],
     }),

@@ -109,7 +109,7 @@ export default function AiRoadmap({
                   ? (visual.accentTone as keyof typeof stageToneConfig)
                   : stageToneOrder[i] || stageToneOrder[0];
               const tone = stageToneConfig[toneKey];
-              const stageImageUrl = getSanityImageUrl(visual?.image);
+              const stageImageUrl = getSanityImageUrl(visual?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
               const overrideIcon = visual?.icon ? iconMap[visual.icon] : undefined;
 
               return (

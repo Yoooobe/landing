@@ -137,7 +137,7 @@ function GenericHeroBlock({ block }: { block: Extract<MarketingPageContentBlock,
 }
 
 function GenericRichTextSection({ block }: { block: RichTextSectionDoc }) {
-  const imageUrl = getSanityImageUrl(block.image);
+  const imageUrl = getSanityImageUrl(block.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
 
   return (
     <section className="border-b border-white/5 bg-brand-navy-dark py-20">
@@ -169,7 +169,7 @@ function GenericRichTextSection({ block }: { block: RichTextSectionDoc }) {
 }
 
 function GenericSplitContentBlock({ block }: { block: SplitContentBlockDoc }) {
-  const imageUrl = getSanityImageUrl(block.image);
+  const imageUrl = getSanityImageUrl(block.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
   const imageFirst = block.imageSide === "left";
   const sectionId = marketingSectionId(block._key);
   const extraAnchorIds = marketingExtraAnchorIds(block._key);
@@ -374,7 +374,7 @@ function GenericLogoStripBlock({
         ) : null}
         <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
           {items.map((item, index) => {
-            const imageUrl = getSanityImageUrl(item.logo);
+            const imageUrl = getSanityImageUrl(item.logo, { width: 320, fit: "max", quality: 90 });
             const inner = (
               <div
                 className="group flex min-h-[120px] items-center justify-center rounded-2xl border border-white/5 bg-surface-elevated p-6"
@@ -619,7 +619,7 @@ function GenericCtaBlock({
   pageSlug: string;
   assignPrimaryContactSection: boolean;
 }) {
-  const imageUrl = getSanityImageUrl(block.image);
+  const imageUrl = getSanityImageUrl(block.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
   const showForm = Boolean(block.showLeadForm);
   const leadVariant = resolveCtaLeadVariant(block);
 

@@ -248,7 +248,7 @@ Retorne um objeto JSON com exatamente esta estrutura:
 }
 
 REGRAS DO CAMPO "body" (Portable Text para Sanity):
-- Entre 12 e 18 blocos no total.
+- Entre 10 e 16 blocos de texto/lista no JSON (o pipeline acrescenta depois blocos CTA \`blogCta\` automaticamente — não os incluas).
 - Inclua pelo menos um bloco "style": "h3" para um subtítulo curto.
 - Inclua OBRIGATORIAMENTE um H2 com o título exato: "${helpsTitle}" seguido de 4 a 6 itens de lista com marcadores.
 - Itens de lista: cada item é um bloco separado com "listItem": "bullet", "style": "normal", "children": [{ "_type": "span", "text": "texto do item", "marks": [] }], "markDefs": [].

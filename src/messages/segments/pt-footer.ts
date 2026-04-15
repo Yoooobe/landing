@@ -19,4 +19,5 @@ export const ptFooter = {
   legal: "Privacidade",
   terms: "Termos de Uso",
   copyright: "4unik. Plataforma de recompensas corporativas.",
+  backedBy: "Investido por",
 } as const;

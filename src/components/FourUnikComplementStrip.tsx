@@ -20,7 +20,7 @@ export default function FourUnikComplementStrip({
     ...m.home.fourUnik,
     ctaHref: "https://4unik.com.br",
   };
-  const sectionImageUrl = getSanityImageUrl(u.sectionImage);
+  const sectionImageUrl = getSanityImageUrl(u.sectionImage, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
 
   return (
     <section

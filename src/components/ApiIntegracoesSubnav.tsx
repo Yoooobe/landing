@@ -9,12 +9,10 @@ const copy = {
   pt: {
     sectionLabel: "API e integrações",
     overview: "Visão geral da API",
-    workvivo: "Workvivo × 4Unik",
   },
   en: {
     sectionLabel: "API & integrations",
     overview: "API overview",
-    workvivo: "Workvivo × 4Unik",
   },
 };
 
@@ -28,13 +26,10 @@ export default function ApiIntegracoesSubnav() {
   const t = isEn ? copy.en : copy.pt;
 
   const baseOverview = isEn ? "/en/api-integracoes/" : "/api-integracoes/";
-  const baseWorkvivoPt = "/api-integracoes/workvivo/";
-  const baseWorkvivoEn = "/en/api-integracoes/workvivo/";
 
   const onOverview =
     pathNorm === "/api-integracoes" ||
     pathNorm.endsWith("/api-integracoes");
-  const onWorkvivo = pathNorm.includes("/workvivo");
 
   return (
     <nav
@@ -56,17 +51,6 @@ export default function ApiIntegracoesSubnav() {
             )}
           >
             {t.overview}
-          </Link>
-          <Link
-            href={isEn ? baseWorkvivoEn : baseWorkvivoPt}
-            className={cn(
-              "rounded-full px-4 py-2 text-sm font-medium transition-colors",
-              onWorkvivo
-                ? "bg-fuchsia-500/15 text-fuchsia-200 ring-1 ring-fuchsia-500/30"
-                : "text-white/65 hover:bg-white/5 hover:text-white",
-            )}
-          >
-            {t.workvivo}
           </Link>
         </div>
       </div>

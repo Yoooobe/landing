@@ -22,7 +22,11 @@ export default function ApiIntegracoesPageSections({
 
   return (
     <div className="min-h-screen bg-[#0a0f18] text-white">
-      <ApiHero content={content.hero} showcaseImage={showcaseMedia?.hero?.showcaseImage} />
+      <ApiHero
+        content={content.hero}
+        showcaseImage={showcaseMedia?.hero?.showcaseImage}
+        locale={locale}
+      />
       <IntegrationsTicker />
       <ApiFeaturesGrid content={content.features} showcaseItems={showcaseMedia?.features?.items} />
       <NativeIntegrations content={content.integrations} showcasePlatforms={showcaseMedia?.integrations?.platforms} />

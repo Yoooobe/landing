@@ -1,22 +1,38 @@
 "use client";
 
-import FeatureScreensCarousel from "@/components/FeatureScreensCarousel";
 import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
+import type { Locale } from "@/lib/locale";
+import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Webhook, Terminal, Code2 } from "lucide-react";
 import type { ResolvedApiIntegracoesContent, SanityImageDoc } from "@/sanity/lib/types";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 
+const FALLBACK_HERO_VISUAL = "/screens/api-integracoes-hero-request.png";
+
 export default function ApiHero({
   content,
   showcaseImage,
+  locale,
 }: {
   content: ResolvedApiIntegracoesContent["hero"];
   showcaseImage?: SanityImageDoc | null;
+  locale: Locale;
 }) {
-  const showcaseImageUrl = getSanityImageUrl(showcaseImage);
-  const codeSnippet = content.codeSnippet.trim();
+  const showcaseImageUrl = getSanityImageUrl(showcaseImage, {
+    width: 2048,
+    height: 716,
+    fit: "max",
+    quality: 88,
+  });
+  const heroVisualUrl = showcaseImageUrl || withBasePath(FALLBACK_HERO_VISUAL);
+  const integrationVisualAlt =
+    showcaseImage?.alt?.trim() ||
+    (locale === "en"
+      ? "Screenshot of an HTTP POST request to the 4Unik rewards API with JSON body (issue points example)."
+      : "Captura de uma requisição HTTP POST à API de recompensas 4Unik com corpo JSON (exemplo de emissão de pontos).");
+  const heroDescription = content.description.trim();
 
   return (
     <section
@@ -34,9 +50,9 @@ export default function ApiHero({
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[150px] mix-blend-screen pointer-events-none"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-16 items-center">
+        <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-14 xl:gap-20">
           
-          <div className="lg:w-1/2 space-y-8">
+          <div className="w-full max-w-xl shrink-0 space-y-8 lg:max-w-md xl:max-w-lg">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -49,19 +65,21 @@ export default function ApiHero({
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-black text-white leading-[1.1] tracking-tight font-heading"
+              className="font-heading text-5xl font-black leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl"
             >
               {content.title}
             </motion.h1>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-white/60 leading-relaxed font-light font-sans"
-            >
-              {content.description}
-            </motion.p>
+
+            {heroDescription ? (
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="font-sans text-xl font-light leading-relaxed text-white/60"
+              >
+                {content.description}
+              </motion.p>
+            ) : null}
 
             <motion.div 
                initial={{ opacity: 0, y: 20 }}
@@ -78,49 +96,24 @@ export default function ApiHero({
             </motion.div>
           </div>
 
-          <div className="lg:w-1/2 w-full flex flex-col gap-6">
-            {/* Code snippet card */}
+          <div className="relative w-full min-w-0 flex-1 lg:ml-auto lg:max-w-[min(100%,56rem)] xl:max-w-[min(100%,64rem)]">
             <motion.div
-              initial={{ opacity: 0, rotateY: 10, x: 50 }}
-              animate={{ opacity: 1, rotateY: 0, x: 0 }}
-              transition={{ duration: 0.8, type: "spring" }}
-              className="glass-panel-dark border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
-            >
-              <div className="bg-[#1e1e1e]/80 flex items-center justify-between px-4 py-3 border-b border-white/5 backdrop-blur-md">
-                <div className="flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                </div>
-                <div className="text-xs text-white/40 font-mono tracking-wider">{content.codeWindowTitle}</div>
-                <div className="w-10" />
-              </div>
-              <div className="p-5 bg-[#0d121c]/90">
-                <pre className="text-xs font-mono text-cyan-300 overflow-x-auto leading-relaxed whitespace-pre-wrap max-h-[180px]">
-                  <code>{codeSnippet}</code>
-                </pre>
-              </div>
-            </motion.div>
-
-            {/* Live screens carousel or CMS showcase image */}
-            <motion.div
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.7 }}
+              transition={{ delay: 0.12, duration: 0.7 }}
+              className="relative w-full"
             >
-              {showcaseImageUrl ? (
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl" style={{ aspectRatio: "16/9" }}>
-                  <Image
-                    src={showcaseImageUrl}
-                    alt={showcaseImage?.alt?.trim() || "Screenshot da plataforma 4unik API"}
-                    fill
-                    className="object-cover"
-                    unoptimized
-                  />
-                </div>
-              ) : (
-                <FeatureScreensCarousel variant="pix" />
-              )}
+              <div className="relative aspect-[1024/358] w-full overflow-hidden rounded-2xl border border-cyan-500/15 bg-[#0a0f18] shadow-[0_28px_80px_rgba(0,0,0,0.55)] ring-1 ring-white/10">
+                <Image
+                  src={heroVisualUrl}
+                  alt={integrationVisualAlt}
+                  fill
+                  className="object-contain object-center"
+                  sizes="(min-width: 1280px) 56rem, (min-width: 1024px) 50vw, 96vw"
+                  unoptimized
+                  priority
+                />
+              </div>
             </motion.div>
           </div>
           

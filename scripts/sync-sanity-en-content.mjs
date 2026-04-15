@@ -284,6 +284,8 @@ export function apiIntegracoesPayloadEn() {
       title: "API for rewards, fulfillment, and corporate experiences",
       description:
         "REST API with real-time webhooks, a testing sandbox, and SDKs for Node.js and Python. Dedicated endpoints for products, inventory, checkout, and redemption history.",
+      visualCaption:
+        "Connect your intranet or engagement platform with 4Unik and automate sending rewards, gifts, or products in a uniquely integrated way.",
       primaryCtaLabel: "Read documentation",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Talk to engineering",

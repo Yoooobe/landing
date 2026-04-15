@@ -17,7 +17,7 @@ export default function PlataformaStore({
 }) {
   const { m } = useLocaleMessages();
   const s = m.plataforma.store;
-  const storeMockupImageUrl = getSanityImageUrl(showcaseMedia?.storeMockupImage);
+  const storeMockupImageUrl = getSanityImageUrl(showcaseMedia?.storeMockupImage, { width: 1440, height: 900, fit: "crop", crop: "entropy", quality: 86 });
 
   return (
     <section id="loja" className="py-24 bg-brand-navy relative overflow-hidden">

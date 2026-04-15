@@ -1,5 +1,6 @@
 import JsonLdScript from "@/components/seo/JsonLdScript";
 import EnterpriseTrustStrip from "@/components/EnterpriseTrustStrip";
+import InvestorBar from "@/components/InvestorBar";
 import AiRoadmap from "@/components/AiRoadmap";
 import ApiSection from "@/components/ApiSection";
 import BentoFeatures from "@/components/BentoFeatures";
@@ -39,10 +40,11 @@ export default function HomePage({ homeContent, cmsHero = null, locale }: Props)
     <div className="min-h-screen bg-surface-deep font-sans text-white selection:bg-brand-orange/30">
       <JsonLdScript data={{ ...buildSoftwareApplicationJsonLd(locale) }} />
       <HomeHero cmsHero={cmsHero} homeContent={homeContent} />
+      <InvestorBar />
       <FourUnikComplementStrip homeContent={homeContent} />
       <TrustBar />
       <EnterpriseTrustStrip />
-      <IntegrationsTicker />
+      <IntegrationsTicker locale={locale} />
       <BentoFeatures homeContent={homeContent} />
       <PlatformTabs homeContent={homeContent} />
       <SectionLeadCta homeContent={homeContent} zone="afterPlatform" />

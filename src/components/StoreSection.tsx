@@ -21,7 +21,7 @@ export default function StoreSection({
       ...item,
       emoji: visual?.emoji || EMOJI[i],
       image: visual?.image || null,
-      imageUrl: getSanityImageUrl(visual?.image),
+      imageUrl: getSanityImageUrl(visual?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 }),
     };
   });
 

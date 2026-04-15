@@ -23,7 +23,7 @@ export default function HomeFinalCta({
     demoHref: "https://calendly.com/yoobeco/demo",
     whatsappHref: "https://wa.me/554187582060",
   };
-  const sectionImageUrl = getSanityImageUrl(c.sectionImage);
+  const sectionImageUrl = getSanityImageUrl(c.sectionImage, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
 
   return (
     <section

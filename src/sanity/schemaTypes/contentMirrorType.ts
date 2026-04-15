@@ -233,6 +233,14 @@ export const contentMirrorType = defineType({
             defineField({ name: "badge", title: "Badge", type: "string" }),
             defineField({ name: "title", title: "Titulo", type: "text", rows: 4 }),
             defineField({ name: "description", title: "Descricao", type: "text", rows: 4 }),
+            defineField({
+              name: "visualCaption",
+              title: "Legenda ao lado do mock (codigo + UI)",
+              description:
+                "Texto curto junto ao visual do hero (coluna direita). Ex.: mensagem de integracao com intranet ou engajamento.",
+              type: "text",
+              rows: 3,
+            }),
             defineField({ name: "primaryCtaLabel", title: "CTA principal", type: "string" }),
             defineField({ name: "primaryCtaHref", title: "Link CTA principal", type: "string" }),
             defineField({ name: "secondaryCtaLabel", title: "CTA secundario", type: "string" }),

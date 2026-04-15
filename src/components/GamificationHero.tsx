@@ -18,7 +18,7 @@ export default function GamificationHero({
   showcaseImage?: SanityImageDoc | null;
 }) {
   const { locale } = useLocaleMessages();
-  const showcaseImageUrl = getSanityImageUrl(showcaseImage);
+  const showcaseImageUrl = getSanityImageUrl(showcaseImage, { width: 1600, height: 960, fit: "crop", crop: "entropy", quality: 86 });
   return (
     <section className="hero-theme-section relative overflow-hidden bg-brand-navy-dark pb-24 pt-32">
       <HeroThemeBackdrop theme="gamification" />

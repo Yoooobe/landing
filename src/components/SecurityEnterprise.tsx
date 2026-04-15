@@ -14,7 +14,7 @@ export default function SecurityEnterprise({
   const { m } = useLocaleMessages();
   const sec = m.plataforma.security;
   const icons = [Lock, FileKey] as const;
-  const securityPanelImageUrl = getSanityImageUrl(showcaseMedia?.securityPanelImage);
+  const securityPanelImageUrl = getSanityImageUrl(showcaseMedia?.securityPanelImage, { width: 1440, height: 900, fit: "crop", crop: "entropy", quality: 86 });
 
   return (
     <section className="py-24 bg-brand-navy-dark relative border-t border-white/5">

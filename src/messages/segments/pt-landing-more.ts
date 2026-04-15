@@ -5,10 +5,26 @@ export const ptLandingMore = {
     titleGradient: "transformar",
     titleAfter: " seu RH",
     steps: [
-      { num: "01", title: "Conecte", desc: "Integre com a sua intranet ou ative o console da 4unik V3. Tudo pronto em alguns dias." },
-      { num: "02", title: "Configure", desc: "Defina os benefícios, crie regras de pontuação e molde o catálogo à sua cultura." },
-      { num: "03", title: "Engaje", desc: "Seu time ganha pontos por bater metas, realizar missões e indicar talentos." },
-      { num: "04", title: "Entregue", desc: "Eles escolhem o prêmio, nós embalamos e entregamos na porta de casa." },
+      {
+        num: "01",
+        title: "Conecte",
+        desc: "Integre com a intranet, HRIS ou ative o console 4unik. Na maioria dos casos, em poucos dias o time já está usando.",
+      },
+      {
+        num: "02",
+        title: "Configure",
+        desc: "Defina benefícios, regras de pontos e o catálogo que combina com a cultura — kits de boas-vindas, brindes de marca ou catálogo aberto.",
+      },
+      {
+        num: "03",
+        title: "Engaje",
+        desc: "O time ganha pontos por metas, missões e reconhecimento. Tudo visível, sem depender de planilha paralela.",
+      },
+      {
+        num: "04",
+        title: "Entregue",
+        desc: "Eles escolhem o presente; a logística automatizada da 4Unik cuida do resto — ou conectamos a sua operação e fornecedores.",
+      },
     ],
     mockInfrastructure: "Infrastructure",
     mockEngine: "Motor de Gamificação & Regras",
@@ -20,9 +36,9 @@ export const ptLandingMore = {
   },
   aiRoadmap: {
     badge: "Agentes de IA",
-    titleBefore: "Inteligência, copilotos e agentes em ",
+    titleBefore: "Assistentes inteligentes em ",
     titleGradient: "toda a jornada",
-    titleAfter: " de engajamento, recompensas e gamificação.",
+    titleAfter: " — da campanha ao presente certo na mão do colaborador.",
     cta: "Conhecer a visão completa",
     stages: [
       {
@@ -68,26 +84,27 @@ export const ptLandingMore = {
     ],
   },
   duality: {
-    badge: "Como Funciona",
+    badge: "Como funciona",
     titleBefore: "Dois caminhos para",
     titleGradient: "engajar seu time",
-    sub: "Você não precisa se adaptar a nós. A 4Unik se adapta ao momento da sua empresa, seja com uma plataforma pronta ou trabalhando nos bastidores.",
+    sub: "Você não precisa mudar tudo de uma vez. A 4Unik se adapta: plataforma completa para começar rápido, ou camada integrada quando você já tem intranet ou gamificação.",
     sideA: {
-      title: "Tudo Pronto pra Usar",
-      body: "Nossa plataforma completa com portal do colaborador. Crie missões, distribua pontos e libere o catálogo de prêmios no primeiro dia.",
+      title: "Tudo pronto para usar",
+      body: "Portal do colaborador com a sua marca. Missões, pontos e loja no ar desde o primeiro dia — logística própria automatizada ou conectada à sua.",
       bullets: [
-        "Portal do colaborador com a sua marca",
-        "Campanhas divertidas e painel do gestor",
-        "App não obrigatório, funciona no navegador",
+        "Loja e campanhas com a cara da empresa",
+        "Painel do gestor sem curva de aprendizado absurda",
+        "Funciona no navegador; app não é obrigatório",
       ],
     },
     sideB: {
-      title: "Integração Invisível",
-      body: "Já tem uma intranet que o time ama? Excelente. Nós conectamos nossa loja e logística lá dentro, sem ninguém perceber que mudou de sistema.",
+      title: "Integração com o que você já tem",
+      body: "Já tem intranet, plataforma de engajamento, HRIS ou logística própria? A 4Unik conecta por API — loja, brindes e envios dentro do fluxo que o time já usa. Fornecedores de brindes e transportadoras parceiras também entram no mesmo fluxo.",
       bullets: [
-        "O colaborador não precisa criar outra senha",
-        "Recompensas aparecem direto nas ferramentas de trabalho",
-        'Operamos a loja e a entrega em "silêncio" por trás',
+        "Sem obrigar todo mundo a criar mais uma senha",
+        "Recompensas aparecem onde as pessoas já trabalham",
+        "Operamos a loja e as entregas nos bastidores — ou integramos a sua operação",
+        "Entregamos no Brasil e no mundo; fora do país, produzimos localmente no destino quando acelera a entrega",
       ],
     },
   },
@@ -113,21 +130,21 @@ export const ptLandingMore = {
     },
   },
   enterpriseCases: {
-    badge: "Casos de Uso Enterprise",
-    titleBefore: "Capacidade comprovada para operar",
-    titleGradient: "gigantes",
-    sub: "Soluções completas, seguras e personalizadas (white-label) para corporações que lidam com mais de 10.000 usuários ativos.",
+    badge: "Casos enterprise",
+    titleBefore: "Capacidade comprovada para operar em",
+    titleGradient: "grande escala",
+    sub: "Para empresas que precisam de personalização, segurança e operação estável — com milhares de colaboradores e entregas no Brasil e no mundo.",
     hapvida: {
       tag1: "Saúde",
       tag2: "+10.000 Usuários",
       bodyBefore: "Plataforma dedicada operando em ",
       bodyStrong: "larga escala",
       bodyAfter:
-        ". Integração fluida de reconhecimento, missões e recompensas para engajar profissionais de saúde e administrativos de um dos maiores sistemas de saúde do país.",
+        ". Reconhecimento, missões e recompensas integrados para profissionais de saúde e administrativos de um dos maiores sistemas de saúde do país.",
       bullets: [
-        "Operação massiva de entregas corporativas e premiações.",
-        "Catálogo personalizado adaptado às regras de compliance.",
-        "SLA severo focado em alta disponibilidade e performance.",
+        "Grande volume de entregas corporativas e premiações com operação previsível.",
+        "Catálogo alinhado às regras de compliance do setor.",
+        "Disponibilidade e suporte pensados para missão crítica.",
       ],
       mockTotalLabel: "Seu Saldo Total",
       mockRewardsTitle: "Recompensas Exclusivas Hapvida",
@@ -138,13 +155,13 @@ export const ptLandingMore = {
       tag1: "Energia / Óleo & Gás",
       tag2: "Loja Corporativa VIP",
       bodyBefore: "Loja de engajamento totalmente ",
-      bodyStrong: "White-label",
+      bodyStrong: "white-label",
       bodyAfter:
-        " estruturada para suportar as complexas demandas logísticas e altíssimo padrão corporativo da maior companhia independente de óleo e gás do Brasil.",
+        ", pensada para demandas logísticas complexas e padrão corporativo elevado na maior companhia independente de óleo e gás do Brasil.",
       bullets: [
-        "Identidade visual customizada (White-label absolute).",
-        "Operação de ponta a ponta: do software à casa do colaborador.",
-        "Suporte nível Enterprise focado na retenção de talentos críticos.",
+        "Identidade visual sob medida para a marca.",
+        "Da configuração da loja à entrega na casa do colaborador.",
+        "Suporte enterprise focado em retenção de talentos críticos.",
       ],
       mockHeroTitle: "Exclusive Merchandising",
       mockHeroSubtitle: "Nova coleção de inverno disponível",
@@ -153,17 +170,17 @@ export const ptLandingMore = {
     },
   },
   dedicatedIntegrations: {
-    badge: "Conectividade Nativa",
-    titleBefore: "Sua intranet já tem",
-    titleGradient: "Gamificação?",
-    subBefore: "A 4Unik opera de forma ",
-    subStrong: "invisível",
+    badge: "Funciona onde o time já está",
+    titleBefore: "Sua empresa já tem",
+    titleGradient: "intranet ou gamificação?",
+    subBefore: "A 4Unik entra de forma ",
+    subStrong: "transparente",
     subAfter:
-      " entregando a infraestrutura de prêmios e logística diretamente dentro das maiores plataformas de Employee Experience do mercado.",
+      ", levando catálogo, resgates e logística para dentro das principais plataformas de experiência do colaborador.",
     workvivo: {
       title: "Workvivo",
       body:
-        "A plataforma líder global do Zoom agora conta com o poder do catálogo corporativo da 4Unik. Premie direto no feed social.",
+        "Premie e reconheça direto no feed social. O catálogo corporativo da 4Unik aparece onde o time já conversa todos os dias.",
       feedAuthor: "RH Oficial",
       feedTime: "Há 2 horas",
       feedPost:
@@ -181,7 +198,7 @@ export const ptLandingMore = {
     beehome: {
       title: "Beehome",
       body:
-        "Turbine a principal intranet do Brasil. Seus colaboradores pontuam na Beehome e sacam produtos físicos via 4Unik.",
+        "Intranet que o time já usa no dia a dia: pontos na Beehome viram produtos físicos entregues pela operação 4Unik.",
       coinsLabel: "Moedas Beehome",
       connectionLabel: "Conexão Ativa",
       yoobeStore: "4Unik Store",

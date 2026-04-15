@@ -21,6 +21,7 @@ export const apiIntegracoesMirrorByIdQuery = groq`
         badge,
         title,
         description,
+        visualCaption,
         primaryCtaLabel,
         primaryCtaHref,
         secondaryCtaLabel,

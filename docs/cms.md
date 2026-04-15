@@ -177,7 +177,18 @@ O site renderiza estes blocos em [`src/components/BlogInlineCta.tsx`](../src/com
 
 O frontend usa conteúdo do Sanity quando disponível e mantém fallback local (`src/lib/blogFallback.ts`) para o build continuar funcionando sem configuração do CMS.
 
-**Fallback local:** 7 posts PT + 7 posts EN (mesmos `slug` por idioma) com temas de engajamento, eventos e gamificação definidos em `src/lib/blogFallback.ts`, usados quando o Sanity não está configurado ou para completar campos vazios no merge.
+**Fallback local:** 7 posts PT + 7 posts EN (mesmos `slug` por idioma) com temas de engajamento, eventos e gamificação definidos em `src/lib/blogFallback.ts`, usados quando o Sanity não está configurado ou para completar campos vazios no merge. Cada post inclui **pelo menos uma imagem inline** no corpo (URLs Unsplash via `src/lib/blogFallbackImages.ts`), além da capa e dos blocos `blogCta` alinhados à landing.
+
+#### Checklist de revisão editorial (produção / dataset)
+
+Antes de marcar `publishedAt` ou usar `--publish` no agente:
+
+1. **Factos e tom** — dados, exemplos e promessas alinhados à marca; sem claims não suportados.
+2. **Secção 4unik** — H2 “Como a 4unik ajuda…” (PT) ou “How 4unik helps…” (EN) com bullets que mapeiam funcionalidades reais (missões, loja, QR/eventos, campanhas, dashboards, integrações, logística).
+3. **SEO** — `excerpt` ≤ 220 caracteres; `seo.metaTitle` / `metaDescription` coerentes com o título.
+4. **Imagens** — `coverImage.alt` e alts das figuras inline; hotspot no Studio quando fizer sentido.
+5. **CTAs** — URLs dos `blogCta` batem com rotas reais da landing (`npm run validate:blog-ctas` no repo).
+6. **Paridade PT/EN** — se o post existir nos dois idiomas, slug/tema equivalentes e categorias mapeadas na UI.
 
 Os CTAs desses posts derivam URLs canónicas da landing via `blogLandingHref` em `src/lib/blogLandingLinks.ts` (respeita `basePath` e o prefixo `/en`); no Studio, convém espelhar os mesmos paths nos `blogCta` para consistência.
 
@@ -185,7 +196,7 @@ Os CTAs desses posts derivam URLs canónicas da landing via `blogLandingHref` em
 
 Para **gerar posts** (`npm run generate:blog-posts`) ou **sincronizar o fallback** (`npm run sync:blog-fallback`), precisas de um token com permissão de **escrita** no dataset (criar/editar documentos e, em muitos fluxos, upload de imagens para a mediatheque).
 
-**Após alterar `src/lib/blogFallback.ts` ou `src/lib/blogLandingLinks.ts`:** corre `npm run sync:blog-fallback` (com token no `.env.local`) para o dataset refletir os mesmos CTAs nos `blogPost` com slug `1`–`7`. O CI (workflow **CI validate**) corre `tsc` e `npm run validate:blog-ctas` (confirma que os paths internos do mapa têm `page.tsx` em `src/app/(pt)/`).
+**Após alterar `src/lib/blogFallback.ts` ou `src/lib/blogLandingLinks.ts`:** corre `npm run sync:blog-fallback` (com token no `.env.local`) para criar/atualizar no dataset os documentos **`blogPost.landing.{pt|en}.fb-1` … `fb-7`** (slug público derivado do título + `-fbN`), **sem alterar** outros posts já no CMS. O CI (workflow **CI validate**) corre `tsc` e `npm run validate:blog-ctas` (confirma que os paths internos do mapa têm `page.tsx` em `src/app/(pt)/`).
 
 1. Abre [sanity.io/manage](https://www.sanity.io/manage) → o projeto → **API** → **Tokens** → **Add API token**.
 2. Dá um nome (ex.: `landing-blog-scripts`) e permissão **Editor** (ou superior, conforme a política da equipa).
@@ -201,35 +212,37 @@ Os scripts de blog aceitam **`SANITY_API_TOKEN`** ou **`SANITY_API_WRITE_TOKEN`*
 
 **Segurança:** não partilhes o token em issues, chats ou CI em texto claro; em GitHub Actions usa **Secrets** se algum dia automatizares estes comandos.
 
-#### Sincronizar fallback → Sanity (posts já existentes)
+#### Sincronizar fallback → Sanity (novos documentos, sem estragar o existente)
 
-Depois de editar [`src/lib/blogFallback.ts`](../src/lib/blogFallback.ts), podes **empurrar** esse conteúdo para o dataset: o comando procura cada `blogPost` com `slug.current` igual a **`"1"` … `"7"`** e `locale` `pt` ou `en`, e faz **patch** (substitui `body`, excerpt, SEO, tags, `readTimeMinutes`, etc.). **Se esse slug ainda não existir, cria** o documento (`_id` estável `blogPost.sync.{locale}.{slug}`), porque o seed histórico em `sanity-seed-data` usa **outros slugs** (ex.: `guia-definitivo-gamificacao-rh-moderno`) — não são os mesmos posts.
+Por defeito, depois de editar [`src/lib/blogFallback.ts`](../src/lib/blogFallback.ts), o comando **cria ou substitui apenas** documentos com `_id` fixo **`blogPost.landing.{pt|en}.fb-1`** … **`fb-7`**. O **`slug.current` público** é derivado do **título** (ASCII) + sufixo **`-fbN`** (ex.: `engaja-time-como-a-gamificacao-transforma-o-rh-em-motor-de-resultados-fb1`), com desambiguação se já existir colisão. **Não faz patch** a posts do seed, a rascunhos melhorados no Studio nem a outros slugs — assim **não removes** CTAs `blogCta`, imagens inline ou copy que já esteja melhor lá.
+
+Cada nova execução **atualiza só** esses 14 documentos landing (7 PT + 7 EN), alinhados ao fallback (incluindo CTAs definidos no código).
 
 Por defeito também **reenvia a capa** (Unsplash do fallback → upload para assets), salvo com `--skip-cover`.
+
+**Modo legado (evitar salvo que saibas o que fazes):** `--legacy-numeric` volta ao fluxo que faz **match por `slug` `1`…`7`** e pode **substituir o corpo inteiro** desses documentos. Com `--legacy-numeric --patch-only` só atualiza se já existir esse slug; não cria `blogPost.sync.*`.
 
 **Pré-requisitos:** `.env.local` com projeto/dataset reais (não `placeholder`) e um dos tokens de escrita acima.
 
 ```bash
-# Simular: sem .env válido lista só o fallback local; com .env completo podes validar antes do patch
 npm run sync:blog-fallback -- --dry-run
 
-# Aplicar: patch nos que existem; criar os que faltam com slug 1–7
+# Por defeito: blogPost.landing.* + slug público -fbN (não mexe noutros posts)
 npm run sync:blog-fallback
 
-# Só português ou só inglês
 npm run sync:blog-fallback -- --locale pt
 npm run sync:blog-fallback -- --locale en
 
-# Só atualizar se já existir slug 1–7 (não cria documentos novos)
-npm run sync:blog-fallback -- --patch-only
+# Opcional: sobrescrever posts com slug numérico 1–7 (legado)
+npm run sync:blog-fallback -- --legacy-numeric
+npm run sync:blog-fallback -- --legacy-numeric --patch-only
 
-# Atualizar só texto/metadata, manter capa já no CMS
 npm run sync:blog-fallback -- --skip-cover
 ```
 
 Os scripts carregam variáveis de **`.env.local`** automaticamente (mesmo padrão que `env:init` / desenvolvimento local).
 
-**Com `--dry-run`:** não altera o dataset. Sem `.env.local` válido (projeto/dataset/token), o comando só imprime uma listagem rápida a partir do fallback; com credenciais completas, imprime uma linha por post (slug + tamanho do corpo) sem chamadas de escrita à API.
+**Com `--dry-run`:** não altera o dataset. Sem credenciais válidas, lista fallback + `_id`/`slug` propostos; com credenciais, em modo legado lista o que seria patch por slug numérico.
 
 ---
 
@@ -253,7 +266,7 @@ npm run generate:blog-posts -- --count 3 --dry-run
 npm run generate:blog-posts -- --count 2 --publish
 ```
 
-O script pede ao modelo **12–18 blocos** no `body`, incluindo listas com `listItem: "bullet"` e uma secção H2 **“Como a 4unik ajuda neste cenário”** (ou equivalente em inglês), com bullets que ligam funcionalidades da plataforma ao tema do post. Em publicação no Sanity, tenta ainda **anexar capa** por categoria (Unsplash → upload de asset).
+Implementação: [`scripts/generate-blog-posts.ts`](../scripts/generate-blog-posts.ts) (o ficheiro `.mjs` homónimo apenas delega para este). O script pede ao modelo **10–16 blocos** de texto/lista no `body` (antes da injeção automática de `blogCta`), incluindo listas com `listItem: "bullet"`, pelo menos um **H3**, e uma secção H2 **“Como a 4unik ajuda neste cenário”** (ou **“How 4unik helps in this scenario”** em EN), com bullets que ligam funcionalidades da plataforma ao tema do post. Em publicação no Sanity, tenta ainda **anexar capa** por categoria (Unsplash → upload de asset).
 
 **Variáveis de ambiente necessárias:**
 
@@ -534,7 +547,7 @@ Documento que centraliza todos os uploads de imagens para a página de API e Int
 
 | Seção | Campos disponíveis |
 | --- | --- |
-| Hero | `hero.showcaseImage` — screenshot/diagrama exibido no hero (substitui o carousel) |
+| Hero | `hero.showcaseImage` — screenshot largo à direita do hero (substitui o fallback estático quando preenchido) |
 | Integrações | `integrations.platforms[]` — até 3 plataformas; cada uma tem `platformName`, `logoImage` e `previewImage` |
 | Features | `features.items[]` — até 6 cards da grade de features com imageWithEmoji |
 | Módulos | `modules.items[]` — até 6 cards de módulos com imageWithEmoji |
@@ -546,6 +559,14 @@ Fluxo recomendado:
 3. Faça upload dos logos e previews em `integrations.platforms[]`
 4. A página `/api-integracoes/` busca automaticamente este documento pelo `mediaKey`
 5. Se uma imagem não estiver preenchida, o card mantém o ícone/letra atual como fallback
+
+**Hero — imagem alargada (`hero.showcaseImage`):**
+
+- No Studio: **Mídia de showcase — API e Integrações** → abra o documento PT (e um espelho EN, se quiser variante em inglês) → secção **Hero da página de API** → **Diagrama / screenshot do hero**.
+- **Formato:** faixa horizontal (~**2,86:1**), por exemplo **1024×358** ou **2048×716** px (mesma ideia que o fallback em `public/screens/api-integracoes-hero-request.png`). O layout do site usa essa proporção; imagens muito altas ou quadradas ficam com letterboxing.
+- **Ficheiro:** PNG ou WebP; texto legível em retina.
+- **Referência local:** pode arrastar para o Studio o mesmo PNG que está em `public/screens/api-integracoes-hero-request.png` para manter consistência com o fallback até publicar um novo asset.
+- Preencha **Texto alternativo** no campo da imagem (acessibilidade).
 
 Além disso, a landing `plataforma` agora aceita imagens nativas diretamente dentro do próprio `marketingPage`, sem depender apenas do documento de showcase paralelo.
 Os blocos editoriais da página podem carregar uploads para:
@@ -590,7 +611,7 @@ Preferencia operacional para ambas:
 Para `api-integracoes`, os documentos `marketingPage.pt.api-integracoes` e `marketingPage.en.api-integracoes` agora sao promovidos para blocos nativos durante o seed.
 Esses blocos alimentam diretamente:
 
-- hero da pagina
+- hero da pagina (titulo e descricao a esquerda; imagem larga a direita via `apiIntegracoesShowcaseMedia.hero.showcaseImage` ou fallback em `public/screens/api-integracoes-hero-request.png`; legado: `hero.visualCaption` no espelho `apiIntegracoesPayload` se ainda existir no conteudo)
 - grade de features
 - secoes de integracoes nativas
 - modulos da plataforma

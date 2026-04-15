@@ -1,12 +1,12 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 
+import BlogContentImage from "@/components/BlogContentImage";
+import PortableTextContent from "@/components/PortableTextContent";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import { getBlogImageUrl } from "@/lib/blogImageUrl";
 import type { BlogPostDoc, BlogPostListItem } from "@/sanity/lib/types";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import Link from "next/link";
-import PortableTextContent from "@/components/PortableTextContent";
 
 type Props = {
   post: BlogPostDoc;
@@ -25,7 +25,7 @@ function formatBlogDate(date: string, locale: "pt" | "en") {
 
 export default function BlogPostContent({ post, relatedPosts = [] }: Props) {
   const { locale, m, path } = useLocaleMessages();
-  const imageUrl = getSanityImageUrl(post.coverImage);
+  const imageUrl = getBlogImageUrl(post.coverImage, "articleCover");
   const blogPageCopy = m.blogPage as typeof m.blogPage & {
     backToBlog?: string;
     relatedHeading?: string;
@@ -69,11 +69,12 @@ export default function BlogPostContent({ post, relatedPosts = [] }: Props) {
         </div>
 
         {imageUrl ? (
-          <div className="mb-12 overflow-hidden rounded-3xl border border-white/10">
-            <img
+          <div className="mb-12">
+            <BlogContentImage
               src={imageUrl}
               alt={post.coverImage?.alt || post.title}
-              className="h-[420px] w-full object-cover"
+              layout="articleCover"
+              priority
             />
           </div>
         ) : null}

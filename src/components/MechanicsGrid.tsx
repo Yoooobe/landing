@@ -64,7 +64,7 @@ export default function MechanicsGrid({
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {s.items.map((item, i) => {
             const cardShowcase = showcaseItems?.[i];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image);
+            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
               <div
                 key={item.id}

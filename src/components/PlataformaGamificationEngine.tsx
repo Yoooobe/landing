@@ -93,7 +93,7 @@ export default function PlataformaGamificationEngine({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 font-sans">
               {g.cards.map((card, i) => {
                 const cardShowcase = gamificacaoFeatureCards?.[i];
-                const cardImageUrl = getSanityImageUrl(cardShowcase?.image);
+                const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
                 const DefaultIcon = DEFAULT_CARD_ICONS[i] ?? Target;
                 const selected = i === 0 ? card0Selected : card1Selected;
                 const onSelect = i === 0 ? selectCampaignCard : selectIntegrationCard;

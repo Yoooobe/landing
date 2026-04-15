@@ -50,18 +50,27 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
   const exploreHref = resolvePublicHref(h.ctaExploreHref?.trim(), defaultExploreHref);
   const platformImageUrl = getSanityImageUrl(h.platformImage, {
     width: SANITY_HOME_HERO_MAIN_WIDTH,
+    height: 760,
     fit: "crop",
-    quality: 82,
+    crop: "focalpoint",
+    focalPoint: { x: 0.5, y: 0.16 },
+    quality: 84,
   });
   const supportingImageUrl = getSanityImageUrl(h.supportingImage, {
     width: SANITY_HOME_HERO_SUPPORTING_WIDTH,
+    height: 520,
     fit: "crop",
-    quality: 80,
+    crop: "focalpoint",
+    focalPoint: { x: 0.52, y: 0.18 },
+    quality: 82,
   });
   const cmsHeroImageUrl = getSanityImageUrl(cmsHero?.image, {
     width: SANITY_HOME_HERO_MAIN_WIDTH,
+    height: 760,
     fit: "crop",
-    quality: 82,
+    crop: "focalpoint",
+    focalPoint: { x: 0.5, y: 0.16 },
+    quality: 84,
   });
   const hasCmsHero = Boolean(cmsHero?.headline?.trim());
   const primaryHref = hasCmsHero
@@ -77,12 +86,12 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
     : h.platformImage?.alt?.trim() || `${h.brand} platform preview`;
   const narrativeEyebrow =
     locale === "pt"
-      ? "Infraestrutura pronta para escalar reconhecimento"
-      : "Infrastructure built to scale recognition";
+      ? "Da campanha ao presente na porta de casa"
+      : "From campaign to gift at the doorstep";
   const narrativePanelTitle =
     locale === "pt"
-      ? "Da campanha ao prêmio entregue, tudo roda na mesma operação."
-      : "From campaign to delivered reward, everything runs in one operation.";
+      ? "Logística própria automatizada ou integrada à sua operação — você escolhe. O time só vê reconhecimento que chega."
+      : "Our automated fulfillment—or yours, connected by API. Employees just see recognition that shows up.";
   const heroProofItems = [
     {
       label: h.floatAdhesion,
@@ -247,9 +256,9 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
                     src={mainVisualUrl}
                     alt={mainVisualAlt}
                     width={1120}
-                    height={905}
+                    height={760}
                     sizes="(min-width: 1280px) 560px, (min-width: 1024px) 46vw, 92vw"
-                    className="h-full w-full rounded-[1.4rem] object-cover"
+                    className="h-full w-full rounded-[1.4rem] object-cover object-[50%_16%]"
                     priority
                     fetchPriority="high"
                     decoding="async"
@@ -308,7 +317,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
                   width={SANITY_HOME_HERO_SUPPORTING_WIDTH}
                   height={520}
                   sizes="(min-width: 1024px) 260px, 45vw"
-                  className="h-full w-full rounded-[1.2rem] object-cover"
+                  className="h-full w-full rounded-[1.2rem] object-cover object-[52%_18%]"
                   decoding="async"
                   loading="lazy"
                   unoptimized

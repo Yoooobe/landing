@@ -1,18 +1,18 @@
 export const ptHome = {
   /** SEO/AEO: usado em `src/app/layout.tsx` via `buildRootLayoutMetadata` — editar aqui replica título/descrição da home. */
   seo: {
-    title: "4Unik — Reward Infrastructure | Gamificação e Recompensas",
+    title: "4Unik — Gamificação, loja corporativa e reconhecimento para equipes",
     description:
-      "Infraestrutura de recompensas para plataformas de gamificação e employee engagement. API, catálogo e fulfillment em um só lugar. Pensada para grandes empresas e plataformas de engajamento que precisam integrar e escalar.",
+      "Reconheça e premie colaboradores com gamificação, loja corporativa e logística automatizada — ou integre a sua própria operação e fornecedores. API por usuário ativo. Entregas no Brasil e no mundo, com produção local no destino quando fizer sentido.",
   },
   hero: {
-    badge: "Reward Infrastructure para RH",
+    badge: "Reconhecimento real para o seu time",
     brand: "4unik",
     afterBrand: "escala",
     line1b: "reconhecimento",
     line2: "sem operação manual",
     sub:
-      "Lance campanhas, distribua pontos e entregue prêmios físicos sem transformar o RH em operação logística.",
+      "Monte campanhas, distribua pontos e envie presentes físicos sem virar uma transportadora. Logística própria automatizada da 4Unik — ou conecte a sua e seus fornecedores de brindes. Entregamos no Brasil e no mundo; para equipes fora do país, produzimos localmente no destino.",
     ctaDemo: "Agendar Demo",
     ctaExplore: "Ver a plataforma",
     floatAdhesion: "Adesão do Time",
@@ -30,7 +30,7 @@ export const ptHome = {
       "você encontra o panorama de benefícios corporativos, logística de recompensas e presença da marca.",
     here: "Aqui",
     bodyAfter:
-      "aprofundamos a plataforma: gamificação, API, integrações, catálogo e operação para RH e squads técnicos.",
+      "aprofundamos a plataforma na prática: gamificação, loja corporativa, integrações por API, catálogo e operação para RH e para o time de tecnologia.",
     cta: "Ver oferta completa no site 4unik",
   },
   trust: {
@@ -39,7 +39,7 @@ export const ptHome = {
   finalCta: {
     title: "Pronto para transformar o reconhecimento na sua empresa?",
     body:
-      "Solicite uma demonstração e veja como a 4Unik eleva o engajamento e a retenção do seu time.",
+      "Veja como outras empresas já simplificaram o reconhecimento e elevaram o engajamento. A demonstração leva cerca de 30 minutos e mostramos tudo funcionando ao vivo.",
     demo: "Solicitar Demonstração",
     whatsapp: "Falar com Especialista",
   },

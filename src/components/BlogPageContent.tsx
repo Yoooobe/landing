@@ -1,9 +1,9 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 
+import BlogContentImage from "@/components/BlogContentImage";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { normalizeBlogCategoryForFilter } from "@/lib/blogFallback";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import { getBlogImageUrl } from "@/lib/blogImageUrl";
 import type { BlogPostDoc } from "@/sanity/lib/types";
 import { ArrowRight, Calendar, Clock, BookOpen, Tag, Users, Zap, Trophy, Target, Lightbulb, Gift, TrendingUp, Brain } from "lucide-react";
 import Link from "next/link";
@@ -34,8 +34,12 @@ function formatBlogDate(date: string, locale: "pt" | "en") {
   }).format(parsed);
 }
 
-function getPostImage(post: BlogPostDoc) {
-  return getSanityImageUrl(post.coverImage);
+function getPostCardImage(post: BlogPostDoc) {
+  return getBlogImageUrl(post.coverImage, "cardThumb");
+}
+
+function getFeaturedSplitImage(post: BlogPostDoc) {
+  return getBlogImageUrl(post.coverImage, "featuredSplit");
 }
 
 function AuthorBadge({ author, aiGenerated }: { author?: string; aiGenerated?: boolean }) {
@@ -130,7 +134,7 @@ export default function BlogPageContent({ posts }: Props) {
     );
   }
 
-  const featuredImage = featured ? getPostImage(featured) : null;
+  const featuredImage = featured ? getFeaturedSplitImage(featured) : null;
 
   return (
     <div className="pt-32 pb-24 bg-[#0d1424] min-h-screen text-white">
@@ -191,10 +195,11 @@ export default function BlogPageContent({ posts }: Props) {
             <div className="relative rounded-3xl overflow-hidden glass-panel-dark border border-white/10 flex flex-col md:flex-row h-auto md:h-[440px]">
               <div className="w-full md:w-1/2 h-64 md:h-full relative overflow-hidden">
                 {featuredImage ? (
-                  <img
+                  <BlogContentImage
                     src={featuredImage}
                     alt={featured.coverImage?.alt || featured.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    layout="featuredSplit"
+                    imgClassName="transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
                   <div className="h-full w-full bg-gradient-to-br from-brand-orange/30 via-yoobe-neon-pink/20 to-unik-blue/30 flex items-center justify-center">
@@ -244,16 +249,17 @@ export default function BlogPageContent({ posts }: Props) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((post) => {
               const postWithExtras = post as BlogPostDoc & { author?: string; aiGenerated?: boolean; tags?: string[] };
-              const img = getPostImage(post);
+              const img = getPostCardImage(post);
               return (
                 <Link key={post._id} href={path(`/blog/${post.slug}`)} className="group flex">
                   <div className="rounded-3xl overflow-hidden glass-panel-dark border border-white/10 flex flex-col w-full transition-transform duration-300 hover:-translate-y-1">
                     <div className="h-44 relative overflow-hidden flex-shrink-0">
                       {img ? (
-                        <img
+                        <BlogContentImage
                           src={img}
                           alt={post.coverImage?.alt || post.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          layout="cardThumb"
+                          imgClassName="transition-transform duration-700 group-hover:scale-105"
                         />
                       ) : (
                         <div className="h-full w-full bg-gradient-to-br from-yoobe-purple/30 via-brand-orange/20 to-brand-navy-dark flex items-center justify-center">

@@ -42,7 +42,21 @@ function shotUrl(
     | "shoutoutImage",
   fallbackPublicPath: string,
 ): string {
-  const url = getSanityImageUrl(showcase?.[field] as SanityImageDoc | null | undefined);
+  const focalByField: Record<typeof field, { x: number; y: number }> = {
+    heroImage: { x: 0.5, y: 0.16 },
+    commsImage: { x: 0.5, y: 0.16 },
+    intelligenceImage: { x: 0.5, y: 0.16 },
+    frontlineImage: { x: 0.5, y: 0.2 },
+    shoutoutImage: { x: 0.5, y: 0.15 },
+  };
+  const url = getSanityImageUrl(showcase?.[field] as SanityImageDoc | null | undefined, {
+    width: 1600,
+    height: 1000,
+    fit: "crop",
+    crop: "focalpoint",
+    focalPoint: focalByField[field],
+    quality: 86,
+  });
   return url ?? withBasePath(fallbackPublicPath);
 }
 
@@ -251,7 +265,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
                 <img
                   src={shotUrl(showcaseMedia, shot.field, shot.fallback)}
                   alt={`Workvivo — ${shot.label}`}
-                  className="w-full aspect-video object-cover object-top"
+                  className="w-full aspect-video object-cover object-[50%_16%]"
                   loading="lazy"
                   width={800}
                   height={450}
@@ -293,21 +307,21 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
                 <img
                   src={shotUrl(showcaseMedia, "shoutoutImage", "/workvivo/workvivo-desktop-shoutout.webp")}
                   alt="Workvivo — shoutout posted in the feed"
-                  className="w-full aspect-video object-cover object-top"
+                  className="w-full aspect-video object-cover object-[50%_15%]"
                   loading="lazy"
                   width={800}
                   height={450}
                 />
               </figure>
-              {getSanityImageUrl(showcaseMedia?.feedShoutoutImage) ? (
+              {getSanityImageUrl(showcaseMedia?.feedShoutoutImage, { width: 1600, height: 1000, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.15 }, quality: 86 }) ? (
                 <figure className="mb-5 overflow-hidden rounded-xl border border-white/10 shadow-md">
                   <img
-                    src={getSanityImageUrl(showcaseMedia?.feedShoutoutImage) ?? ""}
+                    src={getSanityImageUrl(showcaseMedia?.feedShoutoutImage, { width: 1600, height: 1000, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.15 }, quality: 86 }) ?? ""}
                     alt={
                       showcaseMedia?.feedShoutoutImage?.alt?.trim() ||
                       "Workvivo — shoutout no feed (modo claro)"
                     }
-                    className="w-full aspect-video object-cover object-top"
+                    className="w-full aspect-video object-cover object-[50%_15%]"
                     loading="lazy"
                     width={800}
                     height={450}

@@ -17,12 +17,15 @@ export default function PlatformTabs({
   const [activeTab, setActiveTab] = useState("gestao");
   const managementImageUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.platformTabs?.managementImage,
+    { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.16 }, quality: 85 },
   );
   const storeImageUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.platformTabs?.storeImage,
+    { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.18 }, quality: 85 },
   );
   const campaignsImageUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.platformTabs?.campaignsImage,
+    { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.2 }, quality: 85 },
   );
 
   return (
@@ -82,7 +85,7 @@ export default function PlatformTabs({
               </div>
               <div className="relative rounded-2xl border border-white/10 bg-[#f8fafc] p-4 shadow-2xl md:p-8">
                 {managementImageUrl ? (
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-[16/10]">
                     <Image
                       src={managementImageUrl}
                       alt={
@@ -91,7 +94,7 @@ export default function PlatformTabs({
                       }
                       fill
                       sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover"
+                      className="object-cover object-[50%_16%]"
                       unoptimized
                     />
                   </div>
@@ -138,7 +141,7 @@ export default function PlatformTabs({
               </div>
               <div className="relative rounded-2xl border border-white/10 bg-[#f8fafc] p-4 shadow-2xl md:p-8">
                 {storeImageUrl ? (
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-[16/10]">
                     <Image
                       src={storeImageUrl}
                       alt={
@@ -147,7 +150,7 @@ export default function PlatformTabs({
                       }
                       fill
                       sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover"
+                      className="object-cover object-[50%_18%]"
                       unoptimized
                     />
                   </div>
@@ -198,7 +201,7 @@ export default function PlatformTabs({
               </div>
               <div className="relative rounded-2xl border border-white/10 bg-[#f8fafc] p-4 text-center shadow-2xl md:p-8">
                 {campaignsImageUrl ? (
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white">
+                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-[16/10]">
                     <Image
                       src={campaignsImageUrl}
                       alt={
@@ -207,7 +210,7 @@ export default function PlatformTabs({
                       }
                       fill
                       sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover"
+                      className="object-cover object-[50%_20%]"
                       unoptimized
                     />
                   </div>

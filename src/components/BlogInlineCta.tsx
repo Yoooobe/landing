@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import { getBlogImageUrl } from "@/lib/blogImageUrl";
 import type { BlogCtaBlock, BlogCtaVariant } from "@/sanity/lib/types";
 import { ArrowRight, CalendarDays, Layers } from "lucide-react";
 import type { ReactNode } from "react";
@@ -48,11 +48,7 @@ export default function BlogInlineCta({ block }: { block: BlogCtaBlock }) {
   const description = block.description?.trim();
   const eyebrow = block.eyebrow?.trim() || variantDefaults[variant].eyebrowFallback;
   const { icon: Icon } = variantDefaults[variant];
-  const imageUrl = getSanityImageUrl(block.featureImage ?? undefined, {
-    width: 560,
-    fit: "crop",
-    quality: 85,
-  });
+  const imageUrl = getBlogImageUrl(block.featureImage ?? undefined, "ctaFeature");
 
   if (variant === "feature") {
     return (

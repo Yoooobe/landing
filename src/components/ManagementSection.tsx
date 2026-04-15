@@ -21,7 +21,7 @@ export default function ManagementSection({
       ...item,
       icon: visual?.emoji || ICONS[i],
       image: visual?.image || null,
-      imageUrl: getSanityImageUrl(visual?.image),
+      imageUrl: getSanityImageUrl(visual?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 }),
     };
   });
 

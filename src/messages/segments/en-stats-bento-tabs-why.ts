@@ -9,13 +9,13 @@ export const enStatsBentoTabsWhy = {
   },
   bento: {
     badge: "Overview",
-    titleLine1: "The central hub to inspire and",
-    titleLine2: "reward the people who make things happen.",
+    titleLine1: "One place to inspire,",
+    titleLine2: "engage, and reward your team.",
     sub:
-      "Campaigns, points, store, and delivery in one place. Less spreadsheet work, more clarity for leaders and teams.",
+      "Everything you need to recognize people who move the business forward—without living in spreadsheets or chasing vendors the night before an event.",
     card1: {
       title: "You’re in control",
-      body: "Set budgets and see what matters in real time. Finance-ready reports—without chasing approvals in email threads.",
+      body: "Set budgets and see what matters in real time. Finance-ready reports without approval threads in email.",
       cta: "See the dashboard",
     },
     mockMonth: "Monthly overview",
@@ -24,58 +24,60 @@ export const enStatsBentoTabsWhy = {
     mockRed: "Redemptions",
     mockSla: "SLA on time",
     card2: {
-      title: "Fun campaigns",
-      body: "Launch missions tied to business goals. Points, rankings, and recognition stay visible to everyone.",
+      title: "Campaigns people actually get",
+      body: "Missions tied to real goals. Points, rankings, and recognition stay visible—without feeling like a gimmick.",
     },
     card3: {
-      title: "They pick the prize",
-      body: "People redeem points from the catalog. We handle fulfillment—from order to doorstep across Brazil.",
+      title: "They pick the gift",
+      body:
+        "People redeem points from the catalog. 4Unik runs automated logistics from order to tracking—we ship worldwide, and for teams outside Brazil we produce locally at the destination when it’s faster and simpler.",
     },
     card4: {
-      title: "Connects with your stack",
-      body: "Managers get a simple workflow; IT gets a clear API and docs to plug into what you already run day to day.",
+      title: "Fits what you already run",
+      body:
+        "Simple workflows for HR and managers; clear API docs and per-user pricing for engineering. Connect gamification, shipping, HRIS, or intranet—without vendor lock-in.",
       cta: "Documentation",
       apiNote: "Built to integrate without the usual integration headaches.",
     },
   },
   platformTabs: {
     badge: "Explore the solution",
-    title: "A smooth experience for managers and members",
+    title: "A clear experience for managers and members",
     tabGestao: "📊 Manager dashboard",
     tabLoja: "🎁 Member store",
     tabCampanhas: "🎯 Campaign management",
     gestao: {
-      title: "Full operational visibility",
-      body: "One dashboard for orders, revenue, reward inventory, and points in circulation—from pipeline status to redemption insights.",
+      title: "Everything visible in one dashboard",
+      body: "Track orders, revenue, reward inventory, and points in circulation—from pipeline status to what people are redeeming.",
       bullets: [
-        "Order funnel and revenue signals in real time",
-        "Roles and permissions for admins, ops, and store experiences",
-        "Activity history for governance and audit trails",
-        "Budgets, balances, and finance-ready exports",
+        "Order status and revenue signals in real time",
+        "Roles for admins, ops, and store experiences",
+        "History for governance and audit when you need it",
+        "Budgets, balances, and exports to your ERP",
       ],
       cta: "Explore features",
       mockTitle: "Admin view",
     },
     loja: {
-      title: "A VIP corporate store",
-      body: "Employees redeem points for thousands of items from the premium 4Unik catalog or partner brands, with balance, filters, and delivery tracking built in.",
+      title: "A corporate store that feels like a gift, not a generic perk",
+      body: "Employees redeem points for thousands of items from the 4Unik catalog or partners—with clear balance, filters, and delivery tracking.",
       bullets: [
         "Coin balance always visible",
         "Filters by value and category",
-        "Delivery status with home shipping",
-        "Digital options or physical kits and swag",
+        "Delivery tracking to the doorstep",
+        "Digital items, physical kits, or branded swag",
       ],
       cta: "Open catalog",
       mockTitle: "Member view",
     },
     campanhas: {
       title: "Campaigns & engagement",
-      body: "Launch campaigns with landing pages and templates for onboarding, recognition, promos, or retention—with segmentation and business rules.",
+      body: "Onboarding, recognition, goals, or milestones—with branded pages, segmentation, and rules you control.",
       bullets: [
-        "Customizable pages and themes without running a separate site",
-        "Audience segmentation, tags, and credits (performance, tenure, seasonal)",
-        "Track engagement and campaign performance in the dashboard",
-        "APIs and webhooks connect CRM, HR, and engagement tools",
+        "On-brand pages without maintaining another website",
+        "Audiences by team, tag, or profile (goals, tenure, seasonality)",
+        "Engagement and outcomes in the same dashboard",
+        "Connect CRM, HR, and engagement tools when it makes sense",
       ],
       cta: "Gamification strategies",
       mockTitle: "Campaign setup",
@@ -83,19 +85,19 @@ export const enStatsBentoTabsWhy = {
     },
   },
   why: {
-    badge: "Why we exist",
+    badge: "Why 4Unik",
     titleBefore: "Recognition drives",
     titleGradient: "performance",
     sub:
-      "65% of employees receive no recognition during the year. We change that with gamification, integrated logistics, and full privacy compliance.",
+      "65% of employees receive no recognition during the year. We help change that with approachable gamification, a corporate store, and logistics that don’t bury HR—built with privacy in mind.",
     cards: [
       {
         title: "Purpose",
-        desc: "We believe recognition shapes culture. Every reward becomes a meaningful connection between company and employee.",
+        desc: "Real recognition shapes culture. Every reward is a chance to connect company and person.",
       },
       {
         title: "How we do it",
-        desc: "We combine gamification, logistics, and tech in one integrated platform—from points to delivery.",
+        desc: "Gamification, store, and delivery in one flow—from points to the gift in hand—with our logistics or yours connected by API.",
       },
       {
         title: "Outcomes",
@@ -109,23 +111,23 @@ export const enStatsBentoTabsWhy = {
     titleGradient: "engages",
     titleAfter: ". 4Unik delivers.",
     sub:
-      "83% of employees report higher motivation with gamification. Points, rankings, missions, and real rewards in one integrated platform.",
+      "83% of employees report higher motivation when gamification is done well. Points, rankings, missions, and real rewards—integrated, not scattered across spreadsheets.",
     cards: [
       {
         title: "Points & rankings",
-        desc: "Configurable points plus team or individual leaderboards—visible, fair recognition.",
+        desc: "Clear rules and team or individual leaderboards. Everyone sees who is recognized and why.",
       },
       {
         title: "Missions & challenges",
-        desc: "Thematic campaigns, OKR goals, time-bound challenges, and automatic rewards—ongoing engagement.",
+        desc: "Time-bound campaigns with goals and automatic rewards—momentum without weekly manual ops.",
       },
       {
         title: "Badges & levels",
-        desc: "Achievement badges, progression paths, and digital certifications—employees track the journey.",
+        desc: "Achievements, paths, and visible milestones—people track their own journey.",
       },
       {
         title: "Prize redemption",
-        desc: "5,000+ real products in the marketplace. Employees choose what they want and receive it at home with minimal HR overhead.",
+        desc: "5,000+ real products. People choose what they want—we fulfill or connect your logistics. Your call.",
       },
     ],
   },
@@ -140,18 +142,18 @@ export const enStatsBentoTabsWhy = {
       secondaryHint: "Prefer to book or chat now?",
     },
     afterPlatform: {
-      title: "Want to see users, roles, and permissions in action?",
-      body: "Tell us your team size and what you need to run (orders, points, store). We’ll reply with clear next steps.",
+      title: "Want to see dashboards, roles, and reports in action?",
+      body: "Tell us your team size and what you need to run (orders, points, store). We’ll reply with clear next steps within one business day.",
       source: "home-after-platform",
     },
     afterCampaigns: {
-      title: "Campaigns with landing pages and segmentation—how would it fit?",
-      body: "Share your goals (onboarding, targets, retention) and desired integrations. We’ll align a proposal with your HR stack.",
+      title: "Campaigns & segmentation—how would this fit your HR stack?",
+      body: "Share your goals (onboarding, targets, retention) and tools you already use. We’ll align a proposal without unnecessary jargon.",
       source: "home-campaigns",
     },
     afterOperations: {
-      title: "Catalog, logistics, and delivery at scale",
-      body: "Tell us about product variants, shipping, and multi-site needs—we’ll help design end-to-end operations on 4Unik.",
+      title: "Catalog, shipping, and teams across countries",
+      body: "Tell us about product variants, timelines, and whether you need local production abroad. We’ll design end-to-end operations with you.",
       source: "home-operations",
     },
   },

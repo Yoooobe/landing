@@ -42,7 +42,7 @@ export default function ApiFeaturesGrid({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((f, i) => {
             const cardShowcase = showcaseItems?.[i];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image);
+            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
             <motion.div
               key={i}

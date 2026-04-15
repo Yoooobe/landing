@@ -1,18 +1,18 @@
 export const enHome = {
   /** SEO/AEO: usado em `src/app/en/layout.tsx` — manter paridade de significado com `ptHome.seo`. */
   seo: {
-    title: "4Unik — Reward Infrastructure | Gamification & Rewards",
+    title: "4Unik — Corporate gamification, rewards store & employee recognition",
     description:
-      "Reward infrastructure for gamification and employee engagement platforms. API, catalog, and fulfillment in one place. Built for large enterprises and engagement platforms that need integration at scale.",
+      "Recognize and reward teams with gamification, a corporate store, and automated logistics—or plug in your own fulfillment and merchandise partners. Per-user API pricing. We deliver worldwide and produce locally at the destination when it speeds things up.",
   },
   hero: {
-    badge: "Reward infrastructure for HR",
+    badge: "Recognition your people actually feel",
     brand: "4unik",
     afterBrand: "scales",
     line1b: "recognition",
     line2: "without manual ops",
     sub:
-      "Launch campaigns, run points-based recognition, and deliver physical rewards without turning HR into a logistics team.",
+      "Run campaigns, award points, and ship physical rewards without turning HR into a logistics team. Use 4Unik’s automated fulfillment—or connect your carriers and merchandise suppliers. We deliver anywhere in the world; for teams outside Brazil, we manufacture locally at the destination—faster delivery, lower cost, same quality.",
     ctaDemo: "Book a demo",
     ctaExplore: "See the platform",
     floatAdhesion: "Team adoption",
@@ -30,7 +30,7 @@ export const enHome = {
       "you’ll find the full picture of corporate benefits, reward logistics, and brand presence.",
     here: "Here",
     bodyAfter:
-      "we go deeper on the platform: gamification, API, integrations, catalog, and operations for HR and engineering teams.",
+      "we go deeper on the product: corporate gamification, rewards store, API integrations, catalog, and day-to-day operations for HR and engineering.",
     cta: "See the full offer on 4unik",
   },
   trust: {
@@ -38,7 +38,8 @@ export const enHome = {
   },
   finalCta: {
     title: "Ready to transform recognition at your company?",
-    body: "Book a demo and see how 4Unik improves engagement and retention.",
+    body:
+      "See how other companies simplified recognition and lifted engagement. The demo takes about 30 minutes and we show everything live.",
     demo: "Book a demo",
     whatsapp: "Talk to a specialist",
   },

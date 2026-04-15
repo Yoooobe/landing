@@ -5,10 +5,26 @@ export const enLandingMore = {
     titleGradient: "transform",
     titleAfter: " your HR",
     steps: [
-      { num: "01", title: "Connect", desc: "Integrate with your intranet or launch the 4Unik V3 console. Go live in a few days." },
-      { num: "02", title: "Configure", desc: "Set benefits, scoring rules, and shape the catalog to your culture." },
-      { num: "03", title: "Engage", desc: "Your team earns points for hitting goals, completing missions, and referring talent." },
-      { num: "04", title: "Deliver", desc: "They pick the reward—we pack and ship to their door." },
+      {
+        num: "01",
+        title: "Connect",
+        desc: "Plug into your intranet, HRIS, or launch the 4Unik console. Most teams are live within days—not months.",
+      },
+      {
+        num: "02",
+        title: "Configure",
+        desc: "Set benefits, scoring rules, and a catalog that matches your culture—welcome kits, branded merch, or an open rewards shop.",
+      },
+      {
+        num: "03",
+        title: "Engage",
+        desc: "People earn points for goals, missions, and recognition. Everything stays visible—no shadow spreadsheet.",
+      },
+      {
+        num: "04",
+        title: "Deliver",
+        desc: "They pick the reward; 4Unik’s automated logistics handles the rest—or we connect your carriers and merchandise partners.",
+      },
     ],
     mockInfrastructure: "Infrastructure",
     mockEngine: "Gamification engine & rules",
@@ -20,9 +36,9 @@ export const enLandingMore = {
   },
   aiRoadmap: {
     badge: "AI agents",
-    titleBefore: "Intelligence, copilots, and agents across ",
+    titleBefore: "Smart assistants across ",
     titleGradient: "the full journey",
-    titleAfter: " of engagement, rewards, and gamification.",
+    titleAfter: " — from campaign to the right gift in hand.",
     cta: "See the full vision",
     stages: [
       {
@@ -71,23 +87,24 @@ export const enLandingMore = {
     badge: "How it works",
     titleBefore: "Two paths to",
     titleGradient: "engage your team",
-    sub: "You do not have to adapt to us. 4Unik adapts to your current reality, whether you need a full platform or an invisible infrastructure layer.",
+    sub: "You don’t have to rip and replace everything. 4Unik adapts: a full platform to move fast, or an integrated layer when you already run intranet or gamification elsewhere.",
     sideA: {
       title: "Ready to use",
-      body: "Our full platform with an employee portal. Launch missions, award points, and open the rewards catalog from day one.",
+      body: "Branded employee portal. Missions, points, and store live from day one—with our automated logistics or yours connected by API.",
       bullets: [
-        "Employee portal with your brand",
-        "Fun campaigns and a manager console",
-        "No app required—works in the browser",
+        "Store and campaigns that feel like your brand",
+        "A manager console that doesn’t require a manual the size of a book",
+        "Works in the browser—no app required",
       ],
     },
     sideB: {
-      title: "Invisible integration",
-      body: "Already happy with your intranet? We plug in the store and logistics layer without making it feel like a system replacement.",
+      title: "Connect what you already run",
+      body: "Already invested in intranet, engagement, HRIS, or your own logistics? 4Unik connects by API—store, merch, and shipping inside the tools people already use. Merchandise suppliers and carrier partners can plug into the same flow.",
       bullets: [
-        "Employees don’t need another password",
-        "Rewards show up right in work tools",
-        "We run the store and delivery quietly behind the scenes",
+        "No forced “yet another password” rollout",
+        "Rewards surface inside everyday work tools",
+        "We run the store and delivery behind the scenes—or integrate your operation",
+        "We ship anywhere in the world; for teams outside Brazil, we produce locally at the destination when it’s faster",
       ],
     },
   },
@@ -116,18 +133,18 @@ export const enLandingMore = {
     badge: "Enterprise use cases",
     titleBefore: "Proven capacity to run at",
     titleGradient: "enterprise scale",
-    sub: "End-to-end, secure, white-label solutions for organizations with 10,000+ active users.",
+    sub: "For organizations that need customization, security, and stable operations—with thousands of employees and deliveries worldwide.",
     hapvida: {
       tag1: "Healthcare",
       tag2: "10,000+ users",
       bodyBefore: "A dedicated platform operating at ",
       bodyStrong: "large scale",
       bodyAfter:
-        ". Smooth recognition, missions, and rewards for clinical and administrative staff across one of the country’s largest health systems.",
+        ". Recognition, missions, and rewards for clinical and administrative staff across one of the country’s largest health systems.",
       bullets: [
-        "Massive corporate delivery and reward operations.",
-        "A tailored catalog aligned with compliance rules.",
-        "Strict SLAs focused on availability and performance.",
+        "High-volume corporate deliveries and rewards with predictable operations.",
+        "Catalog aligned with sector compliance requirements.",
+        "Availability and support designed for mission-critical use.",
       ],
       mockTotalLabel: "Your total balance",
       mockRewardsTitle: "Hapvida exclusive rewards",
@@ -140,11 +157,11 @@ export const enLandingMore = {
       bodyBefore: "A fully ",
       bodyStrong: "white-label",
       bodyAfter:
-        " engagement store built for complex logistics and the highest corporate standards at Brazil’s largest independent oil & gas company.",
+        " engagement store built for complex logistics and elevated corporate standards at Brazil’s largest independent oil & gas company.",
       bullets: [
-        "Fully custom visual identity (absolute white-label).",
-        "End-to-end operations—from software to the employee’s doorstep.",
-        "Enterprise-grade support focused on retaining critical talent.",
+        "Visual identity tailored to the brand.",
+        "From store configuration to the employee’s doorstep.",
+        "Enterprise support focused on retaining critical talent.",
       ],
       mockHeroTitle: "Exclusive merchandising",
       mockHeroSubtitle: "New winter collection available",
@@ -153,17 +170,17 @@ export const enLandingMore = {
     },
   },
   dedicatedIntegrations: {
-    badge: "Native connectivity",
-    titleBefore: "Does your intranet already have",
-    titleGradient: "gamification?",
-    subBefore: "4Unik works ",
-    subStrong: "invisibly",
+    badge: "Works where your team already is",
+    titleBefore: "Already running an",
+    titleGradient: "intranet or gamification?",
+    subBefore: "4Unik plugs in ",
+    subStrong: "quietly",
     subAfter:
-      ", delivering rewards infrastructure and logistics inside the leading employee experience platforms.",
+      ", bringing catalog, redemptions, and logistics inside leading employee experience platforms.",
     workvivo: {
       title: "Workvivo",
       body:
-        "Workvivo by Zoom now pairs with 4Unik's corporate catalog, so teams can reward people directly in the social feed.",
+        "Recognize and reward right in the social feed. 4Unik’s corporate catalog meets people where they already collaborate.",
       feedAuthor: "HR Official",
       feedTime: "2 hours ago",
       feedPost:
@@ -181,7 +198,7 @@ export const enLandingMore = {
     beehome: {
       title: "Beehome",
       body:
-        "Extend Brazil's leading intranet. Employees earn Beehome coins and redeem physical rewards through 4Unik.",
+        "The intranet people already use every day: Beehome points become physical products fulfilled by 4Unik.",
       coinsLabel: "Beehome coins",
       connectionLabel: "Active connection",
       yoobeStore: "4Unik Store",

@@ -35,8 +35,8 @@ export default function NativeIntegrations({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {content.mainPlatforms.map((p, i) => {
             const sc = getShowcaseForPlatform(p.name);
-            const logoUrl = getSanityImageUrl(sc?.logoImage);
-            const previewUrl = getSanityImageUrl(sc?.previewImage);
+            const logoUrl = getSanityImageUrl(sc?.logoImage, { width: 320, fit: "max", quality: 90 });
+            const previewUrl = getSanityImageUrl(sc?.previewImage, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
             <motion.div
               key={i}

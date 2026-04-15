@@ -43,7 +43,7 @@ export default function ApiPlatformModules({
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {modules.map((m, i) => {
             const cardShowcase = showcaseItems?.[i];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image);
+            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
             <div key={i} className="group rounded-3xl border border-white/10 bg-surface-panel p-8 text-left transition-transform duration-300 hover:-translate-y-2">
               <div className="mb-6 bg-white/5 p-4 rounded-2xl w-fit group-hover:scale-110 transition-transform">

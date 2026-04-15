@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import UnikWordmark from "@/components/UnikWordmark";
 import {
@@ -6,6 +7,7 @@ import {
   useSiteShellMenu,
 } from "@/contexts/SiteSettingsContext";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { withBasePath } from "@/lib/basePath";
 import { resolveShellHref, isExternalShellHref } from "@/lib/siteShell";
 import Link from "next/link";
 import { useMemo, type ReactNode } from "react";
@@ -193,6 +195,20 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm mb-6 max-w-xs">{f.blurb}</p>
+            <div className="mt-1 flex flex-wrap items-center gap-4 opacity-70 transition-opacity hover:opacity-100">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/45">
+                {f.backedBy}
+              </span>
+              <img
+                src={withBasePath("/partners/google-badge.jpg")}
+                alt={m.investorBar.badgeAlt}
+                width={200}
+                height={200}
+                loading="lazy"
+                decoding="async"
+                className="h-16 w-16 shrink-0 rounded-xl object-cover sm:h-[4.5rem] sm:w-[4.5rem]"
+              />
+            </div>
           </div>
 
           {footerSections.map((section, sectionIndex) => (
