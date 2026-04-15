@@ -12,10 +12,10 @@ export const ptStatsBentoTabsWhy = {
     titleLine1: "O hub central para inspirar e",
     titleLine2: "recompensar quem faz acontecer.",
     sub:
-      "Da criação de desafios e campanhas até a entrega do prêmio na casa do colaborador. Catálogo com variantes, pedidos, logística e tags — integrados ao mesmo painel, sem planilhas intermináveis.",
+      "Campanhas, pontos, loja e entrega em um só lugar. Menos planilha, mais clareza para o time e para a gestão.",
     card1: {
       title: "Você no Controle",
-      body: "Esqueça o vai-e-vem de aprovações. Defina orçamentos, acompanhe o engajamento geral e libere relatórios automáticos para o financeiro.",
+      body: "Defina orçamentos e acompanhe tudo em tempo real. Relatórios para o financeiro saem prontos, sem fila de aprovações.",
       cta: "Conheça o painel",
     },
     mockMonth: "Overview Mensal",
@@ -25,16 +25,17 @@ export const ptStatsBentoTabsWhy = {
     mockSla: "SLA Dentro do prazo",
     card2: {
       title: "Campanhas Divertidas",
-      body: "Crie missões baseadas nas metas da empresa. Distribua pontos, crie rankings saudáveis e reconheça quem se destaca na operação.",
+      body: "Monte missões ligadas às metas do negócio. Pontos, ranking e reconhecimento ficam visíveis para todo mundo.",
     },
     card3: {
       title: "Eles Escolhem o Prêmio",
-      body: "Catálogo enorme onde o time troca seus pontos. E o melhor: nós fazemos a entrega porta a porta para o Brasil todo.",
+      body: "O time troca pontos por produtos no catálogo. A entrega é nossa, do pedido à casa do colaborador em todo o Brasil.",
     },
     card4: {
       title: "Conecta com Suas Ferramentas",
-      body: "Sem atrito para o time de TI. Integração simplificada com os sistemas que sua empresa já usa todos os dias, como Slack, Teams e Workday.",
+      body: "O RH e o gestor ganham fluxo simples; o TI ganha API e documentação clara para encaixar no que vocês já usam.",
       cta: "Documentação",
+      apiNote: "API pensada para integrar sem dor de cabeça.",
     },
   },
   platformTabs: {

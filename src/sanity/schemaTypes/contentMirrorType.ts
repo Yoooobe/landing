@@ -4,6 +4,8 @@ export const contentMirrorType = defineType({
   name: "contentMirror",
   title: "Espelho Editorial do Codigo",
   type: "document",
+  description:
+    "Espelho editorial do código-fonte para alinhamento e revisão. O site exportado não lê estes documentos no build — ver docs/content-mirror-policy.md.",
   fields: [
     defineField({
       name: "title",

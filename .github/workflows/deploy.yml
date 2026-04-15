@@ -60,6 +60,7 @@ jobs:
       - name: Verify Sanity secrets
         env:
           ID: ${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          DS: ${{ secrets.NEXT_PUBLIC_SANITY_DATASET }}
         run: |
           if [ -z "${ID}" ]; then
             echo "::warning::NEXT_PUBLIC_SANITY_PROJECT_ID está vazio. O export não embute ID real — o Studio em produção pode falhar. Defina em Settings → Secrets → Actions (ver docs/cms.md)."
@@ -70,6 +71,11 @@ jobs:
             echo "::warning::NEXT_PUBLIC_SANITY_PROJECT_ID=placeholder — build segue (alinhado a dev local), mas o Studio em https://yoooobe.github.io/landing/studio/ pode não autenticar. Para produção, usa o ID real do projeto Sanity."
           else
             echo "NEXT_PUBLIC_SANITY_PROJECT_ID definido (valor não mostrado)."
+          fi
+          if [ -z "${DS}" ]; then
+            echo "::warning::NEXT_PUBLIC_SANITY_DATASET está vazio no CI. O build corre com dataset vazio e o cliente Sanity fica desconfigurado. Define o secret (normalmente production) em Settings → Secrets → Actions."
+          else
+            echo "NEXT_PUBLIC_SANITY_DATASET definido (valor não mostrado)."
           fi
 
       - name: Build static export

@@ -42,7 +42,6 @@ import type {
   CaseStudyGridBlockDoc,
   CtaBlockDoc,
   FaqBlockDoc,
-  FeatureGridBlockDoc,
   LogoStripBlockDoc,
   MarketingPageDoc,
   MarketingPageContentBlock,

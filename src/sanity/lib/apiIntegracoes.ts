@@ -112,22 +112,6 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
             "Pesquisas e feedback integrados",
           ],
         },
-        {
-          name: "Humand",
-          by: "Corporate Super App",
-          logo: "H",
-          badge: "API Pronta",
-          color: "from-yoobe-neon-pink/20",
-          description:
-            "App corporativo completo com comunicação, RH, reconhecimento e processos. API RESTful documentada com Swagger e webhooks em tempo real.",
-          features: [
-            "API RESTful com Swagger",
-            "Webhooks em tempo real",
-            "Recognition programs nativo",
-            "Integração SAP, Workday",
-            "Zapier para +5.000 apps",
-          ],
-        },
       ],
       extraIntegrations: [
         "Slack",
@@ -305,22 +289,6 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
             "Recognition campaigns",
             "Birthday celebrations",
             "Integrated surveys and feedback",
-          ],
-        },
-        {
-          name: "Humand",
-          by: "Corporate Super App",
-          logo: "H",
-          badge: "Ready API",
-          color: "from-yoobe-neon-pink/20",
-          description:
-            "A corporate super app with communication, HR, recognition, and workflows. Includes documented REST APIs and real-time webhooks.",
-          features: [
-            "Swagger-based REST API",
-            "Real-time webhooks",
-            "Native recognition programs",
-            "SAP and Workday integrations",
-            "Zapier for 5,000+ apps",
           ],
         },
       ],

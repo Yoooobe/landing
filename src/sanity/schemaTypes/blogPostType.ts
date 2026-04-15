@@ -120,6 +120,95 @@ export const blogPostType = defineType({
             ],
           },
         },
+        {
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Texto alternativo",
+              type: "string",
+            }),
+          ],
+        },
+        {
+          type: "object",
+          name: "blogCta",
+          title: "CTA inline",
+          fields: [
+            defineField({
+              name: "variant",
+              title: "Tipo",
+              type: "string",
+              initialValue: "platform",
+              options: {
+                list: [
+                  { title: "Feature (destaque + imagem)", value: "feature" },
+                  { title: "Demo / agendar", value: "demo" },
+                  { title: "Plataforma (explorar)", value: "platform" },
+                ],
+                layout: "radio",
+              },
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "eyebrow",
+              title: "Eyebrow",
+              type: "string",
+              description: "Linha curta acima do título (ex.: Destaque de funcionalidade).",
+            }),
+            defineField({
+              name: "title",
+              title: "Título",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "description",
+              title: "Descrição",
+              type: "text",
+              rows: 2,
+            }),
+            defineField({
+              name: "ctaLabel",
+              title: "Texto do botão",
+              type: "string",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "ctaHref",
+              title: "URL do botão",
+              type: "url",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "featureImage",
+              title: "Imagem da feature",
+              type: "image",
+              options: { hotspot: true },
+              fields: [
+                defineField({
+                  name: "alt",
+                  title: "Texto alternativo",
+                  type: "string",
+                }),
+              ],
+              description: "Usar principalmente com o tipo «Feature».",
+            }),
+          ],
+          preview: {
+            select: {
+              title: "title",
+              subtitle: "variant",
+            },
+            prepare({ title, subtitle }) {
+              return {
+                title: title || "CTA inline",
+                subtitle: subtitle ? `CTA · ${subtitle}` : "CTA",
+              };
+            },
+          },
+        },
       ],
     }),
     defineField({

@@ -12,10 +12,10 @@ export const enStatsBentoTabsWhy = {
     titleLine1: "The central hub to inspire and",
     titleLine2: "reward the people who make things happen.",
     sub:
-      "From sales challenges and campaigns to doorstep reward delivery. Variants, orders, logistics, and tags—integrated into one dashboard without endless spreadsheets.",
+      "Campaigns, points, store, and delivery in one place. Less spreadsheet work, more clarity for leaders and teams.",
     card1: {
       title: "You’re in control",
-      body: "Skip approval ping-pong. Set budgets, track engagement, and ship automated reports to finance.",
+      body: "Set budgets and see what matters in real time. Finance-ready reports—without chasing approvals in email threads.",
       cta: "See the dashboard",
     },
     mockMonth: "Monthly overview",
@@ -25,16 +25,17 @@ export const enStatsBentoTabsWhy = {
     mockSla: "SLA on time",
     card2: {
       title: "Fun campaigns",
-      body: "Create missions tied to company goals. Distribute points, build healthy rankings, and recognize top performers.",
+      body: "Launch missions tied to business goals. Points, rankings, and recognition stay visible to everyone.",
     },
     card3: {
       title: "They pick the prize",
-      body: "A huge catalog where teams redeem points—and we deliver door-to-door across Brazil.",
+      body: "People redeem points from the catalog. We handle fulfillment—from order to doorstep across Brazil.",
     },
     card4: {
       title: "Connects with your stack",
-      body: "Low friction for IT. Plug into the tools you already use every day, including Slack, Teams, Workday, and more.",
+      body: "Managers get a simple workflow; IT gets a clear API and docs to plug into what you already run day to day.",
       cta: "Documentation",
+      apiNote: "Built to integrate without the usual integration headaches.",
     },
   },
   platformTabs: {

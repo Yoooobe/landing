@@ -29,7 +29,7 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - Site (EN): ${base}/en/
 - API e integrações: ${base}/api-integracoes/ e ${base}/en/api-integracoes/
 - Plataforma: ${base}/plataforma/ e ${base}/en/plataforma/
-- Gamificação: ${base}/gamificacao/ e ${base}/en/gamificacao/
+- Gamificação (motor): ${base}/plataforma/motor-gamificacao/ e ${base}/en/plataforma/motor-gamificacao/
 - Blog: ${base}/blog/ e ${base}/en/blog/
 - robots.txt: ${base}/robots.txt
 - sitemap: ${base}/sitemap.xml

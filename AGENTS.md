@@ -22,10 +22,13 @@ The site is served at `http://localhost:3000/landing/` when using the default ca
 | Lint | `npm run lint` |
 | Build (static export) | `npm run build` (requires Sanity env vars) |
 | Deploy (GH Pages) | `npm run deploy:gh-pages` |
+| Sync blog fallback → Sanity | `npm run sync:blog-fallback` (needs `SANITY_API_TOKEN` or `SANITY_API_WRITE_TOKEN` in `.env.local`; see `docs/cms.md`) |
+| Generate blog posts (IA → Sanity) | `npm run generate:blog-posts` (needs `OPENAI_API_KEY` + Sanity write token unless `--dry-run`; see `docs/cms.md`) |
+| Validate blog CTA landing paths | `npm run validate:blog-ctas` (no network; checks `BLOG_CTA_PATHS_BY_SLUG` vs `src/app/(pt)/…/page.tsx`) |
 
 Configuração do Pages no GitHub (fonte branch vs Actions, Desktop, CLI, billing): [`docs/github-pages-setup.md`](docs/github-pages-setup.md).
 
-**CI (`.github/workflows/deploy.yml`):** o primeiro passo útil após `npm ci` imprime avisos se **faturação / minutos de Actions** bloquearem o GitHub (mensagem típica: *account locked due to a billing issue*). O passo **Verify Sanity secrets** falha só com `your-project-id` ou `xxx`; `placeholder` gera aviso e permite o build. Detalhes em `docs/cms.md`.
+**CI:** `.github/workflows/ci-validate.yml` corre `tsc` e `validate:blog-ctas` em PR/push para `main`. **CI (`.github/workflows/deploy.yml`):** o primeiro passo útil após `npm ci` imprime avisos se **faturação / minutos de Actions** bloquearem o GitHub (mensagem típica: *account locked due to a billing issue*). O passo **Verify Sanity secrets** falha só com `your-project-id` ou `xxx`; `placeholder` gera aviso e permite o build. Detalhes em `docs/cms.md`.
 
 ### Gotchas
 

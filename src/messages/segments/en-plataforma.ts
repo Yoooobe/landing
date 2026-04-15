@@ -68,17 +68,17 @@ export const enPlataforma = {
     titleGradient: "heart",
     titleAfter: " of engagement.",
     body:
-      "Use 4unik as your native gamification and engagement layer or connect external platforms. Goals, internal actions, recognition, and challenges become points, campaigns, and redemption pages inside the corporate store.",
+      "Run 4unik as your points and campaigns engine—or plug in a platform you already use. Either way, rewards land in the same corporate store and redemption flow.",
     cards: [
       {
         title: "Campaigns with dedicated pages",
         body:
-          "Publish dedicated redemption experiences for hackathons, internal challenges, onboarding flows, and performance goals with their own identity, catalog, and timing.",
+          "Spin up branded pages for hackathons, sales targets, onboarding, or internal challenges—each with its own catalog and timeframe.",
       },
       {
         title: "Native engine or integrations",
         body:
-          "4unik can receive events from other engagement platforms or run the full mechanic itself with rules, wallet, and redemption in one flow.",
+          "Ingest events from other tools or run rules, wallet, and redemption fully on 4unik—one clean flow, fewer workarounds.",
       },
     ],
     flowTitle: "Logical flow (autonomous events)",

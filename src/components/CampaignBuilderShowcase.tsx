@@ -18,11 +18,11 @@ type Step = {
 const STEPS: Step[] = [
   {
     number: "01",
-    title: "Identidade da campanha",
-    desc: "Crie a página da campanha de resgate com nome, slug, cores e contexto da ação. Pode ser uma iniciativa para hackathons, desafios internos, onboarding ou metas específicas.",
-    tag: "Identidade",
+    title: "Moeda própria da empresa",
+    desc: "Defina nome singular e plural, abreviação e símbolo da moeda virtual. Cada loja pode usar terminologia alinhada à marca — pontos, brents, créditos — com preview em tempo real para colaboradores.",
+    tag: "Moeda",
     tagColor: "#2563eb",
-    img: "/screens/admin-campaign-identity.webp",
+    img: "/screens/gamif-moeda.webp",
     accentColor: "#2563eb",
   },
   {

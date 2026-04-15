@@ -12,6 +12,8 @@ export type HeroBlockDoc = {
 export type SeoDoc = {
   metaTitle?: string;
   metaDescription?: string;
+  /** Texto para OG/Twitter; se omitido, `routeMetadata` usa `description` ou fallback. */
+  openGraphDescription?: string;
   openGraphImage?: SanityImageDoc | null;
 };
 
@@ -105,6 +107,31 @@ export type PortableTextBlock = {
   listItem?: "bullet" | "number";
 };
 
+/** Imagem inline no corpo do blog (Portable Text + tipo `image`). */
+export type PortableTextImageBlock = {
+  _key?: string;
+  _type: "image";
+  asset?: SanityImageDoc["asset"];
+  alt?: string;
+};
+
+export type BlogCtaVariant = "feature" | "demo" | "platform";
+
+/** Bloco CTA embutido no corpo do post (`blogCta`). */
+export type BlogCtaBlock = {
+  _key?: string;
+  _type: "blogCta";
+  variant?: BlogCtaVariant;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  featureImage?: SanityImageDoc | null;
+};
+
+export type BlogPostBodyItem = PortableTextBlock | PortableTextImageBlock | BlogCtaBlock;
+
 export type BlogPostListItem = {
   _id: string;
   title: string;
@@ -122,7 +149,7 @@ export type BlogPostListItem = {
 };
 
 export type BlogPostDoc = BlogPostListItem & {
-  body?: PortableTextBlock[];
+  body?: BlogPostBodyItem[];
   relatedKeywords?: string[];
   seo?: SeoDoc | null;
 };

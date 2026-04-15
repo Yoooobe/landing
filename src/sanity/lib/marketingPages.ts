@@ -306,7 +306,7 @@ function homeBlocks(
           title: stats.bento.card2.title,
           description: stats.bento.card2.body,
           icon: "target",
-          href: `${BASE_PATH}${locale === "en" ? "/en/gamificacao" : "/gamificacao"}`,
+          href: `${BASE_PATH}${locale === "en" ? "/en/plataforma/motor-gamificacao" : "/plataforma/motor-gamificacao"}`,
         },
         {
           title: stats.bento.card3.title,
@@ -354,7 +354,7 @@ function homeBlocks(
       body: portableTextParagraph("platform-campaigns-body", stats.platformTabs.campanhas.body),
       bullets: [...stats.platformTabs.campanhas.bullets],
       primaryLabel: stats.platformTabs.campanhas.cta,
-      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/gamificacao" : "/gamificacao"}`,
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/plataforma/motor-gamificacao" : "/plataforma/motor-gamificacao"}`,
       image: showcase?.platformTabs?.campaignsImage,
       imageSide: "right",
     },
@@ -1259,10 +1259,11 @@ async function resolveMarketingPage(
 }
 
 function pageSeo(page: MarketingPageDoc | null, fallback: PageSeoCopy): PageSeoCopy {
+  const ogFromCms = page?.seo?.openGraphDescription?.trim();
   return {
     title: page?.seo?.metaTitle?.trim() || fallback.title,
     description: page?.seo?.metaDescription?.trim() || fallback.description,
-    openGraphDescription: fallback.openGraphDescription,
+    openGraphDescription: ogFromCms || fallback.openGraphDescription,
   };
 }
 

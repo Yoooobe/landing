@@ -6,6 +6,8 @@ Site em export estático (`output: "export"`). O `basePath` deriva de **`NEXT_PU
 
 **yoobe.co:** o domínio institucional **yoobe.co** e os HTML estáticos na raiz do repositório que o referenciam (canonical, OG, etc.) são um contexto à parte. Este fluxo de build e deploy **não** os altera; o export Next continua a ser servido em **GitHub Pages** na URL acima.
 
+**Checklist por rota (o que o Studio alimenta no site):** [`sanity-consumed-checklist.md`](sanity-consumed-checklist.md).
+
 ## 1. Acesso ao admin
 
 - **URL local:** `http://localhost:3000/landing/studio/`
@@ -76,7 +78,7 @@ O `basePath` do site e do Studio segue **`NEXT_PUBLIC_SITE_URL`** (ver [`src/lib
 | `logoCollection` | — | Mensagem | — |
 | `homeShowcaseMedia` | Sim (home) | URL `/` | Sim (mesmo `mediaKey` + `locale`) |
 | `platformShowcaseMedia` | Sim | URL `/plataforma/` | Sim (mesmo `pageKey`) |
-| `gamificacaoShowcaseMedia` | Sim | URL `/gamificacao/` | Sim (mesmo `mediaKey` + `locale`) |
+| `gamificacaoShowcaseMedia` | Sim | URL canónica `/plataforma/motor-gamificacao/` (preview no Studio alinha a esta rota) | Sim (mesmo `mediaKey` + `locale`) |
 | `apiIntegracoesShowcaseMedia` | Sim | URL `/api-integracoes/` | Sim (mesmo `mediaKey` + `locale`) |
 | `workvivoShowcaseMedia` | Sim | URL Workvivo | Sim (mesmo `mediaKey`) |
 
@@ -144,24 +146,90 @@ O Blog tem subseções no Sanity Studio para facilitar o gerenciamento editorial
 | featured | boolean | — | Destaca o post no topo da listagem |
 | coverImage | image | — | Com campo `alt` obrigatório para acessibilidade |
 | seo | object | — | `metaTitle`, `metaDescription`, `openGraphImage` |
-| body | Portable Text | — | Estilos: normal, h2, h3, blockquote, bullet |
+| body | Portable Text | — | Blocos de texto: normal, h2, h3, blockquote, listas com marcadores; **imagens inline** (`image` com `alt` e hotspot); **CTA inline** (`blogCta`) — ver secção abaixo |
 | relatedKeywords | string[] | — | Palavras-chave para SEO e conteúdo relacionado |
 | author | string | — | Nome do editor ou redator responsável |
 | tags | string[] (tags) | — | Labels finos: "OKRs", "NPS", "Recompensas", "Eventos"... |
 | aiGenerated | boolean | — | `true` quando gerado pelo agente de IA |
 | contentBrief | text | — | Brief ou prompt usado — apenas referência interna |
 
+#### CTA inline no corpo (`blogCta`)
+
+No **Conteúdo** do post, o editor pode inserir blocos **CTA inline** (tipo `blogCta`) em qualquer posição, para ligar o texto a uma **feature**, a um **agendamento de demo** ou à **plataforma** em geral.
+
+| Variante | Quando usar | Notas |
+|---|---|---|
+| **Feature** | O artigo menciona uma funcionalidade e queres um cartão com copy + botão + **imagem de ecrã** opcional | Preencher `featureImage` + `alt` quando possível; `eyebrow` opcional (ex.: «Destaque») |
+| **Demo / agendar** | Convite destacado a marcar demo (Calendly ou outro URL) | Layout centrado; URL típico de calendário externo |
+| **Plataforma (explorar)** | Faixa compacta com link para página da plataforma ou produto | Bom para fechar uma secção sem imagem |
+
+**Campos comuns (obrigatórios no Studio):** `variant`, **Título**, **Texto do botão**, **URL do botão**. Opcionais: `eyebrow`, `description`, e `featureImage` (só relevante para a variante Feature).
+
+O site renderiza estes blocos em [`src/components/BlogInlineCta.tsx`](../src/components/BlogInlineCta.tsx) a partir de [`src/components/PortableTextContent.tsx`](../src/components/PortableTextContent.tsx).
+
 **Fluxo de publicação de rascunho IA:**
 
-1. Agente gera o post → salvo com `aiGenerated: true`, sem `publishedAt`
-2. Editor acessa **Rascunhos IA** no Studio
-3. Revisa o conteúdo, ajusta título/excerpt/corpo
-4. Preenche `publishedAt` e clica em **Publicar**
+1. Agente gera o post → salvo com `aiGenerated: true`, sem `publishedAt` (salvo quando usar `--publish` no script). O comando `npm run generate:blog-posts` (ou `npx tsx scripts/generate-blog-posts.ts`) envia **capa** via upload de imagem (Unsplash por categoria) quando o Sanity aceita o asset; se falhar, o editor define `coverImage` manualmente no Studio. O mesmo comando **injeta três blocos `blogCta`** (plataforma, feature, demo) com URLs alinhadas à landing (`src/lib/blogLandingLinks.ts`), como no fallback.
+2. Editor acessa **Rascunhos IA** (ou a lista geral) no Studio
+3. Revisa factos, tom de voz, SEO, **secção “Como a 4unik ajuda” / listas** e imagens; ajusta título, excerpt e corpo
+4. Preenche `publishedAt` e clica em **Publicar** (ou usa `--publish` no script apenas após revisão humana)
 5. GitHub Actions detecta a publicação via webhook `sanity-publish` e reconstrói o site
 
 O frontend usa conteúdo do Sanity quando disponível e mantém fallback local (`src/lib/blogFallback.ts`) para o build continuar funcionando sem configuração do CMS.
 
-**Fallback local:** 5 posts PT + 4 posts EN com temas de engajamento, eventos e gamificação definidos em `src/lib/blogFallback.ts`.
+**Fallback local:** 7 posts PT + 7 posts EN (mesmos `slug` por idioma) com temas de engajamento, eventos e gamificação definidos em `src/lib/blogFallback.ts`, usados quando o Sanity não está configurado ou para completar campos vazios no merge.
+
+Os CTAs desses posts derivam URLs canónicas da landing via `blogLandingHref` em `src/lib/blogLandingLinks.ts` (respeita `basePath` e o prefixo `/en`); no Studio, convém espelhar os mesmos paths nos `blogCta` para consistência.
+
+#### Token de API para scripts do blog (escrita)
+
+Para **gerar posts** (`npm run generate:blog-posts`) ou **sincronizar o fallback** (`npm run sync:blog-fallback`), precisas de um token com permissão de **escrita** no dataset (criar/editar documentos e, em muitos fluxos, upload de imagens para a mediatheque).
+
+**Após alterar `src/lib/blogFallback.ts` ou `src/lib/blogLandingLinks.ts`:** corre `npm run sync:blog-fallback` (com token no `.env.local`) para o dataset refletir os mesmos CTAs nos `blogPost` com slug `1`–`7`. O CI (workflow **CI validate**) corre `tsc` e `npm run validate:blog-ctas` (confirma que os paths internos do mapa têm `page.tsx` em `src/app/(pt)/`).
+
+1. Abre [sanity.io/manage](https://www.sanity.io/manage) → o projeto → **API** → **Tokens** → **Add API token**.
+2. Dá um nome (ex.: `landing-blog-scripts`) e permissão **Editor** (ou superior, conforme a política da equipa).
+3. Coloca o valor em **`.env.local`** na raiz do repo (nunca em git — já está no `.gitignore`):
+
+```env
+NEXT_PUBLIC_SANITY_PROJECT_ID=seu_project_id
+NEXT_PUBLIC_SANITY_DATASET=production
+SANITY_API_TOKEN=sk...SeuToken...
+```
+
+Os scripts de blog aceitam **`SANITY_API_TOKEN`** ou **`SANITY_API_WRITE_TOKEN`** (o mesmo tipo de token; nomes diferentes por convenção no projeto). O `npm run seed:sanity` e outros scripts podem ainda aceitar `SANITY_AUTH_TOKEN` — ver a secção *Seed* (comando `npm run seed:sanity`) mais abaixo neste documento.
+
+**Segurança:** não partilhes o token em issues, chats ou CI em texto claro; em GitHub Actions usa **Secrets** se algum dia automatizares estes comandos.
+
+#### Sincronizar fallback → Sanity (posts já existentes)
+
+Depois de editar [`src/lib/blogFallback.ts`](../src/lib/blogFallback.ts), podes **empurrar** esse conteúdo para o dataset: o comando procura cada `blogPost` com `slug.current` igual a **`"1"` … `"7"`** e `locale` `pt` ou `en`, e faz **patch** (substitui `body`, excerpt, SEO, tags, `readTimeMinutes`, etc.). **Se esse slug ainda não existir, cria** o documento (`_id` estável `blogPost.sync.{locale}.{slug}`), porque o seed histórico em `sanity-seed-data` usa **outros slugs** (ex.: `guia-definitivo-gamificacao-rh-moderno`) — não são os mesmos posts.
+
+Por defeito também **reenvia a capa** (Unsplash do fallback → upload para assets), salvo com `--skip-cover`.
+
+**Pré-requisitos:** `.env.local` com projeto/dataset reais (não `placeholder`) e um dos tokens de escrita acima.
+
+```bash
+# Simular: sem .env válido lista só o fallback local; com .env completo podes validar antes do patch
+npm run sync:blog-fallback -- --dry-run
+
+# Aplicar: patch nos que existem; criar os que faltam com slug 1–7
+npm run sync:blog-fallback
+
+# Só português ou só inglês
+npm run sync:blog-fallback -- --locale pt
+npm run sync:blog-fallback -- --locale en
+
+# Só atualizar se já existir slug 1–7 (não cria documentos novos)
+npm run sync:blog-fallback -- --patch-only
+
+# Atualizar só texto/metadata, manter capa já no CMS
+npm run sync:blog-fallback -- --skip-cover
+```
+
+Os scripts carregam variáveis de **`.env.local`** automaticamente (mesmo padrão que `env:init` / desenvolvimento local).
+
+**Com `--dry-run`:** não altera o dataset. Sem `.env.local` válido (projeto/dataset/token), o comando só imprime uma listagem rápida a partir do fallback; com credenciais completas, imprime uma linha por post (slug + tamanho do corpo) sem chamadas de escrita à API.
 
 ---
 
@@ -173,17 +241,19 @@ O blog conta com dois mecanismos de geração automática de conteúdo:
 
 ```bash
 # Gerar 5 rascunhos em português
-node scripts/generate-blog-posts.mjs --count 5 --locale pt
+npm run generate:blog-posts -- --count 5 --locale pt
 
 # Gerar sobre um tópico específico
-node scripts/generate-blog-posts.mjs --topic "Como gamificar eventos com QR Codes" --category "Eventos & Brindes"
+npm run generate:blog-posts -- --topic "Como gamificar eventos com QR Codes" --category "Eventos & Brindes"
 
 # Testar sem publicar
-node scripts/generate-blog-posts.mjs --count 3 --dry-run
+npm run generate:blog-posts -- --count 3 --dry-run
 
 # Gerar e publicar diretamente
-node scripts/generate-blog-posts.mjs --count 2 --publish
+npm run generate:blog-posts -- --count 2 --publish
 ```
+
+O script pede ao modelo **12–18 blocos** no `body`, incluindo listas com `listItem: "bullet"` e uma secção H2 **“Como a 4unik ajuda neste cenário”** (ou equivalente em inglês), com bullets que ligam funcionalidades da plataforma ao tema do post. Em publicação no Sanity, tenta ainda **anexar capa** por categoria (Unsplash → upload de asset).
 
 **Variáveis de ambiente necessárias:**
 
@@ -191,7 +261,7 @@ node scripts/generate-blog-posts.mjs --count 2 --publish
 OPENAI_API_KEY=sk-...
 NEXT_PUBLIC_SANITY_PROJECT_ID=...
 NEXT_PUBLIC_SANITY_DATASET=production
-SANITY_API_TOKEN=...          # token com permissão de escrita
+SANITY_API_TOKEN=...          # ou SANITY_API_WRITE_TOKEN — ver «Token de API para scripts do blog» acima
 ```
 
 #### MCP Tool (para uso em agentes de IA)
@@ -381,7 +451,7 @@ Hoje esse documento alimenta principalmente:
 - previews centrais das integrações `Workvivo` e `Beehome`
 - mockup técnico da seção `HowItWorks`
 
-**Fallbacks em JSX:** quando não há URL válida de asset, vários blocos continuam a renderizar mockups construídos em código (por exemplo `PlatformMockupScreens`, carrosséis de ecrãs). Isto é intencional: o Studio não duplica esses mockups como imagens fixas.
+**Fallbacks:** quando não há URL válida de asset no Sanity, vários blocos usam screenshots estáticos em `/public/screens/` (WebP) ou o `FeatureScreensCarousel` com esses assets. O hero da página Plataforma e secções de gamificação/inteligência também usam essas capturas — não há mais o módulo `PlatformMockupScreens` (mockups JSX removidos).
 
 Fluxo recomendado:
 
@@ -452,7 +522,7 @@ Fluxo recomendado:
 
 1. Crie um documento com `mediaKey = gamificacao-default`
 2. Faça upload das imagens de telas do sistema nas seções desejadas
-3. A página `/gamificacao/` busca automaticamente este documento pelo `mediaKey`
+3. A página canónica `/plataforma/motor-gamificacao/` busca automaticamente este documento pelo `mediaKey` (a rota `/gamificacao/` existe só como redireccionamento legado para o motor)
 4. Se uma imagem não estiver preenchida, o card mantém o ícone/emoji atual como fallback
 5. Após publicar, faz rebuild para o export estático incorporar o novo documento
 
@@ -472,7 +542,7 @@ Documento que centraliza todos os uploads de imagens para a página de API e Int
 Fluxo recomendado:
 
 1. Crie um documento com `mediaKey = api-integracoes-default`
-2. Para as integrações, preencha `platformName` com exatamente o nome da plataforma (`Workvivo`, `Beehome`, `Humand`) para o matching automático
+2. Para as integrações, preencha `platformName` com exatamente o nome da plataforma (`Workvivo`, `Beehome`) para o matching automático
 3. Faça upload dos logos e previews em `integrations.platforms[]`
 4. A página `/api-integracoes/` busca automaticamente este documento pelo `mediaKey`
 5. Se uma imagem não estiver preenchida, o card mantém o ícone/letra atual como fallback
@@ -708,10 +778,9 @@ Sem Sanity configurado:
 
 ## 5.2 Gamificacao no frontend
 
-Rotas ativas:
+**URL canónica (conteúdo da oferta):** `/plataforma/motor-gamificacao/` (PT) e `/en/plataforma/motor-gamificacao/` (EN) — `src/app/(pt)/plataforma/motor-gamificacao/page.tsx` e `src/app/(en)/en/plataforma/motor-gamificacao/page.tsx`.
 
-- `src/app/(pt)/gamificacao/page.tsx`
-- `src/app/(en)/en/gamificacao/page.tsx`
+**Legado:** `src/app/(pt)/gamificacao/page.tsx` e `src/app/(en)/en/gamificacao/page.tsx` apenas redireccionam no cliente para o motor (links antigos e bookmarks).
 
 Com Sanity configurado:
 
@@ -730,10 +799,8 @@ Rotas ativas:
 
 - `src/app/(pt)/plataforma/logistica-integrada/page.tsx`
 - `src/app/(pt)/plataforma/loja-resgate/page.tsx`
-- `src/app/(pt)/plataforma/motor-gamificacao/page.tsx`
 - `src/app/(en)/en/plataforma/logistica-integrada/page.tsx`
 - `src/app/(en)/en/plataforma/loja-resgate/page.tsx`
-- `src/app/(en)/en/plataforma/motor-gamificacao/page.tsx`
 
 Com ou sem Sanity configurado:
 

@@ -1,13 +1,12 @@
+// SCREENSHOTS: Use imagens reais de /public/screens/ — NÃO substituir por SVG, JSX mockup ou ilustrações de cms-seed/
 "use client";
 
 import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
-import {
-  AdminCampaignIdentityMockup,
-  AdminDashboardMockup,
-} from "@/components/PlatformMockupScreens";
 import UnikWordmark from "@/components/UnikWordmark";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function PlataformaHero() {
   const { m } = useLocaleMessages();
@@ -35,8 +34,15 @@ export default function PlataformaHero() {
             gestor.4unik.io
           </span>
         </div>
-        <div className="overflow-hidden bg-[#111827]" style={{ aspectRatio: "4/3" }}>
-          <AdminDashboardMockup />
+        <div className="relative overflow-hidden bg-[#111827]" style={{ aspectRatio: "4/3" }}>
+          <Image
+            src={withBasePath("/screens/admin-dashboard.webp")}
+            alt={h.titleLine1}
+            fill
+            className="object-cover object-top"
+            sizes="240px"
+            priority
+          />
         </div>
         <div className="flex items-center justify-between bg-[#0d1424]/95 px-3 py-1.5">
           <span className="text-[0.55rem] font-semibold text-brand-orange">Dashboard</span>
@@ -62,8 +68,14 @@ export default function PlataformaHero() {
             Campanha
           </span>
         </div>
-        <div className="overflow-hidden bg-[#111827]" style={{ aspectRatio: "4/3" }}>
-          <AdminCampaignIdentityMockup />
+        <div className="relative overflow-hidden bg-[#111827]" style={{ aspectRatio: "4/3" }}>
+          <Image
+            src={withBasePath("/screens/admin-campaign-identity.webp")}
+            alt={h.titleGradient}
+            fill
+            className="object-cover object-top"
+            sizes="220px"
+          />
         </div>
         <div className="flex items-center justify-between bg-[#0d1424]/95 px-3 py-1.5">
           <span className="text-[0.55rem] font-semibold text-unik-blue-soft">

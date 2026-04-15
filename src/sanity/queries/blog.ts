@@ -74,6 +74,17 @@ export const blogPostBySlugQuery = groq`
         _key,
         _type,
         href
+      },
+      asset->{
+        _ref,
+        url
+      },
+      featureImage{
+        alt,
+        asset->{
+          _ref,
+          url
+        }
       }
     }
   }

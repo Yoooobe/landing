@@ -68,17 +68,17 @@ export const ptPlataforma = {
     titleGradient: "coração",
     titleAfter: " do engajamento.",
     body:
-      "Use a 4unik como motor nativo de gamificação e engajamento ou conecte plataformas externas. Metas, ações internas, reconhecimento e desafios viram pontos, campanhas e páginas de resgate dentro da loja corporativa.",
+      "Você escolhe: usar a 4unik como motor de pontos e campanhas ou conectar uma ferramenta que já tem. No fim, tudo converge na loja corporativa e no resgate.",
     cards: [
       {
         title: "Campanhas com páginas próprias",
         body:
-          "Publique experiências específicas para hackathons, desafios corporativos, onboarding e metas comerciais com identidade, catálogo e vigência próprios.",
+          "Crie páginas com a cara da campanha: hackathon, meta de vendas, onboarding ou desafio interno, com catálogo e prazo definidos por você.",
       },
       {
         title: "Integração ou motor nativo",
         body:
-          "A 4unik pode receber eventos de outras plataformas de gamificação e engajamento ou operar a mecânica inteira com regras, carteira e resgate no mesmo fluxo.",
+          "Receba eventos de outras plataformas ou rode regras, carteira e resgate direto na 4unik — um fluxo só, sem complicação extra.",
       },
     ],
     flowTitle: "Fluxo Lógico (Eventos Autônomos)",

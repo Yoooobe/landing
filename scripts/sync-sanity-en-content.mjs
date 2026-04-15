@@ -381,22 +381,6 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
             "Integrated surveys and feedback",
           ],
         },
-        {
-          name: "Humand",
-          by: "Corporate Super App",
-          logo: "H",
-          badge: "Ready API",
-          color: "from-yoobe-neon-pink/20",
-          description:
-            "A corporate super app with communication, HR, recognition, and workflows. Includes documented REST APIs and real-time webhooks.",
-          features: [
-            "Swagger-based REST API",
-            "Real-time webhooks",
-            "Native recognition programs",
-            "SAP and Workday integrations",
-            "Zapier for 5,000+ apps",
-          ],
-        },
       ],
       extraIntegrations: [
         "Slack",
@@ -765,7 +749,7 @@ export function buildCurrentEnglishMenus() {
               _key: "gamification",
               label: enNav.gamification.title,
               description: enNav.gamification.desc,
-              href: "/gamificacao",
+              href: "/plataforma/motor-gamificacao",
               badge: enNav.gamification.badge,
               icon: "gamification",
             },

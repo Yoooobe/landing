@@ -13,7 +13,7 @@ function appBasePrefix(): string {
 function showcaseTypeUrls(): Record<string, string> {
   const root = appBasePrefix();
   return {
-    gamificacaoShowcaseMedia: `${root}/gamificacao/`,
+    gamificacaoShowcaseMedia: `${root}/plataforma/motor-gamificacao/`,
     apiIntegracoesShowcaseMedia: `${root}/api-integracoes/`,
     platformShowcaseMedia: `${root}/plataforma/`,
     homeShowcaseMedia: `${root}/`,
@@ -34,9 +34,13 @@ function getPreviewUrl(
     const path =
       slug === "home"
         ? `${bp}/`
-        : locale === "en"
-          ? `${bp}/en/${slug}/`
-          : `${bp}/${slug}/`;
+        : slug === "gamificacao"
+          ? locale === "en"
+            ? `${bp}/en/plataforma/motor-gamificacao/`
+            : `${bp}/plataforma/motor-gamificacao/`
+          : locale === "en"
+            ? `${bp}/en/${slug}/`
+            : `${bp}/${slug}/`;
     return `${DEV_BASE}${path}`;
   }
 

@@ -368,7 +368,7 @@ export const enGamificacaoPage = {
       },
       {
         q: "What integrations are supported?",
-        a: "4Unik integrates via REST API with Workvivo, Beehome, Humand, Slack, Microsoft Teams, HRIS platforms such as Workday and BambooHR, ERPs, and more, with real-time webhooks and OAuth 2.0.",
+        a: "4Unik integrates via REST API with Workvivo, Beehome, Slack, Microsoft Teams, HRIS platforms such as Workday and BambooHR, ERPs, and more, with real-time webhooks and OAuth 2.0.",
       },
       {
         q: "How do I calculate gamification ROI?",

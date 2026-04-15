@@ -1,13 +1,12 @@
 import GamificationPageSections from "@/components/GamificationPageSections";
 import { LocaleMessagesProvider } from "@/contexts/LocaleMessagesContext";
-import { enPlatformFeaturePages } from "@/content/platformFeaturePages";
-import { buildRoutePageMetadata } from "@/lib/seo/routeMetadata";
+import { buildMarketingPageMetadata } from "@/sanity/lib/marketingPages";
 import { getResolvedGamificacaoContent } from "@/sanity/lib/gamificacao";
 import { getGamificacaoShowcaseMedia } from "@/sanity/lib/gamificacaoShowcase";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildRoutePageMetadata(enPlatformFeaturePages.motor.seo, {
+  return buildMarketingPageMetadata("en", "gamificacao", {
     canonicalPath: "/en/plataforma/motor-gamificacao/",
     languages: {
       "pt-BR": "/plataforma/motor-gamificacao/",

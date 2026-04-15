@@ -2,6 +2,7 @@
 
 import FeatureScreensCarousel from "@/components/FeatureScreensCarousel";
 import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
+import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
 import { Trophy, Star, Zap } from "lucide-react";
@@ -16,6 +17,7 @@ export default function GamificationHero({
   content: ResolvedGamificacaoContent["hero"];
   showcaseImage?: SanityImageDoc | null;
 }) {
+  const { locale } = useLocaleMessages();
   const showcaseImageUrl = getSanityImageUrl(showcaseImage);
   return (
     <section className="hero-theme-section relative overflow-hidden bg-brand-navy-dark pb-24 pt-32">
@@ -193,7 +195,7 @@ export default function GamificationHero({
           transition={{ delay: 0.55, duration: 0.8 }}
           className="mx-auto mt-16 hidden max-w-3xl lg:block"
         >
-          <FeatureScreensCarousel variant="admin" intervalMs={4200} />
+          <FeatureScreensCarousel variant="gamification" locale={locale} intervalMs={4200} />
         </motion.div>
       </div>
     </section>

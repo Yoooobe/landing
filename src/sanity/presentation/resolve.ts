@@ -92,7 +92,7 @@ export const resolve: PresentationPluginOptions["resolve"] = {
         locations: [
           {
             title: doc?.title || "Gamificação showcase",
-            href: withBasePath("/gamificacao/"),
+            href: withBasePath("/plataforma/motor-gamificacao/"),
           },
         ],
       }),

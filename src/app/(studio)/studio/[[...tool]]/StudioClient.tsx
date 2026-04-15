@@ -1,11 +1,27 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { NextStudio } from "next-sanity/studio";
 import config from "@/sanity/studioConfig";
 
 import StudioErrorBoundary from "./StudioErrorBoundary";
+
+/**
+ * Sanity Studio (styled-components) não deve SSR: hashes de classe diferem entre servidor e cliente
+ * e causam hydration mismatch. Só montar no browser.
+ */
+const NextStudio = dynamic(
+  () => import("next-sanity/studio").then((mod) => mod.NextStudio),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="fixed inset-0 flex items-center justify-center bg-zinc-950 text-sm text-zinc-400">
+        A carregar o Studio…
+      </div>
+    ),
+  },
+);
 
 const MARKETING_PAGE_DOCUMENT_ID_RE = /^marketingPage\.(pt|en)\.[^/;]+$/;
 

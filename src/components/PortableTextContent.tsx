@@ -1,9 +1,26 @@
-import type { PortableTextBlock, PortableTextMarkDefinition, PortableTextSpan } from "@/sanity/lib/types";
+/* eslint-disable @next/next/no-img-element */
+import BlogInlineCta from "@/components/BlogInlineCta";
+import { getSanityImageUrl } from "@/sanity/lib/image";
+import type {
+  BlogCtaBlock,
+  BlogPostBodyItem,
+  PortableTextBlock,
+  PortableTextMarkDefinition,
+  PortableTextSpan,
+} from "@/sanity/lib/types";
 import type { ReactNode } from "react";
 
 type Props = {
-  blocks?: PortableTextBlock[];
+  blocks?: BlogPostBodyItem[];
 };
+
+function isTextBlock(item: BlogPostBodyItem): item is PortableTextBlock {
+  return item._type === "block";
+}
+
+function isBlogCtaBlock(item: BlogPostBodyItem): item is BlogCtaBlock {
+  return item._type === "blogCta";
+}
 
 function renderSpan(
   span: PortableTextSpan,
@@ -45,7 +62,7 @@ function renderBlock(block: PortableTextBlock) {
   }
 
   if (block.style === "h3") {
-    return <h3 className="mt-10 text-2xl font-bold font-heading text-white">{content}</h3>;
+    return <h3 className="mt-10 text-xl font-bold font-heading text-white md:text-2xl">{content}</h3>;
   }
 
   if (block.style === "blockquote") {
@@ -63,14 +80,46 @@ export default function PortableTextContent({ blocks = [] }: Props) {
   const groups: ReactNode[] = [];
 
   for (let index = 0; index < blocks.length; index += 1) {
-    const block = blocks[index];
+    const item = blocks[index];
+
+    if (item._type === "image") {
+      const url = getSanityImageUrl({ asset: item.asset ?? undefined, alt: item.alt });
+      groups.push(
+        <figure
+          key={item._key || `img-${index}`}
+          className="my-8 overflow-hidden rounded-2xl border border-white/10"
+        >
+          {url ? (
+            <img
+              src={url}
+              alt={item.alt || ""}
+              className="h-auto max-h-[480px] w-full object-cover"
+            />
+          ) : null}
+        </figure>,
+      );
+      continue;
+    }
+
+    if (isBlogCtaBlock(item)) {
+      groups.push(<BlogInlineCta key={item._key || `cta-${index}`} block={item} />);
+      continue;
+    }
+
+    if (!isTextBlock(item)) {
+      continue;
+    }
+
+    const block = item;
 
     if (block.listItem === "bullet" || block.listItem === "number") {
       const items: PortableTextBlock[] = [];
       let offset = index;
 
-      while (blocks[offset]?.listItem === block.listItem) {
-        items.push(blocks[offset]);
+      while (offset < blocks.length) {
+        const b = blocks[offset];
+        if (!isTextBlock(b) || b.listItem !== block.listItem) break;
+        items.push(b);
         offset += 1;
       }
 
@@ -82,10 +131,10 @@ export default function PortableTextContent({ blocks = [] }: Props) {
 
       groups.push(
         <ListTag key={block._key || `list-${index}`} className={listClassName}>
-          {items.map((item, itemIndex) => (
-            <li key={item._key || `item-${itemIndex}`}>
-              {(item.children || []).map((span, spanIndex) =>
-                renderSpan(span, item.markDefs, `${item._key || "li"}-${spanIndex}`),
+          {items.map((listBlock, itemIndex) => (
+            <li key={listBlock._key || `item-${itemIndex}`}>
+              {(listBlock.children || []).map((span, spanIndex) =>
+                renderSpan(span, listBlock.markDefs, `${listBlock._key || "li"}-${spanIndex}`),
               )}
             </li>
           ))}

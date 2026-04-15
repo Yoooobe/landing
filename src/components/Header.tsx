@@ -200,12 +200,6 @@ export default function Header() {
             icon: "overview",
           },
           {
-            label: m.nav.motor.title,
-            description: m.nav.motor.desc,
-            href: "/plataforma/motor-gamificacao/",
-            icon: "gamification",
-          },
-          {
             label: m.nav.wallets.title,
             description: m.nav.wallets.desc,
             href: "/plataforma/controle-carteiras/",

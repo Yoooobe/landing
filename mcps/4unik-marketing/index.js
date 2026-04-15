@@ -687,7 +687,7 @@ JSON esperado:
                   published: false,
                   note: "Para publicar no Sanity, defina publish_to_sanity: true e configure SANITY_API_TOKEN.",
                 },
-                cliEquivalent: `node scripts/generate-blog-posts.mjs --topic "${topic}" --category "${category}" --locale ${locale}`,
+                cliEquivalent: `npm run generate:blog-posts -- --topic "${topic}" --category "${category}" --locale ${locale}`,
               },
               null,
               2,

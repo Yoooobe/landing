@@ -221,22 +221,6 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
             "Pesquisas e feedback integrados",
           ],
         },
-        {
-          name: "Humand",
-          by: "Corporate Super App",
-          logo: "H",
-          badge: "API Pronta",
-          color: "from-yoobe-neon-pink/20",
-          description:
-            "App corporativo completo com comunicacao, RH, reconhecimento e processos. API RESTful documentada com Swagger e webhooks em tempo real.",
-          features: [
-            "API RESTful com Swagger",
-            "Webhooks em tempo real",
-            "Recognition programs nativo",
-            "Integracao SAP, Workday",
-            "Zapier para +5.000 apps",
-          ],
-        },
       ],
       extraIntegrations: [
         "Slack",
@@ -414,22 +398,6 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
             "Recognition campaigns",
             "Birthday celebrations",
             "Integrated surveys and feedback",
-          ],
-        },
-        {
-          name: "Humand",
-          by: "Corporate Super App",
-          logo: "H",
-          badge: "Ready API",
-          color: "from-yoobe-neon-pink/20",
-          description:
-            "A corporate super app with communication, HR, recognition, and workflows. Includes documented REST APIs and real-time webhooks.",
-          features: [
-            "Swagger-based REST API",
-            "Real-time webhooks",
-            "Native recognition programs",
-            "SAP and Workday integrations",
-            "Zapier for 5,000+ apps",
           ],
         },
       ],
@@ -1205,7 +1173,7 @@ function buildHomeMarketingPageContent(locale) {
           title: stats.bento.card2.title,
           description: stats.bento.card2.body,
           icon: "target",
-          href: isEn ? "/en/gamificacao" : "/gamificacao",
+          href: isEn ? "/en/plataforma/motor-gamificacao" : "/plataforma/motor-gamificacao",
         },
         {
           title: stats.bento.card3.title,
@@ -1253,7 +1221,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [stats.platformTabs.campanhas.body],
       bullets: stats.platformTabs.campanhas.bullets,
       primaryLabel: stats.platformTabs.campanhas.cta,
-      primaryHref: isEn ? "/en/gamificacao" : "/gamificacao",
+      primaryHref: isEn ? "/en/plataforma/motor-gamificacao" : "/plataforma/motor-gamificacao",
       imagePath: "public/cms-seed/home-platform-campaigns.svg",
       imageAlt: isEn
         ? "Campaign management setup on 4Unik"

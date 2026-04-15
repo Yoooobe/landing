@@ -1,6 +1,10 @@
 import type { Locale } from "@/lib/locale";
 import { getFallbackBlogPostBySlug, getFallbackBlogPosts } from "@/lib/blogFallback";
 import { getSanityClient } from "@/sanity/lib/client";
+import {
+  bodyHasBlogCta,
+  injectFallbackBlogCtas,
+} from "@/sanity/lib/mergeBlogPostBody";
 import type { BlogPostDoc, BlogPostListItem } from "@/sanity/lib/types";
 import {
   blogPostBySlugQuery,
@@ -23,13 +27,19 @@ function hasCoverAsset(cover: BlogPostDoc["coverImage"]): boolean {
   return Boolean(url || ref);
 }
 
+function mergeBlogBody(cms: BlogPostDoc, fb: BlogPostDoc): BlogPostDoc["body"] {
+  if (isPortableBodyEmpty(cms.body)) return fb.body;
+  if (bodyHasBlogCta(cms.body)) return cms.body;
+  return injectFallbackBlogCtas(cms.body!, fb.body, cms.locale);
+}
+
 function mergeCmsPostWithFallback(cms: BlogPostDoc, fb: BlogPostDoc): BlogPostDoc {
   return {
     ...fb,
     ...cms,
     title: cms.title?.trim() || fb.title,
     excerpt: cms.excerpt?.trim() || fb.excerpt,
-    body: isPortableBodyEmpty(cms.body) ? fb.body : cms.body,
+    body: mergeBlogBody(cms, fb),
     slug: cms.slug || fb.slug,
     category: cms.category?.trim() || fb.category,
     coverImage: hasCoverAsset(cms.coverImage) ? cms.coverImage : fb.coverImage,

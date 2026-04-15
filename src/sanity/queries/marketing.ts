@@ -9,7 +9,8 @@ const marketingPageProjection = groq`
   summary,
   seo{
     metaTitle,
-    metaDescription
+    metaDescription,
+    openGraphDescription
   },
   content[]{
     ...,

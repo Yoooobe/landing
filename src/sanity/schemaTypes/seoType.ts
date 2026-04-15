@@ -18,6 +18,14 @@ export const seoType = defineType({
       validation: (Rule) => Rule.max(160).warning('Descrições muito longas são cortadas')
     }),
     defineField({
+      name: 'openGraphDescription',
+      title: 'Descrição Open Graph / Twitter',
+      description:
+        'Opcional. Usada em partilhas sociais (OG/Twitter). Se vazio, o site usa a meta description ou o fallback em código.',
+      type: 'text',
+      validation: (Rule) => Rule.max(200).warning('Textos muito longos podem ser truncados nas previews'),
+    }),
+    defineField({
       name: 'openGraphImage',
       title: 'Imagem de Compartilhamento (Open Graph)',
       type: 'image',

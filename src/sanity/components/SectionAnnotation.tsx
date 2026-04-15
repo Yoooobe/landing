@@ -145,7 +145,7 @@ function PageWireframe({
 // ---------- page URL labels -----------------------------------------------
 
 const PAGE_URL: Record<string, string> = {
-  gamificacao: "/gamificacao/",
+  gamificacao: "/plataforma/motor-gamificacao/",
   api:         "/api-integracoes/",
   home:        "/",
   plataforma:  "/plataforma/",
