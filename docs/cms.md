@@ -859,7 +859,7 @@ O PAT precisa de scope `repo` ou permissão equivalente.
 Secrets recomendados em **Settings → Secrets and variables → Actions**:
 
 - **Nome do secret = nome da variável de ambiente** (ex.: `NEXT_PUBLIC_SANITY_PROJECT_ID`). O **valor** é o Project ID (ex.: `hin8ivz0`). Não cries um secret chamado `hin8ivz0` — o workflow só lê chaves com o nome exacto abaixo; caso contrário o build fica sem ID/dataset embutidos.
-- `NEXT_PUBLIC_SANITY_PROJECT_ID` — **recomendado** o ID real do projeto (ex. `hin8ivz0`). No CI, o workflow **rejeita** os textos literais `your-project-id` e `xxx`. O valor `placeholder` é aceite com **aviso** (build corre; o Studio em produção pode falhar). Vazio também gera aviso.
+- `NEXT_PUBLIC_SANITY_PROJECT_ID` — **recomendado** o ID real do projeto (ex. `hin8ivz0`). No CI, o workflow **rejeita** os textos literais `your-project-id` e `xxx`. O valor `placeholder` é aceite com **aviso** (build corre; o Studio em produção pode falhar). Vazio também gera aviso. **Typo frequente:** `hin8lvz8` (L e 8 no fim) em vez de `hin8ivz0` (i e zero) — o Studio em produção chama `https://hin8lvz8.api.sanity.io` e falha com erro de rede; confirma o ID em [sanity.io/manage](https://www.sanity.io/manage).
 - `NEXT_PUBLIC_SANITY_DATASET` — normalmente `production`
 - opcional: `NEXT_PUBLIC_SANITY_API_VERSION`
 - opcional: `NEXT_PUBLIC_GA_ID`
