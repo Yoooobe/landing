@@ -200,32 +200,39 @@ export const structure: StructureResolver = (S) =>
         .id("marketingPage")
         .schemaType("marketingPage")
         .child(
-          marketingPageDocumentList(S, {
-            id: "marketingPage",
-            title: "Landing Pages de Marketing",
-          }),
-        ),
-      S.listItem()
-        .title("Landing pages PT")
-        .id("marketingPage-pt")
-        .schemaType("marketingPage")
-        .child(
-          marketingPageDocumentList(S, {
-            id: "marketingPage-pt",
-            title: "Landing pages PT",
-            locale: "pt",
-          }),
-        ),
-      S.listItem()
-        .title("Landing pages EN")
-        .id("marketingPage-en")
-        .schemaType("marketingPage")
-        .child(
-          marketingPageDocumentList(S, {
-            id: "marketingPage-en",
-            title: "Landing pages EN",
-            locale: "en",
-          }),
+          S.list()
+            .title("Landing Pages de Marketing")
+            .items([
+              S.listItem()
+                .title("Todas")
+                .id("marketingPage-all")
+                .child(
+                  marketingPageDocumentList(S, {
+                    id: "marketingPage",
+                    title: "Todas as landing pages",
+                  }),
+                ),
+              S.listItem()
+                .title("Português (PT)")
+                .id("marketingPage-locale-pt")
+                .child(
+                  marketingPageDocumentList(S, {
+                    id: "marketingPage-pt",
+                    title: "Landing pages PT",
+                    locale: "pt",
+                  }),
+                ),
+              S.listItem()
+                .title("English (EN)")
+                .id("marketingPage-locale-en")
+                .child(
+                  marketingPageDocumentList(S, {
+                    id: "marketingPage-en",
+                    title: "Landing pages EN",
+                    locale: "en",
+                  }),
+                ),
+            ]),
         ),
       S.listItem()
         .title("Estratégias de marketing")

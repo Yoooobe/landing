@@ -2,6 +2,8 @@
 
 **Configuração local:** modelo em [`.env.example`](../.env.example) — `npm run env:init` cria `.env.local`; `npm run env:check` confirma ID/dataset. Os mesmos nomes (sem o prefixo de ficheiro) devem existir como **Secrets** no GitHub para o [deploy](../.github/workflows/deploy.yml).
 
+**Deploy após publicar no Sanity (sem push manual):** configura um webhook com projeção GROQ para a API `repository_dispatch` do GitHub — passo a passo em [sanity-github-webhook.md](sanity-github-webhook.md). O workflow já escuta o tipo `sanity-publish`.
+
 Site em export estático (`output: "export"`). O `basePath` deriva de **`NEXT_PUBLIC_SITE_URL`** (ver [`src/lib/publicSite.ts`](../src/lib/publicSite.ts) e [`src/lib/parsePublicSiteUrl.ts`](../src/lib/parsePublicSiteUrl.ts); fallback em [`config/public-site.json`](../config/public-site.json)). Em desenvolvimento com o fallback, **`http://localhost:3000/`** redireciona para **`/landing/`**; migração de domínio: [`site-url-migration.md`](site-url-migration.md).
 
 **yoobe.co:** o domínio institucional **yoobe.co** e os HTML estáticos na raiz do repositório que o referenciam (canonical, OG, etc.) são um contexto à parte. Este fluxo de build e deploy **não** os altera; o export Next continua a ser servido em **GitHub Pages** na URL acima.
@@ -13,6 +15,25 @@ Site em export estático (`output: "export"`). O `basePath` deriva de **`NEXT_PU
 - **URL local:** `http://localhost:3000/landing/studio/`
 - **URL produção:** `https://yoooobe.github.io/landing/studio/`
 - **Autenticação:** o admin é o `Sanity Studio`. O acesso é feito com utilizadores convidados no projeto Sanity.
+
+### Ambiente local (primeira vez)
+
+1. `npm run env:init` (se ainda não existir `.env.local`) e preencher `NEXT_PUBLIC_SANITY_PROJECT_ID` + `NEXT_PUBLIC_SANITY_DATASET=production` (ver [`.env.example`](../.env.example)).
+2. `npm run env:check` — deve terminar com *OK*.
+3. `npm run sanity:cors` — regista `http://localhost:3000` no projeto Sanity (só na primeira vez ou após mudar de máquina).
+4. `npm run dev` → abrir `http://localhost:3000/landing/studio/`.
+
+Com `NEXT_PUBLIC_SITE_URL=http://localhost:3000/landing` em `.env.local`, o `basePath` local espelha o GitHub Pages.
+
+### URLs profundas do Studio (bookmarks e links partilhados)
+
+O export estático (`output: "export"`) só gera HTML para `/studio/`, `/studio/structure/` e `/studio/presentation/`. Rotas mais profundas (com `;` no path, ex. documento `marketingPage.pt.api-integracoes`) **não** têm ficheiro próprio em `out/`.
+
+- **Entrada recomendada:** abrir `…/landing/studio/` e navegar em **Landing pages** → filtro PT/EN ou *Todas* → documento (ex. *api-integracoes*).
+- **Bookmark canónico** (após abrir o doc uma vez no Studio):  
+  `https://yoooobe.github.io/landing/studio/structure/marketingPage;marketingPage.pt.api-integracoes/`  
+  (trailing slash alinhado ao Next).
+- **Links antigos** com painel `marketingPage-pt;…` ou `marketingPage-en;…`: em produção, o `out/404.html` gerado por `scripts/patch-studio-spa-fallback.mjs` (no fim de `npm run build`) guarda o path e redireciona para a shell do Studio; o cliente em `StudioClient` restaura e normaliza para `marketingPage;{id}`.
 
 Importante:
 
@@ -452,19 +473,17 @@ O copy base ainda parte dos segmentos locais `src/messages/segments/pt-home.ts`,
 As superfícies visuais compartilhadas da home continuam vindo do documento nativo `homeShowcaseMedia`, agora reaproveitado pelos blocos nativos do `marketingPage.home`.
 Hoje esse documento alimenta principalmente:
 
-- hero principal e overview editorial da home
-- screenshots das áreas `PlatformTabs`
-- mockups dos cases enterprise (`Hapvida` e `Prio`)
-- previews editoriais das integrações `Workvivo` e `Beehome`
-- mockup técnico da seção `HowItWorks`
-
-- mockup principal da seção Bento
-- screenshots das tabs `Dashboard do Gestor`, `Loja do Membro` e `Gestão de Campanhas`
-- mockups dos cases enterprise (`Hapvida` e `Prio`)
-- previews centrais das integrações `Workvivo` e `Beehome`
-- mockup técnico da seção `HowItWorks`
+- screenshots da grelha **Bento** (painel, loja, gamificação, API)
+- screenshots das áreas **PlatformTabs** (gestão, loja, campanhas)
+- logos dos cases enterprise (`Hapvida`, `Prio`) e arte opcional de case
+- logos e previews das integrações **Workvivo** e **Beehome**
+- cards emoji + imagem opcional em **Store**, **Management**, **AI Roadmap** e **How it works** (quando preenchidos)
 
 **Fallbacks:** quando não há URL válida de asset no Sanity, vários blocos usam screenshots estáticos em `/public/screens/` (WebP) ou o `FeatureScreensCarousel` com esses assets. O hero da página Plataforma e secções de gamificação/inteligência também usam essas capturas — não há mais o módulo `PlatformMockupScreens` (mockups JSX removidos).
+
+**Política de imagens (showcase e marketing):** use **capturas reais** (WebP/PNG em `public/screens/`, `public/loja-corporativa/`, `public/workvivo/`) como conteúdo principal no Studio. Ilustrações em `public/cms-seed/*.svg` são apenas **fallbacks editoriais / alternativas** — não devem substituir screenshots de produto no dataset de produção. O seed `scripts/sanity-seed-data.mjs` alinha os documentos padrão com estes ficheiros reais; após alterar o seed, volte a correr o script de população do Sanity (com token de escrita) ou faça upload manual equivalente.
+
+**Bento (home):** o documento `homeShowcaseMedia` expõe quatro imagens opcionais — painel principal, loja, gamificação e API/integrações — alinhadas aos quatro cards da grelha; campos vazios usam os mesmos WebPs de fallback definidos em código.
 
 Fluxo recomendado:
 
@@ -493,6 +512,7 @@ Neste primeiro passo ele controla:
 | `storeMockupImage` | `PlataformaStore` |
 | `logisticsPanelImage` | `LogisticsFulfillment` |
 | `securityPanelImage` | `SecurityEnterprise` |
+| `storeHomeImage`, `productDetailImage`, `cartImage`, `giftWizardImage`, `adminUsersImage`, `adminSettingsImage`, `orderDetailImage` | Imagens da Loja Corporativa (`/plataforma/loja-resgate/`) quando o UI consumir estes campos; já vêm no GROQ |
 | `gamificacaoFeatureCards` (até 2 entradas usadas) | Miniaturas dos dois cards em `PlataformaGamificationEngine` |
 | `gestaoFeatureCards`, `lojaFeatureCards`, `apiFeatureCards` | Ainda **sem** consumidor dedicado no UI; os dados já vêm no GROQ e o Studio pode preparar arte antecipadamente. Próximo passo natural seria ligar a grelhas equivalentes (por exemplo sub-cards de gestão/loja/API) quando essas secções tiverem o mesmo padrão visual que a grelha de gamificação. |
 
@@ -506,7 +526,7 @@ Fluxo recomendado:
 
 Tipo editorial: **workvivoShowcaseMedia**
 
-Documento por idioma com `mediaKey` (predefinido `workvivo-default` no seed) para emparelhar PT/EN no Studio. Campos de imagem: hero, comunicações, intelligence, frontline, shoutout e (opcional) segundo ecrã de feed para shoutouts.
+Documento por idioma com `mediaKey` (predefinido `workvivo-default`; o seed cria pares PT/EN com screenshots em `public/workvivo/*.webp`) para emparelhar PT/EN no Studio. Campos de imagem: hero, comunicações, intelligence, frontline, shoutout e (opcional) segundo ecrã de feed para shoutouts.
 
 | Campo | Uso no site |
 | --- | --- |
@@ -831,7 +851,7 @@ Com ou sem Sanity configurado:
 
 ## 6. Deploy e quando fazer rebuild
 
-O workflow `.github/workflows/deploy.yml` corre em cada push a `main` e também pode ser disparado sem commit.
+O workflow [`.github/workflows/deploy.yml`](../.github/workflows/deploy.yml) corre em cada push a `main` e também pode ser disparado sem commit (`workflow_dispatch` ou webhook Sanity — ver [sanity-github-webhook.md](sanity-github-webhook.md)).
 
 ### Manual
 
@@ -841,7 +861,11 @@ O workflow `.github/workflows/deploy.yml` corre em cada push a `main` e também 
 4. Opcionalmente preenche a nota
 5. **Run workflow**
 
-### Via API
+### Via webhook Sanity (recomendado após publicar no CMS)
+
+Configuração completa (PAT, URL, cabeçalhos HTTP, **projeção GROQ** com `event_type: "sanity-publish"`): [sanity-github-webhook.md](sanity-github-webhook.md).
+
+### Via API (curl manual)
 
 Envia `repository_dispatch` com `event_type` `sanity-publish`:
 
@@ -861,6 +885,7 @@ Secrets recomendados em **Settings → Secrets and variables → Actions**:
 - **Nome do secret = nome da variável de ambiente** (ex.: `NEXT_PUBLIC_SANITY_PROJECT_ID`). O **valor** é o Project ID (ex.: `hin8ivz0`). Não cries um secret chamado `hin8ivz0` — o workflow só lê chaves com o nome exacto abaixo; caso contrário o build fica sem ID/dataset embutidos.
 - `NEXT_PUBLIC_SANITY_PROJECT_ID` — **recomendado** o ID real do projeto (ex. `hin8ivz0`). No CI, o workflow **rejeita** os textos literais `your-project-id` e `xxx`. O valor `placeholder` é aceite com **aviso** (build corre; o Studio em produção pode falhar). Vazio também gera aviso. **Typo frequente:** `hin8lvz8` (L e 8 no fim) em vez de `hin8ivz0` (i e zero) — o Studio em produção chama `https://hin8lvz8.api.sanity.io` e falha com erro de rede; confirma o ID em [sanity.io/manage](https://www.sanity.io/manage).
 - `NEXT_PUBLIC_SANITY_DATASET` — normalmente `production`
+- `NEXT_PUBLIC_SITE_URL` — URL pública do site (ex.: `https://yoooobe.github.io/landing`); define `basePath` e links canónicos no export
 - opcional: `NEXT_PUBLIC_SANITY_API_VERSION`
 - opcional: `NEXT_PUBLIC_GA_ID`
 - opcional: `SANITY_STUDIO_NANO_BANANA_URL` — URL do gerador de imagens para o Nano Banana no Studio (embutida no build; ver secção «Nano Banana» acima). Exemplo de endpoint Vercel: `https://nano-banana-api-pi.vercel.app/api/generate` (confirma o alias público no projeto; evita URLs com *Deployment Protection* que bloqueiam o browser no GitHub Pages).

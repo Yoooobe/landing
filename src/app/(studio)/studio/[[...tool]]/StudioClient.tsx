@@ -1,9 +1,15 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import config from "@/sanity/studioConfig";
+import { BASE_PATH } from "@/lib/basePath";
+import {
+  getCanonicalMarketingPageStudioPath,
+  resolveStudioRestoreTarget,
+  SANITY_STUDIO_RESTORE_PATH_KEY,
+} from "@/sanity/studioDeepLink";
 
 import StudioErrorBoundary from "./StudioErrorBoundary";
 
@@ -23,39 +29,12 @@ const NextStudio = dynamic(
   },
 );
 
-const MARKETING_PAGE_DOCUMENT_ID_RE = /^marketingPage\.(pt|en)\.[^/;]+$/;
-
-function getCanonicalMarketingPageStudioPath(
-  pathname: string | null,
-  search: string,
-): string | null {
-  if (!pathname) {
-    return null;
-  }
-
-  const structurePrefix = "/studio/structure/";
-  const prefixIndex = pathname.indexOf(structurePrefix);
-
-  if (prefixIndex === -1) {
-    return null;
-  }
-
-  const panePath = pathname.slice(prefixIndex + structurePrefix.length);
-  const segments = panePath.split(";").filter(Boolean);
-  const documentId = segments.at(-1);
-
-  if (!documentId || !MARKETING_PAGE_DOCUMENT_ID_RE.test(documentId)) {
-    return null;
-  }
-
-  const canonicalPanePath = `marketingPage;${documentId}`;
-
-  if (panePath === canonicalPanePath) {
-    return null;
-  }
-
-  const basePath = pathname.slice(0, prefixIndex + structurePrefix.length);
-  return `${basePath}${canonicalPanePath}${search}`;
+function StudioLoadingShell() {
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-zinc-950 text-sm text-zinc-400">
+      A carregar o Studio…
+    </div>
+  );
 }
 
 /**
@@ -66,19 +45,38 @@ export default function StudioClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const search = searchParams.toString();
-  const canonicalPath = getCanonicalMarketingPageStudioPath(
-    pathname,
-    search ? `?${search}` : "",
-  );
+  const searchSuffix = search ? `?${search}` : "";
+  const [studioReady, setStudioReady] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    setStudioReady(false);
+
+    try {
+      const stored = sessionStorage.getItem(SANITY_STUDIO_RESTORE_PATH_KEY);
+      if (stored) {
+        sessionStorage.removeItem(SANITY_STUDIO_RESTORE_PATH_KEY);
+        const target = resolveStudioRestoreTarget(stored, BASE_PATH);
+        const current = `${pathname ?? ""}${searchSuffix}`;
+        if (target !== current) {
+          router.replace(target);
+          return;
+        }
+      }
+    } catch {
+      /* sessionStorage indisponível */
+    }
+
+    const canonicalPath = getCanonicalMarketingPageStudioPath(pathname, searchSuffix);
     if (canonicalPath) {
       router.replace(canonicalPath);
+      return;
     }
-  }, [canonicalPath, router]);
 
-  if (canonicalPath) {
-    return null;
+    setStudioReady(true);
+  }, [pathname, router, searchSuffix]);
+
+  if (!studioReady) {
+    return <StudioLoadingShell />;
   }
 
   return (

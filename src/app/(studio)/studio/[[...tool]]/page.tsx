@@ -6,6 +6,8 @@ import StudioSetup from "./StudioSetup";
 
 export { metadata, viewport } from "next-sanity/studio";
 
+export const dynamic = "force-static";
+
 /**
  * Required for `output: 'export'` (GitHub Pages static hosting).
  * Each Sanity Studio tool must be explicitly listed so Next.js pre-renders
