@@ -1,5 +1,7 @@
 User-Agent: *
 Allow: /
 Disallow: /landing/studio/
+Disallow: /landing/workvivo/
+Disallow: /landing/en/workvivo/
 
 Sitemap: http://localhost:3000/landing/sitemap.xml
