@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 /**
  * GitHub Pages: URLs profundas do Studio (ex. …/studio/structure/marketingPage-pt;docId)
- * não têm HTML estático em `out/`. Este script gera `out/404.html` para guardar o path
- * e redirecionar para a shell do Studio (ver StudioClient + SANITY_STUDIO_RESTORE_PATH_KEY).
+ * não têm HTML estático em `out/`. Gera `out/404.html` e sobrescreve `out/404/index.html`
+ * (o export Next cria a pasta `404/`; em project sites o GH costuma servir esse index
+ * em vez do `404.html` na raiz). Ver StudioClient + SANITY_STUDIO_RESTORE_PATH_KEY.
  */
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -82,12 +83,17 @@ if (!existsSync(outDir)) {
   process.exit(1);
 }
 
+const notFoundDir = join(outDir, "404");
+const notFoundIndex = join(notFoundDir, "index.html");
+
 writeFileSync(join(outDir, "404.html"), html, "utf8");
+mkdirSync(notFoundDir, { recursive: true });
+writeFileSync(notFoundIndex, html, "utf8");
 
 if (!existsSync(join(outDir, ".nojekyll"))) {
   writeFileSync(join(outDir, ".nojekyll"), "", "utf8");
 }
 
 console.log(
-  `patch-studio-spa-fallback: out/404.html (Studio deep links → ${studioRoot}, basePath=${basePath || "(root)"})`,
+  `patch-studio-spa-fallback: out/404.html + out/404/index.html (Studio deep links → ${studioRoot}, basePath=${basePath || "(root)"})`,
 );

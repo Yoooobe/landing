@@ -33,7 +33,7 @@ O export estático (`output: "export"`) só gera HTML para `/studio/`, `/studio/
 - **Bookmark canónico** (após abrir o doc uma vez no Studio):  
   `https://yoooobe.github.io/landing/studio/structure/marketingPage;marketingPage.pt.api-integracoes/`  
   (trailing slash alinhado ao Next).
-- **Links antigos** com painel `marketingPage-pt;…` ou `marketingPage-en;…`: em produção, o `out/404.html` gerado por `scripts/patch-studio-spa-fallback.mjs` (no fim de `npm run build`) guarda o path e redireciona para a shell do Studio; o cliente em `StudioClient` restaura e normaliza para `marketingPage;{id}`.
+- **Links antigos** com painel `marketingPage-pt;…` ou `marketingPage-en;…`: em produção, `scripts/patch-studio-spa-fallback.mjs` (no fim de `npm run build`) escreve o redirect em `out/404.html` e em `out/404/index.html` (project sites no GitHub Pages tendem a servir o index da pasta `404/` do export Next); o `StudioClient` restaura o path e normaliza para `marketingPage;{id}`.
 
 Importante:
 
