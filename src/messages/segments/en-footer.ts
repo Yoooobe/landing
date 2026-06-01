@@ -7,6 +7,7 @@ export const enFooter = {
   links: {
     blog: "Engaja, time! blog",
     motor: "Gamification engine",
+    campanhas: "Gamification campaigns",
     wallets: "Wallet control",
     gestor: "Manager dashboard",
     casos: "Use cases",

@@ -39,6 +39,12 @@ const routePairs: RoutePair[] = [
     changeFrequency: "weekly",
   },
   {
+    pt: "/plataforma/campanhas-gamificacao/",
+    en: "/en/plataforma/campanhas-gamificacao/",
+    priority: 0.85,
+    changeFrequency: "weekly",
+  },
+  {
     pt: "/plataforma/controle-carteiras/",
     en: "/en/plataforma/controle-carteiras/",
     priority: 0.55,

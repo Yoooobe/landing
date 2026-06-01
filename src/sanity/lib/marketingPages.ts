@@ -27,6 +27,7 @@ import {
 } from "@/sanity/env";
 import { getResolvedApiIntegracoesContent } from "@/sanity/lib/apiIntegracoes";
 import { getResolvedGamificacaoContent } from "@/sanity/lib/gamificacao";
+import { getResolvedGamificacaoCampanhasContent } from "@/sanity/lib/gamificacaoCampanhas";
 import { getResolvedHomeContent } from "@/sanity/lib/home";
 import { getPlatformShowcaseMedia } from "@/sanity/lib/platformShowcase";
 import type {
@@ -1041,6 +1042,7 @@ type MetadataOptions = {
   languages: { "pt-BR": string; en: string };
   openGraphPath: string;
   ogLocale: "pt_BR" | "en_US";
+  ogRouteKey?: string;
 };
 
 function buildStudioUrl() {
@@ -1297,6 +1299,14 @@ async function getFallbackSeo(locale: Locale, slug: string): Promise<PageSeoCopy
         openGraphDescription: content.seo.openGraphDescription,
       };
     }
+    case "gamificacao-campanhas": {
+      const content = await getResolvedGamificacaoCampanhasContent(locale);
+      return {
+        title: content.seo.title,
+        description: content.seo.description,
+        openGraphDescription: content.seo.openGraphDescription,
+      };
+    }
     case "plataforma":
       return locale === "en" ? enPlataforma.seo : ptPlataforma.seo;
     case "inteligencia":
@@ -1387,7 +1397,10 @@ export async function buildMarketingPageMetadata(
 ): Promise<Metadata> {
   const fallbackSeo = await getFallbackSeo(locale, slug);
   const page = await resolveMarketingPage(locale, slug, false);
-  return buildRoutePageMetadata(pageSeo(page, fallbackSeo), options);
+  return buildRoutePageMetadata(pageSeo(page, fallbackSeo), {
+    ...options,
+    ogRouteKey: options.ogRouteKey ?? slug,
+  });
 }
 
 export async function getMarketingHomeSeo(locale: Locale): Promise<PageSeoCopy> {

@@ -19,6 +19,11 @@ export const ptNav = {
     desc: "Engaje e premie seu time com mecânicas de jogos.",
     badge: "CORE",
   },
+  gamificationCampaigns: {
+    title: "Campanhas de gamificação",
+    desc: "Do byte ao brinde: problema, solução e cases com ROI.",
+    badge: "NOVO",
+  },
   intelligence: {
     title: "Inteligência",
     desc: "IA avançada para campanhas e recomendações.",

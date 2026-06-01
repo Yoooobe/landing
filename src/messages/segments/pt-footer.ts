@@ -7,6 +7,7 @@ export const ptFooter = {
   links: {
     blog: "Blog Engaja, time!",
     motor: "Motor de Gamificação",
+    campanhas: "Campanhas de Gamificação",
     wallets: "Controle de Carteiras (Wallets)",
     gestor: "Painel do Gestor",
     casos: "Casos de Uso",

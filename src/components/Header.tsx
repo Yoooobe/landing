@@ -230,6 +230,20 @@ export default function Header() {
             icon: "gamification",
           },
           {
+            label: m.nav.gamificationCampaigns.title,
+            description: m.nav.gamificationCampaigns.desc,
+            href: "/plataforma/campanhas-gamificacao/",
+            badge: m.nav.gamificationCampaigns.badge,
+            icon: "gamification",
+          },
+          {
+            label: m.nav.intelligence.title,
+            description: m.nav.intelligence.desc,
+            href: "/inteligencia/",
+            badge: m.nav.intelligence.badge,
+            icon: "intelligence",
+          },
+          {
             label: m.nav.cases.title,
             description: m.nav.cases.desc,
             href: "/casos-de-uso",
@@ -298,7 +312,7 @@ export default function Header() {
           className={`flex items-center justify-between rounded-full transition-all duration-500 px-6 py-3 ${
             scrolled
               ? "glass-panel-dark shadow-2xl border-white/15"
-              : "bg-transparent border border-transparent"
+              : "border border-white/0 bg-transparent"
           }`}
         >
           {/* Logo — wordmark 4unik */}
@@ -512,7 +526,7 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex w-full items-center justify-center rounded-xl bg-[#25D366] py-3 text-center text-base font-medium text-white hover:bg-[#128C7E]"
+                className="flex w-full items-center justify-center rounded-xl bg-whatsapp py-3 text-center text-base font-medium text-white hover:bg-whatsapp-deep"
               >
                 {m.conversionDock.linkWhatsapp}
               </a>

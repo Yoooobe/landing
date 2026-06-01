@@ -97,7 +97,7 @@ export default function PlatformSubFeatureCards() {
               >
                 <Link
                   href={href}
-                  className={`group flex flex-col rounded-3xl border border-white/8 bg-surface-panel overflow-hidden transition-all duration-300 ${card.borderHover} hover:shadow-xl hover:-translate-y-1`}
+                  className={`group flex flex-col rounded-3xl border border-white/10 bg-surface-panel overflow-hidden transition-all duration-300 ${card.borderHover} hover:shadow-xl hover:-translate-y-1`}
                 >
                   <div className="relative aspect-16/10 w-full overflow-hidden">
                     <Image
@@ -130,6 +130,17 @@ export default function PlatformSubFeatureCards() {
             );
           })}
         </div>
+
+        <p className="mt-10 text-center text-sm text-white/50">
+          {locale === "en" ? "Want the problem → solution story? " : "Quer a narrativa problema → solução? "}
+          <Link
+            href={resolveShellHref("/plataforma/campanhas-gamificacao/", locale)}
+            className="font-semibold text-brand-orange hover:text-brand-orange/80 transition-colors"
+          >
+            {locale === "en" ? "Gamification campaigns" : "Campanhas de gamificação"}
+            <ArrowRight className="inline w-3.5 h-3.5 ml-0.5 -mt-0.5" />
+          </Link>
+        </p>
       </div>
     </section>
   );

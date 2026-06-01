@@ -14,6 +14,34 @@ const root = join(__dirname, "..");
 const { siteUrl } = parsePublicSiteUrl(process.env.NEXT_PUBLIC_SITE_URL);
 const base = siteUrl;
 
+const platformSubpaths = [
+  "motor-gamificacao",
+  "campanhas-gamificacao",
+  "controle-carteiras",
+  "painel-gestor",
+  "loja-resgate",
+] as const;
+
+function url(path: string): string {
+  const p = path.startsWith("/") ? path : `/${path}`;
+  return `${base}${p.endsWith("/") ? p : `${p}/`}`;
+}
+
+const platformLines = platformSubpaths
+  .flatMap((slug) => [
+    `- ${slug} (PT): ${url(`/plataforma/${slug}`)}`,
+    `- ${slug} (EN): ${url(`/en/plataforma/${slug}`)}`,
+  ])
+  .join("\n");
+
+const blogPillarSlugs = ["1", "2", "3", "4", "5", "6", "7"] as const;
+const blogLines = blogPillarSlugs
+  .flatMap((slug) => [
+    `- Post fallback ${slug} (PT): ${url(`/blog/${slug}`)}`,
+    `- Post fallback ${slug} (EN): ${url(`/en/blog/${slug}`)}`,
+  ])
+  .join("\n");
+
 const content = `# 4Unik (4unik) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
@@ -25,14 +53,24 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 
 ## URLs canónicas (derivadas do build)
 
-- Site (PT): ${base}/
-- Site (EN): ${base}/en/
-- API e integrações: ${base}/api-integracoes/ e ${base}/en/api-integracoes/
-- Plataforma: ${base}/plataforma/ e ${base}/en/plataforma/
-- Gamificação (motor): ${base}/plataforma/motor-gamificacao/ e ${base}/en/plataforma/motor-gamificacao/
-- Blog: ${base}/blog/ e ${base}/en/blog/
+- Site (PT): ${url("/")}
+- Site (EN): ${url("/en")}
+- API e integrações: ${url("/api-integracoes")} | ${url("/en/api-integracoes")}
+- Hub Workvivo: ${url("/api-integracoes/workvivo")} | ${url("/en/api-integracoes/workvivo")}
+- Plataforma (overview): ${url("/plataforma")} | ${url("/en/plataforma")}
+- Inteligência: ${url("/inteligencia")} | ${url("/en/inteligencia")}
+- Casos de uso: ${url("/casos-de-uso")} | ${url("/en/casos-de-uso")}
+- Blog: ${url("/blog")} | ${url("/en/blog")}
 - robots.txt: ${base}/robots.txt
 - sitemap: ${base}/sitemap.xml
+
+### Subpáginas da plataforma
+
+${platformLines}
+
+### Posts do blog (fallback editorial — slugs numéricos)
+
+${blogLines}
 
 ## Tópicos para citação factual
 

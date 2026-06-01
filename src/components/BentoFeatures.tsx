@@ -8,6 +8,7 @@ import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Trophy, Package, LayoutDashboard } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 function BentoMediaFrame({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -25,7 +26,7 @@ export default function BentoFeatures({
 }: {
   homeContent?: ResolvedHomeContent | null;
 }) {
-  const { m, path } = useLocaleMessages();
+  const { m, path, locale } = useLocaleMessages();
   const b = m.bento;
   const primaryCardImageUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.bento?.primaryCardImage,
@@ -33,6 +34,10 @@ export default function BentoFeatures({
   const storeCardImageUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.bento?.storeCardImage,
   );
+  const gamificationCardImageUrl = getSanityImageUrl(
+    homeContent?.showcaseMedia?.bento?.gamificationCardImage,
+  );
+  const apiCardImageUrl = getSanityImageUrl(homeContent?.showcaseMedia?.bento?.apiCardImage);
 
   const dashboardFallback = withBasePath("/screens/admin-dashboard.webp");
   const gamificationFallback = withBasePath("/screens/gamif-bolsa.webp");
@@ -112,16 +117,38 @@ export default function BentoFeatures({
               </div>
               <h3 className="mb-2 font-heading text-xl font-bold text-white transition-colors group-hover:text-yoobe-neon-pink">{b.card2.title}</h3>
               <p className="mb-4 flex-1 font-sans text-sm leading-relaxed text-white/60">{b.card2.body}</p>
+              <Link
+                href={withBasePath(path("/plataforma/campanhas-gamificacao/"))}
+                onClick={(e) => e.stopPropagation()}
+                className="relative z-20 mb-2 inline-flex items-center text-xs font-semibold text-yoobe-neon-pink/90 hover:text-yoobe-neon-pink"
+              >
+                {locale === "en" ? "Campaigns: byte to reward" : "Campanhas: do byte ao brinde"}
+                <ArrowRight className="ml-1 h-3 w-3" />
+              </Link>
             </div>
             <BentoMediaFrame>
-              <Image
-                src={gamificationFallback}
-                alt={b.card2.title}
-                fill
-                sizes="(min-width: 768px) 40vw, 100vw"
-                className="object-cover"
-                unoptimized
-              />
+              {gamificationCardImageUrl ? (
+                <Image
+                  src={gamificationCardImageUrl}
+                  alt={
+                    homeContent?.showcaseMedia?.bento?.gamificationCardImage?.alt?.trim() ||
+                    b.card2.title
+                  }
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-cover"
+                  unoptimized
+                />
+              ) : (
+                <Image
+                  src={gamificationFallback}
+                  alt={b.card2.title}
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-cover"
+                  unoptimized
+                />
+              )}
             </BentoMediaFrame>
           </motion.a>
 
@@ -174,14 +201,27 @@ export default function BentoFeatures({
             <h3 className="mb-2 font-heading text-xl font-bold text-white transition-colors group-hover:text-demo-cyan sm:text-2xl">{b.card4.title}</h3>
             <p className="mb-4 font-sans text-sm leading-relaxed text-white/60">{b.card4.body}</p>
             <BentoMediaFrame>
-              <Image
-                src={apiFallback}
-                alt={b.card4.title}
-                fill
-                sizes="(min-width: 768px) 40vw, 100vw"
-                className="object-cover"
-                unoptimized
-              />
+              {apiCardImageUrl ? (
+                <Image
+                  src={apiCardImageUrl}
+                  alt={
+                    homeContent?.showcaseMedia?.bento?.apiCardImage?.alt?.trim() || b.card4.title
+                  }
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-cover"
+                  unoptimized
+                />
+              ) : (
+                <Image
+                  src={apiFallback}
+                  alt={b.card4.title}
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-cover"
+                  unoptimized
+                />
+              )}
             </BentoMediaFrame>
             {b.card4.apiNote ? (
               <p className="mt-3 text-center font-sans text-xs text-white/45">{b.card4.apiNote}</p>

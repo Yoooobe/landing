@@ -964,10 +964,10 @@ function plataformaBlocks(locale) {
       subheadline: page.hero.sub,
       ctaText: page.pageCta.cta,
       ctaLink: "https://calendly.com/yoobeco/demo",
-      imagePath: "public/cms-seed/platform-hero-overview.svg",
+      imagePath: "public/screens/admin-dashboard.webp",
       imageAlt: isEn
-        ? "Platform overview visual for 4Unik reward infrastructure"
-        : "Visual editorial da visão geral da plataforma 4Unik",
+        ? "Manager dashboard screenshot — 4Unik platform"
+        : "Screenshot do painel do gestor da plataforma 4Unik",
     }),
     splitContentBlock("admin-dashboard", {
       eyebrow: page.adminDashboard.badge,
@@ -975,10 +975,10 @@ function plataformaBlocks(locale) {
       body: [page.adminDashboard.body],
       bullets: page.adminDashboard.bullets.map((item) => `${item.title}: ${item.body}`),
       imageSide: "right",
-      imagePath: "public/cms-seed/platform-admin-dashboard.svg",
+      imagePath: "public/screens/admin-dashboard.webp",
       imageAlt: isEn
-        ? "Manager dashboard mockup for the 4Unik platform"
-        : "Mockup do painel do gestor da plataforma 4Unik",
+        ? "Manager dashboard screenshot for the 4Unik platform"
+        : "Screenshot do painel do gestor da plataforma 4Unik",
     }),
     splitContentBlock("gamification-engine-intro", {
       eyebrow: page.gamificationEngine.badge,
@@ -988,10 +988,10 @@ function plataformaBlocks(locale) {
         `${page.gamificationEngine.flowTitle}: ${page.gamificationEngine.flow.node1Title} -> ${page.gamificationEngine.flow.node2Title} -> ${page.gamificationEngine.flow.node3Title}`,
       ],
       imageSide: "left",
-      imagePath: "public/cms-seed/platform-gamification-flow.svg",
+      imagePath: "public/screens/gamif-bolsa.webp",
       imageAlt: isEn
-        ? "Visual flow of the 4Unik gamification engine"
-        : "Fluxo visual do motor de gamificação da 4Unik",
+        ? "Gamification wallet and points — 4Unik platform"
+        : "Carteira e pontos de gamificação na plataforma 4Unik",
     }),
     featureGridBlock("gamification-engine-cards", {
       eyebrow: isEn ? "Engine mechanics" : "Mecânicas do motor",
@@ -1011,10 +1011,10 @@ function plataformaBlocks(locale) {
       title: `${page.store.titleBefore}${page.store.titleGradient}${page.store.titleAfter}`,
       body: [`${page.store.bodyBefore}${page.store.bodyStrong}${page.store.bodyAfter}`],
       imageSide: "right",
-      imagePath: "public/cms-seed/platform-store-showcase.svg",
+      imagePath: "public/screens/member-store-home.webp",
       imageAlt: isEn
-        ? "Rewards storefront mockup for the 4Unik platform"
-        : "Mockup da loja de recompensas da plataforma 4Unik",
+        ? "Member rewards store screenshot — 4Unik platform"
+        : "Screenshot da loja de recompensas na plataforma 4Unik",
     }),
     featureGridBlock("store-features", {
       eyebrow: isEn ? "Store operations" : "Operação da loja",
@@ -1033,10 +1033,10 @@ function plataformaBlocks(locale) {
       eyebrow: isEn ? "Fulfillment" : "Fulfillment",
       title: page.logistics.title,
       description: page.logistics.sub,
-      imagePath: "public/cms-seed/platform-logistics-panel.svg",
+      imagePath: "public/screens/member-orders.webp",
       imageAlt: isEn
-        ? "Integrated logistics and delivery tracking visual panel"
-        : "Painel visual da logística integrada e rastreio de entregas",
+        ? "Member orders and delivery tracking screenshot"
+        : "Screenshot de pedidos e rastreio de entregas",
       columns: "3",
       items: page.logistics.cards.map((item, index) => ({
         title: item.title,
@@ -1064,10 +1064,10 @@ function plataformaBlocks(locale) {
       body: [page.security.body],
       bullets: page.security.items.map((item) => `${item.title}: ${item.body}`),
       imageSide: "left",
-      imagePath: "public/cms-seed/platform-security-panel.svg",
+      imagePath: "public/screens/member-points.webp",
       imageAlt: isEn
-        ? "Enterprise security, SSO, and audit panel"
-        : "Painel visual de segurança enterprise, SSO e auditoria",
+        ? "Member wallet and points security context — 4Unik"
+        : "Carteira e pontos do colaborador — contexto de segurança 4Unik",
     }),
     faqBlock(
       "faq",
@@ -1082,10 +1082,10 @@ function plataformaBlocks(locale) {
       title: page.pageCta.title,
       primaryLabel: page.pageCta.cta,
       primaryHref: "https://calendly.com/yoobeco/demo",
-      imagePath: "public/cms-seed/platform-hero-overview.svg",
+      imagePath: "public/screens/admin-dashboard.webp",
       imageAlt: isEn
-        ? "Platform overview visual for the final CTA"
-        : "Visual editorial da plataforma para o CTA final",
+        ? "Platform dashboard screenshot for the final CTA"
+        : "Screenshot do painel da plataforma para o CTA final",
     }),
   ];
 }
@@ -2024,6 +2024,14 @@ export const seedDocuments = {
           title: "Soluções",
           items: [
             {
+              _key: "gamification-campaigns",
+              label: "Campanhas de gamificação",
+              description: "Do byte ao brinde: problema, solução e cases com ROI.",
+              href: "/plataforma/campanhas-gamificacao",
+              badge: "NOVO",
+              icon: "gamification",
+            },
+            {
               _key: "cases",
               label: "Casos de Sucesso",
               description: "Veja quem já transforma o RH.",
@@ -2103,6 +2111,14 @@ export const seedDocuments = {
           title: "Solutions",
           items: [
             {
+              _key: "gamification-campaigns",
+              label: "Gamification campaigns",
+              description: "Byte to reward: problem, solution, and ROI-backed cases.",
+              href: "/plataforma/campanhas-gamificacao",
+              badge: "NEW",
+              icon: "gamification",
+            },
+            {
               _key: "cases",
               label: "Success stories",
               description: "See who is already transforming HR.",
@@ -2153,6 +2169,11 @@ export const seedDocuments = {
           title: "Plataforma",
           items: [
             { _key: "motor", label: "Motor de Gamificação", href: "/plataforma/motor-gamificacao" },
+            {
+              _key: "campanhas",
+              label: "Campanhas de Gamificação",
+              href: "/plataforma/campanhas-gamificacao",
+            },
             { _key: "wallets", label: "Controle de Carteiras (Wallets)", href: "/plataforma/controle-carteiras" },
             { _key: "manager", label: "Painel do Gestor", href: "/plataforma/painel-gestor" },
             { _key: "cases", label: "Casos de Uso", href: "/casos-de-uso" },
@@ -2209,6 +2230,11 @@ export const seedDocuments = {
           title: "Platform",
           items: [
             { _key: "motor", label: "Gamification engine", href: "/plataforma/motor-gamificacao" },
+            {
+              _key: "campanhas",
+              label: "Gamification campaigns",
+              href: "/plataforma/campanhas-gamificacao",
+            },
             { _key: "wallets", label: "Wallet control", href: "/plataforma/controle-carteiras" },
             { _key: "manager", label: "Manager dashboard", href: "/plataforma/painel-gestor" },
             { _key: "cases", label: "Use cases", href: "/casos-de-uso" },
@@ -2363,82 +2389,54 @@ export const seedDocuments = {
       title: "Home showcase padrão",
       mediaKey: "home-default",
       bento: {
-        primaryCardImagePath: "public/cms-seed/home-bento-dashboard.svg",
-        primaryCardImageAlt: "Mockup do dashboard principal da 4Unik",
-        storeCardImagePath: "public/cms-seed/home-bento-store.svg",
-        storeCardImageAlt: "Mockup do catálogo de recompensas da 4Unik",
+        primaryCardImagePath: "public/screens/admin-dashboard.webp",
+        primaryCardImageAlt: "Screenshot do painel do gestor da plataforma 4Unik",
+        storeCardImagePath: "public/screens/member-store-home.webp",
+        storeCardImageAlt: "Screenshot da loja de recompensas na plataforma 4Unik",
+        gamificationCardImagePath: "public/screens/gamif-bolsa.webp",
+        gamificationCardImageAlt: "Screenshot da carteira e gamificação na plataforma 4Unik",
+        apiCardImagePath: "public/screens/pix-step-1-banks.webp",
+        apiCardImageAlt: "Screenshot do fluxo de integração e pagamentos (PIX) na plataforma 4Unik",
       },
       platformTabs: {
-        managementImagePath: "public/cms-seed/home-platform-management.svg",
-        managementImageAlt: "Tela da visão de gestão da plataforma 4Unik",
-        storeImagePath: "public/cms-seed/home-platform-store.svg",
-        storeImageAlt: "Tela da loja de recompensas da plataforma 4Unik",
-        campaignsImagePath: "public/cms-seed/home-platform-campaigns.svg",
-        campaignsImageAlt: "Tela de campanhas da plataforma 4Unik",
+        managementImagePath: "public/screens/admin-dashboard.webp",
+        managementImageAlt: "Screenshot da visão de gestão da plataforma 4Unik",
+        storeImagePath: "public/screens/member-store-home.webp",
+        storeImageAlt: "Screenshot da loja de recompensas da plataforma 4Unik",
+        campaignsImagePath: "public/screens/admin-campaign-config-desktop.webp",
+        campaignsImageAlt: "Screenshot da configuração de campanhas na plataforma 4Unik",
       },
       enterpriseCases: {
         hapvidaLogoImagePath: "public/clients/hapvida.png",
         hapvidaLogoImageAlt: "Logo da Hapvida",
-        hapvidaCaseImagePath: "public/cms-seed/home-enterprise-hapvida.svg",
-        hapvidaCaseImageAlt: "Mockup do case enterprise Hapvida",
         prioLogoImagePath: "public/clients/prio.svg",
         prioLogoImageAlt: "Logo da Prio",
-        prioCaseImagePath: "public/cms-seed/home-enterprise-prio.svg",
-        prioCaseImageAlt: "Mockup do case enterprise Prio",
       },
       storeSection: {
         usecaseCards: [
-          {
-            emoji: "🎉",
-            imagePath: "public/cms-seed/home-store-welcome.svg",
-            imageAlt: "Ilustração de welcome kits corporativos",
-          },
-          {
-            emoji: "🏆",
-            imagePath: "public/cms-seed/home-store-recognition.svg",
-            imageAlt: "Ilustração de reconhecimento e premiações",
-          },
-          {
-            emoji: "🎁",
-            imagePath: "public/cms-seed/home-store-partners.svg",
-            imageAlt: "Ilustração de presentes para clientes e parceiros",
-          },
-          {
-            emoji: "🎓",
-            imagePath: "public/cms-seed/home-store-events.svg",
-            imageAlt: "Ilustração de kits para eventos e feiras",
-          },
+          { emoji: "🎉" },
+          { emoji: "🏆" },
+          { emoji: "🎁" },
+          { emoji: "🎓" },
         ],
-      },
-      howItWorks: {
-        architectureImagePath: "public/cms-seed/home-how-it-works.svg",
-        architectureImageAlt: "Arquitetura da operação de engajamento e recompensas da 4Unik",
       },
       aiRoadmap: {
         stages: [
           {
             icon: "sparkles",
             accentTone: "orange",
-            imagePath: "public/cms-seed/home-ai-roadmap-stage-1.svg",
-            imageAlt: "Visual de criação de campanhas com IA",
           },
           {
             icon: "command",
             accentTone: "purple",
-            imagePath: "public/cms-seed/home-ai-roadmap-stage-2.svg",
-            imageAlt: "Visual de gestão de recompensas com IA",
           },
           {
             icon: "brain-circuit",
             accentTone: "cyan",
-            imagePath: "public/cms-seed/home-ai-roadmap-stage-3.svg",
-            imageAlt: "Visual de orquestração contínua com IA",
           },
           {
             icon: "activity",
             accentTone: "emerald",
-            imagePath: "public/cms-seed/home-ai-roadmap-stage-4.svg",
-            imageAlt: "Visual de estratégia e ROI com IA",
           },
         ],
       },
@@ -2446,38 +2444,20 @@ export const seedDocuments = {
         workvivo: {
           logoImagePath: "public/partners/workvivo-logo-white.svg",
           logoImageAlt: "Logo da Workvivo",
-          previewImagePath: "public/cms-seed/home-integrations-workvivo.svg",
-          previewImageAlt: "Preview da integração Workvivo com recompensas 4Unik",
+          previewImagePath: "public/workvivo/workvivo-hero.webp",
+          previewImageAlt: "Screenshot do feed Workvivo com AI companion",
         },
         beehome: {
           logoImagePath: "public/cms-seed/beehome-logo.svg",
           logoImageAlt: "Logo da Beehome",
-          previewImagePath: "public/cms-seed/home-integrations-beehome.svg",
-          previewImageAlt: "Preview da integração Beehome com operação 4Unik",
         },
       },
       managementSection: {
         featureCards: [
-          {
-            emoji: "📊",
-            imagePath: "public/cms-seed/home-management-analytics.svg",
-            imageAlt: "Visual do dashboard analítico de gestão",
-          },
-          {
-            emoji: "📦",
-            imagePath: "public/cms-seed/home-management-logistics.svg",
-            imageAlt: "Visual da logística integrada e entregas",
-          },
-          {
-            emoji: "👥",
-            imagePath: "public/cms-seed/home-management-people.svg",
-            imageAlt: "Visual da gestão de colaboradores e saldos",
-          },
-          {
-            emoji: "🔒",
-            imagePath: "public/cms-seed/home-management-security.svg",
-            imageAlt: "Visual de segurança e compliance",
-          },
+          { emoji: "📊" },
+          { emoji: "📦" },
+          { emoji: "👥" },
+          { emoji: "🔒" },
         ],
       },
     },
@@ -2489,18 +2469,24 @@ export const seedDocuments = {
       title: "Showcase da plataforma (PT)",
       pageKey: "plataforma",
       locale: "pt",
-      adminDashboardImagePath: "public/cms-seed/platform-admin-dashboard.svg",
-      adminDashboardImageAlt:
-        "Mockup editorial do painel do gestor da plataforma 4Unik",
-      storeMockupImagePath: "public/cms-seed/platform-store-showcase.svg",
-      storeMockupImageAlt:
-        "Mockup editorial da loja de recompensas da plataforma 4Unik",
-      logisticsPanelImagePath: "public/cms-seed/platform-logistics-panel.svg",
-      logisticsPanelImageAlt:
-        "Painel visual da logística integrada e rastreamento de entregas",
-      securityPanelImagePath: "public/cms-seed/platform-security-panel.svg",
-      securityPanelImageAlt:
-        "Painel visual de segurança enterprise, SSO e auditoria",
+      adminDashboardImagePath: "public/screens/admin-dashboard.webp",
+      adminDashboardImageAlt: "Screenshot do painel do gestor da plataforma 4Unik",
+      storeMockupImagePath: "public/screens/member-store-home.webp",
+      storeMockupImageAlt: "Screenshot da loja de recompensas da plataforma 4Unik",
+      storeHomeImagePath: "public/loja-corporativa/store-home.webp",
+      storeHomeImageAlt: "Loja corporativa — vitrine principal",
+      productDetailImagePath: "public/loja-corporativa/product-detail.webp",
+      productDetailImageAlt: "Loja corporativa — página de produto",
+      cartImagePath: "public/loja-corporativa/cart.webp",
+      cartImageAlt: "Loja corporativa — carrinho",
+      giftWizardImagePath: "public/loja-corporativa/gift-wizard-review.webp",
+      giftWizardImageAlt: "Loja corporativa — revisão do wizard de presente",
+      adminUsersImagePath: "public/loja-corporativa/admin-users.webp",
+      adminUsersImageAlt: "Loja corporativa — painel de usuários (admin)",
+      adminSettingsImagePath: "public/loja-corporativa/admin-settings.webp",
+      adminSettingsImageAlt: "Loja corporativa — configurações de pontos",
+      orderDetailImagePath: "public/loja-corporativa/order-detail.webp",
+      orderDetailImageAlt: "Loja corporativa — detalhe do pedido entregue",
     },
     {
       _id: "platformShowcaseMedia.plataforma-en",
@@ -2508,18 +2494,64 @@ export const seedDocuments = {
       title: "Platform showcase (EN)",
       pageKey: "plataforma",
       locale: "en",
-      adminDashboardImagePath: "public/cms-seed/platform-admin-dashboard.svg",
-      adminDashboardImageAlt:
-        "Editorial mockup of the 4Unik manager dashboard",
-      storeMockupImagePath: "public/cms-seed/platform-store-showcase.svg",
-      storeMockupImageAlt:
-        "Editorial mockup of the 4Unik rewards storefront",
-      logisticsPanelImagePath: "public/cms-seed/platform-logistics-panel.svg",
-      logisticsPanelImageAlt:
-        "Visual panel for integrated logistics and delivery tracking",
-      securityPanelImagePath: "public/cms-seed/platform-security-panel.svg",
-      securityPanelImageAlt:
-        "Visual panel for enterprise security, SSO, and audit trails",
+      adminDashboardImagePath: "public/screens/admin-dashboard.webp",
+      adminDashboardImageAlt: "Manager dashboard screenshot — 4Unik platform",
+      storeMockupImagePath: "public/screens/member-store-home.webp",
+      storeMockupImageAlt: "Member rewards store screenshot — 4Unik platform",
+      storeHomeImagePath: "public/loja-corporativa/store-home.webp",
+      storeHomeImageAlt: "Corporate store — catalog home",
+      productDetailImagePath: "public/loja-corporativa/product-detail.webp",
+      productDetailImageAlt: "Corporate store — product detail",
+      cartImagePath: "public/loja-corporativa/cart.webp",
+      cartImageAlt: "Corporate store — cart",
+      giftWizardImagePath: "public/loja-corporativa/gift-wizard-review.webp",
+      giftWizardImageAlt: "Corporate store — gift wizard review",
+      adminUsersImagePath: "public/loja-corporativa/admin-users.webp",
+      adminUsersImageAlt: "Corporate store — admin users",
+      adminSettingsImagePath: "public/loja-corporativa/admin-settings.webp",
+      adminSettingsImageAlt: "Corporate store — points settings",
+      orderDetailImagePath: "public/loja-corporativa/order-detail.webp",
+      orderDetailImageAlt: "Corporate store — delivered order detail",
+    },
+  ],
+  workvivoShowcaseMedia: [
+    {
+      _id: "workvivoShowcaseMedia.workvivo-default-pt",
+      _type: "workvivoShowcaseMedia",
+      title: "Mídia de showcase Workvivo (PT)",
+      mediaKey: "workvivo-default",
+      locale: "pt",
+      heroImagePath: "public/workvivo/workvivo-hero.webp",
+      heroImageAlt: "Screenshot do feed Workvivo com AI companion",
+      commsImagePath: "public/workvivo/workvivo-comms.webp",
+      commsImageAlt: "Screenshot do painel Comms Orchestration do Workvivo",
+      intelligenceImagePath: "public/workvivo/workvivo-intelligence.webp",
+      intelligenceImageAlt: "Screenshot do dashboard People Intelligence",
+      frontlineImagePath: "public/workvivo/workvivo-frontline.webp",
+      frontlineImageAlt: "Screenshot do Workvivo Frontline App (mobile)",
+      shoutoutImagePath: "public/workvivo/workvivo-desktop-shoutout.webp",
+      shoutoutImageAlt: "Screenshot de shoutout no feed (desktop escuro)",
+      feedShoutoutImagePath: "public/workvivo/workvivo-feed-shoutout.webp",
+      feedShoutoutImageAlt: "Screenshot do feed com shoutout (modo claro)",
+    },
+    {
+      _id: "workvivoShowcaseMedia.workvivo-default-en",
+      _type: "workvivoShowcaseMedia",
+      title: "Workvivo showcase media (EN)",
+      mediaKey: "workvivo-default",
+      locale: "en",
+      heroImagePath: "public/workvivo/workvivo-hero.webp",
+      heroImageAlt: "Workvivo feed screenshot with AI companion",
+      commsImagePath: "public/workvivo/workvivo-comms.webp",
+      commsImageAlt: "Workvivo Comms Orchestration panel screenshot",
+      intelligenceImagePath: "public/workvivo/workvivo-intelligence.webp",
+      intelligenceImageAlt: "People Intelligence analytics dashboard screenshot",
+      frontlineImagePath: "public/workvivo/workvivo-frontline.webp",
+      frontlineImageAlt: "Workvivo Frontline App mobile screenshot",
+      shoutoutImagePath: "public/workvivo/workvivo-desktop-shoutout.webp",
+      shoutoutImageAlt: "Desktop dark mode shoutout in feed",
+      feedShoutoutImagePath: "public/workvivo/workvivo-feed-shoutout.webp",
+      feedShoutoutImageAlt: "Feed with shoutout — light mode",
     },
   ],
   blogPosts,

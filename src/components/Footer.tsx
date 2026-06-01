@@ -127,6 +127,8 @@ export default function Footer() {
         title: f.colPlatform,
         items: [
           { label: f.links.motor, href: "/plataforma/motor-gamificacao" },
+          { label: m.nav.intelligence.title, href: "/inteligencia/" },
+          { label: f.links.campanhas, href: "/plataforma/campanhas-gamificacao" },
           { label: f.links.wallets, href: "/plataforma/controle-carteiras" },
           { label: f.links.gestor, href: "/plataforma/painel-gestor" },
           { label: f.links.casos, href: "/casos-de-uso" },
@@ -165,13 +167,7 @@ export default function Footer() {
         ],
       },
     ],
-    [
-      f,
-      sanity?.calendlyUrl,
-      sanity?.companySiteUrl,
-      sanity?.rewardsCatalogUrl,
-      sanity?.whatsappUrl,
-    ],
+    [f, m.nav.intelligence.title, sanity?.calendlyUrl, sanity?.companySiteUrl, sanity?.rewardsCatalogUrl, sanity?.whatsappUrl],
   );
 
   const footerSections = useMemo(
@@ -206,7 +202,7 @@ export default function Footer() {
                 height={200}
                 loading="lazy"
                 decoding="async"
-                className="h-16 w-16 shrink-0 rounded-xl object-cover sm:h-[4.5rem] sm:w-[4.5rem]"
+                className="size-16 shrink-0 rounded-xl object-cover sm:size-18"
               />
             </div>
           </div>

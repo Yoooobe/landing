@@ -19,6 +19,11 @@ export const enNav = {
     desc: "Engage and reward your team with game mechanics.",
     badge: "CORE",
   },
+  gamificationCampaigns: {
+    title: "Gamification campaigns",
+    desc: "Byte to reward: problem, solution, and ROI-backed cases.",
+    badge: "NEW",
+  },
   intelligence: {
     title: "Intelligence",
     desc: "Advanced AI for campaigns and recommendations.",
