@@ -13,7 +13,7 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - Site (EN): https://yoooobe.github.io/landing/en/
 - API e integrações: https://yoooobe.github.io/landing/api-integracoes/ e https://yoooobe.github.io/landing/en/api-integracoes/
 - Plataforma: https://yoooobe.github.io/landing/plataforma/ e https://yoooobe.github.io/landing/en/plataforma/
-- Gamificação: https://yoooobe.github.io/landing/gamificacao/ e https://yoooobe.github.io/landing/en/gamificacao/
+- Gamificação (motor): https://yoooobe.github.io/landing/plataforma/motor-gamificacao/ e https://yoooobe.github.io/landing/en/plataforma/motor-gamificacao/
 - Blog: https://yoooobe.github.io/landing/blog/ e https://yoooobe.github.io/landing/en/blog/
 - robots.txt: https://yoooobe.github.io/landing/robots.txt
 - sitemap: https://yoooobe.github.io/landing/sitemap.xml

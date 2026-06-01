@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: /landing/studio/
 
-Sitemap: https://yoooobe.github.io/landing/sitemap.xml
+Sitemap: http://localhost:3000/landing/sitemap.xml
