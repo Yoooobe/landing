@@ -885,14 +885,14 @@ Secrets recomendados em **Settings → Secrets and variables → Actions**:
 - **Nome do secret = nome da variável de ambiente** (ex.: `NEXT_PUBLIC_SANITY_PROJECT_ID`). O **valor** é o Project ID (ex.: `hin8ivz0`). Não cries um secret chamado `hin8ivz0` — o workflow só lê chaves com o nome exacto abaixo; caso contrário o build fica sem ID/dataset embutidos.
 - `NEXT_PUBLIC_SANITY_PROJECT_ID` — **recomendado** o ID real do projeto (ex. `hin8ivz0`). No CI, o workflow **rejeita** os textos literais `your-project-id` e `xxx`. O valor `placeholder` é aceite com **aviso** (build corre; o Studio em produção pode falhar). Vazio também gera aviso. **Typo frequente:** `hin8lvz8` (L e 8 no fim) em vez de `hin8ivz0` (i e zero) — o Studio em produção chama `https://hin8lvz8.api.sanity.io` e falha com erro de rede; confirma o ID em [sanity.io/manage](https://www.sanity.io/manage).
 - `NEXT_PUBLIC_SANITY_DATASET` — normalmente `production`
-- `NEXT_PUBLIC_SITE_URL` — URL pública do site (ex.: `https://yoooobe.github.io/landing`); define `basePath` e links canónicos no export
+- `NEXT_PUBLIC_SITE_URL` — URL pública do site (ex.: `https://plataforma.4unik.com.br/landing`); define `basePath` e links canónicos no export
 - opcional: `NEXT_PUBLIC_SANITY_API_VERSION`
 - opcional: `NEXT_PUBLIC_GA_ID`
 - opcional: `SANITY_STUDIO_NANO_BANANA_URL` — URL do gerador de imagens para o Nano Banana no Studio (embutida no build; ver secção «Nano Banana» acima). Exemplo de endpoint Vercel: `https://nano-banana-api-pi.vercel.app/api/generate` (confirma o alias público no projeto; evita URLs com *Deployment Protection* que bloqueiam o browser no GitHub Pages).
 
 Sem `NEXT_PUBLIC_SANITY_PROJECT_ID` / dataset no CI, o export estático **não** embute o projeto Sanity no bundle do Studio em produção — podes ver erros de rede ou URLs com `your-project-id` / falha a abrir o Studio em `https://yoooobe.github.io/landing/studio/`.
 
-**CORS em produção:** no Sanity → API → CORS origins, adiciona `https://yoooobe.github.io` (origem sem path). Sem isto, o Studio no GitHub Pages pode falhar após login.
+**CORS em produção:** no Sanity → API → CORS origins, adiciona `https://plataforma.4unik.com.br` (origem sem path). Mantém `https://yoooobe.github.io` temporariamente se ainda servires builds legados no GitHub Pages. Sem a origem correta, o Studio em produção pode falhar após login.
 
 **CORS em desenvolvimento:** inclui `http://localhost:3000` e `http://127.0.0.1:3000` (ou o script `npm run sanity:cors` com CLI autenticado).
 

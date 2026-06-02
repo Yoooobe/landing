@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "generate:llms": "npx tsx scripts/generate-llms-txt.ts",
-    "build": "npm run generate:llms && next build && node scripts/patch-studio-spa-fallback.mjs",
+    "generate:og": "node scripts/generate-og-images.mjs",
+    "build": "npm run generate:llms && npm run generate:og && next build && node scripts/patch-studio-spa-fallback.mjs",
     "start": "next start",
     "lint": "eslint",
     "seed:sanity": "node scripts/seed-sanity-content.mjs",
     "sync:blog-fallback": "npx tsx scripts/sync-blog-fallback-to-sanity.ts",
-    "sanity:cors": "node --env-file=.env.local ./node_modules/.bin/sanity cors add http://localhost:3000 && node --env-file=.env.local ./node_modules/.bin/sanity cors add http://127.0.0.1:3000",
+    "sanity:cors": "node --env-file=.env.local ./node_modules/.bin/sanity cors add http://localhost:3000 && node --env-file=.env.local ./node_modules/.bin/sanity cors add http://127.0.0.1:3000 && node --env-file=.env.local ./node_modules/.bin/sanity cors add https://plataforma.4unik.com.br",
     "env:init": "node scripts/init-env-local.mjs",
     "env:check": "node scripts/check-local-env.mjs",
     "test:svg": "npx tsx scripts/run-svg-sanitize-tests.ts",
@@ -51,6 +52,7 @@
     "eslint": "^9",
     "eslint-config-next": "^16.2.1",
     "gh-pages": "^6.3.0",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "tsx": "^4.21.0",
     "typescript": "^5"

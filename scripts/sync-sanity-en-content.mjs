@@ -780,7 +780,7 @@ export function buildCurrentEnglishMenus() {
               _key: "rewards",
               label: enNav.rewardsHub.title,
               description: enNav.rewardsHub.desc,
-              href: "https://catalogo.yoobe.co",
+              href: "https://catalogo.4unik.com.br",
               icon: "rewards",
               openInNewTab: true,
             },
@@ -833,7 +833,7 @@ export function buildCurrentEnglishMenus() {
             {
               _key: "catalog",
               label: enFooter.links.catalogo,
-              href: "https://catalogo.yoobe.co",
+              href: "https://catalogo.4unik.com.br",
               openInNewTab: true,
             },
             {

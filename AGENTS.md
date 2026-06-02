@@ -4,7 +4,7 @@
 
 ### Overview
 
-Yoobe / 4unik marketing landing page — a statically exported Next.js 16 site (React 19, Tailwind CSS v4, Sanity CMS, Framer Motion). Default public URL (fallback): `https://yoooobe.github.io/landing/`. Override with **`NEXT_PUBLIC_SITE_URL`** at build time for Vercel, GCP, or a definitive domain — see [`docs/site-url-migration.md`](docs/site-url-migration.md). Repo: `https://github.com/Yoooobe/landing`.
+Yoobe / 4unik marketing landing page — a statically exported Next.js 16 site (React 19, Tailwind CSS v4, Sanity CMS, Framer Motion). Default public URL (fallback): `https://plataforma.4unik.com.br/landing/`. Override with **`NEXT_PUBLIC_SITE_URL`** at build time for Vercel, GCP, or alternate hosts — see [`docs/site-url-migration.md`](docs/site-url-migration.md). Repo: `https://github.com/Yoooobe/landing`.
 
 ### Dev Server
 

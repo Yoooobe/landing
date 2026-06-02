@@ -141,7 +141,7 @@ export default function Footer() {
           { label: f.links.api, href: "/api-integracoes" },
           {
             label: f.links.catalogo,
-            href: sanity?.rewardsCatalogUrl?.trim() || "https://catalogo.yoobe.co",
+            href: sanity?.rewardsCatalogUrl?.trim() || "https://catalogo.4unik.com.br",
             openInNewTab: true,
           },
           {

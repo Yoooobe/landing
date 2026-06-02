@@ -1967,7 +1967,7 @@ export const seedDocuments = {
     whatsappUrl: "https://wa.me/554187582060",
     contactEmail: "comercial@4unik.com.br",
     appLoginUrl: "https://4unik.yoobe.me/",
-    rewardsCatalogUrl: "https://catalogo.yoobe.co",
+    rewardsCatalogUrl: "https://catalogo.4unik.com.br",
     companySiteUrl: "https://4unik.com.br",
     privacyUrl: "https://4unik.com.br/politica-de-privacidade",
     termsUrl: "https://4unik.com.br/termos-de-uso",
@@ -2042,7 +2042,7 @@ export const seedDocuments = {
               _key: "rewards",
               label: "Hub de Prêmios",
               description: "Milhares de opções incríveis para encantar.",
-              href: "https://catalogo.yoobe.co",
+              href: "https://catalogo.4unik.com.br",
               icon: "rewards",
               openInNewTab: true,
             },
@@ -2129,7 +2129,7 @@ export const seedDocuments = {
               _key: "rewards",
               label: "Rewards hub",
               description: "Thousands of options to delight your people.",
-              href: "https://catalogo.yoobe.co",
+              href: "https://catalogo.4unik.com.br",
               icon: "rewards",
               openInNewTab: true,
             },
@@ -2187,7 +2187,7 @@ export const seedDocuments = {
             {
               _key: "catalog",
               label: "Catálogo de Recompensas",
-              href: "https://catalogo.yoobe.co",
+              href: "https://catalogo.4unik.com.br",
               openInNewTab: true,
             },
             {
@@ -2248,7 +2248,7 @@ export const seedDocuments = {
             {
               _key: "catalog",
               label: "Rewards catalog",
-              href: "https://catalogo.yoobe.co",
+              href: "https://catalogo.4unik.com.br",
               openInNewTab: true,
             },
             {

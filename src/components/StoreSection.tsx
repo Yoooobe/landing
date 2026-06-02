@@ -77,7 +77,7 @@ export default function StoreSection({
 
         <div className="relative z-10 flex flex-wrap justify-center gap-4">
           <a
-            href="https://catalogo.yoobe.co"
+            href="https://catalogo.4unik.com.br"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 font-bold text-brand-navy-dark transition-colors hover:bg-gray-100 font-sans"
@@ -85,7 +85,7 @@ export default function StoreSection({
             {s.ctaCatalog}
           </a>
           <a
-            href="https://catalogo.yoobe.co/kits"
+            href="https://catalogo.4unik.com.br/kits"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-14 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-bold text-white transition-colors hover:bg-white/5 font-sans"

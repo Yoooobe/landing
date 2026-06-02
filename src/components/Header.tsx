@@ -252,7 +252,7 @@ export default function Header() {
           {
             label: m.nav.rewardsHub.title,
             description: m.nav.rewardsHub.desc,
-            href: sanity?.rewardsCatalogUrl?.trim() || "https://catalogo.yoobe.co",
+            href: sanity?.rewardsCatalogUrl?.trim() || "https://catalogo.4unik.com.br",
             icon: "rewards",
             openInNewTab: true,
           },

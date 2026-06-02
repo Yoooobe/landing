@@ -10,12 +10,13 @@ A URL pública provisória (ex.: GitHub Pages) está centralizada em **`NEXT_PUB
 - [`src/app/robots.ts`](../src/app/robots.ts) e [`src/app/sitemap.ts`](../src/app/sitemap.ts) — URLs absolutas via `pageAbsoluteUrl`
 - [`scripts/generate-llms-txt.ts`](../scripts/generate-llms-txt.ts) — `public/llms.txt` (executado em `npm run build`)
 
-**Fallback** se a variável não existir: o valor de `defaultSiteUrl` em `config/public-site.json` (hoje o equivalente a `https://yoooobe.github.io/landing`).
+**Fallback** se a variável não existir: o valor de `defaultSiteUrl` em `config/public-site.json` (produção canónica: `https://plataforma.4unik.com.br/landing`).
 
 ## Formato de `NEXT_PUBLIC_SITE_URL`
 
-- Incluir **esquema** e, se aplicável, **path** do site (ex.: subpasta do repositório no Pages):
-  - `https://yoooobe.github.io/landing`
+- Incluir **esquema** e, se aplicável, **path** do site (ex.: subpasta no proxy):
+  - `https://plataforma.4unik.com.br/landing` (domínio definitivo atual)
+  - `https://yoooobe.github.io/landing` (legado GitHub Pages)
   - `https://www.empresa.com` (site na raiz do host → `BASE_PATH` vazio)
   - `https://landing.empresa.com/app` (subpath customizado)
 
@@ -35,7 +36,7 @@ Sem variável: mantém-se o fallback acima.
 
 4. **Sanity**  
    - **Presentation / preview**: `allowOrigins` em [`sanity.config.ts`](../sanity.config.ts) usa a **origem** de `NEXT_PUBLIC_SITE_URL`.  
-   - **CORS (API)**: no projeto Sanity → API → CORS origins, incluir a(s) origem(ns) reais (ex.: `https://www.empresa.com`). Pode ser necessário manter a origem antiga temporariamente durante a transição.
+   - **CORS (API)**: no projeto Sanity → API → CORS origins, incluir `https://plataforma.4unik.com.br` (origem do Studio/preview). Manter `https://yoooobe.github.io` temporariamente se ainda servir builds legados.
 
 5. **Search Console / Bing Webmaster**  
    Nova propriedade ou mudança de endereço; reenviar sitemap na URL nova.

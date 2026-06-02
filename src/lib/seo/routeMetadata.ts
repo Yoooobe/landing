@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BASE_PATH } from "@/lib/basePath";
 import { pageAbsoluteUrl, siteMetadataBase, SITE_NAME } from "@/lib/site";
+import { DEFAULT_OG_IMAGE_PATH, resolveRouteOgImagePath } from "@/lib/seo/ogImages";
 
 /**
  * Textos de SEO/AEO partilhados: editar nos segmentos `src/messages/segments/*`
@@ -22,14 +23,31 @@ type RouteMetadataOptions = {
   openGraphPath: string;
   ogLocale: OgLocale;
   robots?: Metadata["robots"];
+  /** Maps to `public/og/4unik-*.png` via `resolveRouteOgImagePath`. */
+  ogRouteKey?: string;
 };
+
+/** Garante URL absoluta com origem + BASE_PATH (ex.: plataforma.4unik.com.br/landing/...). */
+function absoluteAlternateUrl(path: string): string {
+  return pageAbsoluteUrl(path);
+}
+
+function absoluteLanguageAlternates(languages: LanguageAlternates): LanguageAlternates {
+  return Object.fromEntries(
+    Object.entries(languages).map(([locale, path]) => [locale, absoluteAlternateUrl(path)]),
+  ) as LanguageAlternates;
+}
 
 function withSharedMetadata(
   seo: PageSeoCopy,
   options: RouteMetadataOptions,
 ): Metadata {
   const ogDesc = seo.openGraphDescription ?? seo.description;
-  const defaultOgImage = pageAbsoluteUrl("/og/4unik-default.svg");
+  const ogImagePath = resolveRouteOgImagePath(options.ogRouteKey);
+  const defaultOgImage = pageAbsoluteUrl(ogImagePath || DEFAULT_OG_IMAGE_PATH);
+  const canonical = absoluteAlternateUrl(options.canonicalPath);
+  const openGraphUrl = absoluteAlternateUrl(options.openGraphPath);
+  const languages = absoluteLanguageAlternates(options.languages);
 
   return {
     metadataBase: siteMetadataBase(),
@@ -43,15 +61,15 @@ function withSharedMetadata(
     title: seo.title,
     description: seo.description,
     alternates: {
-      canonical: options.canonicalPath,
-      languages: options.languages,
+      canonical,
+      languages,
     },
     openGraph: {
       type: "website",
       siteName: SITE_NAME,
       title: seo.title,
       description: ogDesc,
-      url: options.openGraphPath,
+      url: openGraphUrl,
       locale: options.ogLocale,
       images: [
         {
@@ -90,6 +108,7 @@ export function buildRootLayoutMetadata(seo: PageSeoCopy): Metadata {
     languages: buildPtEnAlternates("/", "/en/"),
     openGraphPath: "/",
     ogLocale: "pt_BR",
+    ogRouteKey: "home",
   });
 }
 
@@ -100,6 +119,7 @@ export function buildEnSegmentLayoutMetadata(seo: PageSeoCopy): Metadata {
     languages: buildPtEnAlternates("/", "/en/"),
     openGraphPath: "/en/",
     ogLocale: "en_US",
+    ogRouteKey: "home",
   });
 }
 

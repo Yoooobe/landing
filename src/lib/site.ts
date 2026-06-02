@@ -40,7 +40,7 @@ export function pageAbsoluteUrl(path: string): string {
  *
  * Em desenvolvimento usa o host local (com `BASE_PATH`) para que `icons`, OG e
  * URLs derivadas não apontem só para produção — caso contrário o browser pede
- * favicon em `yoooobe.github.io` enquanto a app corre em `localhost`.
+ * favicon em produção enquanto a app corre em `localhost` (origem canónica via SITE_URL).
  */
 export function siteMetadataBase(): URL {
   if (process.env.VERCEL_URL) {
