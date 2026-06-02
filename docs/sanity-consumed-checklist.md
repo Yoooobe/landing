@@ -1,6 +1,6 @@
 # Checklist: documentos Sanity consumidos pelo site (build)
 
-Referência para saber **o que preencher no Studio** com impacto direto na landing exportada. Rotas assumem `basePath` `/landing` em dev padrão.
+Referência para saber **o que preencher no Studio** com impacto direto na landing exportada. Rotas assumem `basePath` vazio em produção (`https://plataforma.4unik.com.br/`).
 
 ## Como o `marketingPage` entra na página
 
@@ -9,6 +9,21 @@ Referência para saber **o que preencher no Studio** com impacto direto na landi
 - **`openGraphDescription`** (OG/Twitter): campo opcional no grupo SEO do `marketingPage` (`seoType`). Em `pageSeo()`, o CMS **substitui** o texto de OG do fallback quando preenchido; caso contrário usa-se o fallback de cada slug (ex.: `getResolvedGamificacaoContent`, `getResolvedApiIntegracoesContent`, segmentos em `src/messages/segments/*`).
 
 **Espelho editorial (`contentMirror`):** não alimenta o export — ver [`content-mirror-policy.md`](content-mirror-policy.md).
+
+### Rotas em que o corpo do `marketingPage` **não** chega à produção
+
+`MarketingPageScreen` (`src/components/MarketingPageScreen.tsx`) ignora `marketingPage.content[]` e renderiza componentes com copy em TypeScript para estes slugs:
+
+| Slug CMS | Rota pública | Fonte do corpo na produção |
+|----------|--------------|----------------------------|
+| `home` | `/`, `/en/` | `HomePage` + `src/messages/segments/*` + `homeShowcaseMedia` |
+| `plataforma` | `/plataforma/`, `/en/plataforma/` | `PlataformaOverviewPage` + showcase |
+| `api-integracoes` | `/api-integracoes/`, … | `getResolvedApiIntegracoesContent` (hardcoded) + showcase |
+| `gamificacao` | `/plataforma/motor-gamificacao/`, … | `getResolvedGamificacaoContent` + showcase |
+
+Nesses casos, editar blocos no Studio **só afeta SEO** (`seo.*`) até o modelo ser ligado ao renderer. `mergeMarketingPageWithFallback` também força `content: fallback.content` quando há merge.
+
+**IDs do Studio (deep-links):** não renomear `marketingPage-locale-pt` / `marketingPage-locale-en` nem listas `marketingPage-pt` / `marketingPage-en` — usados por `src/sanity/studioDeepLink.ts`.
 
 ---
 
@@ -22,7 +37,7 @@ Referência para saber **o que preencher no Studio** com impacto direto na landi
 | **Menus** (`menu`) | Sim (via `siteSettings`) | Referenciados em `siteSettings`, não editados isoladamente na maioria dos fluxos. |
 | **Coleções de logos** (`logoCollection`) | Sim | Via `siteSettings` e/ou blocos `logoStripBlock` em `marketingPage`. |
 | **Mídia de showcase da home** (`homeShowcaseMedia`) | Sim | Chave típica `home-default` (+ locale). |
-| **Mídia de showcase da plataforma** (`platformShowcaseMedia`) | Sim | `pageKey` típico `plataforma` (+ locale). |
+| **Mídia de showcase da plataforma** (`platformShowcaseMedia`) | Sim | `pageKey` típico `plataforma` (+ locale). GROQ inclui imagens da Loja Corporativa (`storeHomeImage` … `orderDetailImage`) para uso futuro na rota da loja. |
 | **Mídia de showcase — gamificação** (`gamificacaoShowcaseMedia`) | Sim | Chave típica `gamificacao-default` (+ locale). |
 | **Mídia de showcase — API e integrações** (`apiIntegracoesShowcaseMedia`) | Sim | Chave típica `api-integracoes-default` (+ locale). |
 | **Mídia de showcase — Workvivo** (`workvivoShowcaseMedia`) | Sim | Chave típica `workvivo-default` (+ locale). |
@@ -40,7 +55,7 @@ Cada linha: **rota** → **documentos / chaves** consumidos hoje.
 
 | Rota | `marketingPage` | Outros Sanity |
 |------|-----------------|---------------|
-| `/` (PT), `/en/` (EN) | `slug`: **`home`**, `locale`: `pt` / `en` | `homeShowcaseMedia` **`mediaKey` `home-default`**; opcional `page` slug **`home`** (hero legado) |
+| `/` (PT), `/en/` (EN) | `slug`: **`home`**, `locale`: `pt` / `en` | `homeShowcaseMedia` **`mediaKey` `home-default`** (Bento: até 4 imagens: painel, loja, gamificação, API); opcional `page` slug **`home`** (hero legado) |
 
 - Metadata: `getMarketingHomeSeo` → merge CMS + fallback home (`src/sanity/lib/home.ts`).
 

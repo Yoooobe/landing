@@ -1,4 +1,4 @@
 {
-  "defaultSiteUrl": "https://plataforma.4unik.com.br/landing",
-  "note": "Fallback quando NEXT_PUBLIC_SITE_URL não está definido. robots.txt, sitemap, metadados e llms.txt derivam da mesma regra de parsing (ver src/lib/parsePublicSiteUrl.ts). Produção canónica: https://plataforma.4unik.com.br/landing — defina também NEXT_PUBLIC_SITE_URL no CI (GitHub Actions secret)."
+  "defaultSiteUrl": "https://plataforma.4unik.com.br",
+  "note": "Fallback quando NEXT_PUBLIC_SITE_URL não está definido. robots.txt, sitemap, metadados e llms.txt derivam da mesma regra de parsing (ver src/lib/parsePublicSiteUrl.ts). Produção canónica: https://plataforma.4unik.com.br/ (BASE_PATH vazio). Defina também NEXT_PUBLIC_SITE_URL no CI."
 }

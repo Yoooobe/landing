@@ -4,7 +4,7 @@
 
 ### Overview
 
-Yoobe / 4unik marketing landing page — a statically exported Next.js 16 site (React 19, Tailwind CSS v4, Sanity CMS, Framer Motion). Default public URL (fallback): `https://plataforma.4unik.com.br/landing/`. Override with **`NEXT_PUBLIC_SITE_URL`** at build time for Vercel, GCP, or alternate hosts — see [`docs/site-url-migration.md`](docs/site-url-migration.md). Repo: `https://github.com/Yoooobe/landing`.
+Yoobe / 4unik marketing landing page — a statically exported Next.js 16 site (React 19, Tailwind CSS v4, Sanity CMS, Framer Motion). Default public URL (fallback): `https://plataforma.4unik.com.br/`. Override with **`NEXT_PUBLIC_SITE_URL`** at build time for alternate hosts — see [`docs/site-url-migration.md`](docs/site-url-migration.md). Repo: `https://github.com/Yoooobe/landing`.
 
 ### Dev Server
 
@@ -12,7 +12,7 @@ Yoobe / 4unik marketing landing page — a statically exported Next.js 16 site (
 NEXT_PUBLIC_SANITY_DATASET=production NEXT_PUBLIC_SANITY_PROJECT_ID=placeholder npm run dev
 ```
 
-The site is served at `http://localhost:3000/landing/` when using the default canonical URL (path `/landing`). If you set `NEXT_PUBLIC_SITE_URL` to a root-only host (no path), `basePath` becomes empty and local URLs change accordingly.
+The site is served at `http://localhost:3000/` when `NEXT_PUBLIC_SITE_URL` points to the host root (default for production). If you set a subpath in `NEXT_PUBLIC_SITE_URL`, `basePath` matches that path and local URLs change accordingly.
 
 ### Key Commands
 
@@ -33,7 +33,7 @@ Configuração do Pages no GitHub (fonte branch vs Actions, Desktop, CLI, billin
 ### Gotchas
 
 - **Sanity env vars required**: `NEXT_PUBLIC_SANITY_DATASET` and `NEXT_PUBLIC_SANITY_PROJECT_ID` must be set for both `npm run dev` and `npm run build`. Without them, the `/studio` route crashes. Use `production` and `placeholder` as dummy values for local dev if real credentials aren't available.
-- **basePath**: Derived from `NEXT_PUBLIC_SITE_URL` (default includes `/landing` on GitHub Pages). All app routes are prefixed accordingly. See [`src/lib/publicSite.ts`](src/lib/publicSite.ts).
+- **basePath**: Derived from `NEXT_PUBLIC_SITE_URL` (empty at `https://plataforma.4unik.com.br/`). All app routes are prefixed accordingly when non-empty. See [`src/lib/publicSite.ts`](src/lib/publicSite.ts).
 - **Static export**: `next.config.ts` sets `output: "export"` — no SSR, no API routes. The build produces static HTML in `out/`.
 - **Lead capture forms**: set `NEXT_PUBLIC_LEADS_INGEST_URL` to a public HTTPS endpoint that accepts POST JSON matching `leadPayload` (`name`, `email`, `company`, `consent`, `source`, `locale`, etc.). Without it, submit shows a configuration error in the browser after export. Local `npm run dev` can use the Route Handler at `/api/leads` via same-origin fallback.
 - **Optional chat widget**: set `NEXT_PUBLIC_CHAT_SCRIPT_URL` to a third-party script URL (e.g. Intercom/Crisp). Loaded lazily after paint; no server required for static export.

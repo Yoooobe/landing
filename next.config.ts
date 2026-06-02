@@ -3,7 +3,7 @@ import { BASE_PATH } from "./src/lib/basePath";
 
 /**
  * Mantemos `basePath` também em desenvolvimento para espelhar as URLs finais do
- * GitHub Pages e evitar drift entre `/landing/*` local e produção.
+ * URLs finais do host (ex.: plataforma.4unik.com.br na raiz ou subpath via NEXT_PUBLIC_SITE_URL).
  *
  * Apenas `output: "export"` continua restrito à produção para não limitar a
  * navegação dinâmica do Studio durante o desenvolvimento.
@@ -18,7 +18,7 @@ const nextConfig: NextConfig = {
   },
   basePath: BASE_PATH,
   assetPrefix: BASE_PATH,
-  ...(dev
+  ...(dev && BASE_PATH
     ? {
         async redirects() {
           return [

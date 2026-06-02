@@ -84,7 +84,7 @@ if (nano) {
 const ok = !pidBad && !dsBad;
 console.log("---");
 if (ok) {
-  console.log("OK — reinicia `npm run dev` e abre http://localhost:3000/landing/studio/");
+  console.log("OK — reinicia `npm run dev` e abre http://localhost:3000/studio/");
   process.exit(0);
 }
 
