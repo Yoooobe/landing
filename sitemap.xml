@@ -1,306 +1,306 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url>
-<loc>https://plataforma.4unik.com.br/landing/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>1</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.95</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/api-integracoes/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/api-integracoes/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/api-integracoes/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/api-integracoes/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/api-integracoes/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/api-integracoes/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/api-integracoes/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/api-integracoes/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/api-integracoes/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/api-integracoes/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/api-integracoes/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/api-integracoes/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.85</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/api-integracoes/workvivo/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/api-integracoes/workvivo/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/api-integracoes/workvivo/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/api-integracoes/workvivo/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/api-integracoes/workvivo/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/api-integracoes/workvivo/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/api-integracoes/workvivo/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/api-integracoes/workvivo/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/api-integracoes/workvivo/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/api-integracoes/workvivo/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/api-integracoes/workvivo/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/api-integracoes/workvivo/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.75</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/plataforma/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/plataforma/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/plataforma/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/plataforma/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.85</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/inteligencia/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/inteligencia/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/inteligencia/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/inteligencia/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/inteligencia/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/inteligencia/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.85</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/inteligencia/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/inteligencia/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/inteligencia/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/inteligencia/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/inteligencia/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/inteligencia/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7999999999999999</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/casos-de-uso/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/casos-de-uso/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/casos-de-uso/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/casos-de-uso/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/casos-de-uso/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/casos-de-uso/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.85</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/casos-de-uso/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/casos-de-uso/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/casos-de-uso/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/casos-de-uso/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/casos-de-uso/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/casos-de-uso/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7999999999999999</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/blog/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/blog/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.8</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/blog/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/blog/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.75</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/plataforma/motor-gamificacao/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/motor-gamificacao/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/motor-gamificacao/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/plataforma/motor-gamificacao/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/motor-gamificacao/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/motor-gamificacao/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.9</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/plataforma/motor-gamificacao/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/motor-gamificacao/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/motor-gamificacao/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/plataforma/motor-gamificacao/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/motor-gamificacao/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/motor-gamificacao/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.85</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/plataforma/campanhas-gamificacao/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/campanhas-gamificacao/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/campanhas-gamificacao/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/plataforma/campanhas-gamificacao/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/campanhas-gamificacao/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/campanhas-gamificacao/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.85</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/plataforma/campanhas-gamificacao/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/campanhas-gamificacao/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/campanhas-gamificacao/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/plataforma/campanhas-gamificacao/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/campanhas-gamificacao/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/campanhas-gamificacao/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>weekly</changefreq>
 <priority>0.7999999999999999</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/plataforma/controle-carteiras/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/controle-carteiras/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/controle-carteiras/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/plataforma/controle-carteiras/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/controle-carteiras/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/controle-carteiras/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.55</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/plataforma/controle-carteiras/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/controle-carteiras/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/controle-carteiras/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/plataforma/controle-carteiras/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/controle-carteiras/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/controle-carteiras/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/plataforma/painel-gestor/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/painel-gestor/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/painel-gestor/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/plataforma/painel-gestor/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/painel-gestor/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/painel-gestor/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.55</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/plataforma/painel-gestor/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/painel-gestor/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/painel-gestor/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/plataforma/painel-gestor/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/painel-gestor/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/painel-gestor/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/plataforma/loja-resgate/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/loja-resgate/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/loja-resgate/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/plataforma/loja-resgate/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/loja-resgate/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/loja-resgate/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/plataforma/loja-resgate/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/plataforma/loja-resgate/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/plataforma/loja-resgate/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/plataforma/loja-resgate/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/plataforma/loja-resgate/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/plataforma/loja-resgate/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.45</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/blog/1/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/1/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/1/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/blog/1/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/1/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/1/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/blog/2/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/2/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/2/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/blog/2/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/2/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/2/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/blog/3/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/3/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/3/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/blog/3/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/3/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/3/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/blog/4/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/4/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/4/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/blog/4/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/4/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/4/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/blog/5/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/5/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/5/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/blog/5/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/5/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/5/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/blog/6/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/6/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/6/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/blog/6/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/6/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/6/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/blog/7/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/7/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/7/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/blog/7/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/7/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/7/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.7</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/blog/1/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/1/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/1/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/blog/1/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/1/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/1/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.65</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/blog/2/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/2/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/2/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/blog/2/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/2/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/2/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.65</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/blog/3/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/3/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/3/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/blog/3/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/3/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/3/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.65</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/blog/4/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/4/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/4/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/blog/4/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/4/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/4/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.65</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/blog/5/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/5/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/5/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/blog/5/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/5/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/5/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.65</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/blog/6/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/6/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/6/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/blog/6/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/6/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/6/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.65</priority>
 </url>
 <url>
-<loc>https://plataforma.4unik.com.br/landing/en/blog/7/</loc>
-<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/landing/blog/7/" />
-<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/landing/en/blog/7/" />
-<lastmod>2026-06-02T19:53:07.510Z</lastmod>
+<loc>https://plataforma.4unik.com.br/en/blog/7/</loc>
+<xhtml:link rel="alternate" hreflang="pt-BR" href="https://plataforma.4unik.com.br/blog/7/" />
+<xhtml:link rel="alternate" hreflang="en" href="https://plataforma.4unik.com.br/en/blog/7/" />
+<lastmod>2026-06-02T23:50:08.356Z</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.65</priority>
 </url>
