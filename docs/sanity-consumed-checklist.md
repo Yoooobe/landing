@@ -1,6 +1,6 @@
 # Checklist: documentos Sanity consumidos pelo site (build)
 
-Referência para saber **o que preencher no Studio** com impacto direto na landing exportada. Rotas assumem `basePath` vazio em produção (`https://plataforma.4unik.com.br/`).
+Referência para saber **o que preencher no Studio** com impacto direto na landing exportada. Rotas assumem `basePath` `/landing` (`https://plataforma.4unik.com.br/landing/`).
 
 ## Como o `marketingPage` entra na página
 

@@ -27,7 +27,7 @@ type RouteMetadataOptions = {
   ogRouteKey?: string;
 };
 
-/** Garante URL absoluta com origem + BASE_PATH (ex.: plataforma.4unik.com.br/...). */
+/** Garante URL absoluta com origem + BASE_PATH (ex.: plataforma.4unik.com.br/landing/...). */
 function absoluteAlternateUrl(path: string): string {
   return pageAbsoluteUrl(path);
 }

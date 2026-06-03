@@ -1376,7 +1376,7 @@ const marketingPages = [
         ],
         imageSide: "right",
         primaryLabel: "Abrir Studio",
-        primaryHref: "https://plataforma.4unik.com.br/studio/",
+        primaryHref: "https://plataforma.4unik.com.br/landing/studio/",
       }),
       statsBlock("stats", "Indicadores que sustentam a narrativa", [
         {
@@ -1437,7 +1437,7 @@ const marketingPages = [
           { name: "Workvivo", href: "https://www.workvivo.com/" },
           { name: "Zoom", href: "https://www.zoom.us/" },
           { name: "4Unik", href: "https://4unik.com.br/" },
-          { name: "Yoobe", href: "https://plataforma.4unik.com.br/" },
+          { name: "Yoobe", href: "https://plataforma.4unik.com.br/landing/" },
         ],
       }),
       ctaBlock("cta", {
@@ -1518,7 +1518,7 @@ const marketingPages = [
         ],
         imageSide: "right",
         primaryLabel: "Open Studio",
-        primaryHref: "https://plataforma.4unik.com.br/studio/",
+        primaryHref: "https://plataforma.4unik.com.br/landing/studio/",
       }),
       statsBlock("stats", "Numbers that support the story", [
         {
@@ -1572,7 +1572,7 @@ const marketingPages = [
           { name: "Workvivo", href: "https://www.workvivo.com/" },
           { name: "Zoom", href: "https://www.zoom.us/" },
           { name: "4Unik", href: "https://4unik.com.br/" },
-          { name: "Yoobe", href: "https://plataforma.4unik.com.br/" },
+          { name: "Yoobe", href: "https://plataforma.4unik.com.br/landing/" },
         ],
       }),
       ctaBlock("cta", {
@@ -1898,7 +1898,7 @@ const marketingStrategies = [
         description:
           "Use este documento para priorizar os proximos artigos, FAQs, paginas de oferta e campanhas da 4Unik.",
         primaryLabel: "Abrir Studio",
-        primaryHref: "https://plataforma.4unik.com.br/studio/",
+        primaryHref: "https://plataforma.4unik.com.br/landing/studio/",
       }),
     ],
   },
@@ -1952,7 +1952,7 @@ const marketingStrategies = [
         description:
           "Use this document to prioritize upcoming articles, FAQs, offer pages, and campaigns in Sanity.",
         primaryLabel: "Open Studio",
-        primaryHref: "https://plataforma.4unik.com.br/studio/",
+        primaryHref: "https://plataforma.4unik.com.br/landing/studio/",
       }),
     ],
   },

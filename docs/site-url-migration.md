@@ -10,14 +10,14 @@ A URL pública provisória (ex.: GitHub Pages) está centralizada em **`NEXT_PUB
 - [`src/app/robots.ts`](../src/app/robots.ts) e [`src/app/sitemap.ts`](../src/app/sitemap.ts) — URLs absolutas via `pageAbsoluteUrl`
 - [`scripts/generate-llms-txt.ts`](../scripts/generate-llms-txt.ts) — `public/llms.txt` (executado em `npm run build`)
 
-**Fallback** se a variável não existir: o valor de `defaultSiteUrl` em `config/public-site.json` (produção canónica: `https://plataforma.4unik.com.br` — site na raiz, `BASE_PATH` vazio).
+**Fallback** se a variável não existir: o valor de `defaultSiteUrl` em `config/public-site.json` (produção canónica: `https://plataforma.4unik.com.br/landing`).
 
 ## Formato de `NEXT_PUBLIC_SITE_URL`
 
 - Incluir **esquema** e, se aplicável, **path** do site:
-  - `https://plataforma.4unik.com.br` (domínio definitivo — raiz do host)
-  - `https://yoooobe.github.io/landing` (legado GitHub Pages com subpath)
-  - `https://landing.empresa.com/app` (subpath customizado)
+  - `https://plataforma.4unik.com.br/landing` (domínio definitivo — proxy 4unik)
+  - `https://yoooobe.github.io/landing` (legado GitHub Pages)
+  - `https://www.empresa.com` (site na raiz do host → `BASE_PATH` vazio)
   - `https://landing.empresa.com/app` (subpath customizado)
 
 Sem variável: mantém-se o fallback acima.
