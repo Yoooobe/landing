@@ -13,6 +13,8 @@ import { ptInteligenciaPage } from "@/messages/segments/pt-inteligencia-page";
 import { ptBlogPage } from "@/messages/segments/pt-blog-page";
 import { ptLeadForm } from "@/messages/segments/pt-lead-form";
 import { ptConversionDock } from "@/messages/segments/pt-conversion-dock";
+import { ptPricingPage } from "@/messages/segments/pt-pricing-page";
+import { ptSegurancaPage } from "@/messages/segments/pt-seguranca-page";
 
 export const ptMessages = {
   nav: ptNav,
@@ -35,6 +37,8 @@ export const ptMessages = {
   blogPage: ptBlogPage,
   leadForm: ptLeadForm,
   conversionDock: ptConversionDock,
+  pricingPage: ptPricingPage,
+  segurancaPage: ptSegurancaPage,
   ...ptRest,
 } as const;
 

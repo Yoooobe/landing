@@ -15,15 +15,18 @@
 | Done | P2 | Content | Rotas `/vendas/` + `/en/vendas/` — ICP VP de Vendas: incentivo integrado ao CRM com premiação instantânea | Medium | Medium | `src/app/(pt)/vendas/`, `src/app/(en)/en/vendas/`, `src/messages/segments/*-vendas-page.ts` |
 | Done | P3 | Content | Rotas `/comunidades/` + `/en/comunidades/` — ICP criadores/comunidades: loja VIP de fãs com fulfillment 4unik | Medium | Medium | `src/app/(pt)/comunidades/`, `src/app/(en)/en/comunidades/`, `src/messages/segments/*-comunidades-page.ts` |
 | Done | P3 | Content | Rotas `/eventos/` + `/en/eventos/` — ICP produtores de eventos: pontos no evento + checkout no celular, retirada/entrega rastreada | Medium | Medium | `src/app/(pt)/eventos/`, `src/app/(en)/en/eventos/`, `src/messages/segments/*-eventos-page.ts` |
+| Done | P1 | Content | UI dedicada ICP (`IcpProfilePage`, hero temático, showcases `public/screens/icp/`, bloco `icpProfilePage`) — PR [#3](https://github.com/Yoooobe/landing/pull/3) | High | Medium | `src/components/icp/`, `src/config/icp-profile-visuals.ts`, `src/lib/icpVerticalPages.ts` |
+| Done | P2 | CMS | Guardrails Studio: `marketingPage` exige ≥1 bloco + meta title/description | Medium | Low | `src/sanity/schemaTypes/marketingPageType.ts`, `docs/cms.md` |
+| Draft | P1 | Content | `/pricing/` PT+EN — 4 planos (Scale sob consulta); **noindex** até `NEXT_PUBLIC_INDEX_GROWTH_PAGES=true` | High | Medium | `src/app/(pt)/pricing/`, `docs/content-approval-queue.md` |
+| Draft | P2 | Content | `/seguranca/` PT+EN — governança sem SLA %; **noindex** até aprovação | Medium | Medium | `src/app/(pt)/seguranca/`, `docs/content-approval-queue.md` |
 
 ## Next Up
 | Priority | Theme | Change | Impact | Risk | Key files |
 | --- | --- | --- | --- | --- | --- |
-| P2 | CMS | Add stronger guardrails for incomplete `marketingPage` documents in Studio | Medium | Medium | `src/sanity/schemaTypes/marketingPageType.ts`, `docs/cms.md` |
-| P1 | Content | Nova rota `/pricing` (PT/EN) com os 4 planos do notebook (Starter → Enterprise) — exige aprovação comercial dos valores antes de publicar | High | Medium | `src/app/(pt)/`, `src/app/(en)/en/`, `src/messages/segments/` |
+| P1 | GTM | Publicar pricing/segurança: aprovar fila em `content-approval-queue.md`, indexar (`INDEX_GROWTH_PAGES`), sitemap + menu | High | Medium | `docs/content-approval-queue.md`, `src/app/sitemap.ts` |
 | P2 | Content | Landing pages por ICP transversal (RH, Marketing) usando a matriz de `icp-messaging-guide.md` | Medium | Medium | `src/messages/segments/`, `docs/knowledge-base/notebooklm/icp-messaging-guide.md` |
-| P2 | Content | Página `/seguranca/` e calculadora de ROI (já em `STRATEGIC_PAGE_GAPS` do MCP) — prova/SLA verificáveis antes de publicar | Medium | Medium | `src/app/(pt)/`, `src/app/(en)/en/`, `docs/enterprise-content-strategy.md` |
-| P2 | Content | Revisar prova social/tração (R$ 1,34M, logos, Boticário +308%) e expor na landing só após aprovação de marca/jurídico | Medium | Medium | `src/messages/segments/`, `docs/knowledge-base/notebooklm/icp-messaging-guide.md` |
+| P2 | Content | Calculadora de ROI + `/recursos/sla/` — prova verificável; sem ROI garantido em JSON-LD | Medium | High | `docs/enterprise-content-strategy.md` |
+| P2 | Content | Revisar prova social/tração (R$ 1,34M, logos, Boticário +308%) e expor na landing só após aprovação de marca/jurídico | Medium | Medium | `src/messages/segments/`, `docs/content-approval-queue.md` |
 
 ## Blocked Or Larger Scope
 | Priority | Theme | Change | Reason blocked |

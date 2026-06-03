@@ -6,10 +6,30 @@ const localeOptions = [
   { title: "English", value: "en" },
 ];
 
+type MarketingPageDoc = {
+  content?: unknown[];
+  seo?: { metaTitle?: string; metaDescription?: string };
+};
+
 export const marketingPageType = defineType({
   name: "marketingPage",
   title: "Landing Pages de Marketing",
   type: "document",
+  validation: (Rule) =>
+    Rule.custom((doc) => {
+      const page = doc as MarketingPageDoc | undefined;
+      const content = page?.content;
+      if (!Array.isArray(content) || content.length === 0) {
+        return "Adicione pelo menos uma sessão (bloco) antes de considerar a página pronta.";
+      }
+      if (!page?.seo?.metaTitle?.trim()) {
+        return "Preencha o Meta Title no grupo SEO.";
+      }
+      if (!page?.seo?.metaDescription?.trim()) {
+        return "Preencha a Meta Description no grupo SEO.";
+      }
+      return true;
+    }),
   groups: [
     { name: "editorial", title: "Editorial", default: true },
     { name: "seo", title: "SEO" },
@@ -64,6 +84,8 @@ export const marketingPageType = defineType({
       group: "editorial",
       description:
         "Editor visual por blocos. Pode combinar blocos nativos editáveis com blocos legados enquanto a migração editorial avança.",
+      validation: (Rule) =>
+        Rule.min(1).error("Inclua pelo menos um bloco de conteúdo (hero, grid, legado, etc.)."),
       of: [
         { type: "heroBlock" },
         { type: "featureGridBlock" },

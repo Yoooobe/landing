@@ -13,6 +13,8 @@ import { enInteligenciaPage } from "@/messages/segments/en-inteligencia-page";
 import { enBlogPage } from "@/messages/segments/en-blog-page";
 import { enLeadForm } from "@/messages/segments/en-lead-form";
 import { enConversionDock } from "@/messages/segments/en-conversion-dock";
+import { enPricingPage } from "@/messages/segments/en-pricing-page";
+import { enSegurancaPage } from "@/messages/segments/en-seguranca-page";
 /** Overlay inglês sobre `ptMessages` (deepMerge em `getMessages`). */
 export const enOverlay = {
   nav: enNav,
@@ -35,5 +37,7 @@ export const enOverlay = {
   blogPage: enBlogPage,
   leadForm: enLeadForm,
   conversionDock: enConversionDock,
+  pricingPage: enPricingPage,
+  segurancaPage: enSegurancaPage,
   ...enRest,
 } as const;
