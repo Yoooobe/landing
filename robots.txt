@@ -1,7 +1,7 @@
 User-Agent: *
 Allow: /
-Disallow: /studio/
-Disallow: /workvivo/
-Disallow: /en/workvivo/
+Disallow: /landing/studio/
+Disallow: /landing/workvivo/
+Disallow: /landing/en/workvivo/
 
-Sitemap: https://plataforma.4unik.com.br/sitemap.xml
+Sitemap: https://plataforma.4unik.com.br/landing/sitemap.xml
