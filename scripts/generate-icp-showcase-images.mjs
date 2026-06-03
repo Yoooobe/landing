@@ -26,7 +26,7 @@ const PROFILES = {
     accentSoft: "#22d3ee",
     variants: [
       { key: "hero", source: "api-integracoes-hero-composite.jpg", label: "api.4unik.io" },
-      { key: "how", source: "api-integracoes-hero-request.png", label: "api.4unik.io · POST /v1/checkout" },
+      { key: "how", source: "admin-campaign-products.webp", label: "gestor.4unik.io · catálogo" },
       { key: "benefits", source: "member-store-home.webp", label: "loja no seu app" },
     ],
   },
@@ -53,8 +53,8 @@ const PROFILES = {
     accentSoft: "#8338ec",
     variants: [
       { key: "hero", source: "member-store-home.webp", label: "loja.4unik.io · VIP" },
-      { key: "how", source: "member-orders.webp", label: "loja.4unik.io · pedidos" },
-      { key: "benefits", source: "member-order-detail.webp", label: "fulfillment 4Unik" },
+      { key: "how", source: "member-points.webp", label: "loja.4unik.io · engajamento" },
+      { key: "benefits", source: "member-orders.webp", label: "loja.4unik.io · pedidos" },
     ],
   },
   eventos: {
@@ -63,7 +63,8 @@ const PROFILES = {
     variants: [
       { key: "hero", source: "pix-step-1-banks.webp", label: "loja.4unik.io · evento" },
       { key: "how", source: "pix-step-2-form.webp", label: "checkout no celular" },
-      { key: "benefits", source: "pix-step-3-success.webp", label: "resgate confirmado" },
+      // success layout tem a confirmação na coluna direita: ancorar o crop à direita.
+      { key: "benefits", source: "pix-step-3-success.webp", label: "resgate confirmado", position: "right top" },
     ],
   },
 };
@@ -142,7 +143,7 @@ function bottomRoundedMask(w, h, r) {
 </svg>`);
 }
 
-async function buildVariant(sharp, { width, height, accent, accentSoft, label, sourcePath, outPath }) {
+async function buildVariant(sharp, { width, height, accent, accentSoft, label, sourcePath, outPath, position = "top" }) {
   const margin = Math.round(width * 0.055);
   const chromeH = 46;
   const win = { x: margin, y: margin, w: width - margin * 2, h: height - margin * 2 };
@@ -154,7 +155,7 @@ async function buildVariant(sharp, { width, height, accent, accentSoft, label, s
   };
 
   const shot = await sharp(readFileSync(sourcePath))
-    .resize(content.w, content.h, { fit: "cover", position: "top" })
+    .resize(content.w, content.h, { fit: "cover", position })
     .composite([{ input: bottomRoundedMask(content.w, content.h, 20), blend: "dest-in" }])
     .png()
     .toBuffer();
@@ -198,6 +199,7 @@ async function main() {
         label: variant.label,
         sourcePath,
         outPath,
+        position: variant.position,
       });
       created += 1;
       console.log(`generate-icp-showcase-images: ${slug}-${variant.key}.webp`);
