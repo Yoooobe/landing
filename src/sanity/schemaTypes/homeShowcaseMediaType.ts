@@ -101,6 +101,16 @@ export const homeShowcaseMediaType = defineType({
           "Imagem do card de catálogo",
           "Substitui a mídia do card de loja/recompensas na seção Bento.",
         ),
+        imageField(
+          "gamificationCardImage",
+          "Imagem do card de gamificação",
+          "Substitui a mídia do segundo card (motor de gamificação) na seção Bento.",
+        ),
+        imageField(
+          "apiCardImage",
+          "Imagem do card de API / integrações",
+          "Substitui a mídia do quarto card (API e integrações) na seção Bento.",
+        ),
       ],
     }),
     defineField({

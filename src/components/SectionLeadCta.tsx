@@ -68,7 +68,7 @@ export default function SectionLeadCta({ homeContent, zone, variant = "home" }: 
                 href={c.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl bg-[#25D366] px-6 font-sans text-sm font-bold text-white shadow-lg transition hover:bg-[#128C7E]"
+                className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl bg-whatsapp px-6 font-sans text-sm font-bold text-white shadow-lg transition hover:bg-whatsapp-deep"
               >
                 {c.whatsapp}
               </a>

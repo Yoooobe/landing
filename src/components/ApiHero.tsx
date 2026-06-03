@@ -37,7 +37,7 @@ export default function ApiHero({
   return (
     <section
       id="docs"
-      className="hero-theme-section relative overflow-hidden border-t border-white/5 bg-[#0d1424] pb-20 pt-12 md:pt-14"
+      className="hero-theme-section relative overflow-hidden border-t border-white/5 bg-surface-section pb-20 pt-12 md:pt-14"
     >
       <HeroThemeBackdrop theme="api" />
       {/* Developer Grid Background */}
@@ -87,7 +87,7 @@ export default function ApiHero({
                transition={{ delay: 0.2 }}
                className="flex flex-col sm:flex-row gap-4 pt-4"
             >
-               <a href={content.primaryCtaHref} className="inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 font-bold text-[#0a0f18] shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all hover:bg-cyan-400 hover:text-[#0a0f18] hover:scale-105 gap-2 font-sans">
+               <a href={content.primaryCtaHref} className="inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 font-bold text-surface-base shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all hover:bg-cyan-400 hover:text-surface-base hover:scale-105 gap-2 font-sans">
                  <Code2 className="w-5 h-5" /> {content.primaryCtaLabel}
                </a>
                <a href={content.secondaryCtaHref} target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center justify-center rounded-xl border border-white/10 bg-white/5 px-8 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10 gap-2 font-sans">
@@ -103,7 +103,7 @@ export default function ApiHero({
               transition={{ delay: 0.12, duration: 0.7 }}
               className="relative w-full"
             >
-              <div className="relative aspect-[1024/358] w-full overflow-hidden rounded-2xl border border-cyan-500/15 bg-[#0a0f18] shadow-[0_28px_80px_rgba(0,0,0,0.55)] ring-1 ring-white/10">
+              <div className="relative aspect-1024/358 w-full overflow-hidden rounded-2xl border border-cyan-500/15 bg-surface-base shadow-[0_28px_80px_rgba(0,0,0,0.55)] ring-1 ring-white/10">
                 <Image
                   src={heroVisualUrl}
                   alt={integrationVisualAlt}

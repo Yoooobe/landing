@@ -37,7 +37,7 @@ export default function BlogPostContent({ post, relatedPosts = [] }: Props) {
   const readLabel = m.blogPage.readLabel;
 
   return (
-    <article className="min-h-screen bg-[#0d1424] pb-24 pt-32 text-white">
+    <article className="min-h-screen bg-surface-section pb-24 pt-32 text-white">
       <div className="container mx-auto max-w-4xl px-4">
         <Link
           href={path("/blog")}

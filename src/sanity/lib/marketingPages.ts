@@ -18,6 +18,16 @@ import { ptPlataforma } from "@/messages/segments/pt-plataforma";
 import { enPlataforma } from "@/messages/segments/en-plataforma";
 import { ptStatsBentoTabsWhy } from "@/messages/segments/pt-stats-bento-tabs-why";
 import { enStatsBentoTabsWhy } from "@/messages/segments/en-stats-bento-tabs-why";
+import { ptParaPlataformasPage } from "@/messages/segments/pt-para-plataformas-page";
+import { enParaPlataformasPage } from "@/messages/segments/en-para-plataformas-page";
+import { ptEducacaoPage } from "@/messages/segments/pt-educacao-page";
+import { enEducacaoPage } from "@/messages/segments/en-educacao-page";
+import { ptVendasPage } from "@/messages/segments/pt-vendas-page";
+import { enVendasPage } from "@/messages/segments/en-vendas-page";
+import { ptComunidadesPage } from "@/messages/segments/pt-comunidades-page";
+import { enComunidadesPage } from "@/messages/segments/en-comunidades-page";
+import { ptEventosPage } from "@/messages/segments/pt-eventos-page";
+import { enEventosPage } from "@/messages/segments/en-eventos-page";
 import { BASE_PATH } from "@/lib/basePath";
 import {
   apiVersion,
@@ -824,6 +834,160 @@ function gamificacaoBlocks(
   ];
 }
 
+type IcpVerticalItem = {
+  readonly title: string;
+  readonly desc: string;
+  readonly icon?: string;
+  readonly eyebrow?: string;
+};
+
+type IcpVerticalPage = {
+  readonly seo: {
+    readonly title: string;
+    readonly description: string;
+    readonly openGraphDescription?: string;
+  };
+  readonly hero: {
+    readonly badge: string;
+    readonly title: string;
+    readonly sub: string;
+    readonly ctaLabel: string;
+    readonly ctaHref: string;
+  };
+  readonly problem: { readonly badge: string; readonly title: string; readonly items: readonly IcpVerticalItem[] };
+  readonly how: {
+    readonly badge: string;
+    readonly title: string;
+    readonly sub?: string;
+    readonly columns?: "2" | "3" | "4";
+    readonly items: readonly IcpVerticalItem[];
+  };
+  readonly benefits: { readonly badge: string; readonly title: string; readonly items: readonly IcpVerticalItem[] };
+  readonly faq: { readonly items: readonly { readonly q: string; readonly a: string }[] };
+  readonly cta: {
+    readonly eyebrow: string;
+    readonly title: string;
+    readonly body: string;
+    readonly primaryLabel: string;
+    readonly primaryHref: string;
+    readonly secondaryLabel?: string;
+    readonly secondaryHref?: string;
+  };
+};
+
+/** Slug -> copy segment (PT/EN) for the ICP vertical pages. */
+const ICP_VERTICAL_PAGES: Record<string, { pt: IcpVerticalPage; en: IcpVerticalPage; titlePt: string; titleEn: string }> = {
+  "para-plataformas": {
+    pt: ptParaPlataformasPage,
+    en: enParaPlataformasPage,
+    titlePt: "Para plataformas e SaaS",
+    titleEn: "For platforms & SaaS",
+  },
+  educacao: {
+    pt: ptEducacaoPage,
+    en: enEducacaoPage,
+    titlePt: "Para educação e e-learning",
+    titleEn: "For education & e-learning",
+  },
+  vendas: {
+    pt: ptVendasPage,
+    en: enVendasPage,
+    titlePt: "Para times de vendas",
+    titleEn: "For sales teams",
+  },
+  comunidades: {
+    pt: ptComunidadesPage,
+    en: enComunidadesPage,
+    titlePt: "Para criadores e comunidades",
+    titleEn: "For creators & communities",
+  },
+  eventos: {
+    pt: ptEventosPage,
+    en: enEventosPage,
+    titlePt: "Para eventos",
+    titleEn: "For events",
+  },
+};
+
+function withBasePathHref(href: string): string {
+  return /^(?:[a-z]+:)?\/\//i.test(href) ? href : `${BASE_PATH}${href}`;
+}
+
+function icpVerticalBlocks(locale: Locale, page: IcpVerticalPage): MarketingPageDoc["content"] {
+  const isEn = locale === "en";
+
+  return [
+    {
+      _key: "hero",
+      _type: "heroBlock",
+      headline: page.hero.title,
+      subheadline: page.hero.sub,
+      ctaText: page.hero.ctaLabel,
+      ctaLink: withBasePathHref(page.hero.ctaHref),
+    },
+    {
+      _key: "problem",
+      _type: "featureGridBlock",
+      eyebrow: page.problem.badge,
+      title: page.problem.title,
+      columns: "2",
+      items: page.problem.items.map((item) => ({
+        title: item.title,
+        description: item.desc,
+        icon: item.icon,
+      })),
+    },
+    {
+      _key: "how",
+      _type: "featureGridBlock",
+      eyebrow: page.how.badge,
+      title: page.how.title,
+      description: page.how.sub,
+      columns: page.how.columns ?? "3",
+      items: page.how.items.map((item) => ({
+        eyebrow: item.eyebrow,
+        title: item.title,
+        description: item.desc,
+        icon: item.icon,
+      })),
+    },
+    {
+      _key: "benefits",
+      _type: "featureGridBlock",
+      eyebrow: page.benefits.badge,
+      title: page.benefits.title,
+      columns: "3",
+      items: page.benefits.items.map((item) => ({
+        title: item.title,
+        description: item.desc,
+        icon: item.icon,
+      })),
+    },
+    {
+      _key: "faq",
+      _type: "faqBlock",
+      title: isEn ? "Frequently asked questions" : "Perguntas frequentes",
+      items: page.faq.items.map((item) => ({
+        question: item.q,
+        answer: item.a,
+      })),
+    },
+    {
+      _key: "cta",
+      _type: "ctaBlock",
+      eyebrow: page.cta.eyebrow,
+      title: page.cta.title,
+      description: page.cta.body,
+      primaryLabel: page.cta.primaryLabel,
+      primaryHref: withBasePathHref(page.cta.primaryHref),
+      secondaryLabel: page.cta.secondaryLabel,
+      secondaryHref: page.cta.secondaryHref ? withBasePathHref(page.cta.secondaryHref) : undefined,
+      showLeadForm: true,
+      leadFormVariant: "marketing",
+    },
+  ];
+}
+
 function casosBlocks(locale: Locale): MarketingPageDoc["content"] {
   const isEn = locale === "en";
   const page = isEn ? enCasosPage : ptCasosPage;
@@ -1234,8 +1398,28 @@ async function buildFallbackMarketingPage(
         content: casosBlocks(locale),
       };
     }
-    default:
+    default: {
+      const vertical = ICP_VERTICAL_PAGES[slug];
+      if (vertical) {
+        const page = locale === "en" ? vertical.en : vertical.pt;
+        return {
+          _id: `fallback-marketing-page.${locale}.${slug}`,
+          title: locale === "en" ? vertical.titleEn : vertical.titlePt,
+          slug,
+          locale,
+          summary:
+            locale === "en"
+              ? "Fallback marketing page for an ICP vertical."
+              : "Pagina de fallback para uma vertical de ICP.",
+          seo: {
+            metaTitle: page.seo.title,
+            metaDescription: page.seo.description,
+          },
+          content: icpVerticalBlocks(locale, page),
+        };
+      }
       return null;
+    }
   }
 }
 
@@ -1313,11 +1497,17 @@ async function getFallbackSeo(locale: Locale, slug: string): Promise<PageSeoCopy
       return locale === "en" ? enInteligenciaPage.seo : ptInteligenciaPage.seo;
     case "casos-de-uso":
       return locale === "en" ? enCasosPage.seo : ptCasosPage.seo;
-    default:
+    default: {
+      const vertical = ICP_VERTICAL_PAGES[slug];
+      if (vertical) {
+        const page = locale === "en" ? vertical.en : vertical.pt;
+        return page.seo;
+      }
       return {
         title: "4Unik",
         description: "Reward infrastructure",
       };
+    }
   }
 }
 
@@ -1385,8 +1575,14 @@ export async function getMarketingPageFaqItems(
         a: item.a,
       }));
     }
-    default:
+    default: {
+      const vertical = ICP_VERTICAL_PAGES[slug];
+      if (vertical) {
+        const page = locale === "en" ? vertical.en : vertical.pt;
+        return page.faq.items.map((item) => ({ q: item.q, a: item.a }));
+      }
       return [];
+    }
   }
 }
 

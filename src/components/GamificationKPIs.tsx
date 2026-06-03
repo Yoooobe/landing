@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { BarChart3, DollarSign, RefreshCw, TrendingUp, Users, Zap } from "lucide-react";
 import type { ImageWithEmojiDoc, ResolvedGamificacaoContent } from "@/sanity/lib/types";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 
 const KPI_ICONS = [BarChart3, TrendingUp, RefreshCw, DollarSign, Zap, Users] as const;
 const DEMO_VALUES = [85, 42, 68, 350, 24, 91] as const;
@@ -18,7 +17,7 @@ export default function GamificationKPIs({
   showcaseItems?: ImageWithEmojiDoc[];
 }) {
   return (
-    <section className="relative z-10 border-t border-white/5 bg-[#0a0f18] py-24">
+    <section className="relative z-10 border-t border-white/5 bg-surface-base py-24">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70">{k.badge}</span>
@@ -34,14 +33,13 @@ export default function GamificationKPIs({
           {k.items.map((kpi, idx) => {
             const Icon = KPI_ICONS[idx];
             const cardShowcase = showcaseItems?.[idx];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
-              <div key={kpi.title} className="group rounded-2xl border border-white/10 bg-surface-panel p-8 transition-colors hover:bg-[#161d2b]">
+              <div key={kpi.title} className="group rounded-2xl border border-white/10 bg-surface-panel p-8 transition-colors hover:bg-surface-elevated">
                 <div className="mb-6 flex items-start justify-between">
                   <div className="inline-flex rounded-xl border border-white/10 bg-white/5 p-3 transition-all group-hover:scale-110 group-hover:bg-white/10">
-                    {cardImageUrl ? (
-                      <div className="relative h-8 w-8 overflow-hidden rounded-lg">
-                        <Image src={cardImageUrl} alt={cardShowcase?.image?.alt || kpi.title} fill className="object-cover" unoptimized />
+                    {cardShowcase?.image ? (
+                      <div className="relative h-10 w-10 overflow-hidden rounded-lg">
+                        <ShowcaseImage image={cardShowcase.image} alt={cardShowcase.image.alt || kpi.title} variant="thumb" sizes="40px" />
                       </div>
                     ) : cardShowcase?.emoji ? (
                       <span className="text-2xl leading-none">{cardShowcase.emoji}</span>

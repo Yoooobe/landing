@@ -8,6 +8,22 @@ const builder = projectId && dataset ? imageUrlBuilder({ projectId, dataset }) :
 export const SANITY_HOME_HERO_MAIN_WIDTH = 1120;
 export const SANITY_HOME_HERO_SUPPORTING_WIDTH = 640;
 
+/**
+ * Presets de imagem reutilizáveis. Use `fit: "max"` para mostrar a imagem inteira
+ * (thumbs/cards de showcase e screenshots de UI), evitando o duplo corte CDN + CSS.
+ * Mantenha `crop` apenas em banners wide onde o corte é intencional.
+ */
+export const SANITY_IMAGE_PRESETS = {
+  /** Miniatura de card (ícone/logo): imagem inteira, sem corte. */
+  showcaseThumb: { width: 256, height: 256, fit: "max", quality: 82 },
+  /** Card de showcase maior (preview de produto): imagem inteira. */
+  showcaseCard: { width: 720, height: 540, fit: "max", quality: 84 },
+  /** Banner/hero wide de secção: corte intencional centrado em conteúdo. */
+  sectionBanner: { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 },
+  /** Screenshot de interface: mostrar inteiro, sem cortar topo/lados. */
+  uiScreenshot: { width: 1360, height: 900, fit: "max", quality: 85 },
+} as const satisfies Record<string, SanityImageUrlOptions>;
+
 export type SanityImageUrlOptions = {
   width?: number;
   height?: number;

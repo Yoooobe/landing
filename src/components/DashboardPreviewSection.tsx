@@ -117,7 +117,7 @@ export default function DashboardPreviewSection() {
               className={`absolute z-20 hidden md:block ${m.posClass}`}
               style={{ animation: "float 7s ease-in-out infinite" }}
             >
-              <div className="rounded-2xl border border-black/8 bg-white px-4 py-3 shadow-lg shadow-black/10 min-w-[120px]">
+              <div className="rounded-2xl border border-black/10 bg-white px-4 py-3 shadow-lg shadow-black/10 min-w-[120px]">
                 <div className="flex items-center gap-1.5 mb-1">
                   <span
                     className="h-2 w-2 rounded-full shrink-0"
@@ -158,7 +158,7 @@ export default function DashboardPreviewSection() {
             />
 
             {/* Browser chrome */}
-            <div className="flex items-center justify-between border-b border-black/8 bg-gray-50 px-5 py-3">
+            <div className="flex items-center justify-between border-b border-black/10 bg-gray-50 px-5 py-3">
               <div className="flex items-center gap-1.5">
                 <div className="h-3 w-3 rounded-full bg-red-400" />
                 <div className="h-3 w-3 rounded-full bg-yellow-400" />
@@ -170,7 +170,7 @@ export default function DashboardPreviewSection() {
                   gestor.4unik.io · Dashboard
                 </span>
               </div>
-              <span className="rounded-full border border-unik-blue/20 bg-unik-blue/8 px-3 py-1 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-unik-blue">
+              <span className="rounded-full border border-unik-blue/20 bg-unik-blue/10 px-3 py-1 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-unik-blue">
                 Ao vivo
               </span>
             </div>
@@ -191,7 +191,7 @@ export default function DashboardPreviewSection() {
             </div>
 
             {/* Footer */}
-            <div className="flex items-center justify-between border-t border-black/8 bg-gray-50 px-5 py-2.5">
+            <div className="flex items-center justify-between border-t border-black/10 bg-gray-50 px-5 py-2.5">
               <div className="flex items-center gap-3">
                 {["Pedidos", "Faturamento", "Usuários", "Pontos"].map((label, i) => (
                   <span
@@ -223,7 +223,7 @@ export default function DashboardPreviewSection() {
           {METRICS.map((m) => (
             <div
               key={m.label}
-              className="rounded-2xl border border-black/8 bg-white px-4 py-3 shadow-sm text-center"
+              className="rounded-2xl border border-black/10 bg-white px-4 py-3 shadow-sm text-center"
             >
               <div
                 className="font-heading text-2xl font-black"

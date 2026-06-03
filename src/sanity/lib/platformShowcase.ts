@@ -38,7 +38,14 @@ const QUERY = `*[
   apiFeatureCards[]{
     emoji,
     image ${imageFields}
-  }
+  },
+  storeHomeImage ${imageFields},
+  productDetailImage ${imageFields},
+  cartImage ${imageFields},
+  giftWizardImage ${imageFields},
+  adminUsersImage ${imageFields},
+  adminSettingsImage ${imageFields},
+  orderDetailImage ${imageFields}
 }`;
 
 export async function getPlatformShowcaseMedia(

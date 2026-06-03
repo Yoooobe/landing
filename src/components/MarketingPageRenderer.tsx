@@ -35,7 +35,7 @@ import { enCasosPage } from "@/messages/segments/en-casos-page";
 import { enPlataforma } from "@/messages/segments/en-plataforma";
 import { ptCasosPage } from "@/messages/segments/pt-casos-page";
 import { ptPlataforma } from "@/messages/segments/pt-plataforma";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import { getSanityImageUrl, SANITY_IMAGE_PRESETS } from "@/sanity/lib/image";
 import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
 import type { Locale } from "@/lib/locale";
 import type {
@@ -78,7 +78,7 @@ function isExternalHref(href: string): boolean {
 function GenericHeroBlock({ block }: { block: Extract<MarketingPageContentBlock, { _type: "heroBlock" }> }) {
   const imageUrl = getSanityImageUrl(block.image, {
     width: 840,
-    fit: "crop",
+    fit: "max",
     quality: 82,
   });
   const opensInNewTab = isExternalHref(block.ctaLink || "");
@@ -87,7 +87,7 @@ function GenericHeroBlock({ block }: { block: Extract<MarketingPageContentBlock,
   return (
     <section
       id={sectionId}
-      className="relative overflow-hidden border-b border-white/5 bg-[#0a0f18] py-24 md:py-32"
+      className="relative overflow-hidden border-b border-white/5 bg-surface-base py-24 md:py-32"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.16),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(249,115,22,0.18),transparent_35%)]" />
       <div className="container relative z-10 mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[minmax(0,1fr)_420px] md:px-6">
@@ -122,7 +122,7 @@ function GenericHeroBlock({ block }: { block: Extract<MarketingPageContentBlock,
               alt={block.image?.alt?.trim() || block.headline || "Imagem da landing"}
               width={840}
               height={680}
-              className="h-full w-full rounded-[1.4rem] object-cover"
+              className="h-full w-full rounded-[1.4rem] object-contain"
               sizes="(min-width: 1280px) 420px, (min-width: 768px) 38vw, 92vw"
               priority
               fetchPriority="high"
@@ -137,7 +137,7 @@ function GenericHeroBlock({ block }: { block: Extract<MarketingPageContentBlock,
 }
 
 function GenericRichTextSection({ block }: { block: RichTextSectionDoc }) {
-  const imageUrl = getSanityImageUrl(block.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
+  const imageUrl = getSanityImageUrl(block.image, SANITY_IMAGE_PRESETS.uiScreenshot);
 
   return (
     <section className="border-b border-white/5 bg-brand-navy-dark py-20">
@@ -157,7 +157,7 @@ function GenericRichTextSection({ block }: { block: RichTextSectionDoc }) {
               alt={block.image?.alt?.trim() || block.title || "Imagem da secao"}
               width={640}
               height={640}
-              className="h-full w-full rounded-[1.2rem] object-cover"
+              className="h-full w-full rounded-[1.2rem] object-contain"
               sizes="320px"
               unoptimized
             />
@@ -169,7 +169,7 @@ function GenericRichTextSection({ block }: { block: RichTextSectionDoc }) {
 }
 
 function GenericSplitContentBlock({ block }: { block: SplitContentBlockDoc }) {
-  const imageUrl = getSanityImageUrl(block.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
+  const imageUrl = getSanityImageUrl(block.image, SANITY_IMAGE_PRESETS.uiScreenshot);
   const imageFirst = block.imageSide === "left";
   const sectionId = marketingSectionId(block._key);
   const extraAnchorIds = marketingExtraAnchorIds(block._key);
@@ -235,7 +235,7 @@ function GenericSplitContentBlock({ block }: { block: SplitContentBlockDoc }) {
         alt={block.image?.alt?.trim() || block.title || "Imagem da seção"}
         width={960}
         height={960}
-        className="h-full w-full rounded-[1.2rem] object-cover"
+        className="h-full w-full rounded-[1.2rem] object-contain"
         sizes="(min-width: 768px) 420px, 100vw"
         unoptimized
       />
@@ -245,7 +245,7 @@ function GenericSplitContentBlock({ block }: { block: SplitContentBlockDoc }) {
   return (
     <section
       id={sectionId}
-      className="border-b border-white/5 bg-[#0a0f18] py-20"
+      className="border-b border-white/5 bg-surface-base py-20"
     >
       {extraAnchorIds.map((anchorId) => (
         <div
@@ -460,7 +460,7 @@ function GenericCaseStudyGridBlock({ block }: { block: CaseStudyGridBlockDoc }) 
                     <p className="mb-6 leading-relaxed text-white/60">{item.description}</p>
                   ) : null}
                   {item.challenge ? (
-                    <div className="rounded-xl border border-white/5 bg-[#0a0f18] p-5">
+                    <div className="rounded-xl border border-white/5 bg-surface-base p-5">
                       {block.challengeLabel ? (
                         <span className="mb-2 block text-xs font-bold uppercase text-white/40">
                           {block.challengeLabel}
@@ -619,14 +619,14 @@ function GenericCtaBlock({
   pageSlug: string;
   assignPrimaryContactSection: boolean;
 }) {
-  const imageUrl = getSanityImageUrl(block.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
+  const imageUrl = getSanityImageUrl(block.image, SANITY_IMAGE_PRESETS.uiScreenshot);
   const showForm = Boolean(block.showLeadForm);
   const leadVariant = resolveCtaLeadVariant(block);
 
   return (
     <section
       id={showForm && assignPrimaryContactSection ? PRIMARY_CONTACT_SECTION_ID : undefined}
-      className="border-b border-white/5 bg-[#101827] py-24"
+      className="border-b border-white/5 bg-surface-marketing py-24"
     >
       <div
         className={`container mx-auto max-w-5xl gap-8 px-4 md:px-6 ${
@@ -681,7 +681,7 @@ function GenericCtaBlock({
               alt={block.image?.alt?.trim() || block.title || "Imagem do CTA"}
               width={640}
               height={640}
-              className="h-full w-full rounded-[1.2rem] object-cover"
+              className="h-full w-full rounded-[1.2rem] object-contain"
               sizes="320px"
               unoptimized
             />
@@ -696,7 +696,7 @@ function GenericCtaBlock({
               alt={block.image?.alt?.trim() || block.title || "Imagem do CTA"}
               width={640}
               height={640}
-              className="h-full w-full rounded-[1.2rem] object-cover"
+              className="h-full w-full rounded-[1.2rem] object-contain"
               sizes="(min-width: 768px) 448px, 100vw"
               unoptimized
             />

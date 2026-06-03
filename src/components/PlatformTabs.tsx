@@ -83,9 +83,9 @@ export default function PlatformTabs({
                   {t.gestao.cta}
                 </a>
               </div>
-              <div className="relative rounded-2xl border border-white/10 bg-[#f8fafc] p-4 shadow-2xl md:p-8">
+              <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 shadow-2xl md:p-8">
                 {managementImageUrl ? (
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-[16/10]">
+                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
                     <Image
                       src={managementImageUrl}
                       alt={
@@ -139,9 +139,9 @@ export default function PlatformTabs({
                   {t.loja.cta}
                 </a>
               </div>
-              <div className="relative rounded-2xl border border-white/10 bg-[#f8fafc] p-4 shadow-2xl md:p-8">
+              <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 shadow-2xl md:p-8">
                 {storeImageUrl ? (
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-[16/10]">
+                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
                     <Image
                       src={storeImageUrl}
                       alt={
@@ -199,9 +199,9 @@ export default function PlatformTabs({
                   {t.campanhas.cta}
                 </a>
               </div>
-              <div className="relative rounded-2xl border border-white/10 bg-[#f8fafc] p-4 text-center shadow-2xl md:p-8">
+              <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 text-center shadow-2xl md:p-8">
                 {campaignsImageUrl ? (
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-[16/10]">
+                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
                     <Image
                       src={campaignsImageUrl}
                       alt={

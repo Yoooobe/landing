@@ -4,11 +4,11 @@ type Layout = "articleCover" | "inlineFigure" | "cardThumb" | "featuredSplit";
 
 const wrapperClass: Record<Layout, string> = {
   articleCover:
-    "relative w-full overflow-hidden rounded-3xl border border-white/10 bg-[#0a101c] shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] aspect-[16/9] max-h-[min(58vh,560px)] sm:max-h-[min(52vh,600px)]",
+    "relative w-full overflow-hidden rounded-3xl border border-white/10 bg-surface-ink shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] aspect-video max-h-[min(58vh,560px)] sm:max-h-[min(52vh,600px)]",
   inlineFigure:
-    "relative w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0a101c] aspect-[16/10] max-h-[min(70vh,520px)]",
-  cardThumb: "absolute inset-0 h-full w-full overflow-hidden bg-[#0a101c]",
-  featuredSplit: "relative h-full min-h-[16rem] w-full overflow-hidden bg-[#0a101c] md:absolute md:inset-0 md:min-h-0",
+    "relative w-full overflow-hidden rounded-2xl border border-white/10 bg-surface-ink aspect-8/5 max-h-[min(70vh,520px)]",
+  cardThumb: "absolute inset-0 h-full w-full overflow-hidden bg-surface-ink",
+  featuredSplit: "relative h-full min-h-[16rem] w-full overflow-hidden bg-surface-ink md:absolute md:inset-0 md:min-h-0",
 };
 
 const sizesAttr: Record<Layout, string> = {

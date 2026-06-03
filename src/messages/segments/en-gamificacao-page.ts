@@ -274,7 +274,7 @@ export const enGamificacaoPage = {
       {
         title: "eNPS",
         subtitle: "Employee Net Promoter Score",
-        desc: "Measures employee loyalty and satisfaction. With gamification, companies often see eNPS gains of around 20 points.",
+        desc: "Measures employee loyalty and satisfaction. Track how eNPS evolves before and after the program, right in the dashboard.",
       },
       {
         title: "Engagement rate",
@@ -289,7 +289,7 @@ export const enGamificacaoPage = {
       {
         title: "Program ROI",
         subtitle: "Return on investment",
-        desc: "(Retention savings + productivity gains) / cost. Typical program ROI ranges from 3x to 8x.",
+        desc: "(Retention savings + productivity gains) / cost. Track your program's return over time.",
       },
       {
         title: "Time-to-first-engagement",
@@ -308,7 +308,7 @@ export const enGamificacaoPage = {
     titleBefore: "Gamification for every",
     titleGradient: "moment",
     titleAfter: "",
-    sub: "From onboarding new hires to sales campaigns—gamification adapts to each need.",
+    sub: "For HR, sales teams, e-learning, and events: gamification adapts to each goal—and 4Unik handles the real reward at the end.",
     items: [
       {
         icon: "🎉",
@@ -325,8 +325,8 @@ export const enGamificacaoPage = {
       {
         icon: "🎯",
         title: "Goals, OKRs & sales",
-        desc: "Gamified sales teams can reach quotas faster through performance leaderboards, quarterly missions, and outcome-based rewards.",
-        hook: "Recognized performance repeats",
+        desc: "Connect it to your CRM: hit the goal, get rewarded instantly. Performance leaderboards, quarterly missions, and automatic rewards—no spreadsheets, no waiting to recognize results.",
+        hook: "Performance recognized at the right time",
       },
       {
         icon: "🤝",
@@ -336,9 +336,9 @@ export const enGamificacaoPage = {
       },
       {
         icon: "📚",
-        title: "Training & upskilling",
-        desc: "Turn training into an experience with learning paths, points, digital certifications, and knowledge contests.",
-        hook: "Learning can be fun",
+        title: "Training, courses & e-learning",
+        desc: "Fight course drop-off with a tangible reward: finish the path, get a real prize at home. Points, digital certifications, and automatic rewards on completion—for internal teams or learning platforms.",
+        hook: "Completion you can see—and reward",
       },
       {
         icon: "🎪",
@@ -372,7 +372,7 @@ export const enGamificacaoPage = {
       },
       {
         q: "How do I calculate gamification ROI?",
-        a: "ROI = (retention savings + productivity gains + absenteeism reduction) / total program cost. 4Unik provides automated reports. Typical ROI is 3x to 8x.",
+        a: "ROI = (retention savings + productivity gains + absenteeism reduction) / total program cost. 4Unik provides automated reports so you can track your program's return over time.",
       },
       {
         q: "Can I use it without my own gamification engine?",

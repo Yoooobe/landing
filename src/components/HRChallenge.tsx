@@ -10,7 +10,7 @@ const metrics = [
     title: "Painel do Gestor",
     description: "Visão absoluta de pedidos, SLAs, orçamentos (R$) e faturamento. Gestão inspirada nos melhores SaaS B2B.",
     color: "text-white",
-    bg: "bg-gradient-to-br from-[#141415] to-[#0a0a0b]",
+    bg: "bg-linear-to-br from-surface-hr-from to-surface-hr-to",
     colSpan: "md:col-span-2 lg:col-span-2",
     rowSpan: "md:row-span-2"
   },
@@ -70,7 +70,7 @@ export default function HRChallenge() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`glass-panel-dark rounded-3xl p-8 relative group overflow-hidden flex flex-col hover:bg-[#1c1c1e] hover:border-white/20 transition-all duration-400 hover:-translate-y-1 ${metric.colSpan} ${metric.rowSpan} ${metric.id === 1 ? 'bg-gradient-to-br from-[#141415] to-[#0a0a0b]' : ''}`}
+              className={`glass-panel-dark rounded-3xl p-8 relative group overflow-hidden flex flex-col hover:bg-surface-hr-hover hover:border-white/20 transition-all duration-400 hover:-translate-y-1 ${metric.colSpan} ${metric.rowSpan} ${metric.id === 1 ? 'bg-linear-to-br from-surface-hr-from to-surface-hr-to' : ''}`}
             >
               <div
                 className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${metric.bg} border border-white/5 text-2xl filter drop-shadow-md`}

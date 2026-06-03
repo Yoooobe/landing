@@ -18,7 +18,7 @@ export default function ApiSection() {
             </div>
             <h2 className="mb-6 font-heading text-3xl font-black text-white md:text-5xl">
               {a.titleBefore}{" "}
-              <span className="bg-gradient-to-r from-unik-blue-soft to-demo-cyan bg-clip-text text-transparent">{a.titleBrand}</span>{" "}
+              <span className="bg-linear-to-r from-unik-blue-soft to-demo-cyan bg-clip-text text-transparent">{a.titleBrand}</span>{" "}
               {a.titleAfter}
             </h2>
             <p className="mb-8 font-sans text-lg leading-relaxed text-white/60">{a.sub}</p>

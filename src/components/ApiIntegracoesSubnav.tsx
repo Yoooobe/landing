@@ -34,7 +34,7 @@ export default function ApiIntegracoesSubnav() {
   return (
     <nav
       aria-label={isEn ? "API section" : "Seção API"}
-      className="border-b border-white/10 bg-[#0a0f18]/95 backdrop-blur-md"
+      className="border-b border-white/10 bg-surface-base/95 backdrop-blur-md"
     >
       <div className="container mx-auto max-w-7xl px-4 pt-20 pb-3 sm:px-6 md:pt-24 lg:px-8">
         <p className="mb-2 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-cyan-400/80">

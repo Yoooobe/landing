@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import { getSanityImageUrl, SANITY_IMAGE_PRESETS } from "@/sanity/lib/image";
 import type { PlatformShowcaseMediaDoc } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
 import { Globe, CheckCircle2 } from "lucide-react";
@@ -14,7 +14,7 @@ export default function LogisticsFulfillment({
 }) {
   const { m } = useLocaleMessages();
   const l = m.plataforma.logistics;
-  const logisticsPanelImageUrl = getSanityImageUrl(showcaseMedia?.logisticsPanelImage, { width: 1440, height: 900, fit: "crop", crop: "entropy", quality: 86 });
+  const logisticsPanelImageUrl = getSanityImageUrl(showcaseMedia?.logisticsPanelImage, SANITY_IMAGE_PRESETS.uiScreenshot);
 
   return (
     <section className="py-24 bg-brand-navy border-t border-white/5 relative">
@@ -41,7 +41,7 @@ export default function LogisticsFulfillment({
                 }
                 fill
                 sizes="100vw"
-                className="object-cover"
+                className="object-contain"
                 unoptimized
               />
             </div>

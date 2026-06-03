@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 /**
  * GitHub Pages: URLs profundas do Studio (ex. …/studio/structure/marketingPage-pt;docId)
- * não têm HTML estático em `out/`. Gera `out/404.html` e sobrescreve `out/404/index.html`
- * (o export Next cria a pasta `404/`; em project sites o GH costuma servir esse index
- * em vez do `404.html` na raiz). Ver StudioClient + SANITY_STUDIO_RESTORE_PATH_KEY.
+ * não têm HTML estático em `out/`. Gera `out/404.html` e sobrescreve `out/404/index.html`.
+ * Também redirecciona github.io → domínio canónico e URLs quebradas conhecidas.
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -14,7 +13,7 @@ const STORAGE_KEY = "sanity-studio-restore-path";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "out");
 
-function parseBasePath() {
+function parseSiteConfig() {
   const raw =
     (process.env.NEXT_PUBLIC_SITE_URL ?? "").trim() ||
     JSON.parse(readFileSync(join(root, "config/public-site.json"), "utf8"))
@@ -25,25 +24,45 @@ function parseBasePath() {
   if (pathname !== "/" && pathname.endsWith("/")) {
     pathname = pathname.slice(0, -1);
   }
-  return pathname === "/" ? "" : pathname;
+  const basePath = pathname === "/" ? "" : pathname;
+  return {
+    basePath,
+    canonicalOrigin: u.origin,
+    siteUrl: u.href.replace(/\/$/, "") || u.origin,
+  };
 }
 
 function escapeForJsString(value) {
   return value.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
 }
 
-const basePath = parseBasePath();
+/** Broken legacy paths → correct destination (path only, incl. basePath). */
+function legacyRedirectEntries(basePath) {
+  const bp = basePath || "";
+  return [
+    [`${bp}/plataforma/gamificacao/`, `${bp}/plataforma/motor-gamificacao/`],
+    [`${bp}/en/plataforma/gamificacao/`, `${bp}/en/plataforma/motor-gamificacao/`],
+  ];
+}
+
+const { basePath, canonicalOrigin } = parseSiteConfig();
 const studioRoot = `${basePath}/studio/`;
 const homeUrl = `${basePath}/` || "/";
 const basePathJs = escapeForJsString(basePath);
 const studioRootJs = escapeForJsString(studioRoot);
 const homeUrlJs = escapeForJsString(homeUrl);
+const canonicalOriginJs = escapeForJsString(canonicalOrigin);
+const legacyPairs = legacyRedirectEntries(basePath);
+const legacyJsLines = legacyPairs
+  .map(([from, to]) => `  ${JSON.stringify(from)}: ${JSON.stringify(to)}`)
+  .join(",\n");
 
 const html = `<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="0;url=${homeUrlJs}" />
   <title>A redirecionar…</title>
   <script>
 (function () {
@@ -51,8 +70,23 @@ const html = `<!DOCTYPE html>
   var BASE = "${basePathJs}";
   var STUDIO = "${studioRootJs}";
   var HOME = "${homeUrlJs}";
+  var CANONICAL_ORIGIN = "${canonicalOriginJs}";
+  var LEGACY = {
+${legacyJsLines}
+  };
   var path = location.pathname;
   var suffix = (location.search || "") + (location.hash || "");
+
+  if (location.hostname === "yoooobe.github.io") {
+    location.replace(CANONICAL_ORIGIN + path + suffix);
+    return;
+  }
+
+  if (LEGACY[path]) {
+    location.replace(LEGACY[path] + suffix);
+    return;
+  }
+
   var studioPrefix = STUDIO;
   var studioRootNoSlash = STUDIO.charAt(STUDIO.length - 1) === "/"
     ? STUDIO.slice(0, -1)
@@ -74,6 +108,7 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
   <p style="font-family: system-ui, sans-serif; padding: 2rem; color: #444;">A redirecionar…</p>
+  <p><a href="${homeUrlJs}">Ir para a home</a></p>
 </body>
 </html>
 `;
@@ -95,5 +130,5 @@ if (!existsSync(join(outDir, ".nojekyll"))) {
 }
 
 console.log(
-  `patch-studio-spa-fallback: out/404.html + out/404/index.html (Studio deep links → ${studioRoot}, basePath=${basePath || "(root)"})`,
+  `patch-studio-spa-fallback: out/404.html + out/404/index.html (Studio → ${studioRoot}, home → ${homeUrl}, canonical ${canonicalOrigin})`,
 );

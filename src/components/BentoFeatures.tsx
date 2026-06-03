@@ -90,7 +90,7 @@ export default function BentoFeatures({
                   }
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               ) : (
@@ -99,7 +99,7 @@ export default function BentoFeatures({
                   alt={b.card1.title}
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               )}
@@ -136,7 +136,7 @@ export default function BentoFeatures({
                   }
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               ) : (
@@ -145,7 +145,7 @@ export default function BentoFeatures({
                   alt={b.card2.title}
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               )}
@@ -174,7 +174,7 @@ export default function BentoFeatures({
                   }
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               ) : (
@@ -183,7 +183,7 @@ export default function BentoFeatures({
                   alt={b.card3.title}
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               )}
@@ -209,7 +209,7 @@ export default function BentoFeatures({
                   }
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               ) : (
@@ -218,7 +218,7 @@ export default function BentoFeatures({
                   alt={b.card4.title}
                   fill
                   sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               )}

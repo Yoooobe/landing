@@ -18,7 +18,7 @@ export default function GamificationCases({
   const [activeTab, setActiveTab] = useState<string>(c.items[0]?.id ?? "SAP");
 
   return (
-    <section className="relative overflow-hidden bg-[#0a0f18] py-24">
+    <section className="relative overflow-hidden bg-surface-base py-24">
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70">{c.badge}</span>
@@ -83,17 +83,17 @@ export default function GamificationCases({
                 </div>
               </div>
 
-              <div className="flex items-center justify-center">
-                <div className="grid w-full grid-cols-2 gap-6">
+              <div className="flex min-w-0 items-center justify-center">
+                <div className="grid w-full min-w-0 grid-cols-2 gap-4 sm:gap-6">
                   {item.metrics.map((metric) => (
                     <div
                       key={metric.label}
-                      className="rounded-2xl border border-white/5 bg-[#0a0f18] p-6 text-center transition-colors hover:border-yoobe-purple/50"
+                      className="min-w-0 rounded-2xl border border-white/5 bg-surface-base p-4 text-center transition-colors hover:border-yoobe-purple/50 sm:p-6"
                     >
-                      <div className="mb-2 bg-linear-to-br from-yoobe-purple to-fuchsia-600 bg-clip-text text-4xl font-black text-transparent lg:text-5xl">
+                      <div className="mb-2 wrap-break-word bg-linear-to-br from-yoobe-purple to-fuchsia-600 bg-clip-text text-3xl font-black text-transparent lg:text-4xl">
                         {metric.value}
                       </div>
-                      <div className="text-sm font-medium text-white/50">{metric.label}</div>
+                      <div className="text-sm font-medium leading-snug text-white/50">{metric.label}</div>
                     </div>
                   ))}
                 </div>

@@ -12,7 +12,7 @@ export const enCasosPage = {
     titleGradient: "market leaders",
     titleAfter: ".",
     sub:
-      "How SAP, Deloitte, IBM, Microsoft, and CaLLogix used gamification to solve complex HR, sales, and community challenges.",
+      "How SAP, Deloitte, IBM, Microsoft, and CaLLogix used gamification and rewards to solve real HR, sales, education, and community challenges.",
   },
   caseStudies: {
     challengeLabel: "Challenge solved",

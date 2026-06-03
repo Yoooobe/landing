@@ -25,8 +25,42 @@ The site is served at `http://localhost:3000/landing/` when using the default ca
 | Sync blog fallback → Sanity | `npm run sync:blog-fallback` — cria/atualiza só `blogPost.landing.*` (não sobrescreve outros posts); ver `docs/cms.md` |
 | Generate blog posts (IA → Sanity) | `npm run generate:blog-posts` (needs `OPENAI_API_KEY` + Sanity write token unless `--dry-run`; see `docs/cms.md`). **Revisão humana obrigatória** antes de `--publish` — checklist em `docs/cms.md` → *Checklist de revisão editorial*. |
 | Validate blog CTA landing paths | `npm run validate:blog-ctas` (no network; checks `BLOG_CTA_PATHS_BY_SLUG` vs `src/app/(pt)/…/page.tsx`) |
+| Validate landing routes | `npm run validate:landing-routes` — valida rotas internas (sitemap, fallbacks de menu, blog CTAs); `--smoke [baseUrl]` faz smoke HTTP opcional (`scripts/validate-landing-routes.mjs`) |
+| Generate OG images | `npm run generate:og` — rasteriza os templates SVG em PNG 1200×630 para `public/og/*.png` via `sharp` (roda automaticamente no `build`; `scripts/generate-og-images.mjs`) |
+| Patch legacy HTML (raiz) | `npm run patch:legacy-html` — atualiza canonical + links para `plataforma.4unik.com.br/landing` nos HTML estáticos da raiz, sem injetar meta refresh (`scripts/patch-legacy-html-redirects.mjs`) |
+| Blog image presets | `npm run blog:image-presets` (`scripts/blog-image-presets.ts`) |
+| Smoke do gerador de imagens | `npm run smoke:nano-banana` (`scripts/smoke-nano-banana.mjs`) |
+| Seed de conteúdo Sanity | `npm run seed:sanity` (`scripts/seed-sanity-content.mjs`) |
+| Env local | `npm run env:init` / `npm run env:check` (`scripts/init-env-local.mjs`, `scripts/check-local-env.mjs`) |
+| Sanity CORS | `npm run sanity:cors` (adiciona origens localhost + `plataforma.4unik.com.br`) |
+| Deploy rápido (GH Pages) | `npm run deploy:gh-pages:quick` (`npm run build && gh-pages -d out`) |
 
 Configuração do Pages no GitHub (fonte branch vs Actions, Desktop, CLI, billing): [`docs/github-pages-setup.md`](docs/github-pages-setup.md).
+
+Docs relacionados:
+- Proxy / redirects no host canónico `plataforma.4unik.com.br/landing`: [`docs/proxy-redirects-4unik.md`](docs/proxy-redirects-4unik.md).
+- Webhook do Sanity → rebuild no GitHub: [`docs/sanity-github-webhook.md`](docs/sanity-github-webhook.md).
+- Loops de agentes em background (lanes, prioridades de rota, verificação): [`docs/landing-background-agents.md`](docs/landing-background-agents.md).
+- Base de conhecimento NotebookLM + sync: [`docs/agent-knowledge-notebooklm.md`](docs/agent-knowledge-notebooklm.md), [`docs/knowledge-base/README.md`](docs/knowledge-base/README.md).
+- Copy por ICP / linguagem acessível (ler antes de mudar copy ou SEO): [`docs/knowledge-base/notebooklm/icp-messaging-guide.md`](docs/knowledge-base/notebooklm/icp-messaging-guide.md).
+
+### Skills & MCP (marketing / crescimento)
+
+Skills versionadas em [`skills/`](skills/) (use pelo nome no chat ou `@skill`):
+
+| Skill | Uso |
+|-------|-----|
+| `4unik-ai-discovery` | Posicionamento Reward Infrastructure / 4unik |
+| `marketing-growth-hacker` | Funil, experimentos, priorização por rota |
+| `marketing-content-creator` | Copy, blog, segmentos + Sanity |
+| `marketing-ai-citation-strategist` | AEO e citação em assistentes |
+| `landing-page-builder` | Estrutura CRO de landing |
+| `notebooklm-knowledge-curator` | Sync e curadoria da KB NotebookLM |
+| `marketing-page-ideator` | Novas páginas e gaps (readonly no backlog) |
+| `marketing-strategy-orchestrator` | Planos amplos (um tema por sessão) |
+| `hr-gamification-specialist`, `web-design-specialist` | RH/gamificação e UI premium |
+
+MCP local **`4unik-marketing`**: [`mcps/4unik-marketing/`](mcps/4unik-marketing/), ativar em [`.cursor/mcp.json`](.cursor/mcp.json). Tools de conhecimento: `get_notebooklm_briefing`, `search_product_knowledge`, `suggest_growth_opportunities`, `get_knowledge_freshness` (+ GA/SEO simulado, blog, registry). **Primeiro sync:** colar Briefing em `docs/knowledge-base/notebooklm/briefing.md` e `last_synced` em `meta.yaml`. Automations opcionais: [`docs/cursor-automations-growth.md`](docs/cursor-automations-growth.md).
 
 **CI:** `.github/workflows/ci-validate.yml` corre `tsc` e `validate:blog-ctas` em PR/push para `main`. **CI (`.github/workflows/deploy.yml`):** o primeiro passo útil após `npm ci` imprime avisos se **faturação / minutos de Actions** bloquearem o GitHub (mensagem típica: *account locked due to a billing issue*). O passo **Verify Sanity secrets** falha só com `your-project-id` ou `xxx`; `placeholder` gera aviso e permite o build. Detalhes em `docs/cms.md`.
 
@@ -38,6 +72,8 @@ Configuração do Pages no GitHub (fonte branch vs Actions, Desktop, CLI, billin
 - **Lead capture forms**: set `NEXT_PUBLIC_LEADS_INGEST_URL` to a public HTTPS endpoint that accepts POST JSON matching `leadPayload` (`name`, `email`, `company`, `consent`, `source`, `locale`, etc.). Without it, submit shows a configuration error in the browser after export. Local `npm run dev` can use the Route Handler at `/api/leads` via same-origin fallback.
 - **Optional chat widget**: set `NEXT_PUBLIC_CHAT_SCRIPT_URL` to a third-party script URL (e.g. Intercom/Crisp). Loaded lazily after paint; no server required for static export.
 - **AEO / assistentes**: `npm run build` runs `generate:llms` — regenerates `public/llms.txt` via `scripts/generate-llms-txt.ts` using `src/lib/parsePublicSiteUrl.ts` (same URLs as `robots.txt` / `sitemap.xml`). Override with **`NEXT_PUBLIC_SITE_URL`** at build time, or edit **`config/public-site.json`** for the repo fallback. See `docs/aeo-ai-visibility.md`. `pageAbsoluteUrl` in `src/lib/site.ts` resolves absolute URLs from the same canonical base.
+- **OG images**: `npm run build` also runs `generate:og` — rasteriza templates SVG em PNG 1200×630 para `public/og/*.png` (via `sharp`), consumidos pela metadata em [`src/lib/seo/ogImages.ts`](src/lib/seo/ogImages.ts). Regenere com `npm run generate:og` ao mudar título/subtítulo das variantes.
+- **robots.txt**: gerado pela rota [`src/app/robots.ts`](src/app/robots.ts) (não há mais `public/robots.txt` estático); o export estático continua a servir `robots.txt` a partir da mesma base canónica.
 - **Lint has pre-existing errors**: `npm run lint` exits with code 1 due to pre-existing lint errors in the codebase (unescaped entities, unused vars, etc.). This is expected.
 - **Tests:** `npm run test:svg` — sanitização mínima de SVG (`scripts/run-svg-sanitize-tests.ts`). Não há suite completa de testes E2E no repo.
 - **`.npmrc` config**: Uses `legacy-peer-deps=true` and a custom cache dir `/tmp/landing-cache`.

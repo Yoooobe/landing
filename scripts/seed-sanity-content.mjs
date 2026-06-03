@@ -1838,6 +1838,14 @@ async function upsertHomeShowcaseMedia(showcase) {
     showcase.bento?.storeCardImagePath,
     `${showcase.mediaKey || "home"}-bento-store`,
   );
+  const gamificationCardAsset = await uploadLocalImageIfNeeded(
+    showcase.bento?.gamificationCardImagePath,
+    `${showcase.mediaKey || "home"}-bento-gamification`,
+  );
+  const apiCardAsset = await uploadLocalImageIfNeeded(
+    showcase.bento?.apiCardImagePath,
+    `${showcase.mediaKey || "home"}-bento-api`,
+  );
   const managementAsset = await uploadLocalImageIfNeeded(
     showcase.platformTabs?.managementImagePath,
     `${showcase.mediaKey || "home"}-platform-management`,
@@ -1945,6 +1953,11 @@ async function upsertHomeShowcaseMedia(showcase) {
         storeCardAsset,
         showcase.bento?.storeCardImageAlt,
       ),
+      gamificationCardImage: toImageField(
+        gamificationCardAsset,
+        showcase.bento?.gamificationCardImageAlt,
+      ),
+      apiCardImage: toImageField(apiCardAsset, showcase.bento?.apiCardImageAlt),
     },
     platformTabs: {
       managementImage: toImageField(
@@ -2021,21 +2034,54 @@ async function upsertHomeShowcaseMedia(showcase) {
 }
 
 async function upsertPlatformShowcaseMedia(showcase) {
+  const prefix = `${showcase.pageKey || "plataforma"}-${showcase.locale || "pt"}`;
   const adminDashboardAsset = await uploadLocalImageIfNeeded(
     showcase.adminDashboardImagePath,
-    `${showcase.pageKey || "plataforma"}-${showcase.locale || "pt"}-admin-dashboard`,
+    `${prefix}-admin-dashboard`,
   );
   const storeMockupAsset = await uploadLocalImageIfNeeded(
     showcase.storeMockupImagePath,
-    `${showcase.pageKey || "plataforma"}-${showcase.locale || "pt"}-store`,
+    `${prefix}-store`,
   );
-  const logisticsPanelAsset = await uploadLocalImageIfNeeded(
-    showcase.logisticsPanelImagePath,
-    `${showcase.pageKey || "plataforma"}-${showcase.locale || "pt"}-logistics`,
+  const logisticsPanelAsset = showcase.logisticsPanelImagePath
+    ? await uploadLocalImageIfNeeded(
+        showcase.logisticsPanelImagePath,
+        `${prefix}-logistics`,
+      )
+    : null;
+  const securityPanelAsset = showcase.securityPanelImagePath
+    ? await uploadLocalImageIfNeeded(
+        showcase.securityPanelImagePath,
+        `${prefix}-security`,
+      )
+    : null;
+  const storeHomeAsset = await uploadLocalImageIfNeeded(
+    showcase.storeHomeImagePath,
+    `${prefix}-loja-store-home`,
   );
-  const securityPanelAsset = await uploadLocalImageIfNeeded(
-    showcase.securityPanelImagePath,
-    `${showcase.pageKey || "plataforma"}-${showcase.locale || "pt"}-security`,
+  const productDetailAsset = await uploadLocalImageIfNeeded(
+    showcase.productDetailImagePath,
+    `${prefix}-loja-product-detail`,
+  );
+  const cartAsset = await uploadLocalImageIfNeeded(
+    showcase.cartImagePath,
+    `${prefix}-loja-cart`,
+  );
+  const giftWizardAsset = await uploadLocalImageIfNeeded(
+    showcase.giftWizardImagePath,
+    `${prefix}-loja-gift-wizard`,
+  );
+  const adminUsersAsset = await uploadLocalImageIfNeeded(
+    showcase.adminUsersImagePath,
+    `${prefix}-loja-admin-users`,
+  );
+  const adminSettingsAsset = await uploadLocalImageIfNeeded(
+    showcase.adminSettingsImagePath,
+    `${prefix}-loja-admin-settings`,
+  );
+  const orderDetailAsset = await uploadLocalImageIfNeeded(
+    showcase.orderDetailImagePath,
+    `${prefix}-loja-order-detail`,
   );
 
   const document = {
@@ -2052,13 +2098,96 @@ async function upsertPlatformShowcaseMedia(showcase) {
       storeMockupAsset,
       showcase.storeMockupImageAlt,
     ),
-    logisticsPanelImage: toImageField(
-      logisticsPanelAsset,
-      showcase.logisticsPanelImageAlt,
+    ...(logisticsPanelAsset
+      ? {
+          logisticsPanelImage: toImageField(
+            logisticsPanelAsset,
+            showcase.logisticsPanelImageAlt,
+          ),
+        }
+      : {}),
+    ...(securityPanelAsset
+      ? {
+          securityPanelImage: toImageField(
+            securityPanelAsset,
+            showcase.securityPanelImageAlt,
+          ),
+        }
+      : {}),
+    storeHomeImage: toImageField(storeHomeAsset, showcase.storeHomeImageAlt),
+    productDetailImage: toImageField(
+      productDetailAsset,
+      showcase.productDetailImageAlt,
     ),
-    securityPanelImage: toImageField(
-      securityPanelAsset,
-      showcase.securityPanelImageAlt,
+    cartImage: toImageField(cartAsset, showcase.cartImageAlt),
+    giftWizardImage: toImageField(
+      giftWizardAsset,
+      showcase.giftWizardImageAlt,
+    ),
+    adminUsersImage: toImageField(
+      adminUsersAsset,
+      showcase.adminUsersImageAlt,
+    ),
+    adminSettingsImage: toImageField(
+      adminSettingsAsset,
+      showcase.adminSettingsImageAlt,
+    ),
+    orderDetailImage: toImageField(
+      orderDetailAsset,
+      showcase.orderDetailImageAlt,
+    ),
+  };
+
+  await withRetry(`createOrReplace ${document._id}`, () =>
+    client.createOrReplace(document),
+  );
+  return document._id;
+}
+
+async function upsertWorkvivoShowcaseMedia(showcase) {
+  const prefix = `${showcase.mediaKey || "workvivo"}-${showcase.locale || "pt"}`;
+  const heroAsset = await uploadLocalImageIfNeeded(
+    showcase.heroImagePath,
+    `${prefix}-hero`,
+  );
+  const commsAsset = await uploadLocalImageIfNeeded(
+    showcase.commsImagePath,
+    `${prefix}-comms`,
+  );
+  const intelligenceAsset = await uploadLocalImageIfNeeded(
+    showcase.intelligenceImagePath,
+    `${prefix}-intelligence`,
+  );
+  const frontlineAsset = await uploadLocalImageIfNeeded(
+    showcase.frontlineImagePath,
+    `${prefix}-frontline`,
+  );
+  const shoutoutAsset = await uploadLocalImageIfNeeded(
+    showcase.shoutoutImagePath,
+    `${prefix}-shoutout`,
+  );
+  const feedShoutoutAsset = await uploadLocalImageIfNeeded(
+    showcase.feedShoutoutImagePath,
+    `${prefix}-feed-shoutout`,
+  );
+
+  const document = {
+    _id: showcase._id,
+    _type: showcase._type,
+    title: showcase.title,
+    mediaKey: showcase.mediaKey,
+    locale: showcase.locale,
+    heroImage: toImageField(heroAsset, showcase.heroImageAlt),
+    commsImage: toImageField(commsAsset, showcase.commsImageAlt),
+    intelligenceImage: toImageField(
+      intelligenceAsset,
+      showcase.intelligenceImageAlt,
+    ),
+    frontlineImage: toImageField(frontlineAsset, showcase.frontlineImageAlt),
+    shoutoutImage: toImageField(shoutoutAsset, showcase.shoutoutImageAlt),
+    feedShoutoutImage: toImageField(
+      feedShoutoutAsset,
+      showcase.feedShoutoutImageAlt,
     ),
   };
 
@@ -2136,6 +2265,11 @@ async function main() {
     for (const showcase of seedDocuments.platformShowcaseMedia || []) {
       currentDocumentId = showcase._id;
       created.push(await upsertPlatformShowcaseMedia(showcase));
+    }
+
+    for (const showcase of seedDocuments.workvivoShowcaseMedia || []) {
+      currentDocumentId = showcase._id;
+      created.push(await upsertWorkvivoShowcaseMedia(showcase));
     }
 
     if (seedDocuments.siteSettings) {

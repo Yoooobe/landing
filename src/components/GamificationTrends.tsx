@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import type { ImageWithEmojiDoc, ResolvedGamificacaoContent } from "@/sanity/lib/types";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 
 const TAG_STYLES: Record<number, string> = {
   0: "bg-blue-500/20 text-blue-400 border-blue-500/30",
@@ -20,7 +19,7 @@ export default function GamificationTrends({
   showcaseItems?: ImageWithEmojiDoc[];
 }) {
   return (
-    <section className="relative overflow-hidden border-t border-white/5 bg-[#0d1424] py-24">
+    <section className="relative overflow-hidden border-t border-white/5 bg-surface-section py-24">
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70">{t.badge}</span>
@@ -32,7 +31,7 @@ export default function GamificationTrends({
           <p className="text-lg text-white/60">{t.sub}</p>
         </div>
 
-        <div className="group relative mb-16 flex flex-col items-center justify-around gap-8 overflow-hidden rounded-3xl border border-white/10 bg-linear-to-r from-surface-panel to-[#1a1025] p-8 text-center shadow-2xl md:flex-row">
+        <div className="group relative mb-16 flex flex-col items-center justify-around gap-8 overflow-hidden rounded-3xl border border-white/10 bg-linear-to-r from-surface-panel to-surface-purple p-8 text-center shadow-2xl md:flex-row">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(139,92,246,0.1)_0%,transparent_50%)] opacity-50 transition-opacity duration-500 group-hover:opacity-100"></div>
 
           <div className="relative z-10 flex flex-col">
@@ -56,16 +55,15 @@ export default function GamificationTrends({
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {t.items.map((trend, idx) => {
             const cardShowcase = showcaseItems?.[idx];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
             <div
               key={idx}
               className="group rounded-2xl border border-white/10 bg-surface-panel p-8 transition-all hover:-translate-y-2 hover:border-yoobe-purple/50"
             >
               <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-4xl transition-transform group-hover:scale-110">
-                {cardImageUrl ? (
-                  <div className="relative h-10 w-10 overflow-hidden rounded-xl">
-                    <Image src={cardImageUrl} alt={cardShowcase?.image?.alt || trend.title} fill className="object-cover" unoptimized />
+                {cardShowcase?.image ? (
+                  <div className="relative h-12 w-12 overflow-hidden rounded-xl">
+                    <ShowcaseImage image={cardShowcase.image} alt={cardShowcase.image.alt || trend.title} variant="thumb" sizes="48px" />
                   </div>
                 ) : cardShowcase?.emoji ? (
                   <span>{cardShowcase.emoji}</span>

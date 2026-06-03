@@ -14,15 +14,15 @@ export const ptLeadForm = {
   submit: "Enviar pedido de contato",
   submitting: "A enviar…",
   successTitle: "Recebemos o seu pedido",
-  successBody: "A nossa equipa entrará em contacto em breve.",
+  successBody: "Nossa equipe entrará em contato em breve.",
   errorGeneric: "Não foi possível enviar. Tente novamente ou use o link de demonstração.",
   errorConfig:
     "O envio de formulário ainda não está configurado neste ambiente. Use o agendamento ou WhatsApp.",
   altCalendly: "Ou agende uma demonstração",
   altTechnical: "Ou agende uma conversa técnica",
-  altWhatsapp: "Ou fale connosco no WhatsApp",
+  altWhatsapp: "Ou fale conosco no WhatsApp",
   fieldErrors: {
-    name: "Indique o seu nome (mínimo 2 caracteres).",
+    name: "Indique seu nome (mínimo 2 caracteres).",
     email: "Indique um e-mail válido.",
     company: "Indique a empresa.",
     consent: "É necessário aceitar para continuar.",

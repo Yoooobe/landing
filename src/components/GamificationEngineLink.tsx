@@ -61,9 +61,9 @@ export default function GamificationEngineLink() {
   const engineHref = resolveShellHref("/plataforma/motor-gamificacao/", locale);
 
   return (
-    <section className="py-24 bg-[#0a0f18] border-t border-white/5 relative overflow-hidden">
+    <section className="py-24 bg-surface-base border-t border-white/5 relative overflow-hidden">
       {/* Background glow */}
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand-orange/8 rounded-full blur-[100px]" />
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand-orange/10 rounded-full blur-[100px]" />
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-center">

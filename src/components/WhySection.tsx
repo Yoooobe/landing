@@ -21,7 +21,7 @@ export default function WhySection() {
           </div>
           <h2 className="mb-6 font-heading text-3xl font-black text-white md:text-5xl">
             {w.titleBefore}{" "}
-            <span className="bg-gradient-to-r from-brand-orange to-unik-blue bg-clip-text text-transparent">{w.titleGradient}</span>
+            <span className="bg-linear-to-r from-brand-orange to-unik-blue bg-clip-text text-transparent">{w.titleGradient}</span>
           </h2>
           <p className="mx-auto max-w-2xl font-sans text-lg leading-relaxed text-white/50">{w.sub}</p>
         </div>

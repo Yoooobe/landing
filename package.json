@@ -16,6 +16,8 @@
     "env:check": "node scripts/check-local-env.mjs",
     "test:svg": "npx tsx scripts/run-svg-sanitize-tests.ts",
     "validate:blog-ctas": "npx tsx scripts/validate-blog-landing-ctas.ts",
+    "validate:landing-routes": "node scripts/validate-landing-routes.mjs",
+    "patch:legacy-html": "node scripts/patch-legacy-html-redirects.mjs",
     "generate:blog-posts": "npx tsx scripts/generate-blog-posts.ts",
     "blog:image-presets": "npx tsx scripts/blog-image-presets.ts",
     "smoke:nano-banana": "node scripts/smoke-nano-banana.mjs",

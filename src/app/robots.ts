@@ -14,7 +14,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: [`${BASE_PATH}/studio/`],
+        disallow: [
+          `${BASE_PATH}/studio/`,
+          `${BASE_PATH}/workvivo/`,
+          `${BASE_PATH}/en/workvivo/`,
+        ],
       },
     ],
     sitemap: pageAbsoluteUrl("/sitemap.xml"),

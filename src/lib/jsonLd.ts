@@ -13,11 +13,14 @@ const ORGANIZATION_KNOWS_ABOUT = [
   "APIs and webhooks for recognition programs",
 ] as const;
 
+const ORGANIZATION_ID = `${SITE_URL.replace(/\/$/, "")}/#organization`;
+
 /** Descrição alinhada a `ptHome.seo.description` (fonte única para entidade no schema). */
 export function buildOrganizationJsonLd(description: string = ptHome.seo.description) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": ORGANIZATION_ID,
     name: SITE_NAME,
     url: SITE_URL,
     description,
@@ -93,6 +96,7 @@ export function buildBlogPostingJsonLd(
 ) {
   const imageUrl = getSanityImageUrl(post.seo?.openGraphImage || post.coverImage);
   const publishedAt = post.publishedAt || undefined;
+  const dateModified = post._updatedAt || publishedAt;
 
   return {
     "@context": "https://schema.org",
@@ -103,13 +107,15 @@ export function buildBlogPostingJsonLd(
     mainEntityOfPage: pageUrl,
     image: imageUrl ? [imageUrl] : undefined,
     datePublished: publishedAt,
-    dateModified: publishedAt,
+    dateModified,
     inLanguage: locale === "pt" ? "pt-BR" : "en-US",
     articleSection: post.category,
     keywords: post.relatedKeywords?.filter(Boolean),
-    author: buildOrganizationJsonLd(),
+    author: { "@id": ORGANIZATION_ID },
     publisher: {
-      ...buildOrganizationJsonLd(),
+      "@type": "Organization",
+      "@id": ORGANIZATION_ID,
+      name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
         url: pageAbsoluteUrl("/brand/4unik-mark.webp"),

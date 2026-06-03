@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import {
   Activity,
@@ -14,7 +14,6 @@ import {
   Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 const stageItemIcons = [
@@ -70,7 +69,7 @@ export default function AiRoadmap({
   const ar = m.landingMore.aiRoadmap;
 
   return (
-    <section className="py-24 bg-[#050B14] relative overflow-hidden text-white font-sans border-y border-white/5">
+    <section className="py-24 bg-surface-deep relative overflow-hidden text-white font-sans border-y border-white/5">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[500px] bg-yoobe-purple/20 blur-[120px] rounded-full pointer-events-none opacity-50"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10 max-w-7xl">
@@ -109,7 +108,6 @@ export default function AiRoadmap({
                   ? (visual.accentTone as keyof typeof stageToneConfig)
                   : stageToneOrder[i] || stageToneOrder[0];
               const tone = stageToneConfig[toneKey];
-              const stageImageUrl = getSanityImageUrl(visual?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
               const overrideIcon = visual?.icon ? iconMap[visual.icon] : undefined;
 
               return (
@@ -122,16 +120,13 @@ export default function AiRoadmap({
                     className={`absolute top-0 right-0 w-32 h-32 blur-3xl rounded-full -mr-10 -mt-10 pointer-events-none group-hover:scale-150 transition-transform duration-700 ${tone.glowClass}`}
                   ></div>
 
-                  {stageImageUrl ? (
+                  {visual?.image ? (
                     <div className="relative mb-5 h-36 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                      <Image
-                        src={stageImageUrl}
-                        alt={visual?.image?.alt?.trim() || stage.title}
-                        fill
+                      <ShowcaseImage
+                        image={visual.image}
+                        alt={visual.image.alt?.trim() || stage.title}
+                        variant="card"
                         sizes="(min-width: 1024px) 240px, 100vw"
-                        className="object-cover"
-                        loading="lazy"
-                        unoptimized
                       />
                     </div>
                   ) : null}

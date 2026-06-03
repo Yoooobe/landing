@@ -6,7 +6,7 @@ export default function EnApiIntegracoesLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div lang="en" className="min-h-screen bg-[#0a0f18] text-white">
+    <div lang="en" className="min-h-screen bg-surface-base text-white">
       <ApiIntegracoesSubnav />
       {children}
     </div>

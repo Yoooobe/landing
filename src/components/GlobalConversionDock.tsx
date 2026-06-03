@@ -47,7 +47,7 @@ export default function GlobalConversionDock() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-[#25D366] px-4 text-sm font-bold text-white shadow-lg shadow-black/30 transition hover:bg-[#128C7E] sm:h-11 sm:text-[0.85rem]"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-whatsapp px-4 text-sm font-bold text-white shadow-lg shadow-black/30 transition hover:bg-whatsapp-deep sm:h-11 sm:text-[0.85rem]"
         >
           <MessageCircle className="h-5 w-5 shrink-0" aria-hidden />
           {d.whatsappCta}

@@ -31,3 +31,6 @@ jobs:
 
       - name: Validate blog CTA landing paths
         run: npm run validate:blog-ctas
+
+      - name: Validate landing routes and gamification menu
+        run: npm run validate:landing-routes

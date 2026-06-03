@@ -1,4 +1,4 @@
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import { getSanityImageUrl, SANITY_IMAGE_PRESETS } from "@/sanity/lib/image";
 import type { FeatureGridBlockDoc, FeatureGridItemDoc } from "@/sanity/lib/types";
 import { fetchSanitizedSvgMarkup } from "@/lib/fetch-sanitized-svg";
 import { getMarketingLucideIcon } from "@/lib/marketing-icon-registry";
@@ -8,7 +8,7 @@ import Image from "next/image";
 type ItemWithSvg = FeatureGridItemDoc & { inlineSvg?: string | null };
 
 export default async function FeatureGridMarketingBlock({ block }: { block: FeatureGridBlockDoc }) {
-  const imageUrl = getSanityImageUrl(block.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
+  const imageUrl = getSanityImageUrl(block.image, SANITY_IMAGE_PRESETS.uiScreenshot);
   const sectionId = marketingSectionId(block._key);
   const columnsClass =
     block.columns === "2"
@@ -54,7 +54,7 @@ export default async function FeatureGridMarketingBlock({ block }: { block: Feat
               alt={block.image?.alt?.trim() || block.title || "Imagem da seção"}
               width={1440}
               height={900}
-              className="h-full w-full rounded-[1.4rem] object-cover"
+              className="h-full w-full rounded-[1.4rem] object-contain"
               sizes="(min-width: 1024px) 960px, 100vw"
               unoptimized
             />

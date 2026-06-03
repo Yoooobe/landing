@@ -27,6 +27,20 @@ Persona adaptada do [marketing-growth-hacker](https://github.com/msitarzewski/ag
 
 - **`landing-page-builder`**: use para auditoria CRO profunda, estrutura de página e copy de conversão pura.
 - **`4unik-ai-discovery`**: use para não contradizer o posicionamento **Reward Infrastructure** / **4unik V3**.
+- **`marketing-page-ideator`**: novas rotas e gaps de aquisição (readonly no backlog).
+- **`notebooklm-knowledge-curator`**: quando a KB estiver stale (`get_knowledge_freshness`).
+
+## Base NotebookLM
+
+Conhecimento proprietário versionado em `docs/knowledge-base/notebooklm/`. Antes de hipóteses de copy ou novas promessas:
+
+1. **`get_knowledge_freshness`** — se `missing_sync` ou `stale`, avisar o humano (ver [`docs/agent-knowledge-notebooklm.md`](../../docs/agent-knowledge-notebooklm.md)).
+2. **`search_product_knowledge`** — validar claims (ICP, concorrentes, produto).
+3. **`suggest_growth_opportunities`** — priorizar rotas/CTAs com `focus` alinhado ao experimento.
+
+Fallback sem sync: `skills/4unik-ai-discovery` + `docs/enterprise-content-strategy.md`.
+
+**ICPs e diferenciação:** segmentar funil/experimentos pelos 5 ICPs refinados (plataformas/embedded, e-learning, vendas, comunidades, eventos) em [`icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md). Posicionamento API-first ("camada de execução", "comportamento programável") diferencia de "empresa de brindes" e tira da briga de preço.
 
 ## Idioma e rotas
 
@@ -38,9 +52,11 @@ Persona adaptada do [marketing-growth-hacker](https://github.com/msitarzewski/ag
 
 Habilite o servidor MCP **`4unik-marketing`** no Cursor (configuração de MCP do projeto/usuário). Sem o MCP, faça a mesma análise com **Read** nos arquivos listados abaixo e indique que métricas requerem GA/Search Console.
 
-1. **`get_content_sync_registry`** — mapa de ficheiros para não desalinharem SEO (segmentos) e métricas por rota.
-2. **`get_landing_optimization_snapshot`** — visão unificada (GA simulado + SEO + ações priorizadas por rota). Parâmetros: `startDate` (YYYY-MM-DD), `endDate` opcional, `path` opcional (ex. `/casos-de-uso`).
-3. Se precisar de granularidade: **`get_ga4_metrics`** (`startDate`, `endDate` opcional) e **`get_seo_health`** (`url` = URL pública completa da página, ex. `https://yoooobe.github.io/landing/` + path).
+1. **`get_knowledge_freshness`** / **`search_product_knowledge`** — quando a tarefa envolver posicionamento ou ICP (ver Base NotebookLM).
+2. **`get_content_sync_registry`** — mapa de ficheiros para não desalinharem SEO (segmentos) e métricas por rota.
+3. **`get_landing_optimization_snapshot`** — visão unificada (GA simulado + SEO + ações priorizadas por rota). Parâmetros: `startDate` (YYYY-MM-DD), `endDate` opcional, `path` opcional (ex. `/casos-de-uso`).
+4. Se precisar de granularidade: **`get_ga4_metrics`** (`startDate`, `endDate` opcional) e **`get_seo_health`** (`url` = URL pública completa da página, ex. `https://plataforma.4unik.com.br/landing/` + path).
+5. **`suggest_growth_opportunities`** — oportunidades de página/funil (readonly).
 
 Os dados de GA podem estar **simulados** até `GA_PROPERTY_ID` e credenciais estarem configuradas no servidor MCP.
 
@@ -49,7 +65,7 @@ Os dados de GA podem estar **simulados** até `GA_PROPERTY_ID` e credenciais est
 1. Chamar as ferramentas MCP acima (ou explicar ausência do MCP).
 2. **Read** dos alvos prováveis:
    - `src/app/layout.tsx` (metadata global)
-   - `src/app/page.tsx` e páginas em `src/app/**/page.tsx` relevantes ao funil
+   - Home em `src/app/(pt)/page.tsx` / `src/app/(en)/en/page.tsx` e demais páginas em `src/app/(pt)/**/page.tsx` e `src/app/(en)/en/**/page.tsx` relevantes ao funil
    - Componentes de hero/CTA (`src/components/HomeHero.tsx`, `*Cta*.tsx`, etc.)
 3. Propor **hipóteses** (ex.: reduzir bounce em rota X, melhorar CTA acima da dobra) e **edições** concretas (Write/Edit).
 4. Evitar promessas de resultado sem baseline real — com dados simulados, rotule como cenário de exemplo.

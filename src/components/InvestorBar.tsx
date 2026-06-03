@@ -13,7 +13,7 @@ export default function InvestorBar() {
   return (
     <section
       aria-label={s.ariaLabel}
-      className="border-b border-white/5 bg-[#0a1220]/90 py-5 sm:py-6"
+      className="border-b border-white/5 bg-surface-trust/90 py-5 sm:py-6"
     >
       <div className="container mx-auto flex flex-col items-center justify-center gap-4 px-4 sm:flex-row sm:gap-6">
         <motion.span

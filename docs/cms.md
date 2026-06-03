@@ -300,10 +300,11 @@ SANITY_API_TOKEN=...          # ou SANITY_API_WRITE_TOKEN — ver «Token de API
 
 #### MCP Tool (para uso em agentes de IA)
 
-O servidor MCP `4unik-marketing` expõe duas novas tools:
+O servidor MCP `4unik-marketing` expõe tools de blog e de base de conhecimento:
 
 - `generate_blog_post` — Gera um post completo via OpenAI e opcionalmente publica no Sanity
 - `get_blog_topic_seeds` — Lista todos os tópicos pré-definidos por categoria
+- `get_notebooklm_briefing`, `search_product_knowledge`, `suggest_growth_opportunities`, `get_knowledge_freshness` — leem `docs/knowledge-base/` (sync NotebookLM: [`agent-knowledge-notebooklm.md`](agent-knowledge-notebooklm.md))
 
 Exemplo de uso via MCP:
 ```json
@@ -482,6 +483,8 @@ Hoje esse documento alimenta principalmente:
 **Fallbacks:** quando não há URL válida de asset no Sanity, vários blocos usam screenshots estáticos em `/public/screens/` (WebP) ou o `FeatureScreensCarousel` com esses assets. O hero da página Plataforma e secções de gamificação/inteligência também usam essas capturas — não há mais o módulo `PlatformMockupScreens` (mockups JSX removidos).
 
 **Política de imagens (showcase e marketing):** use **capturas reais** (WebP/PNG em `public/screens/`, `public/loja-corporativa/`, `public/workvivo/`) como conteúdo principal no Studio. Ilustrações em `public/cms-seed/*.svg` são apenas **fallbacks editoriais / alternativas** — não devem substituir screenshots de produto no dataset de produção. O seed `scripts/sanity-seed-data.mjs` alinha os documentos padrão com estes ficheiros reais; após alterar o seed, volte a correr o script de população do Sanity (com token de escrita) ou faça upload manual equivalente.
+
+**Enquadramento dos thumbnails de card:** desde a centralização dos presets em [`src/sanity/lib/image.ts`](../src/sanity/lib/image.ts) (`SANITY_IMAGE_PRESETS`) e do componente [`ShowcaseImage`](../src/components/ui/ShowcaseImage.tsx), as miniaturas dos cards (mecânicas, KPIs, módulos, loja, gestão) usam `fit: "max"` + `object-contain` — a imagem aparece **inteira**, sem corte. Por isso, para esses slots prefira **ícones ou imagens quadradas** (logo, símbolo); screenshots **wide** ficam mal numa miniatura e devem ir para slots maiores (hero, painéis de showcase, bento) que usam a variante `card`/`banner`. Banners wide de secção continuam com `crop`/`focalpoint` intencional (home hero, tabs da plataforma).
 
 **Bento (home):** o documento `homeShowcaseMedia` expõe quatro imagens opcionais — painel principal, loja, gamificação e API/integrações — alinhadas aos quatro cards da grelha; campos vazios usam os mesmos WebPs de fallback definidos em código.
 
@@ -907,10 +910,12 @@ Depois de criar ou alterar secrets, faz **re-run** do workflow *Deploy to GitHub
 Após um push a `main` ou um *Run workflow* bem-sucedido:
 
 1. **Actions:** o job *Deploy to GitHub Pages* terminou sem erro. Se o run nem começar ou aparecer bloqueio de **billing** / minutos de Actions, resolve em [Billing da conta](https://github.com/settings/billing) ou da organização (não é um erro do repositório).
-2. **Smoke HTTP:** abre `https://yoooobe.github.io/landing/` e `https://yoooobe.github.io/landing/en/` (respostas 200).
+2. **Smoke HTTP:** abre `https://plataforma.4unik.com.br/landing/` e `https://plataforma.4unik.com.br/landing/en/` (respostas 200). Motor e campanhas: `…/plataforma/motor-gamificacao/` e `…/plataforma/campanhas-gamificacao/`.
 3. **Assets:** confirma que `/landing/favicon.ico` e `/landing/brand/` respondem (favicon e marca).
-4. **Studio (opcional):** se o Sanity estiver configurado no CI, testa `https://yoooobe.github.io/landing/studio/` e login.
-5. **OG (opcional):** usa a ferramenta de debug de partilha (ex. Facebook Sharing Debugger) numa URL de marketing se precisares de validar o card — a imagem por defeito da app vem de `public/og/4unik-default.svg` via metadata.
+4. **Studio:** testa `https://plataforma.4unik.com.br/landing/studio/` — exige `NEXT_PUBLIC_SANITY_PROJECT_ID` real no build e CORS `https://plataforma.4unik.com.br` no painel Sanity.
+5. **Menus CMS:** no Vision, `*[_type == "menu"]{ title, "hrefs": items[].href }` — corrigir `href` com `yoooobe.github.io` (re-seed ou editar no Studio). Fallback Header/Footer em código usa paths relativos correctos.
+6. **Rotas (CI):** `npm run validate:landing-routes` — inclui motor + campanhas no menu e sitemap.
+7. **OG (opcional):** usa a ferramenta de debug de partilha numa URL de marketing.
 
 ## 7. Contrato de sincronização para agentes
 

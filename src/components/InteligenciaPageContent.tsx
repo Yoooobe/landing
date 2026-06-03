@@ -46,7 +46,7 @@ export default function InteligenciaPageContent({
 
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight font-heading">
               {p.hero.titleBefore} <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple to-cyan-400">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple to-cyan-400">
                 {p.hero.titleGradient}
               </span>
             </h1>
@@ -90,7 +90,7 @@ export default function InteligenciaPageContent({
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-heading">
               {p.workvivo.titleBefore}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yoobe-purple to-brand-orange">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple to-brand-orange">
                 {p.workvivo.titleGradient}
               </span>
             </h2>
@@ -123,7 +123,7 @@ export default function InteligenciaPageContent({
 
       <section
         id={primaryContactSectionIdAttr(contactSectionId)}
-        className="py-24 bg-gradient-to-b from-brand-navy-dark to-black relative overflow-hidden border-t border-white/5"
+        className="py-24 bg-linear-to-b from-brand-navy-dark to-black relative overflow-hidden border-t border-white/5"
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yoobe-purple/20 blur-[150px] rounded-full pointer-events-none"></div>
         <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">

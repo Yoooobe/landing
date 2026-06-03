@@ -21,7 +21,7 @@ export default function ApiIntegracoesPageSections({
   const leadCopy = getMessages(locale).leadForm;
 
   return (
-    <div className="min-h-screen bg-[#0a0f18] text-white">
+    <div className="min-h-screen bg-surface-base text-white">
       <ApiHero
         content={content.hero}
         showcaseImage={showcaseMedia?.hero?.showcaseImage}
@@ -34,7 +34,7 @@ export default function ApiIntegracoesPageSections({
 
       <section
         id={PRIMARY_CONTACT_SECTION_ID}
-        className="relative overflow-hidden border-t border-white/5 bg-[#0a0f18] py-24"
+        className="relative overflow-hidden border-t border-white/5 bg-surface-base py-24"
       >
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-cyan-500/5 blur-[100px]"></div>
         <div className="container relative z-10 mx-auto max-w-5xl px-4">
@@ -51,7 +51,7 @@ export default function ApiIntegracoesPageSections({
               href={content.finalCta.buttonHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-cyan-500 px-8 text-base font-bold text-[#0a0f18] shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all hover:scale-105 hover:bg-cyan-400"
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-cyan-500 px-8 text-base font-bold text-surface-base shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all hover:scale-105 hover:bg-cyan-400"
             >
               {content.finalCta.buttonLabel}
             </a>

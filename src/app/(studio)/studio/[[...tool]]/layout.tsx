@@ -1,4 +1,10 @@
+import type { Metadata } from "next";
 import type { ReactNode } from "react";
+
+/** Evita indexação do Studio em motores de busca (complementa `disallow` em robots.ts). */
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 /**
  * Viewport a full height para o Studio; metadata vem de `page.tsx` (next-sanity/studio).

@@ -1,9 +1,8 @@
 "use client";
 
 import { Coins, Goal, Medal, Rocket, Store, Trophy } from "lucide-react";
-import Image from "next/image";
 import type { ImageWithEmojiDoc, ResolvedGamificacaoContent } from "@/sanity/lib/types";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 
 function MechanicIcon({ index }: { index: number }) {
   const c = "h-8 w-8";
@@ -49,7 +48,7 @@ export default function MechanicsGrid({
   showcaseItems?: ImageWithEmojiDoc[];
 }) {
   return (
-    <section id="mechanics" className="relative z-10 border-t border-white/5 bg-[#0d1424] py-24">
+    <section id="mechanics" className="relative z-10 border-t border-white/5 bg-surface-section py-24">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="mx-auto mb-20 max-w-3xl text-center">
           <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70">{s.badge}</span>
@@ -64,7 +63,6 @@ export default function MechanicsGrid({
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {s.items.map((item, i) => {
             const cardShowcase = showcaseItems?.[i];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
               <div
                 key={item.id}
@@ -77,9 +75,9 @@ export default function MechanicsGrid({
                 <div className="relative z-10">
                   <div className="mb-6 flex items-start justify-between">
                     <div className="rounded-2xl border border-white/10 bg-white/5 p-3 transition-transform duration-300 group-hover:scale-110">
-                      {cardImageUrl ? (
-                        <div className="relative h-8 w-8 overflow-hidden rounded-lg">
-                          <Image src={cardImageUrl} alt={cardShowcase?.image?.alt || item.title} fill className="object-cover" unoptimized />
+                      {cardShowcase?.image ? (
+                        <div className="relative h-10 w-10 overflow-hidden rounded-lg">
+                          <ShowcaseImage image={cardShowcase.image} alt={cardShowcase.image.alt || item.title} variant="thumb" sizes="40px" />
                         </div>
                       ) : cardShowcase?.emoji ? (
                         <span className="text-2xl leading-none">{cardShowcase.emoji}</span>

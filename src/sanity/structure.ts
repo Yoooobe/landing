@@ -235,17 +235,21 @@ export const structure: StructureResolver = (S) =>
             ]),
         ),
       S.listItem()
-        .title("Estratégias de marketing")
+        .title("Estratégias de marketing (só referência)")
         .id("marketing-strategies")
         .schemaType("marketingStrategy")
-        .child(S.documentTypeList("marketingStrategy").title("Estratégias de Marketing")),
+        .child(
+          S.documentTypeList("marketingStrategy").title(
+            "Estratégias — não publicadas no site (referência interna)",
+          ),
+        ),
       S.listItem()
-        .title("Espelho editorial do codigo")
+        .title("Espelho editorial (não publica no site)")
         .id("content-mirror")
         .schemaType("contentMirror")
         .child(
           S.documentTypeList("contentMirror")
-            .title("Espelho editorial do codigo")
+            .title("Espelho editorial — não alimenta o export")
             .defaultOrdering([{ field: "title", direction: "asc" }]),
         ),
       S.listItem()

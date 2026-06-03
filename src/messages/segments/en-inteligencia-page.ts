@@ -28,7 +28,7 @@ export const enInteligenciaPage = {
     },
     {
       title: "AI insights for HR",
-      desc: "See where to act, which groups to activate first, and how to maximize program ROI.",
+      desc: "See where to act, which groups to activate first, and how to grow your program's impact.",
     },
   ],
   workvivo: {
@@ -58,8 +58,8 @@ export const enInteligenciaPage = {
         desc: "Flexible budget allocation and forecasting across initiatives.",
       },
       {
-        title: "Culture ROI",
-        desc: "Track and prove gamification impact on productivity and turnover reduction.",
+        title: "Culture impact",
+        desc: "Track gamification's impact on engagement, workplace climate, and retention.",
       },
     ],
   },

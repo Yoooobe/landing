@@ -182,7 +182,7 @@ export default function DedicatedIntegrations({
 
             <p className="text-white/60 font-sans mb-8 min-h-[60px] relative z-10">{b.body}</p>
 
-            <div className="w-full aspect-4/3 bg-[#0d1424] border border-white/10 rounded-2xl relative overflow-hidden mb-8 shadow-inner flex items-center justify-center font-sans max-w-sm mx-auto group-hover:border-yellow-400/20 transition-colors">
+            <div className="w-full aspect-4/3 bg-surface-section border border-white/10 rounded-2xl relative overflow-hidden mb-8 shadow-inner flex items-center justify-center font-sans max-w-sm mx-auto group-hover:border-yellow-400/20 transition-colors">
               {beehomePreviewUrl ? (
                 <Image
                   src={beehomePreviewUrl}
@@ -217,7 +217,7 @@ export default function DedicatedIntegrations({
                       <span className="text-[10px] text-white/40 uppercase tracking-widest mt-2 font-mono">{b.connectionLabel}</span>
                     </div>
 
-                    <div className="w-full bg-linear-to-br from-brand-charcoal to-[#1a233a] border border-brand-orange/30 backdrop-blur-md rounded-xl p-4 flex items-center justify-between shadow-[0_0_20px_rgba(249,115,22,0.15)] group-hover:shadow-[0_0_30px_rgba(249,115,22,0.25)] transition-shadow">
+                    <div className="w-full bg-linear-to-br from-brand-charcoal to-surface-tier-from border border-brand-orange/30 backdrop-blur-md rounded-xl p-4 flex items-center justify-between shadow-[0_0_20px_rgba(249,115,22,0.15)] group-hover:shadow-[0_0_30px_rgba(249,115,22,0.25)] transition-shadow">
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded bg-brand-orange text-white flex items-center justify-center font-black text-xl">
                           Y.

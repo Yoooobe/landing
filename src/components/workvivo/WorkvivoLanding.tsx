@@ -160,7 +160,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
                 href="https://www.zoom.us/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex shrink-0 items-center justify-center opacity-95 transition-opacity hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0b5cff] rounded-lg"
+                className="flex shrink-0 items-center justify-center opacity-95 transition-opacity hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-600 rounded-lg"
               >
                 <img
                   src={withBasePath("/partners/zoom-logo.svg")}
@@ -243,7 +243,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
               return (
                 <div
                   key={pillar.title}
-                  className="glass-panel-dark rounded-2xl border border-white/8 p-5 flex flex-col gap-3"
+                  className="glass-panel-dark rounded-2xl border border-white/10 p-5 flex flex-col gap-3"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-yoobe-purple/15 border border-yoobe-purple/20">
                     <Icon className="w-5 h-5 text-yoobe-purple" />
@@ -270,7 +270,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
                   width={800}
                   height={450}
                 />
-                <figcaption className="border-t border-white/8 px-3 py-2 text-center text-[0.65rem] font-semibold uppercase tracking-wider text-white/40">
+                <figcaption className="border-t border-white/10 px-3 py-2 text-center text-[0.65rem] font-semibold uppercase tracking-wider text-white/40">
                   {shot.label}
                 </figcaption>
               </figure>

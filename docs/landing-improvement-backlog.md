@@ -10,11 +10,20 @@
 | Done | P1 | Performance | `EnvMarketingScripts` (só env) fora do fetch Sanity; CMS só se env ausente | Medium | Low | `EnvMarketingScripts.tsx`, `MarketingScripts.tsx`, `AppProviders.tsx` |
 | Done | P2 | i18n | `<html lang>` só no servidor via `htmlLangForLocale()`; sem correção pós-hidratação no cliente | Medium | Low | `src/lib/locale.ts`, `src/app/(pt)/layout.tsx`, `src/app/(en)/en/layout.tsx`, `src/app/(studio)/layout.tsx` |
 | Done | P2 | Performance | Motion no funil home: mantido acima da dobra no `HomeHero`; entradas `whileInView` extra em secções sem motion | Medium | Low | `FourUnikComplementStrip.tsx`, `EnterpriseTrustStrip.tsx`, `HomeFinalCta.tsx`, `TrustBar.tsx`, `SectionLeadCta.tsx` |
+| Done | P1 | Content | Rotas `/para-plataformas/` + `/en/para-plataformas/` — ICP plataformas/B2B SaaS embedded: API como camada de execução, fluxo Product/Inventory/Checkout, SDK Node/Python, sandbox, webhooks. Copy sem claims sensíveis | High | Medium | `src/app/(pt)/para-plataformas/`, `src/app/(en)/en/para-plataformas/`, `src/messages/segments/*-para-plataformas-page.ts`, `src/sanity/lib/marketingPages.ts` |
+| Done | P2 | Content | Rotas `/educacao/` + `/en/educacao/` — ICP e-learning: recompensa tangível por conclusão (sem citar o número Boticário na copy pública) | Medium | Medium | `src/app/(pt)/educacao/`, `src/app/(en)/en/educacao/`, `src/messages/segments/*-educacao-page.ts` |
+| Done | P2 | Content | Rotas `/vendas/` + `/en/vendas/` — ICP VP de Vendas: incentivo integrado ao CRM com premiação instantânea | Medium | Medium | `src/app/(pt)/vendas/`, `src/app/(en)/en/vendas/`, `src/messages/segments/*-vendas-page.ts` |
+| Done | P3 | Content | Rotas `/comunidades/` + `/en/comunidades/` — ICP criadores/comunidades: loja VIP de fãs com fulfillment 4unik | Medium | Medium | `src/app/(pt)/comunidades/`, `src/app/(en)/en/comunidades/`, `src/messages/segments/*-comunidades-page.ts` |
+| Done | P3 | Content | Rotas `/eventos/` + `/en/eventos/` — ICP produtores de eventos: pontos no evento + checkout no celular, retirada/entrega rastreada | Medium | Medium | `src/app/(pt)/eventos/`, `src/app/(en)/en/eventos/`, `src/messages/segments/*-eventos-page.ts` |
 
 ## Next Up
 | Priority | Theme | Change | Impact | Risk | Key files |
 | --- | --- | --- | --- | --- | --- |
 | P2 | CMS | Add stronger guardrails for incomplete `marketingPage` documents in Studio | Medium | Medium | `src/sanity/schemaTypes/marketingPageType.ts`, `docs/cms.md` |
+| P1 | Content | Nova rota `/pricing` (PT/EN) com os 4 planos do notebook (Starter → Enterprise) — exige aprovação comercial dos valores antes de publicar | High | Medium | `src/app/(pt)/`, `src/app/(en)/en/`, `src/messages/segments/` |
+| P2 | Content | Landing pages por ICP transversal (RH, Marketing) usando a matriz de `icp-messaging-guide.md` | Medium | Medium | `src/messages/segments/`, `docs/knowledge-base/notebooklm/icp-messaging-guide.md` |
+| P2 | Content | Página `/seguranca/` e calculadora de ROI (já em `STRATEGIC_PAGE_GAPS` do MCP) — prova/SLA verificáveis antes de publicar | Medium | Medium | `src/app/(pt)/`, `src/app/(en)/en/`, `docs/enterprise-content-strategy.md` |
+| P2 | Content | Revisar prova social/tração (R$ 1,34M, logos, Boticário +308%) e expor na landing só após aprovação de marca/jurídico | Medium | Medium | `src/messages/segments/`, `docs/knowledge-base/notebooklm/icp-messaging-guide.md` |
 
 ## Blocked Or Larger Scope
 | Priority | Theme | Change | Reason blocked |

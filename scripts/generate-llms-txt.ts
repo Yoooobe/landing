@@ -60,6 +60,11 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - Plataforma (overview): ${url("/plataforma")} | ${url("/en/plataforma")}
 - Inteligência: ${url("/inteligencia")} | ${url("/en/inteligencia")}
 - Casos de uso: ${url("/casos-de-uso")} | ${url("/en/casos-de-uso")}
+- Para plataformas e SaaS: ${url("/para-plataformas")} | ${url("/en/para-plataformas")}
+- Para educação e e-learning: ${url("/educacao")} | ${url("/en/educacao")}
+- Para times de vendas: ${url("/vendas")} | ${url("/en/vendas")}
+- Para criadores e comunidades: ${url("/comunidades")} | ${url("/en/comunidades")}
+- Para eventos: ${url("/eventos")} | ${url("/en/eventos")}
 - Blog: ${url("/blog")} | ${url("/en/blog")}
 - robots.txt: ${base}/robots.txt
 - sitemap: ${base}/sitemap.xml

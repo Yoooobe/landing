@@ -2,7 +2,7 @@
 
 import FeatureScreensCarousel from "@/components/FeatureScreensCarousel";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import { getSanityImageUrl, SANITY_IMAGE_PRESETS } from "@/sanity/lib/image";
 import type { PlatformShowcaseMediaDoc } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
 import { ShoppingBag, CreditCard, Filter } from "lucide-react";
@@ -17,7 +17,7 @@ export default function PlataformaStore({
 }) {
   const { m } = useLocaleMessages();
   const s = m.plataforma.store;
-  const storeMockupImageUrl = getSanityImageUrl(showcaseMedia?.storeMockupImage, { width: 1440, height: 900, fit: "crop", crop: "entropy", quality: 86 });
+  const storeMockupImageUrl = getSanityImageUrl(showcaseMedia?.storeMockupImage, SANITY_IMAGE_PRESETS.uiScreenshot);
 
   return (
     <section id="loja" className="py-24 bg-brand-navy relative overflow-hidden">
@@ -72,7 +72,7 @@ export default function PlataformaStore({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative rounded-3xl overflow-hidden bg-[#0d1522] border border-white/10 shadow-2xl"
+              className="relative rounded-3xl overflow-hidden bg-surface-mid border border-white/10 shadow-2xl"
             >
               {storeMockupImageUrl ? (
                 <div className="relative aspect-5/4 w-full overflow-hidden">
@@ -85,7 +85,7 @@ export default function PlataformaStore({
                     }
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-contain"
                     unoptimized
                   />
                 </div>

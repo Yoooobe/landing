@@ -26,7 +26,7 @@ export default function AiFeatureMockups() {
   const shot = TAB_IMAGES[activeTab];
 
   return (
-    <section className="py-24 bg-[#0a0f18] relative overflow-hidden font-sans border-t border-white/5">
+    <section className="py-24 bg-surface-base relative overflow-hidden font-sans border-t border-white/5">
       {/* Background gradients */}
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-yoobe-purple/10 blur-[130px] rounded-full pointer-events-none -translate-y-1/2"></div>
       

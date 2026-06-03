@@ -1,10 +1,9 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 /**
@@ -20,8 +19,6 @@ export default function FourUnikComplementStrip({
     ...m.home.fourUnik,
     ctaHref: "https://4unik.com.br",
   };
-  const sectionImageUrl = getSanityImageUrl(u.sectionImage, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
-
   return (
     <section
       className="relative border-y border-white/10 bg-white/3 py-8"
@@ -48,16 +45,14 @@ export default function FourUnikComplementStrip({
               <span className="text-white/90">{u.here}</span> {u.bodyAfter}
             </p>
           </div>
-          {sectionImageUrl ? (
+          {u.sectionImage ? (
             <div className="w-full max-w-[220px] overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2 shadow-lg md:w-[220px]">
-              <Image
-                src={sectionImageUrl}
-                alt={u.sectionImage?.alt?.trim() || u.kicker || "Imagem complementar"}
-                width={440}
-                height={280}
+              <ShowcaseImage
+                image={u.sectionImage}
+                alt={u.sectionImage.alt?.trim() || u.kicker || "Imagem complementar"}
+                variant="card"
+                className="rounded-xl"
                 sizes="220px"
-                className="h-full w-full rounded-xl object-cover"
-                unoptimized
               />
             </div>
           ) : null}

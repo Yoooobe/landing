@@ -6,17 +6,17 @@ const fallbackByLocale: Record<Locale, ResolvedApiIntegracoesContent> = {
     seo: {
       title: "API e Integrações | 4unik",
       description:
-        "API REST, webhooks e integrações para recompensas corporativas, catálogo e fulfillment na plataforma 4unik.",
+        "API REST, webhooks e SDKs para oferecer recompensas físicas dentro da sua plataforma: catálogo, checkout embedded, estoque e entrega pela 4unik.",
       openGraphDescription:
-        "API REST, webhooks e integrações para recompensas corporativas, catálogo e fulfillment.",
+        "API REST, webhooks e SDKs para recompensas físicas embedded na sua plataforma — catálogo, checkout, estoque e entrega.",
     },
     hero: {
       badge: "API RESTful + SDK + Webhooks",
-      title: "API para recompensas, fulfillment e experiência corporativa",
+      title: "Recompensas físicas como uma chamada de API",
       description:
-        "API RESTful com Webhooks em tempo real, Sandbox para testes e SDKs para Node.js e Python. Endpoints dedicados para produtos, estoque, checkout e histórico de resgates.",
+        "Sua plataforma mostra o catálogo e o checkout dentro do próprio app; a 4unik cuida de estoque, envio e rastreio. API RESTful com Webhooks em tempo real, Sandbox para testes e SDKs para Node.js e Python — com endpoints dedicados de produtos, estoque, checkout e histórico de resgates.",
       visualCaption:
-        "Integre sua intranet ou plataforma de engajamento com a 4unik e automatize envio de prêmios, presentes ou produtos de forma única.",
+        "Plugue a API da 4unik na sua plataforma de engajamento, e-learning, vendas ou comunidade: o usuário resgata sem sair do seu produto, e a entrega física é com a gente.",
       primaryCtaLabel: "Ler a Documentação",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Falar com Engenharia",
@@ -187,17 +187,17 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
     seo: {
       title: "API & Integrations | 4Unik",
       description:
-        "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment, aligned with the 4Unik platform.",
+        "REST API, webhooks, and SDKs to offer physical rewards inside your platform: catalog, embedded checkout, inventory, and delivery handled by 4Unik.",
       openGraphDescription:
-        "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment.",
+        "REST API, webhooks, and SDKs for physical rewards embedded in your platform—catalog, checkout, inventory, and delivery.",
     },
     hero: {
       badge: "REST API + SDK + Webhooks",
-      title: "API for rewards, fulfillment, and corporate experiences",
+      title: "Physical rewards as an API call",
       description:
-        "REST API with real-time webhooks, a testing sandbox, and SDKs for Node.js and Python. Dedicated endpoints for products, inventory, checkout, and redemption history.",
+        "Your platform shows the catalog and checkout inside your own app; 4Unik handles inventory, shipping, and tracking. REST API with real-time webhooks, a testing sandbox, and SDKs for Node.js and Python—plus dedicated endpoints for products, inventory, checkout, and redemption history.",
       visualCaption:
-        "Connect your intranet or engagement platform with 4Unik and automate sending rewards, gifts, or products in a uniquely integrated way.",
+        "Plug the 4Unik API into your engagement, e-learning, sales, or community platform: users redeem without leaving your product, and physical delivery is on us.",
       primaryCtaLabel: "Read documentation",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Talk to engineering",

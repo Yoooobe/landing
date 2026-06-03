@@ -8,7 +8,7 @@ export default function GamificationFAQ({ content: f }: { content: ResolvedGamif
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative z-10 border-t border-white/5 bg-[#0a0f18] py-24">
+    <section className="relative z-10 border-t border-white/5 bg-surface-base py-24">
       <div className="container mx-auto max-w-3xl px-4">
         <div className="mb-16 text-center">
           <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70">{f.badge}</span>

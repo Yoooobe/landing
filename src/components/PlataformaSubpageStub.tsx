@@ -18,15 +18,15 @@ const gradients: Record<
 > = {
   motor: {
     iconWrap: "bg-brand-orange/20 border border-brand-orange/30",
-    title: "text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-red-500",
+    title: "text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-red-500",
   },
   logistica: {
     iconWrap: "bg-blue-500/20 border border-blue-500/30",
-    title: "text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400",
+    title: "text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-400",
   },
   loja: {
     iconWrap: "bg-yoobe-neon-pink/20 border border-yoobe-neon-pink/30",
-    title: "text-transparent bg-clip-text bg-gradient-to-r from-yoobe-neon-pink to-fuchsia-600",
+    title: "text-transparent bg-clip-text bg-linear-to-r from-yoobe-neon-pink to-fuchsia-600",
   },
 };
 
@@ -37,7 +37,7 @@ export default function PlataformaSubpageStub({ variant }: { variant: Variant })
   const g = gradients[variant];
 
   return (
-    <div className="pt-32 pb-24 bg-[#0a0f18] min-h-screen text-white flex items-center justify-center">
+    <div className="pt-32 pb-24 bg-surface-base min-h-screen text-white flex items-center justify-center">
       <div className="container mx-auto px-4 max-w-4xl text-center">
         <div
           className={`w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-8 ${g.iconWrap}`}

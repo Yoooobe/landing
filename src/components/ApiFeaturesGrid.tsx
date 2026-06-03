@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { PlugZap, RefreshCw, Box, ShieldCheck, Cpu } from "lucide-react";
 import type { ImageWithEmojiDoc, ResolvedApiIntegracoesContent } from "@/sanity/lib/types";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 
 const iconMap = {
   plugZap: <PlugZap className="w-6 h-6 text-brand-orange" />,
@@ -28,7 +27,7 @@ export default function ApiFeaturesGrid({
   }));
 
   return (
-    <section className="py-24 bg-[#0a0f18] relative border-t border-white/5">
+    <section className="py-24 bg-surface-base relative border-t border-white/5">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="mb-16 text-center">
           <h2 className="mb-6 font-mono text-3xl font-black text-white md:text-5xl">
@@ -42,7 +41,6 @@ export default function ApiFeaturesGrid({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((f, i) => {
             const cardShowcase = showcaseItems?.[i];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
             <motion.div
               key={i}
@@ -53,9 +51,9 @@ export default function ApiFeaturesGrid({
               className={`glass-panel-dark border border-white/5 rounded-[2rem] p-8 hover:border-white/10 transition-colors group ${f.colSpan}`}
             >
               <div className="mb-6 inline-block rounded-2xl border border-white/5 bg-surface-elevated p-4 transition-transform group-hover:scale-110">
-                {cardImageUrl ? (
-                  <div className="relative h-6 w-6 overflow-hidden rounded">
-                    <Image src={cardImageUrl} alt={cardShowcase?.image?.alt || f.title} fill className="object-cover" unoptimized />
+                {cardShowcase?.image ? (
+                  <div className="relative h-10 w-10 overflow-hidden rounded-lg">
+                    <ShowcaseImage image={cardShowcase.image} alt={cardShowcase.image.alt || f.title} variant="thumb" sizes="40px" />
                   </div>
                 ) : cardShowcase?.emoji ? (
                   <span className="text-xl leading-none">{cardShowcase.emoji}</span>

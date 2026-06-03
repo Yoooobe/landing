@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
@@ -7,19 +10,317 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const REPO_ROOT = path.resolve(__dirname, "../..");
+const KB_ROOT = path.join(REPO_ROOT, "docs/knowledge-base");
+const NOTEBOOKLM_DIR = path.join(KB_ROOT, "notebooklm");
+
 /**
  * Base pública alinhada a `src/lib/site.ts` + `src/lib/basePath.ts`.
  * Sobrescreva com SITE_URL no ambiente do MCP se necessário.
  */
 const DEFAULT_SITE_URL = process.env.SITE_URL || "https://yoooobe.github.io/landing";
+const DEFAULT_STALE_AFTER_DAYS = 30;
 
 // Configurações e credenciais simuladas para GA API
 const GA_PROPERTY_ID = process.env.GA_PROPERTY_ID || "123456789";
 
-function normalizePath(path) {
-  if (!path || String(path).trim() === "") return "";
-  const p = String(path).trim();
+function normalizePath(routePath) {
+  if (!routePath || String(routePath).trim() === "") return "";
+  const p = String(routePath).trim();
   return p.startsWith("/") ? p : `/${p}`;
+}
+
+function readTextFileSafe(filePath) {
+  try {
+    return fs.readFileSync(filePath, "utf8");
+  } catch {
+    return null;
+  }
+}
+
+function parseYamlScalar(raw, key) {
+  const line = raw.split("\n").find((l) => l.startsWith(`${key}:`));
+  if (!line) return null;
+  let v = line.slice(key.length + 1).trim();
+  if (v === "null") return null;
+  if (
+    (v.startsWith('"') && v.endsWith('"')) ||
+    (v.startsWith("'") && v.endsWith("'"))
+  ) {
+    v = v.slice(1, -1);
+  }
+  return v || null;
+}
+
+function parseNotebooklmMeta() {
+  const raw = readTextFileSafe(path.join(NOTEBOOKLM_DIR, "meta.yaml"));
+  if (!raw) {
+    return {
+      notebook_id: null,
+      last_synced: null,
+      stale_after_days: DEFAULT_STALE_AFTER_DAYS,
+    };
+  }
+  const stale = parseYamlScalar(raw, "stale_after_days");
+  return {
+    notebook_id: parseYamlScalar(raw, "notebook_id"),
+    notebook_url: parseYamlScalar(raw, "notebook_url"),
+    last_synced: parseYamlScalar(raw, "last_synced"),
+    stale_after_days: stale ? Number(stale) : DEFAULT_STALE_AFTER_DAYS,
+    owner: parseYamlScalar(raw, "owner"),
+    sync_frequency_recommended: parseYamlScalar(raw, "sync_frequency_recommended"),
+  };
+}
+
+function listKnowledgeMarkdownFiles(dir = KB_ROOT, acc = []) {
+  if (!fs.existsSync(dir)) return acc;
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) listKnowledgeMarkdownFiles(full, acc);
+    else if (entry.name.endsWith(".md")) acc.push(full);
+  }
+  return acc;
+}
+
+function searchProductKnowledge(query, maxResults = 12) {
+  const q = String(query || "").trim().toLowerCase();
+  if (!q) {
+    return { status: "error", message: "query é obrigatório" };
+  }
+  const hits = [];
+  for (const filePath of listKnowledgeMarkdownFiles()) {
+    const rel = path.relative(REPO_ROOT, filePath);
+    const lines = readTextFileSafe(filePath)?.split("\n") || [];
+    lines.forEach((line, idx) => {
+      if (line.toLowerCase().includes(q)) {
+        hits.push({
+          file: rel,
+          line: idx + 1,
+          excerpt: line.trim().slice(0, 240),
+        });
+      }
+    });
+  }
+  return {
+    status: "success",
+    query: q,
+    totalMatches: hits.length,
+    matches: hits.slice(0, maxResults),
+    truncated: hits.length > maxResults,
+    kbRoot: path.relative(REPO_ROOT, KB_ROOT),
+  };
+}
+
+function daysSinceIsoDate(isoDate) {
+  if (!isoDate) return null;
+  const parsed = new Date(`${isoDate}T12:00:00Z`);
+  if (Number.isNaN(parsed.getTime())) return null;
+  const diffMs = Date.now() - parsed.getTime();
+  return Math.floor(diffMs / (1000 * 60 * 60 * 24));
+}
+
+function getKnowledgeFreshness() {
+  const meta = parseNotebooklmMeta();
+  const days = daysSinceIsoDate(meta.last_synced);
+  const threshold = meta.stale_after_days || DEFAULT_STALE_AFTER_DAYS;
+  const briefing = readTextFileSafe(path.join(NOTEBOOKLM_DIR, "briefing.md")) || "";
+  const briefingEmpty =
+    briefing.includes("Nenhum conteúdo do notebook foi sincronizado") ||
+    briefing.includes("Ação necessária");
+
+  let status = "ok";
+  if (!meta.last_synced || briefingEmpty) status = "missing_sync";
+  else if (days !== null && days > threshold) status = "stale";
+
+  return {
+    status: "success",
+    freshness: status,
+    last_synced: meta.last_synced,
+    days_since_sync: days,
+    stale_after_days: threshold,
+    is_stale: status === "stale",
+    briefing_needs_content: briefingEmpty,
+    recommendation:
+      status === "missing_sync"
+        ? "Cole o Briefing do NotebookLM em docs/knowledge-base/notebooklm/briefing.md e atualize meta.yaml."
+        : status === "stale"
+          ? `Último sync há ${days} dias (limite ${threshold}). Reexportar do NotebookLM.`
+          : "Base de conhecimento dentro do prazo.",
+    meta,
+  };
+}
+
+function getNotebooklmBriefing() {
+  const meta = parseNotebooklmMeta();
+  const briefingPath = path.join(NOTEBOOKLM_DIR, "briefing.md");
+  const briefing = readTextFileSafe(briefingPath);
+  return {
+    status: "success",
+    meta,
+    briefingPath: path.relative(REPO_ROOT, briefingPath),
+    briefing: briefing || "",
+    briefingLength: briefing?.length || 0,
+    note: !meta.last_synced
+      ? "last_synced não definido — ver docs/agent-knowledge-notebooklm.md"
+      : undefined,
+  };
+}
+
+function listPtAppRoutes() {
+  const ptApp = path.join(REPO_ROOT, "src/app/(pt)");
+  const routes = [];
+  function walk(currentDir, urlPrefix) {
+    if (!fs.existsSync(currentDir)) return;
+    if (fs.existsSync(path.join(currentDir, "page.tsx"))) {
+      routes.push(urlPrefix === "" ? "/" : urlPrefix);
+    }
+    for (const entry of fs.readdirSync(currentDir, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const nextPrefix =
+        urlPrefix === "" ? `/${entry.name}` : `${urlPrefix}/${entry.name}`;
+      walk(path.join(currentDir, entry.name), nextPrefix);
+    }
+  }
+  walk(ptApp, "");
+  return [...new Set(routes)].sort();
+}
+
+const STRATEGIC_PAGE_GAPS = [
+  {
+    route: "/seguranca/",
+    enRoute: "/en/seguranca/",
+    intention: "Governança, LGPD, confiança enterprise",
+    icp: "Segurança, TI, comprador enterprise",
+    proofNeeded: "Políticas reais, certificações verificáveis",
+    effort: "high",
+    priority: "P2",
+    source: "docs/enterprise-content-strategy.md",
+  },
+  {
+    route: "/recursos/sla/",
+    enRoute: "/en/recursos/sla/",
+    intention: "SLA e suporte B2B",
+    icp: "TI / procurement",
+    proofNeeded: "SLA contratual",
+    effort: "medium",
+    priority: "P3",
+    source: "docs/enterprise-content-strategy.md",
+  },
+  {
+    route: "/gamificacao-para-rh/",
+    enRoute: "/en/gamification-for-hr/",
+    intention: "Pilar SEO/AEO long-tail RH",
+    icp: "CHRO, People Ops",
+    proofNeeded: "FAQ + casos",
+    effort: "medium",
+    priority: "P1",
+    source: "docs/aeo-ai-visibility.md",
+  },
+  {
+    route: "/para-plataformas/",
+    enRoute: "/en/for-platforms/",
+    intention: "Camada de execução embedded: API de recompensas dentro do app do parceiro (Product/Inventory/Checkout, SDK, webhooks)",
+    icp: "Plataformas de gamificação / B2B SaaS (CTO, Produto)",
+    proofNeeded: "Docs de API, fluxo de integração, SDK/sandbox confirmados pelo produto",
+    effort: "high",
+    priority: "P1",
+    source: "docs/knowledge-base/notebooklm/icp-personas.md",
+  },
+  {
+    route: "/educacao/",
+    enRoute: "/en/education/",
+    intention: "Recompensa tangível por conclusão de curso para e-learning/infoprodutores",
+    icp: "E-learning, infoprodutores, L&D",
+    proofNeeded: "Caso Boticário (+308% conclusão) com aprovação de marca",
+    effort: "medium",
+    priority: "P2",
+    source: "docs/knowledge-base/notebooklm/icp-personas.md",
+  },
+  {
+    route: "/vendas/",
+    enRoute: "/en/sales/",
+    intention: "Incentivo de vendas integrado ao CRM com premiação instantânea",
+    icp: "Diretor/VP de Vendas, RevOps",
+    proofNeeded: "Integração CRM e fluxo de pontos automáticos",
+    effort: "medium",
+    priority: "P2",
+    source: "docs/knowledge-base/notebooklm/icp-personas.md",
+  },
+  {
+    route: "/comunidades/",
+    enRoute: "/en/communities/",
+    intention: "Loja VIP de fãs com fulfillment 100% pela 4unik",
+    icp: "Criadores de conteúdo, gestores de comunidade",
+    proofNeeded: "Exemplos de swag exclusivo + catálogo",
+    effort: "medium",
+    priority: "P3",
+    source: "docs/knowledge-base/notebooklm/icp-personas.md",
+  },
+  {
+    route: "/eventos/",
+    enRoute: "/en/events/",
+    intention: "Pontos no evento + checkout no celular: retira no estande ou recebe em casa",
+    icp: "Produtores de eventos físicos/híbridos, agências de experiência",
+    proofNeeded: "Fluxo de checkout e rastreio no evento",
+    effort: "medium",
+    priority: "P3",
+    source: "docs/knowledge-base/notebooklm/icp-personas.md",
+  },
+  {
+    route: "/recursos/roi-calculadora/",
+    enRoute: "/en/resources/roi-calculator/",
+    intention: "Conversão mid-funnel",
+    icp: "RH Strategist",
+    proofNeeded: "Modelo de ROI auditável",
+    effort: "high",
+    priority: "P2",
+    source: "docs/landing-improvement-backlog.md",
+  },
+];
+
+function suggestGrowthOpportunities(focus) {
+  const existing = listPtAppRoutes();
+  const existingSet = new Set(existing.map((r) => r.replace(/\/$/, "") || "/"));
+
+  const missingPages = STRATEGIC_PAGE_GAPS.filter((gap) => {
+    const key = gap.route.replace(/\/$/, "") || "/";
+    return !existingSet.has(key);
+  });
+
+  const kbSearch = focus
+    ? searchProductKnowledge(focus, 6)
+    : { status: "skipped", note: "Passe focus para cruzar com a KB" };
+
+  const freshness = getKnowledgeFreshness();
+
+  return {
+    status: "success",
+    focus: focus || null,
+    knowledgeFreshness: freshness.freshness,
+    existingRouteCount: existing.length,
+    sampleExistingRoutes: existing.slice(0, 20),
+    strategicGaps: missingPages,
+    blogClusters: [
+      "Reward infrastructure / API",
+      "Gamificação para RH",
+      "Integrações enterprise (Workvivo, HRIS)",
+      "Prova social e casos",
+    ],
+    ctaOpportunities: [
+      "Fortalecer CTA acima da dobra em /casos-de-uso/ e /api-integracoes/",
+      "Alinhar FAQs a perguntas literais para AEO (get_aeo_landing_checklist)",
+      "Verificar NEXT_PUBLIC_LEADS_INGEST_URL em produção",
+    ],
+    backlogFile: "docs/landing-improvement-backlog.md",
+    enterpriseStrategy: "docs/enterprise-content-strategy.md",
+    kbMatches: kbSearch.status === "success" ? kbSearch.matches : undefined,
+    nextSteps: [
+      "Adicionar linhas em docs/landing-improvement-backlog.md (secção Next Up)",
+      "Sync NotebookLM se freshness !== ok",
+      "Uma rota por batch implementation com paridade PT/EN",
+    ],
+  };
 }
 
 function buildPageUrl(path) {
@@ -119,12 +420,32 @@ function contentSyncRegistry() {
       plataforma: "(pt)/plataforma + (en)/en/plataforma — pt-plataforma / en-plataforma + faq",
       inteligencia: "(pt)/inteligencia + (en)/en/inteligencia — segmentos + faq",
     },
+    knowledgeBase: {
+      root: "docs/knowledge-base/",
+      notebooklm: "docs/knowledge-base/notebooklm/",
+      icpMessagingGuide: "docs/knowledge-base/notebooklm/icp-messaging-guide.md",
+      icpPersonas: "docs/knowledge-base/notebooklm/icp-personas.md",
+      syncDoc: "docs/agent-knowledge-notebooklm.md",
+      copyRule:
+        "Antes de reescrever copy pública, ler icp-messaging-guide.md (linguagem por ICP + claims que requerem aprovação).",
+      positioningRule:
+        "4unik = camada de execução / comportamento programável (API-first), não 'empresa de brindes'. 5 ICPs verticais em icp-personas.md: plataformas/embedded, e-learning, vendas, comunidades, eventos.",
+      tools: [
+        "get_notebooklm_briefing",
+        "search_product_knowledge",
+        "suggest_growth_opportunities",
+        "get_knowledge_freshness",
+      ],
+    },
     agentSkills: [
       "skills/marketing-ai-citation-strategist/SKILL.md",
       "skills/marketing-content-creator/SKILL.md",
       "skills/marketing-growth-hacker/SKILL.md",
       "skills/landing-page-builder/SKILL.md",
       "skills/4unik-ai-discovery/SKILL.md",
+      "skills/notebooklm-knowledge-curator/SKILL.md",
+      "skills/marketing-page-ideator/SKILL.md",
+      "skills/marketing-strategy-orchestrator/SKILL.md",
     ],
     positioning: "skills/4unik-ai-discovery/SKILL.md — Reward Infrastructure; não contradizer em metadata nem FAQs.",
   };
@@ -225,7 +546,7 @@ function aeoChecklist(locale, pageType) {
 const server = new Server(
   {
     name: "4unik-marketing-mcp",
-    version: "1.0.0",
+    version: "1.1.0",
   },
   {
     capabilities: {
@@ -386,6 +707,48 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           },
         },
       },
+      {
+        name: "get_notebooklm_briefing",
+        description:
+          "Lê o briefing versionado exportado do NotebookLM (docs/knowledge-base/notebooklm/briefing.md) e metadata (meta.yaml).",
+        inputSchema: { type: "object", properties: {} },
+      },
+      {
+        name: "search_product_knowledge",
+        description:
+          "Busca por palavra-chave em docs/knowledge-base/**/*.md (posicionamento, ICP, concorrentes, factos de produto, temas editoriais).",
+        inputSchema: {
+          type: "object",
+          properties: {
+            query: { type: "string", description: "Termo de busca (obrigatório)" },
+            maxResults: {
+              type: "number",
+              description: "Máximo de resultados (padrão 12)",
+            },
+          },
+          required: ["query"],
+        },
+      },
+      {
+        name: "suggest_growth_opportunities",
+        description:
+          "Cruza rotas existentes, pilares enterprise, gaps estratégicos e opcionalmente a KB — sugere páginas, clusters blog e CTAs.",
+        inputSchema: {
+          type: "object",
+          properties: {
+            focus: {
+              type: "string",
+              description: "Palavra-chave opcional para cruzar com search_product_knowledge",
+            },
+          },
+        },
+      },
+      {
+        name: "get_knowledge_freshness",
+        description:
+          "Verifica se docs/knowledge-base/notebooklm foi sincronizado recentemente (meta.yaml last_synced).",
+        inputSchema: { type: "object", properties: {} },
+      },
     ],
   };
 });
@@ -459,6 +822,41 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           text: JSON.stringify(contentSyncRegistry(), null, 2),
         },
       ],
+    };
+  }
+
+  if (name === "get_notebooklm_briefing") {
+    return {
+      content: [{ type: "text", text: JSON.stringify(getNotebooklmBriefing(), null, 2) }],
+    };
+  }
+
+  if (name === "search_product_knowledge") {
+    const maxResults = args.maxResults ?? 12;
+    return {
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify(searchProductKnowledge(args.query, maxResults), null, 2),
+        },
+      ],
+    };
+  }
+
+  if (name === "suggest_growth_opportunities") {
+    return {
+      content: [
+        {
+          type: "text",
+          text: JSON.stringify(suggestGrowthOpportunities(args.focus), null, 2),
+        },
+      ],
+    };
+  }
+
+  if (name === "get_knowledge_freshness") {
+    return {
+      content: [{ type: "text", text: JSON.stringify(getKnowledgeFreshness(), null, 2) }],
     };
   }
 

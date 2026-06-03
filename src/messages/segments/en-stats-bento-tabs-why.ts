@@ -35,7 +35,7 @@ export const enStatsBentoTabsWhy = {
     card4: {
       title: "Fits what you already run",
       body:
-        "Simple workflows for HR and managers; clear API docs and per-user pricing for engineering. Connect gamification, shipping, HRIS, or intranet—without vendor lock-in.",
+        "Simple workflows for HR and managers; clear API docs and per-user pricing for engineering. Connect gamification, sales CRM, events, HRIS, or intranet—or offer 4Unik’s physical rewards inside your own product, without building logistics.",
       cta: "Documentation",
       apiNote: "Built to integrate without the usual integration headaches.",
     },
@@ -101,7 +101,7 @@ export const enStatsBentoTabsWhy = {
       },
       {
         title: "Outcomes",
-        desc: "Active companies report +30 eNPS points in 6 months, ~78% redemption, and up to 25% lower turnover in year one.",
+        desc: "Track the impact on engagement, culture, and retention over time—with dashboard data to show the program’s return.",
       },
     ],
   },

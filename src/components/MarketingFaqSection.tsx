@@ -19,7 +19,7 @@ export default function MarketingFaqSection({ faq: f }: MarketingFaqSectionProps
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative z-10 border-t border-white/5 bg-[#0a0f18] py-24">
+    <section className="relative z-10 border-t border-white/5 bg-surface-base py-24">
       <div className="container mx-auto max-w-3xl px-4">
         <div className="mb-16 text-center">
           <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70">
@@ -27,7 +27,7 @@ export default function MarketingFaqSection({ faq: f }: MarketingFaqSectionProps
           </span>
           <h2 className="font-heading text-3xl font-black text-white md:text-5xl">
             {f.titleBefore}{" "}
-            <span className="bg-gradient-to-r from-yoobe-purple to-fuchsia-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-yoobe-purple to-fuchsia-600 bg-clip-text text-transparent">
               {f.titleGradient}
             </span>{" "}
             {f.titleAfter}
@@ -40,8 +40,8 @@ export default function MarketingFaqSection({ faq: f }: MarketingFaqSectionProps
               key={idx}
               className={`overflow-hidden rounded-2xl border transition-all duration-300 ${
                 openIndex === idx
-                  ? "border-yoobe-purple/50 bg-[#121824] shadow-[0_0_20px_rgba(139,92,246,0.1)]"
-                  : "border-transparent border-white/10 bg-transparent hover:border-white/20"
+                  ? "border-yoobe-purple/50 bg-surface-panel shadow-[0_0_20px_rgba(139,92,246,0.1)]"
+                  : "border border-white/10 bg-transparent hover:border-white/20"
               }`}
             >
               <button
@@ -51,7 +51,7 @@ export default function MarketingFaqSection({ faq: f }: MarketingFaqSectionProps
               >
                 <span className="pr-8 font-bold text-white">{faq.q}</span>
                 <ChevronDown
-                  className={`h-5 w-5 flex-shrink-0 text-white/50 transition-transform duration-300 ${
+                  className={`h-5 w-5 shrink-0 text-white/50 transition-transform duration-300 ${
                     openIndex === idx ? "rotate-180 text-yoobe-purple" : ""
                   }`}
                 />

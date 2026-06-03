@@ -22,7 +22,9 @@ const homeShowcaseMediaProjection = `{
     locale,
     bento{
       primaryCardImage ${imageFields},
-      storeCardImage ${imageFields}
+      storeCardImage ${imageFields},
+      gamificationCardImage ${imageFields},
+      apiCardImage ${imageFields}
     },
     platformTabs{
       managementImage ${imageFields},

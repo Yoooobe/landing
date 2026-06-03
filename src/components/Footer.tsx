@@ -66,15 +66,15 @@ function normalizeFooterHref(href: string, locale: "pt" | "en"): string {
   const normalized = href.replace(/\/+$/, "");
 
   if (normalized === "/plataforma#gamificacao" || normalized === "/plataforma/#gamificacao") {
-    return "/plataforma/motor-gamificacao";
+    return "/plataforma/motor-gamificacao/";
   }
 
   if (normalized === "/plataforma#wallet" || normalized === "/plataforma/#wallet") {
-    return "/plataforma/controle-carteiras";
+    return "/plataforma/controle-carteiras/";
   }
 
   if (normalized === "/plataforma#gestor" || normalized === "/plataforma/#gestor") {
-    return "/plataforma/painel-gestor";
+    return "/plataforma/painel-gestor/";
   }
 
   if (locale === "en" && normalized.startsWith("/en/plataforma")) {
@@ -126,19 +126,29 @@ export default function Footer() {
       {
         title: f.colPlatform,
         items: [
-          { label: f.links.motor, href: "/plataforma/motor-gamificacao" },
+          { label: f.links.motor, href: "/plataforma/motor-gamificacao/" },
           { label: m.nav.intelligence.title, href: "/inteligencia/" },
-          { label: f.links.campanhas, href: "/plataforma/campanhas-gamificacao" },
-          { label: f.links.wallets, href: "/plataforma/controle-carteiras" },
-          { label: f.links.gestor, href: "/plataforma/painel-gestor" },
-          { label: f.links.casos, href: "/casos-de-uso" },
+          { label: f.links.campanhas, href: "/plataforma/campanhas-gamificacao/" },
+          { label: f.links.wallets, href: "/plataforma/controle-carteiras/" },
+          { label: f.links.gestor, href: "/plataforma/painel-gestor/" },
+          { label: f.links.casos, href: "/casos-de-uso/" },
+        ],
+      },
+      {
+        title: m.nav.solutionsByProfile,
+        items: [
+          { label: m.nav.verticals.platforms.title, href: "/para-plataformas/" },
+          { label: m.nav.verticals.education.title, href: "/educacao/" },
+          { label: m.nav.verticals.sales.title, href: "/vendas/" },
+          { label: m.nav.verticals.communities.title, href: "/comunidades/" },
+          { label: m.nav.verticals.events.title, href: "/eventos/" },
         ],
       },
       {
         title: f.colResources,
         items: [
           { label: f.links.blog, href: "/blog/" },
-          { label: f.links.api, href: "/api-integracoes" },
+          { label: f.links.api, href: "/api-integracoes/" },
           {
             label: f.links.catalogo,
             href: sanity?.rewardsCatalogUrl?.trim() || "https://catalogo.4unik.com.br",
@@ -167,7 +177,7 @@ export default function Footer() {
         ],
       },
     ],
-    [f, m.nav.intelligence.title, sanity?.calendlyUrl, sanity?.companySiteUrl, sanity?.rewardsCatalogUrl, sanity?.whatsappUrl],
+    [f, m.nav, sanity?.calendlyUrl, sanity?.companySiteUrl, sanity?.rewardsCatalogUrl, sanity?.whatsappUrl],
   );
 
   const footerSections = useMemo(
@@ -181,7 +191,7 @@ export default function Footer() {
   return (
     <footer className="bg-brand-navy border-t border-white/5 pt-20 pb-10 text-white/70">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <div className="mb-3">
               <UnikWordmark

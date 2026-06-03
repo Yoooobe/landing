@@ -3,9 +3,8 @@
 import FeatureScreensCarousel from "@/components/FeatureScreensCarousel";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import type { ImageWithEmojiDoc } from "@/sanity/lib/types";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Link2, Sparkles, Target } from "lucide-react";
 import { useCallback, useState } from "react";
 
@@ -58,7 +57,7 @@ export default function PlataformaGamificationEngine({
   return (
     <section
       id="gamificacao"
-      className="py-24 bg-[#0a0f18] relative overflow-hidden text-white border-t border-white/5"
+      className="py-24 bg-surface-base relative overflow-hidden text-white border-t border-white/5"
     >
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -93,7 +92,6 @@ export default function PlataformaGamificationEngine({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 font-sans">
               {g.cards.map((card, i) => {
                 const cardShowcase = gamificacaoFeatureCards?.[i];
-                const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
                 const DefaultIcon = DEFAULT_CARD_ICONS[i] ?? Target;
                 const selected = i === 0 ? card0Selected : card1Selected;
                 const onSelect = i === 0 ? selectCampaignCard : selectIntegrationCard;
@@ -118,14 +116,13 @@ export default function PlataformaGamificationEngine({
                   >
                     <div className="flex gap-3">
                       <div className="shrink-0 rounded-xl border border-white/10 bg-white/5 p-2.5">
-                        {cardImageUrl ? (
-                          <div className="relative h-8 w-8 overflow-hidden rounded-lg">
-                            <Image
-                              src={cardImageUrl}
-                              alt={cardShowcase?.image?.alt?.trim() || card.title}
-                              fill
-                              className="object-cover"
-                              unoptimized
+                        {cardShowcase?.image ? (
+                          <div className="relative h-10 w-10 overflow-hidden rounded-lg">
+                            <ShowcaseImage
+                              image={cardShowcase.image}
+                              alt={cardShowcase.image.alt?.trim() || card.title}
+                              variant="thumb"
+                              sizes="40px"
                             />
                           </div>
                         ) : cardShowcase?.emoji ? (

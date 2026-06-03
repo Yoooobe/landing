@@ -244,9 +244,9 @@ export default function FeatureScreensCarousel({
       />
 
       {/* Browser chrome */}
-      <div className="relative overflow-hidden rounded-[2.2rem] border border-white/12 bg-[#0d1424] shadow-[0_32px_80px_rgba(0,0,0,0.55)]">
+      <div className="relative overflow-hidden rounded-[2.2rem] border border-white/12 bg-surface-section shadow-[0_32px_80px_rgba(0,0,0,0.55)]">
         {/* Top bar */}
-        <div className="flex items-center justify-between border-b border-white/8 bg-[#111827]/90 px-4 py-3 backdrop-blur-md sm:px-5">
+        <div className="flex items-center justify-between border-b border-white/10 bg-gray-900/90 px-4 py-3 backdrop-blur-md sm:px-5">
           <div className="flex items-center gap-2">
             <div className="h-2.5 w-2.5 rounded-full bg-red-500/70" />
             <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/70" />
@@ -269,7 +269,7 @@ export default function FeatureScreensCarousel({
 
         {/* Screen area */}
         <div
-          className={`relative ${isLight ? "bg-[#f8fafc]" : "bg-[#111827]"}`}
+          className={`relative ${isLight ? "bg-slate-50" : "bg-gray-900"}`}
           style={{ aspectRatio: "16/11" }}
         >
           <AnimatePresence mode="wait">
@@ -286,7 +286,7 @@ export default function FeatureScreensCarousel({
                 alt={screen.label}
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-cover object-top"
+                className="object-contain object-top"
                 priority={active === 0}
               />
             </motion.div>
@@ -304,7 +304,7 @@ export default function FeatureScreensCarousel({
                 className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 shadow-sm backdrop-blur-sm ${
                   isLight
                     ? "border-unik-blue/30 bg-white/90"
-                    : "border-white/20 bg-[#1a2236]/90"
+                    : "border-white/20 bg-surface-carousel/90"
                 }`}
               >
                 <span className={`font-mono text-[0.58rem] font-bold ${isLight ? "text-unik-blue" : "text-demo-cyan"}`}>
@@ -319,7 +319,7 @@ export default function FeatureScreensCarousel({
         </div>
 
         {/* Bottom bar */}
-        <div className="flex items-center justify-between border-t border-white/8 bg-[#0d1424]/95 px-4 py-2.5 sm:px-5">
+        <div className="flex items-center justify-between border-t border-white/10 bg-surface-section/95 px-4 py-2.5 sm:px-5">
           <div className="flex items-center gap-2">
             {cfg.poweredBy && (
               <>

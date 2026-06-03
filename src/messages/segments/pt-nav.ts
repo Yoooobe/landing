@@ -1,6 +1,7 @@
 export const ptNav = {
   platform: "Plataforma",
   solutions: "Soluções",
+  solutionsByProfile: "Soluções por perfil",
   api: "API",
   login: "Entrar",
   requestDemo: "Solicitar demo",
@@ -39,7 +40,7 @@ export const ptNav = {
   },
   apiHub: {
     title: "API & Integrações",
-    desc: "Conecte a 4Unik ao seu ecossistema.",
+    desc: "Ofereça recompensas físicas dentro do seu produto, via API.",
   },
   workvivo: {
     title: "Workvivo × 4Unik",
@@ -62,4 +63,26 @@ export const ptNav = {
     desc: "Resgate de prêmios para colaboradores.",
   },
   mobileApiOverview: "Visão geral da API",
+  verticals: {
+    platforms: {
+      title: "Plataformas e SaaS",
+      desc: "Recompensas físicas via API, dentro do seu produto.",
+    },
+    education: {
+      title: "Educação e e-learning",
+      desc: "Recompensa real por conclusão de curso.",
+    },
+    sales: {
+      title: "Vendas",
+      desc: "Premiação integrada ao CRM, na hora.",
+    },
+    communities: {
+      title: "Criadores e comunidades",
+      desc: "Loja VIP de fãs com entrega pela 4Unik.",
+    },
+    events: {
+      title: "Eventos",
+      desc: "Checkout no celular, sem caos logístico.",
+    },
+  },
 } as const;

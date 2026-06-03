@@ -1,5 +1,7 @@
 # Deploy estático (out/) para GitHub Pages.
 #
+# Webhook Sanity → repository_dispatch: docs/sanity-github-webhook.md (event_type: sanity-publish).
+#
 # Troubleshooting quando NADA corre ou o job nem inicia:
 # - Mensagem do GitHub: "account locked" / "billing" → limite ou bloqueio de faturação.
 #   Conta: https://github.com/settings/billing — Organização: Settings → Billing do org.
@@ -88,6 +90,10 @@ jobs:
           # Nano Banana (Studio): URL pública do gerador; embutida no bundle em build-time (ver next.config.ts)
           SANITY_STUDIO_NANO_BANANA_URL: ${{ secrets.SANITY_STUDIO_NANO_BANANA_URL }}
         run: npm run build
+
+      # Sem isto, o Jekyll do GitHub Pages ignora pastas com "_" e o _next/ some (site sem CSS/JS).
+      - name: Ensure .nojekyll in export
+        run: touch out/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

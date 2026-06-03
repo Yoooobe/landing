@@ -31,7 +31,7 @@ export default function CasosHero() {
           className="text-5xl md:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tight max-w-5xl mx-auto"
         >
           {h.titleBefore}{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-600">
             {h.titleGradient}
           </span>
           {h.titleAfter}

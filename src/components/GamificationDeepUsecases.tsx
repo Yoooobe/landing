@@ -1,8 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import type { ImageWithEmojiDoc, ResolvedGamificacaoContent } from "@/sanity/lib/types";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 
 export default function GamificationDeepUsecases({
   content: u,
@@ -12,7 +11,7 @@ export default function GamificationDeepUsecases({
   showcaseItems?: ImageWithEmojiDoc[];
 }) {
   return (
-    <section className="relative overflow-hidden border-t border-white/5 bg-[#0a0f18] py-24">
+    <section className="relative overflow-hidden border-t border-white/5 bg-surface-base py-24">
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <div className="mx-auto mb-16 max-w-3xl text-center">
           <span className="mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70">{u.badge}</span>
@@ -27,16 +26,15 @@ export default function GamificationDeepUsecases({
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {u.items.map((item, idx) => {
             const cardShowcase = showcaseItems?.[idx];
-            const cardImageUrl = getSanityImageUrl(cardShowcase?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
             <div
               key={idx}
-              className="group rounded-2xl border border-white/10 bg-surface-panel p-8 transition-all hover:border-yoobe-purple/50 hover:bg-[linear-gradient(135deg,#121824_0%,#1a1025_100%)]"
+              className="group rounded-2xl border border-white/10 bg-surface-panel p-8 transition-all hover:border-yoobe-purple/50 hover:bg-linear-to-br hover:from-surface-panel hover:to-surface-purple"
             >
               <div className="mb-4 text-4xl transition-transform group-hover:-translate-y-1">
-                {cardImageUrl ? (
+                {cardShowcase?.image ? (
                   <div className="relative h-12 w-12 overflow-hidden rounded-xl">
-                    <Image src={cardImageUrl} alt={cardShowcase?.image?.alt || item.title} fill className="object-cover" unoptimized />
+                    <ShowcaseImage image={cardShowcase.image} alt={cardShowcase.image.alt || item.title} variant="thumb" sizes="48px" />
                   </div>
                 ) : cardShowcase?.emoji ? (
                   <span>{cardShowcase.emoji}</span>

@@ -5,9 +5,10 @@ Keep landing improvements moving in small, low-conflict background loops while p
 
 ## Lanes
 1. `audit`: readonly lane that maps hotspots, regressions, and new opportunities without editing files.
-2. `visual-check`: validation lane that compares PT and EN routes, key funnels, and static-export output.
-3. `implementation`: delivery lane that only works on the highest-priority item currently approved in the backlog.
-4. `verification`: safety lane that runs lint, static build, and route-level checks after each implementation batch.
+2. `growth-ideation`: readonly lane for new pages, funnels, and GTM ideas — uses MCP `suggest_growth_opportunities`, `search_product_knowledge`, and skills `marketing-page-ideator` / `marketing-strategy-orchestrator`. Updates only `docs/landing-improvement-backlog.md` and `docs/knowledge-base/` (never `src/` or Sanity).
+3. `visual-check`: validation lane that compares PT and EN routes, key funnels, and static-export output.
+4. `implementation`: delivery lane that only works on the highest-priority item currently approved in the backlog.
+5. `verification`: safety lane that runs lint, static build, and route-level checks after each implementation batch.
 
 ## Batch Rules
 - Keep each batch scoped to one theme: `seo`, `performance`, `content-safety`, or `navigation`.
@@ -25,11 +26,11 @@ Keep landing improvements moving in small, low-conflict background loops while p
 6. `/casos-de-uso/` and `/en/casos-de-uso/`
 
 ## Recommended Loop
-1. `audit` writes or refreshes the prioritized backlog.
+1. `audit` or `growth-ideation` writes or refreshes the prioritized backlog (ideation may run when NotebookLM sync or quarterly planning — see [`agent-knowledge-notebooklm.md`](agent-knowledge-notebooklm.md)).
 2. `implementation` picks only the top `ready` item.
 3. `verification` runs targeted lint plus a full static build.
 4. `visual-check` validates the affected PT/EN routes.
-5. After a merge to `main`, confirm the **Deploy to GitHub Pages** workflow succeeded on GitHub Actions, then smoke-test `https://yoooobe.github.io/landing/` and `/landing/en/`, `/landing/blog/`, `robots.txt`, and `llms.txt` (and `/landing/studio/` if Sanity is configured). HTML estático na raiz do repo (ex.: `index.html`) não é publicado por este workflow; links para o blog nesses ficheiros devem usar a URL do export Next (ver [site-url-migration.md](site-url-migration.md#ficheiros-html-legacy-na-raiz-do-repo)).
+5. After a merge to `main`, confirm the **Deploy to GitHub Pages** workflow succeeded on GitHub Actions, then smoke-test the canonical host `https://plataforma.4unik.com.br/landing/` and `/landing/en/`, `/landing/blog/`, `robots.txt`, and `llms.txt` (and `/landing/studio/` if Sanity is configured). HTML estático na raiz do repo (ex.: `index.html`) não é publicado por este workflow; links para o blog nesses ficheiros devem usar a URL do export Next (ver [site-url-migration.md](site-url-migration.md#ficheiros-html-legacy-na-raiz-do-repo)).
 6. Move to the next backlog item only after the previous one is verified.
 
 ## Verification Commands
@@ -53,6 +54,7 @@ npx eslint src/app/sitemap.ts \
 
 ## Output Expectations
 - `audit`: updated hotspot summary with impact, risk, and owning files.
+- `growth-ideation`: table of route opportunities (PT/EN), backlog rows for **Next Up**, KB freshness note, no code changes.
 - `visual-check`: route checklist with PT/EN parity notes.
 - `implementation`: small patch set and rationale.
 - `verification`: lint/build result plus any follow-up regressions.

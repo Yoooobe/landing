@@ -28,7 +28,7 @@ export const ptInteligenciaPage = {
     },
     {
       title: "AI Insights for RH",
-      desc: "Descubra onde agir, quais grupos ativar proativamente e como maximizar o ROI do seu programa.",
+      desc: "Descubra onde agir, quais grupos ativar proativamente e como ampliar o impacto do seu programa.",
     },
   ],
   workvivo: {
@@ -47,7 +47,7 @@ export const ptInteligenciaPage = {
       },
       {
         title: "Sugestão de recompensas",
-        desc: "Sugestões de prêmios contextualizados que geram o triplo de conversão entre os colaboradores.",
+        desc: "Sugestões de prêmios contextualizados, com mais chance de resgate entre os colaboradores.",
       },
       {
         title: "Detecção de desengajamento",
@@ -58,8 +58,8 @@ export const ptInteligenciaPage = {
         desc: "Distribuição e previsão de orçamentos flexíveis aplicados a diferentes iniciativas.",
       },
       {
-        title: "ROI de Cultura",
-        desc: "Acompanhe e comprove o impacto da gamificação na produtividade e redução de turnover.",
+        title: "Impacto de cultura",
+        desc: "Acompanhe o impacto da gamificação no engajamento, no clima e na retenção do time.",
       },
     ],
   },

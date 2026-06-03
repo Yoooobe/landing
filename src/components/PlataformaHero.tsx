@@ -26,7 +26,7 @@ export default function PlataformaHero() {
         className="absolute left-[2%] top-[28%] hidden w-[240px] overflow-hidden rounded-2xl border border-white/12 shadow-[0_20px_60px_rgba(0,0,0,0.55)] xl:block"
         style={{ animation: "float 9s ease-in-out infinite 0.5s" }}
       >
-        <div className="flex items-center gap-1.5 border-b border-white/8 bg-[#111827]/95 px-3 py-2">
+        <div className="flex items-center gap-1.5 border-b border-white/10 bg-gray-900/95 px-3 py-2">
           <span className="h-2 w-2 rounded-full bg-red-500/70" />
           <span className="h-2 w-2 rounded-full bg-yellow-500/70" />
           <span className="h-2 w-2 rounded-full bg-green-500/70" />
@@ -34,7 +34,7 @@ export default function PlataformaHero() {
             gestor.4unik.io
           </span>
         </div>
-        <div className="relative overflow-hidden bg-[#111827]" style={{ aspectRatio: "4/3" }}>
+        <div className="relative overflow-hidden bg-gray-900" style={{ aspectRatio: "4/3" }}>
           <Image
             src={withBasePath("/screens/admin-dashboard.webp")}
             alt={h.titleLine1}
@@ -44,7 +44,7 @@ export default function PlataformaHero() {
             priority
           />
         </div>
-        <div className="flex items-center justify-between bg-[#0d1424]/95 px-3 py-1.5">
+        <div className="flex items-center justify-between bg-surface-section/95 px-3 py-1.5">
           <span className="text-[0.55rem] font-semibold text-brand-orange">Dashboard</span>
           <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 text-[0.5rem] font-bold uppercase tracking-widest text-brand-orange">
             Ao vivo
@@ -60,7 +60,7 @@ export default function PlataformaHero() {
         className="absolute right-[2%] top-[22%] hidden w-[220px] overflow-hidden rounded-2xl border border-white/12 shadow-[0_20px_60px_rgba(0,0,0,0.55)] xl:block"
         style={{ animation: "float 11s ease-in-out infinite 1.5s" }}
       >
-        <div className="flex items-center gap-1.5 border-b border-white/8 bg-[#111827]/95 px-3 py-2">
+        <div className="flex items-center gap-1.5 border-b border-white/10 bg-gray-900/95 px-3 py-2">
           <span className="h-2 w-2 rounded-full bg-red-500/70" />
           <span className="h-2 w-2 rounded-full bg-yellow-500/70" />
           <span className="h-2 w-2 rounded-full bg-green-500/70" />
@@ -68,7 +68,7 @@ export default function PlataformaHero() {
             Campanha
           </span>
         </div>
-        <div className="relative overflow-hidden bg-[#111827]" style={{ aspectRatio: "4/3" }}>
+        <div className="relative overflow-hidden bg-gray-900" style={{ aspectRatio: "4/3" }}>
           <Image
             src={withBasePath("/screens/admin-campaign-identity.webp")}
             alt={h.titleGradient}
@@ -77,7 +77,7 @@ export default function PlataformaHero() {
             sizes="220px"
           />
         </div>
-        <div className="flex items-center justify-between bg-[#0d1424]/95 px-3 py-1.5">
+        <div className="flex items-center justify-between bg-surface-section/95 px-3 py-1.5">
           <span className="text-[0.55rem] font-semibold text-unik-blue-soft">
             Editor
           </span>

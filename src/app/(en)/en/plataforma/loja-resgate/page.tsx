@@ -1,29 +1,39 @@
 import PlatformFeaturePage from "@/components/PlatformFeaturePage";
+import JsonLdScript from "@/components/seo/JsonLdScript";
 import { LocaleMessagesProvider } from "@/contexts/LocaleMessagesContext";
 import { enPlatformFeaturePages } from "@/content/platformFeaturePages";
+import { buildPlatformFeatureBreadcrumbJsonLd } from "@/lib/marketingBreadcrumbs";
 import { buildRoutePageMetadata } from "@/lib/seo/routeMetadata";
 import type { Metadata } from "next";
 
+const PAGE_PATH = "/en/plataforma/loja-resgate/";
+const content = enPlatformFeaturePages.loja;
+
 export async function generateMetadata(): Promise<Metadata> {
-  const { seo } = enPlatformFeaturePages.loja;
   return buildRoutePageMetadata(
-    { title: seo.title, description: seo.description },
+    { title: content.seo.title, description: content.seo.description },
     {
-      canonicalPath: "/en/plataforma/loja-resgate/",
+      canonicalPath: PAGE_PATH,
       languages: {
         "pt-BR": "/plataforma/loja-resgate/",
-        en: "/en/plataforma/loja-resgate/",
+        en: PAGE_PATH,
       },
-      openGraphPath: "/en/plataforma/loja-resgate/",
+      openGraphPath: PAGE_PATH,
       ogLocale: "en_US",
+      ogRouteKey: "plataforma",
     },
   );
 }
 
-export default async function EnLojaResgatePage() {
+export default function EnLojaResgatePage() {
+  const breadcrumbLd = buildPlatformFeatureBreadcrumbJsonLd("en", content.badge, PAGE_PATH);
+
   return (
-    <LocaleMessagesProvider locale="en">
-      <PlatformFeaturePage content={enPlatformFeaturePages.loja} />
-    </LocaleMessagesProvider>
+    <>
+      <JsonLdScript data={{ ...breadcrumbLd }} />
+      <LocaleMessagesProvider locale="en">
+        <PlatformFeaturePage content={content} leadSource="plataforma-loja-resgate" />
+      </LocaleMessagesProvider>
+    </>
   );
 }

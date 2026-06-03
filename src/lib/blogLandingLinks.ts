@@ -12,7 +12,7 @@ export const BLOG_CTA_PATHS_BY_SLUG: Record<
   { platform: string; feature: string; img: keyof typeof BLOG_FALLBACK_IMG }
 > = {
   "1": { platform: "/plataforma", feature: "/plataforma/motor-gamificacao", img: "dashboard" },
-  "2": { platform: "/plataforma/loja-resgate", feature: "/plataforma/logistica-integrada", img: "eventStage" },
+  "2": { platform: "/plataforma/loja-resgate/", feature: "/plataforma/logistica-integrada/", img: "eventStage" },
   "3": { platform: "/plataforma/motor-gamificacao", feature: "/plataforma/painel-gestor", img: "salesTeam" },
   "4": { platform: "/plataforma", feature: "/plataforma/loja-resgate", img: "welcomeKit" },
   "5": { platform: "/plataforma/painel-gestor", feature: "/plataforma/motor-gamificacao", img: "dashboard" },

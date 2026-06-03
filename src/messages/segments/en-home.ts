@@ -3,7 +3,7 @@ export const enHome = {
   seo: {
     title: "4Unik — Corporate gamification, rewards store & employee recognition",
     description:
-      "Recognize and reward teams with gamification, a corporate store, and automated logistics—or plug in your own fulfillment and merchandise partners. Per-user API pricing. We deliver worldwide and produce locally at the destination when it speeds things up.",
+      "Recognize and reward teams with gamification, a corporate store, and automated logistics—or connect it all via API. For HR, sales, events, and platforms that embed rewards inside their own product. We deliver worldwide and produce locally at the destination when it speeds things up.",
   },
   hero: {
     badge: "Recognition your people actually feel",
@@ -30,7 +30,7 @@ export const enHome = {
       "you’ll find the full picture of corporate benefits, reward logistics, and brand presence.",
     here: "Here",
     bodyAfter:
-      "we go deeper on the product: corporate gamification, rewards store, API integrations, catalog, and day-to-day operations for HR and engineering.",
+      "we go deeper on the product: corporate gamification, rewards store, API integrations, catalog, and day-to-day operations for HR, sales, events, and platforms that want to offer real rewards inside their own product.",
     cta: "See the full offer on 4unik",
   },
   trust: {

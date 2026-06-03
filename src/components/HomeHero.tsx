@@ -162,7 +162,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="mb-5 font-heading text-[2.35rem] font-black leading-[0.98] tracking-tight text-white sm:mb-6 sm:text-6xl md:text-7xl lg:text-[5.2rem]"
+            className="mb-5 font-heading text-[2.35rem] font-black leading-[1.05] tracking-tight text-white sm:mb-6 sm:text-6xl md:text-7xl lg:text-[5.2rem]"
           >
             {hasCmsHero ? (
               heroHeadline
@@ -171,7 +171,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
                 <span className="block text-white">
                   <strong className="text-unik-blue-soft">{h.brand}</strong> {h.afterBrand}
                 </span>
-                <span className="block text-gradient-hero">{h.line1b}</span>
+                <span className="block pb-1 text-gradient-hero">{h.line1b}</span>
                 <span className="mt-2 block text-[1.75rem] leading-[1.02] text-white/92 sm:mt-3 sm:text-5xl md:text-6xl">
                   {h.line2}
                 </span>

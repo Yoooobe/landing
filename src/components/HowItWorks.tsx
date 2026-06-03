@@ -19,7 +19,7 @@ export default function HowItWorks({
   );
 
   return (
-    <section className="py-24 bg-[#0d1424] relative border-t border-white/5 overflow-hidden">
+    <section className="py-24 bg-surface-section relative border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-20 relative z-10 text-white">
           <div className="inline-block px-3 py-1 mb-4 rounded-full border border-yoobe-neon-pink/30 bg-yoobe-neon-pink/10 text-yoobe-neon-pink text-sm font-bold tracking-wide uppercase">
@@ -132,7 +132,7 @@ export default function HowItWorks({
 
                   <div className="w-1/3 relative group">
                     <div className="absolute -inset-1 rounded-[32px] bg-linear-to-r from-yoobe-purple to-brand-orange opacity-50 blur-sm group-hover:opacity-100 transition duration-500"></div>
-                    <div className="relative bg-[#0d1424]/90 backdrop-blur-xl border border-white/10 rounded-[28px] p-6 shadow-2xl flex flex-col items-center">
+                    <div className="relative bg-surface-section/90 backdrop-blur-xl border border-white/10 rounded-[28px] p-6 shadow-2xl flex flex-col items-center">
                       <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-brand-orange to-yoobe-neon-pink flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.5)] mb-4">
                         <span className="text-white font-black text-2xl font-heading">Y.</span>
                       </div>
@@ -162,7 +162,7 @@ export default function HowItWorks({
                         <div className="w-8 h-8 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange text-sm">🛒</div>
                         <span className="text-[10px] text-white/50 uppercase tracking-wider font-bold">{h.mockItems}</span>
                       </div>
-                      <div className="w-full h-12 rounded-lg bg-linear-to-br from-white/5 to-white/0 border border-white/5 flex items-center justify-center text-xs text-white/40">
+                      <div className="w-full h-12 rounded-lg bg-linear-to-br from-white/5 to-transparent border border-white/5 flex items-center justify-center text-xs text-white/40">
                         {h.mockCatalog}
                       </div>
                     </div>

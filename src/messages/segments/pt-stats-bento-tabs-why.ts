@@ -35,7 +35,7 @@ export const ptStatsBentoTabsWhy = {
     card4: {
       title: "Encaixa no que vocês já usam",
       body:
-        "RH e gestores com fluxo simples; o TI com API por usuário ativo e documentação clara. Conecte gamificação, envios, HRIS ou intranet — sem ficar refém de um único fornecedor.",
+        "RH e gestores com fluxo simples; o time de tecnologia com API por usuário ativo e documentação clara. Conecte gamificação, CRM de vendas, eventos, HRIS ou intranet — ou ofereça as recompensas físicas da 4Unik dentro do seu próprio produto, sem montar logística.",
       cta: "Documentação",
       apiNote: "API pensada para integrar sem dor de cabeça.",
     },
@@ -101,7 +101,7 @@ export const ptStatsBentoTabsWhy = {
       },
       {
         title: "Resultados",
-        desc: "Empresas ativas reportam eNPS +30 pontos em 6 meses, taxa de resgate média de 78% e redução de turnover em até 25% no primeiro ano.",
+        desc: "Acompanhe o impacto no engajamento, no clima e na retenção ao longo do tempo — com dados no painel para mostrar o retorno do programa.",
       },
     ],
   },

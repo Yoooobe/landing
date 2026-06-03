@@ -27,7 +27,7 @@ export default function GamificationDemoStrip() {
             <p className={`font-heading text-lg font-black ${item.accent}`}>{item.value}</p>
           </div>
           <div
-            className="h-10 w-10 shrink-0 rounded-full border-2 border-demo-cyan/40 bg-gradient-to-br from-demo-cyan/20 to-unik-blue/30"
+            className="h-10 w-10 shrink-0 rounded-full border-2 border-demo-cyan/40 bg-linear-to-br from-demo-cyan/20 to-unik-blue/30"
             aria-hidden
           />
         </div>

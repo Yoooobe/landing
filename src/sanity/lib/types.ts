@@ -140,6 +140,7 @@ export type BlogPostListItem = {
   excerpt: string;
   category: string;
   publishedAt: string;
+  _updatedAt?: string;
   readTimeMinutes: number;
   featured?: boolean;
   coverImage?: SanityImageDoc | null;
@@ -466,6 +467,8 @@ export type HomeShowcaseMediaDoc = {
   bento?: {
     primaryCardImage?: SanityImageDoc | null;
     storeCardImage?: SanityImageDoc | null;
+    gamificationCardImage?: SanityImageDoc | null;
+    apiCardImage?: SanityImageDoc | null;
   };
   platformTabs?: {
     managementImage?: SanityImageDoc | null;

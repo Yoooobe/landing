@@ -1,10 +1,9 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const ICONS = ["📊", "📦", "👥", "🔒"] as const;
 
@@ -21,7 +20,6 @@ export default function ManagementSection({
       ...item,
       icon: visual?.emoji || ICONS[i],
       image: visual?.image || null,
-      imageUrl: getSanityImageUrl(visual?.image, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 }),
     };
   });
 
@@ -50,15 +48,13 @@ export default function ManagementSection({
               className="rounded-3xl border border-white/10 bg-white/5 p-8 transition-colors hover:bg-white/10"
             >
               <div className="mb-6">
-                {item.imageUrl ? (
-                  <div className="relative h-20 w-20 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                    <Image
-                      src={item.imageUrl}
-                      alt={item.image?.alt?.trim() || item.title}
-                      fill
+                {item.image ? (
+                  <div className="relative h-20 w-20 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2">
+                    <ShowcaseImage
+                      image={item.image}
+                      alt={item.image.alt?.trim() || item.title}
+                      variant="thumb"
                       sizes="80px"
-                      className="object-cover"
-                      unoptimized
                     />
                   </div>
                 ) : (

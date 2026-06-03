@@ -29,7 +29,7 @@ export default function EnterpriseCases({
   );
 
   return (
-    <section className="py-24 bg-[#0A0F1A] relative border-t border-white/5 overflow-hidden">
+    <section className="py-24 bg-surface-base relative border-t border-white/5 overflow-hidden">
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-yoobe-neon-pink/5 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-brand-orange/5 rounded-full blur-[150px] pointer-events-none"></div>
 
@@ -116,7 +116,7 @@ export default function EnterpriseCases({
             </div>
 
             <div className="flex-1 w-full relative z-10 flex justify-center lg:justify-end">
-              <div className="w-full max-w-md aspect-4/5 bg-[#0d1424] border border-blue-500/20 rounded-2xl relative overflow-hidden shadow-2xl group-hover:border-blue-500/40 transition-colors">
+              <div className="w-full max-w-md aspect-4/5 bg-surface-section border border-blue-500/20 rounded-2xl relative overflow-hidden shadow-2xl group-hover:border-blue-500/40 transition-colors">
                 {hapvidaCaseImageUrl ? (
                   <Image
                     src={hapvidaCaseImageUrl}
@@ -241,7 +241,7 @@ export default function EnterpriseCases({
             </div>
 
             <div className="flex-1 w-full relative z-10 flex justify-center lg:justify-start">
-              <div className="w-full max-w-md aspect-4/5 bg-[#0d1424] border border-white/10 rounded-2xl relative overflow-hidden shadow-2xl group-hover:border-white/30 transition-colors">
+              <div className="w-full max-w-md aspect-4/5 bg-surface-section border border-white/10 rounded-2xl relative overflow-hidden shadow-2xl group-hover:border-white/30 transition-colors">
                 {prioCaseImageUrl ? (
                   <Image
                     src={prioCaseImageUrl}
@@ -264,7 +264,7 @@ export default function EnterpriseCases({
                         ≡
                       </div>
                     </div>
-                    <div className="p-6 bg-[#0a0f1a]">
+                    <div className="p-6 bg-surface-base">
                       <div className="w-full aspect-video rounded-xl bg-linear-to-br from-gray-800 to-black border border-white/10 mb-6 flex flex-col justify-end p-4 relative overflow-hidden">
                         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1621501103258-3e0dfebbcfa9?w=400&q=80')] bg-cover bg-center opacity-30 mix-blend-luminosity"></div>
                         <span className="text-white font-black text-xl relative z-10">{p.mockHeroTitle}</span>

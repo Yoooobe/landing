@@ -2,9 +2,9 @@ export const ptPlataforma = {
   seo: {
     title: "Plataforma | 4unik V3 — Reward Infrastructure",
     description:
-      "Painel analítico, motor de gamificação, loja de resgates, logística e segurança enterprise. Infraestrutura de recompensas e fulfillment para programas de engajamento.",
+      "Painel analítico, motor de gamificação, loja de resgates, logística e segurança enterprise. Tudo para reconhecer, premiar e entregar — sem o RH virar uma operação de logística.",
     openGraphDescription:
-      "Painel, gamificação, catálogo, fulfillment e SSO. A stack 4unik V3 para operar recompensas em escala.",
+      "Painel, gamificação, catálogo, logística e SSO. A plataforma 4unik V3 para operar recompensas em escala.",
   },
   hero: {
     badge: "Controle Total da Operação",

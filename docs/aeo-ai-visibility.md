@@ -28,3 +28,18 @@
 
 - Após deploy: abrir `{SITE_URL}/llms.txt` e `{SITE_URL}/robots.txt` (fallback atual: `https://yoooobe.github.io/landing/`).
 - Rich Results / schema: validar amostras no [Schema.org validator](https://validator.schema.org/) com URL de produção.
+- OG social: confirmar `og:image` aponta para PNG em `public/og/` (gerados por `npm run generate:og`).
+
+## Backlog estratégico (requer dados / decisão de produto)
+
+Itens **não** implementados automaticamente — dependem de conteúdo real ou priorização comercial:
+
+| Área | Ação sugerida |
+|------|----------------|
+| **EEAT** | Testemunhos e casos com clientes reais, logos com permissão, bios de autor no blog |
+| **Métricas** | Substituir stats de marketing (ex. 500+ empresas, 98% satisfação) por números auditáveis ou marcar como ilustrativo |
+| **Topic clusters** | Páginas pilar + comparativos (“gamificação para RH”, “4unik vs …”) |
+| **Conversão** | Reativar calculadora de ROI (`ROICalculator` removido como código morto) com i18n |
+| **Leads** | Definir `NEXT_PUBLIC_LEADS_INGEST_URL` em produção (forms falham sem endpoint no export estático) |
+| **Logística** | Publicar `/plataforma/logistica-integrada/` ou remover de CTAs/nav até haver conteúdo |
+| **CMS** | Ligar slugs `home` / `plataforma` / `api-integracoes` / `gamificacao` ao `MarketingPageRenderer` (ver [`sanity-consumed-checklist.md`](sanity-consumed-checklist.md)) |

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import NotFoundRedirect from "@/components/NotFoundRedirect";
 import { withBasePath } from "@/lib/basePath";
 import "./globals.css";
 
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-brand-navy-dark px-6 py-24 text-white">
+      <NotFoundRedirect />
       {/* Brand wordmark */}
       <Link href={withBasePath("/")} className="mb-16 block opacity-90 hover:opacity-100 transition-opacity">
         <img

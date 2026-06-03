@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import { getSanityImageUrl, SANITY_IMAGE_PRESETS } from "@/sanity/lib/image";
 import type { PlatformShowcaseMediaDoc } from "@/sanity/lib/types";
 import { Shield, Lock, FileKey } from "lucide-react";
 import Image from "next/image";
@@ -14,7 +14,7 @@ export default function SecurityEnterprise({
   const { m } = useLocaleMessages();
   const sec = m.plataforma.security;
   const icons = [Lock, FileKey] as const;
-  const securityPanelImageUrl = getSanityImageUrl(showcaseMedia?.securityPanelImage, { width: 1440, height: 900, fit: "crop", crop: "entropy", quality: 86 });
+  const securityPanelImageUrl = getSanityImageUrl(showcaseMedia?.securityPanelImage, SANITY_IMAGE_PRESETS.uiScreenshot);
 
   return (
     <section className="py-24 bg-brand-navy-dark relative border-t border-white/5">
@@ -34,7 +34,7 @@ export default function SecurityEnterprise({
 
             <div className="md:w-1/2 flex flex-col gap-4 w-full relative z-10">
               {securityPanelImageUrl ? (
-                <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/10 bg-[#0f1522]">
+                <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/10 bg-surface-mid">
                   <Image
                     src={securityPanelImageUrl}
                     alt={
@@ -44,7 +44,7 @@ export default function SecurityEnterprise({
                     }
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
+                    className="object-contain"
                     unoptimized
                   />
                 </div>
@@ -55,7 +55,7 @@ export default function SecurityEnterprise({
                 return (
                   <div
                     key={item.title}
-                    className="bg-[#0f1522] border border-white/5 p-5 rounded-2xl flex items-center gap-4 hover:bg-white/5 transition-colors"
+                    className="bg-surface-mid border border-white/5 p-5 rounded-2xl flex items-center gap-4 hover:bg-white/5 transition-colors"
                   >
                     <div className="p-3 bg-white/5 rounded-xl">
                       <Icon className="text-white w-6 h-6" />

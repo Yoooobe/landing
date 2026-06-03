@@ -5,6 +5,9 @@ import { defineLocations } from "sanity/presentation";
 
 function marketingHref(slug: string | undefined, locale: "pt" | "en" | undefined) {
   const safeLocale = locale === "en" ? "en" : "pt";
+  if (slug === "gamificacao") {
+    return withBasePath(localizedPath("/plataforma/motor-gamificacao/", safeLocale));
+  }
   const pathname =
     !slug || slug === "home" ? localizedPath("/", safeLocale) : localizedPath(`/${slug}/`, safeLocale);
 
@@ -61,8 +64,8 @@ export const resolve: PresentationPluginOptions["resolve"] = {
     }),
     marketingStrategy: defineLocations({
       message:
-        "Documento editorial sem rota publica direta. Use-o como fonte de estrategia para blog, landing pages e campanhas.",
-      tone: "positive",
+        "Nao e consumido pelo site exportado (nenhuma rota publica). Mantenha apenas como referencia interna; alteracoes aqui nao aparecem na landing.",
+      tone: "caution",
     }),
     homeShowcaseMedia: defineLocations({
       select: { title: "title" },

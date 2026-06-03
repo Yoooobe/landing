@@ -1,3 +1,4 @@
+import LeadCaptureForm from "@/components/LeadCaptureForm";
 import type { PlatformFeaturePageContent } from "@/content/platformFeaturePages";
 import { withBasePath } from "@/lib/basePath";
 import Image from "next/image";
@@ -6,13 +7,15 @@ import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 
 type Props = {
   content: PlatformFeaturePageContent;
+  /** Passed to `LeadCaptureForm` `source` (e.g. `plataforma-loja-resgate`). */
+  leadSource: string;
 };
 
 function isExternalHref(href: string): boolean {
   return /^https?:\/\//.test(href);
 }
 
-export default function PlatformFeaturePage({ content }: Props) {
+export default function PlatformFeaturePage({ content, leadSource }: Props) {
   return (
     <div className="min-h-screen bg-brand-navy-dark text-white">
       <section className="relative overflow-hidden border-b border-white/5 pt-32 pb-18">
@@ -45,7 +48,7 @@ export default function PlatformFeaturePage({ content }: Props) {
                 {content.stats.map((stat) => (
                   <div
                     key={stat.label}
-                    className="rounded-3xl border border-white/8 bg-white/4 p-5 backdrop-blur-sm"
+                    className="rounded-3xl border border-white/10 bg-white/4 p-5 backdrop-blur-sm"
                   >
                     <div className="text-xs font-semibold uppercase tracking-[0.22em] text-white/35">
                       {stat.label}
@@ -87,7 +90,7 @@ export default function PlatformFeaturePage({ content }: Props) {
               return (
                 <div
                   key={item.title}
-                  className="rounded-[1.75rem] border border-white/8 bg-surface-panel p-6 transition-colors hover:border-brand-orange/25"
+                  className="rounded-[1.75rem] border border-white/10 bg-surface-panel p-6 transition-colors hover:border-brand-orange/25"
                 >
                   <div className="mb-4 inline-flex rounded-2xl border border-white/10 bg-white/5 p-3">
                     <Icon className="h-6 w-6 text-brand-orange" />
@@ -110,7 +113,7 @@ export default function PlatformFeaturePage({ content }: Props) {
             {content.workflow.map((step, index) => (
               <div
                 key={step.title}
-                className="rounded-[1.75rem] border border-white/8 bg-white/4 p-6"
+                className="rounded-[1.75rem] border border-white/10 bg-white/4 p-6"
               >
                 <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-brand-orange/30 bg-brand-orange/12 text-sm font-bold text-brand-orange">
                   0{index + 1}
@@ -132,7 +135,7 @@ export default function PlatformFeaturePage({ content }: Props) {
             {content.gallery.map((item) => (
               <div
                 key={item.src}
-                className="overflow-hidden rounded-[1.75rem] border border-white/8 bg-surface-panel"
+                className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-surface-panel"
               >
                 <div className="relative aspect-16/10 w-full">
                   <Image
@@ -152,9 +155,17 @@ export default function PlatformFeaturePage({ content }: Props) {
         </div>
       </section>
 
+      <section id="contato" className="border-b border-white/5 py-18">
+        <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-xl">
+            <LeadCaptureForm variant="plataforma" source={leadSource} className="w-full" />
+          </div>
+        </div>
+      </section>
+
       <section className="py-18">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[2rem] border border-white/8 bg-linear-to-r from-white/6 to-white/3 p-8 md:p-10">
+          <div className="rounded-[2rem] border border-white/10 bg-linear-to-r from-white/5 to-transparent p-8 md:p-10">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
               <div className="max-w-3xl">
                 <h2 className="text-3xl font-black md:text-4xl">{content.ctaTitle}</h2>

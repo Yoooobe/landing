@@ -13,9 +13,12 @@
  *   --category "<cat>"  Restringe geração a uma categoria específica
  *   --dry-run           Exibe o JSON gerado sem publicar no Sanity
  *   --publish           Define publishedAt (publica em vez de criar rascunho)
+ *   --provider <p>      Provedor de IA: "openai" (padrão se houver OPENAI_API_KEY) ou "gemini"
+ *   --gemini-model <m>  Modelo Gemini (padrão: gemini-2.5-pro)
  *
  * Variáveis de ambiente necessárias:
- *   OPENAI_API_KEY            — chave da API OpenAI
+ *   OPENAI_API_KEY            — chave da API OpenAI (provider openai)
+ *   GEMINI_API_KEY ou GOOGLE_API_KEY — chave da Gemini API (provider gemini)
  *   NEXT_PUBLIC_SANITY_PROJECT_ID — ID do projeto Sanity
  *   NEXT_PUBLIC_SANITY_DATASET    — dataset do Sanity (ex: production)
  *   SANITY_API_TOKEN ou SANITY_API_WRITE_TOKEN — token com permissão de escrita
@@ -61,14 +64,29 @@ const SPECIFIC_CATEGORY = getArg("--category", null);
 const DRY_RUN = hasFlag("--dry-run");
 const SHOULD_PUBLISH = hasFlag("--publish");
 
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const OPENAI_API_KEY = process.env.OPENAI_API_KEY?.trim() || "";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY?.trim() || process.env.GOOGLE_API_KEY?.trim() || "";
+const PROVIDER_ARG = (getArg("--provider", null) ?? "").toLowerCase();
+const GEMINI_MODEL = getArg("--gemini-model", "gemini-2.5-pro") ?? "gemini-2.5-pro";
+// Provedor resolvido: respeita --provider; caso contrário usa OpenAI se houver chave, senão Gemini.
+const PROVIDER: "openai" | "gemini" =
+  PROVIDER_ARG === "gemini" || PROVIDER_ARG === "openai"
+    ? (PROVIDER_ARG as "openai" | "gemini")
+    : OPENAI_API_KEY
+      ? "openai"
+      : "gemini";
+
 const SANITY_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const SANITY_DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 const SANITY_TOKEN =
   process.env.SANITY_API_TOKEN?.trim() || process.env.SANITY_API_WRITE_TOKEN?.trim() || "";
 
-if (!OPENAI_API_KEY) {
-  console.error("❌ OPENAI_API_KEY não definida. Adicione no .env.local ou exporte no terminal.");
+if (PROVIDER === "openai" && !OPENAI_API_KEY) {
+  console.error("❌ OPENAI_API_KEY não definida. Use --provider gemini ou defina OPENAI_API_KEY.");
+  process.exit(1);
+}
+if (PROVIDER === "gemini" && !GEMINI_API_KEY) {
+  console.error("❌ GEMINI_API_KEY/GOOGLE_API_KEY não definida para --provider gemini.");
   process.exit(1);
 }
 
@@ -205,7 +223,70 @@ ESTILO DE ESCRITA:
 IMPORTANTE: Retorne APENAS o JSON, sem markdown, sem \`\`\`json, sem texto antes ou depois.`;
 
 // ──────────────────────────────────────────────
-// Generate a blog post via OpenAI
+// Provider calls (OpenAI / Gemini)
+// ──────────────────────────────────────────────
+async function callOpenAI(system: string, user: string): Promise<string> {
+  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${OPENAI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-4o",
+      messages: [
+        { role: "system", content: system },
+        { role: "user", content: user },
+      ],
+      temperature: 0.7,
+      max_tokens: 5000,
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`OpenAI API error: ${response.status} — ${err}`);
+  }
+
+  const data = (await response.json()) as {
+    choices?: Array<{ message?: { content?: string } }>;
+  };
+  return data.choices?.[0]?.message?.content?.trim() ?? "";
+}
+
+async function callGemini(system: string, user: string): Promise<string> {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${GEMINI_API_KEY}`;
+  const response = await fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      systemInstruction: { parts: [{ text: system }] },
+      contents: [{ role: "user", parts: [{ text: user }] }],
+      generationConfig: {
+        temperature: 0.7,
+        responseMimeType: "application/json",
+        maxOutputTokens: 8192,
+      },
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Gemini API error: ${response.status} — ${err}`);
+  }
+
+  const data = (await response.json()) as {
+    candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
+  };
+  const parts = data.candidates?.[0]?.content?.parts ?? [];
+  return parts
+    .map((p) => p.text ?? "")
+    .join("")
+    .trim();
+}
+
+// ──────────────────────────────────────────────
+// Generate a blog post via the selected provider
 // ──────────────────────────────────────────────
 async function generatePost(topic: string, category: string, locale: "pt" | "en"): Promise<GeneratedAiPost> {
   const langInstruction =
@@ -256,34 +337,12 @@ REGRAS DO CAMPO "body" (Portable Text para Sanity):
 - Cada bloco deve ter "_key" único (ex: "block-0", "h2-ajuda", "li-1", etc.).
 - Conteúdo mínimo equivalente a ~900 palavras. Inclua exemplos práticos e, na secção "${helpsTitle}", bullets que liguem funcionalidades da 4unik (missões, loja, QR em eventos, campanhas, dashboards, integrações, logística) ao problema do post.`;
 
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${OPENAI_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: "gpt-4o",
-      messages: [
-        { role: "system", content: SYSTEM_PROMPT },
-        { role: "user", content: userPrompt },
-      ],
-      temperature: 0.7,
-      max_tokens: 5000,
-    }),
-  });
+  const content =
+    PROVIDER === "gemini"
+      ? await callGemini(SYSTEM_PROMPT, userPrompt)
+      : await callOpenAI(SYSTEM_PROMPT, userPrompt);
 
-  if (!response.ok) {
-    const err = await response.text();
-    throw new Error(`OpenAI API error: ${response.status} — ${err}`);
-  }
-
-  const data = (await response.json()) as {
-    choices?: Array<{ message?: { content?: string } }>;
-  };
-  const content = data.choices?.[0]?.message?.content?.trim();
-
-  if (!content) throw new Error("Resposta vazia da OpenAI");
+  if (!content) throw new Error("Resposta vazia do provedor de IA");
 
   try {
     return JSON.parse(content) as GeneratedAiPost;
@@ -397,7 +456,9 @@ function pickTopics(count: number) {
 // ──────────────────────────────────────────────
 async function main() {
   console.log(`\n🚀 Blog Engaja, time! — Agente de geração de conteúdo 4unik`);
-  console.log(`   Locale: ${LOCALE} | Posts: ${COUNT} | Dry-run: ${DRY_RUN} | Publicar: ${SHOULD_PUBLISH}\n`);
+  console.log(
+    `   Provedor: ${PROVIDER}${PROVIDER === "gemini" ? ` (${GEMINI_MODEL})` : ""} | Locale: ${LOCALE} | Posts: ${COUNT} | Dry-run: ${DRY_RUN} | Publicar: ${SHOULD_PUBLISH}\n`,
+  );
 
   const topics = pickTopics(COUNT);
 

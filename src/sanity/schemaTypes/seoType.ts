@@ -29,6 +29,15 @@ export const seoType = defineType({
       name: 'openGraphImage',
       title: 'Imagem de Compartilhamento (Open Graph)',
       type: 'image',
+      options: { hotspot: true },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Texto alternativo',
+          type: 'string',
+          description: 'Descrição da imagem para acessibilidade e previews sociais.',
+        }),
+      ],
     })
   ]
 })

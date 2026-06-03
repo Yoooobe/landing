@@ -17,7 +17,7 @@ export default function PricingSection() {
             {p.badge}
           </div>
           <h2 className="mb-6 font-heading text-3xl font-black md:text-5xl">
-            {p.titleBefore} <span className="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">{p.titleGradient}</span>
+            {p.titleBefore} <span className="bg-linear-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">{p.titleGradient}</span>
           </h2>
           <p className="mx-auto max-w-2xl font-sans text-lg leading-relaxed text-white/50">{p.sub}</p>
         </div>
@@ -27,7 +27,7 @@ export default function PricingSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col rounded-3xl border border-white/10 bg-[#141b2d] p-8"
+            className="flex flex-col rounded-3xl border border-white/10 bg-surface-elevated p-8"
           >
             <h3 className="mb-2 font-heading text-2xl font-bold text-white">{p.starter.name}</h3>
             <p className="mb-6 font-sans text-sm text-white/50">{p.starter.blurb}</p>
@@ -59,7 +59,7 @@ export default function PricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="relative flex flex-col rounded-3xl border border-brand-orange bg-gradient-to-b from-[#1a233a] to-[#141b2d] p-8 shadow-[0_0_40px_rgba(249,115,22,0.15)] md:-translate-y-4"
+            className="relative flex flex-col rounded-3xl border border-brand-orange bg-linear-to-b from-surface-tier-from to-surface-elevated p-8 shadow-[0_0_40px_rgba(249,115,22,0.15)] md:-translate-y-4"
           >
             <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
               {p.popular}
@@ -94,7 +94,7 @@ export default function PricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col rounded-3xl border border-white/10 bg-[#141b2d] p-8"
+            className="flex flex-col rounded-3xl border border-white/10 bg-surface-elevated p-8"
           >
             <h3 className="mb-2 font-heading text-2xl font-bold text-white">{p.enterprise.name}</h3>
             <p className="mb-6 font-sans text-sm text-white/50">{p.enterprise.blurb}</p>

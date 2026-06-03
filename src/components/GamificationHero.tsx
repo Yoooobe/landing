@@ -80,7 +80,7 @@ export default function GamificationHero({
           className="absolute left-[1%] top-[30%] hidden w-[240px] overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] xl:block"
           style={{ animation: "float 9s ease-in-out infinite 1s" }}
         >
-          <div className="flex items-center gap-1.5 border-b border-white/8 bg-[#111827]/95 px-3 py-2">
+          <div className="flex items-center gap-1.5 border-b border-white/10 bg-gray-900/95 px-3 py-2">
             <span className="h-2 w-2 rounded-full bg-red-500/70" />
             <span className="h-2 w-2 rounded-full bg-yellow-500/70" />
             <span className="h-2 w-2 rounded-full bg-green-500/70" />
@@ -95,7 +95,7 @@ export default function GamificationHero({
               className="object-cover object-top"
             />
           </div>
-          <div className="flex items-center justify-between bg-[#0d1424]/95 px-3 py-1.5">
+          <div className="flex items-center justify-between bg-surface-section/95 px-3 py-1.5">
             <span className="text-[0.56rem] font-semibold text-brand-orange">Dashboard</span>
             <span className="rounded-full border border-brand-orange/30 bg-brand-orange/20 px-2 py-0.5 text-[0.5rem] font-bold uppercase tracking-widest text-brand-orange">
               Ao vivo
@@ -111,13 +111,13 @@ export default function GamificationHero({
           className="absolute bottom-[8%] right-[3%] hidden w-[260px] overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] lg:block xl:w-[300px]"
           style={{ animation: "float 10s ease-in-out infinite 2s" }}
         >
-          <div className="flex items-center gap-1.5 border-b border-white/8 bg-[#111827]/95 px-3 py-2">
+          <div className="flex items-center gap-1.5 border-b border-white/10 bg-gray-900/95 px-3 py-2">
             <span className="h-2 w-2 rounded-full bg-red-500/70" />
             <span className="h-2 w-2 rounded-full bg-yellow-500/70" />
             <span className="h-2 w-2 rounded-full bg-green-500/70" />
             <span className="ml-2 font-mono text-[0.55rem] text-white/30 tracking-wider">gestor.4unik.io · Campanha</span>
           </div>
-          <div className="relative overflow-hidden bg-[#111827]" style={{ aspectRatio: "4/3" }}>
+          <div className="relative overflow-hidden bg-gray-900" style={{ aspectRatio: "4/3" }}>
             {showcaseImageUrl ? (
               <Image
                 src={showcaseImageUrl}
@@ -136,9 +136,9 @@ export default function GamificationHero({
                 className="object-cover object-top"
               />
             )}
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#111827]/40 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-gray-900/40 to-transparent" />
           </div>
-          <div className="flex items-center justify-between bg-[#0d1424]/95 px-3 py-1.5">
+          <div className="flex items-center justify-between bg-surface-section/95 px-3 py-1.5">
             <span className="text-[0.56rem] font-semibold text-yoobe-purple">Preview ao vivo</span>
             <span className="rounded-full border border-yoobe-purple/30 bg-yoobe-purple/20 px-2 py-0.5 text-[0.5rem] font-bold uppercase tracking-widest text-yoobe-purple">
               Campanha

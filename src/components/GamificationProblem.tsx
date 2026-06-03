@@ -7,7 +7,7 @@ const STAT_COLOR = ["text-red-500", "text-amber-500", "text-blue-500", "text-yoo
 
 export default function GamificationProblem({ content: p }: { content: ResolvedGamificacaoContent["problem"] }) {
   return (
-    <section className="relative overflow-hidden border-t border-white/5 bg-[#0a0f18] py-24">
+    <section className="relative overflow-hidden border-t border-white/5 bg-surface-base py-24">
       <div className="pointer-events-none absolute right-0 top-0 h-full w-full bg-[radial-gradient(circle_at_80%_20%,rgba(139,92,246,0.05)_0%,transparent_50%)]"></div>
 
       <div className="container relative z-10 mx-auto px-4">

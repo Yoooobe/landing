@@ -13,10 +13,10 @@ const cardVariants = cva("rounded-2xl border text-left shadow-xl", {
     variant: {
       home: "border-white/10 bg-white/5 p-5 backdrop-blur-sm md:p-6",
       plataforma: "border-slate-200/80 bg-white p-5 text-brand-navy-dark shadow-black/10 md:p-6",
-      api: "border-cyan-500/25 bg-[#0c1520] p-5 md:p-6",
+      api: "border-cyan-500/25 bg-surface-page p-5 md:p-6",
       gamificacao:
         "border-fuchsia-500/20 bg-linear-to-br from-yoobe-purple/15 to-fuchsia-600/10 p-5 md:p-6",
-      casos: "border-brand-orange/30 bg-[#0f172a] p-5 md:p-6",
+      casos: "border-brand-orange/30 bg-brand-navy p-5 md:p-6",
       inteligencia: "border-white/15 bg-white p-5 text-brand-navy-dark md:p-6",
       marketing: "border-white/10 bg-white/5 p-5 backdrop-blur-sm md:p-6",
     },
@@ -48,7 +48,7 @@ const inputVariants = cva(
           "border-white/20 bg-white/5 text-white placeholder:text-white/35 focus:border-white/40 focus:ring-white/25",
         plataforma:
           "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:border-brand-navy-dark/40 focus:ring-brand-navy-dark/20",
-        api: "border-cyan-500/30 bg-[#0a0f18] text-white placeholder:text-white/35 focus:border-cyan-400/50 focus:ring-cyan-500/25",
+        api: "border-cyan-500/30 bg-surface-base text-white placeholder:text-white/35 focus:border-cyan-400/50 focus:ring-cyan-500/25",
         gamificacao:
           "border-white/20 bg-white/10 text-white placeholder:text-white/35 focus:border-fuchsia-400/40 focus:ring-fuchsia-500/25",
         casos:
@@ -368,7 +368,7 @@ export default function LeadCaptureForm({ variant, source, className }: LeadCapt
           "mt-6 inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-bold transition disabled:opacity-60",
           v === "home" && "bg-yoobe-purple text-white hover:bg-yoobe-purple/90",
           v === "plataforma" && "bg-brand-navy-dark text-white hover:bg-brand-navy-dark/90",
-          v === "api" && "bg-cyan-500 text-[#0a0f18] hover:bg-cyan-400",
+          v === "api" && "bg-cyan-500 text-surface-base hover:bg-cyan-400",
           v === "gamificacao" &&
             "bg-linear-to-r from-yoobe-purple to-fuchsia-600 text-white hover:opacity-95",
           v === "casos" && "bg-brand-orange text-white hover:bg-brand-orange/90",

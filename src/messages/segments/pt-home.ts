@@ -3,7 +3,7 @@ export const ptHome = {
   seo: {
     title: "4Unik — Gamificação, loja corporativa e reconhecimento para equipes",
     description:
-      "Reconheça e premie colaboradores com gamificação, loja corporativa e logística automatizada — ou integre a sua própria operação e fornecedores. API por usuário ativo. Entregas no Brasil e no mundo, com produção local no destino quando fizer sentido.",
+      "Reconheça e premie colaboradores com gamificação, loja corporativa e logística automatizada — ou conecte tudo via API. Para RH, vendas, eventos e plataformas que integram recompensas no próprio produto. Entregas no Brasil e no mundo, com produção local no destino quando fizer sentido.",
   },
   hero: {
     badge: "Reconhecimento real para o seu time",
@@ -30,7 +30,7 @@ export const ptHome = {
       "você encontra o panorama de benefícios corporativos, logística de recompensas e presença da marca.",
     here: "Aqui",
     bodyAfter:
-      "aprofundamos a plataforma na prática: gamificação, loja corporativa, integrações por API, catálogo e operação para RH e para o time de tecnologia.",
+      "aprofundamos a plataforma na prática: gamificação, loja corporativa, integrações por API, catálogo e operação para RH, vendas, eventos e plataformas que querem oferecer recompensas reais dentro do próprio produto.",
     cta: "Ver oferta completa no site 4unik",
   },
   trust: {

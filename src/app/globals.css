@@ -73,9 +73,27 @@
 
   /* Superfícies (substitui hex soltos #0a0f18, #121824, #141b2d) */
   --color-surface-page: #0c1324;
+  --color-surface-base: #0a0f18;
   --color-surface-elevated: #141b2d;
   --color-surface-panel: #121824;
+  --color-surface-section: #0d1424;
+  --color-surface-ink: #0a101c;
   --color-surface-deep: #050a10;
+  --color-surface-tier-from: #1a233a;
+  --color-surface-marketing: #101827;
+  --color-surface-mid: #0d1522;
+  --color-surface-trust: #0a1220;
+  --color-surface-carousel: #1a2236;
+  --color-surface-hr-from: #141415;
+  --color-surface-hr-to: #0a0a0b;
+  --color-surface-hr-hover: #1c1c1e;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-deep: #128c7e;
+  --color-cta-tomato: #ff512f;
+  --color-surface-purple: #1a1025;
+
+  /* Raio grande usado em cards “bento” / case studies */
+  --radius-bento: 2.5rem;
 }
 
 :root {

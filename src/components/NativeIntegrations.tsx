@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import type { ApiIntegracoesShowcasePlatformDoc, ResolvedApiIntegracoesContent } from "@/sanity/lib/types";
 import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 
 export default function NativeIntegrations({
   content,
@@ -18,7 +19,7 @@ export default function NativeIntegrations({
     );
   }
   return (
-    <section className="py-24 bg-[#0d1424] relative border-t border-white/5 overflow-hidden">
+    <section className="py-24 bg-surface-section relative border-t border-white/5 overflow-hidden">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <span className="inline-block py-1 px-3 rounded-full bg-white/5 border border-white/10 text-white/70 text-sm font-semibold mb-4">
@@ -36,7 +37,6 @@ export default function NativeIntegrations({
           {content.mainPlatforms.map((p, i) => {
             const sc = getShowcaseForPlatform(p.name);
             const logoUrl = getSanityImageUrl(sc?.logoImage, { width: 320, fit: "max", quality: 90 });
-            const previewUrl = getSanityImageUrl(sc?.previewImage, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
             return (
             <motion.div
               key={i}
@@ -71,9 +71,9 @@ export default function NativeIntegrations({
                 {p.description}
               </p>
 
-              {previewUrl && (
-                <div className="relative z-10 mb-6 overflow-hidden rounded-xl border border-white/5" style={{ aspectRatio: "16/9" }}>
-                  <Image src={previewUrl} alt={sc?.previewImage?.alt || p.name} fill className="object-cover" unoptimized />
+              {sc?.previewImage && (
+                <div className="relative z-10 mb-6 overflow-hidden rounded-xl border border-white/5 bg-white/5" style={{ aspectRatio: "16/9" }}>
+                  <ShowcaseImage image={sc.previewImage} alt={sc.previewImage.alt || p.name} variant="card" sizes="(min-width: 768px) 360px, 100vw" />
                 </div>
               )}
 

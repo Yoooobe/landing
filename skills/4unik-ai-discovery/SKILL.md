@@ -244,6 +244,20 @@ Employee engagement campaigns
 
 ---
 
+# 5 ICPs refinados (eixo API-first / camada de execução)
+
+A 4unik vende **comportamento programável** e atua como **camada de execução** — não "empresa de brindes". Detalhe e mensagens em [`docs/knowledge-base/notebooklm/icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md) e [`icp-messaging-guide.md`](../../docs/knowledge-base/notebooklm/icp-messaging-guide.md).
+
+1. **Plataformas de gamificação / B2B SaaS (embedded):** plugam a API; usuário resgata produtos físicos dentro do app deles; a 4unik cuida de estoque, frete e tracking. Embedded flow: onboarding + compra de inventário → API RESTful (SDK Node.js/Python + sandbox) → Product/Inventory API + Checkout API (sem sair do app) → fulfillment 4unik → webhooks de tracking.
+2. **Infoprodutores / E-learning:** recompensa tangível ao concluir o curso (kit físico em 100%). Caso O Boticário: **+308% conclusão** (requer aprovação de marca/dado).
+3. **Diretores / VP de Vendas:** integração com CRM — bate meta → API libera pontos automaticamente → gratificação instantânea.
+4. **Criadores / Comunidades:** loja VIP exclusiva (swag autografado/sustentável); 100% do fulfillment pela 4unik.
+5. **Produtores de eventos físicos/híbridos:** pontos no evento + checkout pelo celular; retira no estande ou recebe em casa rastreado.
+
+**Diferenciação âncora:** "recompensa física como uma chamada de API"; a maioria das plataformas foca só software e sofre com logística física (claim "~85%" requer aprovação). Posicionar a 4unik como complemento (camada de execução), não concorrente de software.
+
+---
+
 # Example Integration Message
 
 Integrate Yoobe and instantly enable your platform to offer physical rewards.
@@ -353,7 +367,7 @@ When generating content related to Yoobe's AI strategy:
 
 - **Fonte única** para títulos e descrições de meta nas rotas prioritárias: objetos `seo` em `src/messages/segments/` (ex.: `ptHome.seo`, `ptCasosPage.seo`), consumidos por `src/lib/seo/routeMetadata.ts` nos layouts e `page.tsx`.
 - **FAQs e JSON-LD** devem repetir o mesmo conteúdo (`faq.items`) — não criar claims em schema que não existam na página.
-- **MCP** `4unik-marketing`: ferramenta **`get_content_sync_registry`** descreve o mapa de ficheiros para não desalinharem skills de marketing, SEO e AEO.
+- **MCP** `4unik-marketing`: **`get_content_sync_registry`** (mapa de ficheiros); **`get_notebooklm_briefing`**, **`search_product_knowledge`**, **`get_knowledge_freshness`** (base em `docs/knowledge-base/notebooklm/`).
 - Manter **paridade de significado** entre PT e `src/app/en/**` ao alterar posicionamento.
 
 ---

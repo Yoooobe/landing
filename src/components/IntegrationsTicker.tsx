@@ -51,7 +51,7 @@ function TickerRow({
         {doubled.map((b, i) => (
           <span
             key={`${b.label}-${i}`}
-            className="inline-flex items-center gap-2 rounded-full border border-black/8 bg-white px-4 py-2 shadow-sm"
+            className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 shadow-sm"
           >
             <span
               className="h-2 w-2 shrink-0 rounded-full"
@@ -137,7 +137,7 @@ export default function IntegrationsTicker({ locale = "pt" }: Props) {
           <span className="font-mono text-[0.65rem] font-bold uppercase tracking-widest text-gray-400">
             {bankLabel}
           </span>
-          <div className="h-px flex-1 bg-black/8" />
+          <div className="h-px flex-1 bg-black/10" />
         </div>
         <TickerRow badges={BANKS} reverse={false} speed={36} />
 
@@ -145,7 +145,7 @@ export default function IntegrationsTicker({ locale = "pt" }: Props) {
           <span className="font-mono text-[0.65rem] font-bold uppercase tracking-widest text-gray-400">
             {hrLabel}
           </span>
-          <div className="h-px flex-1 bg-black/8" />
+          <div className="h-px flex-1 bg-black/10" />
         </div>
         <TickerRow badges={PLATFORMS} reverse={true} speed={30} />
       </div>

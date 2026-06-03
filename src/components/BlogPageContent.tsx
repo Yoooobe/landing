@@ -13,7 +13,7 @@ type Props = {
   posts: BlogPostDoc[];
 };
 
-const CATEGORIES = [
+const CATEGORIES_PT = [
   { label: "Todos", value: "all", icon: BookOpen },
   { label: "Engajamento", value: "Engajamento", icon: Trophy },
   { label: "Gamificação de Times", value: "Gamificação de Times", icon: Zap },
@@ -22,7 +22,18 @@ const CATEGORIES = [
   { label: "Crescimento", value: "Crescimento", icon: TrendingUp },
   { label: "Gestão de Pessoas", value: "Gestão de Pessoas", icon: Brain },
   { label: "Motivação & Reconhecimento", value: "Motivação & Reconhecimento", icon: Target },
-];
+] as const;
+
+const CATEGORIES_EN = [
+  { label: "All", value: "all", icon: BookOpen },
+  { label: "Engagement", value: "Engajamento", icon: Trophy },
+  { label: "Team gamification", value: "Gamificação de Times", icon: Zap },
+  { label: "4unik in practice", value: "4unik na Prática", icon: Lightbulb },
+  { label: "Events & swag", value: "Eventos & Brindes", icon: Gift },
+  { label: "Growth", value: "Crescimento", icon: TrendingUp },
+  { label: "People management", value: "Gestão de Pessoas", icon: Brain },
+  { label: "Motivation & recognition", value: "Motivação & Reconhecimento", icon: Target },
+] as const;
 
 function formatBlogDate(date: string, locale: "pt" | "en") {
   const parsed = new Date(date);
@@ -104,6 +115,7 @@ function StatsBar({ posts }: { posts: BlogPostDoc[] }) {
 export default function BlogPageContent({ posts }: Props) {
   const { locale, m, path } = useLocaleMessages();
   const b = m.blogPage;
+  const categories = locale === "en" ? CATEGORIES_EN : CATEGORIES_PT;
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredPosts = useMemo(() => {
@@ -117,14 +129,14 @@ export default function BlogPageContent({ posts }: Props) {
 
   if (!posts.length) {
     return (
-      <div className="min-h-screen bg-[#0d1424] px-4 pb-24 pt-32 text-white">
+      <div className="min-h-screen bg-surface-section px-4 pb-24 pt-32 text-white">
         <div className="container mx-auto max-w-3xl text-center">
           <span className="inline-block px-3 py-1 mb-6 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-xs font-bold tracking-widest uppercase">
             Blog 4unik
           </span>
           <h1 className="mb-4 text-4xl font-black font-heading">
             Engaja,{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yoobe-neon-pink">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-yoobe-neon-pink">
               time!
             </span>
           </h1>
@@ -137,7 +149,7 @@ export default function BlogPageContent({ posts }: Props) {
   const featuredImage = featured ? getFeaturedSplitImage(featured) : null;
 
   return (
-    <div className="pt-32 pb-24 bg-[#0d1424] min-h-screen text-white">
+    <div className="pt-32 pb-24 bg-surface-section min-h-screen text-white">
       {/* ── Hero Header ── */}
       <div className="container mx-auto px-4 max-w-6xl mb-10">
         <div className="max-w-3xl">
@@ -146,7 +158,7 @@ export default function BlogPageContent({ posts }: Props) {
           </span>
           <h1 className="text-4xl md:text-6xl font-black mb-4 font-heading leading-tight">
             Engaja,{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-yoobe-neon-pink">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-yoobe-neon-pink">
               time!
             </span>
           </h1>
@@ -160,7 +172,7 @@ export default function BlogPageContent({ posts }: Props) {
       {/* ── Category Filters ── */}
       <div className="container mx-auto px-4 max-w-6xl mb-10">
         <div className="flex flex-wrap gap-2">
-          {CATEGORIES.map(({ label, value, icon: Icon }) => (
+          {categories.map(({ label, value, icon: Icon }) => (
             <button
               key={value}
               onClick={() => setActiveCategory(value)}
@@ -202,12 +214,12 @@ export default function BlogPageContent({ posts }: Props) {
                     imgClassName="transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="h-full w-full bg-gradient-to-br from-brand-orange/30 via-yoobe-neon-pink/20 to-unik-blue/30 flex items-center justify-center">
+                  <div className="h-full w-full bg-linear-to-br from-brand-orange/30 via-yoobe-neon-pink/20 to-unik-blue/30 flex items-center justify-center">
                     <Trophy className="w-24 h-24 text-white/10" />
                   </div>
                 )}
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f18] via-transparent to-transparent hidden md:block" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0f18] via-transparent to-transparent md:hidden" />
+                <div className="absolute inset-0 hidden bg-linear-to-r from-surface-base via-transparent to-transparent md:block" />
+                <div className="absolute inset-0 bg-linear-to-t from-surface-base via-transparent to-transparent md:hidden" />
                 {featured.featured && (
                   <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-brand-orange text-white text-xs font-bold tracking-wide">
                     ⭐ Destaque
@@ -253,7 +265,7 @@ export default function BlogPageContent({ posts }: Props) {
               return (
                 <Link key={post._id} href={path(`/blog/${post.slug}`)} className="group flex">
                   <div className="rounded-3xl overflow-hidden glass-panel-dark border border-white/10 flex flex-col w-full transition-transform duration-300 hover:-translate-y-1">
-                    <div className="h-44 relative overflow-hidden flex-shrink-0">
+                    <div className="relative h-44 shrink-0 overflow-hidden">
                       {img ? (
                         <BlogContentImage
                           src={img}
@@ -262,7 +274,7 @@ export default function BlogPageContent({ posts }: Props) {
                           imgClassName="transition-transform duration-700 group-hover:scale-105"
                         />
                       ) : (
-                        <div className="h-full w-full bg-gradient-to-br from-yoobe-purple/30 via-brand-orange/20 to-brand-navy-dark flex items-center justify-center">
+                        <div className="h-full w-full bg-linear-to-br from-yoobe-purple/30 via-brand-orange/20 to-brand-navy-dark flex items-center justify-center">
                           <BookOpen className="w-12 h-12 text-white/10" />
                         </div>
                       )}

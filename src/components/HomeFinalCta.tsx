@@ -3,10 +3,9 @@
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { primaryContactSectionIdAttr } from "@/lib/contactAnchor";
-import { getSanityImageUrl } from "@/sanity/lib/image";
+import ShowcaseImage from "@/components/ui/ShowcaseImage";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 export default function HomeFinalCta({
   homeContent = null,
@@ -23,7 +22,6 @@ export default function HomeFinalCta({
     demoHref: "https://calendly.com/yoobeco/demo",
     whatsappHref: "https://wa.me/554187582060",
   };
-  const sectionImageUrl = getSanityImageUrl(c.sectionImage, { width: 1280, height: 800, fit: "crop", crop: "entropy", quality: 84 });
 
   return (
     <section
@@ -71,14 +69,14 @@ export default function HomeFinalCta({
                 href={c.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-xl bg-[#25D366] px-8 font-sans text-base font-bold text-white shadow-xl shadow-[#25D366]/20 transition-all hover:scale-105 hover:bg-[#128C7E] sm:w-auto"
+                className="inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-xl bg-whatsapp px-8 font-sans text-base font-bold text-white shadow-xl shadow-whatsapp/20 transition-all hover:scale-105 hover:bg-whatsapp-deep sm:w-auto"
               >
                 {c.whatsapp}
               </a>
             </div>
           </motion.div>
         </div>
-        {sectionImageUrl ? (
+        {c.sectionImage ? (
           <motion.div
             className="mx-auto mt-12 w-full max-w-[400px] overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-3 shadow-xl backdrop-blur-sm lg:max-w-2xl"
             initial={{ opacity: 0, scale: 0.98 }}
@@ -86,14 +84,12 @@ export default function HomeFinalCta({
             viewport={{ once: true, margin: "0px 0px -10% 0px" }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <Image
-              src={sectionImageUrl}
-              alt={c.sectionImage?.alt?.trim() || c.title || "Imagem do CTA final"}
-              width={640}
-              height={640}
+            <ShowcaseImage
+              image={c.sectionImage}
+              alt={c.sectionImage.alt?.trim() || c.title || "Imagem do CTA final"}
+              variant="card"
+              className="rounded-[1.4rem]"
               sizes="(min-width: 1024px) 672px, 100vw"
-              className="h-full w-full rounded-[1.4rem] object-cover"
-              unoptimized
             />
           </motion.div>
         ) : null}

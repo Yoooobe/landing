@@ -141,8 +141,8 @@ export default function CampaignBuilderShowcase() {
                   }}
                   className={`group relative w-full rounded-2xl border text-left transition-all duration-300 ${
                     isActive
-                      ? "border-transparent bg-white shadow-lg shadow-black/8"
-                      : "border-black/8 bg-white/40 hover:bg-white/70 hover:shadow-sm"
+                      ? "border border-white/0 bg-white shadow-lg shadow-black/10"
+                      : "border-black/10 bg-white/40 hover:bg-white/70 hover:shadow-sm"
                   }`}
                 >
                   {/* Progress bar at top of active card */}
@@ -238,7 +238,7 @@ export default function CampaignBuilderShowcase() {
             {/* Browser chrome */}
             <div className="relative overflow-hidden rounded-2xl border border-black/10 bg-white shadow-2xl shadow-black/15">
               {/* Top bar */}
-              <div className="flex items-center justify-between border-b border-black/8 bg-gray-50 px-4 py-3">
+              <div className="flex items-center justify-between border-b border-black/10 bg-gray-50 px-4 py-3">
                 <div className="flex items-center gap-1.5">
                   <div className="h-3 w-3 rounded-full bg-red-400" />
                   <div className="h-3 w-3 rounded-full bg-yellow-400" />
@@ -289,7 +289,7 @@ export default function CampaignBuilderShowcase() {
               </div>
 
               {/* Footer bar */}
-              <div className="flex items-center justify-between border-t border-black/8 bg-gray-50 px-4 py-2">
+              <div className="flex items-center justify-between border-t border-black/10 bg-gray-50 px-4 py-2">
                 <span className="font-mono text-[0.6rem] text-gray-400">
                   Passo {step.number} de {STEPS.length}
                 </span>

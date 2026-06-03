@@ -13,7 +13,7 @@ export default function EnterpriseTrustStrip() {
   return (
     <section
       aria-label={s.ariaLabel}
-      className="border-y border-white/5 bg-[#0a1220]/90 py-6"
+      className="border-y border-white/5 bg-surface-trust/90 py-6"
     >
       <div className="container mx-auto max-w-6xl px-4">
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -44,6 +44,7 @@ export const blogPostBySlugQuery = groq`
     excerpt,
     category,
     publishedAt,
+    _updatedAt,
     readTimeMinutes,
     featured,
     author,

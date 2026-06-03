@@ -17,17 +17,22 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import {
+  Boxes,
   Brain,
+  CalendarDays,
   ChevronDown,
   Gamepad2,
   Gift,
+  GraduationCap,
   LayoutDashboard,
   Layers,
   Menu,
   Network,
   ShoppingBag,
   Sparkles,
+  TrendingUp,
   Trophy,
+  Users,
   Wallet,
   X,
 } from "lucide-react";
@@ -58,6 +63,11 @@ const HEADER_ICON_MAP = {
   manager: LayoutDashboard,
   store: ShoppingBag,
   logistics: Gift,
+  platforms: Boxes,
+  education: GraduationCap,
+  sales: TrendingUp,
+  communities: Users,
+  events: CalendarDays,
 } as const;
 
 function mergeHeaderSections(
@@ -196,7 +206,7 @@ export default function Header() {
           {
             label: m.nav.overview.title,
             description: m.nav.overview.desc,
-            href: "/plataforma",
+            href: "/plataforma/",
             icon: "overview",
           },
           {
@@ -246,7 +256,7 @@ export default function Header() {
           {
             label: m.nav.cases.title,
             description: m.nav.cases.desc,
-            href: "/casos-de-uso",
+            href: "/casos-de-uso/",
             icon: "cases",
           },
           {
@@ -259,12 +269,47 @@ export default function Header() {
         ],
       },
       {
+        title: m.nav.solutionsByProfile,
+        items: [
+          {
+            label: m.nav.verticals.platforms.title,
+            description: m.nav.verticals.platforms.desc,
+            href: "/para-plataformas/",
+            icon: "platforms",
+          },
+          {
+            label: m.nav.verticals.education.title,
+            description: m.nav.verticals.education.desc,
+            href: "/educacao/",
+            icon: "education",
+          },
+          {
+            label: m.nav.verticals.sales.title,
+            description: m.nav.verticals.sales.desc,
+            href: "/vendas/",
+            icon: "sales",
+          },
+          {
+            label: m.nav.verticals.communities.title,
+            description: m.nav.verticals.communities.desc,
+            href: "/comunidades/",
+            icon: "communities",
+          },
+          {
+            label: m.nav.verticals.events.title,
+            description: m.nav.verticals.events.desc,
+            href: "/eventos/",
+            icon: "events",
+          },
+        ],
+      },
+      {
         title: m.nav.api,
         items: [
           {
             label: m.nav.apiHub.title,
             description: m.nav.apiHub.desc,
-            href: "/api-integracoes",
+            href: "/api-integracoes/",
             icon: "api",
           },
         ],

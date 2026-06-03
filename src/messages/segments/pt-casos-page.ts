@@ -12,7 +12,7 @@ export const ptCasosPage = {
     titleGradient: "gigantes",
     titleAfter: " do mercado.",
     sub:
-      "Veja como SAP, Deloitte, IBM, Microsoft e CaLLogix utilizaram infraestruturas de gamificação para resolver problemas complexos de RH, vendas e comunidade.",
+      "Veja como SAP, Deloitte, IBM, Microsoft e CaLLogix usaram gamificação e recompensas para resolver problemas reais de RH, vendas, educação e comunidade.",
   },
   caseStudies: {
     challengeLabel: "O Desafio Resolvido",
