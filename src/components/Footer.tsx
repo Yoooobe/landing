@@ -8,6 +8,7 @@ import {
 } from "@/contexts/SiteSettingsContext";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { withBasePath } from "@/lib/basePath";
+import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
 import { resolveShellHref, isExternalShellHref } from "@/lib/siteShell";
 import Link from "next/link";
 import { useMemo, type ReactNode } from "react";
@@ -34,24 +35,11 @@ function mergeFooterSections(
   }> | null | undefined,
   fallbackSections: FooterMenuSection[],
 ): FooterMenuSection[] {
-  const sourceSections = cmsSections?.length ? cmsSections : fallbackSections;
-
-  return sourceSections.map((section, sectionIndex) => {
-    const fallbackSection = fallbackSections[sectionIndex];
-    const sourceItems = section.items?.length ? section.items : fallbackSection?.items || [];
-
-    return {
-      title: section.title || fallbackSection?.title || "Links",
-      items: sourceItems.map((item, itemIndex) => {
-        const fallbackItem = fallbackSection?.items[itemIndex];
-        return {
-          label: item.label || fallbackItem?.label || "Item",
-          href: item.href || fallbackItem?.href || "/",
-          openInNewTab: item.openInNewTab ?? fallbackItem?.openInNewTab,
-        };
-      }),
-    };
-  });
+  return mergeShellMenuSections(cmsSections, fallbackSections, (item, fallbackItem) => ({
+    label: item?.label || fallbackItem?.label || "Item",
+    href: item?.href || fallbackItem?.href || "/",
+    openInNewTab: item?.openInNewTab ?? fallbackItem?.openInNewTab,
+  }));
 }
 
 type FooterShellLinkProps = {

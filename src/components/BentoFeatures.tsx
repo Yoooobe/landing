@@ -106,27 +106,32 @@ export default function BentoFeatures({
             </BentoMediaFrame>
           </motion.a>
 
-          <motion.a
-            href={withBasePath(path("/plataforma/motor-gamificacao/"))}
+          <motion.div
             whileHover={{ y: -5 }}
-            className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/5 glass-panel-dark p-6 sm:p-8"
+            className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/5 glass-panel-dark"
           >
-            <div className="relative z-10 flex flex-1 flex-col">
+            <Link
+              href={path("/plataforma/motor-gamificacao/")}
+              className="absolute inset-0 z-10 rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yoobe-neon-pink"
+              aria-label={b.card2.title}
+            />
+            <div className="relative z-0 flex flex-1 flex-col p-6 sm:p-8 pointer-events-none">
               <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-yoobe-purple to-pink-500">
                 <Trophy className="h-6 w-6 text-white" />
               </div>
-              <h3 className="mb-2 font-heading text-xl font-bold text-white transition-colors group-hover:text-yoobe-neon-pink">{b.card2.title}</h3>
+              <h3 className="mb-2 font-heading text-xl font-bold text-white transition-colors group-hover:text-yoobe-neon-pink">
+                {b.card2.title}
+              </h3>
               <p className="mb-4 flex-1 font-sans text-sm leading-relaxed text-white/60">{b.card2.body}</p>
               <Link
-                href={withBasePath(path("/plataforma/campanhas-gamificacao/"))}
-                onClick={(e) => e.stopPropagation()}
-                className="relative z-20 mb-2 inline-flex items-center text-xs font-semibold text-yoobe-neon-pink/90 hover:text-yoobe-neon-pink"
+                href={path("/plataforma/campanhas-gamificacao/")}
+                className="relative z-20 mb-2 inline-flex items-center text-xs font-semibold text-yoobe-neon-pink/90 hover:text-yoobe-neon-pink pointer-events-auto"
               >
                 {locale === "en" ? "Campaigns: byte to reward" : "Campanhas: do byte ao brinde"}
                 <ArrowRight className="ml-1 h-3 w-3" />
               </Link>
             </div>
-            <BentoMediaFrame>
+            <BentoMediaFrame className="mx-6 mb-6 sm:mx-8 sm:mb-8">
               {gamificationCardImageUrl ? (
                 <Image
                   src={gamificationCardImageUrl}
@@ -150,7 +155,7 @@ export default function BentoFeatures({
                 />
               )}
             </BentoMediaFrame>
-          </motion.a>
+          </motion.div>
 
           <motion.a
             href={`${withBasePath(path("/plataforma"))}#loja`}

@@ -1,13 +1,27 @@
 /* eslint-disable @next/next/no-img-element */
 import { withBasePath } from "@/lib/basePath";
 
-type HeroTheme = "home" | "gamification" | "api" | "features";
+type HeroTheme =
+  | "home"
+  | "gamification"
+  | "api"
+  | "features"
+  | "icp-platforms"
+  | "icp-education"
+  | "icp-sales"
+  | "icp-communities"
+  | "icp-events";
 
 const THEME_ASSET: Record<HeroTheme, string> = {
   home: "/hero-home-rewards-background.svg",
   gamification: "/hero-gamification-background.svg",
   api: "/hero-api-background.svg",
   features: "/hero-features-background.svg",
+  "icp-platforms": "/hero-api-background.svg",
+  "icp-education": "/hero-gamification-background.svg",
+  "icp-sales": "/hero-features-background.svg",
+  "icp-communities": "/hero-gamification-background.svg",
+  "icp-events": "/hero-api-background.svg",
 };
 
 type Props = {

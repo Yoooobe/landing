@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:webpack": "next dev --webpack",
     "generate:llms": "npx tsx scripts/generate-llms-txt.ts",
     "generate:og": "node scripts/generate-og-images.mjs",
+    "generate:icp-screens": "node scripts/generate-icp-showcase-images.mjs",
     "build": "npm run generate:llms && npm run generate:og && next build && node scripts/patch-studio-spa-fallback.mjs",
     "start": "next start",
     "lint": "eslint",

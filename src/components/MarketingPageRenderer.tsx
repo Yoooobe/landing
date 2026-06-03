@@ -14,6 +14,7 @@ import GamificationSummary from "@/components/GamificationSummary";
 import HomeFinalCta from "@/components/HomeFinalCta";
 import HomeHero from "@/components/HomeHero";
 import HowItWorks from "@/components/HowItWorks";
+import IcpProfilePage from "@/components/icp/IcpProfilePage";
 import InteligenciaPageContent from "@/components/InteligenciaPageContent";
 import LogisticsFulfillment from "@/components/LogisticsFulfillment";
 import ManagementSection from "@/components/ManagementSection";
@@ -728,6 +729,7 @@ function renderLegacySection(
   block: Extract<MarketingPageContentBlock, { _type: "legacySectionBlock" }>,
   locale: Locale,
   supportData: SupportData,
+  pageSlug: string,
   assignPrimaryContactSection: boolean,
 ) {
   const contactProp = assignPrimaryContactSection ? undefined : null;
@@ -818,6 +820,8 @@ function renderLegacySection(
       return <MarketingFaqSection faq={(locale === "en" ? enCasosPage : ptCasosPage).faq} />;
     case "casosCta":
       return <CasosPageCta contactSectionId={contactProp} />;
+    case "icpProfilePage":
+      return <IcpProfilePage locale={locale} slug={pageSlug} />;
     default:
       return null;
   }
@@ -842,7 +846,7 @@ function renderBlock(
     case "logoStripBlock":
       return <GenericLogoStripBlock block={block} locale={locale} />;
     case "legacySectionBlock":
-      return renderLegacySection(block, locale, supportData, assignPrimaryContactSection);
+      return renderLegacySection(block, locale, supportData, pageSlug, assignPrimaryContactSection);
     case "richTextSection":
       return <GenericRichTextSection block={block} />;
     case "ctaBlock":

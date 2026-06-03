@@ -17,7 +17,8 @@ const nextConfig: NextConfig = {
     SANITY_STUDIO_NANO_BANANA_URL: process.env.SANITY_STUDIO_NANO_BANANA_URL ?? "",
   },
   basePath: BASE_PATH,
-  assetPrefix: BASE_PATH,
+  /** Em dev, só `basePath` — `assetPrefix` duplicado quebra o HMR de CSS no Turbopack. */
+  assetPrefix: dev ? undefined : BASE_PATH || undefined,
   ...(dev && BASE_PATH
     ? {
         async redirects() {

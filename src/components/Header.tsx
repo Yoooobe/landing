@@ -11,6 +11,7 @@ import {
   scrollToPrimaryContact,
   shouldScrollPrimaryContactInPlace,
 } from "@/lib/resolvePrimaryContactHref";
+import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
 import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
 import { toggleLocalePath } from "@/lib/locale";
 import Link from "next/link";
@@ -84,27 +85,14 @@ function mergeHeaderSections(
   }> | null | undefined,
   fallbackSections: HeaderMenuSection[],
 ): HeaderMenuSection[] {
-  const sourceSections = cmsSections?.length ? cmsSections : fallbackSections;
-
-  return sourceSections.map((section, sectionIndex) => {
-    const fallbackSection = fallbackSections[sectionIndex];
-    const sourceItems = section.items?.length ? section.items : fallbackSection?.items || [];
-
-    return {
-      title: section.title || fallbackSection?.title || "Menu",
-      items: sourceItems.map((item, itemIndex) => {
-        const fallbackItem = fallbackSection?.items[itemIndex];
-        return {
-          label: item.label || fallbackItem?.label || "Item",
-          description: item.description ?? fallbackItem?.description,
-          href: item.href || fallbackItem?.href || "/",
-          badge: item.badge ?? fallbackItem?.badge,
-          icon: item.icon ?? fallbackItem?.icon,
-          openInNewTab: item.openInNewTab ?? fallbackItem?.openInNewTab,
-        };
-      }),
-    };
-  });
+  return mergeShellMenuSections(cmsSections, fallbackSections, (item, fallbackItem) => ({
+    label: item?.label || fallbackItem?.label || "Item",
+    description: item?.description ?? fallbackItem?.description,
+    href: item?.href || fallbackItem?.href || "/",
+    badge: item?.badge ?? fallbackItem?.badge,
+    icon: item?.icon ?? fallbackItem?.icon,
+    openInNewTab: item?.openInNewTab ?? fallbackItem?.openInNewTab,
+  }));
 }
 
 function dropdownPanelClasses(index: number, total: number): string {

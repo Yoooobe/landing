@@ -354,7 +354,8 @@ export type LegacySectionKey =
   | "casosHero"
   | "casosGrid"
   | "casosFaq"
-  | "casosCta";
+  | "casosCta"
+  | "icpProfilePage";
 
 export type LegacySectionBlockDoc = {
   _key?: string;

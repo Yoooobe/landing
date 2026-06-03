@@ -47,6 +47,7 @@ const sectionOptions = [
   { title: "Casos de uso: Grid", value: "casosGrid" },
   { title: "Casos de uso: FAQ", value: "casosFaq" },
   { title: "Casos de uso: CTA", value: "casosCta" },
+  { title: "ICP: Página por perfil (completa)", value: "icpProfilePage" },
 ] as const;
 
 export const legacySectionBlock = defineType({

@@ -2049,6 +2049,47 @@ export const seedDocuments = {
           ],
         },
         {
+          _key: "solucoes-perfil",
+          title: "Soluções por perfil",
+          items: [
+            {
+              _key: "platforms",
+              label: "Plataformas e SaaS",
+              description: "Recompensas físicas via API, dentro do seu produto.",
+              href: "/para-plataformas",
+              icon: "platforms",
+            },
+            {
+              _key: "education",
+              label: "Educação e e-learning",
+              description: "Recompensa real por conclusão de curso.",
+              href: "/educacao",
+              icon: "education",
+            },
+            {
+              _key: "sales",
+              label: "Vendas",
+              description: "Premiação integrada ao CRM, na hora.",
+              href: "/vendas",
+              icon: "sales",
+            },
+            {
+              _key: "communities",
+              label: "Criadores e comunidades",
+              description: "Loja VIP de fãs com entrega pela 4Unik.",
+              href: "/comunidades",
+              icon: "communities",
+            },
+            {
+              _key: "events",
+              label: "Eventos",
+              description: "Checkout no celular, sem caos logístico.",
+              href: "/eventos",
+              icon: "events",
+            },
+          ],
+        },
+        {
           _key: "api",
           title: "API",
           items: [
@@ -2136,6 +2177,47 @@ export const seedDocuments = {
           ],
         },
         {
+          _key: "solutions-profile",
+          title: "Solutions by profile",
+          items: [
+            {
+              _key: "platforms",
+              label: "Platforms & SaaS",
+              description: "Physical rewards via API inside your product.",
+              href: "/para-plataformas",
+              icon: "platforms",
+            },
+            {
+              _key: "education",
+              label: "Education & e-learning",
+              description: "Real rewards for course completion.",
+              href: "/educacao",
+              icon: "education",
+            },
+            {
+              _key: "sales",
+              label: "Sales",
+              description: "CRM-integrated rewards in real time.",
+              href: "/vendas",
+              icon: "sales",
+            },
+            {
+              _key: "communities",
+              label: "Creators & communities",
+              description: "VIP fan store with 4Unik fulfillment.",
+              href: "/comunidades",
+              icon: "communities",
+            },
+            {
+              _key: "events",
+              label: "Events",
+              description: "Mobile checkout without logistics chaos.",
+              href: "/eventos",
+              icon: "events",
+            },
+          ],
+        },
+        {
           _key: "api",
           title: "API",
           items: [
@@ -2177,6 +2259,17 @@ export const seedDocuments = {
             { _key: "wallets", label: "Controle de Carteiras (Wallets)", href: "/plataforma/controle-carteiras" },
             { _key: "manager", label: "Painel do Gestor", href: "/plataforma/painel-gestor" },
             { _key: "cases", label: "Casos de Uso", href: "/casos-de-uso" },
+          ],
+        },
+        {
+          _key: "solutions-profile",
+          title: "Soluções por perfil",
+          items: [
+            { _key: "platforms", label: "Plataformas e SaaS", href: "/para-plataformas" },
+            { _key: "education", label: "Educação e e-learning", href: "/educacao" },
+            { _key: "sales", label: "Vendas", href: "/vendas" },
+            { _key: "communities", label: "Criadores e comunidades", href: "/comunidades" },
+            { _key: "events", label: "Eventos", href: "/eventos" },
           ],
         },
         {
@@ -2238,6 +2331,17 @@ export const seedDocuments = {
             { _key: "wallets", label: "Wallet control", href: "/plataforma/controle-carteiras" },
             { _key: "manager", label: "Manager dashboard", href: "/plataforma/painel-gestor" },
             { _key: "cases", label: "Use cases", href: "/casos-de-uso" },
+          ],
+        },
+        {
+          _key: "solutions-profile",
+          title: "Solutions by profile",
+          items: [
+            { _key: "platforms", label: "Platforms & SaaS", href: "/para-plataformas" },
+            { _key: "education", label: "Education & e-learning", href: "/educacao" },
+            { _key: "sales", label: "Sales", href: "/vendas" },
+            { _key: "communities", label: "Creators & communities", href: "/comunidades" },
+            { _key: "events", label: "Events", href: "/eventos" },
           ],
         },
         {
