@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="0;url=/landing/" />
   <title>A redirecionar…</title>
   <script>
 (function () {
@@ -10,8 +11,24 @@
   var BASE = "/landing";
   var STUDIO = "/landing/studio/";
   var HOME = "/landing/";
+  var CANONICAL_ORIGIN = "https://plataforma.4unik.com.br";
+  var LEGACY = {
+  "/landing/plataforma/gamificacao/": "/landing/plataforma/motor-gamificacao/",
+  "/landing/en/plataforma/gamificacao/": "/landing/en/plataforma/motor-gamificacao/"
+  };
   var path = location.pathname;
   var suffix = (location.search || "") + (location.hash || "");
+
+  if (location.hostname === "yoooobe.github.io") {
+    location.replace(CANONICAL_ORIGIN + path + suffix);
+    return;
+  }
+
+  if (LEGACY[path]) {
+    location.replace(LEGACY[path] + suffix);
+    return;
+  }
+
   var studioPrefix = STUDIO;
   var studioRootNoSlash = STUDIO.charAt(STUDIO.length - 1) === "/"
     ? STUDIO.slice(0, -1)
@@ -33,5 +50,6 @@
 </head>
 <body>
   <p style="font-family: system-ui, sans-serif; padding: 2rem; color: #444;">A redirecionar…</p>
+  <p><a href="/landing/">Ir para a home</a></p>
 </body>
 </html>
