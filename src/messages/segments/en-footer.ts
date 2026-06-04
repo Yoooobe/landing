@@ -12,6 +12,8 @@ export const enFooter = {
     gestor: "Manager dashboard",
     casos: "Use cases",
     api: "API & webhooks",
+    pricing: "Plans & pricing",
+    seguranca: "Security & governance",
     catalogo: "Rewards catalog",
     logistica: "Logistics (4unik site)",
     demo: "Book a demo",

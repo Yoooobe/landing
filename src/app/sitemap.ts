@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { GROWTH_INDEX_ROUTE_PAIRS, isGrowthPageIndexable } from "@/lib/growthPagePublish";
 import { pageAbsoluteUrl } from "@/lib/site";
 import { getBlogStaticSlugs, hasBlogPostWithSlug } from "@/sanity/lib/blog";
 
@@ -69,10 +70,25 @@ const routePairs: RoutePair[] = [
   },
 ];
 
+function allRoutePairs(): RoutePair[] {
+  if (!isGrowthPageIndexable()) {
+    return routePairs;
+  }
+  return [
+    ...routePairs,
+    ...GROWTH_INDEX_ROUTE_PAIRS.map((pair) => ({
+      pt: pair.pt,
+      en: pair.en,
+      priority: pair.priority,
+      changeFrequency: pair.changeFrequency,
+    })),
+  ];
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
-  const staticEntries: MetadataRoute.Sitemap = routePairs.flatMap((pair) => {
+  const staticEntries: MetadataRoute.Sitemap = allRoutePairs().flatMap((pair) => {
     const ptUrl = pageAbsoluteUrl(pair.pt);
     const enUrl = pageAbsoluteUrl(pair.en);
     const alternates = {

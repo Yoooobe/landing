@@ -10,23 +10,20 @@
 | Done | P1 | Performance | `EnvMarketingScripts` (só env) fora do fetch Sanity; CMS só se env ausente | Medium | Low | `EnvMarketingScripts.tsx`, `MarketingScripts.tsx`, `AppProviders.tsx` |
 | Done | P2 | i18n | `<html lang>` só no servidor via `htmlLangForLocale()`; sem correção pós-hidratação no cliente | Medium | Low | `src/lib/locale.ts`, `src/app/(pt)/layout.tsx`, `src/app/(en)/en/layout.tsx`, `src/app/(studio)/layout.tsx` |
 | Done | P2 | Performance | Motion no funil home: mantido acima da dobra no `HomeHero`; entradas `whileInView` extra em secções sem motion | Medium | Low | `FourUnikComplementStrip.tsx`, `EnterpriseTrustStrip.tsx`, `HomeFinalCta.tsx`, `TrustBar.tsx`, `SectionLeadCta.tsx` |
-| Done | P1 | Content | Rotas `/para-plataformas/` + `/en/para-plataformas/` — ICP plataformas/B2B SaaS embedded: API como camada de execução, fluxo Product/Inventory/Checkout, SDK Node/Python, sandbox, webhooks. Copy sem claims sensíveis | High | Medium | `src/app/(pt)/para-plataformas/`, `src/app/(en)/en/para-plataformas/`, `src/messages/segments/*-para-plataformas-page.ts`, `src/sanity/lib/marketingPages.ts` |
-| Done | P2 | Content | Rotas `/educacao/` + `/en/educacao/` — ICP e-learning: recompensa tangível por conclusão (sem citar o número Boticário na copy pública) | Medium | Medium | `src/app/(pt)/educacao/`, `src/app/(en)/en/educacao/`, `src/messages/segments/*-educacao-page.ts` |
-| Done | P2 | Content | Rotas `/vendas/` + `/en/vendas/` — ICP VP de Vendas: incentivo integrado ao CRM com premiação instantânea | Medium | Medium | `src/app/(pt)/vendas/`, `src/app/(en)/en/vendas/`, `src/messages/segments/*-vendas-page.ts` |
-| Done | P3 | Content | Rotas `/comunidades/` + `/en/comunidades/` — ICP criadores/comunidades: loja VIP de fãs com fulfillment 4unik | Medium | Medium | `src/app/(pt)/comunidades/`, `src/app/(en)/en/comunidades/`, `src/messages/segments/*-comunidades-page.ts` |
-| Done | P3 | Content | Rotas `/eventos/` + `/en/eventos/` — ICP produtores de eventos: pontos no evento + checkout no celular, retirada/entrega rastreada | Medium | Medium | `src/app/(pt)/eventos/`, `src/app/(en)/en/eventos/`, `src/messages/segments/*-eventos-page.ts` |
-| Done | P1 | Content | UI dedicada ICP (`IcpProfilePage`, hero temático, showcases `public/screens/icp/`, bloco `icpProfilePage`) — PR [#3](https://github.com/Yoooobe/landing/pull/3) | High | Medium | `src/components/icp/`, `src/config/icp-profile-visuals.ts`, `src/lib/icpVerticalPages.ts` |
-| Done | P2 | CMS | Guardrails Studio: `marketingPage` exige ≥1 bloco + meta title/description | Medium | Low | `src/sanity/schemaTypes/marketingPageType.ts`, `docs/cms.md` |
-| Draft | P1 | Content | `/pricing/` PT+EN — 4 planos (Scale sob consulta); **noindex** até `NEXT_PUBLIC_INDEX_GROWTH_PAGES=true` | High | Medium | `src/app/(pt)/pricing/`, `docs/content-approval-queue.md` |
-| Draft | P2 | Content | `/seguranca/` PT+EN — governança sem SLA %; **noindex** até aprovação | Medium | Medium | `src/app/(pt)/seguranca/`, `docs/content-approval-queue.md` |
+| Done | P1 | Content | Rotas ICP verticais (5× PT+EN) + UI dedicada `IcpProfilePage` | High | Medium | `src/components/icp/`, PR [#3](https://github.com/Yoooobe/landing/pull/3) |
+| Done | P2 | CMS | Guardrails Studio: `marketingPage` exige ≥1 bloco + meta title/description | Medium | Low | `src/sanity/schemaTypes/marketingPageType.ts` |
+| Done | P1 | GTM | `/pricing/` + `/seguranca/` PT+EN; gate em `content-approval-queue.md`; footer; sitemap condicional | High | Medium | `src/lib/growthPagePublish.ts`, `docs/content-approval-queue.md` |
 
 ## Next Up
 | Priority | Theme | Change | Impact | Risk | Key files |
 | --- | --- | --- | --- | --- | --- |
-| P1 | GTM | Publicar pricing/segurança: aprovar fila em `content-approval-queue.md`, indexar (`INDEX_GROWTH_PAGES`), sitemap + menu | High | Medium | `docs/content-approval-queue.md`, `src/app/sitemap.ts` |
-| P2 | Content | Landing pages por ICP transversal (RH, Marketing) usando a matriz de `icp-messaging-guide.md` | Medium | Medium | `src/messages/segments/`, `docs/knowledge-base/notebooklm/icp-messaging-guide.md` |
-| P2 | Content | Calculadora de ROI + `/recursos/sla/` — prova verificável; sem ROI garantido em JSON-LD | Medium | High | `docs/enterprise-content-strategy.md` |
-| P2 | Content | Revisar prova social/tração (R$ 1,34M, logos, Boticário +308%) e expor na landing só após aprovação de marca/jurídico | Medium | Medium | `src/messages/segments/`, `docs/content-approval-queue.md` |
+| P1 | Ops | GitHub secret `NEXT_PUBLIC_INDEX_GROWTH_PAGES=true` no deploy após assinatura formal na fila | High | Low | `.github/workflows/deploy.yml`, `docs/content-approval-queue.md` |
+| P1 | Content | Publicar valores Scale/Enterprise e comparativos na `/pricing/` após Financeiro + Jurídico | High | Medium | `src/messages/segments/*-pricing-page.ts` |
+| P2 | Content | ICP transversal **RH** (`/rh/`) — matriz `icp-messaging-guide.md` | Medium | Medium | `src/messages/segments/`, `src/app/(pt)/` |
+| P2 | Content | ICP transversal **Marketing** (`/marketing/`) | Medium | Medium | Idem |
+| P2 | Product | Calculadora ROI (`/recursos/roi/`) — fórmula aprovada por Financeiro; sem garantia em JSON-LD | Medium | High | backlog + `docs/enterprise-content-strategy.md` |
+| P2 | Content | Prova social/tração na home (R$ 1,34M, logos, Boticário +308%) após Marca + Jurídico | Medium | Medium | `docs/content-approval-queue.md` |
+| P2 | Content | `/seguranca/` — citar SLA % e certificações só com contrato documentado | Medium | Medium | `src/messages/segments/*-seguranca-page.ts` |
 
 ## Blocked Or Larger Scope
 | Priority | Theme | Change | Reason blocked |

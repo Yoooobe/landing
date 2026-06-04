@@ -471,6 +471,8 @@ Recomendação operacional:
 
 **Validação no Studio (2026-06):** cada `marketingPage` precisa de pelo menos um bloco em `content[]`, `seo.metaTitle` e `seo.metaDescription` preenchidos — o documento não grava mensagens de erro bloqueantes, mas o editor avisa antes de publicar conteúdo incompleto.
 
+**Páginas `/pricing/` e `/seguranca/`:** indexação controlada por `NEXT_PUBLIC_INDEX_GROWTH_PAGES` (secret opcional no [deploy](../.github/workflows/deploy.yml)). Ver gate em [`content-approval-queue.md`](content-approval-queue.md).
+
 Para a `home`, o frontend publico usa `marketingPage.home` como fonte principal da composição e cai no fallback local apenas se o documento estiver ausente ou incompleto.
 O copy base ainda parte dos segmentos locais `src/messages/segments/pt-home.ts`, `src/messages/segments/en-home.ts`, `src/messages/segments/*stats-bento-tabs-why.ts`, `src/messages/segments/*landing-more.ts` e `src/messages/segments/*rest.ts`.
 As superfícies visuais compartilhadas da home continuam vindo do documento nativo `homeShowcaseMedia`, agora reaproveitado pelos blocos nativos do `marketingPage.home`.

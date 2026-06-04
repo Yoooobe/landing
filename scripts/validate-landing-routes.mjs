@@ -33,6 +33,12 @@ const SITEMAP_ROUTE_PAIRS = [
   ["/plataforma/loja-resgate/", "/en/plataforma/loja-resgate/"],
 ];
 
+/** Espelha `GROWTH_INDEX_ROUTE_PAIRS` em `src/lib/growthPagePublish.ts` — ficheiros devem existir sempre. */
+const GROWTH_ROUTE_PAIRS = [
+  ["/pricing/", "/en/pricing/"],
+  ["/seguranca/", "/en/seguranca/"],
+];
+
 const GAMIFICATION_PATHS = [
   "motor-gamificacao",
   "campanhas-gamificacao",
@@ -164,6 +170,11 @@ function main() {
     errors += assertPageExists(enApp, en.replace(/^\/en/, ""), "EN");
   }
 
+  for (const [pt, en] of GROWTH_ROUTE_PAIRS) {
+    errors += assertPageExists(ptApp, pt, "PT growth");
+    errors += assertPageExists(enApp, en.replace(/^\/en/, ""), "EN growth");
+  }
+
   errors = assertGamificationInFile("src/components/Header.tsx", errors);
   errors = assertGamificationInFile("src/components/Footer.tsx", errors);
   errors = assertSitemapIncludesGamification(errors);
@@ -180,13 +191,15 @@ function main() {
     runSmoke(base).then((smokeErrors) => {
       errors += smokeErrors;
       if (errors > 0) process.exit(1);
-      console.log(`validate-landing-routes: OK (${SITEMAP_ROUTE_PAIRS.length} route pairs)`);
+      const pairCount = SITEMAP_ROUTE_PAIRS.length + GROWTH_ROUTE_PAIRS.length;
+  console.log(`validate-landing-routes: OK (${pairCount} route pairs)`);
     });
     return;
   }
 
   if (errors > 0) process.exit(1);
-  console.log(`validate-landing-routes: OK (${SITEMAP_ROUTE_PAIRS.length} route pairs)`);
+  const pairCount = SITEMAP_ROUTE_PAIRS.length + GROWTH_ROUTE_PAIRS.length;
+  console.log(`validate-landing-routes: OK (${pairCount} route pairs)`);
 }
 
 main();

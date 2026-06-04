@@ -136,6 +136,8 @@ export default function Footer() {
         title: f.colResources,
         items: [
           { label: f.links.blog, href: "/blog/" },
+          { label: f.links.pricing, href: "/pricing/" },
+          { label: f.links.seguranca, href: "/seguranca/" },
           { label: f.links.api, href: "/api-integracoes/" },
           {
             label: f.links.catalogo,
