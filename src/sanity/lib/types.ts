@@ -50,6 +50,8 @@ export type MenuDoc = {
 export type LogoCollectionItemDoc = {
   name?: string;
   href?: string;
+  scale?: number | null;
+  treatment?: "mono-light" | "color" | string | null;
   logo?: SanityImageDoc | null;
 };
 
@@ -268,6 +270,8 @@ export type LogoStripItemDoc = {
   _key?: string;
   name?: string;
   href?: string;
+  scale?: number | null;
+  treatment?: "mono-light" | "color" | string | null;
   logo?: SanityImageDoc | null;
 };
 

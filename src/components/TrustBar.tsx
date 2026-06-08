@@ -1,33 +1,29 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
+import { ClientLogoMark } from "@/components/ClientLogoMark";
+import { FALLBACK_TRUST_LOGOS } from "@/config/client-logos-fallback";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { withBasePath } from "@/lib/basePath";
+import type { ClientLogoTreatment } from "@/lib/clientLogoStyles";
 import { getSanityImageUrl } from "@/sanity/lib/image";
-import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useMemo } from "react";
 
 type TrustLogo = {
   src: string;
   alt: string;
+  name?: string;
   href?: string;
+  scale?: number;
+  treatment?: ClientLogoTreatment;
 };
 
 export default function TrustBar() {
   const { m, locale } = useLocaleMessages();
   const { sanity } = useSiteSettings();
   const fallbackLogos = useMemo<TrustLogo[]>(
-    () => [
-      { src: withBasePath("/clients/yampi.svg"), alt: "Yampi" },
-      { src: withBasePath("/clients/prio.svg"), alt: "PRIO" },
-      { src: withBasePath("/clients/hapvida.webp"), alt: "Hapvida" },
-      { src: withBasePath("/clients/join.png"), alt: "Join RH" },
-      { src: withBasePath("/clients/tecnospeed.svg"), alt: "Tecnospeed" },
-      { src: withBasePath("/clients/boticario.webp"), alt: "O Boticário" },
-    ],
+    () => FALLBACK_TRUST_LOGOS.map((logo) => ({ ...logo, name: logo.alt })),
     [],
   );
 
@@ -45,7 +41,10 @@ export default function TrustBar() {
         return {
           src,
           alt: item.logo?.alt || item.name || "Logo",
+          name: item.name,
           href: item.href || undefined,
+          scale: item.scale ?? undefined,
+          treatment: (item.treatment as ClientLogoTreatment | undefined) ?? "mono-light",
         };
       })
       .filter(Boolean) as TrustLogo[];
@@ -57,7 +56,7 @@ export default function TrustBar() {
     <section className="border-b border-t border-white/5 bg-surface-page py-12">
       <div className="container mx-auto px-4 text-center">
         <motion.p
-          className="text-sm font-bold tracking-widest text-white/40 uppercase mb-8"
+          className="mb-8 text-sm font-bold tracking-widest text-white/40 uppercase"
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
@@ -65,33 +64,25 @@ export default function TrustBar() {
         >
           {m.home.trust.title}
         </motion.p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14">
           {logos.map((logo, i) => (
             <motion.div
               key={`${logo.src}-${i}`}
-              className="h-8 md:h-12 flex items-center justify-center opacity-70 hover:opacity-100 transition-opacity"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "0px 0px -12% 0px" }}
               transition={{ delay: i * 0.05, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             >
-              {logo.href ? (
-                isExternalShellHref(resolveShellHref(logo.href, locale)) ? (
-                  <a
-                    href={resolveShellHref(logo.href, locale)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img src={logo.src} alt={logo.alt} loading="lazy" className="h-auto max-h-full max-w-[min(100%,8rem)] object-contain md:max-w-36" />
-                  </a>
-                ) : (
-                  <Link href={resolveShellHref(logo.href, locale)}>
-                    <img src={logo.src} alt={logo.alt} loading="lazy" className="h-auto max-h-full max-w-[min(100%,8rem)] object-contain md:max-w-36" />
-                  </Link>
-                )
-              ) : (
-                <img src={logo.src} alt={logo.alt} loading="lazy" className="h-auto max-h-full max-w-[min(100%,8rem)] object-contain md:max-w-36" />
-              )}
+              <ClientLogoMark
+                src={logo.src}
+                alt={logo.alt}
+                name={logo.name}
+                href={logo.href}
+                locale={locale}
+                display="compact"
+                scale={logo.scale}
+                treatment={logo.treatment}
+              />
             </motion.div>
           ))}
         </div>

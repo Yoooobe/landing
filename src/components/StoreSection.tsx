@@ -73,7 +73,7 @@ export default function StoreSection({
 
         <div className="relative z-10 flex flex-wrap justify-center gap-4">
           <a
-            href="https://catalogo.4unik.com.br"
+            href="https://catalogo.4unik.com.br/product"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 font-bold text-brand-navy-dark transition-colors hover:bg-gray-100 font-sans"

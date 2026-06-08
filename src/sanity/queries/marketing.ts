@@ -24,6 +24,8 @@ const marketingPageProjection = groq`
         items[]{
           name,
           href,
+          scale,
+          treatment,
           logo
         }
       }

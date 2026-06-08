@@ -95,6 +95,8 @@ export const siteSettingsQuery = groq`
       items[]{
         name,
         href,
+        scale,
+        treatment,
         logo
       }
     },
@@ -105,6 +107,8 @@ export const siteSettingsQuery = groq`
       items[]{
         name,
         href,
+        scale,
+        treatment,
         logo
       }
     }

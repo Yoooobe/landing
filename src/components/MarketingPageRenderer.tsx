@@ -31,13 +31,14 @@ import StatsBar from "@/components/StatsBar";
 import StoreSection from "@/components/StoreSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import TrustBar from "@/components/TrustBar";
+import { ClientLogoMark } from "@/components/ClientLogoMark";
+import type { ClientLogoTreatment } from "@/lib/clientLogoStyles";
 import WhySection from "@/components/WhySection";
 import { enCasosPage } from "@/messages/segments/en-casos-page";
 import { enPlataforma } from "@/messages/segments/en-plataforma";
 import { ptCasosPage } from "@/messages/segments/pt-casos-page";
 import { ptPlataforma } from "@/messages/segments/pt-plataforma";
 import { getSanityImageUrl, SANITY_IMAGE_PRESETS } from "@/sanity/lib/image";
-import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
 import type { Locale } from "@/lib/locale";
 import type {
   CaseStudyGridBlockDoc,
@@ -53,8 +54,6 @@ import type {
 } from "@/sanity/lib/types";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
-import type { ReactNode } from "react";
 import LeadCaptureForm, { type LeadFormVariant } from "@/components/LeadCaptureForm";
 import MarketingPageEmptyState from "@/components/MarketingPageEmptyState";
 import FeatureGridMarketingBlock from "@/components/marketing/FeatureGridMarketingBlock";
@@ -264,27 +263,6 @@ function GenericSplitContentBlock({ block }: { block: SplitContentBlockDoc }) {
   );
 }
 
-function renderLogoLink(
-  locale: Locale,
-  href: string | undefined,
-  child: ReactNode,
-) {
-  if (!href) {
-    return child;
-  }
-
-  const resolvedHref = resolveShellHref(href, locale);
-  if (isExternalShellHref(resolvedHref)) {
-    return (
-      <a href={resolvedHref} target="_blank" rel="noopener noreferrer" className="block">
-        {child}
-      </a>
-    );
-  }
-
-  return <Link href={resolvedHref}>{child}</Link>;
-}
-
 function GenericLogoStripBlock({
   block,
   locale,
@@ -296,112 +274,73 @@ function GenericLogoStripBlock({
   const displayStyle =
     block.displayStyle ||
     (block.collection?.collectionKey === "trustBar" ? "compact" : "grid");
+  const display = displayStyle === "compact" ? "compact" : "grid";
 
   if (!items.length) {
     return null;
   }
 
-  if (displayStyle === "compact") {
-    return (
-      <section
-        id={block.sectionId}
-        className="border-b border-t border-white/5 bg-surface-page py-12"
-      >
-        <div className="container mx-auto px-4 text-center">
-          {block.title ? (
-            <p className="mb-8 text-sm font-bold tracking-widest text-white/40 uppercase">
-              {block.title}
-            </p>
-          ) : null}
-          <div className="flex flex-wrap items-center justify-center gap-8 opacity-60 grayscale transition-all duration-500 hover:opacity-100 hover:grayscale-0 md:gap-16">
-            {items.map((item, index) => {
-              const imageUrl = getSanityImageUrl(item.logo, {
-                width: 240,
-                quality: 82,
-              });
-              const inner = (
-                <div
-                  key={`${item.name || "logo"}-${index}`}
-                  className="flex h-8 items-center justify-center opacity-70 transition-opacity hover:opacity-100 md:h-12"
-                >
-                  {imageUrl ? (
-                    <Image
-                      src={imageUrl}
-                      alt={item.logo?.alt?.trim() || item.name || "Logo"}
-                      width={240}
-                      height={96}
-                      className="max-h-full w-auto max-w-[120px] object-contain"
-                      sizes="120px"
-                      unoptimized
-                    />
-                  ) : (
-                    <span className="text-sm font-semibold uppercase tracking-[0.18em] text-white/65">
-                      {item.name}
-                    </span>
-                  )}
-                </div>
-              );
-
-              return (
-                <div key={`${item.name || "logo"}-${index}`}>
-                  {renderLogoLink(locale, item.href, inner)}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-    );
-  }
+  const gridClass =
+    display === "compact"
+      ? "flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14"
+      : "grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-6";
 
   return (
     <section
       id={block.sectionId}
-      className="relative border-t border-white/5 bg-brand-navy-dark py-24"
+      className={
+        display === "compact"
+          ? "border-b border-t border-white/5 bg-surface-page py-12"
+          : "relative border-t border-white/5 bg-brand-navy-dark py-24"
+      }
     >
-      <div className="container mx-auto max-w-6xl px-4 text-center md:px-6">
+      <div className={`container mx-auto px-4 text-center ${display === "grid" ? "max-w-6xl md:px-6" : ""}`}>
         {block.eyebrow ? (
           <div className="mb-4 inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 text-sm font-bold uppercase tracking-wide text-white/80">
             {block.eyebrow}
           </div>
         ) : null}
         {block.title ? (
-          <h2 className="font-heading text-3xl font-black text-white md:text-5xl">{block.title}</h2>
+          display === "compact" ? (
+            <p className="mb-8 text-sm font-bold tracking-widest text-white/40 uppercase">{block.title}</p>
+          ) : (
+            <h2 className="font-heading text-3xl font-black text-white md:text-5xl">{block.title}</h2>
+          )
         ) : null}
         {block.description ? (
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/50">
-            {block.description}
-          </p>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/50">{block.description}</p>
         ) : null}
-        <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className={display === "grid" && (block.title || block.description) ? `mt-10 ${gridClass}` : gridClass}>
           {items.map((item, index) => {
-            const imageUrl = getSanityImageUrl(item.logo, { width: 320, fit: "max", quality: 90 });
-            const inner = (
-              <div
-                className="group flex min-h-[120px] items-center justify-center rounded-2xl border border-white/5 bg-surface-elevated p-6"
-                title={item.logo?.alt?.trim() || item.name || "Logo"}
-              >
-                {imageUrl ? (
-                  <Image
-                    src={imageUrl}
-                    alt={item.logo?.alt?.trim() || item.name || "Logo"}
-                    width={240}
-                    height={120}
-                    className="h-auto max-h-14 w-full max-w-[min(100%,12rem)] object-contain opacity-65 grayscale transition-all duration-300 group-hover:scale-[1.06] group-hover:opacity-100 group-hover:grayscale-0 md:max-h-16"
-                    sizes="(min-width: 768px) 192px, 160px"
-                    unoptimized
-                  />
-                ) : (
-                  <span className="text-sm font-semibold uppercase tracking-[0.18em] text-white/65">
-                    {item.name}
-                  </span>
-                )}
-              </div>
-            );
+            const imageUrl = getSanityImageUrl(item.logo, {
+              width: display === "compact" ? 240 : 320,
+              fit: "max",
+              quality: display === "compact" ? 82 : 90,
+            });
+
+            if (!imageUrl) {
+              return (
+                <span
+                  key={`${item.name || "logo"}-${index}`}
+                  className="text-sm font-semibold uppercase tracking-[0.18em] text-white/65"
+                >
+                  {item.name}
+                </span>
+              );
+            }
 
             return (
-              <div key={`${item.name || "logo"}-${index}`}>
-                {renderLogoLink(locale, item.href, inner)}
+              <div key={`${item.name || "logo"}-${index}`} className="flex items-center justify-center">
+                <ClientLogoMark
+                  src={imageUrl}
+                  alt={item.logo?.alt?.trim() || item.name || "Logo"}
+                  name={item.name}
+                  href={item.href}
+                  locale={locale}
+                  display={display}
+                  scale={item.scale}
+                  treatment={(item.treatment as ClientLogoTreatment | undefined) ?? "mono-light"}
+                />
               </div>
             );
           })}

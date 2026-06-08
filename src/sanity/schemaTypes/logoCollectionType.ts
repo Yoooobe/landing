@@ -46,6 +46,26 @@ export const logoCollectionType = defineType({
               type: "string",
             }),
             defineField({
+              name: "scale",
+              title: "Escala visual",
+              type: "number",
+              description: "1 = tamanho padrão. Use 0.7–1.2 para equilibrar logos desproporcionais.",
+              validation: (Rule) => Rule.min(0.5).max(1.5),
+              initialValue: 1,
+            }),
+            defineField({
+              name: "treatment",
+              title: "Tratamento visual",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Monocromático claro (recomendado)", value: "mono-light" },
+                  { title: "Cor original", value: "color" },
+                ],
+              },
+              initialValue: "mono-light",
+            }),
+            defineField({
               name: "logo",
               title: "Imagem do logo",
               type: "image",

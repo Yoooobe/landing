@@ -1,19 +1,21 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 
+import { ClientLogoMark } from "@/components/ClientLogoMark";
+import { FALLBACK_CLIENTS_GRID_LOGOS } from "@/config/client-logos-fallback";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { withBasePath } from "@/lib/basePath";
+import type { ClientLogoTreatment } from "@/lib/clientLogoStyles";
 import { getSanityImageUrl } from "@/sanity/lib/image";
-import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useMemo } from "react";
 
 type ClientLogo = {
   src: string;
   alt: string;
+  name?: string;
   href?: string;
+  scale?: number;
+  treatment?: ClientLogoTreatment;
 };
 
 export default function ClientsSection() {
@@ -22,16 +24,7 @@ export default function ClientsSection() {
   const c = m.clients;
 
   const fallbackLogos = useMemo<ClientLogo[]>(
-    () => [
-      { src: withBasePath("/clients/yampi.svg"), alt: "Yampi" },
-      { src: withBasePath("/clients/prio.svg"), alt: "PRIO" },
-      { src: withBasePath("/clients/hapvida.webp"), alt: "Hapvida" },
-      { src: withBasePath("/clients/join.png"), alt: "Join RH" },
-      { src: withBasePath("/clients/tecnospeed.svg"), alt: "Tecnospeed" },
-      { src: withBasePath("/clients/boticario.webp"), alt: "O Boticário" },
-      { src: withBasePath("/clients/w1-consultoria.svg"), alt: "W1 Consultoria" },
-      { src: withBasePath("/clients/contabilizei.svg"), alt: "Contabilizei" },
-    ],
+    () => FALLBACK_CLIENTS_GRID_LOGOS.map((logo) => ({ ...logo, name: logo.alt })),
     [],
   );
 
@@ -49,7 +42,10 @@ export default function ClientsSection() {
         return {
           src,
           alt: item.logo?.alt || item.name || "Logo",
+          name: item.name,
           href: item.href || undefined,
+          scale: item.scale ?? undefined,
+          treatment: (item.treatment as ClientLogoTreatment | undefined) ?? "mono-light",
         };
       })
       .filter(Boolean) as ClientLogo[];
@@ -72,49 +68,26 @@ export default function ClientsSection() {
           <p className="mx-auto max-w-2xl font-sans text-lg leading-relaxed text-white/50">{c.sub}</p>
         </div>
 
-        <div className="relative z-10 grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="relative z-10 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-6">
           {logos.map((logo, i) => (
             <motion.div
-              key={logo.alt}
+              key={`${logo.alt}-${i}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05, duration: 0.4 }}
-              className="group flex min-h-[120px] items-center justify-center rounded-2xl border border-white/5 bg-surface-elevated p-6"
-              title={logo.alt}
+              className="flex items-center justify-center"
             >
-              {logo.href ? (
-                isExternalShellHref(resolveShellHref(logo.href, locale)) ? (
-                  <a
-                    href={resolveShellHref(logo.href, locale)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      loading="lazy"
-                      className="h-auto max-h-14 w-full max-w-[min(100%,12rem)] transform object-contain opacity-65 grayscale transition-all duration-300 group-hover:scale-[1.06] group-hover:grayscale-0 group-hover:opacity-100 md:max-h-16"
-                    />
-                  </a>
-                ) : (
-                  <Link href={resolveShellHref(logo.href, locale)}>
-                    <img
-                      src={logo.src}
-                      alt={logo.alt}
-                      loading="lazy"
-                      className="h-auto max-h-14 w-full max-w-[min(100%,12rem)] transform object-contain opacity-65 grayscale transition-all duration-300 group-hover:scale-[1.06] group-hover:grayscale-0 group-hover:opacity-100 md:max-h-16"
-                    />
-                  </Link>
-                )
-              ) : (
-                <img
-                  src={logo.src}
-                  alt={logo.alt}
-                  loading="lazy"
-                  className="h-auto max-h-14 w-full max-w-[min(100%,12rem)] transform object-contain opacity-65 grayscale transition-all duration-300 group-hover:scale-[1.06] group-hover:grayscale-0 group-hover:opacity-100 md:max-h-16"
-                />
-              )}
+              <ClientLogoMark
+                src={logo.src}
+                alt={logo.alt}
+                name={logo.name}
+                href={logo.href}
+                locale={locale}
+                display="grid"
+                scale={logo.scale}
+                treatment={logo.treatment}
+              />
             </motion.div>
           ))}
         </div>

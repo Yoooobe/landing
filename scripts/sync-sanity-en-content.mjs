@@ -756,12 +756,12 @@ export function buildCurrentEnglishMenus() {
               icon: "gamification",
             },
             {
-              _key: "intelligence",
-              label: enNav.intelligence.title,
-              description: enNav.intelligence.desc,
-              href: "/inteligencia",
-              badge: enNav.intelligence.badge,
-              icon: "intelligence",
+              _key: "gamification-campaigns",
+              label: enNav.gamificationCampaigns.title,
+              description: enNav.gamificationCampaigns.desc,
+              href: "/plataforma/campanhas-gamificacao",
+              badge: enNav.gamificationCampaigns.badge,
+              icon: "gamification",
             },
           ],
         },
@@ -770,17 +770,18 @@ export function buildCurrentEnglishMenus() {
           title: "Solutions",
           items: [
             {
-              _key: "cases",
-              label: enNav.cases.title,
-              description: enNav.cases.desc,
-              href: "/casos-de-uso",
-              icon: "cases",
+              _key: "gamification-motor",
+              label: enNav.gamification.title,
+              description: enNav.gamification.desc,
+              href: "/plataforma/motor-gamificacao",
+              badge: enNav.gamification.badge,
+              icon: "gamification",
             },
             {
               _key: "rewards",
               label: enNav.rewardsHub.title,
               description: enNav.rewardsHub.desc,
-              href: "https://catalogo.4unik.com.br",
+              href: "https://catalogo.4unik.com.br/product",
               icon: "rewards",
               openInNewTab: true,
             },
@@ -820,9 +821,9 @@ export function buildCurrentEnglishMenus() {
           title: enFooter.colPlatform,
           items: [
             { _key: "motor", label: enFooter.links.motor, href: "/plataforma/motor-gamificacao" },
+            { _key: "campanhas", label: enFooter.links.campanhas, href: "/plataforma/campanhas-gamificacao" },
             { _key: "wallets", label: enFooter.links.wallets, href: "/plataforma/controle-carteiras" },
             { _key: "manager", label: enFooter.links.gestor, href: "/plataforma/painel-gestor" },
-            { _key: "cases", label: enFooter.links.casos, href: "/casos-de-uso" },
           ],
         },
         {
@@ -833,7 +834,7 @@ export function buildCurrentEnglishMenus() {
             {
               _key: "catalog",
               label: enFooter.links.catalogo,
-              href: "https://catalogo.4unik.com.br",
+              href: "https://catalogo.4unik.com.br/product",
               openInNewTab: true,
             },
             {

@@ -1,9 +1,9 @@
 export const ptConversionDock = {
-  formCta: "Pedir contacto",
+  formCta: "Fale com a gente!",
   whatsappCta: "Falar com um especialista",
-  contactNav: "Contacto",
-  mobileGroupTitle: "Contacto",
-  linkForm: "Formulário de contacto",
+  contactNav: "Contato",
+  mobileGroupTitle: "Contato",
+  linkForm: "Formulário de contato",
   linkWhatsapp: "WhatsApp",
   linkDemo: "Agendar demonstração",
 } as const;

@@ -108,6 +108,8 @@ function inteligenciaBlocks(locale: Locale): MarketingPageDoc["content"] {
       description: page.cta.sub,
       primaryLabel: page.cta.button,
       primaryHref: "https://calendly.com/yoobeco/demo",
+      showLeadForm: true,
+      leadFormVariant: "inteligencia",
     },
   ];
 }
@@ -203,26 +205,17 @@ function apiIntegracoesBlocks(
 function fallbackLogoCollection(
   collectionKey: "trustBar" | "clientsGrid",
 ): LogoCollectionDoc {
-  const items =
-    collectionKey === "trustBar"
-      ? [
-          { name: "Yampi", href: undefined, logoPath: `${BASE_PATH}/clients/yampi.svg` },
-          { name: "PRIO", href: undefined, logoPath: `${BASE_PATH}/clients/prio.svg` },
-          { name: "Hapvida", href: undefined, logoPath: `${BASE_PATH}/clients/hapvida.png` },
-          { name: "Join RH", href: undefined, logoPath: `${BASE_PATH}/clients/join.png` },
-          { name: "Tecnospeed", href: undefined, logoPath: `${BASE_PATH}/clients/tecnospeed.svg` },
-          { name: "O Boticario", href: undefined, logoPath: `${BASE_PATH}/clients/boticario.png` },
-        ]
-      : [
-          { name: "Yampi", href: undefined, logoPath: `${BASE_PATH}/clients/yampi.svg` },
-          { name: "PRIO", href: undefined, logoPath: `${BASE_PATH}/clients/prio.svg` },
-          { name: "Hapvida", href: undefined, logoPath: `${BASE_PATH}/clients/hapvida.png` },
-          { name: "Join RH", href: undefined, logoPath: `${BASE_PATH}/clients/join.png` },
-          { name: "Tecnospeed", href: undefined, logoPath: `${BASE_PATH}/clients/tecnospeed.svg` },
-          { name: "O Boticario", href: undefined, logoPath: `${BASE_PATH}/clients/boticario.png` },
-          { name: "W1 Consultoria", href: undefined, logoPath: `${BASE_PATH}/clients/w1-consultoria.svg` },
-          { name: "Contabilizei", href: undefined, logoPath: `${BASE_PATH}/clients/contabilizei.svg` },
-        ];
+  const trustItems = [
+    { name: "PRIO", logoPath: `${BASE_PATH}/clients/prio-mono.svg`, scale: 1 },
+    { name: "Hapvida", logoPath: `${BASE_PATH}/clients/hapvida-mono.svg`, scale: 0.9 },
+    { name: "Tecnospeed", logoPath: `${BASE_PATH}/clients/tecnospeed.svg`, scale: 0.95 },
+    { name: "O Boticario", logoPath: `${BASE_PATH}/clients/boticario-mono.svg`, scale: 0.88 },
+  ];
+  const gridExtra = [
+    { name: "W1 Consultoria", logoPath: `${BASE_PATH}/clients/w1-consultoria.svg`, scale: 0.82 },
+    { name: "Contabilizei", logoPath: `${BASE_PATH}/clients/contabilizei-mono.svg`, scale: 0.92 },
+  ];
+  const items = collectionKey === "trustBar" ? trustItems : [...trustItems, ...gridExtra];
 
   return {
     _id: `fallback-logo-collection.${collectionKey}`,
@@ -230,7 +223,9 @@ function fallbackLogoCollection(
     collectionKey,
     items: items.map((item) => ({
       name: item.name,
-      href: item.href,
+      href: undefined,
+      scale: item.scale,
+      treatment: "mono-light",
       logo: {
         alt: item.name,
         asset: {
@@ -908,6 +903,8 @@ function casosBlocks(locale: Locale): MarketingPageDoc["content"] {
       description: cta.body,
       primaryLabel: cta.cta,
       primaryHref: "https://calendly.com/yoobeco/demo",
+      showLeadForm: true,
+      leadFormVariant: "casos",
     },
   ];
 }

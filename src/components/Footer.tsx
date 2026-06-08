@@ -115,11 +115,9 @@ export default function Footer() {
         title: f.colPlatform,
         items: [
           { label: f.links.motor, href: "/plataforma/motor-gamificacao/" },
-          { label: m.nav.intelligence.title, href: "/inteligencia/" },
           { label: f.links.campanhas, href: "/plataforma/campanhas-gamificacao/" },
           { label: f.links.wallets, href: "/plataforma/controle-carteiras/" },
           { label: f.links.gestor, href: "/plataforma/painel-gestor/" },
-          { label: f.links.casos, href: "/casos-de-uso/" },
         ],
       },
       {
@@ -141,7 +139,7 @@ export default function Footer() {
           { label: f.links.api, href: "/api-integracoes/" },
           {
             label: f.links.catalogo,
-            href: sanity?.rewardsCatalogUrl?.trim() || "https://catalogo.4unik.com.br",
+            href: sanity?.rewardsCatalogUrl?.trim() || "https://catalogo.4unik.com.br/product",
             openInNewTab: true,
           },
           {

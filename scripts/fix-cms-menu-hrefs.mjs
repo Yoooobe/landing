@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Corrige menus no Sanity (produção): mantém Gamificação Corporativa (motor) + Campanhas
- * no Header/Footer, aponta gamification para o motor, e troca catalogo.yoobe.co → 4unik.
+ * Corrige menus no Sanity (produção): Campanhas em Plataforma, Inteligência/Casos
+ * removidos da navegação (standby), catálogo → /product.
  *
  * Uso: node --env-file=.env.local scripts/fix-cms-menu-hrefs.mjs
  * Requer NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET, SANITY_API_WRITE_TOKEN.
@@ -25,7 +25,7 @@ const client = createClient({
   useCdn: false,
 });
 
-const CATALOG = "https://catalogo.4unik.com.br";
+const CATALOG = "https://catalogo.4unik.com.br/product";
 
 const item = (key, label, href, extra = {}) => ({
   _type: "menuItem",
@@ -39,14 +39,22 @@ const headerProductPt = [
   item("overview", "Visão Geral", "/plataforma/", { icon: "overview", description: "A base da sua operação e gestão." }),
   item("gamification", "Gamificação", "/plataforma/motor-gamificacao/", { icon: "gamification", badge: "CORE", description: "Engaje e premie seu time com mecânicas de jogos." }),
   item("gamificationCampaigns", "Campanhas de Gamificação", "/plataforma/campanhas-gamificacao/", { icon: "gamification", badge: "NOVO", description: "Do byte ao brinde: problema, solução e cases com ROI." }),
-  item("intelligence", "Inteligência", "/inteligencia/", { icon: "intelligence", badge: "NEW", description: "IA avançada para campanhas e recomendações." }),
 ];
 
 const headerProductEn = [
   item("overview", "Overview", "/plataforma/", { icon: "overview", description: "The foundation for program operations and management." }),
   item("gamification", "Gamification", "/plataforma/motor-gamificacao/", { icon: "gamification", badge: "CORE", description: "Engage and reward your team with game mechanics." }),
   item("gamificationCampaigns", "Gamification campaigns", "/plataforma/campanhas-gamificacao/", { icon: "gamification", badge: "NEW", description: "From byte to gift: problem, solution and ROI cases." }),
-  item("intelligence", "Intelligence", "/inteligencia/", { icon: "intelligence", badge: "NEW", description: "Advanced AI for campaigns and recommendations." }),
+];
+
+const headerSolutionsPt = [
+  item("gamification-motor", "Gamificação", "/plataforma/motor-gamificacao/", { icon: "gamification", badge: "CORE", description: "Engaje e premie seu time com mecânicas de jogos." }),
+  item("rewards", "Hub de Prêmios", CATALOG, { icon: "rewards", openInNewTab: true, description: "Milhares de opções incríveis para encantar." }),
+];
+
+const headerSolutionsEn = [
+  item("gamification-motor", "Gamification", "/plataforma/motor-gamificacao/", { icon: "gamification", badge: "CORE", description: "Engage and reward your team with game mechanics." }),
+  item("rewards", "Rewards hub", CATALOG, { icon: "rewards", openInNewTab: true, description: "Thousands of options to delight your people." }),
 ];
 
 const footerPlatformPt = [
@@ -54,7 +62,6 @@ const footerPlatformPt = [
   item("campanhas", "Campanhas de Gamificação", "/plataforma/campanhas-gamificacao/"),
   item("wallets", "Controle de Carteiras (Wallets)", "/plataforma/controle-carteiras/"),
   item("manager", "Painel do Gestor", "/plataforma/painel-gestor/"),
-  item("cases", "Casos de Uso", "/casos-de-uso/"),
 ];
 
 const footerPlatformEn = [
@@ -62,7 +69,6 @@ const footerPlatformEn = [
   item("campanhas", "Gamification campaigns", "/plataforma/campanhas-gamificacao/"),
   item("wallets", "Wallet control", "/plataforma/controle-carteiras/"),
   item("manager", "Manager dashboard", "/plataforma/painel-gestor/"),
-  item("cases", "Use cases", "/casos-de-uso/"),
 ];
 
 async function run() {
@@ -73,8 +79,7 @@ async function run() {
       .patch("menu.header.pt")
       .set({
         'sections[_key=="produto"].items': headerProductPt,
-        'sections[_key=="solucoes"].items[_key=="cases"].href': "/casos-de-uso/",
-        'sections[_key=="solucoes"].items[_key=="rewards"].href': CATALOG,
+        'sections[_key=="solucoes"].items': headerSolutionsPt,
         'sections[_key=="api"].items[_key=="apiHub"].href': "/api-integracoes/",
       })
       .commit(),
@@ -85,8 +90,7 @@ async function run() {
       .patch("menu.header.en")
       .set({
         'sections[_key=="product"].items': headerProductEn,
-        'sections[_key=="solutions"].items[_key=="cases"].href': "/casos-de-uso/",
-        'sections[_key=="solutions"].items[_key=="rewards"].href': CATALOG,
+        'sections[_key=="solutions"].items': headerSolutionsEn,
         'sections[_key=="api"].items[_key=="apiHub"].href': "/api-integracoes/",
       })
       .commit(),
@@ -111,6 +115,13 @@ async function run() {
         'sections[_key=="resources"].items[_key=="api"].href': "/api-integracoes/",
         'sections[_key=="resources"].items[_key=="catalog"].href': CATALOG,
       })
+      .commit(),
+  );
+
+  results.push(
+    await client
+      .patch("siteSettings")
+      .set({ rewardsCatalogUrl: CATALOG })
       .commit(),
   );
 
