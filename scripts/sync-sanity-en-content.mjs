@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { execSync } from "node:child_process";
 import { pathToFileURL } from "node:url";
 import { createClient } from "@sanity/client";
 import { seedDocuments } from "./sanity-seed-data.mjs";
@@ -127,10 +128,17 @@ const enBlogPage = loadNamedExportObject("src/messages/segments/en-blog-page.ts"
 const enRest = loadNamedExportObject("src/messages/segments/en-rest.ts", "enRest");
 const workvivoMeta = loadNamedExportObject("src/content/workvivo.ts", "workvivoMeta");
 const workvivoContent = loadNamedExportObject("src/content/workvivo.ts", "workvivoContent");
-const blogFallbackImg = loadConstObject("src/lib/blogFallback.ts", "IMG");
-const enFallbackBlogPosts = materializeSeedPosts(
-  loadConstObject("src/lib/blogFallback.ts", "enSeed", { IMG: blogFallbackImg }),
-);
+function loadBlogFallbackEnSeed() {
+  const json = execSync("npx tsx scripts/export-blog-en-seed.ts", {
+    cwd: ROOT_DIR,
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "pipe"],
+    maxBuffer: 16 * 1024 * 1024,
+  });
+  return JSON.parse(json.trim());
+}
+
+const enFallbackBlogPosts = materializeSeedPosts(loadBlogFallbackEnSeed());
 
 function parseEnvFile(filePath) {
   if (!fs.existsSync(filePath)) return {};

@@ -15,6 +15,14 @@ Prefixar `/landing` em rotas conhecidas, **sem fundir** páginas de gamificaçã
 | `/blog/*` | `/landing/blog/*` |
 | `/en/*` | `/landing/en/*` |
 | `/gamificacao/` | `/landing/gamificacao/` (atalho legado; não substitui motor nem campanhas) |
+| `/para-plataformas/*` | `/landing/para-plataformas/*` |
+| `/educacao/*` | `/landing/educacao/*` |
+| `/vendas/*` | `/landing/vendas/*` |
+| `/comunidades/*` | `/landing/comunidades/*` |
+| `/eventos/*` | `/landing/eventos/*` |
+| `/pricing/*` | `/landing/pricing/*` |
+| `/seguranca/*` | `/landing/seguranca/*` |
+| `/workvivo/*` | `/landing/workvivo/*` (legado; preferir `/api-integracoes/workvivo/`) |
 
 **Landings de gamificação (destinos finais distintos):**
 
@@ -23,9 +31,11 @@ Prefixar `/landing` em rotas conhecidas, **sem fundir** páginas de gamificaçã
 
 ## Snippet nginx
 
+Snippet pronto para copiar: [`infra/plataforma-4unik-nginx-redirects.conf`](../infra/plataforma-4unik-nginx-redirects.conf)
+
 ```nginx
 # Antes do proxy_pass para gh-pages /landing/
-location ~ ^/(plataforma|api-integracoes|inteligencia|casos-de-uso|blog|en|gamificacao)(/.*)?$ {
+location ~ ^/(plataforma|api-integracoes|inteligencia|casos-de-uso|blog|en|gamificacao|para-plataformas|educacao|vendas|comunidades|eventos|pricing|seguranca|workvivo)(/.*)?$ {
   return 301 https://$host/landing$request_uri;
 }
 ```

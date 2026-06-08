@@ -957,6 +957,9 @@ const enSeed: readonly SeedPost[] = [
   },
 ] as const;
 
+/** EN blog seed (raw) for Sanity sync — `scripts/export-blog-en-seed.ts`. */
+export const blogFallbackEnSeedForSync = enSeed;
+
 const fallbackByLocale = {
   pt: materialize(ptSeed),
   en: materialize(enSeed),

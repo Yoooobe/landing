@@ -1,0 +1,16 @@
+{
+  "name": "leads-ingest-api",
+  "private": true,
+  "version": "1.0.0",
+  "description": "HTTPS endpoint for landing lead forms (static export)",
+  "scripts": {
+    "vercel-build": "echo ok"
+  },
+  "dependencies": {
+    "@vercel/node": "^5.5.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.0"
+  }
+}

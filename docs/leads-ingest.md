@@ -18,6 +18,17 @@ Com `npm run dev`, se `NEXT_PUBLIC_LEADS_INGEST_URL` não estiver definida, o cl
 
 Exemplos de serviços que aceitam POST JSON + CORS: Formspree, Getform, Web3Forms, ou um worker/edge próprio. Configure o URL completo do endpoint no painel do provider e copie-o para `NEXT_PUBLIC_LEADS_INGEST_URL` nas variáveis de build (GitHub Actions / ambiente de CI).
 
+## API incluída no repositório (`leads-ingest-api/`)
+
+Projeto Vercel **separado** (mesmo padrão que [`nano-banana-api/`](../nano-banana-api/)):
+
+1. Deploy: ver [`leads-ingest-api/README.md`](../leads-ingest-api/README.md).
+2. Configure `POSTMARK_SERVER_TOKEN` + `LEADS_NOTIFY_EMAIL` (ou `LEADS_WEBHOOK_URL`).
+3. Defina `NEXT_PUBLIC_LEADS_INGEST_URL=https://<projeto>.vercel.app/api/ingest` no build da landing.
+4. Redeploy (`npm run deploy:gh-pages` ou workflow).
+
+CORS já inclui `https://plataforma.4unik.com.br` por defeito.
+
 ## Sanity (`ctaBlock`)
 
 Blocos `ctaBlock` nas páginas de marketing podem expor o mesmo componente com `showLeadForm` e `leadFormVariant`; ver `docs/cms.md`.

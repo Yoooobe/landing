@@ -89,6 +89,7 @@ jobs:
           NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
           # true após sign-off em docs/content-approval-queue.md — indexa /pricing/ e /seguranca/ no sitemap
           NEXT_PUBLIC_INDEX_GROWTH_PAGES: ${{ secrets.NEXT_PUBLIC_INDEX_GROWTH_PAGES }}
+          NEXT_PUBLIC_LEADS_INGEST_URL: ${{ secrets.NEXT_PUBLIC_LEADS_INGEST_URL }}
           # Nano Banana (Studio): URL pública do gerador; embutida no bundle em build-time (ver next.config.ts)
           SANITY_STUDIO_NANO_BANANA_URL: ${{ secrets.SANITY_STUDIO_NANO_BANANA_URL }}
         run: npm run build

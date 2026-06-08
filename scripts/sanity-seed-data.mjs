@@ -2404,7 +2404,7 @@ export const seedDocuments = {
           name: "O Boticário",
           scale: 0.88,
           treatment: "mono-light",
-          logoPath: "public/clients/boticario-mono.svg",
+          logoPath: "public/clients/boticario.webp",
           logoAlt: "Logo do O Boticário",
         },
       ],
@@ -2444,7 +2444,7 @@ export const seedDocuments = {
           name: "O Boticário",
           scale: 0.88,
           treatment: "mono-light",
-          logoPath: "public/clients/boticario-mono.svg",
+          logoPath: "public/clients/boticario.webp",
           logoAlt: "Logo do O Boticário",
         },
         {

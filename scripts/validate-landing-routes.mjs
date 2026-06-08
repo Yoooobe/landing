@@ -144,6 +144,8 @@ async function runSmoke(baseUrl) {
   const withoutLanding = [
     "https://plataforma.4unik.com.br/plataforma/motor-gamificacao/",
     "https://plataforma.4unik.com.br/plataforma/campanhas-gamificacao/",
+    "https://plataforma.4unik.com.br/para-plataformas/",
+    "https://plataforma.4unik.com.br/pricing/",
   ];
   for (const url of withoutLanding) {
     try {
