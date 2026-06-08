@@ -16,6 +16,11 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - Plataforma (overview): https://plataforma.4unik.com.br/landing/plataforma/ | https://plataforma.4unik.com.br/landing/en/plataforma/
 - Inteligência: https://plataforma.4unik.com.br/landing/inteligencia/ | https://plataforma.4unik.com.br/landing/en/inteligencia/
 - Casos de uso: https://plataforma.4unik.com.br/landing/casos-de-uso/ | https://plataforma.4unik.com.br/landing/en/casos-de-uso/
+- Para plataformas e SaaS: https://plataforma.4unik.com.br/landing/para-plataformas/ | https://plataforma.4unik.com.br/landing/en/para-plataformas/
+- Para educação e e-learning: https://plataforma.4unik.com.br/landing/educacao/ | https://plataforma.4unik.com.br/landing/en/educacao/
+- Para times de vendas: https://plataforma.4unik.com.br/landing/vendas/ | https://plataforma.4unik.com.br/landing/en/vendas/
+- Para criadores e comunidades: https://plataforma.4unik.com.br/landing/comunidades/ | https://plataforma.4unik.com.br/landing/en/comunidades/
+- Para eventos: https://plataforma.4unik.com.br/landing/eventos/ | https://plataforma.4unik.com.br/landing/en/eventos/
 - Blog: https://plataforma.4unik.com.br/landing/blog/ | https://plataforma.4unik.com.br/landing/en/blog/
 - robots.txt: https://plataforma.4unik.com.br/landing/robots.txt
 - sitemap: https://plataforma.4unik.com.br/landing/sitemap.xml
