@@ -36,15 +36,15 @@ const CORE_LOGO_SEED_ITEMS = [
 const EXTENDED_LOGO_SEED_ITEMS = [
   logoSeedItem("w1", "W1 Consultoria", "w1-consultoria.svg", 0.72, "mono-light"),
   logoSeedItem("contabilizei", "Contabilizei", "contabilizei.svg", 0.7),
-  logoSeedItem("amaro", "AMARO", "amaro.svg", 0.62),
-  logoSeedItem("auto-compara", "Auto Compara", "auto-compara.svg", 0.88),
-  logoSeedItem("be-multti", "Be.multti", "be-multti.svg", 0.82),
-  logoSeedItem("bling", "bling!", "bling.svg", 0.72),
-  logoSeedItem("bms", "BMS", "bms.svg", 0.78),
-  logoSeedItem("cashin", "Cashin", "cashin.svg", 0.68),
-  logoSeedItem("centauro", "Centauro", "centauro.svg", 0.82),
-  logoSeedItem("hubla", "HUBLA", "hubla.svg", 0.62),
-  logoSeedItem("claro", "Claro", "claro.svg", 0.72),
+  logoSeedItem("amaro", "AMARO", "amaro.png", 0.62),
+  logoSeedItem("auto-compara", "Auto Compara", "auto-compara.png", 0.88),
+  logoSeedItem("be-multti", "BeMultti", "be-multti.png", 0.82),
+  logoSeedItem("bling", "bling!", "bling.png", 0.72),
+  logoSeedItem("bms", "BMS", "bms.png", 0.78),
+  logoSeedItem("cashin", "Cashin", "cashin.png", 0.68),
+  logoSeedItem("centauro", "Centauro", "centauro.png", 0.82),
+  logoSeedItem("hubla", "HUBLA", "hubla.png", 0.62),
+  logoSeedItem("claro", "Claro", "claro.png", 0.72),
 ];
 
 function heroBlock(key, values) {
