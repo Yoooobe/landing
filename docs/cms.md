@@ -921,6 +921,13 @@ Após um push a `main` ou um *Run workflow* bem-sucedido:
 6. **Rotas (CI):** `npm run validate:landing-routes` — inclui motor + campanhas no menu e sitemap.
 7. **OG (opcional):** usa a ferramenta de debug de partilha numa URL de marketing.
 
+### Leads e Postmark (formulários de contacto)
+
+- **Ingest:** [`leads-ingest-api/`](../leads-ingest-api/) na Vercel — `POST` JSON → Postmark (comercial + auto-reply) + documento `leadSubmission`.
+- **Templates / DNS:** [`docs/postmark/`](../postmark/README.md).
+- **Studio:** menu **Leads e audiência** — painel com totais, origem (`source`), idioma e stack GA/GTM de `siteSettings`. Documentos `leadSubmission` são **somente leitura** (criados pela API).
+- **Landing:** `NEXT_PUBLIC_LEADS_INGEST_URL` embutido no build. Detalhes: [`leads-ingest.md`](leads-ingest.md).
+
 ## 7. Contrato de sincronização para agentes
 
 A regra permanente dos agentes está em `.cursor/rules/cms-governance.mdc`.

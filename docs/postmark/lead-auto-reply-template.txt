@@ -1,0 +1,27 @@
+4unik
+=====
+
+{{#equals locale "en"}}
+Thank you, {{name}}!
+
+We received your request from {{company}}. Our team will review it and get back to you shortly.
+{{#if message_preview}}
+Your message:
+{{message_preview}}
+{{/if}}
+
+Book a demo: {{demo_url}}
+{{else}}
+Obrigado, {{name}}!
+
+Recebemos o seu pedido de contacto de {{company}}. A nossa equipa vai analisar e responder em breve.
+{{#if message_preview}}
+A sua mensagem:
+{{message_preview}}
+{{/if}}
+
+Agendar demonstração: {{demo_url}}
+{{/equals}}
+
+---
+{{site_url}}

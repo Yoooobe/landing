@@ -15,6 +15,7 @@ import { platformShowcaseMediaType } from "./platformShowcaseMediaType";
 import { heroBlock } from "./blocks/heroBlock";
 import { legacySectionBlock } from "./blocks/legacySectionBlock";
 import { logoStripBlock } from "./blocks/logoStripBlock";
+import { leadSubmissionType } from "./leadSubmissionType";
 import { logoCollectionType } from "./logoCollectionType";
 import { richTextSection } from "./blocks/richTextSection";
 import { seoType } from "./seoType";
@@ -31,6 +32,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     menuType,
     pageType,
     blogPostType,
+    leadSubmissionType,
     caseStudyGridBlock,
     contentMirrorType,
     marketingPageType,

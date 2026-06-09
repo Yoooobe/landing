@@ -7,6 +7,7 @@
     "vercel-build": "echo ok"
   },
   "dependencies": {
+    "@sanity/client": "^7.8.2",
     "@vercel/node": "^5.5.0",
     "zod": "^3.25.76"
   },

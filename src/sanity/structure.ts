@@ -1,6 +1,7 @@
 import type { StructureBuilder, StructureResolver } from "sanity/structure";
 
 import { apiVersion } from "./env";
+import LeadAudienceDashboard from "./components/LeadAudienceDashboard";
 import { PagePreviewPane } from "./components/PagePreviewPane";
 
 const SITE_SETTINGS_ID = "siteSettings";
@@ -15,6 +16,7 @@ const HIDDEN_TYPES = new Set([
   "apiIntegracoesShowcaseMedia",
   "workvivoShowcaseMedia",
   "logoCollection",
+  "leadSubmission",
   "page",
   "menu",
   "platformShowcaseMedia",
@@ -87,6 +89,37 @@ export const structure: StructureResolver = (S) =>
             .schemaType("siteSettings")
             .documentId(SITE_SETTINGS_ID)
             .title("Configurações do site"),
+        ),
+      S.divider(),
+      S.listItem()
+        .title("Leads e audiência")
+        .id("leads-audience-root")
+        .child(
+          S.list()
+            .title("Leads e audiência")
+            .items([
+              S.listItem()
+                .title("Painel")
+                .id("leads-dashboard")
+                .child(
+                  S.component(LeadAudienceDashboard)
+                    .id("leads-dashboard-pane")
+                    .title("Leads e audiência"),
+                ),
+              S.listItem()
+                .title("Todos os leads")
+                .id("leads-all")
+                .schemaType("leadSubmission")
+                .child(
+                  S.documentList()
+                    .id("leads-all-list")
+                    .title("Leads capturados")
+                    .schemaType("leadSubmission")
+                    .apiVersion(apiVersion)
+                    .filter('_type == "leadSubmission"')
+                    .defaultOrdering([{ field: "submittedAt", direction: "desc" }]),
+                ),
+            ]),
         ),
       S.divider(),
       S.listItem()

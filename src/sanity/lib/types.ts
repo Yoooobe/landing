@@ -1155,3 +1155,37 @@ export type RouteMirrorJsonPayloadDoc = {
   workvivoMeta?: Record<string, RouteSeoPayloadDoc>;
   workvivoContent?: Record<string, unknown>;
 };
+
+export type LeadSubmissionDoc = {
+  _id?: string;
+  _type: "leadSubmission";
+  submittedAt?: string;
+  name?: string;
+  email?: string;
+  company?: string;
+  phone?: string;
+  message?: string;
+  source?: string;
+  locale?: "pt" | "en" | string;
+  status?: "emailed" | "received" | "failed" | string;
+  postmarkInternalId?: string;
+  postmarkAutoReplyId?: string;
+  slug?: { current?: string };
+};
+
+export type LeadStatsQueryResult = {
+  total: number;
+  last7Days: number;
+  last30Days: number;
+  byLocale: { pt: number; en: number };
+  leadsForAggregation: { source?: string }[];
+};
+
+export type LeadAudienceSettingsQueryResult = {
+  gaMeasurementId?: string;
+  gtmContainerId?: string;
+  metaPixelId?: string;
+  linkedinPartnerId?: string;
+  calendlyUrl?: string;
+  contactEmail?: string;
+};

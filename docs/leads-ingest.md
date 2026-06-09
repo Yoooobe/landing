@@ -23,9 +23,12 @@ Exemplos de serviços que aceitam POST JSON + CORS: Formspree, Getform, Web3Form
 Projeto Vercel **separado** (mesmo padrão que [`nano-banana-api/`](../nano-banana-api/)):
 
 1. Deploy: ver [`leads-ingest-api/README.md`](../leads-ingest-api/README.md).
-2. Configure `POSTMARK_SERVER_TOKEN` + `LEADS_NOTIFY_EMAIL` (ou `LEADS_WEBHOOK_URL`).
-3. Defina `NEXT_PUBLIC_LEADS_INGEST_URL=https://<projeto>.vercel.app/api/ingest` no build da landing.
-4. Redeploy (`npm run deploy:gh-pages` ou workflow).
+2. **Postmark:** `POSTMARK_SERVER_TOKEN`, `POSTMARK_TEMPLATE_ID` (`45224995`), `LEADS_FROM_EMAIL`, `LEADS_NOTIFY_EMAIL` (`comercial@4unik.com.br`). Templates para colar: [`docs/postmark/`](../postmark/README.md). DNS: [`docs/postmark/dns-4unik-com-br.md`](../postmark/dns-4unik-com-br.md).
+3. **Sanity:** `SANITY_API_WRITE_TOKEN` + `NEXT_PUBLIC_SANITY_*` — cada submissão cria `leadSubmission` (visível no Studio → **Leads e audiência**).
+4. Defina `NEXT_PUBLIC_LEADS_INGEST_URL=https://leads-ingest-api.vercel.app/api/ingest` no build da landing.
+5. Redeploy (`npm run deploy:gh-pages` ou workflow).
+
+Por submissão, a API envia: (a) email plain para comercial; (b) auto-reply ao visitante via template Postmark; (c) documento no Sanity.
 
 CORS já inclui `https://plataforma.4unik.com.br` por defeito.
 
