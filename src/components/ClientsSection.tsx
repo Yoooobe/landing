@@ -24,7 +24,14 @@ export default function ClientsSection() {
   const c = m.clients;
 
   const fallbackLogos = useMemo<ClientLogo[]>(
-    () => FALLBACK_CLIENTS_GRID_LOGOS.map((logo) => ({ ...logo, name: logo.alt })),
+    () =>
+      FALLBACK_CLIENTS_GRID_LOGOS.map((entry) => ({
+        src: entry.src,
+        alt: entry.name,
+        name: entry.name,
+        scale: entry.scale,
+        treatment: entry.treatment ?? "color",
+      })),
     [],
   );
 
@@ -45,7 +52,7 @@ export default function ClientsSection() {
           name: item.name,
           href: item.href || undefined,
           scale: item.scale ?? undefined,
-          treatment: (item.treatment as ClientLogoTreatment | undefined) ?? "mono-light",
+          treatment: (item.treatment as ClientLogoTreatment | undefined) ?? "color",
         };
       })
       .filter(Boolean) as ClientLogo[];
@@ -68,7 +75,7 @@ export default function ClientsSection() {
           <p className="mx-auto max-w-2xl font-sans text-lg leading-relaxed text-white/50">{c.sub}</p>
         </div>
 
-        <div className="relative z-10 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-6">
+        <div className="relative z-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-5 lg:grid-cols-5">
           {logos.map((logo, i) => (
             <motion.div
               key={`${logo.alt}-${i}`}

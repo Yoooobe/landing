@@ -283,7 +283,7 @@ function GenericLogoStripBlock({
   const gridClass =
     display === "compact"
       ? "flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14"
-      : "grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 lg:grid-cols-6";
+      : "grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 md:gap-5 lg:grid-cols-5";
 
   return (
     <section
@@ -339,7 +339,7 @@ function GenericLogoStripBlock({
                   locale={locale}
                   display={display}
                   scale={item.scale}
-                  treatment={(item.treatment as ClientLogoTreatment | undefined) ?? "mono-light"}
+                  treatment={(item.treatment as ClientLogoTreatment | undefined) ?? "color"}
                 />
               </div>
             );

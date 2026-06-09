@@ -23,6 +23,7 @@ import {
   type IcpVerticalPage,
 } from "@/lib/icpVerticalPages";
 import { BASE_PATH } from "@/lib/basePath";
+import { CORE_CLIENT_LOGOS, EXTENDED_CLIENT_LOGOS } from "@/config/client-logos-fallback";
 import {
   apiVersion,
   dataset,
@@ -205,31 +206,24 @@ function apiIntegracoesBlocks(
 function fallbackLogoCollection(
   collectionKey: "trustBar" | "clientsGrid",
 ): LogoCollectionDoc {
-  const trustItems = [
-    { name: "PRIO", logoPath: `${BASE_PATH}/clients/prio-mono.svg`, scale: 1 },
-    { name: "Hapvida", logoPath: `${BASE_PATH}/clients/hapvida-mono.svg`, scale: 0.9 },
-    { name: "Tecnospeed", logoPath: `${BASE_PATH}/clients/tecnospeed.svg`, scale: 0.95 },
-    { name: "O Boticario", logoPath: `${BASE_PATH}/clients/boticario-mono.svg`, scale: 0.88 },
-  ];
-  const gridExtra = [
-    { name: "W1 Consultoria", logoPath: `${BASE_PATH}/clients/w1-consultoria.svg`, scale: 0.82 },
-    { name: "Contabilizei", logoPath: `${BASE_PATH}/clients/contabilizei-mono.svg`, scale: 0.92 },
-  ];
-  const items = collectionKey === "trustBar" ? trustItems : [...trustItems, ...gridExtra];
+  const entries =
+    collectionKey === "trustBar"
+      ? CORE_CLIENT_LOGOS
+      : [...CORE_CLIENT_LOGOS, ...EXTENDED_CLIENT_LOGOS];
 
   return {
     _id: `fallback-logo-collection.${collectionKey}`,
     title: collectionKey === "trustBar" ? "Trust bar" : "Clients grid",
     collectionKey,
-    items: items.map((item) => ({
+    items: entries.map((item) => ({
       name: item.name,
       href: undefined,
       scale: item.scale,
-      treatment: "mono-light",
+      treatment: item.treatment ?? "color",
       logo: {
         alt: item.name,
         asset: {
-          url: item.logoPath,
+          url: item.src,
         },
       },
     })),

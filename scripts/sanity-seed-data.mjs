@@ -15,6 +15,38 @@ function portableTextBlocks(paragraphs) {
   }));
 }
 
+function logoSeedItem(key, name, file, scale, treatment = "color") {
+  return {
+    _key: key,
+    name,
+    scale,
+    treatment,
+    logoPath: `public/clients/${file}`,
+    logoAlt: `Logo ${name}`,
+  };
+}
+
+const CORE_LOGO_SEED_ITEMS = [
+  logoSeedItem("prio", "PRIO", "prio.svg", 0.82),
+  logoSeedItem("hapvida", "Hapvida", "hapvida.webp", 0.72),
+  logoSeedItem("tecnospeed", "Tecnospeed", "tecnospeed.svg", 0.78),
+  logoSeedItem("boticario", "O Boticário", "boticario.webp", 0.68),
+];
+
+const EXTENDED_LOGO_SEED_ITEMS = [
+  logoSeedItem("w1", "W1 Consultoria", "w1-consultoria.svg", 0.72, "mono-light"),
+  logoSeedItem("contabilizei", "Contabilizei", "contabilizei.svg", 0.7),
+  logoSeedItem("amaro", "AMARO", "amaro.svg", 0.62),
+  logoSeedItem("auto-compara", "Auto Compara", "auto-compara.svg", 0.88),
+  logoSeedItem("be-multti", "Be.multti", "be-multti.svg", 0.82),
+  logoSeedItem("bling", "bling!", "bling.svg", 0.72),
+  logoSeedItem("bms", "BMS", "bms.svg", 0.78),
+  logoSeedItem("cashin", "Cashin", "cashin.svg", 0.68),
+  logoSeedItem("centauro", "Centauro", "centauro.svg", 0.82),
+  logoSeedItem("hubla", "HUBLA", "hubla.svg", 0.62),
+  logoSeedItem("claro", "Claro", "claro.svg", 0.72),
+];
+
 function heroBlock(key, values) {
   return {
     _key: key,
@@ -2374,96 +2406,14 @@ export const seedDocuments = {
       _type: "logoCollection",
       title: "Trust bar institucional",
       collectionKey: "trustBar",
-      items: [
-        {
-          _key: "prio",
-          name: "PRIO",
-          scale: 1,
-          treatment: "mono-light",
-          logoPath: "public/clients/prio-mono.svg",
-          logoAlt: "Logo da PRIO",
-        },
-        {
-          _key: "hapvida",
-          name: "Hapvida",
-          scale: 0.9,
-          treatment: "mono-light",
-          logoPath: "public/clients/hapvida-mono.svg",
-          logoAlt: "Logo da Hapvida",
-        },
-        {
-          _key: "tecnospeed",
-          name: "Tecnospeed",
-          scale: 0.95,
-          treatment: "mono-light",
-          logoPath: "public/clients/tecnospeed.svg",
-          logoAlt: "Logo da Tecnospeed",
-        },
-        {
-          _key: "boticario",
-          name: "O Boticário",
-          scale: 0.88,
-          treatment: "mono-light",
-          logoPath: "public/clients/boticario.webp",
-          logoAlt: "Logo do O Boticário",
-        },
-      ],
+      items: CORE_LOGO_SEED_ITEMS,
     },
     {
       _id: "logoCollection.clientsGrid",
       _type: "logoCollection",
       title: "Grid de clientes",
       collectionKey: "clientsGrid",
-      items: [
-        {
-          _key: "prio",
-          name: "PRIO",
-          scale: 1,
-          treatment: "mono-light",
-          logoPath: "public/clients/prio-mono.svg",
-          logoAlt: "Logo da PRIO",
-        },
-        {
-          _key: "hapvida",
-          name: "Hapvida",
-          scale: 0.9,
-          treatment: "mono-light",
-          logoPath: "public/clients/hapvida-mono.svg",
-          logoAlt: "Logo da Hapvida",
-        },
-        {
-          _key: "tecnospeed",
-          name: "Tecnospeed",
-          scale: 0.95,
-          treatment: "mono-light",
-          logoPath: "public/clients/tecnospeed.svg",
-          logoAlt: "Logo da Tecnospeed",
-        },
-        {
-          _key: "boticario",
-          name: "O Boticário",
-          scale: 0.88,
-          treatment: "mono-light",
-          logoPath: "public/clients/boticario.webp",
-          logoAlt: "Logo do O Boticário",
-        },
-        {
-          _key: "w1",
-          name: "W1 Consultoria",
-          scale: 0.82,
-          treatment: "mono-light",
-          logoPath: "public/clients/w1-consultoria.svg",
-          logoAlt: "Logo da W1 Consultoria",
-        },
-        {
-          _key: "contabilizei",
-          name: "Contabilizei",
-          scale: 0.92,
-          treatment: "mono-light",
-          logoPath: "public/clients/contabilizei-mono.svg",
-          logoAlt: "Logo da Contabilizei",
-        },
-      ],
+      items: [...CORE_LOGO_SEED_ITEMS, ...EXTENDED_LOGO_SEED_ITEMS],
     },
   ],
   homeShowcaseMedia: [

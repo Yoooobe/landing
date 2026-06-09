@@ -23,7 +23,14 @@ export default function TrustBar() {
   const { m, locale } = useLocaleMessages();
   const { sanity } = useSiteSettings();
   const fallbackLogos = useMemo<TrustLogo[]>(
-    () => FALLBACK_TRUST_LOGOS.map((logo) => ({ ...logo, name: logo.alt })),
+    () =>
+      FALLBACK_TRUST_LOGOS.map((entry) => ({
+        src: entry.src,
+        alt: entry.name,
+        name: entry.name,
+        scale: entry.scale,
+        treatment: entry.treatment ?? "color",
+      })),
     [],
   );
 
@@ -44,7 +51,7 @@ export default function TrustBar() {
           name: item.name,
           href: item.href || undefined,
           scale: item.scale ?? undefined,
-          treatment: (item.treatment as ClientLogoTreatment | undefined) ?? "mono-light",
+          treatment: (item.treatment as ClientLogoTreatment | undefined) ?? "color",
         };
       })
       .filter(Boolean) as TrustLogo[];
@@ -64,7 +71,7 @@ export default function TrustBar() {
         >
           {m.home.trust.title}
         </motion.p>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14">
+        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5">
           {logos.map((logo, i) => (
             <motion.div
               key={`${logo.src}-${i}`}
