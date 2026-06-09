@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 44" role="img" aria-label="Centauro">
+  <rect x="0" y="10" width="170" height="24" rx="4" fill="#00843D"/>
+  <path d="M12 22c0-4 2.5-7 6-7 2.2 0 4 1.2 5 3.1-1.2 1.4-2.4 2.9-3.6 4.3-.8-1.6-2.2-2.6-4-2.6-2.2 0-3.4 1.2-3.4 2.2z" fill="#E30613"/>
+  <text x="34" y="28" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="16" font-weight="800" font-style="italic">CENTAURO</text>
+</svg>

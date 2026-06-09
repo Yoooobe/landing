@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 40" role="img" aria-label="Auto Compara">
+  <rect x="0" y="8" width="8" height="24" rx="2" fill="#E30613"/>
+  <rect x="12" y="14" width="8" height="18" rx="2" fill="#F5A623"/>
+  <rect x="24" y="10" width="8" height="22" rx="2" fill="#7B2CBF"/>
+  <text x="40" y="27" fill="#111111" font-family="system-ui, sans-serif" font-size="18" font-weight="700">Auto Compara</text>
+</svg>
