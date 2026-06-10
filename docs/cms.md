@@ -522,6 +522,9 @@ Neste primeiro passo ele controla:
 | `storeHomeImage`, `productDetailImage`, `cartImage`, `giftWizardImage`, `adminUsersImage`, `adminSettingsImage`, `orderDetailImage` | Imagens da Loja Corporativa (`/plataforma/loja-resgate/`) quando o UI consumir estes campos; já vêm no GROQ |
 | `gamificacaoFeatureCards` (até 2 entradas usadas) | Miniaturas dos dois cards em `PlataformaGamificationEngine` |
 | `gestaoFeatureCards`, `lojaFeatureCards`, `apiFeatureCards` | Ainda **sem** consumidor dedicado no UI; os dados já vêm no GROQ e o Studio pode preparar arte antecipadamente. Próximo passo natural seria ligar a grelhas equivalentes (por exemplo sub-cards de gestão/loja/API) quando essas secções tiverem o mesmo padrão visual que a grelha de gamificação. |
+| `featurePages.manager / .wallets / .loja` (cada um com `heroImage` + `galleryImages[]` até 3) | Substitui o screenshot do hero e os 3 da galeria das páginas `/plataforma/painel-gestor/`, `/plataforma/controle-carteiras/` e `/plataforma/loja-resgate/`. Vazio = usa os screenshots estáticos de `public/`. Consumido por `PlatformFeaturePage` via `getPlatformFeaturePageOverrides`. As imagens são exibidas em moldura `ScreenshotCard` (object-contain, sem corte, com zoom no hover). |
+
+> Imagens nas páginas de feature e nos cards de recompensa do case Hapvida (`homeShowcaseMedia.enterpriseCases.hapvidaRewardImage1/2`) são opcionais: sem upload, o site usa os screenshots estáticos correspondentes em `public/`.
 
 Fluxo recomendado:
 

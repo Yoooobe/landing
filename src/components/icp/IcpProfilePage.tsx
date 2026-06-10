@@ -2,6 +2,7 @@ import IcpProfileHero from "@/components/icp/IcpProfileHero";
 import IcpProfileProblemSection from "@/components/icp/IcpProfileProblemSection";
 import IcpProfileHowSection from "@/components/icp/IcpProfileHowSection";
 import IcpProfileBenefitsSection from "@/components/icp/IcpProfileBenefitsSection";
+import IcpProfileCaseSection from "@/components/icp/IcpProfileCaseSection";
 import MarketingFaqSection from "@/components/MarketingFaqSection";
 import { getIcpProfileVisual } from "@/config/icp-profile-visuals";
 import { getIcpVerticalPage } from "@/lib/icpVerticalPages";
@@ -33,6 +34,9 @@ export default function IcpProfilePage({ locale, slug }: Props) {
       <IcpProfileProblemSection problem={page.problem} visual={visual} />
       <IcpProfileHowSection how={page.how} visual={visual} />
       <IcpProfileBenefitsSection benefits={page.benefits} visual={visual} />
+      {page.caseStudy ? (
+        <IcpProfileCaseSection caseStudy={page.caseStudy} visual={visual} />
+      ) : null}
       <MarketingFaqSection
         tone="light"
         faq={{

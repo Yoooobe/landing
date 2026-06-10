@@ -18,6 +18,26 @@ function imageField(name: string, title: string, description?: string) {
   });
 }
 
+function featurePageGroup(name: string, title: string) {
+  return defineField({
+    name,
+    title,
+    type: "object",
+    options: { collapsible: true, collapsed: true },
+    fields: [
+      imageField("heroImage", "Screenshot do hero", "Substitui o screenshot principal do topo da página."),
+      defineField({
+        name: "galleryImages",
+        title: "Galeria (até 3)",
+        type: "array",
+        description: "Index-alinhado com os 3 cards da galeria da página.",
+        of: [imageField("galleryImage", "Screenshot da galeria")],
+        validation: (Rule) => Rule.max(3),
+      }),
+    ],
+  });
+}
+
 function imageWithEmojiField(name: string, title: string, description?: string) {
   return defineField({
     name,
@@ -196,6 +216,20 @@ export const platformShowcaseMediaType = defineType({
       "Loja Corporativa — detalhe do pedido entregue",
       "Tela do colaborador mostrando pedido com status Entregue e código de rastreio.",
     ),
+    // ── Páginas de feature (/plataforma/painel-gestor, /controle-carteiras, /loja-resgate) ──
+    defineField({
+      name: "featurePages",
+      title: "Páginas de feature (hero + galeria)",
+      type: "object",
+      description:
+        "Substitui o screenshot do hero e os 3 da galeria de cada página de feature. Vazio = usa os screenshots estáticos.",
+      options: { collapsible: true, collapsed: true },
+      fields: [
+        featurePageGroup("manager", "Painel do Gestor (/painel-gestor)"),
+        featurePageGroup("wallets", "Controle de Carteiras (/controle-carteiras)"),
+        featurePageGroup("loja", "Loja de Resgate (/loja-resgate)"),
+      ],
+    }),
   ],
   preview: {
     select: {

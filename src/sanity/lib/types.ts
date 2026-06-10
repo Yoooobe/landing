@@ -483,6 +483,8 @@ export type HomeShowcaseMediaDoc = {
   enterpriseCases?: {
     hapvidaLogoImage?: SanityImageDoc | null;
     hapvidaCaseImage?: SanityImageDoc | null;
+    hapvidaRewardImage1?: SanityImageDoc | null;
+    hapvidaRewardImage2?: SanityImageDoc | null;
     prioLogoImage?: SanityImageDoc | null;
     prioCaseImage?: SanityImageDoc | null;
   };
@@ -530,6 +532,16 @@ export type PlatformShowcaseMediaDoc = {
   adminUsersImage?: SanityImageDoc | null;
   adminSettingsImage?: SanityImageDoc | null;
   orderDetailImage?: SanityImageDoc | null;
+  featurePages?: {
+    manager?: PlatformFeaturePageMediaDoc | null;
+    wallets?: PlatformFeaturePageMediaDoc | null;
+    loja?: PlatformFeaturePageMediaDoc | null;
+  };
+};
+
+export type PlatformFeaturePageMediaDoc = {
+  heroImage?: SanityImageDoc | null;
+  galleryImages?: Array<SanityImageDoc | null> | null;
 };
 
 export type GamificacaoShowcaseCaseVisualDoc = {

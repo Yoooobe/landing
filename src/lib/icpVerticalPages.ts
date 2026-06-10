@@ -39,6 +39,16 @@ export type IcpVerticalPage = {
     readonly items: readonly IcpVerticalItem[];
   };
   readonly benefits: { readonly badge: string; readonly title: string; readonly items: readonly IcpVerticalItem[] };
+  readonly caseStudy?: {
+    readonly badge: string;
+    readonly company: string;
+    readonly title: string;
+    readonly body: string;
+    readonly logoSrc: string;
+    readonly logoAlt: string;
+    readonly metrics: readonly { readonly value: string; readonly label: string }[];
+    readonly screenshots: readonly { readonly src: string; readonly alt: string; readonly caption: string }[];
+  };
   readonly faq: { readonly items: readonly { readonly q: string; readonly a: string }[] };
   readonly cta: {
     readonly eyebrow: string;

@@ -45,7 +45,12 @@ const QUERY = `*[
   giftWizardImage ${imageFields},
   adminUsersImage ${imageFields},
   adminSettingsImage ${imageFields},
-  orderDetailImage ${imageFields}
+  orderDetailImage ${imageFields},
+  featurePages{
+    manager{ heroImage ${imageFields}, galleryImages[] ${imageFields} },
+    wallets{ heroImage ${imageFields}, galleryImages[] ${imageFields} },
+    loja{ heroImage ${imageFields}, galleryImages[] ${imageFields} }
+  }
 }`;
 
 export async function getPlatformShowcaseMedia(
@@ -63,4 +68,29 @@ export async function getPlatformShowcaseMedia(
   } catch {
     return null;
   }
+}
+
+type FeaturePageOverrides = {
+  heroImageOverride: string | null;
+  galleryOverrides: Array<string | null>;
+};
+
+/**
+ * Resolve hero + gallery Sanity overrides for a `PlatformFeaturePage` sub-page.
+ * Returns absolute asset URLs (or null) so the component falls back to static
+ * `public/` screenshots when the editor has not uploaded a replacement.
+ */
+export async function getPlatformFeaturePageOverrides(
+  locale: Locale,
+  key: "manager" | "wallets" | "loja",
+): Promise<FeaturePageOverrides> {
+  const doc = await getPlatformShowcaseMedia(locale, "plataforma");
+  const group = doc?.featurePages?.[key];
+  const toUrl = (image: { asset?: { url?: string } | null } | null | undefined): string | null =>
+    image?.asset?.url ?? null;
+
+  return {
+    heroImageOverride: toUrl(group?.heroImage),
+    galleryOverrides: (group?.galleryImages ?? []).map(toUrl),
+  };
 }

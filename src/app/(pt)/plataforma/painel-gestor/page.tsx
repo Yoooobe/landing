@@ -3,6 +3,7 @@ import JsonLdScript from "@/components/seo/JsonLdScript";
 import { ptPlatformFeaturePages } from "@/content/platformFeaturePages";
 import { buildPlatformFeatureBreadcrumbJsonLd } from "@/lib/marketingBreadcrumbs";
 import { buildRoutePageMetadata } from "@/lib/seo/routeMetadata";
+import { getPlatformFeaturePageOverrides } from "@/sanity/lib/platformShowcase";
 import type { Metadata } from "next";
 
 const PAGE_PATH = "/plataforma/painel-gestor/";
@@ -21,13 +22,22 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function PainelGestorPage() {
+export default async function PainelGestorPage() {
   const breadcrumbLd = buildPlatformFeatureBreadcrumbJsonLd("pt", content.badge, PAGE_PATH);
+  const { heroImageOverride, galleryOverrides } = await getPlatformFeaturePageOverrides(
+    "pt",
+    "manager",
+  );
 
   return (
     <>
       <JsonLdScript data={{ ...breadcrumbLd }} />
-      <PlatformFeaturePage content={content} leadSource="plataforma-painel-gestor" />
+      <PlatformFeaturePage
+        content={content}
+        leadSource="plataforma-painel-gestor"
+        heroImageOverride={heroImageOverride}
+        galleryOverrides={galleryOverrides}
+      />
     </>
   );
 }

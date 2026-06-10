@@ -4,6 +4,7 @@ import { LocaleMessagesProvider } from "@/contexts/LocaleMessagesContext";
 import { enPlatformFeaturePages } from "@/content/platformFeaturePages";
 import { buildPlatformFeatureBreadcrumbJsonLd } from "@/lib/marketingBreadcrumbs";
 import { buildRoutePageMetadata } from "@/lib/seo/routeMetadata";
+import { getPlatformFeaturePageOverrides } from "@/sanity/lib/platformShowcase";
 import type { Metadata } from "next";
 
 const PAGE_PATH = "/en/plataforma/controle-carteiras/";
@@ -22,14 +23,23 @@ export async function generateMetadata(): Promise<Metadata> {
   });
 }
 
-export default function EnControleCarteirasPage() {
+export default async function EnControleCarteirasPage() {
   const breadcrumbLd = buildPlatformFeatureBreadcrumbJsonLd("en", content.badge, PAGE_PATH);
+  const { heroImageOverride, galleryOverrides } = await getPlatformFeaturePageOverrides(
+    "en",
+    "wallets",
+  );
 
   return (
     <>
       <JsonLdScript data={{ ...breadcrumbLd }} />
       <LocaleMessagesProvider locale="en">
-        <PlatformFeaturePage content={content} leadSource="plataforma-controle-carteiras" />
+        <PlatformFeaturePage
+          content={content}
+          leadSource="plataforma-controle-carteiras"
+          heroImageOverride={heroImageOverride}
+          galleryOverrides={galleryOverrides}
+        />
       </LocaleMessagesProvider>
     </>
   );

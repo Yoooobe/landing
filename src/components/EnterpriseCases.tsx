@@ -28,6 +28,12 @@ export default function EnterpriseCases({
   const prioCaseImageUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.enterpriseCases?.prioCaseImage,
   );
+  const hapvidaReward1Url =
+    getSanityImageUrl(homeContent?.showcaseMedia?.enterpriseCases?.hapvidaRewardImage1) ||
+    withBasePath("/loja-corporativa/product-detail.webp");
+  const hapvidaReward2Url =
+    getSanityImageUrl(homeContent?.showcaseMedia?.enterpriseCases?.hapvidaRewardImage2) ||
+    withBasePath("/screens/member-store-home.webp");
 
   return (
     <section className="py-24 bg-surface-base relative border-t border-white/5 overflow-hidden">
@@ -151,13 +157,31 @@ export default function EnterpriseCases({
                       <div className="space-y-3">
                         <div className="text-sm font-bold text-white mb-3">{h.mockRewardsTitle}</div>
                         <div className="flex gap-4">
-                          <div className="flex-1 h-24 rounded-xl bg-white/5 border border-white/5 p-3 flex flex-col justify-end group-hover:bg-white/10 transition-colors">
-                            <div className="w-full h-2 bg-white/20 rounded-full mb-2"></div>
-                            <div className="w-1/2 h-2 bg-blue-400/50 rounded-full"></div>
+                          <div className="flex-1 h-24 rounded-xl bg-white/5 border border-white/5 p-2 flex flex-col gap-2 group-hover:bg-white/10 transition-colors">
+                            <div className="relative flex-1 overflow-hidden rounded-lg bg-[#0b0e14]">
+                              <Image
+                                src={hapvidaReward1Url}
+                                alt="Recompensa em destaque na loja Hapvida"
+                                fill
+                                sizes="160px"
+                                className="object-contain"
+                                unoptimized
+                              />
+                            </div>
+                            <div className="w-1/2 h-1.5 bg-blue-400/50 rounded-full"></div>
                           </div>
-                          <div className="flex-1 h-24 rounded-xl bg-white/5 border border-white/5 p-3 flex flex-col justify-end group-hover:bg-white/10 transition-colors">
-                            <div className="w-full h-2 bg-white/20 rounded-full mb-2"></div>
-                            <div className="w-2/3 h-2 bg-blue-400/50 rounded-full"></div>
+                          <div className="flex-1 h-24 rounded-xl bg-white/5 border border-white/5 p-2 flex flex-col gap-2 group-hover:bg-white/10 transition-colors">
+                            <div className="relative flex-1 overflow-hidden rounded-lg bg-[#0b0e14]">
+                              <Image
+                                src={hapvidaReward2Url}
+                                alt="Catálogo de recompensas Hapvida"
+                                fill
+                                sizes="160px"
+                                className="object-contain"
+                                unoptimized
+                              />
+                            </div>
+                            <div className="w-2/3 h-1.5 bg-blue-400/50 rounded-full"></div>
                           </div>
                         </div>
                       </div>

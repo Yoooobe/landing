@@ -155,6 +155,16 @@ export const homeShowcaseMediaType = defineType({
           "Substitui o mockup completo do case Hapvida.",
         ),
         imageField(
+          "hapvidaRewardImage1",
+          "Recompensa Hapvida 1",
+          "Primeiro card de recompensa no mockup do case Hapvida (fallback: loja-corporativa/product-detail).",
+        ),
+        imageField(
+          "hapvidaRewardImage2",
+          "Recompensa Hapvida 2",
+          "Segundo card de recompensa no mockup do case Hapvida (fallback: screens/member-store-home).",
+        ),
+        imageField(
           "prioLogoImage",
           "Logo da Prio",
           "Substitui o selo/logo usado no card Prio.",

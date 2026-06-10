@@ -92,7 +92,7 @@ export default function DedicatedIntegrations({
                   }
                   fill
                   sizes="(min-width: 1024px) 384px, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                   unoptimized
                 />
               ) : (
@@ -131,7 +131,7 @@ export default function DedicatedIntegrations({
                     </div>
                   </div>
 
-                  <div className="absolute top-1/2 -right-4 bg-brand-navy-dark text-white text-[10px] px-3 py-1.5 rounded-l-lg font-mono shadow-2xl flex items-center gap-2 border border-white/10">
+                  <div className="absolute top-3 right-3 bg-brand-navy-dark text-white text-[10px] px-3 py-1.5 rounded-lg font-mono shadow-2xl flex items-center gap-2 border border-white/10">
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
                     {w.realtime}
                   </div>

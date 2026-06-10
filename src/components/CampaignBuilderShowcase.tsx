@@ -280,7 +280,7 @@ export default function CampaignBuilderShowcase() {
                       alt={step.title}
                       fill
                       sizes="(min-width: 1024px) 55vw, 100vw"
-                      className="object-cover object-top"
+                      className="object-contain"
                       unoptimized
                       decoding="async"
                     />

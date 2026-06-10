@@ -34,6 +34,8 @@ const homeShowcaseMediaProjection = `{
     enterpriseCases{
       hapvidaLogoImage ${imageFields},
       hapvidaCaseImage ${imageFields},
+      hapvidaRewardImage1 ${imageFields},
+      hapvidaRewardImage2 ${imageFields},
       prioLogoImage ${imageFields},
       prioCaseImage ${imageFields}
     },

@@ -1,7 +1,7 @@
 import LeadCaptureForm from "@/components/LeadCaptureForm";
+import ScreenshotCard from "@/components/ui/ScreenshotCard";
 import type { PlatformFeaturePageContent } from "@/content/platformFeaturePages";
 import { withBasePath } from "@/lib/basePath";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 
@@ -9,13 +9,26 @@ type Props = {
   content: PlatformFeaturePageContent;
   /** Passed to `LeadCaptureForm` `source` (e.g. `plataforma-loja-resgate`). */
   leadSource: string;
+  /** Optional Sanity override for the hero screenshot (absolute URL). */
+  heroImageOverride?: string | null;
+  /** Optional Sanity overrides per gallery item (absolute URLs, index-aligned). */
+  galleryOverrides?: ReadonlyArray<string | null | undefined>;
 };
+
+function resolveScreenshotSrc(override: string | null | undefined, fallback: string): string {
+  return override ? override : withBasePath(fallback);
+}
 
 function isExternalHref(href: string): boolean {
   return /^https?:\/\//.test(href);
 }
 
-export default function PlatformFeaturePage({ content, leadSource }: Props) {
+export default function PlatformFeaturePage({
+  content,
+  leadSource,
+  heroImageOverride = null,
+  galleryOverrides = [],
+}: Props) {
   return (
     <div className="min-h-screen bg-brand-navy-dark text-white">
       <section className="relative overflow-hidden border-b border-white/5 pt-32 pb-18">
@@ -62,17 +75,14 @@ export default function PlatformFeaturePage({ content, leadSource }: Props) {
 
             <div className="relative">
               <div className="absolute -inset-4 rounded-[2rem] bg-linear-to-r from-brand-orange/20 via-unik-blue/15 to-demo-cyan/20 blur-2xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-surface-panel shadow-2xl">
-                <div className="relative aspect-16/10 w-full">
-                  <Image
-                    src={withBasePath(content.imageSrc)}
-                    alt={content.imageAlt}
-                    fill
-                    sizes="(min-width: 1024px) 45vw, 100vw"
-                    className="object-cover object-top"
-                  />
-                </div>
-              </div>
+              <ScreenshotCard
+                src={resolveScreenshotSrc(heroImageOverride, content.imageSrc)}
+                alt={content.imageAlt}
+                aspectRatio="16/10"
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="relative"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -132,24 +142,15 @@ export default function PlatformFeaturePage({ content, leadSource }: Props) {
             <h2 className="text-3xl font-black md:text-4xl">{content.galleryTitle}</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
-            {content.gallery.map((item) => (
-              <div
+            {content.gallery.map((item, index) => (
+              <ScreenshotCard
                 key={item.src}
-                className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-surface-panel"
-              >
-                <div className="relative aspect-16/10 w-full">
-                  <Image
-                    src={withBasePath(item.src)}
-                    alt={item.alt}
-                    fill
-                    sizes="(min-width: 1024px) 30vw, 100vw"
-                    className="object-cover object-top"
-                  />
-                </div>
-                <div className="p-5">
-                  <p className="text-sm leading-relaxed text-white/60">{item.caption}</p>
-                </div>
-              </div>
+                src={resolveScreenshotSrc(galleryOverrides[index], item.src)}
+                alt={item.alt}
+                aspectRatio="16/10"
+                sizes="(min-width: 1024px) 30vw, 100vw"
+                caption={item.caption}
+              />
             ))}
           </div>
         </div>

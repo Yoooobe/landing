@@ -79,6 +79,33 @@ export const enEducacaoPage = {
       },
     ],
   },
+  caseStudy: {
+    badge: "Success story",
+    company: "Grupo Boticário",
+    title: "Gamification that unlocked corporate training",
+    body:
+      "At its Data Center of Excellence, Grupo Boticário turned course completion into points redeemable in an internal store, with branded physical prizes and automated 4Unik logistics. The result: higher adoption of technical training and measurable ROI in corporate education.",
+    logoSrc: "/clients/boticario.webp",
+    logoAlt: "Grupo Boticário logo",
+    metrics: [
+      { value: "+308%", label: "Course opens and completions" },
+      { value: "11k+", label: "Physical prizes shipped" },
+      { value: "R$ 63k", label: "Campaigns with proven ROI" },
+      { value: "6", label: "New teams adopted the model" },
+    ],
+    screenshots: [
+      {
+        src: "/screens/gamif-regras.webp",
+        alt: "Course-completion scoring rules in the 4Unik platform",
+        caption: "Completion-based scoring rules, configurable per team.",
+      },
+      {
+        src: "/screens/admin-campaign-config-desktop.webp",
+        alt: "Training campaign setup with real-time preview",
+        caption: "Training campaign with a prize catalog and real-time preview.",
+      },
+    ],
+  },
   faq: {
     items: [
       {

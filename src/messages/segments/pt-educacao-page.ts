@@ -79,6 +79,33 @@ export const ptEducacaoPage = {
       },
     ],
   },
+  caseStudy: {
+    badge: "Case de sucesso",
+    company: "Grupo Boticário",
+    title: "Gamificação que destravou treinamentos corporativos",
+    body:
+      "No Centro de Excelência em Dados, o Grupo Boticário transformou a conclusão de cursos em pontos resgatáveis numa loja interna, com prêmios físicos brandados e logística automatizada da 4Unik. O resultado foi mais adesão aos treinamentos técnicos e ROI mensurável em educação corporativa.",
+    logoSrc: "/clients/boticario.webp",
+    logoAlt: "Logo do Grupo Boticário",
+    metrics: [
+      { value: "+308%", label: "Abertura e conclusão de cursos" },
+      { value: "11k+", label: "Prêmios físicos enviados" },
+      { value: "R$ 63k", label: "Campanhas com ROI comprovado" },
+      { value: "6", label: "Novas áreas aderiram ao modelo" },
+    ],
+    screenshots: [
+      {
+        src: "/screens/gamif-regras.webp",
+        alt: "Regras de pontuação por conclusão de curso na plataforma 4Unik",
+        caption: "Regras de pontuação por conclusão de trilha, configuráveis por área.",
+      },
+      {
+        src: "/screens/admin-campaign-config-desktop.webp",
+        alt: "Configuração da campanha de treinamento com preview em tempo real",
+        caption: "Campanha de treinamento com catálogo de prêmios e preview em tempo real.",
+      },
+    ],
+  },
   faq: {
     items: [
       {
