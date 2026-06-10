@@ -510,3 +510,43 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     apiLearnMore: "API & integrations hub",
   },
 };
+
+/** FAQ estável para JSON-LD no hub Workvivo (paridade PT/EN). */
+export const workvivoFaqItems: Record<WorkvivoLocale, readonly { q: string; a: string }[]> = {
+  pt: [
+    {
+      q: "O que é o add-on Workvivo × 4Unik?",
+      a: "É a camada de recompensas físicas e loja corporativa que complementa shoutouts, badges e kudos na Workvivo — com pontos, catálogo, checkout e entrega.",
+    },
+    {
+      q: "Como a integração funciona na prática?",
+      a: "Eventos de reconhecimento na Workvivo disparam regras na 4Unik via API ou orquestradores (ex.: Floui). A 4Unik credita pontos, opera a loja e coordena fulfillment ou integração com ERP.",
+    },
+    {
+      q: "Quem opera a entrega das recompensas?",
+      a: "Pode ser fulfillment 4Unik (catálogo e logística) ou conexão via API/ERP do cliente — conforme o modelo comercial acordado.",
+    },
+    {
+      q: "Há cobertura fora do Brasil?",
+      a: "Sim. O add-on atende programas na Europa, EUA e América Latina, com proposta comercial adaptada ao volume e ao modelo de operação.",
+    },
+  ],
+  en: [
+    {
+      q: "What is the Workvivo × 4Unik add-on?",
+      a: "It is the physical rewards and corporate store layer on top of Workvivo shoutouts, badges, and kudos — with points, catalog, checkout, and delivery.",
+    },
+    {
+      q: "How does the integration work in practice?",
+      a: "Recognition events in Workvivo trigger 4Unik rules via API or orchestrators (e.g. Floui). 4Unik credits points, runs the store, and coordinates fulfillment or ERP integration.",
+    },
+    {
+      q: "Who operates reward delivery?",
+      a: "Either 4Unik fulfillment (catalog and logistics) or a connection via the customer's ERP/API — depending on the agreed commercial model.",
+    },
+    {
+      q: "Is there coverage outside Brazil?",
+      a: "Yes. The add-on supports programs in Europe, the US, and Latin America, with a commercial proposal tailored to volume and operating model.",
+    },
+  ],
+};

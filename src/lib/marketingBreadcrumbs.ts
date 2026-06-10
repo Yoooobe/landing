@@ -76,6 +76,21 @@ export function buildMarketingPageBreadcrumbJsonLd(
   ]);
 }
 
+const CAMPANHAS_LABELS: Record<Locale, string> = {
+  pt: "Campanhas de gamificação",
+  en: "Gamification campaigns",
+};
+
+const WORKVIVO_LABELS: Record<Locale, string> = {
+  pt: "Workvivo",
+  en: "Workvivo",
+};
+
+const API_INTEGRACOES_LABELS: Record<Locale, string> = {
+  pt: "API e Integrações",
+  en: "API & Integrations",
+};
+
 /** Breadcrumb JSON-LD for `/plataforma/motor-gamificacao/` (slug CMS: `gamificacao`). */
 export function buildGamificacaoMotorBreadcrumbJsonLd(locale: Locale, pagePath: string) {
   const L = labels(locale);
@@ -86,6 +101,32 @@ export function buildGamificacaoMotorBreadcrumbJsonLd(locale: Locale, pagePath: 
     { name: L.home, path: homePath },
     { name: L.plataforma, path: plataformaPath },
     { name: L.gamificacao, path: pagePath },
+  ]);
+}
+
+/** Breadcrumb JSON-LD for `/plataforma/campanhas-gamificacao/`. */
+export function buildGamificacaoCampanhasBreadcrumbJsonLd(locale: Locale, pagePath: string) {
+  const L = labels(locale);
+  const homePath = locale === "en" ? "/en/" : "/";
+  const plataformaPath = locale === "en" ? "/en/plataforma/" : "/plataforma/";
+
+  return buildBreadcrumbListJsonLd([
+    { name: L.home, path: homePath },
+    { name: L.plataforma, path: plataformaPath },
+    { name: CAMPANHAS_LABELS[locale], path: pagePath },
+  ]);
+}
+
+/** Breadcrumb JSON-LD for `/api-integracoes/workvivo/`. */
+export function buildWorkvivoHubBreadcrumbJsonLd(locale: Locale, pagePath: string) {
+  const L = labels(locale);
+  const homePath = locale === "en" ? "/en/" : "/";
+  const apiPath = locale === "en" ? "/en/api-integracoes/" : "/api-integracoes/";
+
+  return buildBreadcrumbListJsonLd([
+    { name: L.home, path: homePath },
+    { name: API_INTEGRACOES_LABELS[locale], path: apiPath },
+    { name: WORKVIVO_LABELS[locale], path: pagePath },
   ]);
 }
 

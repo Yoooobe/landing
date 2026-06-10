@@ -15,6 +15,14 @@ const ORGANIZATION_KNOWS_ABOUT = [
 
 const ORGANIZATION_ID = `${SITE_URL.replace(/\/$/, "")}/#organization`;
 
+/** Perfis canónicos da entidade (site corporativo; expandir quando houver URLs oficiais verificadas). */
+const ORGANIZATION_SAME_AS = ["https://4unik.com.br/"] as const;
+
+const ORGANIZATION_LOGO = {
+  "@type": "ImageObject" as const,
+  url: pageAbsoluteUrl("/brand/4unik-mark.webp"),
+};
+
 /** Descrição alinhada a `ptHome.seo.description` (fonte única para entidade no schema). */
 export function buildOrganizationJsonLd(description: string = ptHome.seo.description) {
   return {
@@ -23,8 +31,19 @@ export function buildOrganizationJsonLd(description: string = ptHome.seo.descrip
     "@id": ORGANIZATION_ID,
     name: SITE_NAME,
     url: SITE_URL,
+    logo: ORGANIZATION_LOGO,
     description,
     knowsAbout: [...ORGANIZATION_KNOWS_ABOUT],
+    sameAs: [...ORGANIZATION_SAME_AS],
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: "comercial@4unik.com.br",
+        availableLanguage: ["Portuguese", "English"],
+        areaServed: "BR",
+      },
+    ],
   } as const;
 }
 
