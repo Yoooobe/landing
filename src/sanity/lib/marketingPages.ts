@@ -357,7 +357,7 @@ function homeBlocks(
       _type: "statsBlock",
       title: isEn ? "Operational metrics already visible in the platform" : "Metricas operacionais visiveis na plataforma",
       items: stats.statsBar.items.map((item) => ({
-        value: `${item.value}${item.suffix}`.trim(),
+        value: [item.prefix, `${item.value}${item.suffix ?? ""}`].filter(Boolean).join(" "),
         label: item.label,
       })),
     },

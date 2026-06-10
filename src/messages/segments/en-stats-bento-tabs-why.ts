@@ -1,11 +1,28 @@
+import type { StatsBarItem } from "./pt-stats-bento-tabs-why";
+
 export const enStatsBentoTabsWhy = {
   statsBar: {
+    eyebrow: "Impact in numbers",
+    title: "Operating at scale, from Brazil to the world",
+    internationalLabel: "Global presence",
     items: [
-      { value: "500", suffix: "+", label: "Companies served" },
-      { value: "1M", suffix: "+", label: "Rewards delivered" },
-      { value: "98", suffix: "%", label: "Customer satisfaction" },
-      { value: "5000", suffix: "+", label: "Catalog products" },
-    ],
+      { value: "160", label: "companies served in 4 years", highlight: true, group: "operational" },
+      { value: "20M", label: "points redeemed in corporate stores", highlight: true, group: "operational" },
+      { prefix: "Over", value: "R$ 7M", label: "transacted in stores with sales", highlight: true, group: "operational" },
+      { prefix: "Over", value: "340K", label: "products distributed", highlight: true, group: "operational" },
+      { prefix: "over", value: "90K", label: "branded merch shipments completed", group: "operational" },
+      { value: "70", label: "stores launched", group: "operational" },
+      { value: "65K", label: "employees impacted", group: "operational" },
+      { value: "15", label: "external events delivered", group: "operational" },
+      { value: "145", label: "stores launched in 5 years", group: "operational" },
+      { value: "1,900", label: "automated campaigns on the platform in 5 years", group: "operational" },
+      { value: "3", label: "continents with remote delivery · Asia, Europe and the Americas", group: "international" },
+      { value: "6", label: "international clients", group: "international" },
+      { value: "4", label: "unicorn companies", group: "international" },
+      { value: "Merch", label: "branded merchandise production", group: "international" },
+      { value: "US + EU", label: "product shipping in the US and Europe", group: "international" },
+      { value: "Global", label: "active international operations", group: "international" },
+    ] satisfies StatsBarItem[] as StatsBarItem[],
   },
   bento: {
     badge: "Overview",

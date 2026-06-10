@@ -1,11 +1,35 @@
+export type StatsBarItem = {
+  prefix?: string;
+  value: string;
+  suffix?: string;
+  label: string;
+  highlight?: boolean;
+  group: "operational" | "international";
+};
+
 export const ptStatsBentoTabsWhy = {
   statsBar: {
+    eyebrow: "Resultados em números",
+    title: "Operação em escala, do Brasil ao mundo",
+    internationalLabel: "Presença global",
     items: [
-      { value: "500", suffix: "+", label: "Empresas atendidas" },
-      { value: "1M", suffix: "+", label: "Premiações entregues" },
-      { value: "98", suffix: "%", label: "Satisfação dos clientes" },
-      { value: "5000", suffix: "+", label: "Produtos no catálogo" },
-    ],
+      { value: "160", label: "empresas atendidas em 4 anos", highlight: true, group: "operational" },
+      { value: "20 mi", label: "pontos utilizados em trocas nas lojas corporativas", highlight: true, group: "operational" },
+      { prefix: "Mais de", value: "R$ 7 mi", label: "transacionados em lojas com venda", highlight: true, group: "operational" },
+      { prefix: "+ de", value: "340 mil", label: "produtos distribuídos", highlight: true, group: "operational" },
+      { prefix: "mais de", value: "90 mil", label: "envios de brindes realizados", group: "operational" },
+      { value: "70", label: "lojas criadas", group: "operational" },
+      { value: "65 mil", label: "colaboradores impactados", group: "operational" },
+      { value: "15", label: "eventos externos realizados", group: "operational" },
+      { value: "145", label: "lojas criadas em 5 anos", group: "operational" },
+      { value: "1.900", label: "campanhas automáticas na plataforma em 5 anos", group: "operational" },
+      { value: "3", label: "continentes com entrega remota · Ásia, Europa e Américas", group: "international" },
+      { value: "6", label: "clientes internacionais", group: "international" },
+      { value: "4", label: "unicórnios", group: "international" },
+      { value: "Brindes", label: "produção de brindes", group: "international" },
+      { value: "EUA + EU", label: "envio de produtos nos EUA e Europa", group: "international" },
+      { value: "Global", label: "operação internacional ativa", group: "international" },
+    ] satisfies StatsBarItem[] as StatsBarItem[],
   },
   bento: {
     badge: "Visão geral",
