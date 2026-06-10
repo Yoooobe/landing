@@ -39,9 +39,11 @@ Carrega `.env.local`, força `NEXT_PUBLIC_SITE_URL=https://plataforma.4unik.com.
 ### Verificação pós-deploy
 
 1. GA4 → **Relatórios → Tempo real** — visitar `https://plataforma.4unik.com.br/landing/`.
-2. Admin → **Coleta e modificação de dados → Fluxos de dados** — confirmar **Enhanced Measurement** ativo (page views em navegação SPA).
-3. DevTools → Network — pedidos a `google-analytics.com/g/collect` com `tid=G-SMJDYCENBC`.
-4. Build: `node scripts/verify-ga-build.mjs` após `npm run build` — confirma que o ID foi inlined nos chunks (preload no HTML sem ID nos chunks = Realtime vazio).
+2. Admin → **Cobertura da tag** — `plataforma.4unik.com.br/landing` (sem barra) deve estar **Tagged** ou redirecionar 301 a `/landing/` (nginx `location = /landing` em [`infra/plataforma-4unik-nginx-redirects.conf`](../../infra/plataforma-4unik-nginx-redirects.conf)); interim: `out/404.html` inclui gtag no build com `NEXT_PUBLIC_GA_ID`.
+3. Admin → **Coleta e modificação de dados → Fluxos de dados** — confirmar **Enhanced Measurement** ativo (page views em navegação SPA).
+4. DevTools → Network — pedidos a `google-analytics.com/g/collect` com `tid=G-SMJDYCENBC`.
+5. Build: `npm run verify:ga-build` e `npm run verify:ga-404-fallback` após `npm run build`.
+6. Smoke: `npm run validate:landing-routes -- --smoke https://plataforma.4unik.com.br/landing` (inclui check de `/landing` sem trailing slash).
 
 ## Outros pixels (opcionais)
 

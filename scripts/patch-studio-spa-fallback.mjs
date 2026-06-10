@@ -36,6 +36,19 @@ function escapeForJsString(value) {
   return value.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
 }
 
+function escapeForHtmlAttribute(value) {
+  return value.replace(/&/g, "&amp;").replace(/"/g, "&quot;");
+}
+
+/** Same rules as scripts/verify-ga-build.mjs */
+function parseGaIdFromEnv() {
+  const gaId = (process.env.NEXT_PUBLIC_GA_ID ?? "").trim();
+  if (!gaId || gaId === "G-XXXXXXXXXX" || !/^G-[A-Z0-9]+$/i.test(gaId)) {
+    return null;
+  }
+  return gaId;
+}
+
 /** Broken legacy paths → correct destination (path only, incl. basePath). */
 function legacyRedirectEntries(basePath) {
   const bp = basePath || "";
@@ -45,25 +58,41 @@ function legacyRedirectEntries(basePath) {
   ];
 }
 
-const { basePath, canonicalOrigin } = parseSiteConfig();
+const { basePath, canonicalOrigin, siteUrl } = parseSiteConfig();
 const studioRoot = `${basePath}/studio/`;
 const homeUrl = `${basePath}/` || "/";
+const canonicalHomeUrl = `${siteUrl}/`;
 const basePathJs = escapeForJsString(basePath);
 const studioRootJs = escapeForJsString(studioRoot);
 const homeUrlJs = escapeForJsString(homeUrl);
 const canonicalOriginJs = escapeForJsString(canonicalOrigin);
+const canonicalHomeUrlHtml = escapeForHtmlAttribute(canonicalHomeUrl);
 const legacyPairs = legacyRedirectEntries(basePath);
 const legacyJsLines = legacyPairs
   .map(([from, to]) => `  ${JSON.stringify(from)}: ${JSON.stringify(to)}`)
   .join(",\n");
+
+const gaId = parseGaIdFromEnv();
+const gaIdHtml = gaId ? escapeForHtmlAttribute(gaId) : "";
+const gaHeadBlock = gaId
+  ? `
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${gaIdHtml}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${gaIdHtml}');
+  </script>`
+  : "";
 
 const html = `<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="${canonicalHomeUrlHtml}" />
   <meta http-equiv="refresh" content="0;url=${homeUrlJs}" />
-  <title>A redirecionar…</title>
+  <title>A redirecionar…</title>${gaHeadBlock}
   <script>
 (function () {
   var STORAGE_KEY = "${STORAGE_KEY}";
@@ -79,6 +108,11 @@ ${legacyJsLines}
 
   if (location.hostname === "yoooobe.github.io") {
     location.replace(CANONICAL_ORIGIN + path + suffix);
+    return;
+  }
+
+  if (path === BASE && HOME !== path) {
+    location.replace(HOME + suffix);
     return;
   }
 
@@ -130,5 +164,5 @@ if (!existsSync(join(outDir, ".nojekyll"))) {
 }
 
 console.log(
-  `patch-studio-spa-fallback: out/404.html + out/404/index.html (Studio → ${studioRoot}, home → ${homeUrl}, canonical ${canonicalOrigin})`,
+  `patch-studio-spa-fallback: out/404.html + out/404/index.html (Studio → ${studioRoot}, home → ${homeUrl}, canonical ${canonicalHomeUrl}${gaId ? `, GA ${gaId}` : ""})`,
 );

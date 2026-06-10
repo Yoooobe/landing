@@ -120,6 +120,54 @@ async function smokeUrl(url) {
   }
 }
 
+/** /landing without trailing slash — GA Tag Coverage scans this exact URL. */
+async function smokeLandingWithoutTrailingSlash(baseUrl) {
+  const base = baseUrl.replace(/\/$/, "");
+  const url = base;
+  let errors = 0;
+
+  try {
+    const headRes = await fetch(url, { method: "HEAD", redirect: "manual" });
+    if (headRes.status >= 300 && headRes.status < 400) {
+      const location = headRes.headers.get("location") ?? "";
+      if (location.includes("/landing/")) {
+        console.log(`validate-landing-routes: smoke OK ${url} → redirect ${headRes.status} ${location}`);
+        return 0;
+      }
+      console.error(
+        `validate-landing-routes: smoke ${url} → redirect ${headRes.status} to unexpected location: ${location}`,
+      );
+      return 1;
+    }
+
+    const res = await fetch(url, { redirect: "manual" });
+    const body = await res.text();
+    const hasGtag =
+      body.includes("googletagmanager.com/gtag/js") ||
+      /G-[A-Z0-9]+/i.test(body);
+
+    if (res.status === 404 && hasGtag) {
+      console.log(`validate-landing-routes: smoke OK ${url} → 404 fallback with gtag (apply nginx 301 — infra/plataforma-4unik-nginx-redirects.conf)`);
+      return 0;
+    }
+
+    if (res.status === 200 && hasGtag) {
+      console.log(`validate-landing-routes: smoke OK ${url} → 200 with gtag`);
+      return 0;
+    }
+
+    console.error(
+      `validate-landing-routes: smoke ${url} → HTTP ${res.status} without gtag in HTML (expected 301 to /landing/ or 404 with GA4 stub)`,
+    );
+    errors += 1;
+  } catch (e) {
+    console.error(`validate-landing-routes: smoke failed for ${url}: ${e.message}`);
+    errors += 1;
+  }
+
+  return errors;
+}
+
 async function runSmoke(baseUrl) {
   const base = baseUrl.replace(/\/$/, "");
   let errors = 0;
@@ -141,6 +189,8 @@ async function runSmoke(baseUrl) {
       console.log(`validate-landing-routes: smoke OK ${url}`);
     }
   }
+
+  errors += await smokeLandingWithoutTrailingSlash(base);
 
   const withoutLanding = [
     "https://plataforma.4unik.com.br/plataforma/motor-gamificacao/",

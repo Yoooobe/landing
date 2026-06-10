@@ -4,7 +4,21 @@ A landing exportada vive em `gh-pages` com `BASE_PATH=/landing`. O proxy em `pla
 
 ## Regra desejada (301 permanente)
 
-Prefixar `/landing` em rotas conhecidas, **sem fundir** páginas de gamificação:
+### `/landing` sem barra final
+
+Pedidos a **`/landing`** (sem `/` no fim) não correspondem a `/landing/*` no proxy nem a `index.html` no gh-pages — GitHub Pages devolve `404.html` (redirect stub). Para GA4 Tag Coverage e SEO, aplicar **antes** do `proxy_pass`:
+
+```nginx
+location = /landing {
+  return 301 https://$host/landing/;
+}
+```
+
+Snippet completo: [`infra/plataforma-4unik-nginx-redirects.conf`](../infra/plataforma-4unik-nginx-redirects.conf). O export também embute gtag em `out/404.html` quando `NEXT_PUBLIC_GA_ID` está no build (`scripts/patch-studio-spa-fallback.mjs`).
+
+### Prefixar `/landing` em rotas conhecidas
+
+**Sem fundir** páginas de gamificação:
 
 | Pedido | Destino |
 |--------|---------|
@@ -35,6 +49,10 @@ Snippet pronto para copiar: [`infra/plataforma-4unik-nginx-redirects.conf`](../i
 
 ```nginx
 # Antes do proxy_pass para gh-pages /landing/
+location = /landing {
+  return 301 https://$host/landing/;
+}
+
 location ~ ^/(plataforma|api-integracoes|inteligencia|casos-de-uso|blog|en|gamificacao|para-plataformas|educacao|vendas|comunidades|eventos|pricing|seguranca|workvivo)(/.*)?$ {
   return 301 https://$host/landing$request_uri;
 }
