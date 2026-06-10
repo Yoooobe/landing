@@ -18,7 +18,6 @@ export const ptStatsBentoTabsWhy = {
       { prefix: "Mais de", value: "R$ 7 mi", label: "transacionados em lojas com venda", highlight: true, group: "operational" },
       { prefix: "+ de", value: "340 mil", label: "produtos distribuídos", highlight: true, group: "operational" },
       { prefix: "mais de", value: "90 mil", label: "envios de brindes realizados", group: "operational" },
-      { value: "70", label: "lojas criadas", group: "operational" },
       { value: "65 mil", label: "colaboradores impactados", group: "operational" },
       { value: "15", label: "eventos externos realizados", group: "operational" },
       { value: "145", label: "lojas criadas em 5 anos", group: "operational" },

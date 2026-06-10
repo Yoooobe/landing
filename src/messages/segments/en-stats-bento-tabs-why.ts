@@ -11,7 +11,6 @@ export const enStatsBentoTabsWhy = {
       { prefix: "Over", value: "R$ 7M", label: "transacted in stores with sales", highlight: true, group: "operational" },
       { prefix: "Over", value: "340K", label: "products distributed", highlight: true, group: "operational" },
       { prefix: "over", value: "90K", label: "branded merch shipments completed", group: "operational" },
-      { value: "70", label: "stores launched", group: "operational" },
       { value: "65K", label: "employees impacted", group: "operational" },
       { value: "15", label: "external events delivered", group: "operational" },
       { value: "145", label: "stores launched in 5 years", group: "operational" },
