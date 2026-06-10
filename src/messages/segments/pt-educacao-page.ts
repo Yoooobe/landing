@@ -14,7 +14,7 @@ export const ptEducacaoPage = {
     sub:
       "Transforme a conclusão de cursos em algo que se vê e se sente. Quando o aluno termina a trilha, a 4Unik entrega um prêmio físico — você foca no conteúdo, nós na logística.",
     ctaLabel: "Falar com especialista",
-    ctaHref: "https://calendly.com/yoobeco/demo",
+    ctaHref: "https://calendly.com/4unik/30min",
   },
   problem: {
     badge: "A dor",
@@ -138,6 +138,6 @@ export const ptEducacaoPage = {
     body:
       "Conte sobre a sua operação de ensino e a base de alunos. Desenhamos o fluxo de recompensa por conclusão com você.",
     primaryLabel: "Falar com especialista",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
 } as const;

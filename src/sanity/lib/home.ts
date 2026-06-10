@@ -100,7 +100,7 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     },
     hero: {
       ...ptHome.hero,
-      ctaDemoHref: "https://calendly.com/yoobeco/demo",
+      ctaDemoHref: "https://calendly.com/4unik/30min",
       ctaExploreHref: `${BASE_PATH}/#platform`,
       floatAdhesionValue: "92%",
       floatRhValue: "0%",
@@ -115,7 +115,7 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     },
     finalCta: {
       ...ptHome.finalCta,
-      demoHref: "https://calendly.com/yoobeco/demo",
+      demoHref: "https://calendly.com/4unik/30min",
       whatsappHref: "https://wa.me/554187582060",
     },
   },
@@ -126,7 +126,7 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     },
     hero: {
       ...enHome.hero,
-      ctaDemoHref: "https://calendly.com/yoobeco/demo",
+      ctaDemoHref: "https://calendly.com/4unik/30min",
       ctaExploreHref: `${BASE_PATH}/en/#platform`,
       floatAdhesionValue: "92%",
       floatRhValue: "0%",
@@ -141,7 +141,7 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     },
     finalCta: {
       ...enHome.finalCta,
-      demoHref: "https://calendly.com/yoobeco/demo",
+      demoHref: "https://calendly.com/4unik/30min",
       whatsappHref: "https://wa.me/554187582060",
     },
   },

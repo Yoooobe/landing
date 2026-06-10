@@ -12,6 +12,7 @@ import {
   shouldScrollPrimaryContactInPlace,
 } from "@/lib/resolvePrimaryContactHref";
 import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
 import { toggleLocalePath } from "@/lib/locale";
 import Link from "next/link";
@@ -299,7 +300,7 @@ export default function Header() {
   );
 
   const loginUrl = sanity?.appLoginUrl?.trim() || null;
-  const demoUrl = sanity?.calendlyUrl?.trim() || "https://calendly.com/yoobeco/demo";
+  const demoUrl = sanity?.calendlyUrl?.trim() || DEFAULT_CALENDLY_URL;
   const whatsappUrl = sanity?.whatsappUrl?.trim() || "https://wa.me/554187582060";
   const contactHref = resolvePrimaryContactHref(pathname, path);
   const contactScrollInPlace = shouldScrollPrimaryContactInPlace(pathname, path);

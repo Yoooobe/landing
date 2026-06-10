@@ -136,7 +136,7 @@ export default function InteligenciaPageContent({
             <div className="flex flex-col items-center text-center lg:items-stretch lg:text-left">
               <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/45">{lf.altCalendly}</p>
               <a
-                href="https://calendly.com/yoobeco/demo"
+                href="https://calendly.com/4unik/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-14 w-full max-w-sm items-center justify-center gap-3 rounded-xl bg-white px-10 font-bold text-brand-navy-dark text-lg shadow-2xl shadow-white/10 transition-all hover:scale-105 font-sans whitespace-nowrap lg:max-w-none"

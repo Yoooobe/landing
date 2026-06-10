@@ -48,7 +48,7 @@ export default function WalletHighlight() {
               viewport={{ once: true }}
               className="pt-4"
             >
-              <a href="https://calendly.com/yoobeco/demo" target="_blank" rel="noopener noreferrer" className="text-green-400 font-medium hover:text-green-300 transition-colors flex items-center gap-2">
+              <a href="https://calendly.com/4unik/30min" target="_blank" rel="noopener noreferrer" className="text-green-400 font-medium hover:text-green-300 transition-colors flex items-center gap-2">
                 Conhecer a wallet da 4unik →
               </a>
             </motion.div>

@@ -14,7 +14,7 @@ export const ptVendasPage = {
     sub:
       "Pare de premiar vendas com planilha e atraso. Conecte o seu CRM: quando a meta é batida, a 4Unik libera pontos automaticamente para o vendedor trocar por prêmios reais.",
     ctaLabel: "Falar com especialista",
-    ctaHref: "https://calendly.com/yoobeco/demo",
+    ctaHref: "https://calendly.com/4unik/30min",
   },
   problem: {
     badge: "A dor",
@@ -111,6 +111,6 @@ export const ptVendasPage = {
     body:
       "Conte sobre o seu time, metas e CRM. Montamos o fluxo de incentivo automático com você.",
     primaryLabel: "Falar com especialista",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
 } as const;

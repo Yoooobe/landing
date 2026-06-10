@@ -8,6 +8,7 @@ import {
 } from "@/contexts/SiteSettingsContext";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { withBasePath } from "@/lib/basePath";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
 import { resolveShellHref, isExternalShellHref } from "@/lib/siteShell";
 import Link from "next/link";
@@ -156,7 +157,7 @@ export default function Footer() {
         items: [
           {
             label: f.links.demo,
-            href: sanity?.calendlyUrl?.trim() || "https://calendly.com/yoobeco/demo",
+            href: sanity?.calendlyUrl?.trim() || DEFAULT_CALENDLY_URL,
             openInNewTab: true,
           },
           {

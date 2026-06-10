@@ -22,6 +22,7 @@ import {
   Zap,
 } from "lucide-react";
 import { withBasePath } from "@/lib/basePath";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import YoobeMark from "@/components/YoobeMark";
 import { cn } from "@/lib/utils";
 import {
@@ -60,7 +61,7 @@ function shotUrl(
   return url ?? withBasePath(fallbackPublicPath);
 }
 
-const CALENDLY = "https://calendly.com/yoobeco/demo";
+const CALENDLY = DEFAULT_CALENDLY_URL;
 const WHATSAPP = "https://wa.me/554187582060";
 
 const PILLAR_ICONS = [MessageSquare, Users, LayoutGrid, BarChart2];

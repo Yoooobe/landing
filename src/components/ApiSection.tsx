@@ -38,7 +38,7 @@ export default function ApiSection() {
                 {a.ctaDocs}
               </a>
               <a
-                href="https://calendly.com/yoobeco/demo"
+                href="https://calendly.com/4unik/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-14 items-center justify-center rounded-xl bg-unik-blue px-8 font-sans font-bold text-white shadow-[0_0_20px_rgba(37,99,235,0.35)] transition-colors hover:bg-unik-blue-deep"

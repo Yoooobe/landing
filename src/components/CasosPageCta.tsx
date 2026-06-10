@@ -22,7 +22,7 @@ export default function CasosPageCta({ contactSectionId }: { contactSectionId?: 
         <LeadCaptureForm variant="casos" source="casos-de-uso" className="mx-auto w-full max-w-lg text-left" />
         <p className="mt-10 text-sm font-semibold uppercase tracking-wider text-white/45">{lf.altCalendly}</p>
         <a
-          href="https://calendly.com/yoobeco/demo"
+          href="https://calendly.com/4unik/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex h-14 items-center justify-center rounded-2xl bg-brand-orange px-10 text-lg font-bold text-white shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-all hover:scale-105 hover:bg-cta-tomato"

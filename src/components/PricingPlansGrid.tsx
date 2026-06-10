@@ -41,7 +41,7 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
           ))}
         </ul>
         <a
-          href="https://calendly.com/yoobeco/demo"
+          href="https://calendly.com/4unik/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
@@ -76,7 +76,7 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
           ))}
         </ul>
         <a
-          href="https://calendly.com/yoobeco/demo"
+          href="https://calendly.com/4unik/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-auto block w-full rounded-xl bg-brand-orange py-4 text-center font-bold text-white transition-colors hover:bg-brand-orange-dark font-sans"
@@ -107,7 +107,7 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
             ))}
           </ul>
           <a
-            href="https://calendly.com/yoobeco/demo"
+            href="https://calendly.com/4unik/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
@@ -138,7 +138,7 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
           ))}
         </ul>
         <a
-          href="https://calendly.com/yoobeco/demo"
+          href="https://calendly.com/4unik/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"

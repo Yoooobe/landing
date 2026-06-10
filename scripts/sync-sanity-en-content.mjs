@@ -257,7 +257,7 @@ export function homePayloadEn() {
     },
     hero: {
       ...enHome.hero,
-      ctaDemoHref: "https://calendly.com/yoobeco/demo",
+      ctaDemoHref: "https://calendly.com/4unik/30min",
       ctaExploreHref: "/en/#platform",
       floatAdhesionValue: "92%",
       floatRhValue: "0%",
@@ -272,7 +272,7 @@ export function homePayloadEn() {
     },
     finalCta: {
       ...enHome.finalCta,
-      demoHref: "https://calendly.com/yoobeco/demo",
+      demoHref: "https://calendly.com/4unik/30min",
       whatsappHref: "https://wa.me/554187582060",
     },
   };
@@ -297,7 +297,7 @@ export function apiIntegracoesPayloadEn() {
       primaryCtaLabel: "Read documentation",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Talk to engineering",
-      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
+      secondaryCtaHref: "https://calendly.com/4unik/30min",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
 Host: api.4unik.yoobe.co
@@ -457,7 +457,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Create scoped API keys and access the interactive technical documentation hosted on Stoplight.",
       buttonLabel: "Generate API keys",
-      buttonHref: "https://calendly.com/yoobeco/demo",
+      buttonHref: "https://calendly.com/4unik/30min",
     },
   };
 }
@@ -486,7 +486,7 @@ export function gamificacaoPayloadEn() {
     faq: enGamificacaoPage.faq,
     finalCta: {
       ...enGamificacao.pageCta,
-      ctaHref: "https://calendly.com/yoobeco/demo",
+      ctaHref: "https://calendly.com/4unik/30min",
     },
   };
 }
@@ -500,7 +500,7 @@ function inteligenciaBlocksEn() {
       headline: `${page.hero.titleBefore} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.cta.button,
-      ctaLink: "https://calendly.com/yoobeco/demo",
+      ctaLink: "https://calendly.com/4unik/30min",
     },
     {
       _key: "core-capabilities",
@@ -548,7 +548,7 @@ function inteligenciaBlocksEn() {
       title: page.cta.title,
       description: page.cta.sub,
       primaryLabel: page.cta.button,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: "https://calendly.com/4unik/30min",
     },
   ];
 }
@@ -599,7 +599,7 @@ function casosBlocksEn() {
       title: enCasos.pageCta.title,
       description: enCasos.pageCta.body,
       primaryLabel: enCasos.pageCta.cta,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: "https://calendly.com/4unik/30min",
     },
   ];
 }
@@ -614,7 +614,7 @@ function plataformaBlocksEn() {
       headline: `${page.hero.titleLine1} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.pageCta.cta,
-      ctaLink: "https://calendly.com/yoobeco/demo",
+      ctaLink: "https://calendly.com/4unik/30min",
     },
     {
       _key: "admin-dashboard",
@@ -730,7 +730,7 @@ function plataformaBlocksEn() {
       eyebrow: "Next step",
       title: page.pageCta.title,
       primaryLabel: page.pageCta.cta,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: "https://calendly.com/4unik/30min",
     },
   ];
 }
@@ -860,7 +860,7 @@ export function buildCurrentEnglishMenus() {
             {
               _key: "demo",
               label: enFooter.links.demo,
-              href: "https://calendly.com/yoobeco/demo",
+              href: "https://calendly.com/4unik/30min",
               openInNewTab: true,
             },
             {

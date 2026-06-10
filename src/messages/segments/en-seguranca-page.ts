@@ -50,6 +50,6 @@ export const enSegurancaPage = {
     title: "Need a security pack for an RFP?",
     body: "Talk to sales for a questionnaire and attachments aligned with your procurement process.",
     primaryLabel: "Book a demo",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
 } as const;

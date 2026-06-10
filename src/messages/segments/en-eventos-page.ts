@@ -14,7 +14,7 @@ export const enEventosPage = {
     sub:
       "Transporting, storing, and handing out giveaways on-site is a headache. With 4Unik, attendees earn points and check out from their phone: pick up at the booth or get it shipped home, tracked.",
     ctaLabel: "Book a demo",
-    ctaHref: "https://calendly.com/yoobeco/demo",
+    ctaHref: "https://calendly.com/4unik/30min",
   },
   problem: {
     badge: "The pain",
@@ -111,6 +111,6 @@ export const enEventosPage = {
     body:
       "Tell us about the event, audience, and format. We'll design the points and checkout flow with you.",
     primaryLabel: "Book a demo",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
 } as const;

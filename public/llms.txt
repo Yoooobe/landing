@@ -1,7 +1,7 @@
 # 4Unik (4unik) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
-> Gerado por `scripts/generate-llms-txt.ts` em 2026-06-10T20:45:19.401Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
+> Gerado por `scripts/generate-llms-txt.ts` em 2026-06-10T22:35:58.138Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
 
 ## O que é
 

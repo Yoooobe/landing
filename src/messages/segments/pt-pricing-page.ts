@@ -29,7 +29,7 @@ export const ptPricingPage = {
     title: "Quer um orçamento com o seu volume?",
     body: "Agende uma conversa e montamos o plano com integrações, catálogo e logística adequados ao seu caso.",
     primaryLabel: "Agendar demonstração",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
   scale: {
     name: "Scale",

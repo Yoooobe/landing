@@ -26,7 +26,7 @@ const DEFAULT_ORIGINS = [
   "http://127.0.0.1:3000",
 ];
 
-const DEFAULT_DEMO_URL = "https://calendly.com/yoobeco/demo";
+const DEFAULT_DEMO_URL = "https://calendly.com/4unik/30min";
 const DEFAULT_SITE_URL = "https://plataforma.4unik.com.br/landing/";
 
 const RATE_WINDOW_MS = 60_000;

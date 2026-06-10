@@ -120,7 +120,7 @@ export const enParaPlataformasPage = {
     body:
       "Tell us about your platform and use case. We'll walk through the API, the checkout flow, and the integration model.",
     primaryLabel: "Talk to engineering",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
     secondaryLabel: "See API & integrations",
     secondaryHref: "/en/api-integracoes/",
   },

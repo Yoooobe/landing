@@ -1,6 +1,7 @@
 "use client";
 
 import LeadCaptureForm from "@/components/LeadCaptureForm";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { primaryContactSectionIdAttr } from "@/lib/contactAnchor";
 import ShowcaseImage from "@/components/ui/ShowcaseImage";
@@ -19,7 +20,7 @@ export default function HomeFinalCta({
   const lf = m.leadForm;
   const c = homeContent?.finalCta ?? {
     ...m.home.finalCta,
-    demoHref: "https://calendly.com/yoobeco/demo",
+    demoHref: DEFAULT_CALENDLY_URL,
     whatsappHref: "https://wa.me/554187582060",
   };
 

@@ -14,7 +14,7 @@ export const enVendasPage = {
     sub:
       "Stop rewarding sales with spreadsheets and delays. Connect your CRM: when a goal is hit, 4Unik unlocks points automatically for the rep to redeem for real prizes.",
     ctaLabel: "Talk to a specialist",
-    ctaHref: "https://calendly.com/yoobeco/demo",
+    ctaHref: "https://calendly.com/4unik/30min",
   },
   problem: {
     badge: "The pain",
@@ -111,6 +111,6 @@ export const enVendasPage = {
     body:
       "Tell us about your team, goals, and CRM. We'll set up the automatic incentive flow with you.",
     primaryLabel: "Talk to a specialist",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
 } as const;

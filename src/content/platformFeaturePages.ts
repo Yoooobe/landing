@@ -162,7 +162,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ctaBody:
       "A 4unik une motor de regras, loja corporativa, carteira, pedidos e fulfillment para que sua ação saia do briefing e chegue até o resgate e a entrega sem fricção.",
     primaryCtaLabel: "Solicitar demonstração",
-    primaryCtaHref: "https://calendly.com/yoobeco/demo",
+    primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "Ver plataforma completa",
     secondaryCtaHref: "/plataforma",
     backLabel: "Voltar para plataforma",
@@ -370,7 +370,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ctaBody:
       "Com a 4unik, o gestor deixa de navegar entre sistemas isolados e passa a operar o programa inteiro a partir de um centro de comando único.",
     primaryCtaLabel: "Agendar demonstração",
-    primaryCtaHref: "https://calendly.com/yoobeco/demo",
+    primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "Explorar a plataforma",
     secondaryCtaHref: "/plataforma",
     backLabel: "Voltar para plataforma",
@@ -480,7 +480,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ctaBody:
       "Agende uma conversa e veja como a 4Unik transforma o seu programa de reconhecimento numa loja que os colaboradores realmente usam.",
     primaryCtaLabel: "Agendar demonstração",
-    primaryCtaHref: "https://calendly.com/yoobeco/demo",
+    primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "Explorar a plataforma",
     secondaryCtaHref: "/plataforma/",
     backLabel: "Voltar para plataforma",
@@ -587,7 +587,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ctaBody:
       "4unik combines rules, wallet, corporate store, orders, and fulfillment so your action can move from idea to redemption and delivery without operational gaps.",
     primaryCtaLabel: "Request a demo",
-    primaryCtaHref: "https://calendly.com/yoobeco/demo",
+    primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "View full platform",
     secondaryCtaHref: "/plataforma",
     backLabel: "Back to platform",
@@ -795,7 +795,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ctaBody:
       "With 4unik, managers stop bouncing between disconnected tools and run the whole program from one control center.",
     primaryCtaLabel: "Book a demo",
-    primaryCtaHref: "https://calendly.com/yoobeco/demo",
+    primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "Explore the platform",
     secondaryCtaHref: "/plataforma",
     backLabel: "Back to platform",
@@ -905,7 +905,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ctaBody:
       "Book a call and see how 4Unik turns your recognition program into a store employees actually love using.",
     primaryCtaLabel: "Book a demo",
-    primaryCtaHref: "https://calendly.com/yoobeco/demo",
+    primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "Explore the platform",
     secondaryCtaHref: "/en/plataforma/",
     backLabel: "Back to platform",

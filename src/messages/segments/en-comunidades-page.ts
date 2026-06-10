@@ -14,7 +14,7 @@ export const enComunidadesPage = {
     sub:
       "Reward the people who engage the most with exclusive products. You take care of the community; 4Unik takes care of inventory, packing, and shipping—100% of delivery.",
     ctaLabel: "Book a demo",
-    ctaHref: "https://calendly.com/yoobeco/demo",
+    ctaHref: "https://calendly.com/4unik/30min",
   },
   problem: {
     badge: "The pain",
@@ -111,6 +111,6 @@ export const enComunidadesPage = {
     body:
       "Tell us about your community and what makes sense to offer. We'll build the VIP store and operation with you.",
     primaryLabel: "Book a demo",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
 } as const;

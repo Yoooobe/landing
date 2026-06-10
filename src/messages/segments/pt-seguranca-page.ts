@@ -50,6 +50,6 @@ export const ptSegurancaPage = {
     title: "Precisa de um pacote de segurança para RFP?",
     body: "Fale com o time comercial para receber o questionário e anexos alinhados ao seu processo de compra.",
     primaryLabel: "Agendar demonstração",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
 } as const;

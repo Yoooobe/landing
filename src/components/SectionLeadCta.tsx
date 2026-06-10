@@ -1,6 +1,7 @@
 "use client";
 
 import LeadCaptureForm from "@/components/LeadCaptureForm";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import type { LeadFormVariant } from "@/components/LeadCaptureForm";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
@@ -26,7 +27,7 @@ export default function SectionLeadCta({ homeContent, zone, variant = "home" }: 
   const { common } = m.sectionLeadCta;
   const c = homeContent?.finalCta ?? {
     ...m.home.finalCta,
-    demoHref: "https://calendly.com/yoobeco/demo",
+    demoHref: DEFAULT_CALENDLY_URL,
     whatsappHref: "https://wa.me/554187582060",
   };
 

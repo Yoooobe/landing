@@ -5,6 +5,7 @@ import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
 import UnikWordmark from "@/components/UnikWordmark";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { BASE_PATH, withBasePath } from "@/lib/basePath";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import {
   getSanityImageUrl,
   SANITY_HOME_HERO_MAIN_WIDTH,
@@ -41,7 +42,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
   const defaultExploreHref = withBasePath(path("/#platform"));
   const h = homeContent?.hero ?? {
     ...m.home.hero,
-    ctaDemoHref: "https://calendly.com/yoobeco/demo",
+    ctaDemoHref: DEFAULT_CALENDLY_URL,
     ctaExploreHref: defaultExploreHref,
     floatAdhesionValue: "92%",
     floatRhValue: "0%",
@@ -74,8 +75,8 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
   });
   const hasCmsHero = Boolean(cmsHero?.headline?.trim());
   const primaryHref = hasCmsHero
-    ? cmsHero?.ctaLink?.trim() || h.ctaDemoHref || "https://calendly.com/yoobeco/demo"
-    : h.ctaDemoHref || "https://calendly.com/yoobeco/demo";
+    ? cmsHero?.ctaLink?.trim() || h.ctaDemoHref || DEFAULT_CALENDLY_URL
+    : h.ctaDemoHref || DEFAULT_CALENDLY_URL;
   const primaryLabel = hasCmsHero ? cmsHero?.ctaText?.trim() || h.ctaDemo : h.ctaDemo;
   const heroSubheadline =
     (hasCmsHero ? cmsHero?.subheadline?.trim() : "") || h.sub;

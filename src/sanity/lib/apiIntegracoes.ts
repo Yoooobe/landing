@@ -20,7 +20,7 @@ const fallbackByLocale: Record<Locale, ResolvedApiIntegracoesContent> = {
       primaryCtaLabel: "Ler a Documentação",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Falar com Engenharia",
-      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
+      secondaryCtaHref: "https://calendly.com/4unik/30min",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
 Host: api.4unik.yoobe.co
@@ -180,7 +180,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Crie chaves de API restritas e acesse a documentação técnica interativa hospedada no Stoplight.",
       buttonLabel: "Gerar API Keys",
-      buttonHref: "https://calendly.com/yoobeco/demo",
+      buttonHref: "https://calendly.com/4unik/30min",
     },
   },
   en: {
@@ -201,7 +201,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       primaryCtaLabel: "Read documentation",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Talk to engineering",
-      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
+      secondaryCtaHref: "https://calendly.com/4unik/30min",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
 Host: api.4unik.yoobe.co
@@ -361,7 +361,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Create scoped API keys and access the interactive technical documentation hosted on Stoplight.",
       buttonLabel: "Generate API keys",
-      buttonHref: "https://calendly.com/yoobeco/demo",
+      buttonHref: "https://calendly.com/4unik/30min",
     },
   },
 };

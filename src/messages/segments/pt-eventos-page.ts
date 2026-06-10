@@ -14,7 +14,7 @@ export const ptEventosPage = {
     sub:
       "Transportar, armazenar e distribuir brindes no local vira dor de cabeça. Com a 4Unik, o participante ganha pontos e faz checkout pelo celular: retira no estande ou recebe em casa, com rastreio.",
     ctaLabel: "Agendar demonstração",
-    ctaHref: "https://calendly.com/yoobeco/demo",
+    ctaHref: "https://calendly.com/4unik/30min",
   },
   problem: {
     badge: "A dor",
@@ -111,6 +111,6 @@ export const ptEventosPage = {
     body:
       "Conte sobre o evento, público e formato. Desenhamos o fluxo de pontos e checkout com você.",
     primaryLabel: "Agendar demonstração",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
 } as const;

@@ -65,7 +65,7 @@ const homePayloadByLocale = {
       sub:
         "A plataforma que transforma o dia a dia do seu time. Crie campanhas, gamifique resultados e entregue premios fisicos na porta da casa de cada colaborador, sem dar dor de cabeca para o RH.",
       ctaDemo: "Agendar Demonstracao",
-      ctaDemoHref: "https://calendly.com/yoobeco/demo",
+      ctaDemoHref: "https://calendly.com/4unik/30min",
       ctaExplore: "Explorar Beneficios",
       ctaExploreHref: "/#platform",
       floatAdhesion: "Adesao do Time",
@@ -102,7 +102,7 @@ const homePayloadByLocale = {
       body:
         "Solicite uma demonstracao e veja como a 4Unik eleva o engajamento e a retencao do seu time.",
       demo: "Solicitar Demonstracao",
-      demoHref: "https://calendly.com/yoobeco/demo",
+      demoHref: "https://calendly.com/4unik/30min",
       whatsapp: "Falar com Especialista",
       whatsappHref: "https://wa.me/554187582060",
     },
@@ -129,7 +129,7 @@ const apiIntegracoesPayloadByLocale = {
       primaryCtaLabel: "Ler a Documentacao",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Falar com Engenharia",
-      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
+      secondaryCtaHref: "https://calendly.com/4unik/30min",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
 Host: api.4unik.yoobe.co
@@ -289,7 +289,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Crie chaves de API restritas e acesse a documentacao tecnica interativa hospedada no Stoplight.",
       buttonLabel: "Gerar API Keys",
-      buttonHref: "https://calendly.com/yoobeco/demo",
+      buttonHref: "https://calendly.com/4unik/30min",
     },
   },
   en: {
@@ -310,7 +310,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       primaryCtaLabel: "Read documentation",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Talk to engineering",
-      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
+      secondaryCtaHref: "https://calendly.com/4unik/30min",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
 Host: api.4unik.yoobe.co
@@ -470,7 +470,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Create restricted API keys and access the interactive technical documentation hosted on Stoplight.",
       buttonLabel: "Generate API keys",
-      buttonHref: "https://calendly.com/yoobeco/demo",
+      buttonHref: "https://calendly.com/4unik/30min",
     },
   },
 };
@@ -640,7 +640,7 @@ const gamificacaoPayloadByLocale = {
     faq: ptGamificacaoPageSegment.faq,
     finalCta: {
       ...ptGamificacaoSegment.pageCta,
-      ctaHref: "https://calendly.com/yoobeco/demo",
+      ctaHref: "https://calendly.com/4unik/30min",
     },
   },
   en: gamificacaoPayloadEn(),
@@ -1339,7 +1339,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [landingMore.dedicatedIntegrations.beehome.body],
       bullets: landingMore.dedicatedIntegrations.beehome.bullets,
       primaryLabel: isEn ? "Talk to engineering" : "Falar com engenharia",
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: "https://calendly.com/4unik/30min",
       imagePath: "public/cms-seed/home-integrations-beehome.svg",
       imageAlt: isEn
         ? "Beehome integration preview"
@@ -1373,7 +1373,7 @@ function buildHomeMarketingPageContent(locale) {
       primaryLabel: rest.apiSection.ctaDocs,
       primaryHref: isEn ? "/en/api-integracoes" : "/api-integracoes",
       secondaryLabel: rest.apiSection.ctaApi,
-      secondaryHref: "https://calendly.com/yoobeco/demo",
+      secondaryHref: "https://calendly.com/4unik/30min",
       imageSide: "right",
     }),
     featureGridBlock("ai-roadmap", {

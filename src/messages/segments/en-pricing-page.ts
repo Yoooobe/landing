@@ -29,7 +29,7 @@ export const enPricingPage = {
     title: "Need a quote for your volume?",
     body: "Book a call and we will shape the plan around integrations, catalog, and logistics for your case.",
     primaryLabel: "Book a demo",
-    primaryHref: "https://calendly.com/yoobeco/demo",
+    primaryHref: "https://calendly.com/4unik/30min",
   },
   scale: {
     name: "Scale",

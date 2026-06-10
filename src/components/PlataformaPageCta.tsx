@@ -19,7 +19,7 @@ export default function PlataformaPageCta({
         <p className="mb-8 text-sm text-white/50">{lf.altCalendly}</p>
         <LeadCaptureForm variant="plataforma" source="plataforma" className="mx-auto max-w-lg text-left" />
         <a
-          href="https://calendly.com/yoobeco/demo"
+          href="https://calendly.com/4unik/30min"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-8 inline-flex h-11 items-center justify-center rounded-xl border border-white/20 px-6 text-sm font-semibold text-white/90 transition-colors hover:bg-white/10"

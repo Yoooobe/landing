@@ -1,8 +1,9 @@
 import { withBasePath } from "@/lib/basePath";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { BLOG_FALLBACK_IMG } from "@/lib/blogFallbackImages";
 import type { BlogCtaBlock, BlogCtaVariant } from "@/sanity/lib/types";
 
-export const BLOG_DEMO_HREF = "https://calendly.com/yoobeco/demo";
+export const BLOG_DEMO_HREF = DEFAULT_CALENDLY_URL;
 
 export type BlogFallbackSlug = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8";
 

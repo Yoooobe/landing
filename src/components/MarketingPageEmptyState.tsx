@@ -32,7 +32,7 @@ export default function MarketingPageEmptyState({ locale }: Props) {
             {isEn ? "Back to home" : "Voltar ao início"}
           </Link>
           <a
-            href="https://calendly.com/yoobeco/demo"
+            href="https://calendly.com/4unik/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white/85 hover:bg-white/10"

@@ -39,7 +39,7 @@ const fallbackByLocale: Record<Locale, ResolvedGamificacaoContent> = {
     faq: toMutable(ptGamificacaoCampanhasPage.faq),
     finalCta: {
       ...toMutable(ptGamificacaoCampanhas.pageCta),
-      ctaHref: "https://calendly.com/yoobeco/demo",
+      ctaHref: "https://calendly.com/4unik/30min",
     },
   },
   en: {
@@ -65,7 +65,7 @@ const fallbackByLocale: Record<Locale, ResolvedGamificacaoContent> = {
     faq: toMutable(enGamificacaoCampanhasPage.faq),
     finalCta: {
       ...toMutable(enGamificacaoCampanhas.pageCta),
-      ctaHref: "https://calendly.com/yoobeco/demo",
+      ctaHref: "https://calendly.com/4unik/30min",
     },
   },
 };

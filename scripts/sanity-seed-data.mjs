@@ -376,7 +376,7 @@ function inteligenciaBlocks(locale) {
       headline: `${page.hero.titleBefore} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.cta.button,
-      ctaLink: "https://calendly.com/yoobeco/demo",
+      ctaLink: "https://calendly.com/4unik/30min",
       imagePath: "public/cms-seed/intelligence-hero.svg",
       imageAlt: isEn
         ? "AI layer overview for employee engagement"
@@ -412,7 +412,7 @@ function inteligenciaBlocks(locale) {
       title: page.cta.title,
       description: page.cta.sub,
       primaryLabel: page.cta.button,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: "https://calendly.com/4unik/30min",
       imagePath: "public/cms-seed/intelligence-hero.svg",
       imageAlt: isEn
         ? "AI layer visual for the final CTA"
@@ -661,7 +661,7 @@ function casosBlocks(locale) {
       title: page.cta.title,
       description: page.cta.body,
       primaryLabel: page.cta.button,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: "https://calendly.com/4unik/30min",
     }),
   ];
 }
@@ -1002,7 +1002,7 @@ function plataformaBlocks(locale) {
       headline: `${page.hero.titleLine1} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.pageCta.cta,
-      ctaLink: "https://calendly.com/yoobeco/demo",
+      ctaLink: "https://calendly.com/4unik/30min",
       imagePath: "public/screens/admin-dashboard.webp",
       imageAlt: isEn
         ? "Manager dashboard screenshot — 4Unik platform"
@@ -1120,7 +1120,7 @@ function plataformaBlocks(locale) {
       eyebrow: isEn ? "Next step" : "Próximo passo",
       title: page.pageCta.title,
       primaryLabel: page.pageCta.cta,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: "https://calendly.com/4unik/30min",
       imagePath: "public/screens/admin-dashboard.webp",
       imageAlt: isEn
         ? "Platform dashboard screenshot for the final CTA"
@@ -1368,7 +1368,7 @@ const marketingPages = [
         subheadline:
           "Uma base editorial para explicar a plataforma, posicionar a oferta e acelerar a migracao gradual da landing para o CMS.",
         ctaText: "Agendar demonstracao",
-        ctaLink: "https://calendly.com/yoobeco/demo",
+        ctaLink: "https://calendly.com/4unik/30min",
       }),
       richTextSection("context", "Como esta pagina deve ser usada", [
         "Esta landing page no Sanity serve como primeira fonte editorial para substituir gradualmente o conteudo estatico do site. O objetivo e testar fluxo de criacao, revisao e publicacao para o time de marketing.",
@@ -1485,7 +1485,7 @@ const marketingPages = [
         description:
           "A proxima etapa e ligar as paginas de marketing do frontend a estes blocos, mantendo fallback seguro e rebuild quando necessario.",
         primaryLabel: "Agendar demonstracao",
-        primaryHref: "https://calendly.com/yoobeco/demo",
+        primaryHref: "https://calendly.com/4unik/30min",
         secondaryLabel: "Falar no WhatsApp",
         secondaryHref: "https://wa.me/554187582060",
       }),
@@ -1510,7 +1510,7 @@ const marketingPages = [
         subheadline:
           "A first editorial landing page in Sanity to support the gradual migration away from static marketing copy.",
         ctaText: "Book a demo",
-        ctaLink: "https://calendly.com/yoobeco/demo",
+        ctaLink: "https://calendly.com/4unik/30min",
       }),
       richTextSection("context", "How this page should be used", [
         "This marketing page acts as the first editorial source of truth for replacing static landing content over time. It gives the team a controlled workflow for drafting, reviewing, and publishing.",
@@ -1620,7 +1620,7 @@ const marketingPages = [
         description:
           "The next milestone is wiring public marketing routes to these CMS blocks while preserving safe fallbacks and rebuild guidance.",
         primaryLabel: "Book a demo",
-        primaryHref: "https://calendly.com/yoobeco/demo",
+        primaryHref: "https://calendly.com/4unik/30min",
         secondaryLabel: "Talk on WhatsApp",
         secondaryHref: "https://wa.me/554187582060",
       }),
@@ -2002,7 +2002,7 @@ export const seedDocuments = {
     _id: "siteSettings",
     _type: "siteSettings",
     environmentLabel: "production",
-    calendlyUrl: "https://calendly.com/yoobeco/demo",
+    calendlyUrl: "https://calendly.com/4unik/30min",
     whatsappUrl: "https://wa.me/554187582060",
     contactEmail: "comercial@4unik.com.br",
     appLoginUrl: "https://4unik.yoobe.me/",
@@ -2322,7 +2322,7 @@ export const seedDocuments = {
             {
               _key: "demo",
               label: "Agendar Demonstração",
-              href: "https://calendly.com/yoobeco/demo",
+              href: "https://calendly.com/4unik/30min",
               openInNewTab: true,
             },
             {
@@ -2393,7 +2393,7 @@ export const seedDocuments = {
             {
               _key: "demo",
               label: "Book a demo",
-              href: "https://calendly.com/yoobeco/demo",
+              href: "https://calendly.com/4unik/30min",
               openInNewTab: true,
             },
             {

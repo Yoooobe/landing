@@ -50,7 +50,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
             <a
-              href="https://calendly.com/yoobeco/demo"
+              href="https://calendly.com/4unik/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-14 items-center justify-center rounded-full bg-white px-10 font-bold text-brand-navy-dark shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all hover:bg-brand-orange hover:text-white hover:-translate-y-1 hover:shadow-[0_0_60px_rgba(249,115,22,0.4)]"

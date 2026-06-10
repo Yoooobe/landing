@@ -2,6 +2,7 @@ import { createClient } from "@sanity/client";
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/locale";
 import { buildRoutePageMetadata, type PageSeoCopy } from "@/lib/seo/routeMetadata";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { enGamificacaoPage } from "@/messages/segments/en-gamificacao-page";
 import { ptCasosPage } from "@/messages/segments/pt-casos-page";
 import { enCasosPage } from "@/messages/segments/en-casos-page";
@@ -65,7 +66,7 @@ function inteligenciaBlocks(locale: Locale): MarketingPageDoc["content"] {
       headline: `${page.hero.titleBefore} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.cta.button,
-      ctaLink: "https://calendly.com/yoobeco/demo",
+      ctaLink: DEFAULT_CALENDLY_URL,
     },
     {
       _key: "core-capabilities",
@@ -114,7 +115,7 @@ function inteligenciaBlocks(locale: Locale): MarketingPageDoc["content"] {
       title: page.cta.title,
       description: page.cta.sub,
       primaryLabel: page.cta.button,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: DEFAULT_CALENDLY_URL,
       showLeadForm: true,
       leadFormVariant: "inteligencia",
     },
@@ -132,7 +133,7 @@ function rewardInfrastructureBlocks(locale: Locale): MarketingPageDoc["content"]
       headline: `${page.hero.titleBefore} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.cta.button,
-      ctaLink: "https://calendly.com/yoobeco/demo",
+      ctaLink: DEFAULT_CALENDLY_URL,
     },
     {
       _key: "definition",
@@ -204,7 +205,7 @@ function rewardInfrastructureBlocks(locale: Locale): MarketingPageDoc["content"]
       title: page.cta.title,
       description: page.cta.sub,
       primaryLabel: page.cta.button,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: DEFAULT_CALENDLY_URL,
       showLeadForm: true,
       leadFormVariant: "marketing",
     },
@@ -569,7 +570,7 @@ function homeBlocks(
       ),
       bullets: [...landingMore.dedicatedIntegrations.beehome.bullets],
       primaryLabel: isEn ? "Talk to engineering" : "Falar com engenharia",
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: DEFAULT_CALENDLY_URL,
       image: showcase?.dedicatedIntegrations?.beehome?.previewImage,
       imageSide: "left",
     },
@@ -604,7 +605,7 @@ function homeBlocks(
       primaryLabel: rest.apiSection.ctaDocs,
       primaryHref: `${BASE_PATH}${locale === "en" ? "/en/api-integracoes" : "/api-integracoes"}`,
       secondaryLabel: rest.apiSection.ctaApi,
-      secondaryHref: "https://calendly.com/yoobeco/demo",
+      secondaryHref: DEFAULT_CALENDLY_URL,
       imageSide: "right",
     },
     {
@@ -993,7 +994,7 @@ function casosBlocks(locale: Locale): MarketingPageDoc["content"] {
       title: cta.title,
       description: cta.body,
       primaryLabel: cta.cta,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: DEFAULT_CALENDLY_URL,
       showLeadForm: true,
       leadFormVariant: "casos",
     },
@@ -1031,7 +1032,7 @@ function plataformaBlocks(locale: Locale): MarketingPageDoc["content"] {
       headline: `${page.hero.titleLine1} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.pageCta.cta,
-      ctaLink: "https://calendly.com/yoobeco/demo",
+      ctaLink: DEFAULT_CALENDLY_URL,
     },
     {
       _key: "admin-dashboard",
@@ -1151,7 +1152,7 @@ function plataformaBlocks(locale: Locale): MarketingPageDoc["content"] {
       eyebrow: isEn ? "Next step" : "Proximo passo",
       title: page.pageCta.title,
       primaryLabel: page.pageCta.cta,
-      primaryHref: "https://calendly.com/yoobeco/demo",
+      primaryHref: DEFAULT_CALENDLY_URL,
     },
   ];
 }
