@@ -4,4 +4,4 @@ Disallow: /landing/studio/
 Disallow: /landing/workvivo/
 Disallow: /landing/en/workvivo/
 
-Sitemap: http://localhost:3000/landing/sitemap.xml
+Sitemap: https://plataforma.4unik.com.br/landing/sitemap.xml

@@ -1,7 +1,7 @@
 # 4Unik (4unik) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
-> Gerado por `scripts/generate-llms-txt.ts` em 2026-06-10T23:06:26.491Z (base canónica: `http://localhost:3000/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
+> Gerado por `scripts/generate-llms-txt.ts` em 2026-06-10T23:07:03.393Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
 
 ## O que é
 
@@ -11,25 +11,25 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 
 ## URLs canónicas (derivadas do build)
 
-- Site (PT): http://localhost:3000/landing/
-- Site (EN): http://localhost:3000/landing/en/
-- API e integrações: http://localhost:3000/landing/api-integracoes/ | http://localhost:3000/landing/en/api-integracoes/
-- Hub Workvivo: http://localhost:3000/landing/api-integracoes/workvivo/ | http://localhost:3000/landing/en/api-integracoes/workvivo/
-- Plataforma (overview): http://localhost:3000/landing/plataforma/ | http://localhost:3000/landing/en/plataforma/
-- Inteligência: http://localhost:3000/landing/inteligencia/ | http://localhost:3000/landing/en/inteligencia/
-- Infraestrutura de recompensas / Reward infrastructure (pilar AEO): http://localhost:3000/landing/infraestrutura-de-recompensas/ | http://localhost:3000/landing/en/reward-infrastructure/
-- Casos de uso: http://localhost:3000/landing/casos-de-uso/ | http://localhost:3000/landing/en/casos-de-uso/
-- Para plataformas e SaaS: http://localhost:3000/landing/para-plataformas/ | http://localhost:3000/landing/en/para-plataformas/
-- Para educação e e-learning: http://localhost:3000/landing/educacao/ | http://localhost:3000/landing/en/educacao/
-- Para times de vendas: http://localhost:3000/landing/vendas/ | http://localhost:3000/landing/en/vendas/
-- Para criadores e comunidades: http://localhost:3000/landing/comunidades/ | http://localhost:3000/landing/en/comunidades/
-- Para eventos: http://localhost:3000/landing/eventos/ | http://localhost:3000/landing/en/eventos/
-- Blog: http://localhost:3000/landing/blog/ | http://localhost:3000/landing/en/blog/
-- robots.txt: http://localhost:3000/landing/robots.txt
-- sitemap: http://localhost:3000/landing/sitemap.xml
+- Site (PT): https://plataforma.4unik.com.br/landing/
+- Site (EN): https://plataforma.4unik.com.br/landing/en/
+- API e integrações: https://plataforma.4unik.com.br/landing/api-integracoes/ | https://plataforma.4unik.com.br/landing/en/api-integracoes/
+- Hub Workvivo: https://plataforma.4unik.com.br/landing/api-integracoes/workvivo/ | https://plataforma.4unik.com.br/landing/en/api-integracoes/workvivo/
+- Plataforma (overview): https://plataforma.4unik.com.br/landing/plataforma/ | https://plataforma.4unik.com.br/landing/en/plataforma/
+- Inteligência: https://plataforma.4unik.com.br/landing/inteligencia/ | https://plataforma.4unik.com.br/landing/en/inteligencia/
+- Infraestrutura de recompensas / Reward infrastructure (pilar AEO): https://plataforma.4unik.com.br/landing/infraestrutura-de-recompensas/ | https://plataforma.4unik.com.br/landing/en/reward-infrastructure/
+- Casos de uso: https://plataforma.4unik.com.br/landing/casos-de-uso/ | https://plataforma.4unik.com.br/landing/en/casos-de-uso/
+- Para plataformas e SaaS: https://plataforma.4unik.com.br/landing/para-plataformas/ | https://plataforma.4unik.com.br/landing/en/para-plataformas/
+- Para educação e e-learning: https://plataforma.4unik.com.br/landing/educacao/ | https://plataforma.4unik.com.br/landing/en/educacao/
+- Para times de vendas: https://plataforma.4unik.com.br/landing/vendas/ | https://plataforma.4unik.com.br/landing/en/vendas/
+- Para criadores e comunidades: https://plataforma.4unik.com.br/landing/comunidades/ | https://plataforma.4unik.com.br/landing/en/comunidades/
+- Para eventos: https://plataforma.4unik.com.br/landing/eventos/ | https://plataforma.4unik.com.br/landing/en/eventos/
+- Blog: https://plataforma.4unik.com.br/landing/blog/ | https://plataforma.4unik.com.br/landing/en/blog/
+- robots.txt: https://plataforma.4unik.com.br/landing/robots.txt
+- sitemap: https://plataforma.4unik.com.br/landing/sitemap.xml
 
-- Pricing (PT/EN): http://localhost:3000/landing/pricing/ | http://localhost:3000/landing/en/pricing/
-- Security (PT/EN): http://localhost:3000/landing/seguranca/ | http://localhost:3000/landing/en/seguranca/
+- Pricing (PT/EN): https://plataforma.4unik.com.br/landing/pricing/ | https://plataforma.4unik.com.br/landing/en/pricing/
+- Security (PT/EN): https://plataforma.4unik.com.br/landing/seguranca/ | https://plataforma.4unik.com.br/landing/en/seguranca/
 
 ## Soluções por perfil (resumo citável)
 
@@ -49,35 +49,35 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 
 ### Subpáginas da plataforma
 
-- motor-gamificacao (PT): http://localhost:3000/landing/plataforma/motor-gamificacao/
-- motor-gamificacao (EN): http://localhost:3000/landing/en/plataforma/motor-gamificacao/
-- campanhas-gamificacao (PT): http://localhost:3000/landing/plataforma/campanhas-gamificacao/
-- campanhas-gamificacao (EN): http://localhost:3000/landing/en/plataforma/campanhas-gamificacao/
-- controle-carteiras (PT): http://localhost:3000/landing/plataforma/controle-carteiras/
-- controle-carteiras (EN): http://localhost:3000/landing/en/plataforma/controle-carteiras/
-- painel-gestor (PT): http://localhost:3000/landing/plataforma/painel-gestor/
-- painel-gestor (EN): http://localhost:3000/landing/en/plataforma/painel-gestor/
-- loja-resgate (PT): http://localhost:3000/landing/plataforma/loja-resgate/
-- loja-resgate (EN): http://localhost:3000/landing/en/plataforma/loja-resgate/
+- motor-gamificacao (PT): https://plataforma.4unik.com.br/landing/plataforma/motor-gamificacao/
+- motor-gamificacao (EN): https://plataforma.4unik.com.br/landing/en/plataforma/motor-gamificacao/
+- campanhas-gamificacao (PT): https://plataforma.4unik.com.br/landing/plataforma/campanhas-gamificacao/
+- campanhas-gamificacao (EN): https://plataforma.4unik.com.br/landing/en/plataforma/campanhas-gamificacao/
+- controle-carteiras (PT): https://plataforma.4unik.com.br/landing/plataforma/controle-carteiras/
+- controle-carteiras (EN): https://plataforma.4unik.com.br/landing/en/plataforma/controle-carteiras/
+- painel-gestor (PT): https://plataforma.4unik.com.br/landing/plataforma/painel-gestor/
+- painel-gestor (EN): https://plataforma.4unik.com.br/landing/en/plataforma/painel-gestor/
+- loja-resgate (PT): https://plataforma.4unik.com.br/landing/plataforma/loja-resgate/
+- loja-resgate (EN): https://plataforma.4unik.com.br/landing/en/plataforma/loja-resgate/
 
 ### Posts do blog (slugs do CMS + fallback editorial)
 
-- 1 (PT): http://localhost:3000/landing/blog/1/
-- 1 (EN): http://localhost:3000/landing/en/blog/1/
-- 2 (PT): http://localhost:3000/landing/blog/2/
-- 2 (EN): http://localhost:3000/landing/en/blog/2/
-- 3 (PT): http://localhost:3000/landing/blog/3/
-- 3 (EN): http://localhost:3000/landing/en/blog/3/
-- 4 (PT): http://localhost:3000/landing/blog/4/
-- 4 (EN): http://localhost:3000/landing/en/blog/4/
-- 5 (PT): http://localhost:3000/landing/blog/5/
-- 5 (EN): http://localhost:3000/landing/en/blog/5/
-- 6 (PT): http://localhost:3000/landing/blog/6/
-- 6 (EN): http://localhost:3000/landing/en/blog/6/
-- 7 (PT): http://localhost:3000/landing/blog/7/
-- 7 (EN): http://localhost:3000/landing/en/blog/7/
-- 8 (PT): http://localhost:3000/landing/blog/8/
-- 8 (EN): http://localhost:3000/landing/en/blog/8/
+- 1 (PT): https://plataforma.4unik.com.br/landing/blog/1/
+- 1 (EN): https://plataforma.4unik.com.br/landing/en/blog/1/
+- 2 (PT): https://plataforma.4unik.com.br/landing/blog/2/
+- 2 (EN): https://plataforma.4unik.com.br/landing/en/blog/2/
+- 3 (PT): https://plataforma.4unik.com.br/landing/blog/3/
+- 3 (EN): https://plataforma.4unik.com.br/landing/en/blog/3/
+- 4 (PT): https://plataforma.4unik.com.br/landing/blog/4/
+- 4 (EN): https://plataforma.4unik.com.br/landing/en/blog/4/
+- 5 (PT): https://plataforma.4unik.com.br/landing/blog/5/
+- 5 (EN): https://plataforma.4unik.com.br/landing/en/blog/5/
+- 6 (PT): https://plataforma.4unik.com.br/landing/blog/6/
+- 6 (EN): https://plataforma.4unik.com.br/landing/en/blog/6/
+- 7 (PT): https://plataforma.4unik.com.br/landing/blog/7/
+- 7 (EN): https://plataforma.4unik.com.br/landing/en/blog/7/
+- 8 (PT): https://plataforma.4unik.com.br/landing/blog/8/
+- 8 (EN): https://plataforma.4unik.com.br/landing/en/blog/8/
 
 ## Tópicos para citação factual
 
