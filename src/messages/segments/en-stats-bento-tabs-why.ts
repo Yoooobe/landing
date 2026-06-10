@@ -18,7 +18,7 @@ export const enStatsBentoTabsWhy = {
       { value: "3", label: "continents with remote delivery · Asia, Europe and the Americas", group: "international" },
       { value: "6", label: "international clients", group: "international" },
       { value: "4", label: "unicorn companies", group: "international" },
-      { value: "Merch", label: "branded merchandise production", group: "international" },
+      { value: "Merch", label: "local merch production in the US and EU, cutting shipping and production costs", group: "international" },
       { value: "US + EU", label: "product shipping in the US and Europe", group: "international" },
       { value: "Global", label: "active international operations", group: "international" },
     ] satisfies StatsBarItem[] as StatsBarItem[],

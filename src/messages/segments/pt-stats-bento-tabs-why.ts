@@ -25,7 +25,7 @@ export const ptStatsBentoTabsWhy = {
       { value: "3", label: "continentes com entrega remota · Ásia, Europa e Américas", group: "international" },
       { value: "6", label: "clientes internacionais", group: "international" },
       { value: "4", label: "unicórnios", group: "international" },
-      { value: "Brindes", label: "produção de brindes", group: "international" },
+      { value: "Brindes", label: "produção local de brindes nos EUA e EU, reduzindo custos de envio e produção", group: "international" },
       { value: "EUA + EU", label: "envio de produtos nos EUA e Europa", group: "international" },
       { value: "Global", label: "operação internacional ativa", group: "international" },
     ] satisfies StatsBarItem[] as StatsBarItem[],
