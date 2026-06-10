@@ -112,11 +112,22 @@ export default function IcpProfileHero({ locale, hero, visual }: Props) {
             {renderHeadline(hero.title, visual.gradientWord?.[locale], visual.titleGradientClass)}
           </motion.h1>
 
+          {hero.definitionLead ? (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.09 }}
+              className="mx-auto mt-5 max-w-xl text-base font-medium leading-7 text-white/80 md:text-lg lg:mx-0"
+            >
+              {hero.definitionLead}
+            </motion.p>
+          ) : null}
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.12 }}
-            className="mx-auto mt-6 max-w-xl text-lg leading-8 text-white/65 md:text-xl lg:mx-0"
+            className={`mx-auto max-w-xl text-lg leading-8 text-white/65 md:text-xl lg:mx-0 ${hero.definitionLead ? "mt-4" : "mt-6"}`}
           >
             {hero.sub}
           </motion.p>

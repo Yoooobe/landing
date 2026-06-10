@@ -1,7 +1,12 @@
 import JsonLdScript from "@/components/seo/JsonLdScript";
 import MarketingPageScreen from "@/components/MarketingPageScreen";
-import { buildBreadcrumbListJsonLd, buildFaqPageJsonLd } from "@/lib/jsonLd";
+import {
+  buildBreadcrumbListJsonLd,
+  buildFaqPageJsonLd,
+  buildSoftwareApplicationJsonLd,
+} from "@/lib/jsonLd";
 import { pageAbsoluteUrl } from "@/lib/site";
+import { getResolvedApiIntegracoesContent } from "@/sanity/lib/apiIntegracoes";
 import {
   buildMarketingPageMetadata,
   getMarketingPageFaqItems,
@@ -21,17 +26,26 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function EnApiIntegracoesOverviewPage() {
-  const faqItems = await getMarketingPageFaqItems("en", "api-integracoes");
+  const [faqItems, apiContent] = await Promise.all([
+    getMarketingPageFaqItems("en", "api-integracoes"),
+    getResolvedApiIntegracoesContent("en"),
+  ]);
   const pageUrl = pageAbsoluteUrl("/en/api-integracoes/");
   const faqLd = faqItems.length > 0 ? buildFaqPageJsonLd(pageUrl, faqItems) : null;
   const breadcrumbLd = buildBreadcrumbListJsonLd([
     { name: "Home", path: "/en/" },
     { name: "API & Integrations", path: "/en/api-integracoes/" },
   ]);
+  const softwareAppLd = buildSoftwareApplicationJsonLd("en", {
+    name: "4Unik API & integrations",
+    description: apiContent.seo.description,
+    pageUrl,
+  });
 
   return (
     <>
       <JsonLdScript data={{ ...breadcrumbLd }} />
+      <JsonLdScript data={{ ...softwareAppLd }} />
       {faqLd ? <JsonLdScript data={{ ...faqLd }} /> : null}
       <MarketingPageScreen locale="en" slug="api-integracoes" />
     </>

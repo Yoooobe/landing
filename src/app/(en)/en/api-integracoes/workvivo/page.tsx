@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import { buildRoutePageMetadata } from "@/lib/seo/routeMetadata";
+import JsonLdScript from "@/components/seo/JsonLdScript";
 import WorkvivoLanding from "@/components/workvivo/WorkvivoLanding";
-import { workvivoContent, workvivoMeta } from "@/content/workvivo";
+import { workvivoContent, workvivoFaqItems, workvivoMeta } from "@/content/workvivo";
+import { buildWorkvivoHubBreadcrumbJsonLd } from "@/lib/marketingBreadcrumbs";
+import { buildFaqPageJsonLd } from "@/lib/jsonLd";
+import { pageAbsoluteUrl } from "@/lib/site";
+import { buildRoutePageMetadata } from "@/lib/seo/routeMetadata";
 import { getWorkvivoShowcaseMedia } from "@/sanity/lib/workvivoShowcase";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -13,17 +17,28 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraphPath: "/en/api-integracoes/workvivo/",
     ogLocale: "en_US",
+    ogRouteKey: "api-integracoes",
   });
 }
 
 export default async function WorkvivoApiEnPage() {
+  const pagePath = "/en/api-integracoes/workvivo/";
+  const pageUrl = pageAbsoluteUrl(pagePath);
   const showcaseMedia = await getWorkvivoShowcaseMedia("en");
+  const faqItems = workvivoFaqItems.en;
+  const faqLd = buildFaqPageJsonLd(pageUrl, faqItems);
+  const breadcrumbLd = buildWorkvivoHubBreadcrumbJsonLd("en", pagePath);
+
   return (
-    <WorkvivoLanding
-      locale="en"
-      apiHub
-      content={workvivoContent.en}
-      showcaseMedia={showcaseMedia}
-    />
+    <>
+      <JsonLdScript data={{ ...breadcrumbLd }} />
+      <JsonLdScript data={{ ...faqLd }} />
+      <WorkvivoLanding
+        locale="en"
+        apiHub
+        content={workvivoContent.en}
+        showcaseMedia={showcaseMedia}
+      />
+    </>
   );
 }

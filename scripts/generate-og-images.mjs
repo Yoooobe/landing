@@ -11,6 +11,9 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
 const ogDir = join(root, "public", "og");
 
+/** Brand domain shown on OG badge (not `.com`). */
+const OG_SITE_BADGE = "4unik.com.br";
+
 const VARIANTS = [
   { id: "4unik-default", subtitle: "Gamification, catalog, API, and fulfillment in one place." },
   { id: "4unik-home", subtitle: "Reward infrastructure for teams and platforms." },
@@ -19,6 +22,11 @@ const VARIANTS = [
   { id: "4unik-gamificacao", subtitle: "Gamification engine for engagement programs." },
   { id: "4unik-casos", subtitle: "Use cases and enterprise programs." },
   { id: "4unik-inteligencia", subtitle: "AI for campaigns and recommendations." },
+  { id: "4unik-para-plataformas", subtitle: "Embedded physical-rewards API: catalog, checkout, fulfillment." },
+  { id: "4unik-educacao", subtitle: "Tangible reward on course completion, with catalog and logistics." },
+  { id: "4unik-vendas", subtitle: "Sales incentives integrated with your CRM: instant rewards." },
+  { id: "4unik-comunidades", subtitle: "A VIP store for fans and communities, fulfillment included." },
+  { id: "4unik-eventos", subtitle: "Event giveaways without logistics chaos: booth pickup or delivery." },
 ];
 
 function escapeXml(text) {
@@ -40,8 +48,8 @@ function buildSvg(subtitle) {
   <text x="120" y="212" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="0.2em">4UNIK</text>
   <text x="120" y="320" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">Reward infrastructure</text>
   <text x="120" y="404" fill="#A9B4C6" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500">${sub}</text>
-  <rect x="120" y="458" width="286" height="56" rx="28" fill="#F97316"/>
-  <text x="164" y="494" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">4unik.com</text>
+  <rect x="120" y="458" width="340" height="56" rx="28" fill="#F97316"/>
+  <text x="164" y="494" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">${escapeXml(OG_SITE_BADGE)}</text>
   <defs>
     <linearGradient id="panelGradient" x1="72" y1="72" x2="1128" y2="558" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0D1728"/>

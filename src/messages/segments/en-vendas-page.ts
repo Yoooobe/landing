@@ -9,6 +9,8 @@ export const enVendasPage = {
   hero: {
     badge: "For sales teams",
     title: "Hit the goal, get rewarded instantly",
+    definitionLead:
+      "Sales teams connect their CRM to 4Unik to reward goals with real prizes—no spreadsheets, no delivery delays.",
     sub:
       "Stop rewarding sales with spreadsheets and delays. Connect your CRM: when a goal is hit, 4Unik unlocks points automatically for the rep to redeem for real prizes.",
     ctaLabel: "Talk to a specialist",
@@ -81,6 +83,10 @@ export const enVendasPage = {
   },
   faq: {
     items: [
+      {
+        q: "How do you reward sales teams without spreadsheets?",
+        a: "Connect your CRM via API: when a goal is hit, 4Unik unlocks points automatically for the rep to redeem real prizes. No manual tallying or delays—catalog, inventory, and shipping stay with 4Unik. See integrations at /en/api-integracoes/.",
+      },
       {
         q: "Which CRM does it integrate with?",
         a: "Integration is via API, so it connects to the major CRMs and sales tools. Talk to us about your stack.",

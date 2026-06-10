@@ -9,6 +9,8 @@ export const enEducacaoPage = {
   hero: {
     badge: "For education & e-learning",
     title: "A real reward when the learner finishes",
+    definitionLead:
+      "E-learning programs use 4Unik to reward module completion with physical prizes delivered to the learner—without running a catalog or logistics.",
     sub:
       "Turn course completion into something they can see and feel. When the learner finishes the path, 4Unik delivers a physical prize—you focus on content, we handle logistics.",
     ctaLabel: "Talk to a specialist",
@@ -108,6 +110,10 @@ export const enEducacaoPage = {
   },
   faq: {
     items: [
+      {
+        q: "How does gamification with physical prizes help e-learning?",
+        a: "A tangible reward gives learners a concrete reason to finish the path: when they complete a module or course, they pick a real prize and 4Unik delivers it at home. You set the milestone; we handle the catalog and shipping. Integrate via API with your LMS or platform.",
+      },
       {
         q: "Does it work for any course?",
         a: "Yes—internal courses, partner training, or paid online courses. You define the milestone that unlocks the reward.",

@@ -6,9 +6,11 @@ O site publica-se em **export estático** (GitHub Pages). Os Route Handlers em `
 
 | Variável | Obrigatória em produção | Descrição |
 | --- | --- | --- |
-| `NEXT_PUBLIC_LEADS_INGEST_URL` | Sim, para envio real | URL absoluta (HTTPS) que aceita `POST` com corpo JSON. O cliente envia o payload validado (nome, email, empresa, telefone/mensagem opcionais, consentimento, `source`, `locale`, honeypot). O serviço deve permitir CORS a partir do domínio do site. |
+| `NEXT_PUBLIC_LEADS_INGEST_URL` | Recomendado em CI | URL absoluta (HTTPS) que aceita `POST` com corpo JSON. O cliente envia o payload validado (nome, email, empresa, telefone/mensagem opcionais, consentimento, `source`, `locale`, honeypot). O serviço deve permitir CORS a partir do domínio do site. |
 
-Se estiver vazia em produção estática, o formulário continua a validar no cliente mas mostra a mensagem de configuração em vez de simular envio.
+**Fallback:** se a variável estiver vazia no build, o cliente usa `config/leads-ingest.json` → `defaultIngestUrl` (`https://leads-ingest-api.vercel.app/api/ingest`). Override explícito via secret GitHub `NEXT_PUBLIC_LEADS_INGEST_URL` ou env local.
+
+Se nem env nem fallback existirem, o formulário mostra a mensagem de configuração em vez de enviar.
 
 ## Desenvolvimento local
 

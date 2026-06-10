@@ -95,6 +95,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       languages: {
         "pt-BR": ptUrl,
         en: enUrl,
+        "x-default": ptUrl,
       },
     };
 
@@ -135,6 +136,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
               languages: {
                 "pt-BR": pageAbsoluteUrl(`/blog/${slug}/`),
                 en: pageAbsoluteUrl(`/en/blog/${slug}/`),
+                "x-default": pageAbsoluteUrl(`/blog/${slug}/`),
               },
             }
           : undefined,
@@ -156,6 +158,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
               languages: {
                 "pt-BR": pageAbsoluteUrl(`/blog/${slug}/`),
                 en: pageAbsoluteUrl(`/en/blog/${slug}/`),
+                "x-default": pageAbsoluteUrl(`/blog/${slug}/`),
               },
             }
           : undefined,

@@ -9,6 +9,8 @@ export const enComunidadesPage = {
   hero: {
     badge: "For creators & communities",
     title: "A VIP store for your fans",
+    definitionLead:
+      "Creators run a VIP store and swag for superfans; 4Unik handles inventory, packing, and shipping—no logistics of your own.",
     sub:
       "Reward the people who engage the most with exclusive products. You take care of the community; 4Unik takes care of inventory, packing, and shipping—100% of delivery.",
     ctaLabel: "Book a demo",
@@ -81,6 +83,10 @@ export const enComunidadesPage = {
   },
   faq: {
     items: [
+      {
+        q: "How do creators deliver rewards without their own logistics?",
+        a: "Set up a VIP store with exclusive items; fans redeem with engagement points and 4Unik packs, ships, and tracks delivery to each home. You own the community and brand; we run catalog, inventory, and fulfillment.",
+      },
       {
         q: "Do I need to hold inventory?",
         a: "No. 4Unik handles catalog, inventory, and shipping. You define the items and the rules.",
