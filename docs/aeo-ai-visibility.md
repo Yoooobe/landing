@@ -43,5 +43,5 @@ Itens **não** implementados automaticamente — dependem de conteúdo real ou p
 | **Topic clusters** | Páginas pilar + comparativos (“gamificação para RH”, “4unik vs …”) |
 | **Conversão** | Reativar calculadora de ROI (`ROICalculator` removido como código morto) com i18n |
 | **Leads** | Definir `NEXT_PUBLIC_LEADS_INGEST_URL` em produção (forms falham sem endpoint no export estático) |
-| **Logística** | Publicar `/plataforma/logistica-integrada/` ou remover de CTAs/nav até haver conteúdo |
+| **Logística** | ~~Publicar `/plataforma/logistica-integrada/` ou remover de CTAs/nav~~ — **feito (UNI-22):** stub redireciona para `/plataforma/` (noindex); CTAs do blog apontam para páginas indexadas |
 | **CMS** | Ligar slugs `home` / `plataforma` / `api-integracoes` / `gamificacao` ao `MarketingPageRenderer` (ver [`sanity-consumed-checklist.md`](sanity-consumed-checklist.md)) |

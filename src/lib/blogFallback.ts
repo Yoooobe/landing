@@ -16,14 +16,10 @@ const HOME_HREF = BASE_PATH ? `${BASE_PATH}/` : "/";
 const BLOG_HREF = BASE_PATH ? `${BASE_PATH}/blog/` : "/blog/";
 const EDUCACAO_HREF = BASE_PATH ? `${BASE_PATH}/educacao/` : "/educacao/";
 const LOJA_HREF = BASE_PATH ? `${BASE_PATH}/plataforma/loja-resgate/` : "/plataforma/loja-resgate/";
-const LOGISTICA_HREF = BASE_PATH
-  ? `${BASE_PATH}/plataforma/logistica-integrada/`
-  : "/plataforma/logistica-integrada/";
+const PLATAFORMA_HREF = BASE_PATH ? `${BASE_PATH}/plataforma/` : "/plataforma/";
 const EDUCACAO_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/educacao/` : "/en/educacao/";
 const LOJA_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/plataforma/loja-resgate/` : "/en/plataforma/loja-resgate/";
-const LOGISTICA_HREF_EN = BASE_PATH
-  ? `${BASE_PATH}/en/plataforma/logistica-integrada/`
-  : "/en/plataforma/logistica-integrada/";
+const PLATAFORMA_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/plataforma/` : "/en/plataforma/";
 const BLOG_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/blog/` : "/en/blog/";
 
 const CTA_1_PT = buildBlogCtaBodyLines("1", "pt");
@@ -677,7 +673,7 @@ const ptSeed: readonly SeedPost[] = [
           { text: ", explore a " },
           { text: "loja de resgate", href: LOJA_HREF },
           { text: " e a " },
-          { text: "logística integrada", href: LOGISTICA_HREF },
+          { text: "visão geral da Plataforma", href: PLATAFORMA_HREF },
           { text: ", ou continue no " },
           { text: "blog", href: BLOG_HREF },
           { text: "." },
@@ -1181,8 +1177,8 @@ const enSeed: readonly SeedPost[] = [
           { text: "Education and e-learning", href: EDUCACAO_HREF_EN },
           { text: ", explore the " },
           { text: "rewards store", href: LOJA_HREF_EN },
-          { text: " and " },
-          { text: "integrated logistics", href: LOGISTICA_HREF_EN },
+          { text: " and the " },
+          { text: "Platform overview", href: PLATAFORMA_HREF_EN },
           { text: ", or continue on the " },
           { text: "blog", href: BLOG_HREF_EN },
           { text: "." },

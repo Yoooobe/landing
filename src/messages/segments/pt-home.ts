@@ -31,6 +31,7 @@ export const ptHome = {
     here: "Aqui",
     bodyAfter:
       "aprofundamos a plataforma na prática: gamificação, loja corporativa, integrações por API, catálogo e operação para RH, vendas, eventos e plataformas que querem oferecer recompensas reais dentro do próprio produto.",
+    pillarLinkLabel: "O que é infraestrutura de recompensas?",
     cta: "Ver oferta completa no site 4unik",
   },
   trust: {

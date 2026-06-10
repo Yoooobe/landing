@@ -31,6 +31,7 @@ export const enHome = {
     here: "Here",
     bodyAfter:
       "we go deeper on the product: corporate gamification, rewards store, API integrations, catalog, and day-to-day operations for HR, sales, events, and platforms that want to offer real rewards inside their own product.",
+    pillarLinkLabel: "What is reward infrastructure?",
     cta: "See the full offer on 4unik",
   },
   trust: {

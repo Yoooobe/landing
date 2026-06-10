@@ -1,29 +1,29 @@
-import PlataformaSubpageStub from "@/components/PlataformaSubpageStub";
-import { LocaleMessagesProvider } from "@/contexts/LocaleMessagesContext";
+import WorkvivoRouteRedirect from "@/components/WorkvivoRouteRedirect";
 import { getPlataformaStubSeo } from "@/lib/publicRouteFallbacks";
 import { buildRoutePageMetadata } from "@/lib/seo/routeMetadata";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildRoutePageMetadata(getPlataformaStubSeo("en", "logistica"), {
-      canonicalPath: "/en/plataforma/logistica-integrada/",
-      languages: {
-        "pt-BR": "/plataforma/logistica-integrada/",
-        en: "/en/plataforma/logistica-integrada/",
-      },
-      openGraphPath: "/en/plataforma/logistica-integrada/",
-      ogLocale: "en_US",
-      robots: {
-        index: false,
-        follow: true,
-      },
-    });
+    canonicalPath: "/en/plataforma/",
+    languages: {
+      "pt-BR": "/plataforma/",
+      en: "/en/plataforma/",
+    },
+    openGraphPath: "/en/plataforma/",
+    ogLocale: "en_US",
+    robots: {
+      index: false,
+      follow: true,
+    },
+  });
 }
 
-export default async function EnLogisticaIntegradaPage() {
+export default function EnLogisticaIntegradaRedirectPage() {
   return (
-    <LocaleMessagesProvider locale="en">
-      <PlataformaSubpageStub variant="logistica" />
-    </LocaleMessagesProvider>
+    <WorkvivoRouteRedirect
+      href="/en/plataforma/"
+      message="Redirecting to the Platform overview…"
+    />
   );
 }

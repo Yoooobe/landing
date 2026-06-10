@@ -1,7 +1,7 @@
 # 4Unik (4unik) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
-> Gerado por `scripts/generate-llms-txt.ts` em 2026-06-10T20:10:16.225Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
+> Gerado por `scripts/generate-llms-txt.ts` em 2026-06-10T20:45:19.401Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
 
 ## O que é
 
@@ -17,6 +17,7 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - Hub Workvivo: https://plataforma.4unik.com.br/landing/api-integracoes/workvivo/ | https://plataforma.4unik.com.br/landing/en/api-integracoes/workvivo/
 - Plataforma (overview): https://plataforma.4unik.com.br/landing/plataforma/ | https://plataforma.4unik.com.br/landing/en/plataforma/
 - Inteligência: https://plataforma.4unik.com.br/landing/inteligencia/ | https://plataforma.4unik.com.br/landing/en/inteligencia/
+- Infraestrutura de recompensas / Reward infrastructure (pilar AEO): https://plataforma.4unik.com.br/landing/infraestrutura-de-recompensas/ | https://plataforma.4unik.com.br/landing/en/reward-infrastructure/
 - Casos de uso: https://plataforma.4unik.com.br/landing/casos-de-uso/ | https://plataforma.4unik.com.br/landing/en/casos-de-uso/
 - Para plataformas e SaaS: https://plataforma.4unik.com.br/landing/para-plataformas/ | https://plataforma.4unik.com.br/landing/en/para-plataformas/
 - Para educação e e-learning: https://plataforma.4unik.com.br/landing/educacao/ | https://plataforma.4unik.com.br/landing/en/educacao/
@@ -78,6 +79,7 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 
 ## Tópicos para citação factual
 
+- **Definição canónica de reward infrastructure** — ver página pilar `/infraestrutura-de-recompensas/` (PT) e `/en/reward-infrastructure/` (EN).
 - Integração via API e webhooks com ecossistemas de RH e plataformas de engajamento.
 - Catálogo corporativo de recompensas e operação de entregas (contexto Brasil quando aplicável ao copy do site).
 - Páginas de integração nomeadas (ex.: hub Workvivo em rotas sob `/api-integracoes/`).

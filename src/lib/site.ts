@@ -84,3 +84,12 @@ export function getMetaPixelIdFromEnv(): string | undefined {
 export function getLinkedinPartnerIdFromEnv(): string | undefined {
   return readEnvValue("NEXT_PUBLIC_LINKEDIN_PARTNER_ID", undefined, /^[a-zA-Z0-9_-]+$/);
 }
+
+/** Google Search Console HTML-tag verification (content value only, not the full meta tag). */
+export function getGoogleSiteVerificationFromEnv(): string | undefined {
+  return readEnvValue(
+    "NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION",
+    "google-site-verification=XXXXXXXX",
+    /^[a-zA-Z0-9_-]+$/,
+  );
+}

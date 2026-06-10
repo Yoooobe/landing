@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { BASE_PATH } from "@/lib/basePath";
-import { pageAbsoluteUrl, siteMetadataBase, SITE_NAME } from "@/lib/site";
+import {
+  getGoogleSiteVerificationFromEnv,
+  pageAbsoluteUrl,
+  siteMetadataBase,
+  SITE_NAME,
+} from "@/lib/site";
 import { DEFAULT_OG_IMAGE_PATH, resolveRouteOgImagePath } from "@/lib/seo/ogImages";
 
 /**
@@ -48,6 +53,7 @@ function withSharedMetadata(
   const canonical = absoluteAlternateUrl(options.canonicalPath);
   const openGraphUrl = absoluteAlternateUrl(options.openGraphPath);
   const languages = absoluteLanguageAlternates(options.languages);
+  const googleVerification = getGoogleSiteVerificationFromEnv();
 
   return {
     metadataBase: siteMetadataBase(),
@@ -87,6 +93,7 @@ function withSharedMetadata(
       images: [defaultOgImage],
     },
     robots: options.robots,
+    ...(googleVerification ? { verification: { google: googleVerification } } : {}),
     other: {
       "content-language": options.ogLocale === "en_US" ? "en" : "pt-BR",
     },

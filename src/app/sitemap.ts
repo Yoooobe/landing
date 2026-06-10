@@ -31,6 +31,12 @@ const routePairs: RoutePair[] = [
   },
   { pt: "/plataforma/", en: "/en/plataforma/", priority: 0.9, changeFrequency: "weekly" },
   { pt: "/inteligencia/", en: "/en/inteligencia/", priority: 0.85, changeFrequency: "weekly" },
+  {
+    pt: "/infraestrutura-de-recompensas/",
+    en: "/en/reward-infrastructure/",
+    priority: 0.88,
+    changeFrequency: "monthly",
+  },
   { pt: "/casos-de-uso/", en: "/en/casos-de-uso/", priority: 0.85, changeFrequency: "weekly" },
   { pt: "/para-plataformas/", en: "/en/para-plataformas/", priority: 0.7, changeFrequency: "weekly" },
   { pt: "/educacao/", en: "/en/educacao/", priority: 0.7, changeFrequency: "weekly" },

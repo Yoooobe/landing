@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/locale";
 import { buildBreadcrumbListJsonLd } from "@/lib/jsonLd";
+import { isRewardInfrastructureSlug } from "@/lib/rewardInfrastructurePaths";
 
 const PAGE_LABELS: Record<
   Locale,
@@ -14,6 +15,7 @@ const PAGE_LABELS: Record<
     vendas: string;
     comunidades: string;
     eventos: string;
+    rewardInfrastructure: string;
   }
 > = {
   pt: {
@@ -27,6 +29,7 @@ const PAGE_LABELS: Record<
     vendas: "Para times de vendas",
     comunidades: "Para criadores e comunidades",
     eventos: "Para eventos",
+    rewardInfrastructure: "Infraestrutura de recompensas",
   },
   en: {
     home: "Home",
@@ -39,6 +42,7 @@ const PAGE_LABELS: Record<
     vendas: "For sales teams",
     comunidades: "For creators & communities",
     eventos: "For events",
+    rewardInfrastructure: "Reward infrastructure",
   },
 };
 
@@ -66,6 +70,13 @@ export function buildMarketingPageBreadcrumbJsonLd(
     comunidades: L.comunidades,
     eventos: L.eventos,
   };
+
+  if (isRewardInfrastructureSlug(slug)) {
+    return buildBreadcrumbListJsonLd([
+      { name: L.home, path: homePath },
+      { name: L.rewardInfrastructure, path: pagePath },
+    ]);
+  }
 
   const pageName = slugToName[slug];
   if (!pageName) return null;

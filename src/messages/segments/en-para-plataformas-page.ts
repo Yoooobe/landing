@@ -94,7 +94,7 @@ export const enParaPlataformasPage = {
     items: [
       {
         q: "What is reward infrastructure for SaaS platforms?",
-        a: "It is the execution layer that delivers physical rewards inside your product via API: catalog, embedded checkout, inventory, and shipping stay with 4Unik. You keep the experience and engagement; we run logistics. See also /en/api-integracoes/.",
+        a: "It is the execution layer that delivers physical rewards inside your product via API: catalog, embedded checkout, inventory, and shipping stay with 4Unik. You keep the experience and engagement; we run logistics. Full definition at /en/reward-infrastructure/.",
       },
       {
         q: "Does 4Unik compete with my platform?",

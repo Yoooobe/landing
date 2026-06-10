@@ -11,6 +11,7 @@ import { withBasePath } from "@/lib/basePath";
 import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
 import { resolveShellHref, isExternalShellHref } from "@/lib/siteShell";
 import Link from "next/link";
+import { rewardInfrastructurePath } from "@/lib/rewardInfrastructurePaths";
 import { useMemo, type ReactNode } from "react";
 
 type FooterMenuItem = {
@@ -134,6 +135,7 @@ export default function Footer() {
         title: f.colResources,
         items: [
           { label: f.links.blog, href: "/blog/" },
+          { label: f.links.rewardInfrastructure, href: rewardInfrastructurePath(locale) },
           { label: f.links.pricing, href: "/pricing/" },
           { label: f.links.seguranca, href: "/seguranca/" },
           { label: f.links.api, href: "/api-integracoes/" },

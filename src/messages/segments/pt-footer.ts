@@ -12,6 +12,7 @@ export const ptFooter = {
     gestor: "Painel do Gestor",
     casos: "Casos de Uso",
     api: "API & Webhooks",
+    rewardInfrastructure: "Infraestrutura de recompensas",
     pricing: "Planos e preços",
     seguranca: "Segurança e governança",
     catalogo: "Catálogo de Recompensas",

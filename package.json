@@ -19,6 +19,7 @@
     "test:svg": "npx tsx scripts/run-svg-sanitize-tests.ts",
     "validate:blog-ctas": "npx tsx scripts/validate-blog-landing-ctas.ts",
     "validate:landing-routes": "node scripts/validate-landing-routes.mjs",
+    "check:gsc-indexing": "node scripts/gsc-indexing-check.mjs",
     "verify:leads-ingest-build": "node scripts/verify-leads-ingest-build.mjs",
     "verify:growth-index-build": "node scripts/verify-growth-index-build.mjs",
     "verify:canonical-urls-build": "node scripts/verify-canonical-urls-build.mjs",

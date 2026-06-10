@@ -103,6 +103,7 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - Hub Workvivo: ${url("/api-integracoes/workvivo")} | ${url("/en/api-integracoes/workvivo")}
 - Plataforma (overview): ${url("/plataforma")} | ${url("/en/plataforma")}
 - Inteligência: ${url("/inteligencia")} | ${url("/en/inteligencia")}
+- Infraestrutura de recompensas / Reward infrastructure (pilar AEO): ${url("/infraestrutura-de-recompensas")} | ${url("/en/reward-infrastructure")}
 - Casos de uso: ${url("/casos-de-uso")} | ${url("/en/casos-de-uso")}
 - Para plataformas e SaaS: ${url("/para-plataformas")} | ${url("/en/para-plataformas")}
 - Para educação e e-learning: ${url("/educacao")} | ${url("/en/educacao")}
@@ -126,6 +127,7 @@ ${blogLines}
 
 ## Tópicos para citação factual
 
+- **Definição canónica de reward infrastructure** — ver página pilar \`/infraestrutura-de-recompensas/\` (PT) e \`/en/reward-infrastructure/\` (EN).
 - Integração via API e webhooks com ecossistemas de RH e plataformas de engajamento.
 - Catálogo corporativo de recompensas e operação de entregas (contexto Brasil quando aplicável ao copy do site).
 - Páginas de integração nomeadas (ex.: hub Workvivo em rotas sob \`/api-integracoes/\`).

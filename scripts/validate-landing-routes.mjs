@@ -19,6 +19,7 @@ const SITEMAP_ROUTE_PAIRS = [
   ["/api-integracoes/workvivo/", "/en/api-integracoes/workvivo/"],
   ["/plataforma/", "/en/plataforma/"],
   ["/inteligencia/", "/en/inteligencia/"],
+  ["/infraestrutura-de-recompensas/", "/en/reward-infrastructure/"],
   ["/casos-de-uso/", "/en/casos-de-uso/"],
   ["/para-plataformas/", "/en/para-plataformas/"],
   ["/educacao/", "/en/educacao/"],

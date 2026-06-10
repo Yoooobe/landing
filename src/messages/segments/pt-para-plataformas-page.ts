@@ -94,7 +94,7 @@ export const ptParaPlataformasPage = {
     items: [
       {
         q: "O que é reward infrastructure para plataformas SaaS?",
-        a: "É a camada de execução que entrega prémios físicos dentro do seu produto via API: catálogo, checkout embedded, estoque e envio ficam com a 4Unik. Você mantém a experiência e o engajamento; nós operamos a logística. Veja também a documentação em /api-integracoes/.",
+        a: "É a camada de execução que entrega prémios físicos dentro do seu produto via API: catálogo, checkout embedded, estoque e envio ficam com a 4Unik. Você mantém a experiência e o engajamento; nós operamos a logística. Definição completa em /infraestrutura-de-recompensas/.",
       },
       {
         q: "A 4Unik compete com a minha plataforma?",

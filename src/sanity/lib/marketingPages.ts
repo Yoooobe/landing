@@ -9,6 +9,12 @@ import { enCasos } from "@/messages/segments/en-casos";
 import { ptGamificacaoPage } from "@/messages/segments/pt-gamificacao-page";
 import { ptInteligenciaPage } from "@/messages/segments/pt-inteligencia-page";
 import { enInteligenciaPage } from "@/messages/segments/en-inteligencia-page";
+import { ptRewardInfrastructurePage } from "@/messages/segments/pt-reward-infrastructure-page";
+import { enRewardInfrastructurePage } from "@/messages/segments/en-reward-infrastructure-page";
+import {
+  isRewardInfrastructureSlug,
+  rewardInfrastructureSlug,
+} from "@/lib/rewardInfrastructurePaths";
 import { ptCasos } from "@/messages/segments/pt-casos";
 import { ptLandingMore } from "@/messages/segments/pt-landing-more";
 import { enLandingMore } from "@/messages/segments/en-landing-more";
@@ -111,6 +117,96 @@ function inteligenciaBlocks(locale: Locale): MarketingPageDoc["content"] {
       primaryHref: "https://calendly.com/yoobeco/demo",
       showLeadForm: true,
       leadFormVariant: "inteligencia",
+    },
+  ];
+}
+
+function rewardInfrastructureBlocks(locale: Locale): MarketingPageDoc["content"] {
+  const isEn = locale === "en";
+  const page = isEn ? enRewardInfrastructurePage : ptRewardInfrastructurePage;
+
+  return [
+    {
+      _key: "hero",
+      _type: "heroBlock",
+      headline: `${page.hero.titleBefore} ${page.hero.titleGradient}`,
+      subheadline: page.hero.sub,
+      ctaText: page.cta.button,
+      ctaLink: "https://calendly.com/yoobeco/demo",
+    },
+    {
+      _key: "definition",
+      _type: "splitContentBlock",
+      eyebrow: page.hero.badge,
+      title: isEn ? "Stable definition" : "Definição estável",
+      body: portableTextParagraph("reward-infra-definition", page.hero.definition),
+      imageSide: "right",
+    },
+    {
+      _key: "not-this",
+      _type: "splitContentBlock",
+      eyebrow: page.notThis.badge,
+      title: page.notThis.title,
+      body: portableTextParagraph("reward-infra-not-this", page.notThis.body),
+      bullets: [...page.notThis.bullets],
+      imageSide: "left",
+    },
+    {
+      _key: "components",
+      _type: "featureGridBlock",
+      eyebrow: page.components.badge,
+      title: page.components.title,
+      columns: "2",
+      items: page.components.items.map((item) => ({
+        title: item.title,
+        description: item.desc,
+        icon: item.icon,
+      })),
+    },
+    {
+      _key: "audiences",
+      _type: "featureGridBlock",
+      eyebrow: page.audiences.badge,
+      title: page.audiences.title,
+      columns: "2",
+      items: page.audiences.items.map((item) => ({
+        title: item.title,
+        description: item.desc,
+        href: `${BASE_PATH}${item.href.replace(/^\//, "").replace(/\/$/, "")}`,
+      })),
+    },
+    {
+      _key: "related",
+      _type: "featureGridBlock",
+      eyebrow: isEn ? "Explore" : "Explorar",
+      title: page.related.title,
+      columns: "2",
+      items: page.related.links.map((link) => ({
+        title: link.label,
+        description: link.href,
+        icon: "arrow-right",
+        href: `${BASE_PATH}${link.href.replace(/^\//, "").replace(/\/$/, "")}`,
+      })),
+    },
+    {
+      _key: "faq",
+      _type: "faqBlock",
+      title: `${page.faq.titleBefore} ${page.faq.titleGradient} ${page.faq.titleAfter}`.trim(),
+      items: page.faq.items.map((item) => ({
+        question: item.q,
+        answer: item.a,
+      })),
+    },
+    {
+      _key: "cta",
+      _type: "ctaBlock",
+      eyebrow: isEn ? "Next step" : "Próximo passo",
+      title: page.cta.title,
+      description: page.cta.sub,
+      primaryLabel: page.cta.button,
+      primaryHref: "https://calendly.com/yoobeco/demo",
+      showLeadForm: true,
+      leadFormVariant: "marketing",
     },
   ];
 }
@@ -600,6 +696,7 @@ function homeBlocks(
         author: item.author,
         role: item.role,
         company: item.company,
+        illustrative: "illustrative" in item ? item.illustrative : true,
       })),
     },
     {
@@ -1263,6 +1360,27 @@ async function buildFallbackMarketingPage(
       };
     }
     default: {
+      if (isRewardInfrastructureSlug(slug) && slug === rewardInfrastructureSlug(locale)) {
+        const pageCopy = locale === "en" ? enRewardInfrastructurePage : ptRewardInfrastructurePage;
+
+        return {
+          _id: `fallback-marketing-page.${locale}.${slug}`,
+          title: locale === "en" ? "Reward infrastructure" : "Infraestrutura de recompensas",
+          slug,
+          locale,
+          summary:
+            locale === "en"
+              ? "Editorial pillar page with a stable definition of reward infrastructure for AEO and SEO."
+              : "Pagina pilar editorial com definicao estavel de reward infrastructure para AEO e SEO.",
+          seo: {
+            metaTitle: pageCopy.seo.title,
+            metaDescription: pageCopy.seo.description,
+            openGraphDescription: pageCopy.seo.openGraphDescription,
+          },
+          content: rewardInfrastructureBlocks(locale),
+        };
+      }
+
       const vertical = getIcpVerticalEntry(slug);
       if (vertical) {
         const page = locale === "en" ? vertical.en : vertical.pt;
@@ -1362,6 +1480,9 @@ async function getFallbackSeo(locale: Locale, slug: string): Promise<PageSeoCopy
     case "casos-de-uso":
       return locale === "en" ? enCasosPage.seo : ptCasosPage.seo;
     default: {
+      if (isRewardInfrastructureSlug(slug) && slug === rewardInfrastructureSlug(locale)) {
+        return locale === "en" ? enRewardInfrastructurePage.seo : ptRewardInfrastructurePage.seo;
+      }
       const vertical = getIcpVerticalEntry(slug);
       if (vertical) {
         const page = locale === "en" ? vertical.en : vertical.pt;
@@ -1440,6 +1561,14 @@ export async function getMarketingPageFaqItems(
       }));
     }
     default: {
+      if (isRewardInfrastructureSlug(slug) && slug === rewardInfrastructureSlug(locale)) {
+        return (locale === "en" ? enRewardInfrastructurePage : ptRewardInfrastructurePage).faq.items.map(
+          (item) => ({
+            q: item.q,
+            a: item.a,
+          }),
+        );
+      }
       const vertical = getIcpVerticalEntry(slug);
       if (vertical) {
         const page = locale === "en" ? vertical.en : vertical.pt;

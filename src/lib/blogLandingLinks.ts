@@ -12,7 +12,7 @@ export const BLOG_CTA_PATHS_BY_SLUG: Record<
   { platform: string; feature: string; img: keyof typeof BLOG_FALLBACK_IMG }
 > = {
   "1": { platform: "/plataforma", feature: "/plataforma/motor-gamificacao", img: "dashboard" },
-  "2": { platform: "/plataforma/loja-resgate/", feature: "/plataforma/logistica-integrada/", img: "eventStage" },
+  "2": { platform: "/plataforma/loja-resgate/", feature: "/plataforma/", img: "eventStage" },
   "3": { platform: "/plataforma/motor-gamificacao", feature: "/plataforma/painel-gestor", img: "salesTeam" },
   "4": { platform: "/plataforma", feature: "/plataforma/loja-resgate", img: "welcomeKit" },
   "5": { platform: "/plataforma/painel-gestor", feature: "/plataforma/motor-gamificacao", img: "dashboard" },
@@ -104,11 +104,11 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         ctaLabel: "Ver loja de resgate",
       },
       feature: {
-        eyebrow: "Logística integrada",
-        title: "Entrega e operação de prémios",
+        eyebrow: "Plataforma · visão geral",
+        title: "Engajamento, loja e operação num só lugar",
         description:
-          "A logística integrada explica como a 4unik suporta envio e operação — útil para planear eventos e brindes com representantes.",
-        ctaLabel: "Ver logística integrada",
+          "A página Plataforma resume como a 4unik une missões, catálogo e logística — útil para planear eventos e brindes com representantes.",
+        ctaLabel: "Abrir página Plataforma",
         featureAlt: "Evento corporativo e experiência de marca",
       },
       demo: {
@@ -128,11 +128,11 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         ctaLabel: "View rewards store",
       },
       feature: {
-        eyebrow: "Integrated logistics",
-        title: "Fulfillment and prize operations",
+        eyebrow: "Platform · overview",
+        title: "Engagement, store and ops in one place",
         description:
-          "Integrated logistics explains how 4unik supports shipping and ops — plan events and gifts with our representatives.",
-        ctaLabel: "View integrated logistics",
+          "The Platform page shows how 4unik combines missions, catalog and logistics — plan events and gifts with our representatives.",
+        ctaLabel: "Open Platform page",
         featureAlt: "Corporate event audience and stage",
       },
       demo: {
