@@ -33,6 +33,13 @@ const CORE_LOGO_SEED_ITEMS = [
   logoSeedItem("boticario", "O Boticário", "boticario.webp", 0.68),
 ];
 
+const PARTNER_LOGO_SEED_ITEMS = [
+  logoSeedItem("permaneo", "Grupo Permaneo", "permaneo.webp", 0.95),
+  logoSeedItem("cast-ai", "Cast AI", "cast-ai.webp", 0.95),
+  logoSeedItem("join", "Join", "join.webp", 0.72),
+  logoSeedItem("casp", "CASP", "casp.webp", 0.95),
+];
+
 const EXTENDED_LOGO_SEED_ITEMS = [
   logoSeedItem("w1", "W1 Consultoria", "w1-consultoria.svg", 0.72, "mono-light"),
   logoSeedItem("contabilizei", "Contabilizei", "contabilizei.svg", 0.7),
@@ -2406,14 +2413,14 @@ export const seedDocuments = {
       _type: "logoCollection",
       title: "Trust bar institucional",
       collectionKey: "trustBar",
-      items: CORE_LOGO_SEED_ITEMS,
+      items: [...CORE_LOGO_SEED_ITEMS, ...PARTNER_LOGO_SEED_ITEMS],
     },
     {
       _id: "logoCollection.clientsGrid",
       _type: "logoCollection",
       title: "Grid de clientes",
       collectionKey: "clientsGrid",
-      items: [...CORE_LOGO_SEED_ITEMS, ...EXTENDED_LOGO_SEED_ITEMS],
+      items: [...CORE_LOGO_SEED_ITEMS, ...PARTNER_LOGO_SEED_ITEMS, ...EXTENDED_LOGO_SEED_ITEMS],
     },
   ],
   homeShowcaseMedia: [
