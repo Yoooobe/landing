@@ -16,6 +16,27 @@ location = /landing {
 
 Snippet completo: [`infra/plataforma-4unik-nginx-redirects.conf`](../infra/plataforma-4unik-nginx-redirects.conf). O export também embute gtag em `out/404.html` quando `NEXT_PUBLIC_GA_ID` está no build (`scripts/patch-studio-spa-fallback.mjs`).
 
+**Aplicar no servidor (301 em vez de 404):**
+
+```bash
+# Com SSH ao host do proxy (nginx)
+PLATAFORMA_PROXY_SSH=user@plataforma-host \
+PLATAFORMA_NGINX_SNIPPET=/etc/nginx/snippets/plataforma-4unik-landing-redirects.conf \
+npm run infra:apply-proxy-redirects
+
+# Sem SSH — imprime o snippet e passos manuais
+npm run infra:apply-proxy-redirects
+```
+
+- Exemplo de `server` block: [`infra/plataforma-4unik-nginx-server.example.conf`](../infra/plataforma-4unik-nginx-server.example.conf)
+- Se a resposta tem `via: varnish` (sem nginx direto): [`infra/varnish-landing-trailing-slash.vcl`](../infra/varnish-landing-trailing-slash.vcl)
+- Cloudflare: [`infra/cloudflare-redirect-landing-exact.md`](../infra/cloudflare-redirect-landing-exact.md)
+
+```bash
+curl -sI https://plataforma.4unik.com.br/landing | head -5
+# Esperado após aplicar: HTTP/2 301 + location: https://plataforma.4unik.com.br/landing/
+```
+
 ### Prefixar `/landing` em rotas conhecidas
 
 **Sem fundir** páginas de gamificação:
@@ -60,8 +81,8 @@ location ~ ^/(plataforma|api-integracoes|inteligencia|casos-de-uso|blog|en|gamif
 
 ## Cloudflare Redirect Rule (exemplo)
 
-- **Expression:** `(http.host eq "plataforma.4unik.com.br" and starts_with(http.request.uri.path, "/plataforma"))`
-- **Target:** dynamic — `/landing${http.request.uri.path}`
+- **`/landing` sem barra:** ver [`infra/cloudflare-redirect-landing-exact.md`](../infra/cloudflare-redirect-landing-exact.md)
+- **Prefixo `/plataforma`:** `(http.host eq "plataforma.4unik.com.br" and starts_with(http.request.uri.path, "/plataforma"))` → dynamic `/landing${http.request.uri.path}`
 
 ## Validação
 
