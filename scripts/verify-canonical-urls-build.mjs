@@ -30,8 +30,11 @@ function walk(dir) {
     const full = join(dir, entry);
     const st = statSync(full);
     if (st.isDirectory()) {
+      if (entry === "_next") {
+        continue;
+      }
       files.push(...walk(full));
-    } else if (/\.(html|xml|txt|json|js)$/.test(entry)) {
+    } else if (/\.(html|xml)$/.test(entry) || entry === "llms.txt" || entry === "robots.txt") {
       files.push(full);
     }
   }
@@ -65,4 +68,4 @@ if (hits.length > 0) {
   process.exit(1);
 }
 
-console.log("✓ export sem localhost/127.0.0.1 em HTML, XML, TXT, JSON ou JS");
+console.log("✓ export HTML/XML sem localhost/127.0.0.1 (metadata e artefactos públicos)");
