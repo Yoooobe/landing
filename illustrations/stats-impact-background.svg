@@ -1,0 +1,45 @@
+<svg width="1440" height="960" viewBox="0 0 1440 960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="statsRoute" x1="180" y1="220" x2="1280" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#FB923C" stop-opacity="0.34"/>
+    </linearGradient>
+    <radialGradient id="statsGlowPurple" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 240) rotate(90) scale(260 320)">
+      <stop stop-color="#7C3AED" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="statsGlowAmber" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 700) rotate(90) scale(240 300)">
+      <stop stop-color="#F97316" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="statsGlowCenter" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(720 480) rotate(90) scale(360 520)">
+      <stop stop-color="#C4B5FD" stop-opacity="0.08"/>
+      <stop offset="1" stop-color="#C4B5FD" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <circle cx="280" cy="240" r="260" fill="url(#statsGlowPurple)"/>
+  <circle cx="1180" cy="700" r="240" fill="url(#statsGlowAmber)"/>
+  <circle cx="720" cy="480" r="360" fill="url(#statsGlowCenter)"/>
+
+  <!-- abstract globe arcs (no literal map) -->
+  <g opacity="0.5">
+    <ellipse cx="720" cy="480" rx="520" ry="200" stroke="url(#statsRoute)" stroke-width="2" stroke-dasharray="2 14"/>
+    <ellipse cx="720" cy="480" rx="380" ry="132" stroke="url(#statsRoute)" stroke-width="2" stroke-dasharray="2 12" opacity="0.7"/>
+    <ellipse cx="720" cy="480" rx="640" ry="280" stroke="url(#statsRoute)" stroke-width="2" stroke-dasharray="2 18" opacity="0.45"/>
+  </g>
+
+  <!-- delivery routes -->
+  <path d="M220 320C420 220 660 250 820 340C980 430 1120 470 1280 420" stroke="url(#statsRoute)" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 18" opacity="0.6"/>
+  <path d="M300 700C480 620 700 640 880 580C1040 526 1160 540 1260 600" stroke="url(#statsRoute)" stroke-width="4" stroke-linecap="round" stroke-dasharray="4 20" opacity="0.45"/>
+
+  <!-- route nodes -->
+  <g opacity="0.7">
+    <circle cx="222" cy="320" r="10" fill="#A78BFA"/>
+    <circle cx="820" cy="340" r="8" fill="#C4B5FD"/>
+    <circle cx="1278" cy="420" r="12" fill="#FDBA74"/>
+    <circle cx="302" cy="700" r="9" fill="#F97316"/>
+    <circle cx="880" cy="580" r="10" fill="#FB923C"/>
+    <circle cx="1258" cy="600" r="8" fill="#FDBA74"/>
+  </g>
+</svg>
