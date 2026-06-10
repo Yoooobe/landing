@@ -117,6 +117,9 @@ jobs:
           NEXT_PUBLIC_INDEX_GROWTH_PAGES: ${{ secrets.NEXT_PUBLIC_INDEX_GROWTH_PAGES }}
         run: node scripts/verify-growth-index-build.mjs
 
+      - name: Verify canonical URLs in export
+        run: node scripts/verify-canonical-urls-build.mjs
+
       # Sem isto, o Jekyll do GitHub Pages ignora pastas com "_" e o _next/ some (site sem CSS/JS).
       - name: Ensure .nojekyll in export
         run: touch out/.nojekyll

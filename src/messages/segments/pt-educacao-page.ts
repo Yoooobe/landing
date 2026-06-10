@@ -9,6 +9,8 @@ export const ptEducacaoPage = {
   hero: {
     badge: "Para educação e e-learning",
     title: "Recompensa real quando o aluno conclui",
+    definitionLead:
+      "Programas de e-learning usam a 4Unik para premiar conclusão de módulos com prémios físicos entregues ao aluno — sem operar catálogo nem logística.",
     sub:
       "Transforme a conclusão de cursos em algo que se vê e se sente. Quando o aluno termina a trilha, a 4Unik entrega um prêmio físico — você foca no conteúdo, nós na logística.",
     ctaLabel: "Falar com especialista",
@@ -108,6 +110,10 @@ export const ptEducacaoPage = {
   },
   faq: {
     items: [
+      {
+        q: "Como a gamificação com prémios físicos ajuda e-learning?",
+        a: "A recompensa tangível dá um motivo concreto para terminar a trilha: ao concluir um módulo ou curso, o aluno escolhe um prémio real e a 4Unik entrega em casa. Você define o marco; nós cuidamos do catálogo e do envio. Integre por API com o seu LMS ou plataforma.",
+      },
       {
         q: "Funciona para qualquer curso?",
         a: "Sim — cursos internos, formações de parceiros ou infoprodutos. Você define o marco que libera a recompensa.",

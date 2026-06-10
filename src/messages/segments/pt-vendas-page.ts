@@ -9,6 +9,8 @@ export const ptVendasPage = {
   hero: {
     badge: "Para times de vendas",
     title: "Bateu a meta, ganhou na hora",
+    definitionLead:
+      "Times comerciais conectam o CRM à 4Unik para premiar metas com prémios reais — sem planilhas, sem atraso na entrega.",
     sub:
       "Pare de premiar vendas com planilha e atraso. Conecte o seu CRM: quando a meta é batida, a 4Unik libera pontos automaticamente para o vendedor trocar por prêmios reais.",
     ctaLabel: "Falar com especialista",
@@ -81,6 +83,10 @@ export const ptVendasPage = {
   },
   faq: {
     items: [
+      {
+        q: "Como premiar equipas de vendas sem planilhas?",
+        a: "Conecte o seu CRM por API: quando a meta é batida, a 4Unik libera pontos automaticamente para o vendedor resgatar prémios reais. Sem apuração manual nem atraso — catálogo, estoque e envio ficam com a 4Unik. Veja integrações em /api-integracoes/.",
+      },
       {
         q: "Integra com qual CRM?",
         a: "A integração é por API, então conecta aos principais CRMs e ferramentas de vendas. Fale com a gente sobre o seu stack.",

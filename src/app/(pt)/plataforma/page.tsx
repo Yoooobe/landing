@@ -1,4 +1,8 @@
 import MarketingPageWithFaq from "@/components/MarketingPageWithFaq";
+import JsonLdScript from "@/components/seo/JsonLdScript";
+import { buildSoftwareApplicationJsonLd } from "@/lib/jsonLd";
+import { pageAbsoluteUrl } from "@/lib/site";
+import { ptPlataforma } from "@/messages/segments/pt-plataforma";
 import { buildMarketingPageMetadata } from "@/sanity/lib/marketingPages";
 import type { Metadata } from "next";
 
@@ -15,5 +19,16 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function PlataformaPage() {
-  return <MarketingPageWithFaq locale="pt" slug="plataforma" pagePath="/plataforma/" />;
+  const softwareAppLd = buildSoftwareApplicationJsonLd("pt", {
+    name: "Plataforma 4Unik V3",
+    description: ptPlataforma.seo.description,
+    pageUrl: pageAbsoluteUrl("/plataforma/"),
+  });
+
+  return (
+    <>
+      <JsonLdScript data={{ ...softwareAppLd }} />
+      <MarketingPageWithFaq locale="pt" slug="plataforma" pagePath="/plataforma/" />
+    </>
+  );
 }

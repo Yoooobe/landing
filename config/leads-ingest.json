@@ -1,0 +1,4 @@
+{
+  "defaultIngestUrl": "https://leads-ingest-api.vercel.app/api/ingest",
+  "note": "Fallback quando NEXT_PUBLIC_LEADS_INGEST_URL não está definido no build. URL pública (embutida no bundle do cliente). Override via env ou GitHub secret NEXT_PUBLIC_LEADS_INGEST_URL."
+}

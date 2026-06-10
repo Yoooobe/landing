@@ -9,6 +9,8 @@ export const ptEventosPage = {
   hero: {
     badge: "Para eventos físicos e híbridos",
     title: "Brindes sem o caos logístico",
+    definitionLead:
+      "Em eventos presenciais ou híbridos, participantes escolhem brindes no telemóvel — retirada no estande ou entrega em casa, com rastreio.",
     sub:
       "Transportar, armazenar e distribuir brindes no local vira dor de cabeça. Com a 4Unik, o participante ganha pontos e faz checkout pelo celular: retira no estande ou recebe em casa, com rastreio.",
     ctaLabel: "Agendar demonstração",
@@ -81,6 +83,10 @@ export const ptEventosPage = {
   },
   faq: {
     items: [
+      {
+        q: "Como funcionam brindes digitais em eventos presenciais?",
+        a: "Participantes ganham pontos por ações no evento (check-in, missões, estande) e fazem checkout pelo celular para escolher o brinde. Podem retirar no local ou receber em casa com rastreio — sem filas nem montanha de caixas para gerir.",
+      },
       {
         q: "Funciona em evento híbrido?",
         a: "Sim. Presencial, online ou híbrido — os pontos e o checkout funcionam pelo celular.",

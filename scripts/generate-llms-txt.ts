@@ -6,6 +6,7 @@
 import { writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import { isGrowthPageIndexable } from "../src/lib/growthPagePublish";
 import { getBlogStaticSlugs } from "../src/sanity/lib/blog";
 import { parsePublicSiteUrl } from "../src/lib/parsePublicSiteUrl";
 
@@ -60,6 +61,28 @@ async function main() {
       : "- (nenhum slug disponível no build — verifique Sanity/fallback)";
 
   const generatedAt = new Date().toISOString();
+  const growthIndexable = isGrowthPageIndexable();
+
+  const growthLines = growthIndexable
+    ? `- Pricing (PT/EN): ${url("/pricing")} | ${url("/en/pricing")}
+- Security (PT/EN): ${url("/seguranca")} | ${url("/en/seguranca")}`
+    : "";
+
+  const icpSummaries = `## Soluções por perfil (resumo citável)
+
+- **Para plataformas e SaaS** (\`/para-plataformas/\`): Plataformas B2B integram catálogo, checkout e entrega de prémios físicos via API, sem operar logística.
+- **Para educação e e-learning** (\`/educacao/\`): Programas de e-learning premiam conclusão de módulos com recompensas entregues ao aluno.
+- **Para times de vendas** (\`/vendas/\`): Times comerciais recebem prémios ligados a metas e performance, com rastreio automático.
+- **Para criadores e comunidades** (\`/comunidades/\`): Criadores oferecem loja VIP e swag; a 4Unik gere inventário e envios.
+- **Para eventos** (\`/eventos/\`): Participantes escolhem brindes no telemóvel — retirada no estande ou entrega em casa.
+
+### Profile solutions (EN summary)
+
+- **For platforms & SaaS** (\`/en/para-plataformas/\`): B2B platforms embed catalog, checkout, and physical reward delivery via API—without running logistics.
+- **For education & e-learning** (\`/en/educacao/\`): E-learning programs reward module completion with prizes delivered to the learner.
+- **For sales teams** (\`/en/vendas/\`): Sales teams receive prizes tied to goals and performance, with automatic tracking.
+- **For creators & communities** (\`/en/comunidades/\`): Creators run a VIP fan store and swag; 4Unik handles inventory and shipping.
+- **For events** (\`/en/eventos/\`): Attendees pick giveaways on their phone—booth pickup or home delivery.`;
 
   const content = `# 4Unik (4unik) — llms.txt
 
@@ -69,6 +92,8 @@ async function main() {
 ## O que é
 
 A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como **reward infrastructure**: infraestrutura de recompensas para programas de **employee engagement** e **gamificação corporativa**, com **API**, **catálogo** de prémios e **fulfillment** (operação logística de entregas) integrados. O público-alvo inclui **grandes empresas** e **plataformas de engajamento** que precisam de integração e escala.
+
+**Reward infrastructure** = API-first layer for corporate rewards: catalog, checkout, and delivery integrated with engagement platforms.
 
 ## URLs canónicas (derivadas do build)
 
@@ -87,6 +112,9 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - Blog: ${url("/blog")} | ${url("/en/blog")}
 - robots.txt: ${base}/robots.txt
 - sitemap: ${base}/sitemap.xml
+${growthLines ? `\n${growthLines}` : ""}
+
+${icpSummaries}
 
 ### Subpáginas da plataforma
 

@@ -26,9 +26,11 @@
 
 ## Verificação manual
 
-- Após deploy: abrir `{SITE_URL}/llms.txt` e `{SITE_URL}/robots.txt` (fallback atual: `https://yoooobe.github.io/landing/`).
+Checklist completo pós-deploy: [`seo-validation-checklist.md`](seo-validation-checklist.md).
+
+- Após deploy: abrir `{SITE_URL}/llms.txt` e `{SITE_URL}/robots.txt` (canónica: `https://plataforma.4unik.com.br/landing/`).
 - Rich Results / schema: validar amostras no [Schema.org validator](https://validator.schema.org/) com URL de produção.
-- OG social: confirmar `og:image` aponta para PNG em `public/og/` (gerados por `npm run generate:og`).
+- OG social: confirmar `og:image` aponta para PNG em `public/og/` (gerados por `npm run generate:og`) — **nunca** `localhost` no export (`npm run verify:canonical-urls-build`).
 
 ## Backlog estratégico (requer dados / decisão de produto)
 

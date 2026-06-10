@@ -26,6 +26,8 @@ export type IcpVerticalPage = {
   readonly hero: {
     readonly badge: string;
     readonly title: string;
+    /** Visible definitional lead for AEO (below title, above subtitle). */
+    readonly definitionLead?: string;
     readonly sub: string;
     readonly ctaLabel: string;
     readonly ctaHref: string;

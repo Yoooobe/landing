@@ -20,10 +20,13 @@ mcps/**/node_modules/
 
 # production
 /build
+/dist/
 
 # misc
 # clone acidental / artefacto local (não versionar)
 /landing/
+# Paperclip agent reports and local audit artifacts
+.paperclip-artifacts/
 
 .DS_Store
 *.pem

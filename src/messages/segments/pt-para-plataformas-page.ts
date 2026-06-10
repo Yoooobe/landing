@@ -9,6 +9,8 @@ export const ptParaPlataformasPage = {
   hero: {
     badge: "Para plataformas e SaaS",
     title: "Recompensas físicas como uma chamada de API",
+    definitionLead:
+      "A 4Unik é a camada que entrega prémios físicos dentro do seu produto: você mantém a experiência; nós tratamos de catálogo, stock e envio.",
     sub:
       "Sua plataforma mostra o catálogo e o checkout dentro do próprio app. A 4Unik cuida de estoque, envio e rastreio. Você programa o comportamento; a entrega física é com a gente.",
     ctaLabel: "Ver API e integrações",
@@ -90,6 +92,10 @@ export const ptParaPlataformasPage = {
   },
   faq: {
     items: [
+      {
+        q: "O que é reward infrastructure para plataformas SaaS?",
+        a: "É a camada de execução que entrega prémios físicos dentro do seu produto via API: catálogo, checkout embedded, estoque e envio ficam com a 4Unik. Você mantém a experiência e o engajamento; nós operamos a logística. Veja também a documentação em /api-integracoes/.",
+      },
       {
         q: "A 4Unik compete com a minha plataforma?",
         a: "Não. A 4Unik é a camada de execução de recompensas físicas: você cuida da experiência e do engajamento; nós cuidamos de catálogo, estoque, frete e rastreio.",

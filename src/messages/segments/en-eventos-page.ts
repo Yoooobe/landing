@@ -9,6 +9,8 @@ export const enEventosPage = {
   hero: {
     badge: "For physical & hybrid events",
     title: "Giveaways without the logistics chaos",
+    definitionLead:
+      "At in-person or hybrid events, attendees pick giveaways on their phone—booth pickup or home delivery, tracked.",
     sub:
       "Transporting, storing, and handing out giveaways on-site is a headache. With 4Unik, attendees earn points and check out from their phone: pick up at the booth or get it shipped home, tracked.",
     ctaLabel: "Book a demo",
@@ -81,6 +83,10 @@ export const enEventosPage = {
   },
   faq: {
     items: [
+      {
+        q: "How do digital giveaways work at in-person events?",
+        a: "Attendees earn points for on-site actions (check-in, missions, booth) and check out from their phone to pick a giveaway. They can collect at the booth or get it shipped home with tracking—no queues or mountains of boxes to manage.",
+      },
       {
         q: "Does it work for hybrid events?",
         a: "Yes. In-person, online, or hybrid—points and checkout work from the phone.",

@@ -9,6 +9,8 @@ export const enParaPlataformasPage = {
   hero: {
     badge: "For platforms & SaaS",
     title: "Physical rewards as an API call",
+    definitionLead:
+      "4Unik is the layer that delivers physical rewards inside your product: you keep the experience; we handle catalog, inventory, and shipping.",
     sub:
       "Your platform shows the catalog and checkout inside your own app. 4Unik handles inventory, shipping, and tracking. You program the behavior; physical delivery is on us.",
     ctaLabel: "See API & integrations",
@@ -90,6 +92,10 @@ export const enParaPlataformasPage = {
   },
   faq: {
     items: [
+      {
+        q: "What is reward infrastructure for SaaS platforms?",
+        a: "It is the execution layer that delivers physical rewards inside your product via API: catalog, embedded checkout, inventory, and shipping stay with 4Unik. You keep the experience and engagement; we run logistics. See also /en/api-integracoes/.",
+      },
       {
         q: "Does 4Unik compete with my platform?",
         a: "No. 4Unik is the execution layer for physical rewards: you own the experience and engagement; we handle catalog, inventory, shipping, and tracking.",

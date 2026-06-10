@@ -71,13 +71,29 @@ export function buildBreadcrumbListJsonLd(items: readonly { name: string; path: 
   } as const;
 }
 
+export type SoftwareApplicationJsonLdOptions = {
+  /** Canonical page URL for this product surface (defaults to site home). */
+  pageUrl?: string;
+  /** Override application name (e.g. route-specific product label). */
+  name?: string;
+  /** Override description (e.g. from segment SEO copy). */
+  description?: string;
+};
+
 /**
  * Product-oriented schema for the reward platform (conservative wording; no performance claims).
  */
-export function buildSoftwareApplicationJsonLd(locale: "pt" | "en") {
+export function buildSoftwareApplicationJsonLd(
+  locale: "pt" | "en",
+  options?: SoftwareApplicationJsonLdOptions,
+) {
   const description =
-    locale === "en" ? enHome.seo.description : ptHome.seo.description;
-  const appName = locale === "en" ? `${SITE_NAME} platform` : `Plataforma ${SITE_NAME}`;
+    options?.description ??
+    (locale === "en" ? enHome.seo.description : ptHome.seo.description);
+  const appName =
+    options?.name ??
+    (locale === "en" ? `${SITE_NAME} platform` : `Plataforma ${SITE_NAME}`);
+  const url = options?.pageUrl ?? SITE_URL;
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -85,7 +101,8 @@ export function buildSoftwareApplicationJsonLd(locale: "pt" | "en") {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description,
-    url: SITE_URL,
+    url,
+    publisher: { "@id": ORGANIZATION_ID },
   } as const;
 }
 

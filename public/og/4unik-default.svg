@@ -13,9 +13,9 @@
   <text x="120" y="404" fill="#A9B4C6" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="500">
     Gamification, catalog, API, and fulfillment in one place.
   </text>
-  <rect x="120" y="458" width="286" height="56" rx="28" fill="#F97316"/>
+  <rect x="120" y="458" width="340" height="56" rx="28" fill="#F97316"/>
   <text x="164" y="494" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">
-    Landing social preview
+    4unik.com.br
   </text>
   <defs>
     <linearGradient id="panelGradient" x1="72" y1="72" x2="1128" y2="558" gradientUnits="userSpaceOnUse">

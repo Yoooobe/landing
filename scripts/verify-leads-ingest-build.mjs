@@ -9,13 +9,14 @@ import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "out");
-const ingestUrl = (process.env.NEXT_PUBLIC_LEADS_INGEST_URL ?? "").trim();
+const config = JSON.parse(readFileSync(join(root, "config/leads-ingest.json"), "utf8"));
+const ingestUrl = (process.env.NEXT_PUBLIC_LEADS_INGEST_URL ?? config.defaultIngestUrl ?? "").trim();
 
 console.log("--- verify-leads-ingest-build ---");
 
 if (!ingestUrl) {
   console.log(
-    "::warning::NEXT_PUBLIC_LEADS_INGEST_URL vazio — formulários ICP/home falham após export estático. Ver docs/leads-ingest.md",
+    "::warning::NEXT_PUBLIC_LEADS_INGEST_URL vazio e sem fallback em config/leads-ingest.json — formulários ICP/home falham após export estático. Ver docs/leads-ingest.md",
   );
   process.exit(0);
 }

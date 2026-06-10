@@ -9,6 +9,8 @@ export const ptComunidadesPage = {
   hero: {
     badge: "Para criadores e comunidades",
     title: "Uma loja VIP para os seus fãs",
+    definitionLead:
+      "Criadores oferecem loja VIP e swag aos superfãs; a 4Unik gere inventário, embalagem e envio — sem logística própria.",
     sub:
       "Recompense quem mais engaja com produtos exclusivos. Você cuida da comunidade; a 4Unik cuida de estoque, embalagem e envio — 100% da entrega.",
     ctaLabel: "Agendar demonstração",
@@ -81,6 +83,10 @@ export const ptComunidadesPage = {
   },
   faq: {
     items: [
+      {
+        q: "Como criadores entregam recompensas sem logística própria?",
+        a: "Monte uma loja VIP com itens exclusivos; os fãs resgatam com pontos de engajamento e a 4Unik embala, envia e rastreia até à casa de cada um. Você cuida da comunidade e da marca; nós operamos catálogo, estoque e fulfillment.",
+      },
       {
         q: "Preciso ter estoque?",
         a: "Não. A 4Unik cuida de catálogo, estoque e envio. Você define os itens e as regras.",
