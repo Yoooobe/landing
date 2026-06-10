@@ -112,6 +112,11 @@ jobs:
           NEXT_PUBLIC_LEADS_INGEST_URL: ${{ secrets.NEXT_PUBLIC_LEADS_INGEST_URL }}
         run: node scripts/verify-leads-ingest-build.mjs
 
+      - name: Verify growth page indexation in export
+        env:
+          NEXT_PUBLIC_INDEX_GROWTH_PAGES: ${{ secrets.NEXT_PUBLIC_INDEX_GROWTH_PAGES }}
+        run: node scripts/verify-growth-index-build.mjs
+
       # Sem isto, o Jekyll do GitHub Pages ignora pastas com "_" e o _next/ some (site sem CSS/JS).
       - name: Ensure .nojekyll in export
         run: touch out/.nojekyll

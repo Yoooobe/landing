@@ -20,6 +20,7 @@
     "validate:blog-ctas": "npx tsx scripts/validate-blog-landing-ctas.ts",
     "validate:landing-routes": "node scripts/validate-landing-routes.mjs",
     "verify:leads-ingest-build": "node scripts/verify-leads-ingest-build.mjs",
+    "verify:growth-index-build": "node scripts/verify-growth-index-build.mjs",
     "patch:legacy-html": "node scripts/patch-legacy-html-redirects.mjs",
     "generate:blog-posts": "npx tsx scripts/generate-blog-posts.ts",
     "blog:image-presets": "npx tsx scripts/blog-image-presets.ts",
