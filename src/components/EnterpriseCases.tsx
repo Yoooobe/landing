@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { withBasePath } from "@/lib/basePath";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
@@ -264,21 +265,50 @@ export default function EnterpriseCases({
                         ≡
                       </div>
                     </div>
-                    <div className="p-6 bg-surface-base">
-                      <div className="w-full aspect-video rounded-xl bg-linear-to-br from-gray-800 to-black border border-white/10 mb-6 flex flex-col justify-end p-4 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1621501103258-3e0dfebbcfa9?w=400&q=80')] bg-cover bg-center opacity-30 mix-blend-luminosity"></div>
-                        <span className="text-white font-black text-xl relative z-10">{p.mockHeroTitle}</span>
-                        <span className="text-white/60 text-xs font-mono relative z-10">{p.mockHeroSubtitle}</span>
+                    <div className="p-5 bg-surface-base">
+                      <div className="w-full rounded-xl bg-linear-to-br from-gray-800 to-black border border-white/10 mb-4 relative overflow-hidden">
+                        <div className="relative w-full aspect-[1024/565]">
+                          <Image
+                            src={withBasePath("/screens/prio/priostore-hero.webp")}
+                            alt="Home da Prio Store — vitrine Exclusive Merchandising"
+                            fill
+                            sizes="(min-width: 1024px) 400px, 90vw"
+                            className="object-cover"
+                            unoptimized
+                          />
+                        </div>
+                        <div className="flex flex-col px-4 py-3 border-t border-white/10 bg-black/60">
+                          <span className="text-white font-black text-base leading-tight">{p.mockHeroTitle}</span>
+                          <span className="text-white/60 text-xs font-mono">{p.mockHeroSubtitle}</span>
+                        </div>
                       </div>
 
                       <div className="grid grid-cols-2 gap-4">
                         <div className="h-32 rounded-xl bg-white/5 border border-white/5 p-3 flex flex-col group-hover:bg-white/10 transition-colors relative">
-                          <div className="flex-1 bg-white/5 rounded min-h-[50%] mb-2"></div>
+                          <div className="relative flex-1 rounded overflow-hidden mb-2">
+                            <Image
+                              src={withBasePath("/screens/prio/priostore-product.webp")}
+                              alt="Página de produto na Prio Store — moleskine I love PRIO"
+                              fill
+                              sizes="200px"
+                              className="object-cover"
+                              unoptimized
+                            />
+                          </div>
                           <div className="w-full h-2 bg-white/20 rounded-full mb-1"></div>
                           <div className="w-1/2 h-2 bg-brand-orange/50 rounded-full"></div>
                         </div>
                         <div className="h-32 rounded-xl bg-white/5 border border-white/5 p-3 flex flex-col group-hover:bg-white/10 transition-colors relative">
-                          <div className="flex-1 bg-white/5 rounded min-h-[50%] mb-2"></div>
+                          <div className="relative flex-1 rounded overflow-hidden mb-2">
+                            <Image
+                              src={withBasePath("/screens/prio/priostore-catalog.webp")}
+                              alt="Catálogo Moda PRIO na Prio Store"
+                              fill
+                              sizes="200px"
+                              className="object-cover"
+                              unoptimized
+                            />
+                          </div>
                           <div className="w-full h-2 bg-white/20 rounded-full mb-1"></div>
                           <div className="w-2/3 h-2 bg-brand-orange/50 rounded-full"></div>
                         </div>
