@@ -1,7 +1,7 @@
 # 4Unik (4unik) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
-> Gerado por `scripts/generate-llms-txt.ts` (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
+> Gerado por `scripts/generate-llms-txt.ts` em 2026-06-10T18:44:31.804Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
 
 ## O que é
 
@@ -38,22 +38,24 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - loja-resgate (PT): https://plataforma.4unik.com.br/landing/plataforma/loja-resgate/
 - loja-resgate (EN): https://plataforma.4unik.com.br/landing/en/plataforma/loja-resgate/
 
-### Posts do blog (fallback editorial — slugs numéricos)
+### Posts do blog (slugs do CMS + fallback editorial)
 
-- Post fallback 1 (PT): https://plataforma.4unik.com.br/landing/blog/1/
-- Post fallback 1 (EN): https://plataforma.4unik.com.br/landing/en/blog/1/
-- Post fallback 2 (PT): https://plataforma.4unik.com.br/landing/blog/2/
-- Post fallback 2 (EN): https://plataforma.4unik.com.br/landing/en/blog/2/
-- Post fallback 3 (PT): https://plataforma.4unik.com.br/landing/blog/3/
-- Post fallback 3 (EN): https://plataforma.4unik.com.br/landing/en/blog/3/
-- Post fallback 4 (PT): https://plataforma.4unik.com.br/landing/blog/4/
-- Post fallback 4 (EN): https://plataforma.4unik.com.br/landing/en/blog/4/
-- Post fallback 5 (PT): https://plataforma.4unik.com.br/landing/blog/5/
-- Post fallback 5 (EN): https://plataforma.4unik.com.br/landing/en/blog/5/
-- Post fallback 6 (PT): https://plataforma.4unik.com.br/landing/blog/6/
-- Post fallback 6 (EN): https://plataforma.4unik.com.br/landing/en/blog/6/
-- Post fallback 7 (PT): https://plataforma.4unik.com.br/landing/blog/7/
-- Post fallback 7 (EN): https://plataforma.4unik.com.br/landing/en/blog/7/
+- 1 (PT): https://plataforma.4unik.com.br/landing/blog/1/
+- 1 (EN): https://plataforma.4unik.com.br/landing/en/blog/1/
+- 2 (PT): https://plataforma.4unik.com.br/landing/blog/2/
+- 2 (EN): https://plataforma.4unik.com.br/landing/en/blog/2/
+- 3 (PT): https://plataforma.4unik.com.br/landing/blog/3/
+- 3 (EN): https://plataforma.4unik.com.br/landing/en/blog/3/
+- 4 (PT): https://plataforma.4unik.com.br/landing/blog/4/
+- 4 (EN): https://plataforma.4unik.com.br/landing/en/blog/4/
+- 5 (PT): https://plataforma.4unik.com.br/landing/blog/5/
+- 5 (EN): https://plataforma.4unik.com.br/landing/en/blog/5/
+- 6 (PT): https://plataforma.4unik.com.br/landing/blog/6/
+- 6 (EN): https://plataforma.4unik.com.br/landing/en/blog/6/
+- 7 (PT): https://plataforma.4unik.com.br/landing/blog/7/
+- 7 (EN): https://plataforma.4unik.com.br/landing/en/blog/7/
+- 8 (PT): https://plataforma.4unik.com.br/landing/blog/8/
+- 8 (EN): https://plataforma.4unik.com.br/landing/en/blog/8/
 
 ## Tópicos para citação factual
 
