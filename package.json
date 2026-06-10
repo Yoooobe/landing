@@ -29,6 +29,7 @@
     "smoke:nano-banana": "node scripts/smoke-nano-banana.mjs",
     "smoke:leads-ingest": "node scripts/smoke-leads-ingest.mjs",
     "deploy:gh-pages": "bash scripts/deploy-gh-pages.sh",
+    "deploy:production": "bash scripts/deploy-production.sh",
     "deploy:gh-pages:quick": "npm run build && gh-pages -d out -t -m \"chore: deploy static export to gh-pages\""
   },
   "dependencies": {

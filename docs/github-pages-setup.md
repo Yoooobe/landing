@@ -8,8 +8,9 @@ Se os workflows mostram *“account locked due to a billing issue”*:
 
 - Conta pessoal: [github.com/settings/billing](https://github.com/settings/billing)
 - Organização: **Settings → Billing** da org (precisas de permissão de admin)
+- Checklist completo: [docs/github-actions-billing-recovery.md](github-actions-billing-recovery.md)
 
-Enquanto Actions estiver bloqueadas, o workflow **Deploy to GitHub Pages** (`.github/workflows/deploy.yml`) **não corre**. O deploy manual para a branch `gh-pages` (ver abaixo) **continua a funcionar** se tiveres push no repositório.
+Enquanto Actions estiver bloqueadas, o workflow **Deploy to GitHub Pages** (`.github/workflows/deploy.yml`) **não corre**. Use **`npm run deploy:production`** (build + push `gh-pages` com env de `.env.local`) ou `bash scripts/deploy-gh-pages.sh`.
 
 ## 2. Escolher o que o GitHub Pages serve (obrigatório)
 
