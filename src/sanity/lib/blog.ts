@@ -52,6 +52,9 @@ function mergeCmsPostWithFallback(cms: BlogPostDoc, fb: BlogPostDoc): BlogPostDo
         ? cms.relatedKeywords
         : fb.relatedKeywords,
     author: cms.author?.trim() || fb.author,
+    authorProfile: cms.authorProfile?.name?.trim() && cms.authorProfile?.bio?.trim()
+      ? cms.authorProfile
+      : fb.authorProfile,
     tags: cms.tags && cms.tags.length > 0 ? cms.tags : fb.tags,
     readTimeMinutes:
       typeof cms.readTimeMinutes === "number" && cms.readTimeMinutes > 0

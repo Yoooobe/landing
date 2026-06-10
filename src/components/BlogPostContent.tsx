@@ -1,9 +1,11 @@
 "use client";
 
+import BlogAuthorBio from "@/components/BlogAuthorBio";
 import BlogContentImage from "@/components/BlogContentImage";
 import PortableTextContent from "@/components/PortableTextContent";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { getBlogImageUrl } from "@/lib/blogImageUrl";
+import { resolveBlogAuthor } from "@/lib/resolveBlogAuthor";
 import type { BlogPostDoc, BlogPostListItem } from "@/sanity/lib/types";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import Link from "next/link";
@@ -26,6 +28,7 @@ function formatBlogDate(date: string, locale: "pt" | "en") {
 export default function BlogPostContent({ post, relatedPosts = [] }: Props) {
   const { locale, m, path } = useLocaleMessages();
   const imageUrl = getBlogImageUrl(post.coverImage, "articleCover");
+  const authorProfile = resolveBlogAuthor(post);
   const blogPageCopy = m.blogPage as typeof m.blogPage & {
     backToBlog?: string;
     relatedHeading?: string;
@@ -77,6 +80,14 @@ export default function BlogPostContent({ post, relatedPosts = [] }: Props) {
               priority
             />
           </div>
+        ) : null}
+
+        {authorProfile ? (
+          <BlogAuthorBio
+            profile={authorProfile}
+            locale={locale}
+            aiGenerated={post.aiGenerated}
+          />
         ) : null}
 
         <PortableTextContent blocks={post.body} />

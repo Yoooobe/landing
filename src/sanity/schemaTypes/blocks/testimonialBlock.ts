@@ -43,6 +43,34 @@ export const testimonialBlock = defineType({
               title: "Empresa",
               type: "string",
             }),
+            defineField({
+              name: "verified",
+              title: "Caso verificado (EEAT)",
+              type: "boolean",
+              initialValue: false,
+              description:
+                "Marque apenas com autorização formal do cliente e dados auditáveis.",
+            }),
+            defineField({
+              name: "illustrative",
+              title: "Ilustrativo (não verificado)",
+              type: "boolean",
+              initialValue: true,
+              description:
+                "Quando true, o site exibe aviso de que o depoimento é representativo, não um caso auditado.",
+            }),
+            defineField({
+              name: "caseStudyUrl",
+              title: "URL do caso / estudo",
+              type: "url",
+              description: "Link para página de caso de sucesso ou fonte pública verificável.",
+            }),
+            defineField({
+              name: "consentNote",
+              title: "Nota de consentimento (interno)",
+              type: "string",
+              description: "Referência interna: data/autorização jurídica (não renderizado no site).",
+            }),
           ],
           preview: {
             select: {

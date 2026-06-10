@@ -38,7 +38,7 @@ Itens **não** implementados automaticamente — dependem de conteúdo real ou p
 
 | Área | Ação sugerida |
 |------|----------------|
-| **EEAT** | Testemunhos e casos com clientes reais, logos com permissão, bios de autor no blog |
+| **EEAT** | Testemunhos e casos com clientes reais, logos com permissão, bios de autor no blog — **infra implementada** (`authorProfile` no blog, selos ilustrativo/verificado em depoimentos); conteúdo real depende de Marca/Jurídico |
 | **Métricas** | Substituir stats de marketing (ex. 500+ empresas, 98% satisfação) por números auditáveis ou marcar como ilustrativo |
 | **Topic clusters** | Páginas pilar + comparativos (“gamificação para RH”, “4unik vs …”) |
 | **Conversão** | Reativar calculadora de ROI (`ROICalculator` removido como código morto) com i18n |

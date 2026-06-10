@@ -82,6 +82,8 @@ export const enRest = {
     badge: "Testimonials",
     titleBefore: "What our customers",
     titleGradient: "say",
+    illustrativeDisclaimer:
+      "Representative testimonials illustrating typical outcomes. Audited client cases with formal authorization will be published with a verified badge.",
     items: [
       {
         text: `"4Unik unlocked our recognition program. In three months engagement rose about 40% and turnover started to drop in a noticeable way."`,
@@ -89,6 +91,7 @@ export const enRest = {
         role: "Head of HR",
         company: "Tech company (500+ employees)",
         avatar: "MC",
+        illustrative: true,
       },
       {
         text: `"API integration was straightforward. In under a week we were live with our HRIS—and per-user pricing made it easy to explain cost to finance."`,
@@ -96,6 +99,7 @@ export const enRest = {
         role: "CTO",
         company: "Fintech (200+ employees)",
         avatar: "RS",
+        illustrative: true,
       },
       {
         text: `"Personalized welcome kits changed how day one feels. Every new hire sees that the company actually cared."`,
@@ -103,6 +107,7 @@ export const enRest = {
         role: "People Ops",
         company: "E-commerce (1,000+ employees)",
         avatar: "AP",
+        illustrative: true,
       },
     ],
   },

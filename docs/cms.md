@@ -170,6 +170,7 @@ O Blog tem subseções no Sanity Studio para facilitar o gerenciamento editorial
 | body | Portable Text | — | Blocos de texto: normal, h2, h3, blockquote, listas com marcadores; **imagens inline** (`image` com `alt` e hotspot); **CTA inline** (`blogCta`) — ver secção abaixo |
 | relatedKeywords | string[] | — | Palavras-chave para SEO e conteúdo relacionado |
 | author | string | — | Nome do editor ou redator responsável |
+| authorProfile | object | — | EEAT: `name`, `role`, `bio` (máx. 320), `profileUrl`, `avatar` — renderizado na página do post e em JSON-LD `Person` |
 | tags | string[] (tags) | — | Labels finos: "OKRs", "NPS", "Recompensas", "Eventos"... |
 | aiGenerated | boolean | — | `true` quando gerado pelo agente de IA |
 | contentBrief | text | — | Brief ou prompt usado — apenas referência interna |

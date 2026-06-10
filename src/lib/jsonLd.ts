@@ -1,10 +1,9 @@
 import { pageAbsoluteUrl, SITE_NAME, SITE_URL } from "@/lib/site";
+import { authorProfileForJsonLd, resolveBlogAuthor } from "@/lib/resolveBlogAuthor";
 import { enHome } from "@/messages/segments/en-home";
 import { ptHome } from "@/messages/segments/pt-home";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { BlogPostDoc } from "@/sanity/lib/types";
-
-/** Tópicos estáveis para `knowsAbout` (AEO / assistentes que consomem schema.org). */
 const ORGANIZATION_KNOWS_ABOUT = [
   "Employee engagement",
   "Corporate gamification",
@@ -133,6 +132,21 @@ export function buildBlogPostingJsonLd(
   const imageUrl = getSanityImageUrl(post.seo?.openGraphImage || post.coverImage);
   const publishedAt = post.publishedAt || undefined;
   const dateModified = post._updatedAt || publishedAt;
+  const authorProfile = authorProfileForJsonLd(resolveBlogAuthor(post));
+  const authorAvatarUrl = getSanityImageUrl(authorProfile?.avatar);
+
+  const authorJsonLd = authorProfile
+    ? ({
+        "@type": "Person",
+        name: authorProfile.name,
+        ...(authorProfile.role ? { jobTitle: authorProfile.role } : {}),
+        ...(authorProfile.profileUrl ? { url: authorProfile.profileUrl } : {}),
+        ...(authorAvatarUrl
+          ? { image: { "@type": "ImageObject", url: authorAvatarUrl } }
+          : {}),
+        ...(authorProfile.bio ? { description: authorProfile.bio } : {}),
+      } satisfies Record<string, unknown>)
+    : { "@id": ORGANIZATION_ID };
 
   return {
     "@context": "https://schema.org",
@@ -147,7 +161,7 @@ export function buildBlogPostingJsonLd(
     inLanguage: locale === "pt" ? "pt-BR" : "en-US",
     articleSection: post.category,
     keywords: post.relatedKeywords?.filter(Boolean),
-    author: { "@id": ORGANIZATION_ID },
+    author: authorJsonLd,
     publisher: {
       "@type": "Organization",
       "@id": ORGANIZATION_ID,

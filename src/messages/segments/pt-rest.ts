@@ -83,6 +83,8 @@ export const ptRest = {
     badge: "Depoimentos",
     titleBefore: "O que nossos clientes",
     titleGradient: "dizem",
+    illustrativeDisclaimer:
+      "Depoimentos representativos para ilustrar resultados típicos. Casos auditados com autorização do cliente serão publicados com selo verificado.",
     items: [
       {
         text: `"A 4Unik destravou nosso programa de reconhecimento. Em três meses o engajamento subiu cerca de 40% e o turnover começou a cair de forma perceptível."`,
@@ -90,6 +92,7 @@ export const ptRest = {
         role: "Head de RH",
         company: "Tech Company (500+ colaboradores)",
         avatar: "MC",
+        illustrative: true,
       },
       {
         text: `"A integração via API foi direta. Em menos de uma semana estávamos integrados ao HRIS — e o modelo por usuário ativo facilitou apresentar custo para o financeiro."`,
@@ -97,6 +100,7 @@ export const ptRest = {
         role: "CTO",
         company: "Fintech (200+ colaboradores)",
         avatar: "RS",
+        illustrative: true,
       },
       {
         text: `"Os welcome kits personalizados mudaram a percepção do primeiro dia. Cada pessoa nova sente que a empresa se importou de verdade."`,
@@ -104,6 +108,7 @@ export const ptRest = {
         role: "People Ops",
         company: "E-commerce (1.000+ colaboradores)",
         avatar: "AP",
+        illustrative: true,
       },
     ],
   },

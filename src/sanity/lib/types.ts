@@ -134,6 +134,14 @@ export type BlogCtaBlock = {
 
 export type BlogPostBodyItem = PortableTextBlock | PortableTextImageBlock | BlogCtaBlock;
 
+export type BlogAuthorProfile = {
+  name: string;
+  role?: string;
+  bio: string;
+  profileUrl?: string;
+  avatar?: SanityImageDoc | null;
+};
+
 export type BlogPostListItem = {
   _id: string;
   title: string;
@@ -147,6 +155,7 @@ export type BlogPostListItem = {
   featured?: boolean;
   coverImage?: SanityImageDoc | null;
   author?: string;
+  authorProfile?: BlogAuthorProfile | null;
   tags?: string[];
   aiGenerated?: boolean;
 };
@@ -219,6 +228,10 @@ export type TestimonialItemDoc = {
   author?: string;
   role?: string;
   company?: string;
+  verified?: boolean;
+  illustrative?: boolean;
+  caseStudyUrl?: string;
+  consentNote?: string;
 };
 
 export type TestimonialBlockDoc = {

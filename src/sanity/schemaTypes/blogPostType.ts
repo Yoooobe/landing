@@ -224,6 +224,51 @@ export const blogPostType = defineType({
       description: "Nome do editor ou redator responsável pelo post.",
     }),
     defineField({
+      name: "authorProfile",
+      title: "Perfil do autor (EEAT)",
+      type: "object",
+      description:
+        "Bio curta, cargo e link público do autor — melhora confiança editorial e schema Person no blog.",
+      fields: [
+        defineField({
+          name: "name",
+          title: "Nome",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+          name: "role",
+          title: "Cargo / especialidade",
+          type: "string",
+        }),
+        defineField({
+          name: "bio",
+          title: "Bio",
+          type: "text",
+          rows: 4,
+          validation: (Rule) => Rule.required().max(320),
+        }),
+        defineField({
+          name: "profileUrl",
+          title: "URL pública (LinkedIn, página da empresa, etc.)",
+          type: "url",
+        }),
+        defineField({
+          name: "avatar",
+          title: "Foto",
+          type: "image",
+          options: { hotspot: true },
+          fields: [
+            defineField({
+              name: "alt",
+              title: "Texto alternativo",
+              type: "string",
+            }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
       name: "tags",
       title: "Tags",
       type: "array",

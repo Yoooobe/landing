@@ -497,12 +497,33 @@ function GenericTestimonialsBlock({ block }: { block: TestimonialBlockDoc }) {
               key={`${item.author || "testimonial"}-${index}`}
               className="rounded-3xl border border-white/10 bg-white/5 p-8"
             >
+              <div className="mb-4 flex flex-wrap items-center gap-2">
+                {item.verified ? (
+                  <span className="rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-xs font-bold text-emerald-300">
+                    Caso verificado
+                  </span>
+                ) : item.illustrative !== false ? (
+                  <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-xs text-white/45">
+                    Ilustrativo
+                  </span>
+                ) : null}
+              </div>
               {item.quote ? <p className="text-lg leading-8 text-white/75">&ldquo;{item.quote}&rdquo;</p> : null}
               <div className="mt-6 text-sm text-white/60">
                 <div className="font-bold text-white">{item.author}</div>
                 <div>
                   {[item.role, item.company].filter(Boolean).join(" • ")}
                 </div>
+                {item.verified && item.caseStudyUrl ? (
+                  <a
+                    href={item.caseStudyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block text-brand-orange/90 hover:text-brand-orange"
+                  >
+                    Ver caso
+                  </a>
+                ) : null}
               </div>
             </article>
           ))}

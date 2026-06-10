@@ -13,6 +13,19 @@ export const blogPostListQuery = groq`
     readTimeMinutes,
     featured,
     author,
+    authorProfile{
+      name,
+      role,
+      bio,
+      profileUrl,
+      avatar{
+        alt,
+        asset->{
+          _ref,
+          url
+        }
+      }
+    },
     tags,
     aiGenerated,
     coverImage{
@@ -48,6 +61,19 @@ export const blogPostBySlugQuery = groq`
     readTimeMinutes,
     featured,
     author,
+    authorProfile{
+      name,
+      role,
+      bio,
+      profileUrl,
+      avatar{
+        alt,
+        asset->{
+          _ref,
+          url
+        }
+      }
+    },
     tags,
     aiGenerated,
     relatedKeywords,
