@@ -17,10 +17,12 @@ type TestimonialItem = {
 
 export default function TestimonialsSection() {
   const { locale, m } = useLocaleMessages();
-  const t = m.testimonials as typeof m.testimonials & {
-    illustrativeDisclaimer?: string;
-    items: TestimonialItem[];
-  };
+  const t = m.testimonials;
+  const items = t.items as unknown as TestimonialItem[];
+  const disclaimer =
+    "illustrativeDisclaimer" in t && typeof t.illustrativeDisclaimer === "string"
+      ? t.illustrativeDisclaimer
+      : undefined;
   const verifiedLabel = locale === "pt" ? "Caso verificado" : "Verified case";
   const illustrativeLabel = locale === "pt" ? "Ilustrativo" : "Illustrative";
   const caseStudyLabel = locale === "pt" ? "Ver caso" : "View case";
@@ -38,15 +40,15 @@ export default function TestimonialsSection() {
               {t.titleGradient}
             </span>
           </h2>
-          {t.illustrativeDisclaimer ? (
+          {disclaimer ? (
             <p className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-white/45">
-              {t.illustrativeDisclaimer}
+              {disclaimer}
             </p>
           ) : null}
         </div>
 
         <div className="relative z-10 grid gap-8 md:grid-cols-3">
-          {t.items.map((item, i) => (
+          {items.map((item, i) => (
             <motion.div
               key={item.author}
               initial={{ opacity: 0, scale: 0.95 }}
