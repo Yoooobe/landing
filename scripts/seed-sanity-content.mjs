@@ -524,20 +524,19 @@ function titleFromSegmentFile(fileName) {
     .join(" ");
 }
 
-function loadSegmentObject(relativePath) {
-  const fileContent = fs.readFileSync(path.join(ROOT_DIR, relativePath), "utf8");
-  const separatorIndex = fileContent.indexOf("=");
-  if (separatorIndex === -1) {
-    throw new Error(`Nao foi possivel ler o objeto exportado em ${relativePath}`);
-  }
+function segmentExportNameFromPath(relativePath) {
+  const base = path.basename(relativePath, path.extname(relativePath));
+  return base.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+}
 
-  const objectExpression = fileContent
-    .slice(separatorIndex + 1)
-    .trim()
+function stripTypeScriptFromExpression(expression) {
+  return expression
     .replace(/ as const/g, "")
-    .replace(/;\s*$/, "");
+    .replace(/\s+satisfies\s+[A-Za-z0-9_|.\[\]<>]+(?:\s+as\s+[A-Za-z0-9_|.\[\]<>]+)?/g, "");
+}
 
-  return Function(`"use strict"; return (${objectExpression});`)();
+function loadSegmentObject(relativePath) {
+  return loadNamedExportObject(relativePath, segmentExportNameFromPath(relativePath));
 }
 
 function loadNamedExportObject(relativePath, exportName) {
@@ -587,10 +586,9 @@ function loadNamedExportObject(relativePath, exportName) {
     }
   }
 
-  const objectExpression = fileContent
-    .slice(index, endIndex)
-    .trim()
-    .replace(/ as const/g, "");
+  const objectExpression = stripTypeScriptFromExpression(
+    fileContent.slice(index, endIndex).trim(),
+  );
 
   return Function(`"use strict"; return (${objectExpression});`)();
 }

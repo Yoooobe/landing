@@ -111,7 +111,7 @@ Documento singleton com `_id` fixo `siteSettings`.
 
 | Campo | Uso |
 | --- | --- |
-| GA4 Measurement ID | `G-XXXXXXXXXX` — usado só se `NEXT_PUBLIC_GA_ID` não estiver definido |
+| GA4 Measurement ID | `G-SMJDYCENBC` (produção) — usado só se `NEXT_PUBLIC_GA_ID` não estiver definido. Conta GA `66932658` / propriedade `327916606` — ver [`docs/knowledge-base/integrations.md`](knowledge-base/integrations.md) |
 | GTM Container ID | `GTM-XXXXXXX` — injetado no cliente quando preenchido |
 | Meta Pixel ID | só dígitos |
 | LinkedIn Partner ID | alfanumérico / `-` / `_` |

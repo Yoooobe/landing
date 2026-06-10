@@ -31,6 +31,7 @@ Ritual completo: [`docs/agent-knowledge-notebooklm.md`](../agent-knowledge-noteb
 | `notebooklm/editorial-themes.md` | Clusters blog, FAQs, ideias de página |
 | `notebooklm/changelog.md` | Histórico de syncs (uma linha por data) |
 | `notebooklm/meta.yaml` | `notebook_id`, `last_synced`, `stale_after_days` |
+| [`integrations.md`](integrations.md) | IDs de serviços externos (GA4, GTM, pixels) para agentes |
 
 ## Ferramentas MCP
 

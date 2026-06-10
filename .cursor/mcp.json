@@ -14,7 +14,9 @@
       "command": "node",
       "args": ["${workspaceFolder}/mcps/4unik-marketing/index.js"],
       "cwd": "${workspaceFolder}/mcps/4unik-marketing",
-      "env": {}
+      "env": {
+        "GA_PROPERTY_ID": "327916606"
+      }
     }
   }
 }

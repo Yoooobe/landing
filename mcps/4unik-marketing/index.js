@@ -426,6 +426,7 @@ function contentSyncRegistry() {
     knowledgeBase: {
       root: "docs/knowledge-base/",
       notebooklm: "docs/knowledge-base/notebooklm/",
+      integrations: "docs/knowledge-base/integrations.md",
       icpMessagingGuide: "docs/knowledge-base/notebooklm/icp-messaging-guide.md",
       icpPersonas: "docs/knowledge-base/notebooklm/icp-personas.md",
       syncDoc: "docs/agent-knowledge-notebooklm.md",
