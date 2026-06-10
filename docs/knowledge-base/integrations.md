@@ -25,13 +25,23 @@ Registo canónico de IDs e serviços usados pela landing 4unik. **Não colocar c
 
 - Componente: [`src/components/site-settings/SiteAnalytics.tsx`](../../src/components/site-settings/SiteAnalytics.tsx) (`@next/third-parties/google`).
 - Resolução do ID: [`src/contexts/SiteSettingsContext.tsx`](../../src/contexts/SiteSettingsContext.tsx) — env tem prioridade sobre Sanity.
+- **Env no browser:** getters em [`src/lib/site.ts`](../../src/lib/site.ts) usam `process.env.NEXT_PUBLIC_GA_ID` (acesso **estático**). Nunca `process.env[key]` dinâmico — o bundler não inline e o Realtime fica vazio apesar do preload no HTML.
 - Evento de conversão: `generate_lead` disparado em [`src/components/LeadCaptureForm.tsx`](../../src/components/LeadCaptureForm.tsx) após submissão bem-sucedida. Marcar como **key event** no GA4 Admin quando aparecer nos dados.
+
+### Deploy produção (sem GitHub Actions)
+
+```bash
+npm run deploy:production
+```
+
+Carrega `.env.local`, força `NEXT_PUBLIC_SITE_URL=https://plataforma.4unik.com.br/landing`, corre `verify-ga-build` e publica `out/` → branch `gh-pages`. Ver [`docs/github-actions-billing-recovery.md`](../github-actions-billing-recovery.md) se CI estiver bloqueado.
 
 ### Verificação pós-deploy
 
 1. GA4 → **Relatórios → Tempo real** — visitar `https://plataforma.4unik.com.br/landing/`.
 2. Admin → **Coleta e modificação de dados → Fluxos de dados** — confirmar **Enhanced Measurement** ativo (page views em navegação SPA).
 3. DevTools → Network — pedidos a `google-analytics.com/g/collect` com `tid=G-SMJDYCENBC`.
+4. Build: `node scripts/verify-ga-build.mjs` após `npm run build` — confirma que o ID foi inlined nos chunks (preload no HTML sem ID nos chunks = Realtime vazio).
 
 ## Outros pixels (opcionais)
 
@@ -50,4 +60,13 @@ Implementados em [`src/lib/site.ts`](../../src/lib/site.ts) e [`src/components/s
 
 ## Agentes Paperclip
 
-Agentes que operam neste repositório devem consultar este ficheiro (via `search_product_knowledge` ou leitura directa) antes de alterar tracking ou interpretar métricas. Não há registo separado no Paperclip — a KB versionada no repo é a fonte de verdade.
+Agentes Paperclip (e Cursor) que operam neste repositório devem:
+
+1. Ler este ficheiro antes de alterar tracking ou interpretar métricas GA4.
+2. Usar MCP `search_product_knowledge` com termos `GA4`, `integrations`, `G-SMJDYCENBC`.
+3. **Não** reintroduzir `process.env[key]` dinâmico em `src/lib/site.ts`.
+4. Após mudanças que afetem analytics, correr `npm run verify:ga-build` e `npm run deploy:production` (Actions pode estar bloqueado por billing).
+
+**Estado (2026-06-10):** GA4 activo em produção — hits `g/collect` com `tid=G-SMJDYCENBC` confirmados em `https://plataforma.4unik.com.br/landing/`. Sanity fallback: `siteSettings.gaMeasurementId = G-SMJDYCENBC`.
+
+Não há registo separado no Paperclip — a KB versionada no repo é a fonte de verdade; sincronizar skills Paperclip a partir deste repo após push para `main`.

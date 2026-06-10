@@ -23,6 +23,7 @@
     "verify:leads-ingest-build": "node scripts/verify-leads-ingest-build.mjs",
     "verify:growth-index-build": "node scripts/verify-growth-index-build.mjs",
     "verify:canonical-urls-build": "node scripts/verify-canonical-urls-build.mjs",
+    "verify:ga-build": "node scripts/verify-ga-build.mjs",
     "patch:legacy-html": "node scripts/patch-legacy-html-redirects.mjs",
     "generate:blog-posts": "npx tsx scripts/generate-blog-posts.ts",
     "blog:image-presets": "npx tsx scripts/blog-image-presets.ts",

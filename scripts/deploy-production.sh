@@ -17,7 +17,7 @@ else
   echo "==> Aviso: ${ENV_FILE} não encontrado (npm run env:init)"
 fi
 
-export NEXT_PUBLIC_SITE_URL="${NEXT_PUBLIC_SITE_URL:-https://plataforma.4unik.com.br/landing}"
+export NEXT_PUBLIC_SITE_URL="https://plataforma.4unik.com.br/landing"
 export NEXT_PUBLIC_SANITY_PROJECT_ID="${NEXT_PUBLIC_SANITY_PROJECT_ID:?Defina NEXT_PUBLIC_SANITY_PROJECT_ID em .env.local}"
 export NEXT_PUBLIC_SANITY_DATASET="${NEXT_PUBLIC_SANITY_DATASET:-production}"
 export NEXT_PUBLIC_SANITY_API_VERSION="${NEXT_PUBLIC_SANITY_API_VERSION:-2024-03-17}"
@@ -28,6 +28,9 @@ fi
 
 echo "==> Build produção (SITE_URL=${NEXT_PUBLIC_SITE_URL})"
 npm run build
+
+echo "==> Verificar GA4 inlined no export"
+node scripts/verify-ga-build.mjs
 
 if [[ ! -f out/.nojekyll ]]; then
   touch out/.nojekyll

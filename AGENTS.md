@@ -35,6 +35,7 @@ The site is served at `http://localhost:3000/landing/` when using the default ca
 | Env local | `npm run env:init` / `npm run env:check` (`scripts/init-env-local.mjs`, `scripts/check-local-env.mjs`) |
 | Sanity CORS | `npm run sanity:cors` (adiciona origens localhost + `plataforma.4unik.com.br`) |
 | Deploy rápido (GH Pages) | `npm run deploy:gh-pages:quick` (`npm run build && gh-pages -d out`) |
+| Verificar GA4 no build | `npm run verify:ga-build` (após `npm run build`; falha se `NEXT_PUBLIC_GA_ID` não estiver inlined nos chunks) |
 
 Configuração do Pages no GitHub (fonte branch vs Actions, Desktop, CLI, billing): [`docs/github-pages-setup.md`](docs/github-pages-setup.md).
 
@@ -73,6 +74,7 @@ MCP local **`4unik-marketing`**: [`mcps/4unik-marketing/`](mcps/4unik-marketing/
 - **basePath**: Derived from `NEXT_PUBLIC_SITE_URL` (default `/landing` at `https://plataforma.4unik.com.br/landing/`). All app routes are prefixed accordingly. See [`src/lib/publicSite.ts`](src/lib/publicSite.ts).
 - **Static export**: `next.config.ts` sets `output: "export"` — no SSR, no API routes. The build produces static HTML in `out/`.
 - **Lead capture forms**: set `NEXT_PUBLIC_LEADS_INGEST_URL` to a public HTTPS endpoint that accepts POST JSON matching `leadPayload` (`name`, `email`, `company`, `consent`, `source`, `locale`, etc.). Without it, submit shows a configuration error in the browser after export. Local `npm run dev` can use the Route Handler at `/api/leads` via same-origin fallback.
+- **GA4 / analytics env**: `NEXT_PUBLIC_GA_ID` must use **static** `process.env.NEXT_PUBLIC_GA_ID` in [`src/lib/site.ts`](src/lib/site.ts) — dynamic `process.env[key]` is not inlined in client bundles (Realtime vazio). Run `npm run verify:ga-build` after build. Production deploy: `npm run deploy:production`. IDs and troubleshooting: [`docs/knowledge-base/integrations.md`](docs/knowledge-base/integrations.md).
 - **Optional chat widget**: set `NEXT_PUBLIC_CHAT_SCRIPT_URL` to a third-party script URL (e.g. Intercom/Crisp). Loaded lazily after paint; no server required for static export.
 - **AEO / assistentes**: `npm run build` runs `generate:llms` — regenerates `public/llms.txt` via `scripts/generate-llms-txt.ts` using `src/lib/parsePublicSiteUrl.ts` (same URLs as `robots.txt` / `sitemap.xml`). Override with **`NEXT_PUBLIC_SITE_URL`** at build time, or edit **`config/public-site.json`** for the repo fallback. See `docs/aeo-ai-visibility.md`. `pageAbsoluteUrl` in `src/lib/site.ts` resolves absolute URLs from the same canonical base.
 - **OG images**: `npm run build` also runs `generate:og` — rasteriza templates SVG em PNG 1200×630 para `public/og/*.png` (via `sharp`), consumidos pela metadata em [`src/lib/seo/ogImages.ts`](src/lib/seo/ogImages.ts). Regenere com `npm run generate:og` ao mudar título/subtítulo das variantes.

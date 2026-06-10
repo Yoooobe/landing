@@ -56,39 +56,50 @@ export function siteMetadataBase(): URL {
 /**
  * IDs de analytics/ads a partir de variáveis de ambiente.
  * Sempre têm prioridade sobre o documento `siteSettings` em runtime.
+ *
+ * Acesso estático a `process.env.NEXT_PUBLIC_*` — o bundler só inline valores
+ * com referência literal; `process.env[key]` dinâmico fica vazio no browser.
  */
-function readEnvValue(
-  key: string,
+function normalizeEnvValue(
+  raw: string | undefined,
   placeholder: string | undefined,
   pattern: RegExp,
 ): string | undefined {
-  const raw = process.env[key]?.trim();
-  if (!raw || raw === placeholder || !pattern.test(raw)) {
+  const value = raw?.trim();
+  if (!value || value === placeholder || !pattern.test(value)) {
     return undefined;
   }
-  return raw;
+  return value;
 }
 
 export function getGoogleAnalyticsIdFromEnv(): string | undefined {
-  return readEnvValue("NEXT_PUBLIC_GA_ID", "G-XXXXXXXXXX", /^G-[A-Z0-9]+$/i);
+  return normalizeEnvValue(
+    process.env.NEXT_PUBLIC_GA_ID,
+    "G-XXXXXXXXXX",
+    /^G-[A-Z0-9]+$/i,
+  );
 }
 
 export function getGoogleTagManagerIdFromEnv(): string | undefined {
-  return readEnvValue("NEXT_PUBLIC_GTM_ID", undefined, /^GTM-[A-Z0-9]+$/i);
+  return normalizeEnvValue(process.env.NEXT_PUBLIC_GTM_ID, undefined, /^GTM-[A-Z0-9]+$/i);
 }
 
 export function getMetaPixelIdFromEnv(): string | undefined {
-  return readEnvValue("NEXT_PUBLIC_META_PIXEL_ID", undefined, /^\d+$/);
+  return normalizeEnvValue(process.env.NEXT_PUBLIC_META_PIXEL_ID, undefined, /^\d+$/);
 }
 
 export function getLinkedinPartnerIdFromEnv(): string | undefined {
-  return readEnvValue("NEXT_PUBLIC_LINKEDIN_PARTNER_ID", undefined, /^[a-zA-Z0-9_-]+$/);
+  return normalizeEnvValue(
+    process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID,
+    undefined,
+    /^[a-zA-Z0-9_-]+$/,
+  );
 }
 
 /** Google Search Console HTML-tag verification (content value only, not the full meta tag). */
 export function getGoogleSiteVerificationFromEnv(): string | undefined {
-  return readEnvValue(
-    "NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION",
+  return normalizeEnvValue(
+    process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
     "google-site-verification=XXXXXXXX",
     /^[a-zA-Z0-9_-]+$/,
   );

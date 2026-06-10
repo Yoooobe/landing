@@ -2002,6 +2002,7 @@ export const seedDocuments = {
     _id: "siteSettings",
     _type: "siteSettings",
     environmentLabel: "production",
+    gaMeasurementId: "G-SMJDYCENBC",
     calendlyUrl: "https://calendly.com/4unik/30min",
     whatsappUrl: "https://wa.me/554187582060",
     contactEmail: "comercial@4unik.com.br",
