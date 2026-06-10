@@ -13,6 +13,8 @@
 | Done | P1 | Content | Rotas ICP verticais (5× PT+EN) + UI dedicada `IcpProfilePage` | High | Medium | `src/components/icp/`, PR [#3](https://github.com/Yoooobe/landing/pull/3) |
 | Done | P2 | CMS | Guardrails Studio: `marketingPage` exige ≥1 bloco + meta title/description | Medium | Low | `src/sanity/schemaTypes/marketingPageType.ts` |
 | Done | P1 | GTM | `/pricing/` + `/seguranca/` PT+EN; gate em `content-approval-queue.md`; footer; sitemap condicional | High | Medium | `src/lib/growthPagePublish.ts`, `docs/content-approval-queue.md` |
+| Done | P1 | Content | Post blog case Boticário (slug `"8"`, PT+EN) — treinamento gamificado segurança de dados | High | Low | `src/lib/blogFallback.ts`, `src/lib/blogLandingLinks.ts` |
+| Done | P1 | Content | Case Boticário na página `/educacao/` (`IcpProfileCaseSection`) | High | Low | `src/messages/segments/*-educacao-page.ts`, `src/components/icp/` |
 
 ## Next Up
 | Priority | Theme | Change | Impact | Risk | Key files |
@@ -22,7 +24,8 @@
 | P2 | Content | ICP transversal **RH** (`/rh/`) — matriz `icp-messaging-guide.md` | Medium | Medium | `src/messages/segments/`, `src/app/(pt)/` |
 | P2 | Content | ICP transversal **Marketing** (`/marketing/`) | Medium | Medium | Idem |
 | P2 | Product | Calculadora ROI (`/recursos/roi/`) — fórmula aprovada por Financeiro; sem garantia em JSON-LD | Medium | High | backlog + `docs/enterprise-content-strategy.md` |
-| P2 | Content | Prova social/tração na home (R$ 1,34M, logos, Boticário +308%) após Marca + Jurídico | Medium | Medium | `docs/content-approval-queue.md` |
+| P2 | Content | Prova social/tração na home (R$ 1,34M, logos restantes) após Marca + Jurídico | Medium | Medium | `docs/content-approval-queue.md` |
+| P3 | Content | Bloco embed YouTube no blog (schema + renderer) — backlog futuro | Low | Medium | `src/sanity/schemaTypes/blogPostType.ts`, `PortableTextContent` |
 | P2 | Content | `/seguranca/` — citar SLA % e certificações só com contrato documentado | Medium | Medium | `src/messages/segments/*-seguranca-page.ts` |
 
 ## Blocked Or Larger Scope

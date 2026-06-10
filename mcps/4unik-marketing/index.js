@@ -229,13 +229,14 @@ const STRATEGIC_PAGE_GAPS = [
   },
   {
     route: "/educacao/",
-    enRoute: "/en/education/",
+    enRoute: "/en/educacao/",
     intention: "Recompensa tangível por conclusão de curso para e-learning/infoprodutores",
     icp: "E-learning, infoprodutores, L&D",
-    proofNeeded: "Caso Boticário (+308% conclusão) com aprovação de marca",
+    proofNeeded: "Case Boticário live: `/educacao/` + blog slug `8` (+308%, treinamento gamificado segurança de dados)",
     effort: "medium",
     priority: "P2",
-    source: "docs/knowledge-base/notebooklm/icp-personas.md",
+    source: "docs/knowledge-base/notebooklm/editorial-themes.md",
+    status: "shipped",
   },
   {
     route: "/vendas/",
@@ -306,6 +307,7 @@ function suggestGrowthOpportunities(focus) {
       "Gamificação para RH",
       "Integrações enterprise (Workvivo, HRIS)",
       "Prova social e casos",
+      "Casos / treinamento gamificado (trilhas de vídeo + prêmio ao final)",
     ],
     ctaOpportunities: [
       "Fortalecer CTA acima da dobra em /casos-de-uso/ e /api-integracoes/",
@@ -319,6 +321,7 @@ function suggestGrowthOpportunities(focus) {
       "Adicionar linhas em docs/landing-improvement-backlog.md (secção Next Up)",
       "Sync NotebookLM se freshness !== ok",
       "Uma rota por batch implementation com paridade PT/EN",
+      "Posts de case: fallback slug numérico em blogFallback.ts + validate:blog-ctas (ex.: Boticário slug 8)",
     ],
   };
 }
@@ -913,6 +916,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         "Campanhas sazonais com a 4unik: do Dia do Trabalhador ao fim de ano, engajando em cada data",
         "Campanha de metas trimestrais: como conectar OKRs da empresa a recompensas individuais na plataforma",
         "Campanha de vendas gamificada: como montar ranking, prêmios e regras que todo time aceita",
+      ],
+      "Casos de sucesso": [
+        "Case Grupo Boticário: treinamentos de segurança de dados com gamificação e prêmio ao final (publicado slug 8)",
+        "Como engajar colaboradores a concluir trilhas de vídeo de compliance com pontos e loja interna",
+        "De certificado digital a prêmio físico: recompensa tangível por conclusão de curso",
+        "Playbook L&D: medir abertura, conclusão e resgate em campanhas de treinamento gamificado",
       ],
     };
 

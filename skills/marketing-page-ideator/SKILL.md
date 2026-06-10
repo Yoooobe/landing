@@ -49,7 +49,7 @@ Incluir:
 Cruzar com os 5 ICPs refinados em [`icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md):
 
 - `/para-plataformas/` — plataformas/B2B SaaS embedded (API como camada de execução).
-- `/educacao/` — e-learning/infoprodutores (recompensa por conclusão; caso Boticário, flag aprovação).
+- `/educacao/` — e-learning/infoprodutores (recompensa por conclusão; case Boticário live na página + blog slug `"8"`).
 - `/vendas/` — incentivo integrado ao CRM, premiação instantânea.
 - `/comunidades/` — criadores/fãs, loja VIP com fulfillment 4unik.
 - `/eventos/` — checkout no celular, retirada no estande/entrega rastreada.
@@ -57,6 +57,7 @@ Cruzar com os 5 ICPs refinados em [`icp-personas.md`](../../docs/knowledge-base/
 ## Exemplos no backlog atual
 
 - `/seguranca/`, calculadora ROI, pilar “gamificação para RH”, comparativos educativos AEO.
+- Blog case studies (ex.: treinamento gamificado / segurança de dados) — registrar em `editorial-themes.md` e backlog **Next Up** antes de implementar slug em `blogFallback.ts`.
 
 ## Não fazer
 

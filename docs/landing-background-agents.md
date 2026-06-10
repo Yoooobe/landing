@@ -24,6 +24,7 @@ Keep landing improvements moving in small, low-conflict background loops while p
 4. `/gamificacao/` and `/en/gamificacao/`
 5. `/inteligencia/` and `/en/inteligencia/`
 6. `/casos-de-uso/` and `/en/casos-de-uso/`
+7. `/educacao/` and `/en/educacao/` (case Boticário, blog slug `"8"`, CTAs para motor/loja)
 
 ## Recommended Loop
 1. `audit` or `growth-ideation` writes or refreshes the prioritized backlog (ideation may run when NotebookLM sync or quarterly planning — see [`agent-knowledge-notebooklm.md`](agent-knowledge-notebooklm.md)).
@@ -54,7 +55,7 @@ npx eslint src/app/sitemap.ts \
 
 ## Output Expectations
 - `audit`: updated hotspot summary with impact, risk, and owning files.
-- `growth-ideation`: table of route opportunities (PT/EN), backlog rows for **Next Up**, KB freshness note, no code changes.
+- `growth-ideation`: table of route opportunities (PT/EN), backlog rows for **Next Up**, KB freshness note, **case studies / campanhas de treinamento em vídeo** (ex.: Boticário → `/educacao/` + blog), no code changes.
 - `visual-check`: route checklist with PT/EN parity notes.
 - `implementation`: small patch set and rationale.
 - `verification`: lint/build result plus any follow-up regressions.

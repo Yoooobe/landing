@@ -106,6 +106,8 @@ Hero Section: Título principal focado em unificar gamificação e loja corporat
 .
 Social Proof (Prova Social): Logos de empresas parceiras, como Grupo Boticário e Softplan
 .
+Case study (opcional): bloco dedicado com métricas de treinamento gamificado (ex.: conclusão de trilhas de vídeo + prêmio) — ver `/educacao/` e blog slug `"8"`
+.
 Como Funciona: Seção detalhando os 4 passos da operação: Integre, Configure, Engaje e Acompanhe
 .
 Pilares da Plataforma: Grid visual destacando Gamificação, Loja VIP, Dashboard de Gestão, Integrações e API

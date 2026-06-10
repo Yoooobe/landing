@@ -249,7 +249,7 @@ Employee engagement campaigns
 A 4unik vende **comportamento programável** e atua como **camada de execução** — não "empresa de brindes". Detalhe e mensagens em [`docs/knowledge-base/notebooklm/icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md) e [`icp-messaging-guide.md`](../../docs/knowledge-base/notebooklm/icp-messaging-guide.md).
 
 1. **Plataformas de gamificação / B2B SaaS (embedded):** plugam a API; usuário resgata produtos físicos dentro do app deles; a 4unik cuida de estoque, frete e tracking. Embedded flow: onboarding + compra de inventário → API RESTful (SDK Node.js/Python + sandbox) → Product/Inventory API + Checkout API (sem sair do app) → fulfillment 4unik → webhooks de tracking.
-2. **Infoprodutores / E-learning:** recompensa tangível ao concluir o curso (kit físico em 100%). Caso O Boticário: **+308% conclusão** (requer aprovação de marca/dado).
+2. **Infoprodutores / E-learning:** recompensa tangível ao concluir o curso (kit físico em 100%). Caso Grupo Boticário: **+308% conclusão** — publicado em `/educacao/` e blog slug `"8"` (treinamento gamificado de segurança de dados); alinhar claims com `icp-messaging-guide.md`.
 3. **Diretores / VP de Vendas:** integração com CRM — bate meta → API libera pontos automaticamente → gratificação instantânea.
 4. **Criadores / Comunidades:** loja VIP exclusiva (swag autografado/sustentável); 100% do fulfillment pela 4unik.
 5. **Produtores de eventos físicos/híbridos:** pontos no evento + checkout pelo celular; retira no estande ou recebe em casa rastreado.

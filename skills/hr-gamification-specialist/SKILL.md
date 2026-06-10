@@ -72,6 +72,7 @@ triggers:
 | Metas & OKRs | Recompense resultados reais | "Performance reconhecida, performance repetida" |
 | Peer Recognition | Reconhecimento entre colegas | "Quem melhor reconhece é quem convive" |
 | Eventos | Engajamento em treinamentos e feiras | "Transforme eventos em experiências" |
+| Treinamentos & compliance | Trilhas de vídeo (segurança de dados, LGPD) com pontos e prêmio ao final | "Conclusão que vira reconhecimento tangível" |
 
 ## SEO Keywords (PT-BR)
 ### Primary

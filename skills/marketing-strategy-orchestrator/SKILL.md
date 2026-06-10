@@ -51,7 +51,7 @@ Meta-skill para tarefas amplas. **Uma sessão = um tema** — não misturar sche
 
 ## ICPs e diferenciação (eixo API-first)
 
-Planos por ICP usando os 5 perfis refinados em [`icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md): plataformas/embedded, e-learning, vendas, comunidades, eventos. RH/People segue como comprador primário na home; os verticais ampliam o alcance via posicionamento **camada de execução / comportamento programável** (não "empresa de brindes").
+Planos por ICP usando os 5 perfis refinados em [`icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md): plataformas/embedded, e-learning, vendas, comunidades, eventos. RH/People segue como comprador primário na home; os verticais ampliam o alcance via posicionamento **camada de execução / comportamento programável** (não "empresa de brindes"). **Conteúdo:** priorizar casos publicados (`/educacao/` + blog) antes de novos claims; alinhar `editorial-themes.md` e backlog.
 
 ## Política de três camadas
 

@@ -14,6 +14,17 @@ import type {
 /** Links relativos ao host (respeitam `basePath` em export estático). */
 const HOME_HREF = BASE_PATH ? `${BASE_PATH}/` : "/";
 const BLOG_HREF = BASE_PATH ? `${BASE_PATH}/blog/` : "/blog/";
+const EDUCACAO_HREF = BASE_PATH ? `${BASE_PATH}/educacao/` : "/educacao/";
+const LOJA_HREF = BASE_PATH ? `${BASE_PATH}/plataforma/loja-resgate/` : "/plataforma/loja-resgate/";
+const LOGISTICA_HREF = BASE_PATH
+  ? `${BASE_PATH}/plataforma/logistica-integrada/`
+  : "/plataforma/logistica-integrada/";
+const EDUCACAO_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/educacao/` : "/en/educacao/";
+const LOJA_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/plataforma/loja-resgate/` : "/en/plataforma/loja-resgate/";
+const LOGISTICA_HREF_EN = BASE_PATH
+  ? `${BASE_PATH}/en/plataforma/logistica-integrada/`
+  : "/en/plataforma/logistica-integrada/";
+const BLOG_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/blog/` : "/en/blog/";
 
 const CTA_1_PT = buildBlogCtaBodyLines("1", "pt");
 const CTA_2_PT = buildBlogCtaBodyLines("2", "pt");
@@ -22,6 +33,7 @@ const CTA_4_PT = buildBlogCtaBodyLines("4", "pt");
 const CTA_5_PT = buildBlogCtaBodyLines("5", "pt");
 const CTA_6_PT = buildBlogCtaBodyLines("6", "pt");
 const CTA_7_PT = buildBlogCtaBodyLines("7", "pt");
+const CTA_8_PT = buildBlogCtaBodyLines("8", "pt");
 const CTA_1_EN = buildBlogCtaBodyLines("1", "en");
 const CTA_2_EN = buildBlogCtaBodyLines("2", "en");
 const CTA_3_EN = buildBlogCtaBodyLines("3", "en");
@@ -29,6 +41,7 @@ const CTA_4_EN = buildBlogCtaBodyLines("4", "en");
 const CTA_5_EN = buildBlogCtaBodyLines("5", "en");
 const CTA_6_EN = buildBlogCtaBodyLines("6", "en");
 const CTA_7_EN = buildBlogCtaBodyLines("7", "en");
+const CTA_8_EN = buildBlogCtaBodyLines("8", "en");
 
 type SeedPost = Omit<BlogPostDoc, "_id" | "body"> & {
   /** Conteúdo editorial: parágrafos, H2 e listas com marcadores */
@@ -561,6 +574,117 @@ const ptSeed: readonly SeedPost[] = [
       ]},
     ],
   },
+  {
+    title:
+      "Case Grupo Boticário: treinamentos de segurança de dados com gamificação e prêmio ao final",
+    slug: "8",
+    locale: "pt",
+    excerpt:
+      "Como o Grupo Boticário engajou colaboradores a concluir trilhas de vídeo sobre segurança de dados — com pontos, loja interna e prêmios físicos entregues pela 4Unik.",
+    category: "Casos de sucesso",
+    publishedAt: "2026-06-10T00:00:00.000Z",
+    readTimeMinutes: 11,
+    author: "Time 4unik",
+    tags: ["gamificação", "segurança de dados", "LGPD", "treinamento", "e-learning", "Boticário"],
+    coverImage: {
+      alt: "Equipe em treinamento corporativo sobre proteção de dados e cultura digital",
+      asset: { url: IMG.dataSecurity },
+    },
+    relatedKeywords: [
+      "case Boticário",
+      "treinamento gamificado",
+      "segurança de dados",
+      "conclusão de cursos",
+      "4unik",
+    ],
+    seo: {
+      metaTitle: "Case Boticário: treinamento gamificado de segurança de dados | Blog 4unik",
+      metaDescription:
+        "Trilha de vídeos, pontos e prêmios físicos: como o Grupo Boticário elevou conclusão de treinamentos com a 4unik.",
+    },
+    bodySpec: [
+      {
+        type: "p",
+        text: "Treinamentos obrigatórios sobre segurança de dados e LGPD costumam ter o mesmo problema: muita gente começa, pouca gente termina. No Centro de Excelência em Dados, o Grupo Boticário precisava engajar a equipe a assistir trilhas de vídeo educativos — não só abrir o link, mas concluir a jornada — e reforçar a cultura de proteção de informação com reconhecimento tangível.",
+      },
+      {
+        type: "image",
+        alt: "Profissionais em sessão de aprendizagem corporativa com foco em dados",
+        asset: { url: IMG.learning },
+      },
+      CTA_8_PT[0],
+      { type: "h2", text: "A campanha: trilha de vídeos que vira recompensa" },
+      {
+        type: "p",
+        text: "A resposta foi gamificar a jornada de aprendizado. Cada módulo ou vídeo concluído gerava pontos resgatáveis numa loja interna brandada. O colaborador via progresso claro, sabia o que faltava para liberar o prêmio e escolhia o item no catálogo — enquanto a 4Unik cuidava da logística dos brindes físicos até a entrega.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Trilhas de treinamento em vídeo organizadas por tema (segurança de dados, boas práticas, compliance).",
+          "Regras de pontuação por conclusão de módulo ou certificação — configuráveis por área.",
+          "Loja interna com prêmios físicos brandados e resgate rastreado.",
+          "Campanha alinhada à necessidade de engajamento contínuo, não só cumprimento de checklist.",
+        ],
+      },
+      { type: "h2", text: "Resultados" },
+      {
+        type: "p",
+        text: "O modelo combinou educação corporativa com Reward Infrastructure: menos evasão no meio da trilha, mais adesão aos treinamentos técnicos e ROI mensurável para L&D e compliance.",
+      },
+      {
+        type: "ul",
+        items: [
+          "+308% de abertura e conclusão de cursos na campanha.",
+          "Mais de 11 mil prêmios físicos enviados aos colaboradores.",
+          "R$ 63 mil em campanhas com ROI comprovado.",
+          "Seis novas áreas aderiram ao modelo após o piloto.",
+        ],
+      },
+      { type: "h2", text: "Como a 4unik ajuda neste cenário" },
+      CTA_8_PT[1],
+      {
+        type: "ul",
+        items: [
+          "Motor de gamificação com missões e pontos ligados a marcos de conclusão (100% da trilha, módulo ou certificação).",
+          "Loja de resgate com catálogo amplo e experiência de escolha para o colaborador.",
+          "Logística automatizada da 4Unik — produção e envio de brindes sem virar operação manual para RH ou L&D.",
+          "Integração por API com LMS ou plataforma de treinamento para liberar pontos na conclusão real do vídeo.",
+          "Painéis de adesão e resgates para provar engajamento com dados, não só percepção.",
+        ],
+      },
+      { type: "h2", text: "Playbook: como replicar" },
+      {
+        type: "p",
+        text: "Se você lidera L&D, compliance ou cultura digital, dá para adaptar o mesmo desenho sem reinventar a operação:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Escolha uma trilha curta (3–5 vídeos) com tema crítico — segurança de dados, phishing, LGPD.",
+          "Defina o gatilho de pontos (por vídeo ou só na conclusão total) e comunique antes do lançamento.",
+          "Ofereça prêmios variados no catálogo para diferentes perfis — não só um único brinde.",
+          "Meça abertura, conclusão e resgate nas primeiras duas semanas; ajuste pesos se a evasão concentrar num módulo.",
+          "Escale para outras áreas só depois de estabilizar regras e orçamento de prêmios.",
+        ],
+      },
+      CTA_8_PT[2],
+      {
+        type: "rich",
+        segments: [
+          { text: "Veja o case completo na página " },
+          { text: "Educação e e-learning", href: EDUCACAO_HREF },
+          { text: ", explore a " },
+          { text: "loja de resgate", href: LOJA_HREF },
+          { text: " e a " },
+          { text: "logística integrada", href: LOGISTICA_HREF },
+          { text: ", ou continue no " },
+          { text: "blog", href: BLOG_HREF },
+          { text: "." },
+        ],
+      },
+    ],
+  },
 ] as const;
 
 const enSeed: readonly SeedPost[] = [
@@ -955,6 +1079,117 @@ const enSeed: readonly SeedPost[] = [
       ]},
     ],
   },
+  {
+    title:
+      "Grupo Boticário case: data-security training with gamification and end-of-path rewards",
+    slug: "8",
+    locale: "en",
+    excerpt:
+      "How Grupo Boticário engaged employees to finish video paths on data security — with points, an internal store and physical prizes fulfilled by 4unik.",
+    category: "Success stories",
+    publishedAt: "2026-06-10T00:00:00.000Z",
+    readTimeMinutes: 11,
+    author: "4unik Team",
+    tags: ["gamification", "data security", "LGPD", "training", "e-learning", "Boticário"],
+    coverImage: {
+      alt: "Corporate team in training on data protection and digital culture",
+      asset: { url: IMG.dataSecurity },
+    },
+    relatedKeywords: [
+      "Boticário case study",
+      "gamified training",
+      "data security",
+      "course completion",
+      "4unik",
+    ],
+    seo: {
+      metaTitle: "Boticário case: gamified data-security training | 4unik Blog",
+      metaDescription:
+        "Video paths, points and physical rewards: how Grupo Boticário lifted training completion with 4unik.",
+    },
+    bodySpec: [
+      {
+        type: "p",
+        text: "Mandatory training on data security and privacy often shares the same pattern: many people start, few finish. At the Data Excellence Center, Grupo Boticário needed employees to complete educational video paths — not just open a link — and reinforce a culture of information protection with tangible recognition.",
+      },
+      {
+        type: "image",
+        alt: "Professionals in a corporate learning session focused on data",
+        asset: { url: IMG.learning },
+      },
+      CTA_8_EN[0],
+      { type: "h2", text: "The campaign: a video path that becomes a reward" },
+      {
+        type: "p",
+        text: "The answer was to gamify the learning journey. Each completed module or video earned points redeemable in a branded internal store. Employees saw clear progress, knew what was left to unlock the prize and chose items from the catalog — while 4unik handled physical gift logistics through delivery.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Video training paths organized by theme (data security, best practices, compliance).",
+          "Scoring rules per module or certification completion — configurable by area.",
+          "Internal store with branded physical prizes and tracked redemption.",
+          "Campaign aligned to ongoing engagement, not checkbox compliance alone.",
+        ],
+      },
+      { type: "h2", text: "Results" },
+      {
+        type: "p",
+        text: "The model combined corporate education with Reward Infrastructure: less mid-path drop-off, stronger adoption of technical training and measurable ROI for L&D and compliance.",
+      },
+      {
+        type: "ul",
+        items: [
+          "+308% course open and completion rates in the campaign.",
+          "More than 11,000 physical prizes shipped to employees.",
+          "R$ 63k in campaigns with proven ROI.",
+          "Six new departments adopted the model after the pilot.",
+        ],
+      },
+      { type: "h2", text: "How 4unik helps in this scenario" },
+      CTA_8_EN[1],
+      {
+        type: "ul",
+        items: [
+          "Gamification engine with missions and points tied to completion milestones (100% of path, module or certification).",
+          "Rewards store with a broad catalog and employee choice.",
+          "4unik automated logistics — production and shipping without manual HR or L&D ops.",
+          "API integration with LMS or training platforms to release points on real video completion.",
+          "Adoption and redemption dashboards to prove engagement with data, not anecdotes.",
+        ],
+      },
+      { type: "h2", text: "Playbook: how to replicate" },
+      {
+        type: "p",
+        text: "If you lead L&D, compliance or digital culture, you can adapt the same design without rebuilding operations:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Pick a short path (3–5 videos) on a critical topic — data security, phishing, privacy.",
+          "Set point triggers (per video or full completion only) and communicate before launch.",
+          "Offer varied catalog prizes for different profiles — not a single gift for everyone.",
+          "Track opens, completion and redemption in the first two weeks; adjust weights if drop-off clusters on one module.",
+          "Scale to other areas only after rules and prize budget stabilize.",
+        ],
+      },
+      CTA_8_EN[2],
+      {
+        type: "rich",
+        segments: [
+          { text: "See the full case on " },
+          { text: "Education and e-learning", href: EDUCACAO_HREF_EN },
+          { text: ", explore the " },
+          { text: "rewards store", href: LOJA_HREF_EN },
+          { text: " and " },
+          { text: "integrated logistics", href: LOGISTICA_HREF_EN },
+          { text: ", or continue on the " },
+          { text: "blog", href: BLOG_HREF_EN },
+          { text: "." },
+        ],
+      },
+    ],
+  },
 ] as const;
 
 /** EN blog seed (raw) for Sanity sync — `scripts/export-blog-en-seed.ts`. */
@@ -974,6 +1209,7 @@ const EN_CATEGORY_TO_PT: Record<string, string> = {
   "4unik in Practice": "4unik na Prática",
   Growth: "Crescimento",
   "People Management": "Gestão de Pessoas",
+  "Success stories": "Casos de sucesso",
 };
 
 export function normalizeBlogCategoryForFilter(category: string): string {

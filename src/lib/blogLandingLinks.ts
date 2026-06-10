@@ -4,7 +4,7 @@ import type { BlogCtaBlock, BlogCtaVariant } from "@/sanity/lib/types";
 
 export const BLOG_DEMO_HREF = "https://calendly.com/yoobeco/demo";
 
-export type BlogFallbackSlug = "1" | "2" | "3" | "4" | "5" | "6" | "7";
+export type BlogFallbackSlug = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8";
 
 /** Caminhos internos (sem `basePath`, sem `/en`) para `blogLandingHref`. */
 export const BLOG_CTA_PATHS_BY_SLUG: Record<
@@ -18,6 +18,7 @@ export const BLOG_CTA_PATHS_BY_SLUG: Record<
   "5": { platform: "/plataforma/painel-gestor", feature: "/plataforma/motor-gamificacao", img: "dashboard" },
   "6": { platform: "/plataforma/painel-gestor", feature: "/plataforma", img: "analytics" },
   "7": { platform: "/casos-de-uso", feature: "/plataforma", img: "peopleHr" },
+  "8": { platform: "/educacao", feature: "/plataforma/motor-gamificacao", img: "peopleHr" },
 };
 
 /**
@@ -343,6 +344,56 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
       },
     },
   },
+  "8": {
+    pt: {
+      platform: {
+        eyebrow: "Educação · landing",
+        title: "Recompensa por conclusão de trilha",
+        description:
+          "A página Educação mostra como a 4unik liga conclusão de cursos a prêmios físicos — o mesmo modelo usado em treinamentos corporativos gamificados.",
+        ctaLabel: "Ver solução para educação",
+      },
+      feature: {
+        eyebrow: "Motor de gamificação",
+        title: "Pontos e missões por vídeo assistido",
+        description:
+          "No motor da 4unik você configura regras por conclusão de módulo ou trilha — ideal para campanhas de compliance e segurança de dados.",
+        ctaLabel: "Ver motor de gamificação",
+        featureAlt: "Profissionais em treinamento corporativo com foco em dados e cultura",
+      },
+      demo: {
+        eyebrow: "Demo · representantes 4unik",
+        title: "Desenhe sua campanha de treinamento",
+        description:
+          "Agenda uma demo: representantes 4unik ajudam a ligar trilhas de vídeo, pontos e loja interna ao seu contexto de L&D ou compliance.",
+        ctaLabel: "Marcar demo",
+      },
+    },
+    en: {
+      platform: {
+        eyebrow: "Education · landing",
+        title: "Reward when learners finish the path",
+        description:
+          "The Education page shows how 4unik ties course completion to physical prizes — the same model used in gamified corporate training.",
+        ctaLabel: "View education solution",
+      },
+      feature: {
+        eyebrow: "Gamification engine",
+        title: "Points and missions per video completed",
+        description:
+          "On the 4unik engine you set rules per module or path completion — ideal for compliance and data-security campaigns.",
+        ctaLabel: "View gamification engine",
+        featureAlt: "Corporate professionals in training focused on data and culture",
+      },
+      demo: {
+        eyebrow: "Demo · 4unik representatives",
+        title: "Design your training campaign",
+        description:
+          "Book a demo: 4unik representatives help connect video paths, points and the internal store to your L&D or compliance context.",
+        ctaLabel: "Book a demo",
+      },
+    },
+  },
   "7": {
     pt: {
       platform: {
@@ -407,7 +458,16 @@ export type BlogCtaBodySpecLine = {
 };
 
 function isBlogFallbackSlug(s: string): s is BlogFallbackSlug {
-  return s === "1" || s === "2" || s === "3" || s === "4" || s === "5" || s === "6" || s === "7";
+  return (
+    s === "1" ||
+    s === "2" ||
+    s === "3" ||
+    s === "4" ||
+    s === "5" ||
+    s === "6" ||
+    s === "7" ||
+    s === "8"
+  );
 }
 
 /** Categoria do Studio (PT ou EN) → slug lógico `1`…`7` usado em `BLOG_CTA_PATHS_BY_SLUG` / copy do triplet. */
@@ -426,6 +486,8 @@ export const BLOG_CATEGORY_TO_FALLBACK_SLUG: Partial<Record<string, BlogFallback
   Growth: "6",
   "Gestão de Pessoas": "7",
   "People Management": "7",
+  "Casos de sucesso": "8",
+  "Success stories": "8",
 };
 
 export function resolveBlogSlugFromCategory(category: string): BlogFallbackSlug {

@@ -40,7 +40,7 @@ Conhecimento proprietário versionado em `docs/knowledge-base/notebooklm/`. Ante
 
 Fallback sem sync: `skills/4unik-ai-discovery` + `docs/enterprise-content-strategy.md`.
 
-**ICPs e diferenciação:** segmentar funil/experimentos pelos 5 ICPs refinados (plataformas/embedded, e-learning, vendas, comunidades, eventos) em [`icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md). Posicionamento API-first ("camada de execução", "comportamento programável") diferencia de "empresa de brindes" e tira da briga de preço.
+**ICPs e diferenciação:** segmentar funil/experimentos pelos 5 ICPs refinados (plataformas/embedded, e-learning, vendas, comunidades, eventos) em [`icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md). Posicionamento API-first ("camada de execução", "comportamento programável") diferencia de "empresa de brindes" e tira da briga de preço. **E-learning:** medir funil blog slug `"8"` → `/educacao/` → demo; campanhas de treinamento em vídeo com prêmio ao final.
 
 ## Idioma e rotas
 
@@ -73,7 +73,7 @@ Os dados de GA podem estar **simulados** até `GA_PROPERTY_ID` e credenciais est
 ## Entregáveis típicos
 
 - Lista priorizada de experimentos (impacto vs esforço).
-- Mapa funil: landing → micro-conversões → lead (Calendly/WhatsApp quando aplicável em `siteSettings` / links).
+- Mapa funil: landing → micro-conversões → lead (Calendly/WhatsApp quando aplicável em `siteSettings` / links); incluir rotas ICP (`/educacao/`) e posts de case no blog.
 - Métricas de sucesso: taxa de rejeição por rota, ativação, experiment velocity (conceitual).
 
 ## Paths úteis no repo

@@ -34,6 +34,8 @@ Estratégia e factos aprovados: `docs/knowledge-base/notebooklm/`.
 2. **`get_notebooklm_briefing`** + **`search_product_knowledge`** antes de hero/FAQ/blog que cite produto ou concorrentes.
 3. **`get_knowledge_freshness`** — não publicar claims novos se `briefing_needs_content: true`.
 4. Blog IA: **`get_blog_topic_seeds`** + temas em `editorial-themes.md`; **`generate_blog_post`** só com revisão humana antes de Sanity (`docs/cms.md`).
+5. **Posts de case (fallback estático):** slug numérico `"8"`… em `src/lib/blogFallback.ts`; CTAs via `BLOG_CTA_PATHS_BY_SLUG` + `buildBlogCtaBodyLines` em `src/lib/blogLandingLinks.ts`; validar com `npm run validate:blog-ctas`. Checklist editorial em `docs/cms.md` (secção "Como a 4unik ajuda…", excerpt ≤220, PT/EN com mesmo slug).
+6. **Campanhas de treinamento em vídeo:** narrar trilhas educativas (compliance, segurança de dados, LGPD) com gamificação + prêmio ao final — sem embed YouTube no blog; referências internas (`/educacao/`, motor, loja). Case publicado: slug `"8"` (Grupo Boticário).
 
 ## Idioma
 
@@ -71,10 +73,11 @@ Para ângulo AEO (FAQs, definições claras da marca), use também **`get_aeo_la
 
 - Variações de headline/subhead/CTA com critério de teste.
 - Adaptação por canal (landing vs blog) sem divergência de promessa.
+- Posts de case study (PT/EN, slug alinhado) com CTAs triplet e links para ICP `/educacao/` quando aplicável.
 - Notas de handoff para design (quando copy exigir mudança de layout).
 
 ## Paths úteis
 
 - Mensagens: `src/messages/`
-- Blog/listagens: `src/app/(pt)/blog/`, `src/app/(en)/en/blog/`; CMS em `src/sanity/`
+- Blog/listagens: `src/app/(pt)/blog/`, `src/app/(en)/en/blog/`; fallback `src/lib/blogFallback.ts`; CMS em `src/sanity/`
 - CTAs reutilizáveis: `*Cta*.tsx`, `Footer.tsx`, `Header.tsx`

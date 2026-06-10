@@ -48,7 +48,7 @@ Sem MCP: execute o checklist manualmente usando os itens retornados como modelo 
 
 ## Fluxo de trabalho
 
-1. Identificar **páginas-alvo** (home `/landing/`, plataforma, gamificação, blog, rotas `/landing/en/...`).
+1. Identificar **páginas-alvo** (home `/landing/`, plataforma, gamificação, **`/educacao/`**, blog incl. posts de case slug `"8"`, rotas `/landing/en/...`).
 2. Chamar **`get_content_sync_registry`** e **`get_aeo_landing_checklist`** (`locale`: `pt-BR` | `en`; `pageType`: `home` | `product` | `blog` | `generic` quando aplicável).
 3. **Fonte única de texto SEO**: para **home**, título/description vêm do **Sanity** (`getMarketingHomeSeo`) nos layouts; para **casos/plataforma/inteligência/blog**, editar **`seo`** (e `faq`) nos segmentos `src/messages/segments/` — não duplicar metadata à mão em `page.tsx`. Usar `buildRoutePageMetadata(*.seo, …)` onde já estiver o padrão.
 4. **JSON-LD FAQ**: já derivado de `segment.faq.items` em `page.tsx` — o texto visível (ex.: `MarketingFaqSection`) deve ser o mesmo array; nunca inventar Q&A só no schema.

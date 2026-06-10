@@ -38,7 +38,7 @@ Mantém `docs/knowledge-base/notebooklm/` alinhada ao notebook Google e ao posic
 
 - [ ] 4unik vs Yoobe explícito onde o notebook misturar marcas
 - [ ] Sem comparativos “vs concorrente” não aprovados
-- [ ] Claims sensíveis (%, tração, logos) marcados como "requer aprovação" — ver [`icp-messaging-guide.md`](../../docs/knowledge-base/notebooklm/icp-messaging-guide.md)
+- [ ] Claims sensíveis (%, tração, logos) marcados como "requer aprovação" ou alinhados ao que já está publicado (`/educacao/`, blog slug `"8"`) — ver [`icp-messaging-guide.md`](../../docs/knowledge-base/notebooklm/icp-messaging-guide.md)
 - [ ] `get_knowledge_freshness` → `freshness: ok` após sync
 
 ## Referências

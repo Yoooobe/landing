@@ -107,7 +107,7 @@ Produce copy in this order (a complete landing page):
 
 ### 5. Proof Section
 - Testimonials with specific results
-- Case study snippets
+- Case study snippets (training/video-path campaigns with end rewards — link to `/educacao/` or blog)
 - Trust indicators (logos, numbers, credentials)
 
 ### 6. Objection Handling

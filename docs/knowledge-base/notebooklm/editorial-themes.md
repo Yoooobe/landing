@@ -24,6 +24,7 @@ Identidade 4unik by Yoobe · Produto all-in-one · Engagement Autopilot · RH/Ve
 4. Inteligência — Autopilot + fases 1–3 (tom responsável)  
 5. API / Reward Infrastructure — endpoints, fluxo Yoobe  
 6. TCO — build vs. buy (sem % Shopify/VTEX até jurídico)
+7. **Casos / treinamento gamificado** — trilhas de vídeo (compliance, LGPD) + prêmio ao final; case Boticário (slug blog `"8"`, `/educacao/`)
 
 ## SEO — keywords (repo + notebook)
 
@@ -42,7 +43,7 @@ Lista extendida: `skills/4unik-ai-discovery`.
 | P | Item | Fonte |
 |---|------|-------|
 | P1 | Pricing = 4 planos notebook | NotebookLM |
-| P1 | Casos Boticário / Softplan | NotebookLM |
+| P1 | Casos Boticário / Softplan | NotebookLM — **Boticário:** blog slug `"8"` + `/educacao/` ✅ (2026-06-10); Softplan pendente |
 | P2 | `/seguranca/`, `/recursos/sla/` | Enterprise + pilares repo |
 | P2 | Comparativos educativos AEO | Repo + matriz notebook |
 | P3 | Calculadora ROI | Repo + claim Pro 80% |
@@ -59,3 +60,4 @@ Lista extendida: `skills/4unik-ai-discovery`.
 - «O que é Reward Infrastructure» (repo).  
 - Workvivo + camada de inteligência (repo, sem over-promise fase 3).  
 - Série Autopilot ↔ roadmap 3 fases.
+- **Case Grupo Boticário** — treinamentos de segurança de dados com gamificação e prêmio ao final (publicado: blog `"8"`, PT+EN).
