@@ -661,34 +661,6 @@ function homeBlocks(
       })),
     },
     {
-      _key: "pricing",
-      _type: "featureGridBlock",
-      eyebrow: rest.pricing.badge,
-      title: joinTitle(rest.pricing.titleBefore, rest.pricing.titleGradient),
-      description: rest.pricing.sub,
-      columns: "3",
-      items: [
-        {
-          eyebrow: rest.pricing.starter.blurb,
-          title: `${rest.pricing.starter.name} · ${rest.pricing.currency}${rest.pricing.starter.price}${rest.pricing.starter.period}`,
-          description: rest.pricing.starter.bullets.join(" • "),
-          icon: "sparkles",
-        },
-        {
-          eyebrow: rest.pricing.popular,
-          title: `${rest.pricing.pro.name} · ${rest.pricing.currency}${rest.pricing.pro.price}${rest.pricing.pro.period}`,
-          description: rest.pricing.pro.bullets.join(" • "),
-          icon: "zap",
-        },
-        {
-          eyebrow: rest.pricing.enterprise.blurb,
-          title: `${rest.pricing.enterprise.name} · ${rest.pricing.enterprise.priceLabel}`,
-          description: rest.pricing.enterprise.bullets.join(" • "),
-          icon: "shield",
-        },
-      ],
-    },
-    {
       _key: "testimonials",
       _type: "testimonialBlock",
       title: joinTitle(rest.testimonials.titleBefore, rest.testimonials.titleGradient),

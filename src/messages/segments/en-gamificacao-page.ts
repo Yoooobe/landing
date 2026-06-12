@@ -71,7 +71,7 @@ export const enGamificacaoPage = {
     titleBefore: "From setup to",
     titleGradient: "engagement",
     titleAfter: "in 4 steps",
-    sub: "Simple to roll out, fast to show value. The platform adapts to your culture and processes.",
+    sub: "The platform adapts to your culture and processes—no lengthy implementation project.",
     steps: [
       {
         num: "01",
@@ -113,7 +113,7 @@ export const enGamificacaoPage = {
         num: "04",
         role: "Employee / member",
         title: "Redeem real rewards",
-        desc: "With accumulated points, employees open the corporate store, choose from 5,000+ products, and receive delivery at home through a premium e-commerce experience.",
+        desc: "With accumulated points, employees open the corporate store, choose from 5,000+ products, and receive tracked delivery at home.",
         features: [
           { icon: "🛒", text: "5,000+ products" },
           { icon: "📦", text: "Tracked delivery" },
@@ -124,11 +124,11 @@ export const enGamificacaoPage = {
     ],
   },
   cases: {
-    badge: "Case studies",
-    titleBefore: "Real results from",
-    titleGradient: "market leaders",
-    titleAfter: "",
-    sub: "Companies that implemented gamification successfully and the measurable outcomes they achieved.",
+    badge: "Market examples",
+    titleBefore: "What gamification has",
+    titleGradient: "delivered",
+    titleAfter: "in the market",
+    sub: "Public cases of companies that implemented gamification—market examples, not 4unik customers.",
     challengeLabel: "Challenge",
     solutionLabel: "Solution",
     items: [
@@ -216,7 +216,7 @@ export const enGamificacaoPage = {
       {
         icon: "🥽",
         title: "Immersive VR",
-        desc: "Immersive VR training continues to grow quickly. Gamified simulations can improve knowledge retention by roughly 70%.",
+        desc: "Immersive VR training keeps growing: gamified simulations of real scenarios help knowledge stick in practice.",
         tag: "Emerging",
         tagStyle: 1,
       },
@@ -251,10 +251,10 @@ export const enGamificacaoPage = {
     ],
   },
   stats: {
-    badge: "Proven impact",
-    titleBefore: "Numbers that",
-    titleGradient: "speak",
-    titleAfter: "for themselves",
+    badge: "What the research says",
+    titleBefore: "Market",
+    titleGradient: "numbers",
+    titleAfter: "",
     items: [
       { value: "89", suffix: "%", desc: "of employees report feeling more productive with gamification" },
       { value: "88", suffix: "%", desc: "report being happier at work when game mechanics are in place" },
@@ -313,7 +313,7 @@ export const enGamificacaoPage = {
       {
         icon: "🎉",
         title: "Welcome kits & onboarding",
-        desc: "Stand out from day one with gamified onboarding paths, premium welcome kits, and activation missions that help reduce early turnover.",
+        desc: "Stand out from day one with gamified onboarding paths, welcome kits, and activation missions for the first 45 days.",
         hook: "First impressions shape the journey",
       },
       {

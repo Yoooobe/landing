@@ -169,6 +169,7 @@ Use these insights to:
 4. **Clear CTA**: Obvious next step, no confusion
 5. **Mobile-First**: Short paragraphs, scannable structure
 6. **No Fluff**: Cut "very", "really", "just", "amazing"
+7. **Canonical Phrases & Density** (this repo): core promises use the canonical phrase once per page (see `docs/knowledge-base/notebooklm/icp-messaging-guide.md` → "Frases canónicas"); each statistic appears once site-wide; third-party cases (SAP, Deloitte) are labeled market examples, never 4unik customers; max 1 intermediate lead CTA per page
 
 ## Output Format
 

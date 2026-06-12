@@ -7,16 +7,16 @@ export const ptCasosPage = {
       "Estudos de caso de empresas globais em gamificação corporativa e comunidades. Infraestrutura de recompensas 4Unik para programas de engajamento.",
   },
   hero: {
-    badge: "Estudos de Caso Global",
-    titleBefore: "Resultados reais de",
-    titleGradient: "gigantes",
-    titleAfter: " do mercado.",
+    badge: "Exemplos de mercado",
+    titleBefore: "O que gigantes do mercado",
+    titleGradient: "alcançaram",
+    titleAfter: " com gamificação.",
     sub:
-      "Veja como SAP, Deloitte, IBM, Microsoft e CaLLogix usaram gamificação e recompensas para resolver problemas reais de RH, vendas, educação e comunidade.",
+      "Casos públicos de SAP, Deloitte, IBM, Microsoft e CaLLogix — exemplos de mercado, não clientes 4Unik — em RH, vendas, educação e comunidade.",
   },
   caseStudies: {
-    challengeLabel: "O Desafio Resolvido",
-    resultsLabel: "Resultados Comprovados",
+    challengeLabel: "O desafio",
+    resultsLabel: "Resultados divulgados",
     cases: [
       {
         id: "sap",
@@ -64,7 +64,7 @@ export const ptCasosPage = {
         id: "ibm",
         company: "IBM",
         industry: "Tecnologia",
-        title: "Treinamento de vendedores de elite",
+        title: "Treinamento técnico de vendedores",
         description:
           "A IBM implementou programas gamificados para capacitar vendedores em habilidades técnicas, combinando simulações e desafios regionais.",
         challenge: "Vendedores precisavam dominar habilidades técnicas complexas, mas treinamentos tinham baixa adesão.",

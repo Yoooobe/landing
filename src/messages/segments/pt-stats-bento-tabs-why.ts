@@ -53,7 +53,7 @@ export const ptStatsBentoTabsWhy = {
     card3: {
       title: "Eles escolhem o presente",
       body:
-        "O time troca pontos no catálogo. A 4Unik cuida da logística automatizada do pedido ao rastreio — no Brasil e no mundo; fora do país, produzimos localmente no destino quando faz sentido.",
+        "O time troca pontos no catálogo. Nós cuidamos da logística e da entrega — no Brasil e no mundo, com produção local no destino quando faz sentido.",
     },
     card4: {
       title: "Encaixa no que vocês já usam",
@@ -169,16 +169,6 @@ export const ptStatsBentoTabsWhy = {
       title: "Quer ver painel, permissões e relatórios na prática?",
       body: "Conte o tamanho do time e o que precisa rodar (pedidos, pontos, loja). Voltamos com o próximo passo em poucas horas úteis.",
       source: "home-after-platform",
-    },
-    afterCampaigns: {
-      title: "Campanhas e segmentação — como isso encaixa no seu RH?",
-      body: "Fale do objetivo (onboarding, metas, retenção) e das ferramentas que já usam. Montamos uma proposta alinhada, sem jargão desnecessário.",
-      source: "home-campaigns",
-    },
-    afterOperations: {
-      title: "Catálogo, envios e times em vários países",
-      body: "Explique variantes de produto, prazos e se precisa de produção local no exterior. Desenhamos a operação ponta a ponta com você.",
-      source: "home-operations",
     },
   },
 } as const;

@@ -40,6 +40,8 @@ Conhecimento proprietário versionado em `docs/knowledge-base/notebooklm/`. Ante
 
 Fallback sem sync: `skills/4unik-ai-discovery` + `docs/enterprise-content-strategy.md`.
 
+**Quality gate de copy (antes de publicar experimento):** frases canónicas e regra de densidade em [`icp-messaging-guide.md`](../../docs/knowledge-base/notebooklm/icp-messaging-guide.md) → "Frases canónicas" — promessa central 1× por página, estatística única no site, exemplos de mercado rotulados, máx. 1 lead CTA intermédio por página (a home usa só `afterPlatform`).
+
 **ICPs e diferenciação:** segmentar funil/experimentos pelos 5 ICPs refinados (plataformas/embedded, e-learning, vendas, comunidades, eventos) em [`icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md). Posicionamento API-first ("camada de execução", "comportamento programável") diferencia de "empresa de brindes" e tira da briga de preço. **E-learning:** medir funil blog slug `"8"` → `/educacao/` → demo; campanhas de treinamento em vídeo com prêmio ao final.
 
 ## Idioma e rotas
@@ -58,7 +60,7 @@ Habilite o servidor MCP **`4unik-marketing`** no Cursor (configuração de MCP d
 4. Se precisar de granularidade: **`get_ga4_metrics`** (`startDate`, `endDate` opcional) e **`get_seo_health`** (`url` = URL pública completa da página, ex. `https://plataforma.4unik.com.br/landing/` + path).
 5. **`suggest_growth_opportunities`** — oportunidades de página/funil (readonly).
 
-Os dados de GA podem estar **simulados** no MCP até credenciais GCP estarem configuradas — a propriedade real é **`327916606`** (`GA_PROPERTY_ID` em `.cursor/mcp.json`). O site em produção usa **`G-SMJDYCENBC`** (`NEXT_PUBLIC_GA_ID`). Após alterar analytics: `npm run verify:ga-build` + `npm run deploy:production`. Referência completa: [`docs/knowledge-base/integrations.md`](../../docs/knowledge-base/integrations.md).
+Os dados de GA podem estar **simulados** no MCP até credenciais GCP estarem configuradas — a propriedade real é **`327916606`** (`GA_PROPERTY_ID` em `.cursor/mcp.json`). O site em produção usa **`G-SMJDYCENBC`** (`NEXT_PUBLIC_GA_ID`). Após alterar analytics: `npm run verify:ga-build`, `verify:ga-pages` + `npm run deploy:production`. Referência completa: [`docs/knowledge-base/integrations.md`](../../docs/knowledge-base/integrations.md).
 
 ## Fluxo de trabalho (obrigatório)
 

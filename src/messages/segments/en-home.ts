@@ -38,9 +38,9 @@ export const enHome = {
     title: "Companies that trust 4Unik",
   },
   finalCta: {
-    title: "Ready to transform recognition at your company?",
+    title: "Ready to simplify recognition at your company?",
     body:
-      "See how other companies simplified recognition and lifted engagement. The demo takes about 30 minutes and we show everything live.",
+      "See how other companies run programs without spreadsheets. The demo takes about 30 minutes and we show everything live.",
     demo: "Book a demo",
     whatsapp: "Talk to a specialist",
   },

@@ -2,8 +2,8 @@ export const enLandingMore = {
   howItWorks: {
     badge: "How it works",
     titleBefore: "Four steps to",
-    titleGradient: "transform",
-    titleAfter: " your HR",
+    titleGradient: "get started",
+    titleAfter: "",
     steps: [
       {
         num: "01",
@@ -23,7 +23,7 @@ export const enLandingMore = {
       {
         num: "04",
         title: "Deliver",
-        desc: "They pick the reward; 4Unik’s automated logistics handles the rest—or we connect your carriers and merchandise partners.",
+        desc: "They pick the reward; we handle the rest—or we connect your carriers and merchandise partners.",
       },
     ],
     mockInfrastructure: "Infrastructure",
@@ -87,7 +87,7 @@ export const enLandingMore = {
     badge: "How it works",
     titleBefore: "Two paths to",
     titleGradient: "engage your team",
-    sub: "You don’t have to rip and replace everything. 4Unik adapts: a full platform to move fast, or an integrated layer when you already run intranet or gamification elsewhere.",
+    sub: "You don’t have to rip and replace everything. Full platform or execution layer via API—4Unik adapts to what you already run.",
     sideA: {
       title: "Ready to use",
       body: "Branded employee portal. Missions, points, and store live from day one—with our automated logistics or yours connected by API.",
@@ -104,7 +104,7 @@ export const enLandingMore = {
         "No forced “yet another password” rollout",
         "Rewards surface inside everyday work tools",
         "We run the store and delivery behind the scenes—or integrate your operation",
-        "We ship anywhere in the world; for teams outside Brazil, we produce locally at the destination when it’s faster",
+        "Domestic and international delivery in the same flow",
       ],
     },
   },

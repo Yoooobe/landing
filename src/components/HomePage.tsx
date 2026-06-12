@@ -25,7 +25,6 @@ import type { Locale } from "@/lib/locale";
 import type { HeroBlockDoc, ResolvedHomeContent } from "@/sanity/lib/types";
 import dynamic from "next/dynamic";
 
-const PricingSection = dynamic(() => import("@/components/PricingSection"));
 const TestimonialsSection = dynamic(() => import("@/components/TestimonialsSection"));
 const ClientsSection = dynamic(() => import("@/components/ClientsSection"));
 
@@ -52,16 +51,13 @@ export default function HomePage({ homeContent, cmsHero = null, locale }: Props)
       <WhySection />
       <GamificationSummary />
       <GamificationDuality />
-      <SectionLeadCta homeContent={homeContent} zone="afterCampaigns" />
       <EnterpriseCases homeContent={homeContent} />
       <DedicatedIntegrations homeContent={homeContent} />
       <StoreSection homeContent={homeContent} />
       <ApiSection />
-      <SectionLeadCta homeContent={homeContent} zone="afterOperations" />
       <AiRoadmap homeContent={homeContent} />
       <ManagementSection homeContent={homeContent} />
       <HowItWorks homeContent={homeContent} />
-      <PricingSection />
       <TestimonialsSection />
       <ClientsSection />
       <HomeFinalCta homeContent={homeContent} />

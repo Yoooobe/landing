@@ -7,14 +7,14 @@ export const enPlataforma = {
       "Console, gamification, catalog, fulfillment, and SSO: the 4Unik V3 stack to run rewards at scale.",
   },
   hero: {
-    badge: "Full operational control",
-    titleLine1: "Total visibility.",
+    badge: "Operations under control",
+    titleLine1: "Everything in one console.",
     titleGradient: "Faster decisions.",
     sub:
-      "Real-time analytics with eNPS, ROI, and redemption metrics. Budget approvals, bulk import, and direct ERP export—with full privacy compliance.",
+      "Real-time analytics with eNPS, ROI, and redemption metrics. Budget approvals, bulk import, and direct ERP export—privacy-compliant.",
   },
   pageCta: {
-    title: "Ready for full control?",
+    title: "Ready to see the console in action?",
     cta: "Request a demo",
   },
   adminDashboard: {
@@ -94,7 +94,7 @@ export const enPlataforma = {
     },
   },
   store: {
-    badge: "Premium VIP catalog",
+    badge: "VIP catalog",
     titleBefore: "A VIP store with ",
     titleGradient: "your brand",
     titleAfter: " front and center.",

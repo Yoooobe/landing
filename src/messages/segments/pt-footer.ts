@@ -1,6 +1,6 @@
 export const ptFooter = {
   blurb:
-    "Infraestrutura de recompensas corporativa. Motor de gamificação e catálogo integrado em uma plataforma SaaS premium para líderes e desenvolvedores.",
+    "Infraestrutura de recompensas corporativa. Motor de gamificação e catálogo integrado em uma plataforma SaaS para líderes e desenvolvedores.",
   colPlatform: "Plataforma",
   colResources: "Recursos",
   colContact: "Contato",

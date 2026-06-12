@@ -24,7 +24,7 @@ export const enRest = {
     titleGradient: "options",
     titleAfter: "for every moment",
     sub:
-      "5,000+ products, 100+ categories. Build custom kits or let employees choose. We deliver worldwide—and for teams outside Brazil, we produce locally at the destination when it cuts time and cost.",
+      "5,000+ products, 100+ categories. Build custom kits or let employees choose—delivery is on us.",
     usecases: [
       {
         title: "Welcome kits",
@@ -73,9 +73,9 @@ export const enRest = {
   },
   clients: {
     badge: "Who trusts 4Unik",
-    titleBefore: "Companies that have already",
-    titleGradient: "transformed",
-    titleAfter: "their people programs",
+    titleBefore: "Companies already running",
+    titleGradient: "recognition",
+    titleAfter: "with us",
     sub: "From lean teams to global operations, we help HR run recognition and corporate stores without becoming an internal shipping department.",
   },
   testimonials: {
@@ -182,12 +182,12 @@ export const enRest = {
       {
         title: "Automated or integrated logistics",
         body:
-          "Use 4Unik’s automated fulfillment—or connect your merchandise suppliers and carriers by API. You choose how operations run.",
+          "Our own fulfillment from order to tracking—or connect your merchandise suppliers and carriers by API.",
       },
       {
         title: "Global reach, local production",
         body:
-          "We ship anywhere in the world. For teams outside Brazil, we manufacture locally at the destination—faster delivery, no import hassle, same quality.",
+          "Local production at the destination for teams outside Brazil—same quality, less import hassle.",
       },
     ],
   },

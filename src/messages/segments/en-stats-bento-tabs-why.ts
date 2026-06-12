@@ -46,7 +46,7 @@ export const enStatsBentoTabsWhy = {
     card3: {
       title: "They pick the gift",
       body:
-        "People redeem points from the catalog. 4Unik runs automated logistics from order to tracking—we ship worldwide, and for teams outside Brazil we produce locally at the destination when it’s faster and simpler.",
+        "People redeem points from the catalog. We handle logistics and delivery—in Brazil and worldwide, with local production at the destination when it makes sense.",
     },
     card4: {
       title: "Fits what you already run",
@@ -161,16 +161,6 @@ export const enStatsBentoTabsWhy = {
       title: "Want to see dashboards, roles, and reports in action?",
       body: "Tell us your team size and what you need to run (orders, points, store). We’ll reply with clear next steps within one business day.",
       source: "home-after-platform",
-    },
-    afterCampaigns: {
-      title: "Campaigns & segmentation—how would this fit your HR stack?",
-      body: "Share your goals (onboarding, targets, retention) and tools you already use. We’ll align a proposal without unnecessary jargon.",
-      source: "home-campaigns",
-    },
-    afterOperations: {
-      title: "Catalog, shipping, and teams across countries",
-      body: "Tell us about product variants, timelines, and whether you need local production abroad. We’ll design end-to-end operations with you.",
-      source: "home-operations",
     },
   },
 } as const;

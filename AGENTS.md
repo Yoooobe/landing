@@ -35,7 +35,7 @@ The site is served at `http://localhost:3000/landing/` when using the default ca
 | Env local | `npm run env:init` / `npm run env:check` (`scripts/init-env-local.mjs`, `scripts/check-local-env.mjs`) |
 | Sanity CORS | `npm run sanity:cors` (adiciona origens localhost + `plataforma.4unik.com.br`) |
 | Deploy rápido (GH Pages) | `npm run deploy:gh-pages:quick` (`npm run build && gh-pages -d out`) |
-| Verificar GA4 no build | `npm run verify:ga-build` (após `npm run build`; falha se `NEXT_PUBLIC_GA_ID` não estiver inlined nos chunks) |
+| Verificar GA4 no build | `npm run verify:ga-build`, `verify:ga-404-fallback`, `verify:ga-pages` (após `npm run build`) |
 
 Configuração do Pages no GitHub (fonte branch vs Actions, Desktop, CLI, billing): [`docs/github-pages-setup.md`](docs/github-pages-setup.md).
 
@@ -44,7 +44,7 @@ Docs relacionados:
 - Webhook do Sanity → rebuild no GitHub: [`docs/sanity-github-webhook.md`](docs/sanity-github-webhook.md).
 - Loops de agentes em background (lanes, prioridades de rota, verificação): [`docs/landing-background-agents.md`](docs/landing-background-agents.md).
 - Base de conhecimento NotebookLM + sync: [`docs/agent-knowledge-notebooklm.md`](docs/agent-knowledge-notebooklm.md), [`docs/knowledge-base/README.md`](docs/knowledge-base/README.md).
-- Copy por ICP / linguagem acessível (ler antes de mudar copy ou SEO): [`docs/knowledge-base/notebooklm/icp-messaging-guide.md`](docs/knowledge-base/notebooklm/icp-messaging-guide.md).
+- Copy por ICP / linguagem acessível (ler antes de mudar copy ou SEO): [`docs/knowledge-base/notebooklm/icp-messaging-guide.md`](docs/knowledge-base/notebooklm/icp-messaging-guide.md). Inclui a secção **"Frases canónicas"** (logística, API, GTM dual) e a regra de densidade: uma promessa central por página; cada estatística aparece uma única vez no site. A home foi enxugada (sem `PricingSection`, só 1 `SectionLeadCta` — `afterPlatform`); o `homeBlocks()` em `src/sanity/lib/marketingPages.ts` espelha essa composição e não deve voltar a divergir.
 
 ### Skills & MCP (marketing / crescimento)
 

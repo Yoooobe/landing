@@ -71,7 +71,7 @@ export const ptGamificacaoPage = {
     titleBefore: "Do setup ao",
     titleGradient: "engajamento",
     titleAfter: "em 4 etapas",
-    sub: "Implementação simples, resultado imediato. A plataforma se adapta à sua cultura e processos.",
+    sub: "A plataforma se adapta à sua cultura e processos — sem projeto longo de implantação.",
     steps: [
       {
         num: "01",
@@ -113,7 +113,7 @@ export const ptGamificacaoPage = {
         num: "04",
         role: "Colaborador / Membro",
         title: "Resgate Prêmios Reais",
-        desc: "Com os pontos acumulados, o colaborador acessa a loja corporativa, escolhe entre +5.000 produtos e recebe em casa. Experiência de e-commerce premium.",
+        desc: "Com os pontos acumulados, o colaborador acessa a loja corporativa, escolhe entre +5.000 produtos e recebe em casa, com rastreio.",
         features: [
           { icon: "🛒", text: "+5.000 produtos" },
           { icon: "📦", text: "Entrega rastreada" },
@@ -124,11 +124,11 @@ export const ptGamificacaoPage = {
     ],
   },
   cases: {
-    badge: "Estudos de Caso",
-    titleBefore: "Resultados reais de",
-    titleGradient: "gigantes",
-    titleAfter: "do mercado",
-    sub: "Empresas que implementaram gamificação com sucesso e os resultados mensuráveis que alcançaram.",
+    badge: "Exemplos de mercado",
+    titleBefore: "O que a gamificação já",
+    titleGradient: "entregou",
+    titleAfter: "no mercado",
+    sub: "Casos públicos de empresas que implementaram gamificação — exemplos de mercado, não clientes 4unik.",
     challengeLabel: "Desafio",
     solutionLabel: "Solução",
     items: [
@@ -210,21 +210,21 @@ export const ptGamificacaoPage = {
       {
         icon: "🤖",
         title: "IA Personalizada",
-        desc: "Inteligência Artificial adaptando desafios e recompensas em tempo real para cada colaborador. Aumento de até 60% em engajamento com personalização orientada por dados.",
+        desc: "Inteligência Artificial adaptando desafios e recompensas em tempo real para cada colaborador, com personalização orientada por dados.",
         tag: "Alta Adoção",
         tagStyle: 0,
       },
       {
         icon: "🥽",
         title: "Realidade Virtual Imersiva",
-        desc: "Treinamentos imersivos com RV devem triplicar em 2025. Simulações gamificadas de cenários reais aumentam retenção de conhecimento em 70%.",
+        desc: "Treinamentos imersivos com RV em crescimento: simulações gamificadas de cenários reais para fixar conhecimento na prática.",
         tag: "Emergente",
         tagStyle: 1,
       },
       {
         icon: "🌐",
         title: "Equipes Remotas",
-        desc: "Gamificação online como solução para conectar equipes distribuídas. Escape rooms virtuais, desafios colaborativos e reconhecimento digital.",
+        desc: "Mecânicas online para conectar equipes distribuídas: escape rooms virtuais, desafios colaborativos e kudos digitais.",
         tag: "Consolidada",
         tagStyle: 2,
       },
@@ -238,7 +238,7 @@ export const ptGamificacaoPage = {
       {
         icon: "💡",
         title: "Inovação Gamificada",
-        desc: "Hackathons internos, competições de design thinking e desafios de inovação aberta. Gamificação como motor de criatividade organizacional.",
+        desc: "Hackathons internos, competições de design thinking e desafios de inovação aberta — um motor de criatividade organizacional.",
         tag: "Alta Adoção",
         tagStyle: 0,
       },
@@ -252,10 +252,10 @@ export const ptGamificacaoPage = {
     ],
   },
   stats: {
-    badge: "Impacto Comprovado",
-    titleBefore: "Números que",
-    titleGradient: "falam",
-    titleAfter: "por si",
+    badge: "O que dizem as pesquisas",
+    titleBefore: "Números do",
+    titleGradient: "mercado",
+    titleAfter: "",
     items: [
       { value: "89", suffix: "%", desc: "dos funcionários se sentem mais produtivos com gamificação" },
       { value: "88", suffix: "%", desc: "se sentem mais felizes no trabalho com mecânicas de jogo" },
@@ -314,7 +314,7 @@ export const ptGamificacaoPage = {
       {
         icon: "🎉",
         title: "Welcome Kits & Onboarding",
-        desc: "Impressione desde o primeiro dia. Trilhas de onboarding gamificadas, welcome kits premium e missões de integração que reduzem o turnover nos primeiros 45 dias.",
+        desc: "Impressione desde o primeiro dia. Trilhas de onboarding gamificadas, welcome kits e missões de integração para os primeiros 45 dias.",
         hook: "A primeira impressão define a jornada",
       },
       {

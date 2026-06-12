@@ -24,7 +24,7 @@ export const ptRest = {
     titleGradient: "opções",
     titleAfter: "para cada momento",
     sub:
-      "+5.000 produtos, +100 categorias. Monte kits personalizados ou deixe o colaborador escolher. Entregamos no Brasil e no mundo — para equipes fora do país, produzimos localmente no destino quando reduz prazo e custo.",
+      "+5.000 produtos, +100 categorias. Monte kits personalizados ou deixe o colaborador escolher — a entrega é por nossa conta.",
     usecases: [
       {
         title: "Welcome kits",
@@ -73,9 +73,9 @@ export const ptRest = {
   },
   clients: {
     badge: "Quem confia na 4Unik",
-    titleBefore: "Empresas que já",
-    titleGradient: "transformaram",
-    titleAfter: "seu RH",
+    titleBefore: "Empresas que já rodam",
+    titleGradient: "reconhecimento",
+    titleAfter: "conosco",
     sub:
       "De times enxutos a operações globais, ajudamos RH e People a rodar reconhecimento e loja corporativa sem virar logística interna.",
   },
@@ -183,12 +183,12 @@ export const ptRest = {
       {
         title: "Logística automatizada ou integrada",
         body:
-          "Use a logística própria da 4Unik — automatizada do pedido ao rastreamento — ou conecte fornecedor de brindes e transportadora via API. A operação fica do seu jeito.",
+          "Logística própria do pedido ao rastreamento — ou conecte seus fornecedores e transportadoras via API.",
       },
       {
         title: "Alcance global",
         body:
-          "Entregamos para qualquer país. Para equipes fora do Brasil, produzimos os itens localmente no destino — mesmo padrão, menos burocracia de importação.",
+          "Produção local no destino para equipes fora do Brasil — mesmo padrão, menos burocracia de importação.",
       },
     ],
   },

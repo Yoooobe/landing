@@ -71,7 +71,7 @@ export const enGamificacaoCampanhasPage = {
         badge: "Outcomes",
         title: "Measurable impact",
         description:
-          "Companies report +40% engagement and -25% turnover in year one. 83% feel more motivated with structured gamification.",
+          "The ROI dashboard correlates engagement, redemption rate, and retention—your program's real numbers in real time, not estimates.",
         features: [
           "ROI dashboard",
           "Adoption metrics",
@@ -84,9 +84,9 @@ export const enGamificacaoCampanhasPage = {
   flow: {
     badge: "How it works",
     titleBefore: "4 steps to",
-    titleGradient: "transform",
-    titleAfter: "your HR program",
-    sub: "From setup to measurable engagement. Simple implementation, visible outcomes for leadership.",
+    titleGradient: "launch",
+    titleAfter: "your program",
+    sub: "From setup to measurable engagement, with outcomes visible to leadership.",
     steps: [
       {
         num: "01",
@@ -139,11 +139,11 @@ export const enGamificacaoCampanhasPage = {
     ],
   },
   cases: {
-    badge: "Real outcomes",
-    titleBefore: "Cases that",
-    titleGradient: "prove",
-    titleAfter: "the model",
-    sub: "Companies that combined gamification, corporate store, and automated logistics—with public metrics.",
+    badge: "Cases and examples",
+    titleBefore: "Who already combined campaigns,",
+    titleGradient: "store",
+    titleAfter: "and logistics",
+    sub: "4unik cases (Grupo Boticário, Softplan) and public market examples (Deloitte, CaLLogix) with published metrics.",
     challengeLabel: "Challenge",
     solutionLabel: "Solution",
     items: [
@@ -216,11 +216,11 @@ export const enGamificacaoCampanhasPage = {
     titleGradient: "infrastructure",
     titleAfter: ", not a one-off project",
     sub: "The market is moving from isolated swag to integrated engagement, rewards, and logistics ecosystems.",
-    banner2025: "Structured engagement",
-    banner2033: "Automated operations",
-    cagr: "83% more motivated",
-    value2025: "+40% engagement",
-    value2033: "-25% turnover",
+    banner2025: "Market today",
+    banner2033: "Next step",
+    cagr: "Market trend",
+    value2025: "Integrated ecosystems",
+    value2033: "Automated operations",
     items: [
       {
         icon: "🌉",
@@ -320,7 +320,7 @@ export const enGamificacaoCampanhasPage = {
       {
         title: "eNPS",
         subtitle: "Employee Net Promoter Score",
-        desc: "Employee satisfaction and loyalty. Structured gamification often lifts eNPS by double-digit points.",
+        desc: "Employee satisfaction and loyalty. Track the evolution before and after the program, right in the dashboard.",
       },
       {
         title: "48h adoption",
@@ -349,7 +349,7 @@ export const enGamificacaoCampanhasPage = {
       {
         icon: "👻",
         title: "Corporate invisibility",
-        desc: "65% without recognition all year. Automated milestone campaigns, peer recognition, and real rewards—no spreadsheets.",
+        desc: "Automated milestone campaigns, peer recognition, and real rewards bring visibility back to people who deliver—no spreadsheets.",
         hook: "Recognition is not optional",
       },
       {

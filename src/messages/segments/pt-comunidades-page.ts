@@ -12,7 +12,7 @@ export const ptComunidadesPage = {
     definitionLead:
       "Criadores oferecem loja VIP e swag aos superfãs; a 4Unik gere inventário, embalagem e envio — sem logística própria.",
     sub:
-      "Recompense quem mais engaja com produtos exclusivos. Você cuida da comunidade; a 4Unik cuida de estoque, embalagem e envio — 100% da entrega.",
+      "Recompense quem mais engaja com produtos exclusivos. Você cuida da comunidade; a 4Unik cuida de estoque, embalagem e envio — do pedido ao rastreio.",
     ctaLabel: "Agendar demonstração",
     ctaHref: "https://calendly.com/4unik/30min",
   },

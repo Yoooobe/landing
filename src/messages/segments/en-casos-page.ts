@@ -7,16 +7,16 @@ export const enCasosPage = {
       "Global enterprise case studies in corporate gamification and communities. Reward infrastructure for engagement programs.",
   },
   hero: {
-    badge: "Global case studies",
-    titleBefore: "Real outcomes from",
-    titleGradient: "market leaders",
-    titleAfter: ".",
+    badge: "Market examples",
+    titleBefore: "What market leaders",
+    titleGradient: "achieved",
+    titleAfter: " with gamification.",
     sub:
-      "How SAP, Deloitte, IBM, Microsoft, and CaLLogix used gamification and rewards to solve real HR, sales, education, and community challenges.",
+      "Public cases from SAP, Deloitte, IBM, Microsoft, and CaLLogix—market examples, not 4Unik customers—across HR, sales, education, and community.",
   },
   caseStudies: {
-    challengeLabel: "Challenge solved",
-    resultsLabel: "Proven results",
+    challengeLabel: "The challenge",
+    resultsLabel: "Published results",
     cases: [
       {
         id: "sap",
@@ -64,7 +64,7 @@ export const enCasosPage = {
         id: "ibm",
         company: "IBM",
         industry: "Technology",
-        title: "Elite seller training",
+        title: "Technical seller training",
         description:
           "IBM ran gamified programs to upskill sellers on technical topics, blending simulations and regional challenges.",
         challenge: "Sellers needed deep technical skills, but training saw low adoption.",

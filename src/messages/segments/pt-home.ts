@@ -38,9 +38,9 @@ export const ptHome = {
     title: "Empresas que confiam na 4Unik",
   },
   finalCta: {
-    title: "Pronto para transformar o reconhecimento na sua empresa?",
+    title: "Pronto para simplificar o reconhecimento na sua empresa?",
     body:
-      "Veja como outras empresas já simplificaram o reconhecimento e elevaram o engajamento. A demonstração leva cerca de 30 minutos e mostramos tudo funcionando ao vivo.",
+      "Veja como outras empresas já rodam programas sem planilhas. A demonstração leva cerca de 30 minutos e mostramos tudo funcionando ao vivo.",
     demo: "Solicitar Demonstração",
     whatsapp: "Falar com Especialista",
   },

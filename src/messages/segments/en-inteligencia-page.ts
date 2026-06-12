@@ -11,7 +11,7 @@ export const enInteligenciaPage = {
     titleBefore: "Intelligence applied to",
     titleGradient: "employee engagement",
     sub:
-      "Turn campaigns, rewards, and journeys into more personalized, measurable, and scalable programs: a new era for recognition infrastructure.",
+      "More personalized, measurable, and scalable campaigns, rewards, and journeys—part available today, part on the roadmap.",
   },
   cards: [
     {
@@ -64,8 +64,8 @@ export const enInteligenciaPage = {
     ],
   },
   cta: {
-    title: "A natively intelligent strategy",
-    sub: "Get ready to orchestrate more natural, data-guided recognition with modern HR infrastructure.",
+    title: "Intelligence applied to your program",
+    sub: "Orchestrate data-guided recognition at your HR team's pace.",
     button: "See the AI roadmap",
   },
   faq: {

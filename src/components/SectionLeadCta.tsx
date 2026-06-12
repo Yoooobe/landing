@@ -7,12 +7,10 @@ import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
 
-export type SectionLeadCtaZone = "afterPlatform" | "afterCampaigns" | "afterOperations";
+export type SectionLeadCtaZone = "afterPlatform";
 
 const ZONE_ANCHOR: Record<SectionLeadCtaZone, string> = {
   afterPlatform: "contato-pos-plataforma",
-  afterCampaigns: "contato-pos-campanhas",
-  afterOperations: "contato-pos-operacoes",
 };
 
 type Props = {

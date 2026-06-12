@@ -12,7 +12,7 @@ export const enComunidadesPage = {
     definitionLead:
       "Creators run a VIP store and swag for superfans; 4Unik handles inventory, packing, and shipping—no logistics of your own.",
     sub:
-      "Reward the people who engage the most with exclusive products. You take care of the community; 4Unik takes care of inventory, packing, and shipping—100% of delivery.",
+      "Reward the people who engage the most with exclusive products. You take care of the community; 4Unik takes care of inventory, packing, and shipping—from order to tracking.",
     ctaLabel: "Book a demo",
     ctaHref: "https://calendly.com/4unik/30min",
   },

@@ -7,14 +7,14 @@ export const ptPlataforma = {
       "Painel, gamificação, catálogo, logística e SSO. A plataforma 4unik V3 para operar recompensas em escala.",
   },
   hero: {
-    badge: "Controle Total da Operação",
-    titleLine1: "Visibilidade total.",
+    badge: "Operação sob controle",
+    titleLine1: "Tudo num só painel.",
     titleGradient: "Decisões mais rápidas.",
     sub:
-      "Dashboard analítico em tempo real com métricas de eNPS, ROI e taxas de resgate. Aprovação de orçamentos, importação em massa e exportação direta para o ERP — com conformidade total à LGPD.",
+      "Dashboard analítico em tempo real com métricas de eNPS, ROI e taxas de resgate. Aprovação de orçamentos, importação em massa e exportação direta para o ERP — alinhado à LGPD.",
   },
   pageCta: {
-    title: "Pronto para ter o controle total?",
+    title: "Pronto para ver o painel na prática?",
     cta: "Solicitar Demonstração",
   },
   adminDashboard: {
@@ -38,12 +38,12 @@ export const ptPlataforma = {
     titleGradient: "jogo",
     titleAfter: ".",
     body:
-      "O ambiente onde supervisores, RH e gestores orçamentais governam as regras. Inspirado em painéis de e-commerce e ERPs, mantendo visibilidade 100% sobre R$, prazos e entregas logísticas dos prêmios.",
+      "O ambiente onde supervisores, RH e gestores orçamentais governam as regras. Inspirado em painéis de e-commerce e ERPs: SLA de entrega, centros de custo e BI de resgates no mesmo painel.",
     bullets: [
       {
         title: "Monitoramento de SLA's",
         body:
-          "Saiba extamente onde está cada kit enviado para a casa dos funcionários corporativos com rastreio Last-Mile integrado D+1.",
+          "Saiba exatamente onde está cada kit enviado para a casa dos funcionários corporativos com rastreio Last-Mile integrado D+1.",
       },
       {
         title: "Centros de Custo (Budgeting)",
@@ -94,7 +94,7 @@ export const ptPlataforma = {
     },
   },
   store: {
-    badge: "Catálogo Premium VIP",
+    badge: "Catálogo VIP",
     titleBefore: "Uma loja VIP com a marca da sua ",
     titleGradient: "empresa",
     titleAfter: ".",
@@ -129,7 +129,7 @@ export const ptPlataforma = {
   logistics: {
     title: "Logística ponta a ponta.",
     sub:
-      "Não somos apenas um software. Somos os donos do armazém. O prêmio resgatado é processado, embalado e despachado pelas nossas facilities com precisão militar.",
+      "Não somos apenas um software: operamos o armazém. O prêmio resgatado é processado, embalado e despachado pelas nossas instalações, com SLA acompanhado no painel.",
     cards: [
       {
         title: "Estoque Próprio",
@@ -152,7 +152,7 @@ export const ptPlataforma = {
     badge: "Segurança Enterprise",
     title: "Segurança, SSO Corporativo & LGPD",
     body:
-      "Lidamos com dados da sua equipe de altíssima prioridade (endereços de entrega, CPFs, nomes de departamento). Nossa plataforma passa pelas mais estritas due-diligences de bancos e empresas Globais de tech.",
+      "Lidamos com dados sensíveis da sua equipe (endereços de entrega, CPFs, departamentos). A plataforma responde a due-diligences de segurança de clientes enterprise, incluindo bancos e empresas globais de tecnologia.",
     items: [
       {
         title: "SAML / SSO Active Directory",

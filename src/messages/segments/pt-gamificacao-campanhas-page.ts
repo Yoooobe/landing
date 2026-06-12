@@ -71,7 +71,7 @@ export const ptGamificacaoCampanhasPage = {
         badge: "Resultado",
         title: "Impacto mensurável",
         description:
-          "Empresas reportam +40% de engajamento e -25% de turnover no primeiro ano. 83% se sentem mais motivados com gamificação estruturada.",
+          "Dashboard de ROI correlaciona engajamento, taxa de resgate e retenção — números do seu programa em tempo real, não estimativas.",
         features: [
           "Dashboard de ROI",
           "Métricas de adoção",
@@ -84,9 +84,9 @@ export const ptGamificacaoCampanhasPage = {
   flow: {
     badge: "Como funciona",
     titleBefore: "4 passos para",
-    titleGradient: "transformar",
-    titleAfter: "seu RH",
-    sub: "Do setup ao engajamento mensurável. Implementação simples, resultado visível para liderança.",
+    titleGradient: "lançar",
+    titleAfter: "seu programa",
+    sub: "Do setup ao engajamento mensurável, com resultado visível para a liderança.",
     steps: [
       {
         num: "01",
@@ -139,11 +139,11 @@ export const ptGamificacaoCampanhasPage = {
     ],
   },
   cases: {
-    badge: "Resultados reais",
-    titleBefore: "Cases que",
-    titleGradient: "comprovam",
-    titleAfter: "o modelo",
-    sub: "Empresas que uniram gamificação, loja corporativa e logística automatizada — com métricas públicas.",
+    badge: "Cases e exemplos",
+    titleBefore: "Quem já uniu campanha,",
+    titleGradient: "loja",
+    titleAfter: "e logística",
+    sub: "Casos 4unik (Grupo Boticário, Softplan) e exemplos públicos de mercado (Deloitte, CaLLogix) com métricas divulgadas.",
     challengeLabel: "Desafio",
     solutionLabel: "Solução",
     items: [
@@ -216,11 +216,11 @@ export const ptGamificacaoCampanhasPage = {
     titleGradient: "infraestrutura",
     titleAfter: ", não projeto pontual",
     sub: "O mercado evolui de brindes isolados para ecossistemas integrados de engajamento, recompensa e logística.",
-    banner2025: "Engajamento estruturado",
-    banner2033: "Operação automatizada",
-    cagr: "83% mais motivados",
-    value2025: "+40% engajamento",
-    value2033: "-25% turnover",
+    banner2025: "Mercado hoje",
+    banner2033: "Próximo passo",
+    cagr: "Tendência de mercado",
+    value2025: "Ecossistemas integrados",
+    value2033: "Operação automatizada",
     items: [
       {
         icon: "🌉",
@@ -316,7 +316,7 @@ export const ptGamificacaoCampanhasPage = {
       {
         title: "eNPS",
         subtitle: "Employee Net Promoter Score",
-        desc: "Satisfação e lealdade dos colaboradores. Gamificação estruturada costuma elevar o eNPS em dezenas de pontos.",
+        desc: "Satisfação e lealdade dos colaboradores. Acompanhe a evolução antes e depois do programa, direto no painel.",
       },
       {
         title: "Adoção em 48h",
@@ -345,7 +345,7 @@ export const ptGamificacaoCampanhasPage = {
       {
         icon: "👻",
         title: "Invisibilidade corporativa",
-        desc: "65% sem reconhecimento no ano. Campanhas automáticas por marcos, peer recognition e prêmios reais devolvem visibilidade sem planilhas.",
+        desc: "Campanhas automáticas por marcos, peer recognition e prêmios reais devolvem visibilidade a quem trabalha — sem planilhas.",
         hook: "Reconhecimento não é opcional",
       },
       {

@@ -2,8 +2,8 @@ export const ptLandingMore = {
   howItWorks: {
     badge: "Como funciona",
     titleBefore: "4 passos para",
-    titleGradient: "transformar",
-    titleAfter: " seu RH",
+    titleGradient: "começar",
+    titleAfter: "",
     steps: [
       {
         num: "01",
@@ -23,7 +23,7 @@ export const ptLandingMore = {
       {
         num: "04",
         title: "Entregue",
-        desc: "Eles escolhem o presente; a logística automatizada da 4Unik cuida do resto — ou conectamos a sua operação e fornecedores.",
+        desc: "Eles escolhem o presente; nós cuidamos do resto — ou conectamos a sua operação e fornecedores.",
       },
     ],
     mockInfrastructure: "Infrastructure",
@@ -87,7 +87,7 @@ export const ptLandingMore = {
     badge: "Como funciona",
     titleBefore: "Dois caminhos para",
     titleGradient: "engajar seu time",
-    sub: "Você não precisa mudar tudo de uma vez. A 4Unik se adapta: plataforma completa para começar rápido, ou camada integrada quando você já tem intranet ou gamificação.",
+    sub: "Você não precisa mudar tudo de uma vez. Plataforma completa ou camada de execução via API — a 4Unik se adapta ao que você já tem.",
     sideA: {
       title: "Tudo pronto para usar",
       body: "Portal do colaborador com a sua marca. Missões, pontos e loja no ar desde o primeiro dia — logística própria automatizada ou conectada à sua.",
@@ -104,7 +104,7 @@ export const ptLandingMore = {
         "Sem obrigar todo mundo a criar mais uma senha",
         "Recompensas aparecem onde as pessoas já trabalham",
         "Operamos a loja e as entregas nos bastidores — ou integramos a sua operação",
-        "Entregamos no Brasil e no mundo; fora do país, produzimos localmente no destino quando acelera a entrega",
+        "Entrega nacional e internacional no mesmo fluxo",
       ],
     },
   },

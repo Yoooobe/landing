@@ -93,11 +93,30 @@ Esses itens vivem na KB para contexto dos agentes, mas só vão para a copy púb
 
 ---
 
+## Frases canónicas (anti-repetição)
+
+Cada promessa central tem **uma frase canónica**. Use-a **uma vez por página**; nas outras secções referencie por link/CTA em vez de reescrever a mesma promessa com outras palavras.
+
+| Promessa | Frase canónica PT | EN |
+|----------|-------------------|----|
+| Logística | "Nós cuidamos da logística e da entrega — no Brasil e no mundo." | "We handle logistics and delivery — in Brazil and worldwide." |
+| API/embed | "Recompensa física como uma chamada de API." | "Physical rewards as an API call." |
+| GTM dual | "Plataforma completa ou camada de execução via API." | "Full platform or execution layer via API." |
+
+**Regra de densidade:**
+
+- Uma promessa central por página (a do ICP dominante); as restantes aparecem no máximo uma vez como apoio.
+- Cada estatística (ex.: 65% engajamento, 83%) aparece **uma única vez no site inteiro** — hoje vivem na home (`WhySection`); não duplicar em outras secções/páginas.
+- Termos saturados (`gamificação`, `engajamento`, `reconhecimento`): antes de adicionar mais uma ocorrência, verifique se a frase não funciona com o termo já presente no título da secção.
+- Exemplos de mercado (SAP, Deloitte, estudos de terceiros) levam sempre o rótulo "exemplo de mercado" — nunca apresentar como clientes 4unik.
+
 ## Checklist rápido (antes de publicar copy)
 
 - [ ] Abre pela dor do ICP dominante da página?
 - [ ] Frases curtas, "você", sem jargão?
 - [ ] Benefício antes da feature?
+- [ ] Promessas centrais usam a frase canónica (1× por página)?
+- [ ] Nenhuma estatística duplicada noutra secção/página?
 - [ ] PT e EN com o mesmo significado?
 - [ ] Sem claim sensível não aprovado?
 - [ ] Coerente com `positioning.md` e `4unik-ai-discovery`?

@@ -11,7 +11,7 @@ export const ptInteligenciaPage = {
     titleBefore: "Inteligência aplicada ao",
     titleGradient: "engajamento corporativo",
     sub:
-      "Transforme campanhas, recompensas e jornadas em ações mais personalizadas, mensuráveis e escaláveis. Uma nova era de infraestrutura de reconhecimento.",
+      "Campanhas, recompensas e jornadas mais personalizadas, mensuráveis e escaláveis — parte disponível hoje, parte em roadmap.",
   },
   cards: [
     {
@@ -64,8 +64,8 @@ export const ptInteligenciaPage = {
     ],
   },
   cta: {
-    title: "Sua estratégia nativamente inteligente",
-    sub: "Prepare-se para orquestrar reconhecimento orgânico guiado por dados. A infraestrutura para RH moderno.",
+    title: "Inteligência aplicada ao seu programa",
+    sub: "Orquestre reconhecimento guiado por dados, no ritmo do seu RH.",
     button: "Quero conhecer a evolução AI",
   },
   faq: {
