@@ -1,6 +1,6 @@
 export const enGamificacao = {
   pageCta: {
-    title: "Ready to transform your culture?",
+    title: "Ready to strengthen your culture?",
     body: "Automate recognition programs that used to require weeks of manual admin work.",
     cta: "Talk to a specialist",
   },

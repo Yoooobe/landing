@@ -1,6 +1,6 @@
 export const ptGamificacao = {
   pageCta: {
-    title: "Pronto para transformar a cultura?",
+    title: "Pronto para impulsionar a cultura?",
     body:
       "Automatize programas de reconhecimento que antes levavam semanas de overhead administrativo.",
     cta: "Falar com Especialistas",

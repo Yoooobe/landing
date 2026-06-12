@@ -25,7 +25,7 @@ export default function GamificationPageSections({
   return (
     <div className="min-h-screen bg-brand-navy-dark text-white">
       <GamificationHero content={content.hero} showcaseImage={showcaseMedia?.hero?.showcaseImage} />
-      <CampaignBuilderShowcase />
+      {!isMotor ? <CampaignBuilderShowcase /> : null}
       <GamificationProblem content={content.problem} />
       {isMotor ? (
         <>

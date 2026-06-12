@@ -498,7 +498,8 @@ Fluxo recomendado:
 
 - atualize o documento `Mídia de showcase da home` para trocar mockups e screenshots
 - trate `homeShowcaseMedia.home-default` como a fonte nativa dessas superfícies compartilhadas
-- use o `marketingPage.home` para ordenar, editar e testar a narrativa principal da home em blocos nativos
+- use o `marketingPage.home` para ordenar, editar e testar a narrativa principal da home em blocos nativos (seed `homeMarketingPageBlocks` em `scripts/sanity-seed-data.mjs` alinhado ao fallback `homeBlocks()`; a rota `/` renderiza sempre `HomePage.tsx` nativo)
+- após mudanças no seed da home, correr `npm run seed:sanity` com token de escrita para atualizar o documento no Studio de produção
 - use `logoStripBlock` com referência a `logoCollection.trustBar` e `logoCollection.clientsGrid` para a prova social da home, sem voltar a `legacySectionBlock`
 
 Se o documento de showcase estiver ausente ou incompleto, o frontend cai automaticamente no fallback atual vindo dos segmentos locais.

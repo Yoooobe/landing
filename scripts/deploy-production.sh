@@ -22,6 +22,9 @@ export NEXT_PUBLIC_SANITY_PROJECT_ID="${NEXT_PUBLIC_SANITY_PROJECT_ID:?Defina NE
 export NEXT_PUBLIC_SANITY_DATASET="${NEXT_PUBLIC_SANITY_DATASET:-production}"
 export NEXT_PUBLIC_SANITY_API_VERSION="${NEXT_PUBLIC_SANITY_API_VERSION:-2024-03-17}"
 
+# Páginas /pricing/ e /seguranca/ — gate em docs/content-approval-queue.md (indexação liberada 2026-06-03).
+export NEXT_PUBLIC_INDEX_GROWTH_PAGES="${NEXT_PUBLIC_INDEX_GROWTH_PAGES:-true}"
+
 if [[ -z "${NEXT_PUBLIC_GA_ID:-}" || "${NEXT_PUBLIC_GA_ID}" == "G-XXXXXXXXXX" ]]; then
   echo "==> Aviso: NEXT_PUBLIC_GA_ID ausente ou placeholder — GA4 não será embutido no build."
 fi

@@ -1,6 +1,6 @@
 export const ptGamificacaoCampanhas = {
   pageCta: {
-    title: "Pronto para transformar campanhas em resultados?",
+    title: "Pronto para lançar campanhas com resultado?",
     body:
       "Conecte metas, pontuação e prêmios reais em um ecossistema automatizado — da API à porta do colaborador.",
     cta: "Solicitar demonstração",

@@ -1348,6 +1348,188 @@ const blogPosts = [
   },
 ];
 
+/** Espelha `homeBlocks()` em src/sanity/lib/marketingPages.ts — composição nativa HomePage (8 secções no frontend). */
+function homeMarketingPageBlocks(isEn) {
+  const base = isEn ? "/en" : "";
+  const trustTitle = isEn ? "Companies that trust 4Unik" : "Empresas que confiam na 4Unik";
+  const heroHeadline = isEn
+    ? "4unik scales recognition without manual ops"
+    : "4unik escala reconhecimento sem operação manual";
+  const heroSub = isEn
+    ? "Full platform or execution layer via API. You set goals and points; we handle logistics and delivery—in Brazil and worldwide."
+    : "Plataforma completa ou camada de execução via API. Você define metas e pontos; nós cuidamos da logística e da entrega — no Brasil e no mundo.";
+  const finalTitle = isEn
+    ? "Ready to simplify recognition at your company?"
+    : "Pronto para simplificar reconhecimento na sua empresa?";
+  const finalBody = isEn
+    ? "Book a 30-minute demo: we walk through the dashboard, store, and delivery flow live—no commitment."
+    : "Agende uma demonstração de 30 minutos: vemos juntos painel, loja e fluxo de entrega ao vivo — sem compromisso.";
+
+  return [
+    heroBlock("hero", {
+      headline: heroHeadline,
+      subheadline: heroSub,
+      ctaText: isEn ? "Book a demo" : "Agendar Demo",
+      ctaLink: "https://calendly.com/4unik/demo",
+    }),
+    logoStripBlock("trust-bar", {
+      displayStyle: "compact",
+      title: trustTitle,
+      collection: { _type: "reference", _ref: "logoCollection.trustBar" },
+    }),
+    featureGridBlock("platform-tabs-overview", {
+      eyebrow: isEn ? "Explore the solution" : "Explore a Solução",
+      title: isEn
+        ? "A clear experience for managers and members"
+        : "Uma experiência clara para gestor e colaborador",
+      columns: "3",
+      items: [
+        {
+          title: isEn ? "Manager dashboard" : "Dashboard do Gestor",
+          description: isEn
+            ? "Orders, revenue, inventory, and points in one panel."
+            : "Pedidos, faturamento, estoque e pontos num só painel.",
+          icon: "bar-chart-3",
+        },
+        {
+          title: isEn ? "Member store" : "Loja do Membro",
+          description: isEn
+            ? "Branded catalog and self-service redemption."
+            : "Catálogo com a cara da empresa e resgate autônomo.",
+          icon: "store",
+        },
+        {
+          title: isEn ? "Campaign management" : "Gestão de Campanhas",
+          description: isEn
+            ? "Missions, rules, and rewards without manual ops."
+            : "Missões, regras e premiação sem operação manual.",
+          icon: "target",
+        },
+      ],
+    }),
+    featureGridBlock("why-4unik", {
+      eyebrow: isEn ? "Why 4Unik" : "Por que a 4Unik",
+      title: isEn ? "Recognition drives performance" : "Reconhecimento gera performance",
+      description: isEn
+        ? "65% of employees receive no recognition during the year; 83% feel more motivated when the program actually works. Store, points, and logistics in one flow."
+        : "65% dos colaboradores não recebem reconhecimento durante o ano; 83% se sentem mais motivados quando o programa funciona de verdade. Loja, pontos e logística no mesmo fluxo.",
+      columns: "3",
+      items: [
+        {
+          title: isEn ? "Purpose" : "Propósito",
+          description: isEn
+            ? "Real recognition shapes culture."
+            : "Reconhecimento de verdade muda cultura.",
+          icon: "target",
+        },
+        {
+          title: isEn ? "How we do it" : "Como fazemos",
+          description: isEn
+            ? "Gamification, store, and delivery in one flow."
+            : "Gamificação, loja e entregas no mesmo fluxo.",
+          icon: "sparkles",
+        },
+        {
+          title: isEn ? "Outcomes" : "Resultados",
+          description: isEn
+            ? "Track impact on culture and retention in the dashboard."
+            : "Acompanhe impacto no clima e na retenção no painel.",
+          icon: "bar-chart-3",
+        },
+      ],
+    }),
+    statsBlock("stats-highlights", isEn ? "Scale in numbers" : "Operação em escala", [
+      { value: "160", label: isEn ? "companies served in 4 years" : "empresas atendidas em 4 anos" },
+      { value: "20 mi", label: isEn ? "points redeemed in corporate stores" : "pontos utilizados em trocas" },
+      { value: "R$ 7 mi", label: isEn ? "transacted in stores with sales" : "transacionados em lojas com venda" },
+      { value: "340 mil", label: isEn ? "products distributed" : "produtos distribuídos" },
+    ]),
+    featureGridBlock("how-it-works", {
+      eyebrow: isEn ? "How it works" : "Como funciona",
+      title: isEn ? "Four steps to get started" : "4 passos para começar",
+      columns: "4",
+      items: [
+        { eyebrow: "01", title: isEn ? "Connect" : "Conecte", description: isEn ? "HRIS, intranet, or 4Unik console." : "Intranet, HRIS ou console 4unik.", icon: "link-2" },
+        { eyebrow: "02", title: isEn ? "Configure" : "Configure", description: isEn ? "Rules, catalog, and culture fit." : "Regras, catálogo e cultura.", icon: "target" },
+        { eyebrow: "03", title: isEn ? "Engage" : "Engaje", description: isEn ? "Points, missions, recognition." : "Pontos, missões e reconhecimento.", icon: "coins" },
+        { eyebrow: "04", title: isEn ? "Deliver" : "Entregue", description: isEn ? "They choose; we fulfill." : "Eles escolhem; nós entregamos.", icon: "package" },
+      ],
+    }),
+    splitContentBlock("ready-to-use", {
+      eyebrow: isEn ? "Two ways to start" : "Duas formas de começar",
+      title: isEn ? "Ready to use" : "Tudo pronto para usar",
+      body: isEn
+        ? ["Branded portal with missions, points, and store from day one."]
+        : ["Portal com missões, pontos e loja desde o primeiro dia."],
+      bullets: isEn
+        ? ["Store and campaigns on-brand", "Manager console", "Works in the browser"]
+        : ["Loja e campanhas com a cara da empresa", "Painel do gestor", "Funciona no navegador"],
+      primaryLabel: isEn ? "See the platform" : "Ver a plataforma",
+      primaryHref: `${base}/plataforma`,
+      imageSide: "right",
+    }),
+    splitContentBlock("invisible-integration", {
+      eyebrow: isEn ? "Two ways to start" : "Duas formas de começar",
+      title: isEn ? "Connect what you already run" : "Integração com o que você já tem",
+      body: isEn
+        ? ["4Unik connects by API inside your existing stack."]
+        : ["A 4Unik conecta por API ao stack que você já usa."],
+      bullets: isEn
+        ? ["No extra password rollout", "Rewards in everyday tools", "We run fulfillment"]
+        : ["Sem outra senha", "Recompensas onde o time trabalha", "Operamos a entrega"],
+      primaryLabel: isEn ? "Explore integrations" : "Explorar integrações",
+      primaryHref: `${base}/api-integracoes`,
+      imageSide: "left",
+    }),
+    splitContentBlock("enterprise-cases", {
+      eyebrow: isEn ? "Enterprise cases" : "Casos enterprise",
+      title: isEn ? "Proven capacity at scale" : "Capacidade comprovada para operar em grande escala",
+      body: isEn
+        ? ["Hapvida and Prio run dedicated programs with predictable operations."]
+        : ["Hapvida e Prio operam programas dedicados com operação previsível."],
+      bullets: isEn
+        ? ["High-volume deliveries", "Compliance-aligned catalog", "Mission-critical support"]
+        : ["Alto volume de entregas", "Catálogo alinhado a compliance", "Suporte mission-critical"],
+      primaryLabel: isEn ? "See use cases" : "Ver casos de uso",
+      primaryHref: `${base}/casos-de-uso`,
+      imageSide: "right",
+    }),
+    testimonialBlock("testimonials", isEn ? "What teams say" : "Depoimentos", [
+      {
+        quote: isEn
+          ? "4Unik unlocked our recognition program in weeks."
+          : "A 4Unik destravou nosso programa de reconhecimento em poucas semanas.",
+        author: isEn ? "Marina Costa" : "Marina Costa",
+        role: isEn ? "Head of HR" : "Head de RH",
+        company: isEn ? "Tech company" : "Empresa de tecnologia",
+        illustrative: true,
+      },
+    ]),
+    splitContentBlock("api-integrations", {
+      eyebrow: isEn ? "Works where your team already is" : "Funciona onde o time já está",
+      title: isEn ? "Connect 4Unik to your stack" : "Conecte a 4Unik a qualquer sistema",
+      body: isEn
+        ? ["API priced per active user. Catalog, checkout, and fulfillment embedded."]
+        : ["API por usuário ativo. Catálogo, checkout e fulfillment integrados."],
+      bullets: isEn
+        ? ["Real-time rewards", "Unified login", "Developer sandbox"]
+        : ["Prêmios em tempo real", "Login unificado", "Sandbox para devs"],
+      primaryLabel: isEn ? "Docs & API" : "Documentação e API",
+      primaryHref: `${base}/api-integracoes`,
+      imageSide: "right",
+    }),
+    ctaBlock("final-cta", {
+      eyebrow: isEn ? "Next step" : "Próximo passo",
+      title: finalTitle,
+      description: finalBody,
+      primaryLabel: isEn ? "Book a demo" : "Solicitar Demonstração",
+      primaryHref: "https://calendly.com/4unik/demo",
+      secondaryLabel: isEn ? "Talk to a specialist" : "Falar com Especialista",
+      secondaryHref: "https://wa.me/554187582060",
+    }),
+  ];
+}
+
 const marketingPages = [
   {
     _id: "marketingPage.pt.reward-infrastructure",
@@ -1632,46 +1814,14 @@ const marketingPages = [
     title: "Home",
     slug: { _type: "slug", current: "home" },
     locale: "pt",
-    summary: "Home principal da landing, promovida para composicao nativa no marketingPage com apoio de midia compartilhada.",
+    summary:
+      "Home nativa (HomePage.tsx): 8 secoes publicas — hero, trust, tabs, why+stats, how+duality, cases, integracoes/API, CTA final. Blocos abaixo espelham o fallback editorial.",
     seo: {
-      metaTitle: "4Unik - Reward Infrastructure | Gamificacao e Recompensas",
+      metaTitle: "4Unik — Reconhecimento, loja corporativa e logística para equipes",
       metaDescription:
-        "Infraestrutura de recompensas para plataformas de gamificacao e employee engagement. API, catalogo e fulfillment em um so lugar.",
+        "Plataforma completa ou camada de execução via API: campanhas, pontos, loja e entrega — no Brasil e no mundo.",
     },
-    content: [
-      legacySectionBlock("home-hero", "homeHero"),
-      legacySectionBlock("home-four-unik", "homeFourUnik"),
-      logoStripBlock("home-trust", {
-        displayStyle: "compact",
-        title: "Empresas que confiam na 4Unik",
-        collection: { _type: "reference", _ref: "logoCollection.trustBar" },
-      }),
-      legacySectionBlock("home-bento", "homeBentoFeatures"),
-      legacySectionBlock("home-platform", "homePlatformTabs"),
-      legacySectionBlock("home-stats", "homeStatsBar"),
-      legacySectionBlock("home-why", "homeWhySection"),
-      legacySectionBlock("home-gamification-summary", "homeGamificationSummary"),
-      legacySectionBlock("home-gamification-duality", "homeGamificationDuality"),
-      legacySectionBlock("home-enterprise-cases", "homeEnterpriseCases"),
-      legacySectionBlock("home-integrations", "homeDedicatedIntegrations"),
-      legacySectionBlock("home-store", "homeStoreSection"),
-      legacySectionBlock("home-api", "homeApiSection"),
-      legacySectionBlock("home-ai", "homeAiRoadmap"),
-      legacySectionBlock("home-management", "homeManagementSection"),
-      legacySectionBlock("home-how", "homeHowItWorks"),
-      legacySectionBlock("home-pricing", "homePricingSection"),
-      legacySectionBlock("home-testimonials", "homeTestimonialsSection"),
-      logoStripBlock("home-clients", {
-        displayStyle: "grid",
-        sectionId: "clientes",
-        eyebrow: "Quem confia na 4Unik",
-        title: "Empresas que já transformaram seu RH",
-        description:
-          "De startups a grandes corporações, ajudamos equipes de RH a criar programas de reconhecimento que funcionam.",
-        collection: { _type: "reference", _ref: "logoCollection.clientsGrid" },
-      }),
-      legacySectionBlock("home-final-cta", "homeFinalCta"),
-    ],
+    content: homeMarketingPageBlocks(false),
   },
   {
     _id: "marketingPage.en.home",
@@ -1679,46 +1829,14 @@ const marketingPages = [
     title: "Home",
     slug: { _type: "slug", current: "home" },
     locale: "en",
-    summary: "Main landing home page, promoted to native marketingPage composition with shared showcase media.",
+    summary:
+      "Native home (HomePage.tsx): 8 public sections — hero, trust, tabs, why+stats, how+duality, cases, integrations/API, final CTA. Blocks below mirror editorial fallback.",
     seo: {
-      metaTitle: "4Unik - Reward Infrastructure | Gamification & Rewards",
+      metaTitle: "4Unik — Recognition, corporate store & logistics for teams",
       metaDescription:
-        "Reward infrastructure for gamification and employee engagement platforms. API, catalog, and fulfillment in one place.",
+        "Full platform or execution layer via API: campaigns, points, store, and delivery—in Brazil and worldwide.",
     },
-    content: [
-      legacySectionBlock("home-hero", "homeHero"),
-      legacySectionBlock("home-four-unik", "homeFourUnik"),
-      logoStripBlock("home-trust", {
-        displayStyle: "compact",
-        title: "Companies that trust 4Unik",
-        collection: { _type: "reference", _ref: "logoCollection.trustBar" },
-      }),
-      legacySectionBlock("home-bento", "homeBentoFeatures"),
-      legacySectionBlock("home-platform", "homePlatformTabs"),
-      legacySectionBlock("home-stats", "homeStatsBar"),
-      legacySectionBlock("home-why", "homeWhySection"),
-      legacySectionBlock("home-gamification-summary", "homeGamificationSummary"),
-      legacySectionBlock("home-gamification-duality", "homeGamificationDuality"),
-      legacySectionBlock("home-enterprise-cases", "homeEnterpriseCases"),
-      legacySectionBlock("home-integrations", "homeDedicatedIntegrations"),
-      legacySectionBlock("home-store", "homeStoreSection"),
-      legacySectionBlock("home-api", "homeApiSection"),
-      legacySectionBlock("home-ai", "homeAiRoadmap"),
-      legacySectionBlock("home-management", "homeManagementSection"),
-      legacySectionBlock("home-how", "homeHowItWorks"),
-      legacySectionBlock("home-pricing", "homePricingSection"),
-      legacySectionBlock("home-testimonials", "homeTestimonialsSection"),
-      logoStripBlock("home-clients", {
-        displayStyle: "grid",
-        sectionId: "clientes",
-        eyebrow: "Who trusts 4Unik",
-        title: "Companies that have already transformed their people programs",
-        description:
-          "From startups to large enterprises, we help HR teams run recognition programs that work.",
-        collection: { _type: "reference", _ref: "logoCollection.clientsGrid" },
-      }),
-      legacySectionBlock("home-final-cta", "homeFinalCta"),
-    ],
+    content: homeMarketingPageBlocks(true),
   },
   {
     _id: "marketingPage.pt.api-integracoes",
