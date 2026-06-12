@@ -32,6 +32,7 @@ npm run build
 echo "==> Verificar GA4 inlined no export"
 node scripts/verify-ga-build.mjs
 node scripts/verify-ga-404-fallback.mjs
+node scripts/verify-ga-pages.mjs
 
 if [[ ! -f out/.nojekyll ]]; then
   touch out/.nojekyll

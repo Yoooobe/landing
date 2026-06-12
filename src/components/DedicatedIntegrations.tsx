@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { withBasePath } from "@/lib/basePath";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
@@ -18,9 +19,10 @@ export default function DedicatedIntegrations({
   const workvivoLogoUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.dedicatedIntegrations?.workvivo?.logoImage,
   );
-  const workvivoPreviewUrl = getSanityImageUrl(
-    homeContent?.showcaseMedia?.dedicatedIntegrations?.workvivo?.previewImage,
-  );
+  const workvivoPreviewUrl =
+    getSanityImageUrl(
+      homeContent?.showcaseMedia?.dedicatedIntegrations?.workvivo?.previewImage,
+    ) ?? withBasePath("/workvivo/workvivo-feed-shoutout.webp");
   const beehomeLogoUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.dedicatedIntegrations?.beehome?.logoImage,
   );
@@ -82,61 +84,22 @@ export default function DedicatedIntegrations({
 
             <p className="text-white/60 font-sans mb-8 min-h-[60px] relative z-10">{w.body}</p>
 
-            <div className="w-full aspect-4/3 bg-white border border-white/10 rounded-2xl relative overflow-hidden mb-8 shadow-inner flex flex-col p-4 font-sans max-w-sm mx-auto group-hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-shadow">
-              {workvivoPreviewUrl ? (
-                <Image
-                  src={workvivoPreviewUrl}
-                  alt={
-                    homeContent?.showcaseMedia?.dedicatedIntegrations?.workvivo?.previewImage?.alt?.trim() ||
-                    w.title
-                  }
-                  fill
-                  sizes="(min-width: 1024px) 384px, 100vw"
-                  className="object-contain"
-                  unoptimized
-                />
-              ) : (
-                <>
-                  <div className="flex items-center justify-between mb-4 border-b pb-2">
-                    <div className="w-24 h-4 bg-gray-200 rounded"></div>
-                    <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-[10px]">
-                      W
-                    </div>
-                  </div>
-
-                  <div className="bg-gray-50 rounded-xl p-4 border border-gray-100 shadow-sm relative overflow-hidden">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-full bg-linear-to-br from-blue-400 to-indigo-500"></div>
-                      <div>
-                        <div className="text-xs font-bold text-gray-800">{w.feedAuthor}</div>
-                        <div className="text-[10px] text-gray-400">{w.feedTime}</div>
-                      </div>
-                    </div>
-                    <div className="text-sm text-gray-600 mb-3 leading-tight">{w.feedPost}</div>
-
-                    <div className="bg-white border-2 border-brand-orange/20 rounded-lg p-3 flex items-center gap-3 transform group-hover:scale-[1.02] transition-transform">
-                      <div className="w-12 h-12 bg-orange-50 rounded-md flex items-center justify-center text-xl shadow-sm border border-brand-orange/10">
-                        🎁
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-gray-800">{w.feedCardTitle}</div>
-                        <div className="text-[10px] text-brand-orange font-bold">{w.feedCardBrand}</div>
-                      </div>
-                      <button
-                        type="button"
-                        className="ml-auto bg-brand-orange text-white text-[10px] px-3 py-1.5 rounded-full font-bold"
-                      >
-                        {w.feedCta}
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="absolute top-3 right-3 bg-brand-navy-dark text-white text-[10px] px-3 py-1.5 rounded-lg font-mono shadow-2xl flex items-center gap-2 border border-white/10">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
-                    {w.realtime}
-                  </div>
-                </>
-              )}
+            <div className="w-full aspect-4/3 bg-white border border-white/10 rounded-2xl relative overflow-hidden mb-8 shadow-inner font-sans max-w-sm mx-auto group-hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-shadow">
+              <Image
+                src={workvivoPreviewUrl}
+                alt={
+                  homeContent?.showcaseMedia?.dedicatedIntegrations?.workvivo?.previewImage?.alt?.trim() ||
+                  w.title
+                }
+                fill
+                sizes="(min-width: 1024px) 384px, 100vw"
+                className="object-contain"
+                unoptimized
+              />
+              <div className="absolute top-3 right-3 bg-brand-navy-dark text-white text-[10px] px-3 py-1.5 rounded-lg font-mono shadow-2xl flex items-center gap-2 border border-white/10">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                {w.realtime}
+              </div>
             </div>
 
             <ul className="space-y-3 font-sans text-sm text-white/70 mt-auto">

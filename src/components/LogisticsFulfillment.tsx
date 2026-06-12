@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { withBasePath } from "@/lib/basePath";
 import { getSanityImageUrl, SANITY_IMAGE_PRESETS } from "@/sanity/lib/image";
 import type { PlatformShowcaseMediaDoc } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
@@ -14,7 +15,9 @@ export default function LogisticsFulfillment({
 }) {
   const { m } = useLocaleMessages();
   const l = m.plataforma.logistics;
-  const logisticsPanelImageUrl = getSanityImageUrl(showcaseMedia?.logisticsPanelImage, SANITY_IMAGE_PRESETS.uiScreenshot);
+  const logisticsPanelImageUrl =
+    getSanityImageUrl(showcaseMedia?.logisticsPanelImage, SANITY_IMAGE_PRESETS.uiScreenshot) ??
+    withBasePath("/screens/member-orders.webp");
 
   return (
     <section className="py-24 bg-brand-navy border-t border-white/5 relative">
@@ -24,29 +27,27 @@ export default function LogisticsFulfillment({
           <p className="text-lg text-white/60 max-w-2xl mx-auto">{l.sub}</p>
         </div>
 
-        {logisticsPanelImageUrl ? (
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative mb-10 overflow-hidden rounded-[2rem] border border-white/10 bg-surface-page shadow-2xl"
-          >
-            <div className="relative aspect-16/7 w-full">
-              <Image
-                src={logisticsPanelImageUrl}
-                alt={
-                  showcaseMedia?.logisticsPanelImage?.alt?.trim() ||
-                  l.title ||
-                  "Painel visual da logística integrada"
-                }
-                fill
-                sizes="100vw"
-                className="object-contain"
-                unoptimized
-              />
-            </div>
-          </motion.div>
-        ) : null}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="relative mb-10 overflow-hidden rounded-[2rem] border border-white/10 bg-surface-page shadow-2xl"
+        >
+          <div className="relative aspect-16/7 w-full">
+            <Image
+              src={logisticsPanelImageUrl}
+              alt={
+                showcaseMedia?.logisticsPanelImage?.alt?.trim() ||
+                l.title ||
+                "Painel visual da logística integrada"
+              }
+              fill
+              sizes="100vw"
+              className="object-contain"
+              unoptimized
+            />
+          </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {l.cards.map((card, i) => (

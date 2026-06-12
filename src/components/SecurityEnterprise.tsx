@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { withBasePath } from "@/lib/basePath";
 import { getSanityImageUrl, SANITY_IMAGE_PRESETS } from "@/sanity/lib/image";
 import type { PlatformShowcaseMediaDoc } from "@/sanity/lib/types";
 import { Shield, Lock, FileKey } from "lucide-react";
@@ -14,7 +15,9 @@ export default function SecurityEnterprise({
   const { m } = useLocaleMessages();
   const sec = m.plataforma.security;
   const icons = [Lock, FileKey] as const;
-  const securityPanelImageUrl = getSanityImageUrl(showcaseMedia?.securityPanelImage, SANITY_IMAGE_PRESETS.uiScreenshot);
+  const securityPanelImageUrl =
+    getSanityImageUrl(showcaseMedia?.securityPanelImage, SANITY_IMAGE_PRESETS.uiScreenshot) ??
+    withBasePath("/screens/security-panel.webp");
 
   return (
     <section className="py-24 bg-brand-navy-dark relative border-t border-white/5">
@@ -33,22 +36,20 @@ export default function SecurityEnterprise({
             </div>
 
             <div className="md:w-1/2 flex flex-col gap-4 w-full relative z-10">
-              {securityPanelImageUrl ? (
-                <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/10 bg-surface-mid">
-                  <Image
-                    src={securityPanelImageUrl}
-                    alt={
-                      showcaseMedia?.securityPanelImage?.alt?.trim() ||
-                      sec.title ||
-                      "Painel visual da segurança enterprise"
-                    }
-                    fill
-                    sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-contain"
-                    unoptimized
-                  />
-                </div>
-              ) : null}
+              <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/10 bg-surface-mid">
+                <Image
+                  src={securityPanelImageUrl}
+                  alt={
+                    showcaseMedia?.securityPanelImage?.alt?.trim() ||
+                    sec.title ||
+                    "Painel visual da segurança enterprise"
+                  }
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
 
               {sec.items.map((item, i) => {
                 const Icon = icons[i] ?? Lock;

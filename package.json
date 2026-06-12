@@ -25,6 +25,7 @@
     "verify:canonical-urls-build": "node scripts/verify-canonical-urls-build.mjs",
     "verify:ga-build": "node scripts/verify-ga-build.mjs",
     "verify:ga-404-fallback": "node scripts/verify-ga-404-fallback.mjs",
+    "verify:ga-pages": "node scripts/verify-ga-pages.mjs",
     "patch:legacy-html": "node scripts/patch-legacy-html-redirects.mjs",
     "generate:blog-posts": "npx tsx scripts/generate-blog-posts.ts",
     "blog:image-presets": "npx tsx scripts/blog-image-presets.ts",

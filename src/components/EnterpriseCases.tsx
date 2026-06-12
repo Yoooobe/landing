@@ -19,22 +19,15 @@ export default function EnterpriseCases({
   const hapvidaLogoUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.enterpriseCases?.hapvidaLogoImage,
   );
-  const hapvidaCaseImageUrl = getSanityImageUrl(
-    homeContent?.showcaseMedia?.enterpriseCases?.hapvidaCaseImage,
-  );
+  const hapvidaCaseImageUrl =
+    getSanityImageUrl(homeContent?.showcaseMedia?.enterpriseCases?.hapvidaCaseImage) ??
+    withBasePath("/screens/hapvida/hapvida-vendas-on-login.webp");
   const prioLogoUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.enterpriseCases?.prioLogoImage,
   );
   const prioCaseImageUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.enterpriseCases?.prioCaseImage,
   );
-  const hapvidaReward1Url =
-    getSanityImageUrl(homeContent?.showcaseMedia?.enterpriseCases?.hapvidaRewardImage1) ||
-    withBasePath("/loja-corporativa/product-detail.webp");
-  const hapvidaReward2Url =
-    getSanityImageUrl(homeContent?.showcaseMedia?.enterpriseCases?.hapvidaRewardImage2) ||
-    withBasePath("/screens/member-store-home.webp");
-
   return (
     <section className="py-24 bg-surface-base relative border-t border-white/5 overflow-hidden">
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-yoobe-neon-pink/5 rounded-full blur-[120px] pointer-events-none"></div>
@@ -124,75 +117,17 @@ export default function EnterpriseCases({
 
             <div className="flex-1 w-full relative z-10 flex justify-center lg:justify-end">
               <div className="w-full max-w-md aspect-4/5 bg-surface-section border border-blue-500/20 rounded-2xl relative overflow-hidden shadow-2xl group-hover:border-blue-500/40 transition-colors">
-                {hapvidaCaseImageUrl ? (
-                  <Image
-                    src={hapvidaCaseImageUrl}
-                    alt={
-                      homeContent?.showcaseMedia?.enterpriseCases?.hapvidaCaseImage?.alt?.trim() ||
-                      "Case Hapvida"
-                    }
-                    fill
-                    sizes="(min-width: 1024px) 448px, 100vw"
-                    className="object-cover"
-                    unoptimized
-                  />
-                ) : (
-                  <>
-                    <div className="h-16 border-b border-white/5 bg-white/2 flex items-center justify-between px-6">
-                      <div className="w-8 h-8 rounded-full bg-blue-500/20"></div>
-                      <div className="flex gap-2">
-                        <div className="w-4 h-4 rounded-full bg-white/10"></div>
-                        <div className="w-4 h-4 rounded-full bg-white/10"></div>
-                      </div>
-                    </div>
-                    <div className="p-6">
-                      <div className="w-full h-32 rounded-xl bg-linear-to-r from-blue-900/40 to-cyan-900/40 border border-blue-500/20 mb-6 flex flex-col justify-center px-6 relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/20 blur-2xl object-cover mix-blend-screen"></div>
-                        <span className="text-xs text-blue-300 font-bold uppercase mb-1">{h.mockTotalLabel}</span>
-                        <span className="text-4xl font-black text-white">
-                          12.500 <span className="text-lg text-blue-400">pts</span>
-                        </span>
-                      </div>
-
-                      <div className="space-y-3">
-                        <div className="text-sm font-bold text-white mb-3">{h.mockRewardsTitle}</div>
-                        <div className="flex gap-4">
-                          <div className="flex-1 h-24 rounded-xl bg-white/5 border border-white/5 p-2 flex flex-col gap-2 group-hover:bg-white/10 transition-colors">
-                            <div className="relative flex-1 overflow-hidden rounded-lg bg-[#0b0e14]">
-                              <Image
-                                src={hapvidaReward1Url}
-                                alt="Recompensa em destaque na loja Hapvida"
-                                fill
-                                sizes="160px"
-                                className="object-contain"
-                                unoptimized
-                              />
-                            </div>
-                            <div className="w-1/2 h-1.5 bg-blue-400/50 rounded-full"></div>
-                          </div>
-                          <div className="flex-1 h-24 rounded-xl bg-white/5 border border-white/5 p-2 flex flex-col gap-2 group-hover:bg-white/10 transition-colors">
-                            <div className="relative flex-1 overflow-hidden rounded-lg bg-[#0b0e14]">
-                              <Image
-                                src={hapvidaReward2Url}
-                                alt="Catálogo de recompensas Hapvida"
-                                fill
-                                sizes="160px"
-                                className="object-contain"
-                                unoptimized
-                              />
-                            </div>
-                            <div className="w-2/3 h-1.5 bg-blue-400/50 rounded-full"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="absolute -left-6 bottom-16 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-3 rounded-xl shadow-xl transform group-hover:scale-105 transition-transform">
-                      <div className="text-[10px] text-white/50 uppercase font-bold mb-1">{h.mockDailyLabel}</div>
-                      <div className="text-xl font-black text-green-400">{h.mockDailyValue}</div>
-                    </div>
-                  </>
-                )}
+                <Image
+                  src={hapvidaCaseImageUrl}
+                  alt={
+                    homeContent?.showcaseMedia?.enterpriseCases?.hapvidaCaseImage?.alt?.trim() ||
+                    "Portal Hapvida VENDAS ON (Beehome)"
+                  }
+                  fill
+                  sizes="(min-width: 1024px) 448px, 100vw"
+                  className="object-cover"
+                  unoptimized
+                />
               </div>
             </div>
           </motion.div>

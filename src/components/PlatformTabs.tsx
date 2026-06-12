@@ -1,6 +1,8 @@
+// SCREENSHOTS: Use imagens reais de /public/screens/ — NÃO substituir por SVG, JSX mockup ou ilustrações de cms-seed/
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { withBasePath } from "@/lib/basePath";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
@@ -15,18 +17,21 @@ export default function PlatformTabs({
   const { m } = useLocaleMessages();
   const t = m.platformTabs;
   const [activeTab, setActiveTab] = useState("gestao");
-  const managementImageUrl = getSanityImageUrl(
-    homeContent?.showcaseMedia?.platformTabs?.managementImage,
-    { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.16 }, quality: 85 },
-  );
-  const storeImageUrl = getSanityImageUrl(
-    homeContent?.showcaseMedia?.platformTabs?.storeImage,
-    { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.18 }, quality: 85 },
-  );
-  const campaignsImageUrl = getSanityImageUrl(
-    homeContent?.showcaseMedia?.platformTabs?.campaignsImage,
-    { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.2 }, quality: 85 },
-  );
+  const managementImageUrl =
+    getSanityImageUrl(
+      homeContent?.showcaseMedia?.platformTabs?.managementImage,
+      { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.16 }, quality: 85 },
+    ) ?? withBasePath("/screens/admin-dashboard-v3.webp");
+  const storeImageUrl =
+    getSanityImageUrl(
+      homeContent?.showcaseMedia?.platformTabs?.storeImage,
+      { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.18 }, quality: 85 },
+    ) ?? withBasePath("/screens/member-store-home.webp");
+  const campaignsImageUrl =
+    getSanityImageUrl(
+      homeContent?.showcaseMedia?.platformTabs?.campaignsImage,
+      { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.2 }, quality: 85 },
+    ) ?? withBasePath("/screens/admin-campaign-config-desktop.webp");
 
   return (
     <section id="preview" className="relative overflow-hidden bg-brand-navy-dark py-24">
@@ -84,37 +89,27 @@ export default function PlatformTabs({
                 </a>
               </div>
               <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 shadow-2xl md:p-8">
-                {managementImageUrl ? (
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
-                    <Image
-                      src={managementImageUrl}
-                      alt={
-                        homeContent?.showcaseMedia?.platformTabs?.managementImage?.alt?.trim() ||
-                        t.gestao.mockTitle
-                      }
-                      fill
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover object-[50%_16%]"
-                      unoptimized
-                    />
+                <div className="mb-4 flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
                   </div>
-                ) : (
-                  <>
-                    <div className="mb-4 flex items-center gap-2">
-                      <div className="flex gap-1.5">
-                        <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                        <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                        <div className="h-3 w-3 rounded-full bg-green-400"></div>
-                      </div>
-                      <span className="ml-2 text-xs font-bold text-slate-800">{t.gestao.mockTitle}</span>
-                    </div>
-                    <div className="mb-4 grid grid-cols-2 gap-4">
-                      <div className="h-16 rounded-xl border border-slate-200 bg-white shadow-sm"></div>
-                      <div className="h-16 rounded-xl border border-slate-200 bg-white shadow-sm"></div>
-                    </div>
-                    <div className="h-32 rounded-xl border border-slate-200 bg-white shadow-sm"></div>
-                  </>
-                )}
+                  <span className="ml-2 text-xs font-bold text-slate-800">{t.gestao.mockTitle}</span>
+                </div>
+                <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
+                  <Image
+                    src={managementImageUrl}
+                    alt={
+                      homeContent?.showcaseMedia?.platformTabs?.managementImage?.alt?.trim() ||
+                      t.gestao.mockTitle
+                    }
+                    fill
+                    sizes="(min-width: 768px) 40vw, 100vw"
+                    className="object-cover object-[50%_16%]"
+                    unoptimized
+                  />
+                </div>
               </div>
             </motion.div>
           )}
@@ -140,41 +135,27 @@ export default function PlatformTabs({
                 </a>
               </div>
               <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 shadow-2xl md:p-8">
-                {storeImageUrl ? (
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
-                    <Image
-                      src={storeImageUrl}
-                      alt={
-                        homeContent?.showcaseMedia?.platformTabs?.storeImage?.alt?.trim() ||
-                        t.loja.mockTitle
-                      }
-                      fill
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover object-[50%_18%]"
-                      unoptimized
-                    />
+                <div className="mb-4 flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
                   </div>
-                ) : (
-                  <>
-                    <div className="mb-4 flex items-center gap-2">
-                      <div className="flex gap-1.5">
-                        <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                        <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                        <div className="h-3 w-3 rounded-full bg-green-400"></div>
-                      </div>
-                      <span className="ml-2 text-xs font-bold text-slate-800">{t.loja.mockTitle}</span>
-                    </div>
-                    <div className="grid grid-cols-3 gap-3">
-                      {[1, 2, 3].map((i) => (
-                        <div key={i} className="rounded-xl border border-slate-200 bg-white p-2 shadow-sm">
-                          <div className="mb-2 h-16 rounded-lg bg-slate-100"></div>
-                          <div className="mt-2 h-2 w-2/3 rounded bg-slate-200"></div>
-                          <div className="mt-2 text-[10px] font-bold text-brand-orange">{(i * 0.8).toFixed(1)}k pts</div>
-                        </div>
-                      ))}
-                    </div>
-                  </>
-                )}
+                  <span className="ml-2 text-xs font-bold text-slate-800">{t.loja.mockTitle}</span>
+                </div>
+                <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
+                  <Image
+                    src={storeImageUrl}
+                    alt={
+                      homeContent?.showcaseMedia?.platformTabs?.storeImage?.alt?.trim() ||
+                      t.loja.mockTitle
+                    }
+                    fill
+                    sizes="(min-width: 768px) 40vw, 100vw"
+                    className="object-cover object-[50%_18%]"
+                    unoptimized
+                  />
+                </div>
               </div>
             </motion.div>
           )}
@@ -199,41 +180,28 @@ export default function PlatformTabs({
                   {t.campanhas.cta}
                 </a>
               </div>
-              <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 text-center shadow-2xl md:p-8">
-                {campaignsImageUrl ? (
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
-                    <Image
-                      src={campaignsImageUrl}
-                      alt={
-                        homeContent?.showcaseMedia?.platformTabs?.campaignsImage?.alt?.trim() ||
-                        t.campanhas.mockTitle
-                      }
-                      fill
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      className="object-cover object-[50%_20%]"
-                      unoptimized
-                    />
+              <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 shadow-2xl md:p-8">
+                <div className="mb-4 flex items-center gap-2">
+                  <div className="flex gap-1.5">
+                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
+                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
                   </div>
-                ) : (
-                  <>
-                    <div className="mb-4 flex items-center gap-2 text-left">
-                      <div className="flex gap-1.5">
-                        <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                        <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                        <div className="h-3 w-3 rounded-full bg-green-400"></div>
-                      </div>
-                      <span className="ml-2 text-xs font-bold text-slate-800">{t.campanhas.mockTitle}</span>
-                    </div>
-                    <div className="rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 p-8">
-                      <div className="mb-4 text-4xl">⚙️</div>
-                      <div className="mx-auto mb-2 h-2 w-1/2 rounded bg-slate-200"></div>
-                      <div className="mx-auto mb-6 h-2 w-1/3 rounded bg-slate-200"></div>
-                      <button type="button" className="rounded-full bg-brand-navy px-6 py-2 text-sm font-bold text-white shadow-md">
-                        {t.campanhas.mockBtn}
-                      </button>
-                    </div>
-                  </>
-                )}
+                  <span className="ml-2 text-xs font-bold text-slate-800">{t.campanhas.mockTitle}</span>
+                </div>
+                <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
+                  <Image
+                    src={campaignsImageUrl}
+                    alt={
+                      homeContent?.showcaseMedia?.platformTabs?.campaignsImage?.alt?.trim() ||
+                      t.campanhas.mockTitle
+                    }
+                    fill
+                    sizes="(min-width: 768px) 40vw, 100vw"
+                    className="object-cover object-[50%_20%]"
+                    unoptimized
+                  />
+                </div>
               </div>
             </motion.div>
           )}
