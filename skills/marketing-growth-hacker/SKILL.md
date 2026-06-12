@@ -40,8 +40,6 @@ Conhecimento proprietário versionado em `docs/knowledge-base/notebooklm/`. Ante
 
 Fallback sem sync: `skills/4unik-ai-discovery` + `docs/enterprise-content-strategy.md`.
 
-**Quality gate de copy (antes de publicar experimento):** frases canónicas e regra de densidade em [`icp-messaging-guide.md`](../../docs/knowledge-base/notebooklm/icp-messaging-guide.md) → "Frases canónicas" — promessa central 1× por página, estatística única no site, exemplos de mercado rotulados, máx. 1 lead CTA intermédio por página (a home usa só `afterPlatform`).
-
 **ICPs e diferenciação:** segmentar funil/experimentos pelos 5 ICPs refinados (plataformas/embedded, e-learning, vendas, comunidades, eventos) em [`icp-personas.md`](../../docs/knowledge-base/notebooklm/icp-personas.md). Posicionamento API-first ("camada de execução", "comportamento programável") diferencia de "empresa de brindes" e tira da briga de preço. **E-learning:** medir funil blog slug `"8"` → `/educacao/` → demo; campanhas de treinamento em vídeo com prêmio ao final.
 
 ## Idioma e rotas

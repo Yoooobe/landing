@@ -40,7 +40,7 @@ export default async function MotorGamificacaoPage() {
       <JsonLdScript data={{ ...breadcrumbLd }} />
       {faqLd ? <JsonLdScript data={{ ...faqLd }} /> : null}
       <LocaleMessagesProvider locale="pt">
-        <GamificationPageSections content={content} showcaseMedia={showcaseMedia} />
+        <GamificationPageSections content={content} showcaseMedia={showcaseMedia} variant="motor" />
       </LocaleMessagesProvider>
     </>
   );

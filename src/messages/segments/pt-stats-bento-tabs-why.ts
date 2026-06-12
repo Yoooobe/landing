@@ -83,7 +83,7 @@ export const ptStatsBentoTabsWhy = {
     },
     loja: {
       title: "Loja corporativa que parece presente, não benefício genérico",
-      body: "Colaboradores trocam pontos por milhares de itens do catálogo 4Unik ou parceiros. Saldo claro, filtros e acompanhamento da entrega.",
+      body: "Colaboradores trocam pontos por itens do catálogo 4Unik ou parceiros. Saldo claro, filtros e acompanhamento da entrega.",
       bullets: [
         "Saldo de moedas sempre visível",
         "Filtros por valor e categoria",
@@ -112,7 +112,7 @@ export const ptStatsBentoTabsWhy = {
     titleBefore: "Reconhecimento gera",
     titleGradient: "performance",
     sub:
-      "65% dos colaboradores não recebem reconhecimento durante o ano. Ajudamos a mudar isso com gamificação acessível, loja corporativa e logística que não sobrecarrega o RH — com privacidade e LGPD em mente.",
+      "65% dos colaboradores não recebem reconhecimento durante o ano; 83% se sentem mais motivados quando o programa funciona de verdade. Loja, pontos e logística no mesmo fluxo — com privacidade e LGPD em mente.",
     cards: [
       {
         title: "Propósito",
@@ -134,7 +134,7 @@ export const ptStatsBentoTabsWhy = {
     titleGradient: "engaja",
     titleAfter: ". A 4Unik executa.",
     sub:
-      "83% dos colaboradores se sentem mais motivados com gamificação bem feita. Pontos, rankings, missões e prêmios reais — numa experiência integrada, não solta em planilhas.",
+      "Pontos, rankings, missões e prêmios reais — numa experiência integrada, não solta em planilhas.",
     cards: [
       {
         title: "Pontos & rankings",
@@ -150,7 +150,7 @@ export const ptStatsBentoTabsWhy = {
       },
       {
         title: "Resgate de prêmios",
-        desc: "Mais de 5.000 produtos reais. A pessoa escolhe o que quer; a entrega é nossa ou conectada à sua logística — você define.",
+        desc: "Catálogo amplo de produtos reais. A pessoa escolhe o que quer; a entrega é nossa ou conectada à sua logística — você define.",
       },
     ],
   },

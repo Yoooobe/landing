@@ -71,11 +71,11 @@ export const ptParaPlataformasPage = {
   },
   benefits: {
     badge: "Por que a 4Unik",
-    title: "A camada de execução invisível",
+    title: "Operação nos bastidores",
     items: [
       {
         title: "Catálogo pronto",
-        desc: "Mais de 5.000 produtos físicos disponíveis para resgate, sem você operar estoque.",
+        desc: "Catálogo amplo de produtos físicos disponíveis para resgate, sem você operar estoque.",
         icon: "boxes",
       },
       {
@@ -98,7 +98,7 @@ export const ptParaPlataformasPage = {
       },
       {
         q: "A 4Unik compete com a minha plataforma?",
-        a: "Não. A 4Unik é a camada de execução de recompensas físicas: você cuida da experiência e do engajamento; nós cuidamos de catálogo, estoque, frete e rastreio.",
+        a: "Não. Somos parceiros de fulfillment: você cuida da experiência e do produto; nós cuidamos de catálogo, estoque, frete e rastreio. Veja a definição completa em /infraestrutura-de-recompensas/.",
       },
       {
         q: "Como é a integração técnica?",

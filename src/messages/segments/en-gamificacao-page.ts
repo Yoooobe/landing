@@ -2,7 +2,7 @@ export const enGamificacaoPage = {
   mechanics: {
     badge: "Gamification mechanics",
     titleBefore: "Six pillars that",
-    titleGradient: "transform",
+    titleGradient: "drive",
     titleAfter: "engagement",
     sub: "Every mechanic is configurable and adaptable to your culture. Combine them to build unique programs.",
     items: [
@@ -61,8 +61,8 @@ export const enGamificacaoPage = {
         badge: "Real rewards",
         title: "Rewards marketplace",
         description:
-          "5,000+ real products to redeem. Employees choose their reward and receive it at home—with no HR paperwork.",
-        features: ["5,000+ products", "Delivery across Brazil", "Custom kits", "Experience catalog"],
+          "Broad catalog of real products to redeem. Employees choose their reward and receive it at home—with no HR paperwork.",
+        features: ["Broad catalog", "Delivery across Brazil", "Custom kits", "Experience catalog"],
       },
     ],
   },
@@ -113,9 +113,9 @@ export const enGamificacaoPage = {
         num: "04",
         role: "Employee / member",
         title: "Redeem real rewards",
-        desc: "With accumulated points, employees open the corporate store, choose from 5,000+ products, and receive tracked delivery at home.",
+        desc: "With accumulated points, employees open the corporate store, choose from the catalog, and receive tracked delivery at home.",
         features: [
-          { icon: "🛒", text: "5,000+ products" },
+          { icon: "🛒", text: "Broad catalog" },
           { icon: "📦", text: "Tracked delivery" },
           { icon: "🎁", text: "Custom kits" },
         ],
@@ -145,21 +145,6 @@ export const enGamificacaoPage = {
           { value: "+96%", label: "Community feedback" },
           { value: "+22%", label: "Productivity" },
           { value: "-25%", label: "Training cost" },
-        ],
-      },
-      {
-        id: "Deloitte",
-        company: "Deloitte",
-        industry: "Consulting & audit",
-        title: "Gamified leadership at Deloitte University",
-        desc: "Deloitte turned mandatory leadership training into engaging, measurable experiences using gamification.",
-        challenge: "Low completion on leadership programs—leaders were not finishing required courses.",
-        solution: "Learning missions, level-based progression, competency badges, and team leaderboards.",
-        metrics: [
-          { value: "+50%", label: "Course completion" },
-          { value: "+47%", label: "Return rate" },
-          { value: "+36%", label: "Weekly retention" },
-          { value: "3x", label: "More engagement" },
         ],
       },
       {

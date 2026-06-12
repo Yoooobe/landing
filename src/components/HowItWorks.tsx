@@ -1,6 +1,7 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { withBasePath } from "@/lib/basePath";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
@@ -11,8 +12,9 @@ export default function HowItWorks({
 }: {
   homeContent?: ResolvedHomeContent | null;
 }) {
-  const { m } = useLocaleMessages();
+  const { m, path } = useLocaleMessages();
   const h = m.landingMore.howItWorks;
+  const d = m.landingMore.duality;
   const steps = h.steps;
   const architectureImageUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.howItWorks?.architectureImage,
@@ -58,7 +60,54 @@ export default function HowItWorks({
           ))}
         </div>
 
-        {/* --- Visual Mockup / Architecture representation --- */}
+        <div className="relative z-10 mt-20 grid gap-8 lg:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="rounded-3xl border border-white/10 bg-white/3 p-8"
+          >
+            <h3 className="mb-3 font-heading text-xl font-bold text-white">{d.sideA.title}</h3>
+            <p className="mb-6 font-sans text-sm leading-relaxed text-white/60">{d.sideA.body}</p>
+            <ul className="space-y-2 font-sans text-sm text-white/70">
+              {d.sideA.bullets.map((line) => (
+                <li key={line} className="flex gap-2">
+                  <span className="text-yoobe-neon-pink">✓</span> {line}
+                </li>
+              ))}
+            </ul>
+            <a
+              href={withBasePath(path("/plataforma/motor-gamificacao"))}
+              className="mt-6 inline-block text-sm font-semibold text-brand-orange hover:underline"
+            >
+              {m.platformTabs.campanhas.cta} →
+            </a>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="rounded-3xl border border-white/10 bg-white/3 p-8"
+          >
+            <h3 className="mb-3 font-heading text-xl font-bold text-white">{d.sideB.title}</h3>
+            <p className="mb-6 font-sans text-sm leading-relaxed text-white/60">{d.sideB.body}</p>
+            <ul className="space-y-2 font-sans text-sm text-white/70">
+              {d.sideB.bullets.slice(0, 3).map((line) => (
+                <li key={line} className="flex gap-2">
+                  <span className="text-blue-400">✓</span> {line}
+                </li>
+              ))}
+            </ul>
+            <a
+              href={withBasePath(path("/api-integracoes"))}
+              className="mt-6 inline-block text-sm font-semibold text-brand-orange hover:underline"
+            >
+              {m.apiSection.ctaDocs} →
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Architecture mockup — desktop only */}
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

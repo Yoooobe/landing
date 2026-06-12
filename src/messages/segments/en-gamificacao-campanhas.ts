@@ -24,10 +24,10 @@ export const enGamificacaoCampanhas = {
     titleAfter: "",
     cards: [
       {
-        stat: "65%",
-        title: "No recognition",
-        body: "Employees go a full year without recognition. Retention drops, talent leaves quietly, and culture fails to drive performance.",
-        cite: "Source: Deloitte Insights",
+        stat: "Weeks",
+        title: "Slow rewarding",
+        body: "Between approving, buying, and shipping, the reward arrives weeks after the achievement—and the recognition effect cools off.",
+        cite: "Manual operations",
       },
       {
         stat: "6+ months",
@@ -42,7 +42,7 @@ export const enGamificacaoCampanhas = {
         cite: "Management without data",
       },
       {
-        stat: "5,000+",
+        stat: "1 gift",
         title: "Rewards without choice",
         body: "One-size-fits-all swag feels low value. People want to choose their reward—and get it at home without emailing HR.",
         cite: "Redemption experience",

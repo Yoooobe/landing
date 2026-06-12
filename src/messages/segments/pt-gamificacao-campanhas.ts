@@ -24,10 +24,10 @@ export const ptGamificacaoCampanhas = {
     titleAfter: "",
     cards: [
       {
-        stat: "65%",
-        title: "Sem reconhecimento",
-        body: "Dos colaboradores não recebem reconhecimento durante o ano. Retenção cai, talentos saem em silêncio e a cultura não sustenta performance.",
-        cite: "Fonte: Deloitte Insights",
+        stat: "Semanas",
+        title: "Premiação lenta",
+        body: "Entre aprovar, comprar e enviar, o prêmio chega semanas depois da conquista — e o efeito do reconhecimento esfria no caminho.",
+        cite: "Operação manual",
       },
       {
         stat: "6+ meses",
@@ -42,7 +42,7 @@ export const ptGamificacaoCampanhas = {
         cite: "Gestão sem dados",
       },
       {
-        stat: "+5.000",
+        stat: "1 brinde",
         title: "Recompensa sem escolha",
         body: "Brinde padronizado para todos gera baixo valor percebido. O colaborador quer escolher o prêmio — e receber em casa sem fricção com o RH.",
         cite: "Experiência de resgate",

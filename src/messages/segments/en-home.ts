@@ -1,18 +1,18 @@
 export const enHome = {
   /** SEO/AEO: usado em `src/app/en/layout.tsx` — manter paridade de significado com `ptHome.seo`. */
   seo: {
-    title: "4Unik — Corporate gamification, rewards store & employee recognition",
+    title: "4Unik — Recognition, corporate store & logistics for teams",
     description:
-      "Recognize and reward teams with gamification, a corporate store, and automated logistics—or connect it all via API. For HR, sales, events, and platforms that embed rewards inside their own product. We deliver worldwide and produce locally at the destination when it speeds things up.",
+      "Full platform or execution layer via API: campaigns, points, store, and delivery—in Brazil and worldwide. For HR, sales, events, and platforms that embed rewards.",
   },
   hero: {
-    badge: "Recognition your people actually feel",
+    badge: "Reward infrastructure",
     brand: "4unik",
     afterBrand: "scales",
     line1b: "recognition",
     line2: "without manual ops",
     sub:
-      "Run campaigns, award points, and ship physical rewards without turning HR into a logistics team. Use 4Unik’s automated fulfillment—or connect your carriers and merchandise suppliers. We deliver anywhere in the world; for teams outside Brazil, we manufacture locally at the destination—faster delivery, lower cost, same quality.",
+      "Full platform or execution layer via API. You set goals and points; we handle logistics and delivery—in Brazil and worldwide.",
     ctaDemo: "Book a demo",
     ctaExplore: "See the platform",
     floatAdhesion: "Team adoption",
@@ -40,7 +40,7 @@ export const enHome = {
   finalCta: {
     title: "Ready to simplify recognition at your company?",
     body:
-      "See how other companies run programs without spreadsheets. The demo takes about 30 minutes and we show everything live.",
+      "Book a 30-minute demo: we walk through the dashboard, store, and delivery flow live—no commitment.",
     demo: "Book a demo",
     whatsapp: "Talk to a specialist",
   },

@@ -24,9 +24,9 @@ export const enGamificacaoCampanhasPage = {
         badge: "Rewards",
         title: "VIP corporate store",
         description:
-          "5,000+ real products, branded welcome kits, and self-service checkout. Employees choose their reward—no HR email per redemption.",
+          "Broad catalog of real products, branded welcome kits, and self-service checkout. Employees choose their reward—no HR email per redemption.",
         features: [
-          "5,000+ catalog items",
+          "Broad catalog",
           "Balance and value filters",
           "Branded welcome kits",
           "Frictionless redemption",
@@ -143,7 +143,7 @@ export const enGamificacaoCampanhasPage = {
     titleBefore: "Who already combined campaigns,",
     titleGradient: "store",
     titleAfter: "and logistics",
-    sub: "4unik cases (Grupo Boticário, Softplan) and public market examples (Deloitte, CaLLogix) with published metrics.",
+    sub: "4unik cases (Grupo Boticário, Softplan) and public market examples (CaLLogix) with published metrics.",
     challengeLabel: "Challenge",
     solutionLabel: "Solution",
     items: [
@@ -157,10 +157,10 @@ export const enGamificacaoCampanhasPage = {
         solution:
           "Gamified internal store, points for course completion, and integrated logistics for physical rewards.",
         metrics: [
-          { value: "+308%", label: "Course open/complete rate" },
           { value: "11k+", label: "Products shipped" },
-          { value: "R$ 63k", label: "Campaigns with ROI" },
           { value: "6", label: "New departments joined" },
+          { value: "100%", label: "Self-service checkout" },
+          { value: "48h", label: "Tracked delivery" },
         ],
       },
       {
@@ -176,21 +176,6 @@ export const enGamificacaoCampanhasPage = {
           { value: "+1,220", label: "Tracked deliveries" },
           { value: "73", label: "Products per cycle" },
           { value: "100%", label: "Checkout without HR" },
-        ],
-      },
-      {
-        id: "Deloitte",
-        company: "Deloitte",
-        industry: "Consulting",
-        title: "Gamified leadership at Deloitte University",
-        desc: "Mandatory training turned into engaging experiences with missions, levels, and team leaderboards.",
-        challenge: "Low completion in leadership and corporate training programs.",
-        solution: "Learning missions, level progression, and competency badges.",
-        metrics: [
-          { value: "+50%", label: "Course completion" },
-          { value: "+47%", label: "Return rate" },
-          { value: "+36%", label: "Weekly retention" },
-          { value: "3x", label: "More engagement" },
         ],
       },
       {
@@ -277,7 +262,6 @@ export const enGamificacaoCampanhasPage = {
         suffix: "h",
         desc: "API and connector integration—vs. months of internal development",
       },
-      { value: "5000", suffix: "+", desc: "real products in the VIP store redemption catalog" },
       {
         value: "48",
         suffix: "h",
@@ -373,7 +357,7 @@ export const enGamificacaoCampanhasPage = {
       {
         icon: "🎓",
         title: "Education & data",
-        desc: "Inspired by Boticário: +308% in courses with an internal store, points, and branded physical prizes.",
+        desc: "Inspired by Boticário: internal store, points, and branded physical prizes with integrated logistics.",
         hook: "Learning that pays off",
       },
       {
@@ -404,11 +388,11 @@ export const enGamificacaoCampanhasPage = {
       },
       {
         q: "How do I prove ROI to executives?",
-        a: "The dashboard links engagement, redemptions, eNPS, and retention metrics. Cases like Boticário (R$ 63k with proven ROI) illustrate the model.",
+        a: "The dashboard links engagement, redemptions, eNPS, and retention metrics. Cases like Boticário and Softplan illustrate the model with tracked deliveries and self-service redemption.",
       },
       {
         q: "Can employees choose their reward?",
-        a: "Yes. VIP store with 5,000+ items, coin balance, and self-service checkout—no HR email per redemption.",
+        a: "Yes. VIP store with a broad catalog, coin balance, and self-service checkout—no HR email per redemption.",
       },
       {
         q: "Does it work for global companies?",

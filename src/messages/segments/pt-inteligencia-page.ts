@@ -9,7 +9,7 @@ export const ptInteligenciaPage = {
   hero: {
     badge: "4Unik AI Layer",
     titleBefore: "Inteligência aplicada ao",
-    titleGradient: "engajamento corporativo",
+    titleGradient: "programas corporativos",
     sub:
       "Campanhas, recompensas e jornadas mais personalizadas, mensuráveis e escaláveis — parte disponível hoje, parte em roadmap.",
   },
@@ -59,7 +59,7 @@ export const ptInteligenciaPage = {
       },
       {
         title: "Impacto de cultura",
-        desc: "Acompanhe o impacto da gamificação no engajamento, no clima e na retenção do time.",
+        desc: "Acompanhe o impacto da gamificação no clima, na retenção e na participação do time.",
       },
     ],
   },

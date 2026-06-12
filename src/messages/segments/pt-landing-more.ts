@@ -30,7 +30,7 @@ export const ptLandingMore = {
     mockEngine: "Motor de Gamificação & Regras",
     mockPoints: "Engine de Pontos",
     mockWebhook: "Webhook API",
-    mockItems: "5.000+ Itens",
+    mockItems: "Catálogo amplo",
     mockCatalog: "Catálogo Físico e Digital",
     mockRoi: "ROI Dashboard",
   },

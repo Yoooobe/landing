@@ -99,7 +99,7 @@ export const enPlataforma = {
     titleGradient: "your brand",
     titleAfter: " front and center.",
     bodyBefore:
-      "Stop managing stock or buying products employees do not want. 4Unik V3 fills the store with 5,000+ quality swag options featuring ",
+      "Stop managing stock or buying products employees do not want. 4Unik V3 fills the store with a wide catalog of quality products featuring ",
     bodyStrong: "YOUR BRAND",
     bodyAfter: " with on-demand shipping.",
     features: [

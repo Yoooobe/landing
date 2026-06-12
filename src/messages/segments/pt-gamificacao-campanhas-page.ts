@@ -24,9 +24,9 @@ export const ptGamificacaoCampanhasPage = {
         badge: "Recompensa",
         title: "Loja VIP corporativa",
         description:
-          "+5.000 produtos reais, Welcome Kits com identidade da marca e checkout autônomo. O colaborador escolhe o prêmio — zero e-mail ao RH.",
+          "Catálogo amplo de produtos reais, Welcome Kits com identidade da marca e checkout autônomo. O colaborador escolhe o prêmio — zero e-mail ao RH.",
         features: [
-          "+5.000 itens no catálogo",
+          "Catálogo amplo",
           "Saldo e filtros por valor",
           "Kits de boas-vindas personalizados",
           "Resgate sem burocracia",
@@ -143,7 +143,7 @@ export const ptGamificacaoCampanhasPage = {
     titleBefore: "Quem já uniu campanha,",
     titleGradient: "loja",
     titleAfter: "e logística",
-    sub: "Casos 4unik (Grupo Boticário, Softplan) e exemplos públicos de mercado (Deloitte, CaLLogix) com métricas divulgadas.",
+    sub: "Casos 4unik (Grupo Boticário, Softplan) e exemplos públicos de mercado (CaLLogix) com métricas divulgadas.",
     challengeLabel: "Desafio",
     solutionLabel: "Solução",
     items: [
@@ -157,10 +157,10 @@ export const ptGamificacaoCampanhasPage = {
         solution:
           "Loja interna gamificada, pontos por conclusão de cursos e resgate em prêmios físicos com logística integrada.",
         metrics: [
-          { value: "+308%", label: "Abertura/conclusão de cursos" },
           { value: "11k+", label: "Produtos enviados" },
-          { value: "R$ 63k", label: "Campanhas com ROI" },
           { value: "6", label: "Novas áreas aderiram" },
+          { value: "100%", label: "Checkout autônomo" },
+          { value: "48h", label: "Entrega rastreável" },
         ],
       },
       {
@@ -176,21 +176,6 @@ export const ptGamificacaoCampanhasPage = {
           { value: "+1.220", label: "Entregas rastreadas" },
           { value: "73", label: "Produtos por ciclo" },
           { value: "100%", label: "Checkout sem RH" },
-        ],
-      },
-      {
-        id: "Deloitte",
-        company: "Deloitte",
-        industry: "Consultoria",
-        title: "Liderança gamificada na Deloitte University",
-        desc: "Treinamentos obrigatórios transformados em experiências com missões, níveis e leaderboards de equipe.",
-        challenge: "Baixa conclusão em programas de liderança e treinamento corporativo.",
-        solution: "Missões de aprendizado, progressão por níveis e badges de competência.",
-        metrics: [
-          { value: "+50%", label: "Conclusão de cursos" },
-          { value: "+47%", label: "Taxa de retorno" },
-          { value: "+36%", label: "Retenção semanal" },
-          { value: "3x", label: "Mais engajamento" },
         ],
       },
       {
@@ -277,7 +262,6 @@ export const ptGamificacaoCampanhasPage = {
         suffix: "h",
         desc: "para integração via API e conectores — versus meses de desenvolvimento interno",
       },
-      { value: "5000", suffix: "+", desc: "produtos reais no catálogo de resgate da loja VIP" },
       { value: "48", suffix: "h", desc: "entrega rastreável no Brasil, do gatilho à porta do colaborador" },
       {
         value: "100",
@@ -369,7 +353,7 @@ export const ptGamificacaoCampanhasPage = {
       {
         icon: "🎓",
         title: "Educação e dados",
-        desc: "Inspire-se no case Boticário: +308% em cursos com loja interna, pontos e prêmios físicos brandados.",
+        desc: "Inspire-se no case Boticário: loja interna, pontos e prêmios físicos brandados com logística integrada.",
         hook: "Aprender vira jogo que paga",
       },
       {
@@ -400,11 +384,11 @@ export const ptGamificacaoCampanhasPage = {
       },
       {
         q: "Como provar ROI para a diretoria?",
-        a: "O painel correlaciona engajamento, resgates, eNPS e métricas de retenção. Cases como Boticário (R$ 63 mil com ROI comprovado) ilustram o modelo.",
+        a: "O painel correlaciona engajamento, resgates, eNPS e métricas de retenção. Cases como Boticário e Softplan ilustram o modelo com entregas rastreadas e resgate autônomo.",
       },
       {
         q: "O colaborador escolhe o prêmio?",
-        a: "Sim. Loja VIP com +5.000 itens, saldo em moedas e checkout autônomo — sem e-mail ao RH para cada resgate.",
+        a: "Sim. Loja VIP com catálogo amplo, saldo em moedas e checkout autônomo — sem e-mail ao RH para cada resgate.",
       },
       {
         q: "Funciona para empresas globais?",

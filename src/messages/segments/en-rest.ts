@@ -24,7 +24,7 @@ export const enRest = {
     titleGradient: "options",
     titleAfter: "for every moment",
     sub:
-      "5,000+ products, 100+ categories. Build custom kits or let employees choose—delivery is on us.",
+      "Thousands of options in the catalog. Build custom kits or let employees choose—delivery is on us.",
     usecases: [
       {
         title: "Welcome kits",
@@ -126,7 +126,7 @@ export const enRest = {
         "Up to 100 employees",
         "Full gamification (points, badges, missions)",
         "Analytics dashboard (eNPS, ROI, redemption)",
-        "Catalog with 5,000+ products",
+        "Broad product catalog",
         "Shipping across Brazil plus global options when you need them",
         "Email support",
       ],

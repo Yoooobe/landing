@@ -28,7 +28,7 @@ export const ptRewardInfrastructurePage = {
   },
   components: {
     badge: "Componentes",
-    title: "O que compõe a infraestrutura",
+    title: "O que compõe a stack",
     items: [
       {
         title: "API e webhooks",
@@ -73,7 +73,7 @@ export const ptRewardInfrastructurePage = {
       },
       {
         title: "Eventos e comunidades",
-        desc: "Brindes, swag e lojas VIP com inventário e envio geridos pela infraestrutura.",
+        desc: "Brindes, swag e lojas VIP com inventário e envio geridos pela plataforma.",
         href: "/eventos/",
       },
     ],
@@ -88,7 +88,7 @@ export const ptRewardInfrastructurePage = {
     ],
   },
   cta: {
-    title: "Veja a infraestrutura em ação",
+    title: "Veja a stack em ação",
     sub: "Demonstração de 30 minutos: catálogo, fluxo de resgate, API e operação logística integrada ao seu caso.",
     button: "Agendar demonstração",
   },

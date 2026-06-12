@@ -105,7 +105,7 @@ export const enStatsBentoTabsWhy = {
     titleBefore: "Recognition drives",
     titleGradient: "performance",
     sub:
-      "65% of employees receive no recognition during the year. We help change that with approachable gamification, a corporate store, and logistics that don’t bury HR—built with privacy in mind.",
+      "65% of employees receive no recognition during the year; 83% feel more motivated when the program actually works. Store, points, and logistics in one flow—built with privacy in mind.",
     cards: [
       {
         title: "Purpose",
@@ -127,7 +127,7 @@ export const enStatsBentoTabsWhy = {
     titleGradient: "engages",
     titleAfter: ". 4Unik delivers.",
     sub:
-      "83% of employees report higher motivation when gamification is done well. Points, rankings, missions, and real rewards—integrated, not scattered across spreadsheets.",
+      "Points, rankings, missions, and real rewards—integrated, not scattered across spreadsheets.",
     cards: [
       {
         title: "Points & rankings",
@@ -143,7 +143,7 @@ export const enStatsBentoTabsWhy = {
       },
       {
         title: "Prize redemption",
-        desc: "5,000+ real products. People choose what they want—we fulfill or connect your logistics. Your call.",
+        desc: "Broad catalog of real products. People choose what they want—we fulfill or connect your logistics. Your call.",
       },
     ],
   },

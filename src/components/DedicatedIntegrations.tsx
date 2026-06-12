@@ -9,8 +9,10 @@ import Image from "next/image";
 
 export default function DedicatedIntegrations({
   homeContent = null,
+  embedded = false,
 }: {
   homeContent?: ResolvedHomeContent | null;
+  embedded?: boolean;
 }) {
   const { m } = useLocaleMessages();
   const di = m.landingMore.dedicatedIntegrations;
@@ -30,25 +32,40 @@ export default function DedicatedIntegrations({
     homeContent?.showcaseMedia?.dedicatedIntegrations?.beehome?.previewImage,
   );
 
-  return (
-    <section className="py-24 bg-brand-navy-dark relative border-t border-white/5 overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+  const Wrapper = embedded ? "div" : "section";
+  const wrapperClass = embedded
+    ? "relative"
+    : "py-24 bg-brand-navy-dark relative border-t border-white/5 overflow-hidden";
 
-      <div className="container mx-auto px-4 max-w-7xl relative z-10">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <span className="inline-block px-3 py-1 mb-4 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-400 text-sm font-bold tracking-wide uppercase">
-            {di.badge}
-          </span>
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
-            {di.titleBefore}{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">{di.titleGradient}</span>
-          </h2>
-          <p className="text-xl text-white/50 font-sans">
+  return (
+    <Wrapper className={wrapperClass}>
+      {!embedded ? (
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-500/5 rounded-full blur-[120px] pointer-events-none"></div>
+      ) : null}
+
+      <div className={`relative z-10 ${embedded ? "" : "container mx-auto px-4 max-w-7xl"}`}>
+        {!embedded ? (
+          <div className="text-center mb-16 max-w-3xl mx-auto">
+            <span className="inline-block px-3 py-1 mb-4 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-400 text-sm font-bold tracking-wide uppercase">
+              {di.badge}
+            </span>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
+              {di.titleBefore}{" "}
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-cyan-300">{di.titleGradient}</span>
+            </h2>
+            <p className="text-xl text-white/50 font-sans">
+              {di.subBefore}
+              <strong className="text-white">{di.subStrong}</strong>
+              {di.subAfter}
+            </p>
+          </div>
+        ) : (
+          <p className="mb-8 text-center font-sans text-white/60">
             {di.subBefore}
             <strong className="text-white">{di.subStrong}</strong>
             {di.subAfter}
           </p>
-        </div>
+        )}
 
         <div className="grid lg:grid-cols-2 gap-8">
           <motion.div
@@ -226,6 +243,6 @@ export default function DedicatedIntegrations({
           </motion.div>
         </div>
       </div>
-    </section>
+    </Wrapper>
   );
 }

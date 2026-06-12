@@ -2,7 +2,7 @@ export const ptGamificacaoPage = {
   mechanics: {
     badge: "Mecânicas de Gamificação",
     titleBefore: "6 pilares que",
-    titleGradient: "transformam",
+    titleGradient: "impulsionam",
     titleAfter: "o engajamento",
     sub: "Cada mecânica é configurável e adaptável à cultura da sua empresa. Combine-as para criar programas únicos.",
     items: [
@@ -61,8 +61,8 @@ export const ptGamificacaoPage = {
         badge: "Recompensas Reais",
         title: "Marketplace de Premiações",
         description:
-          "+5.000 produtos reais para resgate. Colaboradores escolhem sua premiação e recebem em casa. Sem burocracia para o RH.",
-        features: ["+5.000 produtos", "Entrega em todo Brasil", "Kits personalizados", "Catálogo de experiências"],
+          "Catálogo amplo de produtos reais para resgate. Colaboradores escolhem a premiação e recebem em casa. Sem burocracia para o RH.",
+        features: ["Catálogo amplo", "Entrega em todo Brasil", "Kits personalizados", "Catálogo de experiências"],
       },
     ],
   },
@@ -113,9 +113,9 @@ export const ptGamificacaoPage = {
         num: "04",
         role: "Colaborador / Membro",
         title: "Resgate Prêmios Reais",
-        desc: "Com os pontos acumulados, o colaborador acessa a loja corporativa, escolhe entre +5.000 produtos e recebe em casa, com rastreio.",
+        desc: "Com os pontos acumulados, o colaborador acessa a loja corporativa, escolhe no catálogo e recebe em casa, com rastreio.",
         features: [
-          { icon: "🛒", text: "+5.000 produtos" },
+          { icon: "🛒", text: "Catálogo amplo" },
           { icon: "📦", text: "Entrega rastreada" },
           { icon: "🎁", text: "Kits personalizados" },
         ],
@@ -146,21 +146,6 @@ export const ptGamificacaoPage = {
           { value: "+96%", label: "Feedback da comunidade" },
           { value: "+22%", label: "Produtividade" },
           { value: "-25%", label: "Custos de treinamento" },
-        ],
-      },
-      {
-        id: "Deloitte",
-        company: "Deloitte",
-        industry: "Consultoria & Auditoria",
-        title: "Liderança gamificada na Deloitte University",
-        desc: "A Deloitte transformou seu programa de capacitação de líderes com gamificação, tornando treinamentos obrigatórios em experiências engajadoras e mensuráveis.",
-        challenge: "Baixa taxa de conclusão em programas de liderança e treinamento corporativo. Líderes não completavam os cursos.",
-        solution: "Missões de aprendizado, sistema de progressão por níveis, badges de competência e leaderboards de equipe.",
-        metrics: [
-          { value: "+50%", label: "Conclusão de cursos" },
-          { value: "+47%", label: "Taxa de retorno" },
-          { value: "+36%", label: "Retenção semanal" },
-          { value: "3x", label: "Mais engajamento" },
         ],
       },
       {
@@ -224,7 +209,7 @@ export const ptGamificacaoPage = {
       {
         icon: "🌐",
         title: "Equipes Remotas",
-        desc: "Mecânicas online para conectar equipes distribuídas: escape rooms virtuais, desafios colaborativos e kudos digitais.",
+        desc: "Gamificação online como solução para conectar equipes distribuídas. Escape rooms virtuais, desafios colaborativos e reconhecimento digital.",
         tag: "Consolidada",
         tagStyle: 2,
       },
@@ -238,7 +223,7 @@ export const ptGamificacaoPage = {
       {
         icon: "💡",
         title: "Inovação Gamificada",
-        desc: "Hackathons internos, competições de design thinking e desafios de inovação aberta — um motor de criatividade organizacional.",
+        desc: "Hackathons internos, competições de design thinking e desafios de inovação aberta. Gamificação como motor de criatividade organizacional.",
         tag: "Alta Adoção",
         tagStyle: 0,
       },

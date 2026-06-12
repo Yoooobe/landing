@@ -110,6 +110,23 @@ Cada promessa central tem **uma frase canónica**. Use-a **uma vez por página**
 - Termos saturados (`gamificação`, `engajamento`, `reconhecimento`): antes de adicionar mais uma ocorrência, verifique se a frase não funciona com o termo já presente no título da secção.
 - Exemplos de mercado (SAP, Deloitte, estudos de terceiros) levam sempre o rótulo "exemplo de mercado" — nunca apresentar como clientes 4unik.
 
+## Registo de propriedade (stats e promessas)
+
+Cada estatística e cada promessa canónica tem **uma página dona**. Antes de escrever um número ou promessa, confirme aqui; fora da página dona, referencie por link.
+
+| Item | Página dona | Ficheiro | Nota |
+|------|-------------|----------|------|
+| 65% (sem reconhecimento) | Home (`WhySection`) | `pt-stats-bento-tabs-why.ts` | Outras páginas usam linguagem qualitativa ("um ano sem reconhecimento") |
+| 83% (motivação) | Home (`WhySection`) | `pt-stats-bento-tabs-why.ts` | — |
+| R$ 7 mi (transacionado) | Home (`WhySection`/stats) | `pt-stats-bento-tabs-why.ts` | — |
+| +5.000 itens | Home (1×, secção produto) + `/plataforma/loja-resgate/` | `pt-stats-bento-tabs-why.ts`, `platformFeaturePages.ts` | Restantes páginas: "catálogo amplo" |
+| +308% / R$ 63k (Boticário, aprovado) | `/educacao/` | `pt-educacao-page.ts` | Campanhas e gamificação linkam para `/educacao/` |
+| Caso Deloitte (exemplo de mercado) | `/casos-de-uso/` | `pt-casos-page.ts` | Sempre com rótulo "exemplo de mercado" |
+| "Camada de execução" | `/para-plataformas/` (hero, 1×) | `pt-para-plataformas-page.ts` | Home pode usar a frase canónica GTM dual 1× |
+| Definição "API-first" | `/infraestrutura-de-recompensas/` (1 bloco) | `pt-reward-infrastructure-page.ts` | — |
+| "Plataforma completa ou camada de execução via API" | Home (1×) | `pt-landing-more.ts` | FAQs de outras páginas linkam em vez de reescrever |
+| "Nós cuidamos da logística e da entrega" | Home (1×) | `pt-home.ts` | — |
+
 ## Checklist rápido (antes de publicar copy)
 
 - [ ] Abre pela dor do ICP dominante da página?

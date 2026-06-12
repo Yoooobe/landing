@@ -44,7 +44,7 @@ Docs relacionados:
 - Webhook do Sanity → rebuild no GitHub: [`docs/sanity-github-webhook.md`](docs/sanity-github-webhook.md).
 - Loops de agentes em background (lanes, prioridades de rota, verificação): [`docs/landing-background-agents.md`](docs/landing-background-agents.md).
 - Base de conhecimento NotebookLM + sync: [`docs/agent-knowledge-notebooklm.md`](docs/agent-knowledge-notebooklm.md), [`docs/knowledge-base/README.md`](docs/knowledge-base/README.md).
-- Copy por ICP / linguagem acessível (ler antes de mudar copy ou SEO): [`docs/knowledge-base/notebooklm/icp-messaging-guide.md`](docs/knowledge-base/notebooklm/icp-messaging-guide.md). Inclui a secção **"Frases canónicas"** (logística, API, GTM dual) e a regra de densidade: uma promessa central por página; cada estatística aparece uma única vez no site. A home foi enxugada (sem `PricingSection`, só 1 `SectionLeadCta` — `afterPlatform`); o `homeBlocks()` em `src/sanity/lib/marketingPages.ts` espelha essa composição e não deve voltar a divergir.
+- Copy por ICP / linguagem acessível (ler antes de mudar copy ou SEO): [`docs/knowledge-base/notebooklm/icp-messaging-guide.md`](docs/knowledge-base/notebooklm/icp-messaging-guide.md).
 
 ### Skills & MCP (marketing / crescimento)
 

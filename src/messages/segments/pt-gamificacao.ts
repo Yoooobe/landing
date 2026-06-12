@@ -36,9 +36,9 @@ export const ptGamificacao = {
         cite: "Fonte: SHRM Research",
       },
       {
-        stat: "65%",
+        stat: "1 ano",
         title: "Sem Reconhecimento",
-        body: "65% dos colaboradores dizem não receber nenhum tipo de reconhecimento durante o ano. A consequência é desmotivação silenciosa.",
+        body: "Boa parte dos colaboradores passa o ano inteiro sem receber qualquer reconhecimento. A consequência é desmotivação silenciosa.",
         cite: "Fonte: Deloitte Insights",
       },
       {

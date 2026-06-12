@@ -35,9 +35,9 @@ export const enGamificacao = {
         cite: "Source: SHRM Research",
       },
       {
-        stat: "65%",
+        stat: "1 year",
         title: "No recognition",
-        body: "65% of employees say they receive no recognition during the year—leading to quiet disengagement.",
+        body: "Many employees go a full year without any recognition—leading to quiet disengagement.",
         cite: "Source: Deloitte Insights",
       },
       {

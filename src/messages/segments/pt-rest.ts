@@ -24,7 +24,7 @@ export const ptRest = {
     titleGradient: "opções",
     titleAfter: "para cada momento",
     sub:
-      "+5.000 produtos, +100 categorias. Monte kits personalizados ou deixe o colaborador escolher — a entrega é por nossa conta.",
+      "Milhares de opções no catálogo. Monte kits personalizados ou deixe o colaborador escolher — a entrega é por nossa conta.",
     usecases: [
       {
         title: "Welcome kits",
@@ -127,7 +127,7 @@ export const ptRest = {
         "Até 100 colaboradores",
         "Gamificação completa (pontos, badges, missões)",
         "Dashboard analítico (eNPS, ROI, resgate)",
-        "Catálogo com +5.000 produtos",
+        "Catálogo amplo de produtos",
         "Envios no Brasil e opções globais conforme necessidade",
         "Suporte por email",
       ],

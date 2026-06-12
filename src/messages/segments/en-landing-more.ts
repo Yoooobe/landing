@@ -30,7 +30,7 @@ export const enLandingMore = {
     mockEngine: "Gamification engine & rules",
     mockPoints: "Points engine",
     mockWebhook: "Webhook API",
-    mockItems: "5,000+ items",
+    mockItems: "Broad catalog",
     mockCatalog: "Physical & digital catalog",
     mockRoi: "ROI dashboard",
   },

@@ -71,11 +71,11 @@ export const enParaPlataformasPage = {
   },
   benefits: {
     badge: "Why 4Unik",
-    title: "The invisible execution layer",
+    title: "Back-end operations",
     items: [
       {
         title: "Catalog ready to go",
-        desc: "Over 5,000 physical products available for redemption, with no inventory to run.",
+        desc: "A wide catalog of physical products available for redemption, with no inventory to run.",
         icon: "boxes",
       },
       {
@@ -98,7 +98,7 @@ export const enParaPlataformasPage = {
       },
       {
         q: "Does 4Unik compete with my platform?",
-        a: "No. 4Unik is the execution layer for physical rewards: you own the experience and engagement; we handle catalog, inventory, shipping, and tracking.",
+        a: "No. We are a fulfillment partner: you own the experience and product; we handle catalog, inventory, shipping, and tracking. See the full definition at /en/reward-infrastructure/.",
       },
       {
         q: "What does the technical integration look like?",

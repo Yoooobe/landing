@@ -99,7 +99,7 @@ export const ptPlataforma = {
     titleGradient: "empresa",
     titleAfter: ".",
     bodyBefore:
-      "Esqueça gerenciar estoques ou comprar produtos que seus funcionários sequer querem. A 4unik V3 preenche automaticamente a loja com mais de 5.000 SWAGs de alta qualidade com a ",
+      "Esqueça gerenciar estoques ou comprar produtos que seus colaboradores sequer querem. A 4unik V3 preenche automaticamente a loja com um catálogo amplo de produtos de alta qualidade com a ",
     bodyStrong: "MARCA DA SUA EMPRESA",
     bodyAfter: " e envios on-demand.",
     features: [

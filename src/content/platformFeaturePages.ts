@@ -392,7 +392,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     stats: [
       {
         label: "Catálogo",
-        value: "Ilimitado",
+        value: "+5.000 itens",
         detail: "Produtos físicos, digitais, experiências e kits personalizados.",
       },
       {
@@ -817,7 +817,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     stats: [
       {
         label: "Catalog",
-        value: "Unlimited",
+        value: "5,000+ items",
         detail: "Physical products, digital items, experiences, and branded kits.",
       },
       {

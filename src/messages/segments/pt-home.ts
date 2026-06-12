@@ -1,18 +1,18 @@
 export const ptHome = {
   /** SEO/AEO: usado em `src/app/layout.tsx` via `buildRootLayoutMetadata` — editar aqui replica título/descrição da home. */
   seo: {
-    title: "4Unik — Gamificação, loja corporativa e reconhecimento para equipes",
+    title: "4Unik — Reconhecimento, loja corporativa e logística para equipes",
     description:
-      "Reconheça e premie colaboradores com gamificação, loja corporativa e logística automatizada — ou conecte tudo via API. Para RH, vendas, eventos e plataformas que integram recompensas no próprio produto. Entregas no Brasil e no mundo, com produção local no destino quando fizer sentido.",
+      "Plataforma completa ou camada de execução via API: campanhas, pontos, loja e entrega — no Brasil e no mundo. Para RH, vendas, eventos e plataformas que integram recompensas.",
   },
   hero: {
-    badge: "Reconhecimento real para o seu time",
+    badge: "Infraestrutura de recompensas",
     brand: "4unik",
     afterBrand: "escala",
     line1b: "reconhecimento",
     line2: "sem operação manual",
     sub:
-      "Monte campanhas, distribua pontos e envie presentes físicos sem virar uma transportadora. Logística própria automatizada da 4Unik — ou conecte a sua e seus fornecedores de brindes. Entregamos no Brasil e no mundo; para equipes fora do país, produzimos localmente no destino.",
+      "Plataforma completa ou camada de execução via API. Você define metas e pontos; nós cuidamos da logística e da entrega — no Brasil e no mundo.",
     ctaDemo: "Agendar Demo",
     ctaExplore: "Ver a plataforma",
     floatAdhesion: "Adesão do Time",
@@ -38,9 +38,9 @@ export const ptHome = {
     title: "Empresas que confiam na 4Unik",
   },
   finalCta: {
-    title: "Pronto para simplificar o reconhecimento na sua empresa?",
+    title: "Pronto para simplificar reconhecimento na sua empresa?",
     body:
-      "Veja como outras empresas já rodam programas sem planilhas. A demonstração leva cerca de 30 minutos e mostramos tudo funcionando ao vivo.",
+      "Agende uma demonstração de 30 minutos: vemos juntos painel, loja e fluxo de entrega ao vivo — sem compromisso.",
     demo: "Solicitar Demonstração",
     whatsapp: "Falar com Especialista",
   },

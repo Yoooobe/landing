@@ -9,10 +9,12 @@ import Image from "next/image";
 
 export default function EnterpriseCases({
   homeContent = null,
+  showTestimonials = false,
 }: {
   homeContent?: ResolvedHomeContent | null;
+  showTestimonials?: boolean;
 }) {
-  const { m } = useLocaleMessages();
+  const { m, locale } = useLocaleMessages();
   const ec = m.landingMore.enterpriseCases;
   const h = ec.hapvida;
   const p = ec.prio;
@@ -286,6 +288,37 @@ export default function EnterpriseCases({
             </div>
           </motion.div>
         </div>
+
+        {showTestimonials ? (
+          <div className="mt-20 border-t border-white/10 pt-16">
+            <p className="mb-8 text-center text-sm font-bold tracking-widest text-white/40 uppercase">
+              {m.testimonials.badge}
+            </p>
+            <div className="grid gap-6 md:grid-cols-2">
+              {m.testimonials.items.slice(0, 2).map((item) => (
+                <blockquote
+                  key={item.author}
+                  className="rounded-2xl border border-white/5 bg-white/2 p-6 font-sans"
+                >
+                  <p className="mb-4 text-sm italic leading-relaxed text-white/75">{item.text}</p>
+                  <footer className="text-xs text-white/50">
+                    <strong className="text-white/80">{item.author}</strong> — {item.role},{" "}
+                    {item.company}
+                  </footer>
+                </blockquote>
+              ))}
+            </div>
+            {locale === "pt" ? (
+              <p className="mt-4 text-center text-xs text-white/40">
+                Depoimentos ilustrativos; casos auditados aparecem com selo verificado.
+              </p>
+            ) : (
+              <p className="mt-4 text-center text-xs text-white/40">
+                Illustrative quotes; audited cases appear with a verified badge.
+              </p>
+            )}
+          </div>
+        ) : null}
       </div>
     </section>
   );

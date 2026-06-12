@@ -9,7 +9,7 @@ export const enInteligenciaPage = {
   hero: {
     badge: "4Unik AI Layer",
     titleBefore: "Intelligence applied to",
-    titleGradient: "employee engagement",
+    titleGradient: "corporate programs",
     sub:
       "More personalized, measurable, and scalable campaigns, rewards, and journeys—part available today, part on the roadmap.",
   },
@@ -59,7 +59,7 @@ export const enInteligenciaPage = {
       },
       {
         title: "Culture impact",
-        desc: "Track gamification's impact on engagement, workplace climate, and retention.",
+        desc: "Track gamification's impact on climate, retention, and team participation.",
       },
     ],
   },

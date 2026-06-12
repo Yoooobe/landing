@@ -28,7 +28,7 @@ export const enRewardInfrastructurePage = {
   },
   components: {
     badge: "Components",
-    title: "What the infrastructure includes",
+    title: "What the stack includes",
     items: [
       {
         title: "API and webhooks",
@@ -73,7 +73,7 @@ export const enRewardInfrastructurePage = {
       },
       {
         title: "Events and communities",
-        desc: "Giveaways, swag, and VIP stores with inventory and shipping managed by the infrastructure.",
+        desc: "Giveaways, swag, and VIP stores with inventory and shipping managed by the platform.",
         href: "/en/eventos/",
       },
     ],
@@ -88,7 +88,7 @@ export const enRewardInfrastructurePage = {
     ],
   },
   cta: {
-    title: "See the infrastructure live",
+    title: "See the stack live",
     sub: "30-minute demo: catalog, redemption flow, API, and logistics mapped to your use case.",
     button: "Book a demo",
   },
