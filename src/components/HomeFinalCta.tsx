@@ -1,10 +1,12 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { primaryContactSectionIdAttr } from "@/lib/contactAnchor";
+import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
 import ShowcaseImage from "@/components/ui/ShowcaseImage";
+import { primaryContactSectionIdAttr } from "@/lib/contactAnchor";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
 
@@ -21,7 +23,7 @@ export default function HomeFinalCta({
   const c = homeContent?.finalCta ?? {
     ...m.home.finalCta,
     demoHref: DEFAULT_CALENDLY_URL,
-    whatsappHref: "https://wa.me/554187582060",
+    whatsappHref: DEFAULT_WHATSAPP_URL,
   };
 
   return (
@@ -58,22 +60,24 @@ export default function HomeFinalCta({
           >
             <p className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/45">{lf.altCalendly}</p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start">
-              <a
+              <TrackedOutboundLink
                 href={c.demoHref}
+                source="home-final-cta-demo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-xl bg-yoobe-purple px-8 font-sans text-base font-bold text-white shadow-xl shadow-yoobe-purple/20 transition-all hover:scale-105 hover:bg-yoobe-purple/90 sm:w-auto"
               >
                 {c.demo}
-              </a>
-              <a
+              </TrackedOutboundLink>
+              <TrackedOutboundLink
                 href={c.whatsappHref}
+                source="home-final-cta-whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-xl bg-whatsapp px-8 font-sans text-base font-bold text-white shadow-xl shadow-whatsapp/20 transition-all hover:scale-105 hover:bg-whatsapp-deep sm:w-auto"
               >
                 {c.whatsapp}
-              </a>
+              </TrackedOutboundLink>
             </div>
           </motion.div>
         </div>

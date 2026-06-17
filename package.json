@@ -20,6 +20,8 @@
     "validate:blog-ctas": "npx tsx scripts/validate-blog-landing-ctas.ts",
     "validate:landing-routes": "node scripts/validate-landing-routes.mjs",
     "check:gsc-indexing": "node scripts/gsc-indexing-check.mjs",
+    "fetch:ga4-snapshot": "node scripts/fetch-ga4-landing-metrics.mjs",
+    "setup:ga4-admin": "node scripts/setup-ga4-admin.mjs",
     "verify:leads-ingest-build": "node scripts/verify-leads-ingest-build.mjs",
     "verify:growth-index-build": "node scripts/verify-growth-index-build.mjs",
     "verify:canonical-urls-build": "node scripts/verify-canonical-urls-build.mjs",

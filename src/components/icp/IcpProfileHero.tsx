@@ -1,5 +1,6 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
 import { withBasePath } from "@/lib/basePath";
 import type { Locale } from "@/lib/locale";
@@ -138,15 +139,16 @@ export default function IcpProfileHero({ locale, hero, visual }: Props) {
             transition={{ duration: 0.5, delay: 0.18 }}
             className="mt-9 flex justify-center lg:justify-start"
           >
-            <a
+            <TrackedOutboundLink
               href={ctaHref}
+              source="icp-hero-cta"
               target={isExternal ? "_blank" : undefined}
               rel={isExternal ? "noopener noreferrer" : undefined}
               className={`group inline-flex h-12 items-center gap-2 rounded-full bg-linear-to-r px-8 font-bold text-white shadow-[0_10px_40px_rgba(0,0,0,0.35)] transition-transform hover:scale-[1.03] ${visual.titleGradientClass}`}
             >
               {hero.ctaLabel}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </TrackedOutboundLink>
           </motion.div>
         </div>
 

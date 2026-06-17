@@ -4,6 +4,7 @@ import { getLeadSubmitUrl } from "@/lib/getLeadSubmitUrl";
 import { leadPayloadSchema, type LeadPayload } from "@/lib/leadPayload";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { cn } from "@/lib/utils";
+import { GA_CONVERSION_EVENTS } from "@/lib/analyticsEvents";
 import { sendGAEvent } from "@next/third-parties/google";
 import { cva, type VariantProps } from "class-variance-authority";
 import { Loader2 } from "lucide-react";
@@ -156,7 +157,7 @@ export default function LeadCaptureForm({ variant, source, className }: LeadCapt
         setFieldErrors({ root: copy.errorGeneric });
         return;
       }
-      sendGAEvent("event", "generate_lead", { source, locale: leadLocale });
+      sendGAEvent("event", GA_CONVERSION_EVENTS.generateLead, { source, locale: leadLocale });
       setStatus("success");
     } catch {
       setStatus("error");

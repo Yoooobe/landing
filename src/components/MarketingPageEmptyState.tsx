@@ -1,4 +1,6 @@
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { withBasePath } from "@/lib/basePath";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import type { Locale } from "@/lib/locale";
 import Link from "next/link";
 
@@ -31,14 +33,15 @@ export default function MarketingPageEmptyState({ locale }: Props) {
           >
             {isEn ? "Back to home" : "Voltar ao início"}
           </Link>
-          <a
-            href="https://calendly.com/4unik/30min"
+          <TrackedOutboundLink
+            href={DEFAULT_CALENDLY_URL}
+            source="marketing-empty-state-demo"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white/85 hover:bg-white/10"
           >
             {isEn ? "Talk to us" : "Falar connosco"}
-          </a>
+          </TrackedOutboundLink>
         </div>
       </div>
     </div>

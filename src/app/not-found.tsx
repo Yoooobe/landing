@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import NotFoundRedirect from "@/components/NotFoundRedirect";
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { withBasePath } from "@/lib/basePath";
+import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -49,14 +51,15 @@ export default function NotFound() {
         >
           Voltar ao início
         </Link>
-        <a
-          href="https://wa.me/554187582060"
+        <TrackedOutboundLink
+          href={DEFAULT_WHATSAPP_URL}
+          source="not-found-whatsapp"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex h-12 min-w-[180px] items-center justify-center rounded-xl border border-white/20 bg-white/5 px-8 font-bold text-white hover:bg-white/10 transition-colors"
         >
           Falar no WhatsApp
-        </a>
+        </TrackedOutboundLink>
       </div>
 
       {/* Subtle decoration */}

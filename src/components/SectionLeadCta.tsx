@@ -1,9 +1,11 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import type { LeadFormVariant } from "@/components/LeadCaptureForm";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
 
@@ -26,7 +28,7 @@ export default function SectionLeadCta({ homeContent, zone, variant = "home" }: 
   const c = homeContent?.finalCta ?? {
     ...m.home.finalCta,
     demoHref: DEFAULT_CALENDLY_URL,
-    whatsappHref: "https://wa.me/554187582060",
+    whatsappHref: DEFAULT_WHATSAPP_URL,
   };
 
   return (
@@ -55,22 +57,24 @@ export default function SectionLeadCta({ homeContent, zone, variant = "home" }: 
               {common.secondaryHint}
             </p>
             <div className="mt-3 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start">
-              <a
+              <TrackedOutboundLink
                 href={c.demoHref}
+                source={`section-lead-${block.source}-demo`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl bg-yoobe-purple px-6 font-sans text-sm font-bold text-white shadow-lg shadow-yoobe-purple/20 transition hover:bg-yoobe-purple/90"
               >
                 {c.demo}
-              </a>
-              <a
+              </TrackedOutboundLink>
+              <TrackedOutboundLink
                 href={c.whatsappHref}
+                source={`section-lead-${block.source}-whatsapp`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-11 items-center justify-center whitespace-nowrap rounded-xl bg-whatsapp px-6 font-sans text-sm font-bold text-white shadow-lg transition hover:bg-whatsapp-deep"
               >
                 {c.whatsapp}
-              </a>
+              </TrackedOutboundLink>
             </div>
           </motion.div>
           <motion.div

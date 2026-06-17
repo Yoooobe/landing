@@ -34,7 +34,42 @@ Ambos os streams reportam à mesma propriedade `327916606`; para isolar a landin
 - Componente: [`src/components/site-settings/SiteAnalytics.tsx`](../../src/components/site-settings/SiteAnalytics.tsx) (`@next/third-parties/google`).
 - Resolução do ID: [`src/contexts/SiteSettingsContext.tsx`](../../src/contexts/SiteSettingsContext.tsx) — env tem prioridade sobre Sanity.
 - **Env no browser:** getters em [`src/lib/site.ts`](../../src/lib/site.ts) usam `process.env.NEXT_PUBLIC_GA_ID` (acesso **estático**). Nunca `process.env[key]` dinâmico — o bundler não inline e o Realtime fica vazio apesar do preload no HTML.
-- Evento de conversão: `generate_lead` disparado em [`src/components/LeadCaptureForm.tsx`](../../src/components/LeadCaptureForm.tsx) após submissão bem-sucedida. Marcar como **key event** no GA4 Admin quando aparecer nos dados.
+- Eventos de conversão (funil):
+  - `generate_lead` — formulário de lead ([`LeadCaptureForm.tsx`](../../src/components/LeadCaptureForm.tsx)) após POST bem-sucedido; params: `source`, `locale`.
+  - `schedule_demo` — cliques em links Calendly ([`TrackedOutboundLink.tsx`](../../src/components/analytics/TrackedOutboundLink.tsx)); params: `source`, `link_url`.
+  - `contact_whatsapp` — cliques em `wa.me` / WhatsApp ([`TrackedOutboundLink.tsx`](../../src/components/analytics/TrackedOutboundLink.tsx)); params: `source`, `link_url`.
+- Constantes e deteção de URL: [`src/lib/analyticsEvents.ts`](../../src/lib/analyticsEvents.ts).
+
+### Key events no Admin GA4 (manual)
+
+Marcar os três eventos como **key events** após o deploy e um clique/submit de teste:
+
+| Evento | Origem |
+|--------|--------|
+| `generate_lead` | Submit do formulário de lead |
+| `schedule_demo` | CTA “Agendar demo” (Calendly) |
+| `contact_whatsapp` | CTA WhatsApp (`wa.me`) |
+
+| Passo | Estado |
+|-------|--------|
+| Eventos disparam em produção | Implementado no código |
+| Marcar como key events no Admin | **Pendente** — ver caminho abaixo |
+
+**Caminho no Admin (interface em inglês):**
+
+1. Abre [GA4 Admin](https://analytics.google.com/analytics/web/#/a66932658p327916606/admin) (ícone engrenagem, canto inferior esquerdo).
+2. Coluna **Property** → secção **Data display** → **Events** (não confundir com “Data streams”).
+3. Aba **Recent events** — quando cada evento aparecer, clica na **estrela** (“Mark as key event”), ou usa **Key events → New key event** com o nome exato (`generate_lead`, `schedule_demo`, `contact_whatsapp`).
+
+**Se um evento não aparecer na lista** (normal até haver um hit real em produção):
+
+1. Na mesma página **Admin → Data display → Events**, ou diretamente **Key events → New key event**.
+2. **Event name:** `generate_lead`, `schedule_demo` ou `contact_whatsapp` (um de cada vez).
+3. Guarda; o evento passa a key event assim que o primeiro hit chegar ao stream.
+
+Link direto (após login): [Admin → Events](https://analytics.google.com/analytics/web/#/a66932658p327916606/admin/events)
+
+Checklist completo: [`GCP_SERVICE_ACCOUNT_SETUP.md`](../../GCP_SERVICE_ACCOUNT_SETUP.md) § GA4 Data API → Key event.
 
 ### Deploy produção (sem GitHub Actions)
 
@@ -66,7 +101,21 @@ Implementados em [`src/lib/site.ts`](../../src/lib/site.ts) e [`src/components/s
 ## Pendências conhecidas
 
 - **Banner de consentimento LGPD** — tracking carrega sem gate de consentimento (fora de escopo da integração inicial).
-- **GA Data API real no MCP** — requer service account GCP com acesso à propriedade `327916606`; ver [`GCP_SERVICE_ACCOUNT_SETUP.md`](../GCP_SERVICE_ACCOUNT_SETUP.md).
+- **GA Data API — acesso à propriedade** — SA `landing-ga4-reader@institucional-480905.iam.gserviceaccount.com` criada; falta **Viewer** na propriedade `327916606` no Admin GA4 (ver [`GCP_SERVICE_ACCOUNT_SETUP.md`](../../GCP_SERVICE_ACCOUNT_SETUP.md) § GA4 Data API).
+- **Key events** (`generate_lead`, `schedule_demo`, `contact_whatsapp`) — marcar manualmente no Admin GA4 (checklist no mesmo guia).
+
+### GA Data API (MCP + CLI)
+
+| Env | Uso |
+|-----|-----|
+| `GOOGLE_APPLICATION_CREDENTIALS` | Caminho absoluto ao JSON da SA (local; não commitar) |
+| `GA_PROPERTY_ID` | `327916606` |
+| `GA4_STREAM_ID` | `15052677461` (Plataforma Landing) |
+| `GA4_HOSTNAME` | `plataforma.4unik.com.br` (fallback de filtro) |
+
+- MCP: [`mcps/4unik-marketing/lib/ga4.js`](../../mcps/4unik-marketing/lib/ga4.js) — `get_ga4_metrics` usa API real ou `mock_fallback`.
+- Snapshot períodos A/B/C: `npm run fetch:ga4-snapshot` → `docs/reviews/ga4-snapshots/`.
+
 
 ## Agentes Paperclip
 

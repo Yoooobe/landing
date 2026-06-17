@@ -1,5 +1,7 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { motion } from "framer-motion";
 
 export default function WalletHighlight() {
@@ -48,9 +50,9 @@ export default function WalletHighlight() {
               viewport={{ once: true }}
               className="pt-4"
             >
-              <a href="https://calendly.com/4unik/30min" target="_blank" rel="noopener noreferrer" className="text-green-400 font-medium hover:text-green-300 transition-colors flex items-center gap-2">
+              <TrackedOutboundLink href={DEFAULT_CALENDLY_URL} source="wallet-highlight-demo" target="_blank" rel="noopener noreferrer" className="text-green-400 font-medium hover:text-green-300 transition-colors flex items-center gap-2">
                 Conhecer a wallet da 4unik →
-              </a>
+              </TrackedOutboundLink>
             </motion.div>
           </div>
 

@@ -191,3 +191,49 @@ Se encontrar algum problema, verifique:
 
 1. Os logs do GitHub Actions em: https://github.com/Yoooobe/landing/actions
 2. A documentação do Google Cloud: https://cloud.google.com/iam/docs/service-accounts
+
+---
+
+## GA4 Data API (landing — MCP e snapshots)
+
+Service account dedicada (sem roles GCP pesadas; acesso GA4 é no **Admin do Analytics**):
+
+| Campo | Valor |
+|-------|-------|
+| **Email** | `landing-ga4-reader@institucional-480905.iam.gserviceaccount.com` |
+| **Projeto GCP** | `institucional-480905` |
+| **API** | [Google Analytics Data API](https://console.cloud.google.com/apis/library/analyticsdata.googleapis.com?project=institucional-480905) |
+| **Propriedade GA4** | `327916606` |
+| **Stream** | `Plataforma Landing` — ID `15052677461`, measurement `G-SMJDYCENBC` |
+| **JSON local (não commitar)** | `~/.config/4unik/landing-ga4-reader.json` |
+
+### Erro OAuth `This app is blocked`
+
+O comando `gcloud auth application-default login` com scopes Analytics usa o cliente OAuth genérico do Google Cloud SDK, que **Google bloqueia** para `analytics.edit` / `analytics.manage.users` em contas normais.
+
+**Não use** `npm run setup:ga4-admin` até ter um OAuth client próprio verificado no GCP — para a landing, o caminho mais rápido é **manual no Admin GA4** (abaixo) + `npm run fetch:ga4-snapshot` (a SA já tem chave JSON local).
+
+### Passos manuais (recomendado, ~3 min)
+
+1. Criar SA `landing-ga4-reader` (ou usar a existente) e baixar chave JSON.
+2. Ativar **Analytics Data API** no projeto `institucional-480905`.
+3. [GA4 Admin → Acesso à propriedade](https://analytics.google.com/analytics/web/#/a66932658p327916606/admin/property/access) → **+** → email da SA → papel **Viewer**.
+4. Exportar credenciais:
+   ```bash
+   export GOOGLE_APPLICATION_CREDENTIALS="$HOME/.config/4unik/landing-ga4-reader.json"
+   export GA_PROPERTY_ID=327916606
+   export GA4_STREAM_ID=15052677461
+   ```
+5. Testar: `npm run fetch:ga4-snapshot`
+6. Cursor MCP: variáveis em [`.cursor/mcp.json`](../.cursor/mcp.json) (caminho absoluto do JSON).
+
+### Key event `generate_lead`
+
+1. [GA4 → Admin → Eventos](https://analytics.google.com/analytics/web/#/a66932658p327916606/admin/events)
+2. Localizar `generate_lead` → **Marcar como evento principal** (key event).
+3. Confirmar após submit de teste em produção (Relatórios → Tempo real).
+
+### Erro 403 na API
+
+A SA tem chave GCP válida mas **não** foi adicionada como Viewer na propriedade `327916606`. IAM do projeto GCP não substitui este passo.
+

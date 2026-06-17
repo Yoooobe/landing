@@ -2,6 +2,7 @@
 
 import FeatureScreensCarousel from "@/components/FeatureScreensCarousel";
 import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
@@ -179,12 +180,13 @@ export default function GamificationHero({
           </motion.p>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex justify-center">
-            <a
+            <TrackedOutboundLink
               href={h.ctaHref}
+              source="gamification-hero-cta"
               className="flex items-center gap-2 rounded-full bg-white px-8 py-4 font-sans text-lg font-bold text-yoobe-purple shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all hover:scale-105"
             >
               {h.cta}
-            </a>
+            </TrackedOutboundLink>
           </motion.div>
         </div>
 

@@ -1,5 +1,6 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { PRIMARY_CONTACT_SECTION_ID } from "@/lib/contactAnchor";
@@ -24,14 +25,15 @@ export default function GamificacaoPageCta({
         <p className="mx-auto mb-10 max-w-2xl text-xl text-white/60">{content.body}</p>
         <LeadCaptureForm variant="gamificacao" source="gamificacao" className="mx-auto w-full max-w-lg text-left" />
         <p className="mt-10 text-sm font-semibold uppercase tracking-wider text-white/45">{lf.altCalendly}</p>
-        <a
+        <TrackedOutboundLink
           href={content.ctaHref}
+          source="gamificacao-page-demo"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex h-14 items-center justify-center rounded-2xl bg-linear-to-r from-yoobe-purple to-fuchsia-600 px-10 text-lg font-bold text-white shadow-[0_0_40px_rgba(139,92,246,0.5)] transition-transform hover:scale-105"
         >
           {content.cta}
-        </a>
+        </TrackedOutboundLink>
       </div>
     </section>
   );

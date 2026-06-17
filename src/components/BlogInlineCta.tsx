@@ -1,35 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import BlogInlineCtaLink from "@/components/blog/BlogInlineCtaLink";
 import { getBlogImageUrl } from "@/lib/blogImageUrl";
 import type { BlogCtaBlock, BlogCtaVariant } from "@/sanity/lib/types";
 import { ArrowRight, CalendarDays, Layers } from "lucide-react";
-import type { ReactNode } from "react";
-
-function isExternalHref(href: string): boolean {
-  return /^https?:\/\//i.test(href);
-}
-
-function CtaLink({
-  href,
-  label,
-  className,
-  children,
-}: {
-  href: string;
-  label: string;
-  className?: string;
-  children?: ReactNode;
-}) {
-  const external = isExternalHref(href);
-  return (
-    <a
-      href={href}
-      className={className}
-      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-    >
-      {children ?? label}
-    </a>
-  );
-}
 
 const variantDefaults: Record<
   BlogCtaVariant,
@@ -66,9 +39,10 @@ export default function BlogInlineCta({ block }: { block: BlogCtaBlock }) {
               <h3 className="mb-3 font-heading text-xl font-bold text-white md:text-2xl">{title}</h3>
             ) : null}
             {description ? <p className="mb-6 text-base leading-relaxed text-white/70">{description}</p> : null}
-            <CtaLink
+            <BlogInlineCtaLink
               href={href}
               label={label}
+              source={`blog-cta-${variant}`}
               className="inline-flex h-11 w-fit items-center justify-center rounded-xl bg-brand-orange px-5 text-sm font-semibold text-white transition hover:bg-brand-orange/90"
             />
           </div>
@@ -101,9 +75,10 @@ export default function BlogInlineCta({ block }: { block: BlogCtaBlock }) {
             <h3 className="mb-3 font-heading text-2xl font-bold text-white md:text-3xl">{title}</h3>
           ) : null}
           {description ? <p className="mb-8 text-base text-white/75">{description}</p> : null}
-          <CtaLink
+          <BlogInlineCtaLink
             href={href}
             label={label}
+            source={`blog-cta-${variant}`}
             className="inline-flex h-12 min-w-[200px] items-center justify-center rounded-xl bg-brand-orange px-8 text-base font-semibold text-white shadow-lg shadow-brand-orange/20 transition hover:bg-brand-orange/90"
           />
         </div>
@@ -122,16 +97,17 @@ export default function BlogInlineCta({ block }: { block: BlogCtaBlock }) {
         {title ? <h3 className="font-heading text-lg font-bold text-white md:text-xl">{title}</h3> : null}
         {description ? <p className="mt-2 text-sm text-white/65">{description}</p> : null}
       </div>
-      <CtaLink
+      <BlogInlineCtaLink
         href={href}
         label={label}
+        source={`blog-cta-${variant}`}
         className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-brand-orange/50 hover:bg-white/10"
       >
         <>
           <span>{label}</span>
           <ArrowRight className="size-4 shrink-0" aria-hidden />
         </>
-      </CtaLink>
+      </BlogInlineCtaLink>
     </aside>
   );
 }

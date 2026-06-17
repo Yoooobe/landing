@@ -1,6 +1,7 @@
 "use client";
 
 import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import type { Locale } from "@/lib/locale";
 import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
@@ -87,12 +88,12 @@ export default function ApiHero({
                transition={{ delay: 0.2 }}
                className="flex flex-col sm:flex-row gap-4 pt-4"
             >
-               <a href={content.primaryCtaHref} className="inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 font-bold text-surface-base shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all hover:bg-cyan-400 hover:text-surface-base hover:scale-105 gap-2 font-sans">
+               <TrackedOutboundLink href={content.primaryCtaHref} source="api-hero-primary" className="inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 font-bold text-surface-base shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all hover:bg-cyan-400 hover:text-surface-base hover:scale-105 gap-2 font-sans">
                  <Code2 className="w-5 h-5" /> {content.primaryCtaLabel}
-               </a>
-               <a href={content.secondaryCtaHref} target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center justify-center rounded-xl border border-white/10 bg-white/5 px-8 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10 gap-2 font-sans">
+               </TrackedOutboundLink>
+               <TrackedOutboundLink href={content.secondaryCtaHref} source="api-hero-secondary" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center justify-center rounded-xl border border-white/10 bg-white/5 px-8 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10 gap-2 font-sans">
                  <Webhook className="w-5 h-5" /> {content.secondaryCtaLabel}
-               </a>
+               </TrackedOutboundLink>
             </motion.div>
           </div>
 

@@ -15,7 +15,11 @@
       "args": ["${workspaceFolder}/mcps/4unik-marketing/index.js"],
       "cwd": "${workspaceFolder}/mcps/4unik-marketing",
       "env": {
-        "GA_PROPERTY_ID": "327916606"
+        "GA_PROPERTY_ID": "327916606",
+        "GA4_STREAM_ID": "15052677461",
+        "GA4_HOSTNAME": "plataforma.4unik.com.br",
+        "SITE_URL": "https://plataforma.4unik.com.br/landing",
+        "GOOGLE_APPLICATION_CREDENTIALS": "/Users/genautech/.config/4unik/landing-ga4-reader.json"
       }
     }
   }

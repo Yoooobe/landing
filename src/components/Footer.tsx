@@ -8,8 +8,10 @@ import {
 } from "@/contexts/SiteSettingsContext";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { withBasePath } from "@/lib/basePath";
+import { trackOutboundConversion } from "@/components/analytics/TrackedOutboundLink";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
+import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
 import { resolveShellHref, isExternalShellHref } from "@/lib/siteShell";
 import Link from "next/link";
 import { rewardInfrastructurePath } from "@/lib/rewardInfrastructurePaths";
@@ -92,6 +94,7 @@ function FooterShellLink({
         target={shouldOpenInNewTab ? "_blank" : undefined}
         rel={shouldOpenInNewTab ? "noopener noreferrer" : undefined}
         className={className}
+        onClick={() => trackOutboundConversion(resolvedHref, "footer")}
       >
         {children}
       </a>
@@ -162,7 +165,7 @@ export default function Footer() {
           },
           {
             label: f.links.comercial,
-            href: sanity?.whatsappUrl?.trim() || "https://wa.me/554187582060",
+            href: sanity?.whatsappUrl?.trim() || DEFAULT_WHATSAPP_URL,
             openInNewTab: true,
           },
         ],

@@ -41,6 +41,10 @@ yarn-error.log*
 .env*
 !.env.example
 
+# GA4 service account keys (local only — never commit)
+*-ga4-reader.json
+.config/4unik/
+
 # vercel
 .vercel
 

@@ -22,7 +22,9 @@ import {
   Zap,
 } from "lucide-react";
 import { withBasePath } from "@/lib/basePath";
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
+import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
 import YoobeMark from "@/components/YoobeMark";
 import { cn } from "@/lib/utils";
 import {
@@ -62,7 +64,7 @@ function shotUrl(
 }
 
 const CALENDLY = DEFAULT_CALENDLY_URL;
-const WHATSAPP = "https://wa.me/554187582060";
+const WHATSAPP = DEFAULT_WHATSAPP_URL;
 
 const PILLAR_ICONS = [MessageSquare, Users, LayoutGrid, BarChart2];
 
@@ -204,22 +206,24 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <a
+            <TrackedOutboundLink
               href={CALENDLY}
+              source="workvivo-hero-demo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-14 items-center justify-center rounded-xl bg-yoobe-purple px-8 font-bold text-white shadow-lg shadow-yoobe-purple/25 hover:bg-yoobe-purple/90 transition-colors"
             >
               {c.ctaDemo}
-            </a>
-            <a
+            </TrackedOutboundLink>
+            <TrackedOutboundLink
               href={WHATSAPP}
+              source="workvivo-hero-whatsapp"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-14 items-center justify-center rounded-xl border border-white/20 bg-white/5 px-8 font-bold text-white hover:bg-white/10 transition-colors"
             >
               {c.ctaWhatsapp}
-            </a>
+            </TrackedOutboundLink>
           </div>
         </div>
       </section>
@@ -750,22 +754,24 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
             {lf.altCalendly}
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
+            <TrackedOutboundLink
               href={CALENDLY}
+              source="workvivo-final-demo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-14 min-w-[200px] items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white shadow-lg shadow-brand-orange/20 hover:bg-brand-orange-dark transition-colors"
             >
               {c.ctaDemo}
-            </a>
-            <a
+            </TrackedOutboundLink>
+            <TrackedOutboundLink
               href={WHATSAPP}
+              source="workvivo-final-whatsapp"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-14 min-w-[200px] items-center justify-center rounded-xl border border-white/20 bg-white/5 px-8 font-bold text-white hover:bg-white/10 transition-colors"
             >
               {c.ctaWhatsapp}
-            </a>
+            </TrackedOutboundLink>
           </div>
         </div>
       </section>

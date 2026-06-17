@@ -2,6 +2,8 @@
 "use client";
 
 import FeatureScreensCarousel from "@/components/FeatureScreensCarousel";
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { motion } from "framer-motion";
 
 export default function GamificationHighlight() {
@@ -71,9 +73,9 @@ export default function GamificationHighlight() {
               viewport={{ once: true }}
               className="pt-6"
             >
-              <a href="https://calendly.com/4unik/30min" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 bg-white/5 px-10 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10">
+              <TrackedOutboundLink href={DEFAULT_CALENDLY_URL} source="gamification-highlight-demo" target="_blank" rel="noopener noreferrer" className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 bg-white/5 px-10 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10">
                 Ver Funcionamento na Prática
-              </a>
+              </TrackedOutboundLink>
             </motion.div>
           </div>
 

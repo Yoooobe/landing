@@ -58,7 +58,7 @@ Habilite o servidor MCP **`4unik-marketing`** no Cursor (configuração de MCP d
 4. Se precisar de granularidade: **`get_ga4_metrics`** (`startDate`, `endDate` opcional) e **`get_seo_health`** (`url` = URL pública completa da página, ex. `https://plataforma.4unik.com.br/landing/` + path).
 5. **`suggest_growth_opportunities`** — oportunidades de página/funil (readonly).
 
-Os dados de GA podem estar **simulados** no MCP até credenciais GCP estarem configuradas — a propriedade real é **`327916606`** (`GA_PROPERTY_ID` em `.cursor/mcp.json`). O site em produção usa **`G-SMJDYCENBC`** (`NEXT_PUBLIC_GA_ID`). Após alterar analytics: `npm run verify:ga-build`, `verify:ga-pages` + `npm run deploy:production`. Referência completa: [`docs/knowledge-base/integrations.md`](../../docs/knowledge-base/integrations.md).
+Métricas GA4 no MCP usam **GA Data API** quando `GOOGLE_APPLICATION_CREDENTIALS` aponta para `~/.config/4unik/landing-ga4-reader.json` e a SA tem **Viewer** na propriedade **`327916606`**. Snapshot CLI: `npm run fetch:ga4-snapshot`. Sem acesso GA4 Admin → `mock_fallback`. Measurement ID produção: **`G-SMJDYCENBC`**. Ver [`docs/knowledge-base/integrations.md`](../../docs/knowledge-base/integrations.md) e [`GCP_SERVICE_ACCOUNT_SETUP.md`](../../GCP_SERVICE_ACCOUNT_SETUP.md).
 
 ## Fluxo de trabalho (obrigatório)
 

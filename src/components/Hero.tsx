@@ -1,6 +1,8 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { motion } from "framer-motion";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 
 export default function Hero() {
   return (
@@ -49,14 +51,15 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 pt-4"
           >
-            <a
-              href="https://calendly.com/4unik/30min"
+            <TrackedOutboundLink
+              href={DEFAULT_CALENDLY_URL}
+              source="legacy-hero-demo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-14 items-center justify-center rounded-full bg-white px-10 font-bold text-brand-navy-dark shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all hover:bg-brand-orange hover:text-white hover:-translate-y-1 hover:shadow-[0_0_60px_rgba(249,115,22,0.4)]"
             >
               Agendar Demonstração
-            </a>
+            </TrackedOutboundLink>
             <a
               href="#bento"
               className="inline-flex h-14 items-center justify-center rounded-full border border-white/20 bg-white/5 px-10 font-bold text-white backdrop-blur-md transition-all hover:bg-white/10"

@@ -1,0 +1,221 @@
+{
+  "generatedAt": "2026-06-17T17:08:04.400Z",
+  "snapshotDate": "2026-06-17",
+  "allSuccess": true,
+  "periods": [
+    {
+      "id": "A",
+      "label": "Baseline",
+      "startDate": "2026-06-10",
+      "endDate": "2026-06-11",
+      "filterMode": "stream",
+      "notes": "Pós-fix tag GA4",
+      "result": {
+        "status": "success",
+        "source": "ga4_data_api",
+        "gaPropertyId": "327916606",
+        "ga4StreamId": "15052677461",
+        "hostname": "plataforma.4unik.com.br",
+        "period": "2026-06-10 a 2026-06-11",
+        "metrics": {
+          "activeUsers": 13,
+          "sessions": 20,
+          "newUsers": 13,
+          "bounceRate": 0.25,
+          "screenPageViews": 85,
+          "generateLeadEvents": 0,
+          "leadConversionRate": 0,
+          "topTrafficChannels": [
+            {
+              "channel": "Direct",
+              "sessions": 18
+            },
+            {
+              "channel": "Referral",
+              "sessions": 1
+            },
+            {
+              "channel": "Unassigned",
+              "sessions": 1
+            }
+          ],
+          "topLandingPages": [
+            "/landing/",
+            "/landing/plataforma/",
+            "/",
+            "/landing/plataforma/controle-carteiras/",
+            "/landing",
+            "/landing/plataforma/painel-gestor/",
+            "/landing/para-plataformas/",
+            "/landing/plataforma/loja-resgate/",
+            "/landing/plataforma/motor-gamificacao/",
+            "/landing/api-integracoes/"
+          ],
+          "topPagesDetail": [
+            {
+              "path": "/landing/",
+              "views": 35
+            },
+            {
+              "path": "/landing/plataforma/",
+              "views": 9
+            },
+            {
+              "path": "/",
+              "views": 8
+            },
+            {
+              "path": "/landing/plataforma/controle-carteiras/",
+              "views": 5
+            },
+            {
+              "path": "/landing",
+              "views": 4
+            },
+            {
+              "path": "/landing/plataforma/painel-gestor/",
+              "views": 4
+            },
+            {
+              "path": "/landing/para-plataformas/",
+              "views": 3
+            },
+            {
+              "path": "/landing/plataforma/loja-resgate/",
+              "views": 3
+            },
+            {
+              "path": "/landing/plataforma/motor-gamificacao/",
+              "views": 3
+            },
+            {
+              "path": "/landing/api-integracoes/",
+              "views": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "B",
+      "label": "Pós-conteúdo",
+      "startDate": "2026-06-12",
+      "endDate": "2026-06-17",
+      "filterMode": "stream",
+      "notes": "Home redesign + motor/campanhas",
+      "result": {
+        "status": "success",
+        "source": "ga4_data_api",
+        "gaPropertyId": "327916606",
+        "ga4StreamId": "15052677461",
+        "hostname": "plataforma.4unik.com.br",
+        "period": "2026-06-12 a 2026-06-17",
+        "metrics": {
+          "activeUsers": 11,
+          "sessions": 21,
+          "newUsers": 7,
+          "bounceRate": 0.5238095238095238,
+          "screenPageViews": 60,
+          "generateLeadEvents": 0,
+          "leadConversionRate": 0,
+          "topTrafficChannels": [
+            {
+              "channel": "Direct",
+              "sessions": 20
+            },
+            {
+              "channel": "Paid Search",
+              "sessions": 1
+            },
+            {
+              "channel": "Unassigned",
+              "sessions": 1
+            }
+          ],
+          "topLandingPages": [
+            "/landing/",
+            "/landing/plataforma/campanhas-gamificacao/",
+            "/landing/plataforma/motor-gamificacao/",
+            "/landing/plataforma/painel-gestor/",
+            "/",
+            "/landing/para-plataformas/",
+            "/landing/plataforma/",
+            "/landing/en/",
+            "/landing/plataforma/controle-carteiras/",
+            "/catalogo/"
+          ],
+          "topPagesDetail": [
+            {
+              "path": "/landing/",
+              "views": 17
+            },
+            {
+              "path": "/landing/plataforma/campanhas-gamificacao/",
+              "views": 10
+            },
+            {
+              "path": "/landing/plataforma/motor-gamificacao/",
+              "views": 8
+            },
+            {
+              "path": "/landing/plataforma/painel-gestor/",
+              "views": 5
+            },
+            {
+              "path": "/",
+              "views": 3
+            },
+            {
+              "path": "/landing/para-plataformas/",
+              "views": 3
+            },
+            {
+              "path": "/landing/plataforma/",
+              "views": 3
+            },
+            {
+              "path": "/landing/en/",
+              "views": 2
+            },
+            {
+              "path": "/landing/plataforma/controle-carteiras/",
+              "views": 2
+            },
+            {
+              "path": "/catalogo/",
+              "views": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "C",
+      "label": "Pré-stream",
+      "startDate": "2026-06-03",
+      "endDate": "2026-06-09",
+      "filterMode": "hostname",
+      "notes": "hostName = plataforma.4unik.com.br",
+      "result": {
+        "status": "success",
+        "source": "ga4_data_api",
+        "gaPropertyId": "327916606",
+        "ga4StreamId": "15052677461",
+        "hostname": "plataforma.4unik.com.br",
+        "period": "2026-06-03 a 2026-06-09",
+        "metrics": {
+          "activeUsers": 0,
+          "sessions": 0,
+          "newUsers": 0,
+          "bounceRate": 0,
+          "screenPageViews": 0,
+          "generateLeadEvents": 0,
+          "leadConversionRate": 0,
+          "topTrafficChannels": [],
+          "topLandingPages": [],
+          "topPagesDetail": []
+        }
+      }
+    }
+  ]
+}

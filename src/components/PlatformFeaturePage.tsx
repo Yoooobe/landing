@@ -1,3 +1,4 @@
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import ScreenshotCard from "@/components/ui/ScreenshotCard";
 import type { PlatformFeaturePageContent } from "@/content/platformFeaturePages";
@@ -174,15 +175,16 @@ export default function PlatformFeaturePage({
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col xl:flex-row">
                 {isExternalHref(content.primaryCtaHref) ? (
-                  <a
+                  <TrackedOutboundLink
                     href={content.primaryCtaHref}
+                    source={`${leadSource}-primary`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-brand-navy-dark transition-transform hover:-translate-y-0.5"
                   >
                     {content.primaryCtaLabel}
                     <ExternalLink className="h-4 w-4" />
-                  </a>
+                  </TrackedOutboundLink>
                 ) : (
                   <Link
                     href={content.primaryCtaHref}

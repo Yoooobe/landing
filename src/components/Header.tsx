@@ -11,8 +11,10 @@ import {
   scrollToPrimaryContact,
   shouldScrollPrimaryContactInPlace,
 } from "@/lib/resolvePrimaryContactHref";
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
+import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
 import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
 import { toggleLocalePath } from "@/lib/locale";
 import Link from "next/link";
@@ -301,7 +303,7 @@ export default function Header() {
 
   const loginUrl = sanity?.appLoginUrl?.trim() || null;
   const demoUrl = sanity?.calendlyUrl?.trim() || DEFAULT_CALENDLY_URL;
-  const whatsappUrl = sanity?.whatsappUrl?.trim() || "https://wa.me/554187582060";
+  const whatsappUrl = sanity?.whatsappUrl?.trim() || DEFAULT_WHATSAPP_URL;
   const contactHref = resolvePrimaryContactHref(pathname, path);
   const contactScrollInPlace = shouldScrollPrimaryContactInPlace(pathname, path);
 
@@ -446,14 +448,15 @@ export default function Header() {
                 {m.nav.login}
               </a>
             ) : null}
-            <a
+            <TrackedOutboundLink
               href={demoUrl}
+              source="header-demo"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-white hover:bg-brand-orange text-brand-navy-dark hover:text-white px-6 py-2.5 text-[0.95rem] font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] whitespace-nowrap"
             >
               {m.nav.requestDemo}
-            </a>
+            </TrackedOutboundLink>
             {/* Mobile Menu Toggle */}
             <button
               className="lg:hidden text-white/80 hover:text-white p-2 transition-colors ml-2"
@@ -542,24 +545,26 @@ export default function Header() {
                   {m.conversionDock.linkForm}
                 </Link>
               )}
-              <a
+              <TrackedOutboundLink
                 href={whatsappUrl}
+                source="header-mobile-whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex w-full items-center justify-center rounded-xl bg-whatsapp py-3 text-center text-base font-medium text-white hover:bg-whatsapp-deep"
               >
                 {m.conversionDock.linkWhatsapp}
-              </a>
-              <a
+              </TrackedOutboundLink>
+              <TrackedOutboundLink
                 href={demoUrl}
+                source="header-mobile-demo"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex w-full items-center justify-center rounded-xl border border-white/20 py-3 text-center text-base font-medium text-white hover:bg-white/5"
               >
                 {m.conversionDock.linkDemo}
-              </a>
+              </TrackedOutboundLink>
             </div>
             <div className="mt-8 flex flex-col gap-4">
               <Link

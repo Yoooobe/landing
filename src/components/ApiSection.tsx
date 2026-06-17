@@ -1,7 +1,9 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { withBasePath } from "@/lib/basePath";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { motion } from "framer-motion";
 
 export default function ApiSection() {
@@ -37,14 +39,15 @@ export default function ApiSection() {
               >
                 {a.ctaDocs}
               </a>
-              <a
-                href="https://calendly.com/4unik/30min"
+              <TrackedOutboundLink
+                href={DEFAULT_CALENDLY_URL}
+                source="api-section-demo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-14 items-center justify-center rounded-xl bg-unik-blue px-8 font-sans font-bold text-white shadow-[0_0_20px_rgba(37,99,235,0.35)] transition-colors hover:bg-unik-blue-deep"
               >
                 {a.ctaApi}
-              </a>
+              </TrackedOutboundLink>
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import AiRoadmap from "@/components/AiRoadmap";
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import AdminDashboardHighlight from "@/components/AdminDashboardHighlight";
 import ApiSection from "@/components/ApiSection";
 import BentoFeatures from "@/components/BentoFeatures";
@@ -204,24 +205,26 @@ function GenericSplitContentBlock({ block }: { block: SplitContentBlockDoc }) {
       {(block.primaryLabel && block.primaryHref) || (block.secondaryLabel && block.secondaryHref) ? (
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           {block.primaryLabel && block.primaryHref ? (
-            <a
+            <TrackedOutboundLink
               href={block.primaryHref}
+              source="marketing-split-primary"
               target={primaryOpensInNewTab ? "_blank" : undefined}
               rel={primaryOpensInNewTab ? "noopener noreferrer" : undefined}
               className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-transform hover:scale-[1.02]"
             >
               {block.primaryLabel}
-            </a>
+            </TrackedOutboundLink>
           ) : null}
           {block.secondaryLabel && block.secondaryHref ? (
-            <a
+            <TrackedOutboundLink
               href={block.secondaryHref}
+              source="marketing-split-secondary"
               target={secondaryOpensInNewTab ? "_blank" : undefined}
               rel={secondaryOpensInNewTab ? "noopener noreferrer" : undefined}
               className="inline-flex h-12 items-center justify-center rounded-xl border border-white/15 px-8 font-semibold text-white transition-colors hover:bg-white/5"
             >
               {block.secondaryLabel}
-            </a>
+            </TrackedOutboundLink>
           ) : null}
         </div>
       ) : null}
@@ -612,24 +615,26 @@ function GenericCtaBlock({
           ) : null}
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             {block.primaryLabel && block.primaryHref ? (
-              <a
+              <TrackedOutboundLink
                 href={block.primaryHref}
+                source={`marketing-cta-${pageSlug}-primary`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-transform hover:scale-[1.02]"
               >
                 {block.primaryLabel}
-              </a>
+              </TrackedOutboundLink>
             ) : null}
             {block.secondaryLabel && block.secondaryHref ? (
-              <a
+              <TrackedOutboundLink
                 href={block.secondaryHref}
+                source={`marketing-cta-${pageSlug}-secondary`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex h-12 items-center justify-center rounded-xl border border-white/15 px-8 font-semibold text-white transition-colors hover:bg-white/5"
               >
                 {block.secondaryLabel}
-              </a>
+              </TrackedOutboundLink>
             ) : null}
           </div>
         </div>

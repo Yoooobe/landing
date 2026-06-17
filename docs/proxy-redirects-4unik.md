@@ -58,6 +58,7 @@ curl -sI https://plataforma.4unik.com.br/landing | head -5
 | `/pricing/*` | `/landing/pricing/*` |
 | `/seguranca/*` | `/landing/seguranca/*` |
 | `/workvivo/*` | `/landing/workvivo/*` (legado; preferir `/api-integracoes/workvivo/`) |
+| `/infraestrutura-de-recompensas/*` | `/landing/infraestrutura-de-recompensas/*` |
 
 **Landings de gamificação (destinos finais distintos):**
 
@@ -74,7 +75,7 @@ location = /landing {
   return 301 https://$host/landing/;
 }
 
-location ~ ^/(plataforma|api-integracoes|inteligencia|casos-de-uso|blog|en|gamificacao|para-plataformas|educacao|vendas|comunidades|eventos|pricing|seguranca|workvivo)(/.*)?$ {
+location ~ ^/(plataforma|api-integracoes|inteligencia|casos-de-uso|blog|en|gamificacao|para-plataformas|educacao|vendas|comunidades|eventos|pricing|seguranca|workvivo|infraestrutura-de-recompensas)(/.*)?$ {
   return 301 https://$host/landing$request_uri;
 }
 ```
@@ -93,6 +94,14 @@ curl -sI "https://plataforma.4unik.com.br/plataforma/motor-gamificacao/" | head 
 # Esperado após proxy: HTTP/2 301
 # Location: https://plataforma.4unik.com.br/landing/plataforma/motor-gamificacao/
 ```
+
+### Estado da aplicação
+
+| Data | Snippet repo | Produção |
+|------|--------------|----------|
+| 2026-06-17 | Atualizado (`infraestrutura-de-recompensas` incluído) | **Pendente** — aplicar via `PLATAFORMA_PROXY_SSH=… npm run infra:apply-proxy-redirects` |
+
+Até aplicar no nginx, smoke reporta 404 nos paths sem `/landing` (comportamento esperado).
 
 ## Cache
 

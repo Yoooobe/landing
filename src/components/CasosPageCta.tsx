@@ -1,8 +1,10 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { primaryContactSectionIdAttr } from "@/lib/contactAnchor";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 
 export default function CasosPageCta({ contactSectionId }: { contactSectionId?: string | null } = {}) {
   const { m } = useLocaleMessages();
@@ -21,14 +23,15 @@ export default function CasosPageCta({ contactSectionId }: { contactSectionId?: 
         <p className="mx-auto mb-10 max-w-xl text-sm italic text-white/45">{c.socialProof}</p>
         <LeadCaptureForm variant="casos" source="casos-de-uso" className="mx-auto w-full max-w-lg text-left" />
         <p className="mt-10 text-sm font-semibold uppercase tracking-wider text-white/45">{lf.altCalendly}</p>
-        <a
-          href="https://calendly.com/4unik/30min"
+        <TrackedOutboundLink
+          href={DEFAULT_CALENDLY_URL}
+          source="casos-page-demo"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-4 inline-flex h-14 items-center justify-center rounded-2xl bg-brand-orange px-10 text-lg font-bold text-white shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-all hover:scale-105 hover:bg-cta-tomato"
         >
           {c.cta}
-        </a>
+        </TrackedOutboundLink>
       </div>
     </section>
   );

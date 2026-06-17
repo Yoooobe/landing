@@ -1,5 +1,6 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import FeatureScreensCarousel from "@/components/FeatureScreensCarousel";
 import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
 import UnikWordmark from "@/components/UnikWordmark";
@@ -195,15 +196,16 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
             transition={{ duration: 0.7, delay: 0.3 }}
             className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 lg:justify-start"
           >
-            <a
+            <TrackedOutboundLink
               href={primaryHref}
+              source="home-hero-demo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-base font-bold text-brand-navy-dark shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all hover:bg-brand-orange hover:text-white hover:shadow-[0_0_60px_rgba(249,115,22,0.4)] sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
             >
               {primaryLabel}
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
-            </a>
+            </TrackedOutboundLink>
             <a
               href={exploreHref}
               className="w-full rounded-full border border-white/20 px-6 py-3.5 text-base font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"

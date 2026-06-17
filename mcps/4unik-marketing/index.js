@@ -9,6 +9,7 @@ import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
+import { mockGa4Payload, resolveGa4Metrics } from "./lib/ga4.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "../..");
@@ -19,11 +20,8 @@ const NOTEBOOKLM_DIR = path.join(KB_ROOT, "notebooklm");
  * Base pública alinhada a `src/lib/site.ts` + `src/lib/basePath.ts`.
  * Sobrescreva com SITE_URL no ambiente do MCP se necessário.
  */
-const DEFAULT_SITE_URL = process.env.SITE_URL || "https://yoooobe.github.io/landing";
+const DEFAULT_SITE_URL = process.env.SITE_URL || "https://plataforma.4unik.com.br/landing";
 const DEFAULT_STALE_AFTER_DAYS = 30;
-
-// Configurações e credenciais simuladas para GA API
-const GA_PROPERTY_ID = process.env.GA_PROPERTY_ID || "123456789";
 
 function normalizePath(routePath) {
   if (!routePath || String(routePath).trim() === "") return "";
@@ -332,27 +330,6 @@ function buildPageUrl(path) {
   return suffix ? `${base}${suffix}` : `${base}/`;
 }
 
-/** Payload GA simulado — trocar por google.analyticsdata quando credenciais existirem. */
-function mockGa4Payload(startDate, endDate) {
-  return {
-    status: "success",
-    gaPropertyId: GA_PROPERTY_ID,
-    note:
-      "Dados simulados. Com GA_PROPERTY_ID + credenciais, substituir por google.analyticsdata('v1beta').",
-    period: `${startDate} a ${endDate || "hoje"}`,
-    metrics: {
-      activeUsers: 1450,
-      sessions: 1820,
-      bounceRate: 42.5,
-      mqlsGenerated: 45,
-      topTrafficSource: "google / organic",
-      topLandingPages: ["/api-integracoes", "/casos-de-uso"],
-    },
-    recommendation:
-      "Aumentar otimização on-page para /casos-de-uso baseada na alta taxa de rejeição observada nesse segmento.",
-  };
-}
-
 function mockSeoPayload(url) {
   return {
     status: "success",
@@ -564,7 +541,8 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
     tools: [
       {
         name: "get_ga4_metrics",
-        description: "Obter métricas de tráfego, MQLs e conversões do Google Analytics 4 da 4Unik",
+        description:
+          "Métricas GA4 da landing (stream Plataforma Landing). Usa GA Data API quando GOOGLE_APPLICATION_CREDENTIALS está configurado; caso contrário devolve mock_fallback.",
         inputSchema: {
           type: "object",
           properties: {
@@ -598,7 +576,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       {
         name: "get_landing_optimization_snapshot",
         description:
-          "Visão unificada para growth: GA simulado + SEO da URL + ações priorizadas por rota (4Unik landing).",
+          "Visão unificada para growth: GA4 real (ou mock_fallback) + SEO simulado + ações priorizadas por rota.",
         inputSchema: {
           type: "object",
           properties: {
@@ -761,11 +739,12 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
 
   if (name === "get_ga4_metrics") {
+    const ga = await resolveGa4Metrics(args.startDate, args.endDate);
     return {
       content: [
         {
           type: "text",
-          text: JSON.stringify(mockGa4Payload(args.startDate, args.endDate), null, 2),
+          text: JSON.stringify(ga, null, 2),
         },
       ],
     };
@@ -784,7 +763,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
   if (name === "get_landing_optimization_snapshot") {
     const path = normalizePath(args.path);
-    const ga = mockGa4Payload(args.startDate, args.endDate);
+    const ga = await resolveGa4Metrics(args.startDate, args.endDate);
     const pageUrl = buildPageUrl(path);
     const seo = mockSeoPayload(pageUrl);
     const snapshot = {

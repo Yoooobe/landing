@@ -1,5 +1,6 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import MarketingFaqSection from "@/components/MarketingFaqSection";
 import PricingPlansGrid from "@/components/PricingPlansGrid";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
@@ -54,14 +55,15 @@ export default function PricingLandingPage() {
         <div className="container mx-auto max-w-3xl px-4 text-center">
           <h2 className="mb-4 font-heading text-3xl font-black text-white">{page.cta.title}</h2>
           <p className="mb-8 text-lg text-white/65">{page.cta.body}</p>
-          <a
+          <TrackedOutboundLink
             href={page.cta.primaryHref}
+            source="pricing-page-demo"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white hover:bg-brand-orange/90"
           >
             {page.cta.primaryLabel}
-          </a>
+          </TrackedOutboundLink>
         </div>
       </section>
     </div>

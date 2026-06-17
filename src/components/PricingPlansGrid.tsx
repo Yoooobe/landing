@@ -1,5 +1,7 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
+import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { motion } from "framer-motion";
 
@@ -40,14 +42,15 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
             </li>
           ))}
         </ul>
-        <a
-          href="https://calendly.com/4unik/30min"
+        <TrackedOutboundLink
+          href={DEFAULT_CALENDLY_URL}
+          source="pricing-plan-starter"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
         >
           {p.starter.cta}
-        </a>
+        </TrackedOutboundLink>
       </motion.div>
 
       <motion.div
@@ -75,14 +78,15 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
             </li>
           ))}
         </ul>
-        <a
-          href="https://calendly.com/4unik/30min"
+        <TrackedOutboundLink
+          href={DEFAULT_CALENDLY_URL}
+          source="pricing-plan-pro"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-auto block w-full rounded-xl bg-brand-orange py-4 text-center font-bold text-white transition-colors hover:bg-brand-orange-dark font-sans"
         >
           {p.pro.cta}
-        </a>
+        </TrackedOutboundLink>
       </motion.div>
 
       {includeScale && scale ? (
@@ -106,14 +110,15 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
               </li>
             ))}
           </ul>
-          <a
-            href="https://calendly.com/4unik/30min"
+          <TrackedOutboundLink
+            href={DEFAULT_CALENDLY_URL}
+            source="pricing-plan-scale"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
           >
             {scale.cta}
-          </a>
+          </TrackedOutboundLink>
         </motion.div>
       ) : null}
 
@@ -137,14 +142,15 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
             </li>
           ))}
         </ul>
-        <a
-          href="https://calendly.com/4unik/30min"
+        <TrackedOutboundLink
+          href={DEFAULT_CALENDLY_URL}
+          source="pricing-plan-enterprise"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
         >
           {p.enterprise.cta}
-        </a>
+        </TrackedOutboundLink>
       </motion.div>
     </div>
   );

@@ -1,7 +1,9 @@
 "use client";
 
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
+import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
 import {
   resolvePrimaryContactHref,
   scrollToPrimaryContact,
@@ -11,7 +13,7 @@ import { MessageCircle, Send } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
-const WHATSAPP_FALLBACK = "https://wa.me/554187582060";
+const WHATSAPP_FALLBACK = DEFAULT_WHATSAPP_URL;
 
 export default function GlobalConversionDock() {
   const pathname = usePathname();
@@ -43,15 +45,16 @@ export default function GlobalConversionDock() {
       style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
     >
       <div className="pointer-events-auto flex w-full max-w-[100vw] flex-col gap-2 sm:w-auto sm:min-w-[200px]">
-        <a
+        <TrackedOutboundLink
           href={whatsappUrl}
+          source="conversion-dock-whatsapp"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-whatsapp px-4 text-sm font-bold text-white shadow-lg shadow-black/30 transition hover:bg-whatsapp-deep sm:h-11 sm:text-[0.85rem]"
         >
           <MessageCircle className="h-5 w-5 shrink-0" aria-hidden />
           {d.whatsappCta}
-        </a>
+        </TrackedOutboundLink>
         {scrollInPlace ? (
           <button
             type="button"

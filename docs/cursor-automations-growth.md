@@ -32,8 +32,18 @@ Requer MCP **`4unik-marketing`** habilitado no ambiente da automation (dashboard
 | **Instruções** | `get_content_sync_registry` + `search_product_knowledge` com termos das headlines/FAQs alteradas. Reportar contradições vs `docs/knowledge-base/` e `4unik-ai-discovery`. |
 | **Tools** | MCP `4unik-marketing`, Read |
 
+## 4. Monthly GA4 snapshot (tráfego landing)
+
+| Campo | Valor sugerido |
+|-------|----------------|
+| **Nome** | 4unik — monthly GA4 landing snapshot |
+| **Trigger** | Cron — dia **15** de cada mês (primeira reavaliação: **15/jul/2026**) |
+| **Modo** | Pode escrever só em `docs/reviews/` |
+| **Instruções** | Correr `npm run fetch:ga4-snapshot` (requer `GOOGLE_APPLICATION_CREDENTIALS` local). Comparar JSON em `docs/reviews/ga4-snapshots/` com o mês anterior. Se for julho/2026, seguir checklist em `docs/reviews/REAVALIACAO-2026-07.md` e produzir resumo em `docs/reviews/agent-seo-traffic-2026-07.md`. Chamar MCP `get_ga4_metrics` para período 12/jun–hoje como validação cruzada. |
+| **Tools** | Shell (`npm run fetch:ga4-snapshot`), MCP `4unik-marketing`, Read, Write (só `docs/reviews/**`) |
+
 ## Notas
 
 - Automations **não** disparam deploy GitHub Pages; ver [`sanity-github-webhook.md`](sanity-github-webhook.md).
 - Para criar automations pela UI, use a skill Cursor `automate` no Agents Window.
-- Dados GA/SEO no MCP podem ser simulados até credenciais reais.
+- GA4 no MCP usa **GA Data API real** quando `GOOGLE_APPLICATION_CREDENTIALS` aponta para `landing-ga4-reader.json` e a SA tem Viewer na propriedade `327916606`; caso contrário `mock_fallback`.
