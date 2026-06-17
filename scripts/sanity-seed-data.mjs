@@ -1525,7 +1525,7 @@ function homeMarketingPageBlocks(isEn) {
       primaryLabel: isEn ? "Book a demo" : "Solicitar Demonstração",
       primaryHref: "https://calendly.com/4unik/demo",
       secondaryLabel: isEn ? "Talk to a specialist" : "Falar com Especialista",
-      secondaryHref: "https://wa.me/554187582060",
+      secondaryHref: "https://wa.me/554163470307",
     }),
   ];
 }
@@ -1669,7 +1669,7 @@ const marketingPages = [
         primaryLabel: "Agendar demonstracao",
         primaryHref: "https://calendly.com/4unik/30min",
         secondaryLabel: "Falar no WhatsApp",
-        secondaryHref: "https://wa.me/554187582060",
+        secondaryHref: "https://wa.me/554163470307",
       }),
     ],
   },
@@ -1804,7 +1804,7 @@ const marketingPages = [
         primaryLabel: "Book a demo",
         primaryHref: "https://calendly.com/4unik/30min",
         secondaryLabel: "Talk on WhatsApp",
-        secondaryHref: "https://wa.me/554187582060",
+        secondaryHref: "https://wa.me/554163470307",
       }),
     ],
   },
@@ -2122,7 +2122,7 @@ export const seedDocuments = {
     environmentLabel: "production",
     gaMeasurementId: "G-SMJDYCENBC",
     calendlyUrl: "https://calendly.com/4unik/30min",
-    whatsappUrl: "https://wa.me/554187582060",
+    whatsappUrl: "https://wa.me/554163470307",
     contactEmail: "comercial@4unik.com.br",
     appLoginUrl: "https://4unik.yoobe.me/",
     rewardsCatalogUrl: "https://catalogo.4unik.com.br/product",
@@ -2447,7 +2447,7 @@ export const seedDocuments = {
             {
               _key: "sales",
               label: "Falar com Comercial",
-              href: "https://wa.me/554187582060",
+              href: "https://wa.me/554163470307",
               openInNewTab: true,
             },
           ],
@@ -2518,7 +2518,7 @@ export const seedDocuments = {
             {
               _key: "sales",
               label: "Talk to sales",
-              href: "https://wa.me/554187582060",
+              href: "https://wa.me/554163470307",
               openInNewTab: true,
             },
           ],
