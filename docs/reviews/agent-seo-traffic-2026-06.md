@@ -13,8 +13,8 @@
 |----------|----------|
 | **Agentes (Paperclip + Cursor)** | Entrega forte em conteúdo, SEO técnico e instrumentação (jun 2–12). KB, 10 skills, MCP e backlog com 13 itens Done. |
 | **SEO técnico** | **OK** — build, sitemap (56 URLs), canonical, growth pages indexáveis, smoke produção nas rotas chave. 3 avisos de proxy 301 em paths sem `/landing`. |
-| **Analytics** | **Infra OK** — tag `G-SMJDYCENBC` em produção, 63 páginas marketing com GA, `generate_lead` implementado. |
-| **Evolução de visitas** | **Inconclusivo** — stream da landing criado em 10/jun; sem API GA4 configurada neste ambiente; números reais exigem login no Admin (ver §4). |
+| **Analytics** | **Infra OK** — tag `G-SMJDYCENBC` em produção, 63 páginas marketing com GA; funil `generate_lead`, `schedule_demo`, `contact_whatsapp` (commit `c8cdfa87`, deploy 12/jun+). |
+| **Evolução de visitas** | **Inconclusivo** — stream desde 10/jun; GA Data API real via SA `landing-ga4-reader` (snapshot §4); lag SEO 2–4 semanas. |
 
 **Conclusão:** os agentes melhoraram de forma mensurável a **capacidade** da landing (conteúdo, indexação, tracking). Não há evidência estatística de **crescimento orgânico de audiência** atribuível ao Paperclip nos primeiros dias pós-deploy — janela curta e lag natural de SEO.
 
@@ -29,7 +29,7 @@
 | Paperclip | Externo; governança via KB no repo após push `main` | [`integrations.md`](../knowledge-base/integrations.md) § Agentes Paperclip |
 | Cursor background lanes | 5 lanes (audit → ideation → implementation → verification → visual-check) | [`landing-background-agents.md`](../landing-background-agents.md) |
 | Skills versionadas | **10** skills em [`skills/`](../../skills/) | content-creator, growth-hacker, page-ideator, 4unik-ai-discovery, etc. |
-| MCP `4unik-marketing` | Ativo; KB + growth tools; **GA/SEO simulados** | [`mcps/4unik-marketing/`](../../mcps/4unik-marketing/) |
+| MCP `4unik-marketing` | Ativo; KB + growth tools; **GA4 real** (`get_ga4_metrics` via Data API); **`get_seo_health` ainda simulado** | [`mcps/4unik-marketing/`](../../mcps/4unik-marketing/) |
 | Cursor Automations | Documentadas; **ativação não confirmada** | [`cursor-automations-growth.md`](../cursor-automations-growth.md) |
 
 ### Entregas no código (jun 2026)
@@ -42,6 +42,8 @@
 | 10/jun | GA4 produção, EEAT blog, UNI SEO fixes, case Boticário | `73cc2442`, `920d0444`, PR #4 |
 | 11/jun | Screenshots reais, copy diet PT/EN | `257721f9`, `456a38ea` |
 | 12/jun | Home redesign (8 secções, 1 CTA), motor vs campanhas | `bb7fb26c`, `afc09b49` |
+| 12/jun+ | Funil GA4 completo (`schedule_demo`, `contact_whatsapp`), GA Data API no MCP, deploy `c8cdfa87` | `c8cdfa87` |
+| 17/jun | Plano SEO/agentes: docs/MCP sync, funil GA4 no snapshot, `/gamificacao-para-rh/`, blog→ICP links | sessão atual |
 
 ### Backlog ([`landing-improvement-backlog.md`](../landing-improvement-backlog.md))
 
@@ -54,7 +56,9 @@
 |-----|---------|-------|
 | Sanity `marketingPage.home` | Studio/fallback desalinhado (~25 blocos antigos via `buildHomeMarketingPageContent`) | Site público usa `HomePage.tsx` nativo — **sem impacto no visitante** |
 | GitHub Actions | CI + Deploy workflow **falham** (~3–9s, billing) | `gh-pages` nativo OK (deploy 12/jun success); deploy manual via `npm run deploy:production` |
-| MCP GA4 | Métricas simuladas (`mockGa4Payload`) | `GA_PROPERTY_ID=327916606` sem service account GCP |
+| MCP GA4 | **Resolvido** — SA `landing-ga4-reader@institucional-480905.iam.gserviceaccount.com` + `npm run fetch:ga4-snapshot` | Ver [`GCP_SERVICE_ACCOUNT_SETUP.md`](../../GCP_SERVICE_ACCOUNT_SETUP.md) |
+| Key events GA4 | **Pendente** — marcar `generate_lead`, `schedule_demo`, `contact_whatsapp` no Admin | [`integrations.md`](../knowledge-base/integrations.md) |
+| MCP `get_seo_health` | Heurística simulada; usar `npm run check:gsc-indexing` + checklist manual | Até integração GSC/PageSpeed |
 | Proxy 301 | URLs sem `/landing` → 404 no host raiz | Ver [`proxy-redirects-4unik.md`](../proxy-redirects-4unik.md) |
 
 ---
@@ -72,6 +76,7 @@
 | `verify:ga-build` + `verify:ga-pages` | OK com `G-SMJDYCENBC` — 63 páginas marketing | 2026-06-17 |
 | `verify:growth-index-build` | OK — pricing/seguranca indexáveis | 2026-06-17 |
 | `check:gsc-indexing` | **19/19 passed** | 2026-06-17 |
+| Pós-plano SEO (build local + smoke) | OK — 21 route pairs; `/gamificacao-para-rh/` no export | 2026-06-17 |
 
 ### Smoke produção (`validate:landing-routes --smoke`)
 
@@ -102,24 +107,26 @@ Configurar 301 conforme [`infra/plataforma-4unik-nginx-redirects.conf`](../../in
 ### Limitações desta revisão
 
 1. Stream `Plataforma Landing` criado em **10/jun/2026** — sem baseline pré-agentes no mesmo stream.
-2. **GA Data API:** tentativa com `gcloud` retornou `403 ACCESS_TOKEN_SCOPE_INSUFFICIENT`; service account não configurada ([`GCP_SERVICE_ACCOUNT_SETUP.md`](../../GCP_SERVICE_ACCOUNT_SETUP.md)).
-3. **Browser GA4:** requer re-autenticação Google (não automatizável nesta sessão).
-4. **MCP `get_ga4_metrics`:** devolve dados **simulados** (1450 users, 1820 sessions) — **não usar para decisões**.
+2. **GA Data API:** configurada com service account `landing-ga4-reader` (Viewer na propriedade `327916606`). Snapshot CLI: `npm run fetch:ga4-snapshot`.
+3. **Key events:** eventos disparam no site; marcação como key event no Admin GA4 é **manual** (ver [`integrations.md`](../knowledge-base/integrations.md)).
+4. **MCP `get_seo_health`:** devolve heurística **simulada** — não substitui GSC. Use `npm run check:gsc-indexing` para indexação.
+5. Sem MCP, `get_ga4_metrics` cai em `mock_fallback` — rotular como cenário de exemplo.
 
-### Tabela para preenchimento manual no Admin
+### Tabela snapshot GA4 (Data API)
 
 _Último snapshot: 2026-06-17._
 
-| Período | Janela | Utilizadores ativos | Sessões | Novos utilizadores | `generate_lead` | Taxa lead/sessão | Notas |
-|---------|--------|---------------------|---------|-------------------|-----------------|------------------|-------|
-| **A — Baseline** | 2026-06-10 – 2026-06-11 | 13 | 20 | 13 | 0 | 0.00% | Pós-fix tag GA4 |
-| **B — Pós-conteúdo** | 2026-06-12 – 2026-06-17 | 11 | 21 | 7 | 0 | 0.00% | Home redesign + motor/campanhas |
-| **C — Pré-stream** | 2026-06-03 – 2026-06-09 | 0 | 0 | 0 | 0 | — | hostName = plataforma.4unik.com.br |
+| Período | Janela | Utilizadores ativos | Sessões | Novos utilizadores | `generate_lead` | `schedule_demo` | `contact_whatsapp` | Taxa funil/sessão | Notas |
+|---------|--------|---------------------|---------|-------------------|-----------------|-----------------|-------------------|-------------------|-------|
+| **A — Baseline** | 2026-06-10 – 2026-06-11 | 13 | 20 | 13 | 0 | 0 | 0 | 0.00% | Pós-fix tag GA4 |
+| **B — Pós-conteúdo** | 2026-06-12 – 2026-06-17 | 11 | 21 | 7 | 0 | 0 | 0 | 0.00% | Home redesign + motor/campanhas |
+| **C — Pré-stream** | 2026-06-03 – 2026-06-09 | 0 | 0 | 0 | 0 | 0 | 0 | — | hostName = plataforma.4unik.com.br |
 
 **Métricas derivadas a calcular:**
 
-- Taxa `generate_lead` / sessão (B vs A)
-- Top 10 páginas: `/landing/`, ICPs, motor/campanhas, blog `"8"`
+- Taxa por evento / sessão: `generate_lead`, `schedule_demo`, `contact_whatsapp`
+- Taxa funil total (soma dos três eventos / sessões)
+- Top 10 páginas: `/landing/`, ICPs, `/gamificacao-para-rh/`, motor/campanhas, blog `"8"`
 - Origem/meio: organic vs direct vs referral
 
 ### Interpretação esperada
@@ -142,7 +149,7 @@ Auditoria 10/jun em [`integrations.md`](../knowledge-base/integrations.md): Real
 
 - Conteúdo: home narrativa nova, gamificação diferenciada, 5 ICPs, case Boticário, dedupe de stats.
 - SEO: sitemap, canonical, hreflang, OG ICP, `llms.txt`, EEAT blog, growth pages com gate.
-- Analytics: GA4 end-to-end em produção + evento de lead.
+- Analytics: GA4 end-to-end + funil de 3 eventos (`generate_lead`, `schedule_demo`, `contact_whatsapp`).
 - Agentes: KB estruturada, skills, backlog disciplinado, documentação para Paperclip.
 
 ### (b) Crescimento de tráfego comprovado — **não confirmado nesta revisão**
@@ -159,13 +166,13 @@ Auditoria 10/jun em [`integrations.md`](../knowledge-base/integrations.md): Real
 
 | Prioridade | Ação | Responsável sugerido |
 |------------|------|----------------------|
-| **P1** | Configurar service account GCP + GA Data API no MCP (substituir `mockGa4Payload`) | Dev + owner GA |
-| **P1** | Marcar `generate_lead` como **key event** no GA4; criar exploração “Landing stream only” | Marketing |
-| **P1** | Ativar automation **weekly growth audit** ([`cursor-automations-growth.md`](../cursor-automations-growth.md)) | Cursor admin |
-| **P2** | Aplicar proxy 301 para paths sem `/landing` (motor-gamificacao, pricing, ICPs) | Infra |
+| **P1** | Marcar **key events** (`generate_lead`, `schedule_demo`, `contact_whatsapp`) no GA4 Admin | Marketing |
+| **P1** | Ativar automation **monthly GA4 snapshot** ([`cursor-automations-growth.md`](../cursor-automations-growth.md)) | Cursor admin |
+| **P1** | Publicar `/gamificacao-para-rh/` PT+EN (long-tail RH) | Marketing + Dev — **implementado**; falta deploy |
+| **P2** | Aplicar proxy 301 para paths sem `/landing` | Infra (`PLATAFORMA_PROXY_SSH`) |
 | **P2** | Alinhar seed Sanity home (`buildHomeMarketingPageContent` → narrativa 8 secções) | Dev |
 | **P2** | Resolver billing GitHub Actions OU manter ritual `deploy:production` pós-merge | Owner org Yoooobe |
-| **P3** | Revisão GSC (impressões/cliques por página ICP) após 28 dias do deploy ICPs | Marketing |
+| **P3** | Revisão GSC (impressões/cliques por página ICP) — ver [`REAVALIACAO-2026-07.md`](REAVALIACAO-2026-07.md) | Marketing |
 
 ---
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T17:08:04.400Z",
+  "generatedAt": "2026-06-17T18:38:26.542Z",
   "snapshotDate": "2026-06-17",
   "allSuccess": true,
   "periods": [
@@ -24,7 +24,12 @@
           "bounceRate": 0.25,
           "screenPageViews": 85,
           "generateLeadEvents": 0,
+          "scheduleDemoEvents": 0,
+          "contactWhatsappEvents": 0,
           "leadConversionRate": 0,
+          "scheduleDemoRate": 0,
+          "contactWhatsappRate": 0,
+          "funnelConversionRate": 0,
           "topTrafficChannels": [
             {
               "channel": "Direct",
@@ -117,7 +122,12 @@
           "bounceRate": 0.5238095238095238,
           "screenPageViews": 60,
           "generateLeadEvents": 0,
+          "scheduleDemoEvents": 0,
+          "contactWhatsappEvents": 0,
           "leadConversionRate": 0,
+          "scheduleDemoRate": 0,
+          "contactWhatsappRate": 0,
+          "funnelConversionRate": 0,
           "topTrafficChannels": [
             {
               "channel": "Direct",
@@ -210,7 +220,12 @@
           "bounceRate": 0,
           "screenPageViews": 0,
           "generateLeadEvents": 0,
+          "scheduleDemoEvents": 0,
+          "contactWhatsappEvents": 0,
           "leadConversionRate": 0,
+          "scheduleDemoRate": 0,
+          "contactWhatsappRate": 0,
+          "funnelConversionRate": 0,
           "topTrafficChannels": [],
           "topLandingPages": [],
           "topPagesDetail": []

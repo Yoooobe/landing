@@ -2,7 +2,9 @@
 
 **Data alvo:** ~**15/jul/2026** (4 semanas após revisão inicial de 17/jun/2026)  
 **Revisão base:** [`agent-seo-traffic-2026-06.md`](agent-seo-traffic-2026-06.md)  
-**Snapshot inicial:** [`ga4-snapshots/2026-06-17.json`](ga4-snapshots/2026-06-17.json)
+**Snapshot inicial:** [`ga4-snapshots/2026-06-17.json`](ga4-snapshots/2026-06-17.json)  
+**Baseline intercalar:** [`agent-seo-traffic-2026-07.md`](agent-seo-traffic-2026-07.md)  
+**Ops manuais:** [`MANUAL-OPS-CHECKLIST.md`](MANUAL-OPS-CHECKLIST.md)
 
 ## Pré-requisitos
 

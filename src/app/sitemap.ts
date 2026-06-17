@@ -43,6 +43,12 @@ const routePairs: RoutePair[] = [
   { pt: "/vendas/", en: "/en/vendas/", priority: 0.7, changeFrequency: "weekly" },
   { pt: "/comunidades/", en: "/en/comunidades/", priority: 0.7, changeFrequency: "weekly" },
   { pt: "/eventos/", en: "/en/eventos/", priority: 0.7, changeFrequency: "weekly" },
+  {
+    pt: "/gamificacao-para-rh/",
+    en: "/en/gamificacao-para-rh/",
+    priority: 0.75,
+    changeFrequency: "weekly",
+  },
   { pt: "/blog/", en: "/en/blog/", priority: 0.8, changeFrequency: "weekly" },
   {
     pt: "/plataforma/motor-gamificacao/",

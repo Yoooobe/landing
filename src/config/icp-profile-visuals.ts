@@ -234,6 +234,40 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
       },
     ],
   },
+  "gamificacao-para-rh": {
+    heroTheme: "icp-education",
+    gradientWord: { pt: "RH", en: "HR" },
+    titleGradientClass: "from-yoobe-purple via-fuchsia-500 to-yoobe-neon-pink",
+    accentTextClass: "text-yoobe-purple",
+    accentBgClass: "bg-yoobe-purple/10",
+    accentBorderClass: "border-yoobe-purple/30",
+    heroGlowPrimaryClass: "bg-yoobe-purple/22",
+    heroGlowSecondaryClass: "bg-fuchsia-500/12",
+    chromeLabel: "people.4unik.io",
+    images: {
+      hero: "/screens/gamif-regras.webp",
+      how: "/screens/admin-campaign-config-desktop.webp",
+      benefits: "/screens/gamif-niveis.webp",
+    },
+    floatingCards: [
+      {
+        icon: "users",
+        title: { pt: "Missão cumprida", en: "Mission complete" },
+        sub: { pt: "Reconhecimento + pontos", en: "Recognition + points" },
+        chipClass: "text-yoobe-purple bg-yoobe-purple/15 border-yoobe-purple/30",
+        delay: 0.5,
+        floatDuration: 7.5,
+      },
+      {
+        icon: "gift",
+        title: { pt: "Prémio resgatado", en: "Reward redeemed" },
+        sub: { pt: "Entrega rastreada", en: "Tracked delivery" },
+        chipClass: "text-fuchsia-400 bg-fuchsia-500/15 border-fuchsia-500/30",
+        delay: 0.7,
+        floatDuration: 9,
+      },
+    ],
+  },
 };
 
 export function getIcpProfileVisual(slug: string): IcpProfileVisual | null {

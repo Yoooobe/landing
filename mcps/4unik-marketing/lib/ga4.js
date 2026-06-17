@@ -74,7 +74,7 @@ function parseEngagementTotals(response) {
   };
 }
 
-async function fetchGenerateLeadCount(analytics, startDate, endDate, scopeFilter) {
+async function fetchEventCount(analytics, startDate, endDate, scopeFilter, eventName) {
   const response = await runReport(analytics, {
     dateRanges: [{ startDate, endDate }],
     dimensionFilter: {
@@ -84,7 +84,7 @@ async function fetchGenerateLeadCount(analytics, startDate, endDate, scopeFilter
           {
             filter: {
               fieldName: "eventName",
-              stringFilter: { matchType: "EXACT", value: "generate_lead" },
+              stringFilter: { matchType: "EXACT", value: eventName },
             },
           },
         ],
@@ -93,6 +93,15 @@ async function fetchGenerateLeadCount(analytics, startDate, endDate, scopeFilter
     metrics: [{ name: "eventCount" }],
   });
   return metricValueFromRow(response.data.rows?.[0], 0);
+}
+
+async function fetchConversionEventCounts(analytics, startDate, endDate, scopeFilter) {
+  const [generateLeadEvents, scheduleDemoEvents, contactWhatsappEvents] = await Promise.all([
+    fetchEventCount(analytics, startDate, endDate, scopeFilter, "generate_lead"),
+    fetchEventCount(analytics, startDate, endDate, scopeFilter, "schedule_demo"),
+    fetchEventCount(analytics, startDate, endDate, scopeFilter, "contact_whatsapp"),
+  ]);
+  return { generateLeadEvents, scheduleDemoEvents, contactWhatsappEvents };
 }
 
 /**
@@ -144,13 +153,13 @@ export async function fetchGa4LandingMetrics({
     }
 
     const engagement = parseEngagementTotals(engagementResponse);
-    const generateLeadEvents = await fetchGenerateLeadCount(
+    const conversionEvents = await fetchConversionEventCounts(
       analytics,
       startDate,
       endDate,
       activeFilter,
     );
-    const totals = { ...engagement, generateLeadEvents };
+    const totals = { ...engagement, ...conversionEvents };
 
     const channelResponse = await runReport(analytics, {
       dateRanges: [{ startDate, endDate }],
@@ -182,6 +191,9 @@ export async function fetchGa4LandingMetrics({
 
     const sessions = totals.sessions || 0;
     const generateLead = totals.generateLeadEvents || 0;
+    const scheduleDemo = totals.scheduleDemoEvents || 0;
+    const contactWhatsapp = totals.contactWhatsappEvents || 0;
+    const conversionEventsTotal = generateLead + scheduleDemo + contactWhatsapp;
 
     return {
       status: "success",
@@ -193,6 +205,10 @@ export async function fetchGa4LandingMetrics({
       metrics: {
         ...totals,
         leadConversionRate: sessions > 0 ? Number((generateLead / sessions).toFixed(4)) : 0,
+        scheduleDemoRate: sessions > 0 ? Number((scheduleDemo / sessions).toFixed(4)) : 0,
+        contactWhatsappRate: sessions > 0 ? Number((contactWhatsapp / sessions).toFixed(4)) : 0,
+        funnelConversionRate:
+          sessions > 0 ? Number((conversionEventsTotal / sessions).toFixed(4)) : 0,
         topTrafficChannels: topChannels,
         topLandingPages: topPages.map((p) => p.path),
         topPagesDetail: topPages,
@@ -227,7 +243,12 @@ export function mockGa4Payload(startDate, endDate) {
       bounceRate: 42.5,
       screenPageViews: 3200,
       generateLeadEvents: 45,
+      scheduleDemoEvents: 28,
+      contactWhatsappEvents: 19,
       leadConversionRate: 0.0247,
+      scheduleDemoRate: 0.0154,
+      contactWhatsappRate: 0.0104,
+      funnelConversionRate: 0.0505,
       topTrafficChannels: [{ channel: "Organic Search", sessions: 620 }],
       topLandingPages: ["/landing/api-integracoes", "/landing/casos-de-uso"],
     },

@@ -9,6 +9,8 @@ import { ptComunidadesPage } from "@/messages/segments/pt-comunidades-page";
 import { enComunidadesPage } from "@/messages/segments/en-comunidades-page";
 import { ptEventosPage } from "@/messages/segments/pt-eventos-page";
 import { enEventosPage } from "@/messages/segments/en-eventos-page";
+import { ptGamificacaoParaRhPage } from "@/messages/segments/pt-gamificacao-para-rh-page";
+import { enGamificacaoParaRhPage } from "@/messages/segments/en-gamificacao-para-rh-page";
 
 export type IcpVerticalItem = {
   readonly title: string;
@@ -68,7 +70,8 @@ export type IcpProfileSlug =
   | "educacao"
   | "vendas"
   | "comunidades"
-  | "eventos";
+  | "eventos"
+  | "gamificacao-para-rh";
 
 type IcpVerticalEntry = {
   readonly pt: IcpVerticalPage;
@@ -108,6 +111,12 @@ export const ICP_VERTICAL_PAGES: Record<IcpProfileSlug, IcpVerticalEntry> = {
     en: enEventosPage,
     titlePt: "Para eventos",
     titleEn: "For events",
+  },
+  "gamificacao-para-rh": {
+    pt: ptGamificacaoParaRhPage,
+    en: enGamificacaoParaRhPage,
+    titlePt: "Gamificação para RH",
+    titleEn: "HR gamification",
   },
 };
 

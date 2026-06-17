@@ -54,7 +54,7 @@ Habilite o servidor MCP **`4unik-marketing`** no Cursor (configuração de MCP d
 
 1. **`get_knowledge_freshness`** / **`search_product_knowledge`** — quando a tarefa envolver posicionamento ou ICP (ver Base NotebookLM).
 2. **`get_content_sync_registry`** — mapa de ficheiros para não desalinharem SEO (segmentos) e métricas por rota.
-3. **`get_landing_optimization_snapshot`** — visão unificada (GA simulado + SEO + ações priorizadas por rota). Parâmetros: `startDate` (YYYY-MM-DD), `endDate` opcional, `path` opcional (ex. `/casos-de-uso`).
+3. **`get_landing_optimization_snapshot`** — visão unificada (GA4 real + SEO heurístico + ações priorizadas por rota). Parâmetros: `startDate` (YYYY-MM-DD), `endDate` opcional, `path` opcional (ex. `/casos-de-uso`).
 4. Se precisar de granularidade: **`get_ga4_metrics`** (`startDate`, `endDate` opcional) e **`get_seo_health`** (`url` = URL pública completa da página, ex. `https://plataforma.4unik.com.br/landing/` + path).
 5. **`suggest_growth_opportunities`** — oportunidades de página/funil (readonly).
 

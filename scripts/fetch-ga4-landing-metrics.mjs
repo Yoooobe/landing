@@ -60,8 +60,8 @@ const PERIODS = [
 
 function buildMarkdownTable(results) {
   const lines = [
-    "| Período | Janela | Utilizadores ativos | Sessões | Novos utilizadores | `generate_lead` | Taxa lead/sessão | Notas |",
-    "|---------|--------|---------------------|---------|-------------------|-----------------|------------------|-------|",
+    "| Período | Janela | Utilizadores ativos | Sessões | Novos utilizadores | `generate_lead` | `schedule_demo` | `contact_whatsapp` | Taxa funil/sessão | Notas |",
+    "|---------|--------|---------------------|---------|-------------------|-----------------|-----------------|-------------------|-------------------|-------|",
   ];
 
   for (const { period, result } of results) {
@@ -71,8 +71,10 @@ function buildMarkdownTable(results) {
       result.status === "success"
         ? ""
         : ` ⚠️ ${result.reason}: ${result.note ?? ""}`;
+    const funnelTotal =
+      (m.generateLeadEvents ?? 0) + (m.scheduleDemoEvents ?? 0) + (m.contactWhatsappEvents ?? 0);
     lines.push(
-      `| **${period.id} — ${period.label}** | ${window} | ${formatNum(m.activeUsers)} | ${formatNum(m.sessions)} | ${formatNum(m.newUsers)} | ${formatNum(m.generateLeadEvents)} | ${formatRate(m.sessions, m.generateLeadEvents)} | ${period.notes}${status} |`,
+      `| **${period.id} — ${period.label}** | ${window} | ${formatNum(m.activeUsers)} | ${formatNum(m.sessions)} | ${formatNum(m.newUsers)} | ${formatNum(m.generateLeadEvents)} | ${formatNum(m.scheduleDemoEvents)} | ${formatNum(m.contactWhatsappEvents)} | ${formatRate(m.sessions, funnelTotal)} | ${period.notes}${status} |`,
     );
   }
 
@@ -86,7 +88,7 @@ function updateReviewMarkdown(tableMd, snapshotDate, allSuccess) {
   }
 
   let content = fs.readFileSync(REVIEW_PATH, "utf8");
-  const markerStart = "### Tabela para preenchimento manual no Admin";
+  const markerStart = "### Tabela snapshot GA4 (Data API)";
   const markerEnd = "**Métricas derivadas a calcular:**";
 
   const startIdx = content.indexOf(markerStart);

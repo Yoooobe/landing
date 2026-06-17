@@ -46,9 +46,9 @@ Estratégia e factos aprovados: `docs/knowledge-base/notebooklm/`.
 
 1. **`get_knowledge_freshness`** / **`get_notebooklm_briefing`** — ver Base NotebookLM.
 2. **`get_content_sync_registry`** — onde está a fonte única (segmentos + `routeMetadata.ts` + JSON-LD).
-3. **`get_landing_optimization_snapshot`** — contexto rápido (rotas com tráfego, bounce, issues SEO simuladas).
-4. **`get_ga4_metrics`** — período (`startDate`, `endDate` opcional).
-5. **`get_seo_health`** — uma URL por página cujo copy está sendo reescrito.
+3. **`get_landing_optimization_snapshot`** — contexto rápido (GA4 real quando credenciais configuradas; `get_seo_health` ainda heurístico).
+4. **`get_ga4_metrics`** — período (`startDate`, `endDate` opcional); requer `GOOGLE_APPLICATION_CREDENTIALS` para dados reais.
+5. **`get_seo_health`** — heurística simulada por URL; para indexação use `npm run check:gsc-indexing` no repo.
 
 Para ângulo AEO (FAQs, definições claras da marca), use também **`get_aeo_landing_checklist`** do mesmo MCP.
 

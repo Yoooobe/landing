@@ -194,6 +194,7 @@ const STRATEGIC_PAGE_GAPS = [
     effort: "high",
     priority: "P2",
     source: "docs/enterprise-content-strategy.md",
+    status: "shipped",
   },
   {
     route: "/recursos/sla/",
@@ -207,23 +208,25 @@ const STRATEGIC_PAGE_GAPS = [
   },
   {
     route: "/gamificacao-para-rh/",
-    enRoute: "/en/gamification-for-hr/",
+    enRoute: "/en/gamificacao-para-rh/",
     intention: "Pilar SEO/AEO long-tail RH",
     icp: "CHRO, People Ops",
     proofNeeded: "FAQ + casos",
     effort: "medium",
     priority: "P1",
     source: "docs/aeo-ai-visibility.md",
+    status: "shipped",
   },
   {
     route: "/para-plataformas/",
-    enRoute: "/en/for-platforms/",
+    enRoute: "/en/para-plataformas/",
     intention: "Camada de execução embedded: API de recompensas dentro do app do parceiro (Product/Inventory/Checkout, SDK, webhooks)",
     icp: "Plataformas de gamificação / B2B SaaS (CTO, Produto)",
     proofNeeded: "Docs de API, fluxo de integração, SDK/sandbox confirmados pelo produto",
     effort: "high",
     priority: "P1",
     source: "docs/knowledge-base/notebooklm/icp-personas.md",
+    status: "shipped",
   },
   {
     route: "/educacao/",
@@ -238,33 +241,36 @@ const STRATEGIC_PAGE_GAPS = [
   },
   {
     route: "/vendas/",
-    enRoute: "/en/sales/",
+    enRoute: "/en/vendas/",
     intention: "Incentivo de vendas integrado ao CRM com premiação instantânea",
     icp: "Diretor/VP de Vendas, RevOps",
     proofNeeded: "Integração CRM e fluxo de pontos automáticos",
     effort: "medium",
     priority: "P2",
     source: "docs/knowledge-base/notebooklm/icp-personas.md",
+    status: "shipped",
   },
   {
     route: "/comunidades/",
-    enRoute: "/en/communities/",
+    enRoute: "/en/comunidades/",
     intention: "Loja VIP de fãs com fulfillment 100% pela 4unik",
     icp: "Criadores de conteúdo, gestores de comunidade",
     proofNeeded: "Exemplos de swag exclusivo + catálogo",
     effort: "medium",
     priority: "P3",
     source: "docs/knowledge-base/notebooklm/icp-personas.md",
+    status: "shipped",
   },
   {
     route: "/eventos/",
-    enRoute: "/en/events/",
+    enRoute: "/en/eventos/",
     intention: "Pontos no evento + checkout no celular: retira no estande ou recebe em casa",
     icp: "Produtores de eventos físicos/híbridos, agências de experiência",
     proofNeeded: "Fluxo de checkout e rastreio no evento",
     effort: "medium",
     priority: "P3",
     source: "docs/knowledge-base/notebooklm/icp-personas.md",
+    status: "shipped",
   },
   {
     route: "/recursos/roi-calculadora/",
@@ -332,7 +338,8 @@ function buildPageUrl(path) {
 
 function mockSeoPayload(url) {
   return {
-    status: "success",
+    status: "simulated",
+    note: "Heurística simulada. Para indexação real use npm run check:gsc-indexing no repo.",
     targetUrl: url,
     healthScore: 85,
     metrics: {
@@ -561,7 +568,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       {
         name: "get_seo_health",
         description:
-          "Obter dados simulados de saúde de SEO, tráfego orgânico e impressões das landing pages.",
+          "Heurística simulada de SEO on-page (não substitui Google Search Console). Para indexação use npm run check:gsc-indexing.",
         inputSchema: {
           type: "object",
           properties: {
@@ -576,7 +583,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
       {
         name: "get_landing_optimization_snapshot",
         description:
-          "Visão unificada para growth: GA4 real (ou mock_fallback) + SEO simulado + ações priorizadas por rota.",
+          "Visão unificada para growth: GA4 real (ou mock_fallback) + SEO heurístico + ações priorizadas por rota.",
         inputSchema: {
           type: "object",
           properties: {

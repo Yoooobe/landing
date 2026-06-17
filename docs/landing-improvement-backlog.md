@@ -16,6 +16,7 @@
 | Done | P1 | Ops | Secret `NEXT_PUBLIC_INDEX_GROWTH_PAGES=true` no deploy + verificação pós-build (`verify:growth-index-build`) | High | Low | `.github/workflows/deploy.yml`, `scripts/verify-growth-index-build.mjs` |
 | Done | P1 | Content | Post blog case Boticário (slug `"8"`, PT+EN) — treinamento gamificado segurança de dados | High | Low | `src/lib/blogFallback.ts`, `src/lib/blogLandingLinks.ts` |
 | Done | P1 | Content | Case Boticário na página `/educacao/` (`IcpProfileCaseSection`) | High | Low | `src/messages/segments/*-educacao-page.ts`, `src/components/icp/` |
+| Done | P1 | SEO | Página `/gamificacao-para-rh/` PT+EN (long-tail RH) + blog CTAs 7/8 | High | Low | `src/messages/segments/*-gamificacao-para-rh-page.ts`, `src/app/(pt)/gamificacao-para-rh/` |
 
 ## Next Up
 | Priority | Theme | Change | Impact | Risk | Key files |

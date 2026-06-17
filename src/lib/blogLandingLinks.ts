@@ -18,8 +18,8 @@ export const BLOG_CTA_PATHS_BY_SLUG: Record<
   "4": { platform: "/plataforma", feature: "/plataforma/loja-resgate", img: "welcomeKit" },
   "5": { platform: "/plataforma/painel-gestor", feature: "/plataforma/motor-gamificacao", img: "dashboard" },
   "6": { platform: "/plataforma/painel-gestor", feature: "/plataforma", img: "analytics" },
-  "7": { platform: "/casos-de-uso", feature: "/plataforma", img: "peopleHr" },
-  "8": { platform: "/educacao", feature: "/plataforma/motor-gamificacao", img: "peopleHr" },
+  "7": { platform: "/gamificacao-para-rh", feature: "/plataforma/motor-gamificacao", img: "peopleHr" },
+  "8": { platform: "/educacao", feature: "/gamificacao-para-rh", img: "peopleHr" },
 };
 
 /**
@@ -355,11 +355,11 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         ctaLabel: "Ver solução para educação",
       },
       feature: {
-        eyebrow: "Motor de gamificação",
-        title: "Pontos e missões por vídeo assistido",
+        eyebrow: "Gamificação para RH",
+        title: "Reconhecimento e missões para colaboradores",
         description:
-          "No motor da 4unik você configura regras por conclusão de módulo ou trilha — ideal para campanhas de compliance e segurança de dados.",
-        ctaLabel: "Ver motor de gamificação",
+          "A página Gamificação para RH liga cultura e performance a prémios físicos — complementa trilhas de educação e compliance com fulfillment pela 4unik.",
+        ctaLabel: "Ver gamificação para RH",
         featureAlt: "Profissionais em treinamento corporativo com foco em dados e cultura",
       },
       demo: {
@@ -379,11 +379,11 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         ctaLabel: "View education solution",
       },
       feature: {
-        eyebrow: "Gamification engine",
-        title: "Points and missions per video completed",
+        eyebrow: "HR gamification",
+        title: "Recognition and missions for employees",
         description:
-          "On the 4unik engine you set rules per module or path completion — ideal for compliance and data-security campaigns.",
-        ctaLabel: "View gamification engine",
+          "The HR gamification page ties culture and performance to physical rewards — complements education and compliance paths with 4unik fulfillment.",
+        ctaLabel: "View HR gamification",
         featureAlt: "Corporate professionals in training focused on data and culture",
       },
       demo: {
@@ -398,18 +398,18 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
   "7": {
     pt: {
       platform: {
-        eyebrow: "Casos de uso · landing",
-        title: "Como outras equipas usam a 4unik",
+        eyebrow: "Gamificação para RH · landing",
+        title: "Programas de engajamento que o RH opera",
         description:
-          "A página Casos de uso mostra cenários reais — inspiração antes de pedires ajuda para cultura, feedback e performance contínuos.",
-        ctaLabel: "Ver casos de uso",
+          "A página Gamificação para RH explica missões, pontos e prémios físicos sem logística interna — ponto de partida para cultura e reconhecimento.",
+        ctaLabel: "Ver gamificação para RH",
       },
       feature: {
-        eyebrow: "Plataforma · oferta",
-        title: "Reconhecimento e missões no dia a dia",
+        eyebrow: "Motor de gamificação",
+        title: "Missões e campanhas por período",
         description:
-          "A Plataforma detalha módulos e fluxos — combina com gestão de pessoas; representantes 4unik ajudam a desenhar o teu modelo.",
-        ctaLabel: "Abrir página Plataforma",
+          "O motor liga metas de equipe e reconhecimento a pontos resgatáveis — representantes 4unik ajudam a configurar regras e calendário.",
+        ctaLabel: "Ver motor de gamificação",
         featureAlt: "RH e liderança em conversa estratégica",
       },
       demo: {
@@ -422,18 +422,18 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
     },
     en: {
       platform: {
-        eyebrow: "Use cases · landing",
-        title: "How teams use 4unik",
+        eyebrow: "HR gamification · landing",
+        title: "Engagement programs HR can run",
         description:
-          "The use cases page shows real scenarios — inspiration before you ask for help on culture, feedback and ongoing performance.",
-        ctaLabel: "View use cases",
+          "The HR gamification page explains missions, points, and physical rewards without in-house logistics — your starting point for culture and recognition.",
+        ctaLabel: "View HR gamification",
       },
       feature: {
-        eyebrow: "Platform · offer",
-        title: "Recognition and missions every day",
+        eyebrow: "Gamification engine",
+        title: "Missions and campaigns by period",
         description:
-          "The Platform page details modules and flows — pair with people management; 4unik reps help design your model.",
-        ctaLabel: "Open Platform page",
+          "The engine ties team goals and recognition to redeemable points — 4unik reps help configure rules and calendars.",
+        ctaLabel: "View gamification engine",
         featureAlt: "HR and leadership in strategic conversation",
       },
       demo: {
