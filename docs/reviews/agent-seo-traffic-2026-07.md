@@ -31,7 +31,7 @@
 
 ### Ações antes de 15/jul
 
-1. Marcar key events no Admin (ver [`MANUAL-OPS-CHECKLIST.md`](MANUAL-OPS-CHECKLIST.md)).
+1. ~~Marcar key events no Admin~~ — **feito** 17/jun/2026.
 2. Após deploy com funil completo: gerar hits de teste (form + Calendly + WhatsApp).
 3. `npm run fetch:ga4-snapshot` com período B estendido até 15/jul.
 
@@ -62,7 +62,7 @@
 ## 5. Veredito provisório
 
 **Infra de medição e SEO técnico:** confirmada e reforçada.  
-**Crescimento orgânico:** ainda **não comprovado** — aguardar janela até 15/jul + key events + deploy da página RH.
+**Crescimento orgânico:** ainda **não comprovado** — aguardar janela até 15/jul + dados pós key events.
 
 ---
 

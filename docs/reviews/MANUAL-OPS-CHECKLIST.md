@@ -2,16 +2,15 @@
 
 Itens que **não** são automatizáveis no repo. Marque quando concluídos.
 
-## GA4 Admin — key events
+## GA4 Admin — key events ✅ (17/jun/2026)
 
-1. Abrir [Admin → Events](https://analytics.google.com/analytics/web/#/a66932658p327916606/admin/events) → aba **Key events**.
-2. **New key event** (um de cada vez), nome exato:
-   - `generate_lead`
-   - `schedule_demo`
-   - `contact_whatsapp`
-3. Validar: clicar num CTA Calendly/WhatsApp em produção + submeter formulário de teste; confirmar em **Realtime** ou **Recent events**.
+- [x] `generate_lead`
+- [x] `schedule_demo`
+- [x] `contact_whatsapp`
 
-Referência: [`docs/knowledge-base/integrations.md`](../knowledge-base/integrations.md).
+Configurados em Admin → Events → Key events (**Create with code**). Eventos legados `ga4_form_*` / `ga4_wpp` são de implementação anterior — não substituem os nomes acima.
+
+Validação opcional: **Realtime** após clique/submit em produção. Referência: [`integrations.md`](../knowledge-base/integrations.md).
 
 ## Proxy 301 — paths sem `/landing`
 

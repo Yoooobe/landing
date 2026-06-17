@@ -57,7 +57,7 @@
 | Sanity `marketingPage.home` | Studio/fallback desalinhado (~25 blocos antigos via `buildHomeMarketingPageContent`) | Site público usa `HomePage.tsx` nativo — **sem impacto no visitante** |
 | GitHub Actions | CI + Deploy workflow **falham** (~3–9s, billing) | `gh-pages` nativo OK (deploy 12/jun success); deploy manual via `npm run deploy:production` |
 | MCP GA4 | **Resolvido** — SA `landing-ga4-reader@institucional-480905.iam.gserviceaccount.com` + `npm run fetch:ga4-snapshot` | Ver [`GCP_SERVICE_ACCOUNT_SETUP.md`](../../GCP_SERVICE_ACCOUNT_SETUP.md) |
-| Key events GA4 | **Pendente** — marcar `generate_lead`, `schedule_demo`, `contact_whatsapp` no Admin | [`integrations.md`](../knowledge-base/integrations.md) |
+| Key events GA4 | **Feito** (17/jun/2026) — `generate_lead`, `schedule_demo`, `contact_whatsapp` | [`integrations.md`](../knowledge-base/integrations.md) |
 | MCP `get_seo_health` | Heurística simulada; usar `npm run check:gsc-indexing` + checklist manual | Até integração GSC/PageSpeed |
 | Proxy 301 | URLs sem `/landing` → 404 no host raiz | Ver [`proxy-redirects-4unik.md`](../proxy-redirects-4unik.md) |
 
@@ -108,7 +108,7 @@ Configurar 301 conforme [`infra/plataforma-4unik-nginx-redirects.conf`](../../in
 
 1. Stream `Plataforma Landing` criado em **10/jun/2026** — sem baseline pré-agentes no mesmo stream.
 2. **GA Data API:** configurada com service account `landing-ga4-reader` (Viewer na propriedade `327916606`). Snapshot CLI: `npm run fetch:ga4-snapshot`.
-3. **Key events:** eventos disparam no site; marcação como key event no Admin GA4 é **manual** (ver [`integrations.md`](../knowledge-base/integrations.md)).
+3. **Key events:** configurados no Admin (17/jun/2026) — `generate_lead`, `schedule_demo`, `contact_whatsapp`.
 4. **MCP `get_seo_health`:** devolve heurística **simulada** — não substitui GSC. Use `npm run check:gsc-indexing` para indexação.
 5. Sem MCP, `get_ga4_metrics` cai em `mock_fallback` — rotular como cenário de exemplo.
 
@@ -166,7 +166,7 @@ Auditoria 10/jun em [`integrations.md`](../knowledge-base/integrations.md): Real
 
 | Prioridade | Ação | Responsável sugerido |
 |------------|------|----------------------|
-| **P1** | Marcar **key events** (`generate_lead`, `schedule_demo`, `contact_whatsapp`) no GA4 Admin | Marketing |
+| ~~**P1**~~ | ~~Marcar **key events** no GA4 Admin~~ | **Feito** 17/jun/2026 |
 | **P1** | Ativar automation **monthly GA4 snapshot** ([`cursor-automations-growth.md`](../cursor-automations-growth.md)) | Cursor admin |
 | **P1** | Publicar `/gamificacao-para-rh/` PT+EN (long-tail RH) | Marketing + Dev — **implementado**; falta deploy |
 | **P2** | Aplicar proxy 301 para paths sem `/landing` | Infra (`PLATAFORMA_PROXY_SSH`) |

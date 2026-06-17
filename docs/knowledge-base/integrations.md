@@ -53,7 +53,7 @@ Marcar os três eventos como **key events** após o deploy e um clique/submit de
 | Passo | Estado |
 |-------|--------|
 | Eventos disparam em produção | Implementado no código |
-| Marcar como key events no Admin | **Pendente** — ver caminho abaixo |
+| Marcar como key events no Admin | **Feito** (17/jun/2026) — `generate_lead`, `schedule_demo`, `contact_whatsapp` |
 
 **Caminho no Admin (interface em inglês):**
 
