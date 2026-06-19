@@ -266,7 +266,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ctaBody:
       "A 4unik entrega uma wallet única para consulta, uso e auditoria de pontos dentro da loja corporativa e também como camada conectada a outras ferramentas de gamificação e engajamento.",
     primaryCtaLabel: "Falar com o time",
-    primaryCtaHref: "https://wa.me/554163470307",
+    primaryCtaHref: "https://wa.me/554187582060",
     secondaryCtaLabel: "Ver a plataforma",
     secondaryCtaHref: "/plataforma",
     backLabel: "Voltar para plataforma",
@@ -691,7 +691,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ctaBody:
       "4unik gives you one wallet layer for checking, spending, and auditing points inside the corporate store and across external engagement and gamification tools.",
     primaryCtaLabel: "Talk to the team",
-    primaryCtaHref: "https://wa.me/554163470307",
+    primaryCtaHref: "https://wa.me/554187582060",
     secondaryCtaLabel: "View the platform",
     secondaryCtaHref: "/plataforma",
     backLabel: "Back to platform",

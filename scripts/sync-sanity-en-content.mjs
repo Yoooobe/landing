@@ -273,7 +273,7 @@ export function homePayloadEn() {
     finalCta: {
       ...enHome.finalCta,
       demoHref: "https://calendly.com/4unik/30min",
-      whatsappHref: "https://wa.me/554163470307",
+      whatsappHref: "https://wa.me/554187582060",
     },
   };
 }
@@ -866,7 +866,7 @@ export function buildCurrentEnglishMenus() {
             {
               _key: "sales",
               label: enFooter.links.comercial,
-              href: "https://wa.me/554163470307",
+              href: "https://wa.me/554187582060",
               openInNewTab: true,
             },
           ],
