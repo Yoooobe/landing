@@ -143,6 +143,32 @@ Agentes Paperclip (e Cursor) que operam neste repositório devem:
 
 Produção actual (`gh-pages`) já servia GA correctamente — redeploy não necessário nesta auditoria.
 
+## Catálogo 4unik (`catalogo.4unik.com.br`)
+
+Repositório: `genautech/yoobe-catalogo-refactor` (branch `preview/4unik`).  
+Paperclip: ler [`catalogo/docs/catalog-background-agents.md`](../../catalogo/docs/catalog-background-agents.md) antes de alterar o funil catálogo → plataforma.
+
+| Item | Valor |
+|------|-------|
+| **Produção actual (Cloud Run)** | `https://catalog-app-lhofqqf2ra-uc.a.run.app` |
+| **Domínio canónico (pós-DNS)** | `https://catalogo.4unik.com.br` |
+| **GA4 property** | `327916606` (mesma da landing) |
+| **Measurement ID** | `G-SMJDYCENBC` (`NEXT_PUBLIC_GA_ID_4UNIK` no catálogo) |
+| **Segmentação** | Parâmetro custom `tenant=4unik` em eventos (`platform_promo_click`, `kit_cta_click`, etc.) |
+| **UTM catálogo → plataforma** | `utm_source=catalogo`, `utm_medium=cta`, `utm_campaign=platform-discovery` |
+
+**GA4 Admin (DevOps):** criar data stream **"Catálogo 4unik"** na propriedade `327916606` com URL `https://catalogo.4unik.com.br` (pode partilhar o mesmo Measurement ID ou stream dedicado).
+
+**Verificação catálogo:**
+
+```bash
+node scripts/gcp/verify-production-tenant.mjs https://catalog-app-lhofqqf2ra-uc.a.run.app
+# pós-cutover DNS:
+node scripts/gcp/verify-production-tenant.mjs https://catalogo.4unik.com.br
+```
+
+Cutover DNS: [`catalogo/docs/4UNIK-DNS-CUTOVER.md`](../../catalogo/docs/4UNIK-DNS-CUTOVER.md).
+
 **Nota sobre "Data collection isn't active" (2026-06-10):** o stream `Plataforma Landing` foi criado no mesmo dia do primeiro tráfego real; os indicadores do GA4 ("isn't active", "No data received in past 48 hours") têm atraso de até 24-48h após os primeiros hits. Tag, stream e propriedade confirmados corretos por screenshot do Admin. Se após 48h continuar sem dados: testar com [Tag Assistant](https://tagassistant.google.com) ligado a `https://plataforma.4unik.com.br/landing/` e verificar Admin → Filtros de dados.
 
 Não há registo separado no Paperclip — a KB versionada no repo é a fonte de verdade; sincronizar skills Paperclip a partir deste repo após push para `main`.

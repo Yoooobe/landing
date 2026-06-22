@@ -25,6 +25,11 @@ Keep landing improvements moving in small, low-conflict background loops while p
 5. `/inteligencia/` and `/en/inteligencia/`
 6. `/casos-de-uso/` and `/en/casos-de-uso/`
 7. `/educacao/` and `/en/educacao/` (case Boticário, blog slug `"8"`, CTAs para motor/loja)
+8. **Catálogo 4unik** — `https://catalogo.4unik.com.br` (pós-cutover DNS) ou `https://catalog-app-lhofqqf2ra-uc.a.run.app` (Cloud Run atual); funil `utm_source=catalogo` → plataforma. Ver [`catalogo/docs/catalog-background-agents.md`](../../catalogo/docs/catalog-background-agents.md).
+
+## Cross-repo (catálogo)
+
+Agentes que alteram o funil catálogo → plataforma devem ler [`catalogo/docs/catalog-background-agents.md`](../../catalogo/docs/catalog-background-agents.md).
 
 ## Recommended Loop
 1. `audit` or `growth-ideation` writes or refreshes the prioritized backlog (ideation may run when NotebookLM sync or quarterly planning — see [`agent-knowledge-notebooklm.md`](agent-knowledge-notebooklm.md)).
