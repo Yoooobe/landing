@@ -16,6 +16,7 @@ CLAUDE_BIN="$(command -v claude || echo "$HOME/.local/share/dense/bin/claude")"
 
 "$CLAUDE_BIN" -p "Rode a skill seo-improver-loop (skills/seo-improver-loop/SKILL.md) para o projeto 4unik landing. Siga o fluxo completo: medir (GA4/GSC), orquestrar via marketing-strategy-orchestrator, priorizar backlog, aplicar mudanças de baixo risco no Sanity, abrir PR para mudanças estruturais, e atualizar o relatório em docs/reviews/. Reporte um resumo do que foi feito ao final." \
   --allow-dangerously-skip-permissions \
+  --dangerously-skip-permissions \
   >> "$LOG_FILE" 2>&1
 
 echo "seo-improver-loop run finished at $(date)" >> "$LOG_FILE"
