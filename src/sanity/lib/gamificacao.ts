@@ -18,11 +18,11 @@ function toMutable<T>(value: T): MutableDeep<T> {
 const fallbackByLocale: Record<Locale, ResolvedGamificacaoContent> = {
   pt: {
     seo: {
-      title: "Gamificacao Corporativa | 4unik",
+      title: "Gamificação corporativa: pontos, rankings e recompensas | 4Unik",
       description:
-        "Motor de gamificacao corporativa com pontos, rankings, desafios, recompensas reais e analytics para RH e liderancas.",
+        "Motor de gamificação corporativa com pontos, rankings, desafios, recompensas reais e analytics para RH e lideranças.",
       openGraphDescription:
-        "Gamificacao corporativa com pontos, rankings, desafios e recompensas reais para elevar engajamento e performance.",
+        "Gamificação corporativa com pontos, rankings, desafios e recompensas reais para elevar engajamento e performance.",
     },
     hero: {
       ...toMutable(ptGamificacao.hero),
