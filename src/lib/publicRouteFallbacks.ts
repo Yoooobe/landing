@@ -10,15 +10,15 @@ export type PlataformaStubVariant = "motor" | "logistica" | "loja";
 const plataformaStubSeoByLocale: Record<Locale, Record<PlataformaStubVariant, PageSeoCopy>> = {
   pt: {
     motor: {
-      title: "Motor de Gamificacao | 4Unik",
+      title: "Motor de gamificação corporativa | 4Unik — pontos, missões e rankings",
       description: ptLandingMore.plataformaStubs.motor.body,
     },
     logistica: {
-      title: "Logistica Integrada | 4Unik",
+      title: "Logística integrada de brindes e prêmios | 4Unik",
       description: ptLandingMore.plataformaStubs.logistica.body,
     },
     loja: {
-      title: "Loja Corporativa e Resgates | 4Unik",
+      title: "Loja corporativa de resgates e recompensas | 4Unik",
       description: ptLandingMore.plataformaStubs.loja.body,
     },
   },
@@ -40,7 +40,7 @@ const plataformaStubSeoByLocale: Record<Locale, Record<PlataformaStubVariant, Pa
 
 const blogListingSeoByLocale: Record<Locale, PageSeoCopy> = {
   pt: {
-    title: "Blog | 4unik",
+    title: "Blog 4Unik — engajamento, gamificação e reconhecimento",
     description: ptBlogPage.sub,
   },
   en: {

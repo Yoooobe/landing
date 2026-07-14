@@ -1,6 +1,6 @@
 export const ptPlataforma = {
   seo: {
-    title: "Plataforma | 4unik V3 — Reward Infrastructure",
+    title: "Plataforma de gamificação e recompensas corporativas | 4Unik",
     description:
       "Painel analítico, motor de gamificação, loja de resgates, logística e segurança enterprise. Tudo para reconhecer, premiar e entregar — sem o RH virar uma operação de logística.",
     openGraphDescription:

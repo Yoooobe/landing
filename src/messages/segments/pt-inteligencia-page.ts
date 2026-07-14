@@ -1,6 +1,6 @@
 export const ptInteligenciaPage = {
   seo: {
-    title: "Inteligência | 4Unik — Reward Infrastructure",
+    title: "IA para engajamento e reconhecimento corporativo | 4Unik",
     description:
       "Camada de inteligência para engajamento: campanhas assistidas, kits, recomendações e integração com Workvivo. Roadmap de IA aplicada ao RH.",
     openGraphDescription:

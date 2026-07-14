@@ -1,6 +1,6 @@
 export const ptCasosPage = {
   seo: {
-    title: "Casos de uso | 4Unik — Reward Infrastructure",
+    title: "Casos de uso de gamificação corporativa e recompensas | 4Unik",
     description:
       "Estudos de caso de empresas globais em gamificação corporativa e comunidades. Como gigantes escalam engajamento — e como a 4Unik fornece infraestrutura de recompensas.",
     openGraphDescription:

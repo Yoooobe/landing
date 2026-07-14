@@ -1,6 +1,6 @@
 export const ptPricingPage = {
   seo: {
-    title: "Planos e preços | 4Unik",
+    title: "Planos e preços | 4Unik — plataforma de recompensas corporativas",
     description:
       "Compare planos para gamificação, loja de recompensas e API. Escale por usuários ativos sem operar logística sozinho.",
   },
