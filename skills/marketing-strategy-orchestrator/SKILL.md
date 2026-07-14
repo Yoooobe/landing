@@ -30,6 +30,8 @@ Meta-skill para tarefas amplas. **Uma sessão = um tema** — não misturar sche
 3. `marketing-ai-citation-strategist`
 4. MCP: `get_aeo_landing_checklist`, `get_landing_optimization_snapshot`
 
+Execução recorrente automatizada (semanal, mede+aplica low-risk+relatório): [`seo-improver-loop`](../seo-improver-loop/SKILL.md).
+
 ### `navigation`
 
 1. `marketing-page-ideator`
