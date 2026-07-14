@@ -8,7 +8,7 @@
     "generate:llms": "npx tsx scripts/generate-llms-txt.ts",
     "generate:og": "node scripts/generate-og-images.mjs",
     "generate:icp-screens": "node scripts/generate-icp-showcase-images.mjs",
-    "build": "npm run generate:llms && npm run generate:og && next build && node scripts/patch-studio-spa-fallback.mjs",
+    "build": "npm run generate:llms && npm run generate:og && next build && node scripts/patch-studio-spa-fallback.mjs && node scripts/generate-root-redirect-stubs.mjs",
     "start": "next start",
     "lint": "eslint",
     "seed:sanity": "node scripts/seed-sanity-content.mjs",
