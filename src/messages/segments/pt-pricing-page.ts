@@ -23,6 +23,14 @@ export const ptPricingPage = {
         q: "Posso começar pequeno e migrar de plano?",
         a: "Sim. A maioria dos clientes começa no Starter ou Pro e evolui quando aumentam colaboradores, campanhas ou integrações.",
       },
+      {
+        q: "A logística de entrega das recompensas está incluída?",
+        a: "Sim — estoque, montagem de kits, envio e rastreio fazem parte da operação da plataforma. O desenho logístico (volumes, praças e prazos) é ajustado ao seu cenário na proposta comercial.",
+      },
+      {
+        q: "Preciso falar com vendas para começar?",
+        a: "Você pode explorar a plataforma e validar o caso de uso na demonstração guiada antes de qualquer contrato. Para ativar o programa, o time comercial monta o plano com catálogo, integrações e logística do seu caso.",
+      },
     ],
   },
   cta: {
