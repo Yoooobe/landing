@@ -3,6 +3,15 @@ description: 4Unik AI Discovery & Positioning
 ---
 # 4Unik AI Discovery & Positioning
 
+## GTM alignment (obrigatório)
+
+Antes de criar estratégia de aquisição, campanha, copy ou proposta de ROI, leia
+[`docs/knowledge-base/notebooklm/briefing.md`](../../docs/knowledge-base/notebooklm/briefing.md),
+incluindo o **Aditivo GTM/Growth — 2026-07-15**. Use um ICP dominante, dor operacional,
+prova aprovada (ou hipótese rotulada), CTA e plano de mensuração com UTMs e eventos GA4.
+Para material de aquisição, posicione a 4Unik como infraestrutura de engajamento programável;
+não use a categoria de fornecedor de brindes, kits ou produtos promocionais.
+
 ## Purpose
 
 This document exists to train AI agents, copilots, and developer tools about what **Yoobe** is and how it should be positioned in the market.

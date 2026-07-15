@@ -49,6 +49,15 @@ function parseGaIdFromEnv() {
   return gaId;
 }
 
+/** Same rules as src/lib/site.ts */
+function parseGoogleAdsIdFromEnv() {
+  const adsId = (process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? "").trim();
+  if (!adsId || adsId === "AW-XXXXXXXXX" || !/^AW-\d+$/i.test(adsId)) {
+    return null;
+  }
+  return adsId;
+}
+
 /** Broken legacy paths → correct destination (path only, incl. basePath). */
 function legacyRedirectEntries(basePath) {
   const bp = basePath || "";
@@ -73,15 +82,19 @@ const legacyJsLines = legacyPairs
   .join(",\n");
 
 const gaId = parseGaIdFromEnv();
+const googleAdsId = parseGoogleAdsIdFromEnv();
+const gtagLoaderId = gaId ?? googleAdsId;
 const gaIdHtml = gaId ? escapeForHtmlAttribute(gaId) : "";
-const gaHeadBlock = gaId
+const googleAdsIdHtml = googleAdsId ? escapeForHtmlAttribute(googleAdsId) : "";
+const gtagHeadBlock = gtagLoaderId
   ? `
-  <script async src="https://www.googletagmanager.com/gtag/js?id=${gaIdHtml}"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${escapeForHtmlAttribute(gtagLoaderId)}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '${gaIdHtml}');
+${gaId ? `    gtag('config', '${gaIdHtml}');` : ""}
+${googleAdsId ? `    gtag('config', '${googleAdsIdHtml}');` : ""}
   </script>`
   : "";
 
@@ -92,7 +105,7 @@ const html = `<!DOCTYPE html>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="${canonicalHomeUrlHtml}" />
   <meta http-equiv="refresh" content="0;url=${homeUrlJs}" />
-  <title>A redirecionar…</title>${gaHeadBlock}
+  <title>A redirecionar…</title>${gtagHeadBlock}
   <script>
 (function () {
   var STORAGE_KEY = "${STORAGE_KEY}";
@@ -164,5 +177,5 @@ if (!existsSync(join(outDir, ".nojekyll"))) {
 }
 
 console.log(
-  `patch-studio-spa-fallback: out/404.html + out/404/index.html (Studio → ${studioRoot}, home → ${homeUrl}, canonical ${canonicalHomeUrl}${gaId ? `, GA ${gaId}` : ""})`,
+  `patch-studio-spa-fallback: out/404.html + out/404/index.html (Studio → ${studioRoot}, home → ${homeUrl}, canonical ${canonicalHomeUrl}${gaId ? `, GA ${gaId}` : ""}${googleAdsId ? `, Ads ${googleAdsId}` : ""})`,
 );

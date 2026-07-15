@@ -14,7 +14,8 @@ import {
 import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
-import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
+import { normalizeWhatsappHref, resolveWhatsappUrl } from "@/lib/whatsapp";
+import { resolveRewardsCatalogProductUrl } from "@/lib/rewardsCatalog";
 import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
 import { toggleLocalePath } from "@/lib/locale";
 import Link from "next/link";
@@ -156,7 +157,7 @@ function ShellMenuLink({
   onClick,
   children,
 }: ShellMenuLinkProps) {
-  const resolvedHref = resolveShellHref(href, locale);
+  const resolvedHref = normalizeWhatsappHref(resolveShellHref(href, locale));
   const isExternal = isExternalShellHref(resolvedHref);
   const shouldOpenInNewTab = openInNewTab ?? isExternal;
 
@@ -240,7 +241,7 @@ export default function Header() {
           {
             label: m.nav.rewardsHub.title,
             description: m.nav.rewardsHub.desc,
-            href: sanity?.rewardsCatalogUrl?.trim() || "https://catalogo.4unik.com.br/product",
+            href: resolveRewardsCatalogProductUrl(sanity?.rewardsCatalogUrl),
             icon: "rewards",
             openInNewTab: true,
           },
@@ -301,9 +302,8 @@ export default function Header() {
     [cmsHeaderMenu?.sections, fallbackSections],
   );
 
-  const loginUrl = sanity?.appLoginUrl?.trim() || null;
   const demoUrl = sanity?.calendlyUrl?.trim() || DEFAULT_CALENDLY_URL;
-  const whatsappUrl = sanity?.whatsappUrl?.trim() || DEFAULT_WHATSAPP_URL;
+  const whatsappUrl = resolveWhatsappUrl(sanity?.whatsappUrl);
   const contactHref = resolvePrimaryContactHref(pathname, path);
   const contactScrollInPlace = shouldScrollPrimaryContactInPlace(pathname, path);
 
@@ -438,16 +438,6 @@ export default function Header() {
             >
               {locale === "pt" ? m.nav.langToEn : m.nav.langToPt}
             </Link>
-            {loginUrl ? (
-              <a
-                href={loginUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[0.88rem] font-medium text-white/70 hover:text-white transition-colors hidden md:block"
-              >
-                {m.nav.login}
-              </a>
-            ) : null}
             <TrackedOutboundLink
               href={demoUrl}
               source="header-demo"
@@ -575,17 +565,6 @@ export default function Header() {
               >
                 {locale === "pt" ? m.nav.langToEn : m.nav.langToPt}
               </Link>
-              {loginUrl ? (
-                <a
-                  href={loginUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-4 rounded-xl border border-white/20 text-white font-medium text-center hover:bg-white/5 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {m.nav.mobileLogin}
-                </a>
-              ) : null}
             </div>
           </nav>
         </div>

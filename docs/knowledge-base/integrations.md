@@ -98,6 +98,45 @@ Implementados em [`src/lib/site.ts`](../../src/lib/site.ts) e [`src/components/s
 | Meta Pixel | `NEXT_PUBLIC_META_PIXEL_ID` | `metaPixelId` |
 | LinkedIn Insight | `NEXT_PUBLIC_LINKEDIN_PARTNER_ID` | `linkedinPartnerId` |
 
+## Google Tag Manager — hub de tags (plano jul/2026)
+
+Arquitetura: **2 containers** (um por site), GTM cuida de Ads/pixels; GA4 da landing fica FORA do GTM.
+
+### Container 1 — plataforma.4unik.com.br (esta landing)
+
+1. Criar container web em [tagmanager.google.com](https://tagmanager.google.com) (ex.: "4unik — plataforma") e anotar o `GTM-XXXXXXX`.
+2. Dentro do container, **apenas**: Conversion Linker (All Pages) + tag de remarketing/conversão Google Ads `AW-860167767` + pixels futuros (Meta/LinkedIn se sair do env).
+3. **NUNCA criar tag "Google Analytics: GA4 Configuration" neste container** — o GA4 (`G-SMJDYCENBC`) já carrega via `@next/third-parties` no código (verificado, key events funcionando). Tag GA4 no GTM = pageviews duplicados.
+4. Ativar no site: `NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX` (`.env.local` + GitHub secret do deploy) e/ou campo `gtmContainerId` no `siteSettings` do Sanity. Zero código novo — `EnvMarketingScripts.tsx`/`MarketingScripts.tsx` já injetam.
+5. Deploy `npm run deploy:production`; validar com Tag Assistant + `curl -s https://plataforma.4unik.com.br/landing/ | grep -oE 'GTM-[A-Z0-9]+|G-[A-Z0-9]+'` (deve mostrar o GTM e **um único** G-SMJDYCENBC).
+
+### Container 2 — 4unik.com.br (Loja Integrada, sem acesso a código)
+
+Estado atual do site: gtag `AW-860167767` (Ads) + `UA-66932658-1` (Universal Analytics, **morto desde jul/2023**). O stream GA4 `G-HK5YVFW9R7` da mesma propriedade **já recebe dados** (via connected site tags do gtag AW) — 2.2k usuários/28d em jul/2026 — mas a tag correta deve ficar explícita no GTM.
+
+Checklist no painel da Loja Integrada:
+
+1. Criar container web (ex.: "4unik — loja") com: tag **GA4 Config `G-HK5YVFW9R7`** (All Pages) + **Conversion Linker** + tag de **remarketing `AW-860167767`**. Publicar o container.
+2. Painel Loja Integrada → tema → edição de HTML (ou campo "Códigos externos/Scripts"): colar o snippet GTM do `<head>` + o `<noscript>` do body.
+3. **Remover o bloco `UA-66932658-1`** (não coleta nada desde 2023).
+4. **Manter o gtag `AW-860167767` direto por ora** — só remover numa segunda visita, depois de validar as tags Ads no GTM com Tag Assistant (evita buraco de conversões/remarketing).
+5. Validar: `curl -s https://www.4unik.com.br | grep -oE 'GTM-[A-Z0-9]+|UA-[0-9-]+'` → GTM presente, UA ausente; GA4 Realtime filtrado por hostname `4unik.com.br`.
+
+### Vínculo Ads ↔ GA4 + conversões (manual, Admin)
+
+1. GA4 Admin (propriedade `327916606`) → **Vínculos de produto → Google Ads** → vincular a conta do `AW-860167767`.
+2. Google Ads → **Ferramentas → Medição → Conversões → Importar → propriedades do GA4**: importar `generate_lead`, `schedule_demo`, `contact_whatsapp`.
+3. Opcional: ativar Sinais do Google na propriedade para listas de remarketing GA4→Ads.
+
+## Integração 4unik.mail (dashboard local de email, porta 8377)
+
+O dashboard `~/mkt/gws-4unik/dashboard` conversa com esta stack (implementado jul/2026):
+
+- **UTMs automáticos** nos links dos emails: `utm_source=4unik-mail`, `utm_medium=email`, `utm_campaign=<slug da campanha>`, `utm_content=etapa<N>` — injetados antes do token do tracking worker, então sobrevivem ao redirect `t.4unik.com.br/c/`.
+- **Leitura GA4** (aba "Site & Ads"): Data API v1beta com a mesma SA `landing-ga4-reader@institucional-480905.iam.gserviceaccount.com` (`~/.config/4unik/landing-ga4-reader.json`), separando plataforma × loja por `hostName`; funil ponta-a-ponta enviados→abertos→cliques→sessões→key events casado por `utm_campaign`.
+- **Espelhamento**: ao ativar campanha, evento `email_campaign_activated` via Measurement Protocol (requer `api_secret` do stream `G-SMJDYCENBC` no Admin → colocar em `GA4_MP_API_SECRET` no `.env` do dashboard).
+- **Briefing Google Ads por campanha**: IA gera estrutura RSA (headlines/descriptions/keywords/final_url com `utm_source=google&utm_medium=cpc&utm_campaign=<slug>`), exportável em CSV do Ads Editor. Nada é criado na conta Ads automaticamente (sem developer token da Ads API).
+
 ## Pendências conhecidas
 
 - **Banner de consentimento LGPD** — tracking carrega sem gate de consentimento (fora de escopo da integração inicial).

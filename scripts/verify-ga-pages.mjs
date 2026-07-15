@@ -21,6 +21,13 @@ function hasGaMarker(html) {
   );
 }
 
+function isNoIndexRedirectStub(html) {
+  return (
+    /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(html) &&
+    /<meta\s+http-equiv=["']refresh["']/i.test(html)
+  );
+}
+
 async function collectIndexHtmlFiles(dir, base = dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const files = [];
@@ -59,6 +66,7 @@ async function main() {
   const studio = [];
   const missing = [];
   const studioWithGa = [];
+  let redirectStubCount = 0;
 
   for (const rel of allRel) {
     const normalized = rel.split(path.sep).join("/");
@@ -77,7 +85,9 @@ async function main() {
     await stat(rootIndex);
     rootChecked = true;
     const html = await readFile(rootIndex, "utf8");
-    if (!hasGaMarker(html)) {
+    if (isNoIndexRedirectStub(html)) {
+      redirectStubCount += 1;
+    } else if (!hasGaMarker(html)) {
       missing.push("index.html");
     }
   } catch {
@@ -86,7 +96,9 @@ async function main() {
 
   for (const rel of marketing) {
     const html = await readFile(path.join(outDir, rel), "utf8");
-    if (!hasGaMarker(html)) {
+    if (isNoIndexRedirectStub(html)) {
+      redirectStubCount += 1;
+    } else if (!hasGaMarker(html)) {
       missing.push(rel);
     }
   }
@@ -137,7 +149,7 @@ async function main() {
 
   const marketingCount = marketing.length + (rootChecked ? 1 : 0);
   console.log(
-    `verify-ga-pages: OK — ${marketingCount} página(s) marketing com GA, ${studio.length} Studio sem GA, 404.html com gtag`,
+    `verify-ga-pages: OK — ${marketingCount - redirectStubCount} página(s) marketing com GA, ${redirectStubCount} redirect(s) noindex ignorado(s), ${studio.length} Studio sem GA, 404.html com gtag`,
   );
 }
 

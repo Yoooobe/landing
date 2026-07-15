@@ -80,6 +80,15 @@ export function getGoogleAnalyticsIdFromEnv(): string | undefined {
   );
 }
 
+/** Google Ads destination ID (public identifier, not a credential). */
+export function getGoogleAdsIdFromEnv(): string | undefined {
+  return normalizeEnvValue(
+    process.env.NEXT_PUBLIC_GOOGLE_ADS_ID,
+    "AW-XXXXXXXXX",
+    /^AW-\d+$/i,
+  );
+}
+
 export function getGoogleTagManagerIdFromEnv(): string | undefined {
   return normalizeEnvValue(process.env.NEXT_PUBLIC_GTM_ID, undefined, /^GTM-[A-Z0-9]+$/i);
 }

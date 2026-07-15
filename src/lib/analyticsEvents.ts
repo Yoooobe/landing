@@ -3,6 +3,7 @@ export const GA_CONVERSION_EVENTS = {
   generateLead: "generate_lead",
   scheduleDemo: "schedule_demo",
   contactWhatsapp: "contact_whatsapp",
+  contactEmail: "contact_email",
 } as const;
 
 export type GaConversionEventName =
@@ -16,5 +17,6 @@ export function outboundConversionEventName(href: string): GaConversionEventName
   if (h.includes("wa.me") || h.includes("whatsapp.com") || h.includes("api.whatsapp.com")) {
     return GA_CONVERSION_EVENTS.contactWhatsapp;
   }
+  if (h.startsWith("mailto:")) return GA_CONVERSION_EVENTS.contactEmail;
   return null;
 }

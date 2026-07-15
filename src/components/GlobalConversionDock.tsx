@@ -3,7 +3,7 @@
 import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
-import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
+import { resolveWhatsappUrl } from "@/lib/whatsapp";
 import {
   resolvePrimaryContactHref,
   scrollToPrimaryContact,
@@ -12,8 +12,6 @@ import {
 import { MessageCircle, Send } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-
-const WHATSAPP_FALLBACK = DEFAULT_WHATSAPP_URL;
 
 export default function GlobalConversionDock() {
   const pathname = usePathname();
@@ -26,7 +24,7 @@ export default function GlobalConversionDock() {
     return null;
   }
 
-  const whatsappUrl = sanity?.whatsappUrl?.trim() || WHATSAPP_FALLBACK;
+  const whatsappUrl = resolveWhatsappUrl(sanity?.whatsappUrl);
   const contactHref = resolvePrimaryContactHref(pathname, path);
   const scrollInPlace = shouldScrollPrimaryContactInPlace(pathname, path);
 

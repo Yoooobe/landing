@@ -140,4 +140,14 @@ Reward infrastructure | Engajamento e gamificação | Integrações enterprise |
 
 ## Manutenção
 
+## Aditivo GTM/Growth — 2026-07-15
+
+Para agentes de aquisição, usar a 4Unik como **Infraestrutura de Engajamento Programável**: comportamento programável por rewards físicos via API, gamificação, checkout e execução logística. Evitar posicionar a empresa como fornecedora de brindes, kits ou produtos promocionais.
+
+**Escopo de ICP:** RH/People, Vendas/RevOps, E-learning/L&D, Comunidades/Eventos e CTO/Produto. Toda campanha deve declarar ICP, dor operacional, gancho, prova aprovada ou hipótese identificada, CTA e mensuração com UTMs + GA4 (`generate_lead`, `schedule_demo`, `contact_whatsapp`, `contact_email`).
+
+**Dados comerciais para uso interno e rascunhos:** Starter R$999/mês; Business R$2.999/mês; Scale R$7.999/mês; Enterprise R$24.999/mês; Gamification & Loyalty API a partir de R$4.999/mês. O caso Boticário (+308% na conclusão de e-learning) e Softplan (957 resgates automatizados/ano) requerem aprovação de marca e contexto para copy pública. O cálculo de Business com economia de R$5.500/mês é hipótese comercial: economia líquida simples R$2.501/mês e ROI simples 83,4%; não apresentar como garantia.
+
+**Comparativos:** em rascunhos internos, a 4Unik pode ser enquadrada como camada que une gamificação, checkout e fulfillment; qualquer percentual versus concorrentes ou desenvolvimento próprio exige validação comercial/jurídica antes de publicação.
+
 Após alterações no NotebookLM ou no skill `4unik-ai-discovery`: atualizar este ficheiro, `meta.yaml` (`last_synced`), `changelog.md` e pedir `notebooklm-knowledge-curator` para re-fatiar.

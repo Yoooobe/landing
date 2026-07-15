@@ -4,7 +4,7 @@ import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
+import { DEFAULT_WHATSAPP_URL, resolveWhatsappUrl } from "@/lib/whatsapp";
 import ShowcaseImage from "@/components/ui/ShowcaseImage";
 import { primaryContactSectionIdAttr } from "@/lib/contactAnchor";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
@@ -70,7 +70,7 @@ export default function HomeFinalCta({
                 {c.demo}
               </TrackedOutboundLink>
               <TrackedOutboundLink
-                href={c.whatsappHref}
+                href={resolveWhatsappUrl(c.whatsappHref)}
                 source="home-final-cta-whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"

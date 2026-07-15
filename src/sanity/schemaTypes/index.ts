@@ -16,6 +16,7 @@ import { heroBlock } from "./blocks/heroBlock";
 import { legacySectionBlock } from "./blocks/legacySectionBlock";
 import { logoStripBlock } from "./blocks/logoStripBlock";
 import { leadSubmissionType } from "./leadSubmissionType";
+import { emailTrackingEventType } from "./emailTrackingEventType";
 import { logoCollectionType } from "./logoCollectionType";
 import { richTextSection } from "./blocks/richTextSection";
 import { seoType } from "./seoType";
@@ -33,6 +34,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     pageType,
     blogPostType,
     leadSubmissionType,
+    emailTrackingEventType,
     caseStudyGridBlock,
     contentMirrorType,
     marketingPageType,

@@ -116,7 +116,7 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     finalCta: {
       ...ptHome.finalCta,
       demoHref: "https://calendly.com/4unik/30min",
-      whatsappHref: "https://wa.me/554187582060",
+      whatsappHref: "https://wa.me/551126844724",
     },
   },
   en: {
@@ -142,7 +142,7 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     finalCta: {
       ...enHome.finalCta,
       demoHref: "https://calendly.com/4unik/30min",
-      whatsappHref: "https://wa.me/554187582060",
+      whatsappHref: "https://wa.me/551126844724",
     },
   },
 };

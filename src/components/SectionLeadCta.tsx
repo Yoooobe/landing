@@ -5,7 +5,7 @@ import LeadCaptureForm from "@/components/LeadCaptureForm";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import type { LeadFormVariant } from "@/components/LeadCaptureForm";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
+import { DEFAULT_WHATSAPP_URL, resolveWhatsappUrl } from "@/lib/whatsapp";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
 
@@ -67,7 +67,7 @@ export default function SectionLeadCta({ homeContent, zone, variant = "home" }: 
                 {c.demo}
               </TrackedOutboundLink>
               <TrackedOutboundLink
-                href={c.whatsappHref}
+                href={resolveWhatsappUrl(c.whatsappHref)}
                 source={`section-lead-${block.source}-whatsapp`}
                 target="_blank"
                 rel="noopener noreferrer"

@@ -1,6 +1,7 @@
 "use client";
 
 import { outboundConversionEventName } from "@/lib/analyticsEvents";
+import { normalizeWhatsappHref } from "@/lib/whatsapp";
 import { sendGAEvent } from "@next/third-parties/google";
 import type { ComponentProps } from "react";
 
@@ -16,7 +17,8 @@ type TrackedOutboundLinkProps = ComponentProps<"a"> & {
 };
 
 /**
- * External `<a>` that fires `schedule_demo` or `contact_whatsapp` before navigation.
+ * External `<a>` that fires `schedule_demo`, `contact_whatsapp` or
+ * `contact_email` before navigation.
  */
 export default function TrackedOutboundLink({
   href,
@@ -24,11 +26,11 @@ export default function TrackedOutboundLink({
   onClick,
   ...props
 }: TrackedOutboundLinkProps) {
-  const url = typeof href === "string" ? href : "";
+  const url = typeof href === "string" ? normalizeWhatsappHref(href) : "";
 
   return (
     <a
-      href={href}
+      href={url || href}
       {...props}
       onClick={(event) => {
         if (url) trackOutboundConversion(url, source);

@@ -11,7 +11,8 @@ import { withBasePath } from "@/lib/basePath";
 import { trackOutboundConversion } from "@/components/analytics/TrackedOutboundLink";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
-import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
+import { normalizeWhatsappHref, resolveWhatsappUrl } from "@/lib/whatsapp";
+import { resolveRewardsCatalogProductUrl } from "@/lib/rewardsCatalog";
 import { resolveShellHref, isExternalShellHref } from "@/lib/siteShell";
 import Link from "next/link";
 import { rewardInfrastructurePath } from "@/lib/rewardInfrastructurePaths";
@@ -83,7 +84,9 @@ function FooterShellLink({
   className,
   children,
 }: FooterShellLinkProps) {
-  const resolvedHref = resolveShellHref(normalizeFooterHref(href, locale), locale);
+  const resolvedHref = normalizeWhatsappHref(
+    resolveShellHref(normalizeFooterHref(href, locale), locale),
+  );
   const isExternal = isExternalShellHref(resolvedHref);
   const shouldOpenInNewTab = openInNewTab ?? isExternal;
 
@@ -145,7 +148,7 @@ export default function Footer() {
           { label: f.links.api, href: "/api-integracoes/" },
           {
             label: f.links.catalogo,
-            href: sanity?.rewardsCatalogUrl?.trim() || "https://catalogo.4unik.com.br/product",
+            href: resolveRewardsCatalogProductUrl(sanity?.rewardsCatalogUrl),
             openInNewTab: true,
           },
           {
@@ -165,13 +168,21 @@ export default function Footer() {
           },
           {
             label: f.links.comercial,
-            href: sanity?.whatsappUrl?.trim() || DEFAULT_WHATSAPP_URL,
+            href: resolveWhatsappUrl(sanity?.whatsappUrl),
             openInNewTab: true,
           },
         ],
       },
     ],
-    [f, m.nav, sanity?.calendlyUrl, sanity?.companySiteUrl, sanity?.rewardsCatalogUrl, sanity?.whatsappUrl],
+    [
+      f,
+      locale,
+      m.nav,
+      sanity?.calendlyUrl,
+      sanity?.companySiteUrl,
+      sanity?.rewardsCatalogUrl,
+      sanity?.whatsappUrl,
+    ],
   );
 
   const footerSections = useMemo(

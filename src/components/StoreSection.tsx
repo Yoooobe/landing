@@ -3,6 +3,7 @@
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import ShowcaseImage from "@/components/ui/ShowcaseImage";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
+import { resolveRewardsCatalogKitsUrl, resolveRewardsCatalogProductUrl } from "@/lib/rewardsCatalog";
 import { motion } from "framer-motion";
 
 const EMOJI = ["🎉", "🏆", "🎁", "🎓"] as const;
@@ -22,6 +23,9 @@ export default function StoreSection({
       image: visual?.image || null,
     };
   });
+
+  const catalogProductUrl = resolveRewardsCatalogProductUrl();
+  const catalogKitsUrl = resolveRewardsCatalogKitsUrl(catalogProductUrl);
 
   return (
     <section id="loja" className="relative overflow-hidden border-t border-white/5 bg-brand-navy-dark py-24">
@@ -73,7 +77,7 @@ export default function StoreSection({
 
         <div className="relative z-10 flex flex-wrap justify-center gap-4">
           <a
-            href="https://catalogo.4unik.com.br/product"
+            href={catalogProductUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 font-bold text-brand-navy-dark transition-colors hover:bg-gray-100 font-sans"
@@ -81,7 +85,7 @@ export default function StoreSection({
             {s.ctaCatalog}
           </a>
           <a
-            href="https://catalogo.4unik.com.br/kits"
+            href={catalogKitsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-14 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-bold text-white transition-colors hover:bg-white/5 font-sans"

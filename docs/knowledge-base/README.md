@@ -6,6 +6,8 @@ Conhecimento estratégico versionado no repositório para skills Cursor e o MCP 
 
 **2026-06-02:** briefing **NotebookLM + complemento repositório** (`4unik-ai-discovery`, rotas, API Yoobe, roadmap Inteligência) fundidos em `briefing.md` e fatiados em `notebooklm/*.md`. Claims comerciais (% concorrência, tração, logos) exigem validação antes da landing ou Sanity.
 
+**2026-07-15:** o briefing inclui um **Aditivo GTM/Growth** consumido pelo MCP e pelas skills: ICP, dor, gancho, prova/hypótese, CTA, UTMs e eventos GA4. Use-o para rascunhos de aquisição; publicação, alterações em GTM/GA4 e ativação de mídia continuam a exigir aprovação humana.
+
 ## NotebookLM → repositório
 
 O notebook privado no Google **não** tem API pública para agentes. O fluxo suportado é export manual:
