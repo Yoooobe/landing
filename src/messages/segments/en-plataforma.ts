@@ -2,9 +2,9 @@ export const enPlataforma = {
   seo: {
     title: "Platform | 4Unik V3 — Reward Infrastructure",
     description:
-      "Analytics console, gamification engine, redemption store, logistics, and enterprise security. Reward infrastructure and fulfillment for engagement programs.",
+      "Analytics console, gamification engine, redemption store, logistics, and enterprise security. Reward infrastructure and delivery for engagement programs.",
     openGraphDescription:
-      "Console, gamification, catalog, fulfillment, and SSO: the 4Unik V3 stack to run rewards at scale.",
+      "Console, gamification, catalog, logistics, and SSO: the 4Unik V3 stack to run rewards at scale.",
   },
   hero: {
     badge: "Operations under control",
@@ -15,7 +15,8 @@ export const enPlataforma = {
   },
   pageCta: {
     title: "Ready to see the console in action?",
-    cta: "Request a demo",
+    cta: "Book a demo",
+    ctaHint: "30 min with the team · no commitment",
   },
   adminDashboard: {
     mock: {
@@ -26,7 +27,7 @@ export const enPlataforma = {
       chartTitle: "Operations performance",
       chartUpdated: "Updated 1 minute ago",
       chartRange: "Last 30 days",
-      statLeftLabel: "Logistics cost (SLA)",
+      statLeftLabel: "Logistics cost",
       statLeftValue: "R$ 12,450",
       statLeftTrend: "↓ 4.2% vs prior month",
       statRightLabel: "Service level",
@@ -38,12 +39,12 @@ export const enPlataforma = {
     titleGradient: "game",
     titleAfter: ".",
     body:
-      "Where managers, HR, and budget owners control the rules, with ERP-style visibility into balances, SLAs, and reward logistics.",
+      "Where managers, HR, and budget owners control the rules, with ERP-style visibility into balances, delivery timelines, and reward logistics.",
     bullets: [
       {
-        title: "SLA monitoring",
+        title: "Delivery timeline monitoring",
         body:
-          "See where every kit is—from warehouse to doorstep—with integrated last‑mile tracking and D+1 delivery.",
+          "See where every kit is—from warehouse to each employee’s door—with integrated tracking and next-day delivery visibility.",
       },
       {
         title: "Cost centers (budgeting)",
@@ -134,7 +135,7 @@ export const enPlataforma = {
       {
         title: "Owned inventory",
         body:
-          "Store corporate swag with us or use our partner catalog. B2C fulfillment straight to each employee’s home.",
+          "Store corporate swag with us or use our partner catalog. We handle logistics and delivery — straight to each employee’s home.",
       },
       {
         title: "National coverage",
@@ -174,11 +175,11 @@ export const enPlataforma = {
     items: [
       {
         q: "Is 4Unik V3 just a swag catalog?",
-        a: "No. 4Unik V3 is reward infrastructure: administration, a gamification engine, catalog, fulfillment, and integrations built for engagement and incentive programs, not a standalone storefront.",
+        a: "No. 4Unik V3 is reward infrastructure: administration, a gamification engine, catalog, logistics and delivery, and integrations built for engagement and incentive programs, not a standalone storefront.",
       },
       {
-        q: "How does reward fulfillment work?",
-        a: "Operations cover catalog, stock, shipping, and post-sale support; managers track SLAs and deliveries in the console, with tracking and reverse logistics when needed.",
+        q: "How does reward logistics and delivery work?",
+        a: "Operations cover catalog, stock, shipping, and post-sale support; managers track delivery timelines in the console, with tracking and reverse logistics when needed.",
       },
       {
         q: "Does the platform scale to thousands of employees?",

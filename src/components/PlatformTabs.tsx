@@ -1,12 +1,12 @@
 // SCREENSHOTS: Use imagens reais de /public/screens/ — NÃO substituir por SVG, JSX mockup ou ilustrações de cms-seed/
 "use client";
 
+import { ZoomableScreenshot } from "@/components/ui/ScreenshotLightbox";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { withBasePath } from "@/lib/basePath";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 
 export default function PlatformTabs({
@@ -21,7 +21,7 @@ export default function PlatformTabs({
     getSanityImageUrl(
       homeContent?.showcaseMedia?.platformTabs?.managementImage,
       { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.16 }, quality: 85 },
-    ) ?? withBasePath("/screens/admin-dashboard-v3.webp");
+    ) ?? withBasePath("/screens/dash/dashboard-geral.webp");
   const storeImageUrl =
     getSanityImageUrl(
       homeContent?.showcaseMedia?.platformTabs?.storeImage,
@@ -31,7 +31,7 @@ export default function PlatformTabs({
     getSanityImageUrl(
       homeContent?.showcaseMedia?.platformTabs?.campaignsImage,
       { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.2 }, quality: 85 },
-    ) ?? withBasePath("/screens/admin-campaign-config-desktop.webp");
+    ) ?? withBasePath("/screens/flows/campanha-passo-1.webp");
 
   return (
     <section id="preview" className="relative overflow-hidden bg-brand-navy-dark py-24">
@@ -47,21 +47,21 @@ export default function PlatformTabs({
           <button
             type="button"
             onClick={() => setActiveTab("gestao")}
-            className={`rounded-full px-6 py-3 font-bold transition-all ${activeTab === "gestao" ? "scale-105 bg-white text-black" : "bg-white/5 text-white/70 hover:bg-white/10"}`}
+            className={`rounded-full px-6 py-3 font-bold transition-all ${activeTab === "gestao" ? "scale-105 bg-white text-black shadow-lg" : "border border-white/10 bg-white/5 text-white/70 backdrop-blur-md hover:bg-white/10"}`}
           >
             {t.tabGestao}
           </button>
           <button
             type="button"
             onClick={() => setActiveTab("loja")}
-            className={`rounded-full px-6 py-3 font-bold transition-all ${activeTab === "loja" ? "scale-105 bg-white text-black" : "bg-white/5 text-white/70 hover:bg-white/10"}`}
+            className={`rounded-full px-6 py-3 font-bold transition-all ${activeTab === "loja" ? "scale-105 bg-white text-black shadow-lg" : "border border-white/10 bg-white/5 text-white/70 backdrop-blur-md hover:bg-white/10"}`}
           >
             {t.tabLoja}
           </button>
           <button
             type="button"
             onClick={() => setActiveTab("campanhas")}
-            className={`rounded-full px-6 py-3 font-bold transition-all ${activeTab === "campanhas" ? "scale-105 bg-white text-black" : "bg-white/5 text-white/70 hover:bg-white/10"}`}
+            className={`rounded-full px-6 py-3 font-bold transition-all ${activeTab === "campanhas" ? "scale-105 bg-white text-black shadow-lg" : "border border-white/10 bg-white/5 text-white/70 backdrop-blur-md hover:bg-white/10"}`}
           >
             {t.tabCampanhas}
           </button>
@@ -88,27 +88,30 @@ export default function PlatformTabs({
                   {t.gestao.cta}
                 </a>
               </div>
-              <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 shadow-2xl md:p-8">
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="flex gap-1.5">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
+              <div className="relative">
+                <div className="pointer-events-none absolute -inset-3 rounded-[2rem] bg-unik-blue/20 blur-2xl opacity-60" />
+                <div className="glass-panel-dark relative rounded-2xl border-t border-t-white/20 p-4 shadow-2xl md:p-6">
+                  <div className="mb-4 flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="h-3 w-3 rounded-full bg-red-400/90" />
+                      <div className="h-3 w-3 rounded-full bg-yellow-400/90" />
+                      <div className="h-3 w-3 rounded-full bg-green-400/90" />
+                    </div>
+                    <span className="ml-2 font-mono text-xs font-bold text-white/55">{t.gestao.mockTitle}</span>
                   </div>
-                  <span className="ml-2 text-xs font-bold text-slate-800">{t.gestao.mockTitle}</span>
-                </div>
-                <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
-                  <Image
-                    src={managementImageUrl}
-                    alt={
-                      homeContent?.showcaseMedia?.platformTabs?.managementImage?.alt?.trim() ||
-                      t.gestao.mockTitle
-                    }
-                    fill
-                    sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover object-[50%_16%]"
-                    unoptimized
-                  />
+                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-white/10 bg-[#0b0e14] md:aspect-8/5">
+                    <ZoomableScreenshot
+                      src={managementImageUrl}
+                      alt={
+                        homeContent?.showcaseMedia?.platformTabs?.managementImage?.alt?.trim() ||
+                        t.gestao.mockTitle
+                      }
+                      sizes="(min-width: 768px) 40vw, 100vw"
+                      imgClassName="object-contain object-top"
+                      className="absolute inset-0 h-full w-full"
+                      unoptimized
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -134,27 +137,30 @@ export default function PlatformTabs({
                   {t.loja.cta}
                 </a>
               </div>
-              <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 shadow-2xl md:p-8">
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="flex gap-1.5">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
+              <div className="relative">
+                <div className="pointer-events-none absolute -inset-3 rounded-[2rem] bg-demo-cyan/20 blur-2xl opacity-60" />
+                <div className="glass-panel-dark relative rounded-2xl border-t border-t-white/20 p-4 shadow-2xl md:p-6">
+                  <div className="mb-4 flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="h-3 w-3 rounded-full bg-red-400/90" />
+                      <div className="h-3 w-3 rounded-full bg-yellow-400/90" />
+                      <div className="h-3 w-3 rounded-full bg-green-400/90" />
+                    </div>
+                    <span className="ml-2 font-mono text-xs font-bold text-white/55">{t.loja.mockTitle}</span>
                   </div>
-                  <span className="ml-2 text-xs font-bold text-slate-800">{t.loja.mockTitle}</span>
-                </div>
-                <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
-                  <Image
-                    src={storeImageUrl}
-                    alt={
-                      homeContent?.showcaseMedia?.platformTabs?.storeImage?.alt?.trim() ||
-                      t.loja.mockTitle
-                    }
-                    fill
-                    sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover object-[50%_18%]"
-                    unoptimized
-                  />
+                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-white/10 bg-[#0b0e14] md:aspect-8/5">
+                    <ZoomableScreenshot
+                      src={storeImageUrl}
+                      alt={
+                        homeContent?.showcaseMedia?.platformTabs?.storeImage?.alt?.trim() ||
+                        t.loja.mockTitle
+                      }
+                      sizes="(min-width: 768px) 40vw, 100vw"
+                      imgClassName="object-contain object-top"
+                      className="absolute inset-0 h-full w-full"
+                      unoptimized
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -180,27 +186,30 @@ export default function PlatformTabs({
                   {t.campanhas.cta}
                 </a>
               </div>
-              <div className="relative rounded-2xl border border-white/10 bg-slate-50 p-4 shadow-2xl md:p-8">
-                <div className="mb-4 flex items-center gap-2">
-                  <div className="flex gap-1.5">
-                    <div className="h-3 w-3 rounded-full bg-red-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-yellow-400"></div>
-                    <div className="h-3 w-3 rounded-full bg-green-400"></div>
+              <div className="relative">
+                <div className="pointer-events-none absolute -inset-3 rounded-[2rem] bg-brand-orange/20 blur-2xl opacity-60" />
+                <div className="glass-panel-dark relative rounded-2xl border-t border-t-white/20 p-4 shadow-2xl md:p-6">
+                  <div className="mb-4 flex items-center gap-2">
+                    <div className="flex gap-1.5">
+                      <div className="h-3 w-3 rounded-full bg-red-400/90" />
+                      <div className="h-3 w-3 rounded-full bg-yellow-400/90" />
+                      <div className="h-3 w-3 rounded-full bg-green-400/90" />
+                    </div>
+                    <span className="ml-2 font-mono text-xs font-bold text-white/55">{t.campanhas.mockTitle}</span>
                   </div>
-                  <span className="ml-2 text-xs font-bold text-slate-800">{t.campanhas.mockTitle}</span>
-                </div>
-                <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-slate-200 bg-white md:aspect-8/5">
-                  <Image
-                    src={campaignsImageUrl}
-                    alt={
-                      homeContent?.showcaseMedia?.platformTabs?.campaignsImage?.alt?.trim() ||
-                      t.campanhas.mockTitle
-                    }
-                    fill
-                    sizes="(min-width: 768px) 40vw, 100vw"
-                    className="object-cover object-[50%_20%]"
-                    unoptimized
-                  />
+                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-white/10 bg-[#0b0e14] md:aspect-8/5">
+                    <ZoomableScreenshot
+                      src={campaignsImageUrl}
+                      alt={
+                        homeContent?.showcaseMedia?.platformTabs?.campaignsImage?.alt?.trim() ||
+                        t.campanhas.mockTitle
+                      }
+                      sizes="(min-width: 768px) 40vw, 100vw"
+                      imgClassName="object-contain object-top"
+                      className="absolute inset-0 h-full w-full"
+                      unoptimized
+                    />
+                  </div>
                 </div>
               </div>
             </motion.div>

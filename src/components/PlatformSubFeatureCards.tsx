@@ -1,11 +1,10 @@
 "use client";
 
+import { ZoomableScreenshot } from "@/components/ui/ScreenshotLightbox";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
-import { withBasePath } from "@/lib/basePath";
 import { resolveShellHref } from "@/lib/siteShell";
 import { motion } from "framer-motion";
 import { ArrowRight, Gamepad2, LayoutDashboard, ShoppingBag, Wallet } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 type FeatureCard = {
@@ -44,7 +43,7 @@ const FEATURE_CARDS: FeatureCard[] = [
     icon: LayoutDashboard,
     iconColor: "text-unik-blue",
     borderHover: "hover:border-unik-blue/40",
-    imageSrc: "/screens/admin-dashboard.webp",
+    imageSrc: "/screens/dash/dashboard-geral.webp",
     imageAlt: "Painel do Gestor — dashboard geral",
     href: "/plataforma/painel-gestor/",
     titleKey: "manager",
@@ -54,8 +53,8 @@ const FEATURE_CARDS: FeatureCard[] = [
     icon: ShoppingBag,
     iconColor: "text-demo-cyan",
     borderHover: "hover:border-demo-cyan/40",
-    imageSrc: "/loja-corporativa/store-home.webp",
-    imageAlt: "Loja Corporativa — home da loja",
+    imageSrc: "/screens/member-store-home.webp",
+    imageAlt: "Loja Corporativa — home da loja de resgate",
     href: "/plataforma/loja-resgate/",
     titleKey: "store",
     descKey: "store",
@@ -95,37 +94,42 @@ export default function PlatformSubFeatureCards() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
-                <Link
-                  href={href}
-                  className={`group flex flex-col rounded-3xl border border-white/10 bg-surface-panel overflow-hidden transition-all duration-300 ${card.borderHover} hover:shadow-xl hover:-translate-y-1`}
+                <div
+                  className={`group glass-panel-dark flex flex-col overflow-hidden rounded-3xl border-t border-t-white/15 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(0,0,0,0.45)] ${card.borderHover}`}
                 >
-                  <div className="relative aspect-16/10 w-full overflow-hidden">
-                    <Image
-                      src={withBasePath(card.imageSrc)}
+                  <div
+                    className={`relative w-full overflow-hidden bg-[#0b0e14] ${
+                      card.imageSrc.includes("gamif-")
+                        ? "aspect-4/5 sm:aspect-3/4"
+                        : "aspect-16/10"
+                    }`}
+                  >
+                    <ZoomableScreenshot
+                      src={card.imageSrc}
                       alt={card.imageAlt}
-                      fill
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      imgClassName="object-contain object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                      className="absolute inset-0 h-full w-full"
                     />
-                    <div className="absolute inset-0 bg-linear-to-t from-surface-panel/80 via-transparent to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-surface-panel/90 via-transparent to-transparent" />
                   </div>
 
-                  <div className="p-5 flex flex-col gap-3">
+                  <Link href={href} className="flex flex-col gap-3 p-5">
                     <div className="flex items-center gap-2">
-                      <div className="p-2 rounded-xl bg-white/5 border border-white/10">
-                        <Icon className={`w-4 h-4 ${card.iconColor}`} />
+                      <div className="rounded-xl border border-white/10 bg-white/5 p-2 backdrop-blur-sm">
+                        <Icon className={`h-4 w-4 ${card.iconColor}`} />
                       </div>
-                      <h3 className="text-white font-bold text-base font-heading leading-tight">
+                      <h3 className="font-heading text-base font-bold leading-tight text-white">
                         {title}
                       </h3>
                     </div>
-                    <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
-                    <div className="flex items-center gap-1.5 text-white/40 text-xs font-semibold group-hover:text-white/70 transition-colors">
+                    <p className="text-sm leading-relaxed text-white/50">{desc}</p>
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-white/40 transition-colors group-hover:text-white/70">
                       {locale === "en" ? "Learn more" : "Ver mais"}
-                      <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                      <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               </motion.div>
             );
           })}

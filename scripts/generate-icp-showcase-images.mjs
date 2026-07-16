@@ -26,7 +26,7 @@ const PROFILES = {
     accentSoft: "#22d3ee",
     variants: [
       { key: "hero", source: "api-integracoes-hero-composite.jpg", label: "api.4unik.io" },
-      { key: "how", source: "admin-campaign-products.webp", label: "gestor.4unik.io · catálogo" },
+      { key: "how", source: "flows/campanha-passo-3.webp", label: "gestor.4unik.io · catálogo" },
       { key: "benefits", source: "member-store-home.webp", label: "loja no seu app" },
     ],
   },
@@ -36,15 +36,15 @@ const PROFILES = {
     variants: [
       { key: "hero", source: "member-points.webp", label: "app.4unik.io · trilha" },
       { key: "how", source: "gamif-niveis.webp", label: "gestor.4unik.io · níveis" },
-      { key: "benefits", source: "member-store-home.webp", label: "loja de recompensas" },
+      { key: "benefits", source: "dash/produtos.webp", label: "loja de recompensas" },
     ],
   },
   vendas: {
     accent: "#f98f16",
     accentSoft: "#ef476f",
     variants: [
-      { key: "hero", source: "admin-dashboard.webp", label: "gestor.4unik.io · metas" },
-      { key: "how", source: "admin-campaign-config-desktop.webp", label: "gestor.4unik.io · campanha" },
+      { key: "hero", source: "dash/dashboard-geral.webp", label: "gestor.4unik.io · metas" },
+      { key: "how", source: "flows/campanha-passo-1.webp", label: "gestor.4unik.io · campanha" },
       { key: "benefits", source: "member-points.webp", label: "premiação na hora" },
     ],
   },
@@ -53,18 +53,17 @@ const PROFILES = {
     accentSoft: "#8338ec",
     variants: [
       { key: "hero", source: "member-store-home.webp", label: "loja.4unik.io · VIP" },
-      { key: "how", source: "member-points.webp", label: "loja.4unik.io · engajamento" },
-      { key: "benefits", source: "member-orders.webp", label: "loja.4unik.io · pedidos" },
+      { key: "how", source: "dash/campanhas-landing-pages.webp", label: "loja.4unik.io · engajamento" },
+      { key: "benefits", source: "dash/detail/area-cliente-pedidos-loja.webp", label: "loja.4unik.io · pedidos" },
     ],
   },
   eventos: {
     accent: "#22d3ee",
     accentSoft: "#2563eb",
     variants: [
-      { key: "hero", source: "pix-step-1-banks.webp", label: "loja.4unik.io · evento" },
-      { key: "how", source: "pix-step-2-form.webp", label: "checkout no celular" },
-      // success layout tem a confirmação na coluna direita: ancorar o crop à direita.
-      { key: "benefits", source: "pix-step-3-success.webp", label: "resgate confirmado", position: "right top" },
+      { key: "hero", source: "dash/brindes-presentes.webp", label: "loja.4unik.io · evento" },
+      { key: "how", source: "flows/brinde-passo-4.webp", label: "envio e retirada" },
+      { key: "benefits", source: "dash/envios.webp", label: "logística do evento" },
     ],
   },
 };
@@ -155,7 +154,7 @@ async function buildVariant(sharp, { width, height, accent, accentSoft, label, s
   };
 
   const shot = await sharp(readFileSync(sourcePath))
-    .resize(content.w, content.h, { fit: "cover", position })
+    .resize(content.w, content.h, { fit: "contain", position, background: { r: 11, g: 14, b: 20, alpha: 1 } })
     .composite([{ input: bottomRoundedMask(content.w, content.h, 20), blend: "dest-in" }])
     .png()
     .toBuffer();

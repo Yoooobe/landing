@@ -213,6 +213,9 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
               {h.ctaExplore}
             </a>
           </motion.div>
+          {m.home.hero.ctaDemoHint ? (
+            <p className="mt-3 text-center text-xs text-white/55 lg:text-left">{m.home.hero.ctaDemoHint}</p>
+          ) : null}
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

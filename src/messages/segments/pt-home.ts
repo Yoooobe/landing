@@ -13,8 +13,9 @@ export const ptHome = {
     line2: "sem operação manual",
     sub:
       "Plataforma completa ou camada de execução via API. Você define metas e pontos; nós cuidamos da logística e da entrega — no Brasil e no mundo.",
-    ctaDemo: "Agendar Demo",
+    ctaDemo: "Agendar demonstração",
     ctaExplore: "Ver a plataforma",
+    ctaDemoHint: "30 min · sem compromisso",
     floatAdhesion: "Adesão do Time",
     floatAdhesionSub: "↑ Média nos primeiros 30 dias",
     floatRh: "Trabalho Manual do RH",
@@ -41,7 +42,7 @@ export const ptHome = {
     title: "Pronto para simplificar reconhecimento na sua empresa?",
     body:
       "Agende uma demonstração de 30 minutos: vemos juntos painel, loja e fluxo de entrega ao vivo — sem compromisso.",
-    demo: "Solicitar Demonstração",
+    demo: "Agendar demonstração",
     whatsapp: "Falar com Especialista",
   },
 } as const;

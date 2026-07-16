@@ -46,7 +46,18 @@ export type PlatformFeaturePageContent = {
   workflow: Array<{
     title: string;
     body: string;
+    imageSrc?: string;
+    imageAlt?: string;
   }>;
+  /** Optional on-demand demo video (campaign / gift flow). */
+  video?: {
+    title: string;
+    body?: string;
+    playLabel: string;
+    webm: string;
+    mp4: string;
+    poster: string;
+  };
   galleryTitle: string;
   gallery: Array<{
     src: string;
@@ -74,9 +85,9 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     title: "A 4unik conecta metas,",
     highlight: "resgates e engajamento em uma só operação.",
     description:
-      "A 4unik pode operar como motor nativo de gamificação e engajamento ou ser conectada a plataformas externas. Com ela, a loja corporativa vira a camada de resgate auditável para presentear times, colaboradores e parceiros, enquanto campanhas com páginas próprias ativam hackathons, desafios corporativos, ações internas, onboarding e metas comerciais sem operação paralela.",
-    imageSrc: "/screens/admin-campaign-config-desktop.webp",
-    imageAlt: "Tela de configuração de campanha da 4unik",
+      "Use a 4unik como motor de gamificação e engajamento ou conecte plataformas que você já tem. A loja corporativa vira a camada de resgate com rastreio completo para presentear times, colaboradores e parceiros. Campanhas com páginas próprias ativam hackathons, desafios, onboarding e metas comerciais — sem operação paralela.",
+    imageSrc: "/screens/flows/campanha-passo-1.webp",
+    imageAlt: "Wizard de criação de campanha na 4unik — dados iniciais e slug",
     stats: [
       {
         label: "Campanhas publicadas",
@@ -91,7 +102,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         label: "Resgate operacional",
         value: "Fim a fim",
-        detail: "Carteira, catálogo, pedidos e fulfillment ficam conectados na mesma jornada.",
+        detail: "Carteira, catálogo, pedidos e logística ficam conectados na mesma jornada.",
       },
     ],
     capabilitiesTitle: "O que o motor entrega",
@@ -112,7 +123,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         icon: Gift,
         title: "Loja corporativa como camada de resgate",
         body:
-          "Cada campanha pode publicar uma página de resgate com produtos selecionados para presentear colaboradores, times e parceiros com controle auditável do uso dos pontos.",
+          "Cada campanha pode publicar uma página de resgate com produtos selecionados para presentear colaboradores, times e parceiros — com controle completo do uso dos pontos.",
       },
       {
         icon: BellRing,
@@ -124,44 +135,65 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     workflowTitle: "Como a 4unik opera uma campanha",
     workflow: [
       {
-        title: "1. Crie a campanha e a página de resgate",
-        body: "Defina o objetivo da ação, quem participa e publique uma experiência própria para hackathon, desafio, reconhecimento ou meta.",
+        title: "Dados iniciais e slug",
+        body: "Defina o objetivo da ação, nome, URL amigável e identidade da landing de resgate.",
+        imageSrc: "/screens/flows/campanha-passo-1.webp",
+        imageAlt: "Passo 1 — dados iniciais da campanha",
       },
       {
-        title: "2. Configure regras e comunicação",
-        body: "Personalize identidade, mensagem, vigência, critérios de pontuação e como os participantes verão a campanha.",
+        title: "Mensagem e identidade",
+        body: "Personalize banner, títulos e copy para participantes entenderem a mecânica.",
+        imageSrc: "/screens/flows/campanha-passo-2.webp",
+        imageAlt: "Passo 2 — mensagem de boas-vindas",
       },
       {
-        title: "3. Distribua pontos e abra o catálogo",
-        body: "Associe produtos, limites e lógica de distribuição para que os participantes possam acumular benefícios e resgatar na loja corporativa.",
+        title: "Empresa e produtos",
+        body: "Associe a empresa e monte a vitrine de recompensas da página de resgate.",
+        imageSrc: "/screens/flows/campanha-passo-3.webp",
+        imageAlt: "Passo 3 — empresa e produtos",
       },
       {
-        title: "4. Acompanhe resgates até a entrega",
-        body: "O gestor acompanha adesão, carteira, pedidos e fulfillment, enquanto a 4unik sustenta a operação até a conclusão dos envios.",
+        title: "Publicação e entrega",
+        body: "Publique com vigência e regras; acompanhe resgates e envios até a conclusão.",
+        imageSrc: "/screens/flows/campanha-passo-4.webp",
+        imageAlt: "Passo 4 — configurações finais",
       },
     ],
+    video: {
+      title: "Fluxo completo de criação de campanha",
+      body: "Veja o wizard do gestor em ação — do slug à publicação da landing de resgate.",
+      playLabel: "Reproduzir fluxo de campanha",
+      webm: "/screens/flows/fluxo-campanha.webm",
+      mp4: "/screens/flows/fluxo-campanha.mp4",
+      poster: "/screens/flows/fluxo-campanha-poster.webp",
+    },
     galleryTitle: "Telas reais da jornada de campanha",
     gallery: [
       {
-        src: "/screens/admin-campaign-config-desktop.webp",
-        alt: "Tela de identidade de campanha",
-        caption: "Criação da página de campanha com identidade, slug, tema visual e preview em tempo real.",
+        src: "/screens/flows/campanha-passo-1.webp",
+        alt: "Wizard — dados iniciais e slug",
+        caption: "Criação da página de campanha com identidade, slug e branding coerente.",
       },
       {
-        src: "/screens/admin-campaign-products.webp",
-        alt: "Tela de seleção de produtos para campanha",
+        src: "/screens/flows/campanha-passo-3.webp",
+        alt: "Wizard — empresa e produtos",
         caption: "Curadoria do catálogo que abastece a página de resgate daquela campanha.",
       },
       {
-        src: "/screens/admin-campaign-config-mobile.webp",
-        alt: "Preview mobile da campanha",
-        caption: "Preview mobile da experiência final antes da campanha entrar no ar para os participantes.",
+        src: "/screens/dash/detail/editar-campanha.webp",
+        alt: "Edição avançada de campanha no painel",
+        caption: "Edição detalhada de regras, vigência e configuração após a publicação.",
+      },
+      {
+        src: "/screens/dash/campanhas-landing-pages.webp",
+        alt: "Lista de campanhas e landing pages",
+        caption: "Visão consolidada das campanhas e landings ativas no painel do gestor.",
       },
     ],
     ctaTitle: "Quer ativar campanhas e resgates com operação fim a fim?",
     ctaBody:
-      "A 4unik une motor de regras, loja corporativa, carteira, pedidos e fulfillment para que sua ação saia do briefing e chegue até o resgate e a entrega sem fricção.",
-    primaryCtaLabel: "Solicitar demonstração",
+      "A 4unik une motor de regras, loja corporativa, carteira, pedidos e logística para que sua ação saia do briefing e chegue até o resgate e a entrega sem fricção.",
+    primaryCtaLabel: "Agendar demonstração",
     primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "Ver plataforma completa",
     secondaryCtaHref: "/plataforma",
@@ -172,13 +204,13 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     seo: {
       title: "Controle de Carteiras (Wallets) | 4unik",
       description:
-        "Saldo, extrato, resgates e governança de pontos em uma carteira auditável para programas de engajamento, campanhas e recompensas.",
+        "Saldo, extrato, resgates e governança de pontos em uma carteira com rastreio completo para programas de engajamento, campanhas e recompensas.",
     },
     badge: "Controle de Carteiras (Wallets)",
     title: "Participantes acompanham",
-    highlight: "pontos, resgates e saldo em uma carteira auditável.",
+    highlight: "pontos, resgates e saldo com rastreio completo.",
     description:
-      "Na 4unik, funcionários e participantes de campanhas de engajamento consultam saldo, verificam extrato, acompanham pedidos e usam pontos dentro da loja corporativa com total rastreabilidade. A wallet também pode receber dados de ferramentas externas de gamificação, mantendo o uso dos pontos auditável do crédito ao resgate.",
+      "Na 4unik, colaboradores e participantes consultam saldo, verificam extrato, acompanham pedidos e usam pontos na loja corporativa com rastreabilidade total. A carteira também pode receber dados de ferramentas externas de gamificação — do crédito ao resgate.",
     imageSrc: "/screens/member-points.webp",
     imageAlt: "Histórico de pontos na carteira do colaborador",
     stats: [
@@ -195,7 +227,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         label: "Integração de jornada",
         value: "Wallet + loja",
-        detail: "A carteira conversa com catálogo, pedidos e integrações externas no mesmo fluxo auditável.",
+        detail: "A carteira conversa com catálogo, pedidos e integrações externas no mesmo fluxo rastreável.",
       },
     ],
     capabilitiesTitle: "O que a carteira resolve",
@@ -214,7 +246,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       },
       {
         icon: ShieldCheck,
-        title: "Uso auditável dos pontos",
+        title: "Uso rastreável dos pontos",
         body:
           "RH, marketing e operação conseguem auditar a jornada do crédito ao resgate, validar políticas e eliminar reconciliações manuais.",
       },
@@ -228,20 +260,28 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     workflowTitle: "Como a wallet opera na prática",
     workflow: [
       {
-        title: "1. Ganhe pontos na ação certa",
+        title: "Ganhe pontos na ação certa",
         body: "Os pontos entram por campanha, meta, reconhecimento, integração externa ou ajuste manual com motivo registrado.",
+        imageSrc: "/screens/member-points.webp",
+        imageAlt: "Carteira com saldo e histórico de pontos",
       },
       {
-        title: "2. Consulte carteira e extrato",
+        title: "Consulte carteira e extrato",
         body: "O participante acompanha saldo, histórico e origem dos créditos antes de decidir como usar os pontos.",
+        imageSrc: "/screens/dash/detail/area-cliente-pedidos-loja.webp",
+        imageAlt: "Área do cliente — pedidos e saldo na loja",
       },
       {
-        title: "3. Resgate na loja corporativa",
-        body: "Os pontos são usados em produtos e experiências da loja, com débito auditável e conexão direta com o pedido.",
+        title: "Resgate na loja corporativa",
+        body: "Os pontos são usados em produtos e experiências da loja, com débito rastreável e conexão direta com o pedido.",
+        imageSrc: "/screens/member-orders.webp",
+        imageAlt: "Lista de pedidos do colaborador",
       },
       {
-        title: "4. Acompanhe pedido e histórico",
+        title: "Acompanhe pedido e histórico",
         body: "Participantes e gestores visualizam pedido, extrato e status do resgate, enquanto a operação mantém governança fim a fim.",
+        imageSrc: "/screens/member-order-detail.webp",
+        imageAlt: "Detalhe do pedido resgatado",
       },
     ],
     galleryTitle: "Telas reais da experiência da wallet",
@@ -261,11 +301,16 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         alt: "Detalhe do pedido resgatado",
         caption: "Detalhe logístico do resgate para fechar o ciclo entre pontos, loja corporativa e entrega.",
       },
+      {
+        src: "/screens/dash/detail/area-cliente-pedidos-loja.webp",
+        alt: "Área do cliente com pedidos da loja",
+        caption: "Visão do participante na loja: pedidos, status e acompanhamento do resgate.",
+      },
     ],
-    ctaTitle: "Quer uma wallet auditável e pronta para integração?",
+    ctaTitle: "Quer uma carteira rastreável e pronta para integração?",
     ctaBody:
-      "A 4unik entrega uma wallet única para consulta, uso e auditoria de pontos dentro da loja corporativa e também como camada conectada a outras ferramentas de gamificação e engajamento.",
-    primaryCtaLabel: "Falar com o time",
+      "A 4unik entrega uma carteira única para consulta, uso e rastreio de pontos dentro da loja corporativa — e também como camada conectada a outras ferramentas de gamificação e engajamento.",
+    primaryCtaLabel: "Falar com especialista",
     primaryCtaHref: "https://wa.me/551126844724",
     secondaryCtaLabel: "Ver a plataforma",
     secondaryCtaHref: "/plataforma",
@@ -283,8 +328,8 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "de ponta a ponta em um só painel.",
     description:
       "O painel do gestor da 4unik reúne performance da operação, catálogo, pedidos, campanhas, usuários e indicadores críticos em uma camada de comando pensada para RH, marketing, people ops e times administrativos.",
-    imageSrc: "/screens/admin-dashboard.webp",
-    imageAlt: "Dashboard administrativo da 4unik",
+    imageSrc: "/screens/dash/dashboard-geral.webp",
+    imageAlt: "Dashboard geral do painel do gestor 4unik",
     stats: [
       {
         label: "Visão executiva",
@@ -318,7 +363,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       },
       {
         icon: PackageCheck,
-        title: "Operação e fulfillment",
+        title: "Operação e logística",
         body:
           "Pedidos, envios, métodos logísticos, usuários e empresas ficam conectados ao fluxo do programa sem múltiplos painéis paralelos.",
       },
@@ -332,38 +377,84 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     workflowTitle: "Como o gestor usa o painel no dia a dia",
     workflow: [
       {
-        title: "1. Monitora a saúde da operação",
+        title: "Monitora a saúde da operação",
         body: "Bate o olho no dashboard e identifica desvios em pedidos, catálogo, estoque e engajamento.",
+        imageSrc: "/screens/dash/dashboard-geral.webp",
+        imageAlt: "Dashboard geral com KPIs",
       },
       {
-        title: "2. Ajusta campanhas e catálogo",
+        title: "Ajusta campanhas e catálogo",
         body: "Revisa identidade, produtos, múltiplos resgates, vigência e regras sem sair da mesma estrutura.",
+        imageSrc: "/screens/dash/detail/editar-campanha.webp",
+        imageAlt: "Edição de campanha no painel",
       },
       {
-        title: "3. Acompanha execução",
+        title: "Acompanha execução",
         body: "Valida pedidos, visualiza usuários, envios e comportamento de resgate por período.",
+        imageSrc: "/screens/dash/pedidos.webp",
+        imageAlt: "Lista de pedidos no painel",
       },
       {
-        title: "4. Fecha o ciclo com dados",
+        title: "Fecha o ciclo com dados",
         body: "Usa os indicadores para defender orçamento, priorizar ações e evoluir o programa com mais precisão.",
+        imageSrc: "/screens/dash/usuarios.webp",
+        imageAlt: "Gestão de usuários no painel",
       },
     ],
+    video: {
+      title: "Fluxo completo no painel do gestor",
+      body: "Do dashboard à publicação de campanha — o mesmo centro de comando da operação.",
+      playLabel: "Reproduzir demonstração do painel",
+      webm: "/screens/flows/fluxo-campanha.webm",
+      mp4: "/screens/flows/fluxo-campanha.mp4",
+      poster: "/screens/flows/fluxo-campanha-poster.webp",
+    },
     galleryTitle: "Telas reais do painel do gestor",
     gallery: [
       {
-        src: "/screens/admin-dashboard.webp",
+        src: "/screens/dash/dashboard-geral.webp",
         alt: "Dashboard com indicadores operacionais",
         caption: "Dashboard com indicadores centrais para gestão contínua do programa.",
       },
       {
-        src: "/screens/admin-campaign-identity.webp",
-        alt: "Tela de identidade da campanha",
-        caption: "Criação e edição da camada visual da campanha com preview imediato.",
+        src: "/screens/dash/pedidos.webp",
+        alt: "Pedidos e envios",
+        caption: "Pedidos e status de envio em tempo real para a operação acompanhar cada resgate.",
       },
       {
-        src: "/screens/admin-campaign-products.webp",
-        alt: "Tela de produtos da campanha",
-        caption: "Gestão do catálogo da campanha com busca, seleção e apoio de IA.",
+        src: "/screens/dash/produtos.webp",
+        alt: "Catálogo de produtos",
+        caption: "Gestão do catálogo com estoque, opções e disponibilidade.",
+      },
+      {
+        src: "/screens/dash/cupons.webp",
+        alt: "Cupons e promoções",
+        caption: "Cupons e regras promocionais conectados às campanhas e à loja.",
+      },
+      {
+        src: "/screens/dash/envios.webp",
+        alt: "Métodos e status de envio",
+        caption: "Acompanhamento logístico e métodos de envio no mesmo painel.",
+      },
+      {
+        src: "/screens/dash/empresas.webp",
+        alt: "Gestão de empresas",
+        caption: "Empresas e unidades organizacionais vinculadas ao programa.",
+      },
+      {
+        src: "/screens/dash/usuarios.webp",
+        alt: "Usuários do programa",
+        caption: "Usuários, papéis e acesso ao painel e à loja de resgate.",
+      },
+      {
+        src: "/screens/dash/detail/editar-campanha.webp",
+        alt: "Detalhe de edição de campanha",
+        caption: "Edição profunda de campanha com regras, vigência e preview.",
+      },
+      {
+        src: "/screens/dash/brindes-presentes.webp",
+        alt: "Brindes e presentes",
+        caption: "Envio de brindes e presentes com wizard operacional no painel.",
       },
     ],
     ctaTitle: "Quer visibilidade real sobre campanhas, pedidos e catálogo?",
@@ -387,8 +478,8 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "escolhe o próprio prêmio.",
     description:
       "Uma vitrine totalmente white-label conectada ao seu programa de pontos. Colaboradores navegam pelo catálogo, resgatam pontos e recebem prêmios físicos ou digitais — sem nenhuma operação manual do RH.",
-    imageSrc: "/loja-corporativa/store-home.webp",
-    imageAlt: "Home da loja corporativa 4Unik — catálogo com produtos em 4Ucoins",
+    imageSrc: "/screens/member-store-home.webp",
+    imageAlt: "Home da loja de resgate 4Unik — catálogo com produtos em pontos",
     stats: [
       {
         label: "Catálogo",
@@ -426,7 +517,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         icon: Truck,
         title: "Logística integrada",
-        body: "Acompanhe cada pedido no painel de admin. Use o fulfillment 4Unik ou conecte seu ERP e transportadora via API.",
+        body: "Acompanhe cada pedido no painel de admin. Use a logística 4Unik ou conecte seu ERP e transportadora via API.",
       },
       {
         icon: Tag,
@@ -442,24 +533,45 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     workflowTitle: "Como funciona um resgate",
     workflow: [
       {
-        title: "1. Acumula pontos",
+        title: "Acumula pontos",
         body: "Reconhecimentos (shoutouts, badges, metas) creditam o saldo do colaborador automaticamente.",
+        imageSrc: "/screens/member-points.webp",
+        imageAlt: "Saldo de pontos do colaborador",
       },
       {
-        title: "2. Navega na loja",
+        title: "Navega na loja",
         body: "O colaborador abre a loja corporativa da empresa, filtra o catálogo e lê os detalhes do produto.",
+        imageSrc: "/screens/member-store-home.webp",
+        imageAlt: "Home da loja de resgate",
       },
       {
-        title: "3. Finaliza o pedido",
+        title: "Finaliza o pedido",
         body: "Os pontos são debitados no checkout; endereço e método de envio são confirmados.",
+        imageSrc: "/loja-corporativa/cart.webp",
+        imageAlt: "Carrinho da loja corporativa",
       },
       {
-        title: "4. Recebe o prêmio",
-        body: "O item é enviado para o endereço do colaborador via fulfillment 4Unik ou parceiro de logística.",
+        title: "Recebe o prêmio",
+        body: "O item é enviado para o endereço do colaborador via logística 4Unik ou parceiro de envio.",
+        imageSrc: "/screens/flows/brinde-passo-4.webp",
+        imageAlt: "Confirmação de envio do brinde",
       },
     ],
+    video: {
+      title: "Fluxo completo de envio de brinde",
+      body: "Do wizard do gestor à confirmação do envio — presenteie sem planilhas.",
+      playLabel: "Reproduzir fluxo de brinde",
+      webm: "/screens/flows/fluxo-brinde.webm",
+      mp4: "/screens/flows/fluxo-brinde.mp4",
+      poster: "/screens/flows/fluxo-brinde-poster.webp",
+    },
     galleryTitle: "A loja em ação",
     gallery: [
+      {
+        src: "/screens/member-store-home.webp",
+        alt: "Home da loja de resgate",
+        caption: "Vitrine white-label com catálogo, pontos e navegação familiar para o colaborador.",
+      },
       {
         src: "/loja-corporativa/product-detail.webp",
         alt: "Página de produto — Alexa Echo Dot 5 em 4Ucoins",
@@ -471,9 +583,19 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         caption: "O carrinho exibe itens, subtotal em pontos e estimativa de frete.",
       },
       {
+        src: "/screens/dash/produtos.webp",
+        alt: "Catálogo de produtos no painel",
+        caption: "Gestão do catálogo no painel: estoque, opções e disponibilidade.",
+      },
+      {
         src: "/loja-corporativa/gift-wizard-review.webp",
         alt: "Revisão do wizard de presente — nome, 2 produtos, 2 destinatários",
         caption: "Gestores revisam o presente antes de salvar. O agendamento do envio é opcional.",
+      },
+      {
+        src: "/screens/flows/brinde-passo-2.webp",
+        alt: "Seleção de produto no wizard de brinde",
+        caption: "Wizard de brinde: escolha do produto no catálogo antes do envio.",
       },
     ],
     ctaTitle: "Pronto para lançar a loja da sua empresa?",
@@ -500,8 +622,8 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "redemptions, and engagement in one operation.",
     description:
       "4unik can run as your native gamification and engagement layer or connect to external engagement platforms. It turns the corporate store into an auditable redemption layer for teams, employees, and partners while campaign-specific landing pages support hackathons, internal challenges, recognition programs, onboarding, and performance goals.",
-    imageSrc: "/screens/admin-campaign-config-desktop.webp",
-    imageAlt: "4unik campaign setup screen",
+    imageSrc: "/screens/flows/campanha-passo-1.webp",
+    imageAlt: "4unik campaign creation wizard — initial data and slug",
     stats: [
       {
         label: "Campaign launch",
@@ -516,7 +638,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         label: "Redemption operations",
         value: "End to end",
-        detail: "Wallet, catalog, orders, and fulfillment stay connected throughout the experience.",
+        detail: "Wallet, catalog, orders, and logistics stay connected throughout the experience.",
       },
     ],
     capabilitiesTitle: "What the engine delivers",
@@ -549,44 +671,65 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     workflowTitle: "How 4unik runs a campaign",
     workflow: [
       {
-        title: "1. Create the campaign and redemption page",
-        body: "Define the objective, target audience, and the dedicated experience for hackathons, recognition actions, internal challenges, or goal-based programs.",
+        title: "Initial data and slug",
+        body: "Define the objective, friendly URL, and identity of the redemption landing page.",
+        imageSrc: "/screens/flows/campanha-passo-1.webp",
+        imageAlt: "Step 1 — campaign initial data",
       },
       {
-        title: "2. Configure rules and messaging",
-        body: "Set identity, communication, timing, and point rules so participants understand the action and how rewards will work.",
+        title: "Messaging and identity",
+        body: "Set banner, titles, and copy so participants understand the mechanics.",
+        imageSrc: "/screens/flows/campanha-passo-2.webp",
+        imageAlt: "Step 2 — welcome messaging",
       },
       {
-        title: "3. Open the catalog and distribute value",
-        body: "Attach products, limits, and distribution logic so participants can earn benefits and redeem through the corporate store.",
+        title: "Company and products",
+        body: "Attach the company and curate the reward catalog for the redemption page.",
+        imageSrc: "/screens/flows/campanha-passo-3.webp",
+        imageAlt: "Step 3 — company and products",
       },
       {
-        title: "4. Track redemptions through delivery",
-        body: "Managers monitor adoption, balances, orders, and fulfillment while 4unik supports the operation through the final delivery step.",
+        title: "Publish and deliver",
+        body: "Publish with validity and rules; track redemptions and shipments through delivery.",
+        imageSrc: "/screens/flows/campanha-passo-4.webp",
+        imageAlt: "Step 4 — final settings",
       },
     ],
+    video: {
+      title: "Full campaign creation flow",
+      body: "Watch the manager wizard in action — from slug to published redemption landing.",
+      playLabel: "Play campaign flow",
+      webm: "/screens/flows/fluxo-campanha.webm",
+      mp4: "/screens/flows/fluxo-campanha.mp4",
+      poster: "/screens/flows/fluxo-campanha-poster.webp",
+    },
     galleryTitle: "Real campaign workflow screens",
     gallery: [
       {
-        src: "/screens/admin-campaign-config-desktop.webp",
-        alt: "Campaign identity screen",
-        caption: "Campaign page creation with identity, slug, visual theme, and live preview.",
+        src: "/screens/flows/campanha-passo-1.webp",
+        alt: "Wizard — initial data and slug",
+        caption: "Campaign page creation with identity, slug, and coherent branding.",
       },
       {
-        src: "/screens/admin-campaign-products.webp",
-        alt: "Campaign product selection screen",
+        src: "/screens/flows/campanha-passo-3.webp",
+        alt: "Wizard — company and products",
         caption: "Catalog curation for the specific redemption page tied to the campaign.",
       },
       {
-        src: "/screens/admin-campaign-config-mobile.webp",
-        alt: "Mobile preview of the campaign",
-        caption: "Mobile preview of the final participant experience before publishing.",
+        src: "/screens/dash/detail/editar-campanha.webp",
+        alt: "Advanced campaign editing in the dashboard",
+        caption: "Deep edit of rules, validity, and configuration after publishing.",
+      },
+      {
+        src: "/screens/dash/campanhas-landing-pages.webp",
+        alt: "Campaigns and landing pages list",
+        caption: "Consolidated view of active campaigns and landings in the manager dashboard.",
       },
     ],
     ctaTitle: "Need campaigns and redemptions with end-to-end operations?",
     ctaBody:
-      "4unik combines rules, wallet, corporate store, orders, and fulfillment so your action can move from idea to redemption and delivery without operational gaps.",
-    primaryCtaLabel: "Request a demo",
+      "4unik combines rules, wallet, corporate store, orders, and logistics so your action can move from idea to redemption and delivery without operational gaps.",
+    primaryCtaLabel: "Book a demo",
     primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "View full platform",
     secondaryCtaHref: "/plataforma",
@@ -653,20 +796,28 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     workflowTitle: "How the wallet operates day to day",
     workflow: [
       {
-        title: "1. Earn points in the right moment",
+        title: "Earn points in the right moment",
         body: "Points enter through campaigns, goal completion, recognition, external integrations, or manual adjustments with clear attribution.",
+        imageSrc: "/screens/member-points.webp",
+        imageAlt: "Wallet with balance and points history",
       },
       {
-        title: "2. Review wallet and statement",
+        title: "Review wallet and statement",
         body: "Participants check balances, point history, and the origin of each credit before using them.",
+        imageSrc: "/screens/dash/detail/area-cliente-pedidos-loja.webp",
+        imageAlt: "Customer area — store orders and balance",
       },
       {
-        title: "3. Redeem through the corporate store",
+        title: "Redeem through the corporate store",
         body: "Points are used on products and experiences in the store, with an auditable debit connected directly to the order.",
+        imageSrc: "/screens/member-orders.webp",
+        imageAlt: "Employee orders list",
       },
       {
-        title: "4. Track orders and history",
+        title: "Track orders and history",
         body: "Participants and managers follow the order, the statement, and redemption status while operations maintain governance end to end.",
+        imageSrc: "/screens/member-order-detail.webp",
+        imageAlt: "Redeemed order detail",
       },
     ],
     galleryTitle: "Real wallet experience screens",
@@ -685,6 +836,11 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         src: "/screens/member-order-detail.webp",
         alt: "Redeemed order detail",
         caption: "Logistics detail closes the loop between points, the corporate store, and delivery.",
+      },
+      {
+        src: "/screens/dash/detail/area-cliente-pedidos-loja.webp",
+        alt: "Customer area with store orders",
+        caption: "Participant view in the store: orders, status, and redemption tracking.",
       },
     ],
     ctaTitle: "Need an auditable wallet ready for integrations?",
@@ -708,8 +864,8 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "end to end in one dashboard.",
     description:
       "4unik brings program performance, catalog, orders, campaigns, users, and operational signals into one command layer built for HR, marketing, people ops, and admin teams.",
-    imageSrc: "/screens/admin-dashboard.webp",
-    imageAlt: "4unik admin dashboard",
+    imageSrc: "/screens/dash/dashboard-geral.webp",
+    imageAlt: "4unik manager dashboard overview",
     stats: [
       {
         label: "Executive visibility",
@@ -743,7 +899,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       },
       {
         icon: PackageCheck,
-        title: "Operations and fulfillment",
+        title: "Operations and logistics",
         body:
           "Orders, shipping, logistics methods, users, and companies stay connected to the reward program without multiple disconnected panels.",
       },
@@ -757,38 +913,84 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     workflowTitle: "How managers use the dashboard",
     workflow: [
       {
-        title: "1. Monitor program health",
+        title: "Monitor program health",
         body: "Open the dashboard and identify drift in orders, catalog, stock, and engagement.",
+        imageSrc: "/screens/dash/dashboard-geral.webp",
+        imageAlt: "Dashboard overview with KPIs",
       },
       {
-        title: "2. Adjust campaigns and catalog",
+        title: "Adjust campaigns and catalog",
         body: "Review identity, products, multiple redemptions, validity, and rules in the same structure.",
+        imageSrc: "/screens/dash/detail/editar-campanha.webp",
+        imageAlt: "Campaign editing in the dashboard",
       },
       {
-        title: "3. Track execution",
+        title: "Track execution",
         body: "Validate orders, inspect users, shipments, and redemption behavior by date range.",
+        imageSrc: "/screens/dash/pedidos.webp",
+        imageAlt: "Orders list in the dashboard",
       },
       {
-        title: "4. Close the loop with data",
+        title: "Close the loop with data",
         body: "Use the indicators to defend budgets, prioritize actions, and improve the program.",
+        imageSrc: "/screens/dash/usuarios.webp",
+        imageAlt: "User management in the dashboard",
       },
     ],
+    video: {
+      title: "Full manager dashboard flow",
+      body: "From overview to campaign publish — one command center for the whole operation.",
+      playLabel: "Play dashboard demo",
+      webm: "/screens/flows/fluxo-campanha.webm",
+      mp4: "/screens/flows/fluxo-campanha.mp4",
+      poster: "/screens/flows/fluxo-campanha-poster.webp",
+    },
     galleryTitle: "Real manager dashboard screens",
     gallery: [
       {
-        src: "/screens/admin-dashboard.webp",
+        src: "/screens/dash/dashboard-geral.webp",
         alt: "Dashboard with core metrics",
         caption: "Dashboard with the operating metrics that matter most to program owners.",
       },
       {
-        src: "/screens/admin-campaign-identity.webp",
-        alt: "Campaign identity screen",
-        caption: "Create and edit the visual layer of each campaign with immediate preview.",
+        src: "/screens/dash/pedidos.webp",
+        alt: "Orders and shipments",
+        caption: "Orders and shipping status in real time so ops can track every redemption.",
       },
       {
-        src: "/screens/admin-campaign-products.webp",
-        alt: "Campaign product selection",
-        caption: "Manage the campaign catalog with search, selection, and AI assistance.",
+        src: "/screens/dash/produtos.webp",
+        alt: "Product catalog",
+        caption: "Catalog management with stock, options, and availability.",
+      },
+      {
+        src: "/screens/dash/cupons.webp",
+        alt: "Coupons and promotions",
+        caption: "Coupons and promo rules connected to campaigns and the store.",
+      },
+      {
+        src: "/screens/dash/envios.webp",
+        alt: "Shipping methods and status",
+        caption: "Logistics tracking and shipping methods in the same dashboard.",
+      },
+      {
+        src: "/screens/dash/empresas.webp",
+        alt: "Company management",
+        caption: "Companies and organizational units linked to the program.",
+      },
+      {
+        src: "/screens/dash/usuarios.webp",
+        alt: "Program users",
+        caption: "Users, roles, and access to the dashboard and redemption store.",
+      },
+      {
+        src: "/screens/dash/detail/editar-campanha.webp",
+        alt: "Campaign edit detail",
+        caption: "Deep campaign editing with rules, validity, and preview.",
+      },
+      {
+        src: "/screens/dash/brindes-presentes.webp",
+        alt: "Gifts and presents",
+        caption: "Gift and present shipping with an operational wizard in the dashboard.",
       },
     ],
     ctaTitle: "Need real visibility into campaigns, orders, and catalog?",
@@ -812,8 +1014,8 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "choose their own prize.",
     description:
       "A fully white-labeled storefront connected to your points program. Employees browse the catalog, redeem points, and receive physical or digital rewards — without any manual work from HR.",
-    imageSrc: "/loja-corporativa/store-home.webp",
-    imageAlt: "4Unik corporate store home — catalog with products priced in 4Ucoins",
+    imageSrc: "/screens/member-store-home.webp",
+    imageAlt: "4Unik redemption store home — catalog with products priced in points",
     stats: [
       {
         label: "Catalog",
@@ -828,7 +1030,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         label: "Delivery",
         value: "Global",
-        detail: "4Unik fulfillment or API integration with your own ERP and carrier.",
+        detail: "4Unik logistics or API integration with your own ERP and carrier.",
       },
     ],
     capabilitiesTitle: "What the store delivers",
@@ -851,7 +1053,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         icon: Truck,
         title: "Integrated logistics",
-        body: "Track every order from the admin panel. Use 4Unik fulfillment or connect your ERP and carrier stack via API.",
+        body: "Track every order from the admin panel. Use 4Unik logistics or connect your ERP and carrier stack via API.",
       },
       {
         icon: Tag,
@@ -869,22 +1071,43 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Earn points",
         body: "Recognition events (shoutouts, badges, goals) credit the employee's balance automatically.",
+        imageSrc: "/screens/member-points.webp",
+        imageAlt: "Employee points balance",
       },
       {
         title: "Browse the store",
         body: "Employee opens the branded store, filters the catalog, and reads product details.",
+        imageSrc: "/screens/member-store-home.webp",
+        imageAlt: "Redemption store home",
       },
       {
         title: "Complete checkout",
         body: "Points are deducted at checkout; address and shipping method are confirmed.",
+        imageSrc: "/loja-corporativa/cart.webp",
+        imageAlt: "Corporate store cart",
       },
       {
         title: "Receive the reward",
-        body: "The item ships to the employee's door via 4Unik fulfillment or your logistics partner.",
+        body: "The item ships to the employee's door via 4Unik logistics or your delivery partner.",
+        imageSrc: "/screens/flows/brinde-passo-4.webp",
+        imageAlt: "Gift shipping confirmation",
       },
     ],
+    video: {
+      title: "Full gift shipping flow",
+      body: "From the manager wizard to shipping confirmation — gift without spreadsheets.",
+      playLabel: "Play gift flow",
+      webm: "/screens/flows/fluxo-brinde.webm",
+      mp4: "/screens/flows/fluxo-brinde.mp4",
+      poster: "/screens/flows/fluxo-brinde-poster.webp",
+    },
     galleryTitle: "The store in action",
     gallery: [
+      {
+        src: "/screens/member-store-home.webp",
+        alt: "Redemption store home",
+        caption: "White-label storefront with catalog, points, and familiar browsing for employees.",
+      },
       {
         src: "/loja-corporativa/product-detail.webp",
         alt: "Product page showing Alexa Echo Dot 5 priced in 4Ucoins",
@@ -896,9 +1119,19 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         caption: "The cart shows item breakdown, subtotal in points, and shipping estimate.",
       },
       {
+        src: "/screens/dash/produtos.webp",
+        alt: "Product catalog in the dashboard",
+        caption: "Catalog management in the dashboard: stock, options, and availability.",
+      },
+      {
         src: "/loja-corporativa/gift-wizard-review.webp",
         alt: "Gift wizard review step — name, 2 products, 2 recipients",
         caption: "Managers review the gift before saving. Scheduling is optional.",
+      },
+      {
+        src: "/screens/flows/brinde-passo-2.webp",
+        alt: "Product selection in the gift wizard",
+        caption: "Gift wizard: pick the catalog product before shipping.",
       },
     ],
     ctaTitle: "Ready to launch your company's reward store?",

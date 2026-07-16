@@ -15,7 +15,8 @@ export const ptPlataforma = {
   },
   pageCta: {
     title: "Pronto para ver o painel na prática?",
-    cta: "Solicitar Demonstração",
+    cta: "Agendar demonstração",
+    ctaHint: "30 min com o time · sem compromisso",
   },
   adminDashboard: {
     mock: {
@@ -26,7 +27,7 @@ export const ptPlataforma = {
       chartTitle: "Performance da Operação",
       chartUpdated: "Atualizado há 1 minuto",
       chartRange: "Últimos 30 dias",
-      statLeftLabel: "Custo Logístico (SLA)",
+      statLeftLabel: "Custo logístico",
       statLeftValue: "R$ 12.450",
       statLeftTrend: "↓ 4.2% vs mês anterior",
       statRightLabel: "Nível de Serviço",
@@ -38,12 +39,12 @@ export const ptPlataforma = {
     titleGradient: "jogo",
     titleAfter: ".",
     body:
-      "O ambiente onde supervisores, RH e gestores orçamentais governam as regras. Inspirado em painéis de e-commerce e ERPs: SLA de entrega, centros de custo e BI de resgates no mesmo painel.",
+      "O ambiente onde supervisores, RH e gestores orçamentais definem as regras. Parecido com painéis de e-commerce e ERPs: prazo de entrega, centros de custo e visão de resgates no mesmo lugar.",
     bullets: [
       {
-        title: "Monitoramento de SLA's",
+        title: "Acompanhamento de prazos",
         body:
-          "Saiba exatamente onde está cada kit enviado para a casa dos funcionários corporativos com rastreio Last-Mile integrado D+1.",
+          "Saiba exatamente onde está cada kit enviado para a casa dos colaboradores, com rastreio da entrega até o dia seguinte.",
       },
       {
         title: "Centros de Custo (Budgeting)",
@@ -129,12 +130,12 @@ export const ptPlataforma = {
   logistics: {
     title: "Logística ponta a ponta.",
     sub:
-      "Não somos apenas um software: operamos o armazém. O prêmio resgatado é processado, embalado e despachado pelas nossas instalações, com SLA acompanhado no painel.",
+      "Não somos apenas um software: operamos o armazém. O prêmio resgatado é processado, embalado e despachado pelas nossas instalações, com o prazo acompanhado no painel.",
     cards: [
       {
         title: "Estoque Próprio",
         body:
-          "Armazene seus brindes corporativos (swag) conosco ou utilize o nosso catálogo de parceiros. Fulfillment B2C para a residência de cada colaborador.",
+          "Armazene seus brindes corporativos conosco ou use o nosso catálogo de parceiros. Nós cuidamos da logística e da entrega — na casa de cada colaborador.",
       },
       {
         title: "Cobertura Nacional",
@@ -174,11 +175,11 @@ export const ptPlataforma = {
     items: [
       {
         q: "A 4unik V3 é só um catálogo de brindes?",
-        a: "Não. A 4unik V3 é infraestrutura de recompensas: administração, motor de gamificação (na stack 4unik V3), catálogo, fulfillment e integrações — pensada para programas de engajamento e incentivo, não para um e‑commerce avulso.",
+        a: "Não. A 4unik V3 é infraestrutura de recompensas: administração, motor de gamificação, catálogo, logística e entrega, e integrações — pensada para programas de engajamento e incentivo, não para um e‑commerce avulso.",
       },
       {
-        q: "Como funciona o fulfillment de recompensas?",
-        a: "A operação cobre catálogo, estoque, envio e suporte pós-venda; o gestor acompanha SLAs e entregas no painel, com rastreio e logística reversa quando necessário.",
+        q: "Como funciona a logística e a entrega das recompensas?",
+        a: "A operação cobre catálogo, estoque, envio e suporte pós-venda; o gestor acompanha prazos e entregas no painel, com rastreio e logística reversa quando necessário.",
       },
       {
         q: "A plataforma escala para milhares de colaboradores?",

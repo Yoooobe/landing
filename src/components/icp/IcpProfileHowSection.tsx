@@ -88,10 +88,10 @@ export default function IcpProfileHowSection({ how, visual }: Props) {
         >
           <Image
             src={withBasePath(visual.images.how)}
-            alt={how.title}
+            alt={`Fluxo da plataforma — ${how.title}`}
             width={1100}
             height={820}
-            className="h-auto w-full object-cover"
+            className="h-auto w-full object-contain bg-[#0b0e14]"
             sizes="(min-width: 1024px) 620px, 92vw"
           />
         </motion.div>

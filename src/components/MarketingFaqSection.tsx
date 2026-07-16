@@ -74,7 +74,10 @@ export default function MarketingFaqSection({ faq: f, tone = "dark" }: Marketing
                 <button
                   type="button"
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="flex w-full items-center justify-between px-6 py-5 text-left focus:outline-none"
+                  className="flex w-full items-center justify-between px-6 py-5 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-yoobe-purple/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                  aria-expanded={isOpen}
+                  aria-controls={`faq-panel-${idx}`}
+                  id={`faq-trigger-${idx}`}
                 >
                   <span className={`pr-8 font-bold ${isLight ? "text-brand-navy" : "text-white"}`}>
                     {faq.q}
@@ -83,10 +86,15 @@ export default function MarketingFaqSection({ faq: f, tone = "dark" }: Marketing
                     className={`h-5 w-5 shrink-0 transition-transform duration-300 ${
                       isLight ? "text-brand-warm-gray" : "text-white/50"
                     } ${isOpen ? "rotate-180 text-yoobe-purple" : ""}`}
+                    aria-hidden
                   />
                 </button>
 
                 <div
+                  id={`faq-panel-${idx}`}
+                  role="region"
+                  aria-labelledby={`faq-trigger-${idx}`}
+                  hidden={!isOpen}
                   className={`transition-all duration-300 ease-in-out ${
                     isOpen ? "max-h-96 opacity-100" : "max-h-0 overflow-hidden opacity-0"
                   }`}

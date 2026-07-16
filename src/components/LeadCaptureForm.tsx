@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { GA_CONVERSION_EVENTS } from "@/lib/analyticsEvents";
 import { sendGAEvent } from "@next/third-parties/google";
 import { cva, type VariantProps } from "class-variance-authority";
-import { Loader2 } from "lucide-react";
+import { CheckCircle2, Loader2 } from "lucide-react";
 import { useCallback, useState } from "react";
 
 const cardVariants = cva("rounded-2xl border text-left shadow-xl", {
@@ -166,28 +166,41 @@ export default function LeadCaptureForm({ variant, source, className }: LeadCapt
   };
 
   if (status === "success") {
+    const isLight = v === "plataforma" || v === "inteligencia";
     return (
       <div
-        className={cn(cardVariants({ variant: v }), "text-center", className)}
+        className={cn(cardVariants({ variant: v }), "relative overflow-hidden text-center", className)}
         role="status"
         aria-live="polite"
       >
-        <p
-          className={cn(
-            "font-heading text-lg font-bold md:text-xl",
-            v === "plataforma" || v === "inteligencia" ? "text-emerald-700" : "text-emerald-400",
-          )}
-        >
-          {copy.successTitle}
-        </p>
-        <p
-          className={cn(
-            "mt-2 text-sm",
-            v === "plataforma" || v === "inteligencia" ? "text-slate-600" : "text-white/70",
-          )}
-        >
-          {copy.successBody}
-        </p>
+        <div
+          className="pointer-events-none absolute inset-0 bg-linear-to-br from-emerald-400/15 via-transparent to-brand-orange/10 motion-safe:animate-pulse"
+          aria-hidden
+        />
+        <div className="relative z-10 flex flex-col items-center">
+          <span
+            className={cn(
+              "mb-3 flex h-12 w-12 items-center justify-center rounded-full border shadow-[0_0_24px_rgba(16,185,129,0.35)]",
+              isLight
+                ? "border-emerald-500/30 bg-emerald-50 text-emerald-600"
+                : "border-emerald-400/40 bg-emerald-400/15 text-emerald-300",
+            )}
+            aria-hidden
+          >
+            <CheckCircle2 className="h-6 w-6" />
+          </span>
+          <p
+            className={cn(
+              "font-heading text-lg font-bold md:text-xl",
+              isLight ? "text-emerald-700" : "text-emerald-400",
+            )}
+          >
+            {copy.successTitle}
+          </p>
+          <p className={cn("mt-2 text-sm", isLight ? "text-slate-600" : "text-white/70")}>
+            {copy.successBody}
+          </p>
+        </div>
       </div>
     );
   }

@@ -1,8 +1,7 @@
 "use client";
 
-import { withBasePath } from "@/lib/basePath";
+import { ZoomableScreenshot } from "@/components/ui/ScreenshotLightbox";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 type MetricCard = {
   label: string;
@@ -117,10 +116,10 @@ export default function DashboardPreviewSection() {
               className={`absolute z-20 hidden md:block ${m.posClass}`}
               style={{ animation: "float 7s ease-in-out infinite" }}
             >
-              <div className="rounded-2xl border border-black/10 bg-white px-4 py-3 shadow-lg shadow-black/10 min-w-[120px]">
-                <div className="flex items-center gap-1.5 mb-1">
+              <div className="glass-panel-light min-w-[120px] rounded-2xl border-t border-t-white/40 px-4 py-3 shadow-lg shadow-black/10">
+                <div className="mb-1 flex items-center gap-1.5">
                   <span
-                    className="h-2 w-2 rounded-full shrink-0"
+                    className="h-2 w-2 shrink-0 rounded-full"
                     style={{ backgroundColor: m.color }}
                   />
                   <span className="font-mono text-[0.6rem] font-bold uppercase tracking-widest text-gray-400">
@@ -133,7 +132,7 @@ export default function DashboardPreviewSection() {
                 >
                   {m.value}
                 </div>
-                <div className="text-[0.62rem] text-gray-400 mt-0.5">{m.sub}</div>
+                <div className="mt-0.5 text-[0.62rem] text-gray-400">{m.sub}</div>
               </div>
             </motion.div>
           ))}
@@ -176,15 +175,14 @@ export default function DashboardPreviewSection() {
             </div>
 
             {/* Screenshot */}
-            <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
-              <Image
-                src={withBasePath("/screens/admin-dashboard.webp")}
+            <div className="relative w-full bg-slate-100" style={{ aspectRatio: "16/10" }}>
+              <ZoomableScreenshot
+                src="/screens/dash/dashboard-geral.webp"
                 alt="Dashboard do gestor 4unik"
-                fill
                 sizes="(min-width: 1024px) 70vw, 100vw"
-                className="object-cover object-top"
+                imgClassName="object-contain object-top"
+                className="absolute inset-0 h-full w-full"
                 unoptimized
-                decoding="async"
               />
               {/* Subtle bottom fade */}
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-linear-to-t from-white/30 to-transparent" />
@@ -223,7 +221,7 @@ export default function DashboardPreviewSection() {
           {METRICS.map((m) => (
             <div
               key={m.label}
-              className="rounded-2xl border border-black/10 bg-white px-4 py-3 shadow-sm text-center"
+              className="glass-panel-light rounded-2xl border-t border-t-white/40 px-4 py-3 text-center shadow-sm"
             >
               <div
                 className="font-heading text-2xl font-black"

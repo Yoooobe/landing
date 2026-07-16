@@ -17,7 +17,7 @@ export const ptFooter = {
     seguranca: "Segurança e governança",
     catalogo: "Catálogo de Recompensas",
     logistica: "Logística (Site 4Unik)",
-    demo: "Agendar Demonstração",
+    demo: "Agendar demonstração",
     comercial: "Falar com Comercial",
   },
   legal: "Privacidade",

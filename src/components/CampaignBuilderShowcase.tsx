@@ -1,8 +1,7 @@
 "use client";
 
-import { withBasePath } from "@/lib/basePath";
+import { ZoomableScreenshot } from "@/components/ui/ScreenshotLightbox";
 import { AnimatePresence, motion } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 type Step = {
@@ -18,38 +17,38 @@ type Step = {
 const STEPS: Step[] = [
   {
     number: "01",
-    title: "Moeda própria da empresa",
-    desc: "Defina nome singular e plural, abreviação e símbolo da moeda virtual. Cada loja pode usar terminologia alinhada à marca — pontos, brents, créditos — com preview em tempo real para colaboradores.",
-    tag: "Moeda",
+    title: "Dados iniciais e slug",
+    desc: "Defina nome, slug e identidade da campanha. O wizard guia cada campo para a landing page de resgate ficar pronta com URL amigável e branding coerente.",
+    tag: "Identidade",
     tagColor: "#2563eb",
-    img: "/screens/gamif-moeda.webp",
+    img: "/screens/flows/campanha-passo-1.webp",
     accentColor: "#2563eb",
   },
   {
     number: "02",
-    title: "Conteúdo e mensagem",
-    desc: "Defina banner, títulos e mensagens da experiência. Explique a ação, o objetivo e a mecânica da campanha para participantes, colaboradores ou parceiros.",
+    title: "Mensagem de boas-vindas",
+    desc: "Configure banner, títulos e mensagens da experiência. Explique a ação, o objetivo e a mecânica da campanha para participantes, colaboradores ou parceiros.",
     tag: "Conteúdo",
     tagColor: "#8338ec",
-    img: "/screens/admin-campaign-products.webp",
+    img: "/screens/flows/campanha-passo-2.webp",
     accentColor: "#8338ec",
   },
   {
     number: "03",
-    title: "Seleção de produtos",
-    desc: "Selecione os produtos que vão abastecer aquela página de resgate. Visualize estoque, monte a vitrine da campanha e prepare a jornada de premiação na loja corporativa.",
+    title: "Empresa e produtos",
+    desc: "Selecione a empresa e os produtos que vão abastecer a página de resgate. Monte a vitrine da campanha e prepare a jornada de premiação.",
     tag: "Produtos",
     tagColor: "#f98f16",
-    img: "/screens/admin-campaign-config-desktop.webp",
+    img: "/screens/flows/campanha-passo-3.webp",
     accentColor: "#f98f16",
   },
   {
     number: "04",
-    title: "Status e publicação",
-    desc: "Publique a campanha com vigência, múltiplos resgates e regras finais. O preview desktop e mobile valida a experiência enquanto a 4unik sustenta a operação até os resgates e envios.",
+    title: "Configurações finais",
+    desc: "Publique a campanha com vigência, regras de resgate e ajustes finais. A 4unik sustenta a operação até os resgates e envios.",
     tag: "Publicação",
     tagColor: "#22d3ee",
-    img: "/screens/admin-campaign-config-mobile.webp",
+    img: "/screens/flows/campanha-passo-4.webp",
     accentColor: "#22d3ee",
   },
 ];
@@ -139,10 +138,10 @@ export default function CampaignBuilderShowcase() {
                     setActive(i);
                     setPaused(true);
                   }}
-                  className={`group relative w-full rounded-2xl border text-left transition-all duration-300 ${
+                  className={`group relative w-full rounded-2xl border text-left backdrop-blur-xl transition-all duration-300 ${
                     isActive
-                      ? "border border-white/0 bg-white shadow-lg shadow-black/10"
-                      : "border-black/10 bg-white/40 hover:bg-white/70 hover:shadow-sm"
+                      ? "border-white/0 bg-white shadow-lg shadow-black/10"
+                      : "border-black/10 bg-white/50 hover:bg-white/80 hover:shadow-sm"
                   }`}
                 >
                   {/* Progress bar at top of active card */}
@@ -275,14 +274,13 @@ export default function CampaignBuilderShowcase() {
                     transition={{ duration: 0.38, ease: "easeInOut" }}
                     className="absolute inset-0"
                   >
-                    <Image
-                      src={withBasePath(step.img)}
+                    <ZoomableScreenshot
+                      src={step.img}
                       alt={step.title}
-                      fill
                       sizes="(min-width: 1024px) 55vw, 100vw"
-                      className="object-contain"
+                      imgClassName="object-contain object-top"
+                      className="absolute inset-0 h-full w-full"
                       unoptimized
-                      decoding="async"
                     />
                   </motion.div>
                 </AnimatePresence>

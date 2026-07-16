@@ -1,7 +1,6 @@
 "use client";
 
-import Image from "next/image";
-import { withBasePath } from "@/lib/basePath";
+import { ZoomableScreenshot } from "@/components/ui/ScreenshotLightbox";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -53,9 +52,9 @@ const VARIANTS: Record<string, VariantConfig> = {
   },
   admin: {
     screens: [
-      { src: "/screens/admin-dashboard.webp", label: "Dashboard geral", step: "01", accent: "Últimos 30 dias" },
-      { src: "/screens/admin-campaign-identity.webp", label: "Editor de campanha", step: "02", accent: "Preview em tempo real" },
-      { src: "/screens/admin-campaign-products.webp", label: "Seleção de produtos", step: "03", accent: "Assistente IA integrado" },
+      { src: "/screens/dash/dashboard-geral.webp", label: "Dashboard geral", step: "01", accent: "Últimos 30 dias" },
+      { src: "/screens/dash/produtos.webp", label: "Catálogo de produtos", step: "02", accent: "Estoque e opções" },
+      { src: "/screens/dash/pedidos.webp", label: "Pedidos e envios", step: "03", accent: "Operação em tempo real" },
     ],
     urlBar: "gestor.4unik.io",
     badgeText: "Gestor",
@@ -66,9 +65,10 @@ const VARIANTS: Record<string, VariantConfig> = {
   },
   campaign: {
     screens: [
-      { src: "/screens/admin-campaign-identity.webp", label: "Identidade da campanha", step: "01", accent: "Slug + cores personalizadas" },
-      { src: "/screens/admin-campaign-products.webp", label: "Seleção de produtos", step: "02", accent: "Assistente IA integrado" },
-      { src: "/screens/admin-campaign-config-desktop.webp", label: "Preview em tempo real", step: "03", accent: "Desktop e mobile" },
+      { src: "/screens/flows/campanha-passo-1.webp", label: "Dados iniciais", step: "01", accent: "Slug + identidade" },
+      { src: "/screens/flows/campanha-passo-2.webp", label: "Mensagem de boas-vindas", step: "02", accent: "Copy da campanha" },
+      { src: "/screens/flows/campanha-passo-3.webp", label: "Empresa e produtos", step: "03", accent: "Vitrine do resgate" },
+      { src: "/screens/flows/campanha-passo-4.webp", label: "Configurações finais", step: "04", accent: "Publicar campanha" },
     ],
     urlBar: "gestor.4unik.io · Campanha",
     badgeText: "Campaign",
@@ -281,12 +281,12 @@ export default function FeatureScreensCarousel({
               transition={{ duration: 0.36, ease: "easeInOut" }}
               className="absolute inset-0 h-full w-full overflow-hidden"
             >
-              <Image
-                src={withBasePath(screen.src)}
+              <ZoomableScreenshot
+                src={screen.src}
                 alt={screen.label}
-                fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-contain object-top"
+                imgClassName="object-contain object-top"
+                className="absolute inset-0 h-full w-full"
                 priority={active === 0}
               />
             </motion.div>

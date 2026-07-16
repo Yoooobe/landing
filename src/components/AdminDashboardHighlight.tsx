@@ -31,17 +31,16 @@ export default function AdminDashboardHighlight({
             <div className="absolute -inset-1 rounded-[2rem] bg-linear-to-r from-brand-orange via-unik-blue to-demo-cyan opacity-20 blur transition duration-1000 group-hover:opacity-40 group-hover:duration-200"></div>
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-surface-page shadow-2xl">
               {adminDashboardImageUrl ? (
-                <div className="relative aspect-16/11 w-full overflow-hidden">
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-[#0b0e14]">
                   <Image
                     src={adminDashboardImageUrl}
                     alt={
                       showcaseMedia?.adminDashboardImage?.alt?.trim() ||
-                      d.badge ||
-                      "Mockup do painel do gestor"
+                      "Painel do gestor 4unik com métricas e campanhas"
                     }
                     fill
                     sizes="(min-width: 1024px) 60vw, 100vw"
-                    className="object-cover"
+                    className="object-contain object-top"
                     unoptimized
                   />
                 </div>

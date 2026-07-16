@@ -85,13 +85,13 @@ export default function AiFeatureMockups() {
         </div>
 
         {/* Screenshot da plataforma (por aba) */}
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-white/10 shadow-2xl" style={{ aspectRatio: "16 / 11" }}>
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-[#0b0e14] shadow-2xl" style={{ aspectRatio: "16 / 10" }}>
           <Image
             key={shot.src}
             src={withBasePath(shot.src)}
             alt={shot.alt}
             fill
-            className="object-cover object-top"
+            className="object-contain object-top"
             sizes="(min-width: 1024px) 80vw, 100vw"
             priority={activeTab === "campaign"}
           />

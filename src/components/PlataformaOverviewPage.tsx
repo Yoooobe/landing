@@ -1,10 +1,10 @@
 "use client";
 
-import AdminDashboardHighlight from "@/components/AdminDashboardHighlight";
 import DashboardPreviewSection from "@/components/DashboardPreviewSection";
 import PlataformaHero from "@/components/PlataformaHero";
 import PlataformaGamificationEngine from "@/components/PlataformaGamificationEngine";
 import PlataformaStore from "@/components/PlataformaStore";
+import PlatformFlowsShowcase from "@/components/PlatformFlowsShowcase";
 import PlatformSubFeatureCards from "@/components/PlatformSubFeatureCards";
 import LogisticsFulfillment from "@/components/LogisticsFulfillment";
 import SecurityEnterprise from "@/components/SecurityEnterprise";
@@ -20,20 +20,20 @@ type Props = {
 };
 
 export default function PlataformaOverviewPage({ showcaseMedia = null, homeContent = null }: Props) {
-  const { m } = useLocaleMessages();
+  const { m, locale } = useLocaleMessages();
 
   return (
     <div className="bg-brand-navy-dark text-white min-h-screen">
       <PlataformaHero />
       <DashboardPreviewSection />
       <PlatformSubFeatureCards />
-      <AdminDashboardHighlight showcaseMedia={showcaseMedia} />
+      <PlatformFlowsShowcase locale={locale} />
       <PlataformaGamificationEngine gamificacaoFeatureCards={showcaseMedia?.gamificacaoFeatureCards} />
       <PlataformaStore showcaseMedia={showcaseMedia} />
       <LogisticsFulfillment showcaseMedia={showcaseMedia} />
       <AiRoadmap homeContent={homeContent} />
       <SecurityEnterprise showcaseMedia={showcaseMedia} />
-      <MarketingFaqSection faq={m.plataforma.faq} />
+      <MarketingFaqSection faq={m.plataforma.faq} tone="light" />
       <PlataformaPageCta />
     </div>
   );

@@ -48,13 +48,13 @@ export default function GamificationDuality() {
             </h3>
             <p className="text-white/60 font-sans mb-8 min-h-[50px]">{d.sideA.body}</p>
 
-            <div className="relative mb-8 aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/5 bg-surface-page shadow-inner">
+            <div className="relative mb-8 mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-2xl border border-white/5 bg-[#0b0e14] shadow-inner">
               <Image
                 src={withBasePath("/screens/gamif-niveis.webp")}
-                alt={d.sideA.title}
+                alt="Painel de níveis e progressão do motor de gamificação"
                 fill
-                className="object-cover object-top"
-                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-contain object-top"
+                sizes="(min-width: 1024px) 30vw, 80vw"
               />
             </div>
 
@@ -85,12 +85,12 @@ export default function GamificationDuality() {
             </h3>
             <p className="text-white/60 font-sans mb-8 min-h-[50px]">{d.sideB.body}</p>
 
-            <div className="relative mb-8 aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/5 bg-surface-page shadow-inner">
+            <div className="relative mb-8 aspect-16/10 w-full overflow-hidden rounded-2xl border border-white/5 bg-[#0b0e14] shadow-inner">
               <Image
                 src={withBasePath("/screens/pix-step-1-banks.webp")}
-                alt={d.sideB.title}
+                alt="Integração via API — seleção de bancos no fluxo Pix"
                 fill
-                className="object-cover object-top"
+                className="object-contain object-top"
                 sizes="(min-width: 1024px) 45vw, 100vw"
               />
             </div>

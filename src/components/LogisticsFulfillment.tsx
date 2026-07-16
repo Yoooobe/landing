@@ -20,53 +20,52 @@ export default function LogisticsFulfillment({
     withBasePath("/screens/member-orders.webp");
 
   return (
-    <section className="py-24 bg-brand-navy border-t border-white/5 relative">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">{l.title}</h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">{l.sub}</p>
+    <section className="relative border-t border-brand-navy/5 bg-brand-cream py-24">
+      <div className="container mx-auto max-w-6xl px-4">
+        <div className="mb-16 text-center">
+          <h2 className="mb-6 font-heading text-3xl font-black text-brand-navy md:text-5xl">{l.title}</h2>
+          <p className="mx-auto max-w-2xl text-lg text-brand-warm-gray">{l.sub}</p>
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative mb-10 overflow-hidden rounded-[2rem] border border-white/10 bg-surface-page shadow-2xl"
+          className="relative mb-10 overflow-hidden rounded-[2rem] border border-brand-navy/10 bg-[#0b0e14] shadow-2xl"
         >
           <div className="relative aspect-16/7 w-full">
             <Image
               src={logisticsPanelImageUrl}
               alt={
                 showcaseMedia?.logisticsPanelImage?.alt?.trim() ||
-                l.title ||
-                "Painel visual da logística integrada"
+                "Painel de pedidos e logística integrada da 4unik"
               }
               fill
               sizes="100vw"
-              className="object-contain"
+              className="object-contain object-top"
               unoptimized
             />
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
           {l.cards.map((card, i) => (
             <motion.div
               key={card.title}
               whileHover={{ y: -5 }}
-              className="glass-panel-dark p-8 rounded-3xl border border-white/5"
+              className="rounded-3xl border border-brand-navy/8 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
             >
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-brand-navy/10 bg-brand-cream">
                 {i === 0 ? (
-                  <PackageIcon className="text-white w-7 h-7" />
+                  <PackageIcon className="h-7 w-7 text-brand-navy" />
                 ) : i === 1 ? (
-                  <Globe className="text-white w-7 h-7" />
+                  <Globe className="h-7 w-7 text-brand-navy" />
                 ) : (
-                  <CheckCircle2 className="text-white w-7 h-7" />
+                  <CheckCircle2 className="h-7 w-7 text-brand-navy" />
                 )}
               </div>
-              <h3 className="text-xl font-bold text-white mb-3 font-heading">{card.title}</h3>
-              <p className="text-sm text-white/50 leading-relaxed">{card.body}</p>
+              <h3 className="mb-3 font-heading text-xl font-bold text-brand-navy">{card.title}</h3>
+              <p className="text-sm leading-relaxed text-brand-warm-gray">{card.body}</p>
             </motion.div>
           ))}
         </div>

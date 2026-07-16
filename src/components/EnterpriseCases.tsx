@@ -14,7 +14,7 @@ export default function EnterpriseCases({
   homeContent?: ResolvedHomeContent | null;
   showTestimonials?: boolean;
 }) {
-  const { m, locale } = useLocaleMessages();
+  const { m, locale, path } = useLocaleMessages();
   const ec = m.landingMore.enterpriseCases;
   const h = ec.hapvida;
   const p = ec.prio;
@@ -105,20 +105,30 @@ export default function EnterpriseCases({
                 {h.bodyAfter}
               </p>
 
+              <p className="mb-4 text-[10px] font-semibold tracking-wider text-white/45 uppercase">
+                {locale === "en" ? "How it works" : "Como funciona"}
+              </p>
               <ul className="space-y-4 font-sans text-white/80">
-                {h.bullets.map((line) => (
-                  <li key={line} className="flex gap-3 items-center">
-                    <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-blue-400 text-sm shrink-0">
-                      ✓
+                {h.bullets.map((line, i) => (
+                  <li key={line} className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-blue-500/15 font-mono text-xs font-bold text-blue-300">
+                      {i + 1}
                     </div>
                     {line}
                   </li>
                 ))}
               </ul>
+              <a
+                href={path("/casos-de-uso/")}
+                className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-300 transition-colors hover:text-blue-200"
+              >
+                {locale === "en" ? "See more use cases" : "Ver mais casos de uso"}
+                <span aria-hidden>→</span>
+              </a>
             </div>
 
-            <div className="flex-1 w-full relative z-10 flex justify-center lg:justify-end">
-              <div className="w-full max-w-md aspect-4/5 bg-surface-section border border-blue-500/20 rounded-2xl relative overflow-hidden shadow-2xl group-hover:border-blue-500/40 transition-colors">
+            <div className="relative z-10 flex w-full flex-1 justify-center lg:justify-end">
+              <div className="relative aspect-4/5 w-full max-w-md overflow-hidden rounded-2xl border border-blue-500/20 bg-[#0b0e14] shadow-2xl transition-colors group-hover:border-blue-500/40">
                 <Image
                   src={hapvidaCaseImageUrl}
                   alt={
@@ -127,7 +137,7 @@ export default function EnterpriseCases({
                   }
                   fill
                   sizes="(min-width: 1024px) 448px, 100vw"
-                  className="object-cover"
+                  className="object-contain object-top"
                   unoptimized
                 />
               </div>
@@ -192,28 +202,40 @@ export default function EnterpriseCases({
                 {p.bodyAfter}
               </p>
 
+              <p className="mb-4 text-[10px] font-semibold tracking-wider text-white/45 uppercase">
+                {locale === "en" ? "How it works" : "Como funciona"}
+              </p>
               <ul className="space-y-4 font-sans text-white/80">
-                {p.bullets.map((line) => (
-                  <li key={line} className="flex gap-3 items-center">
-                    <div className="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-white text-sm shrink-0">✓</div>
+                {p.bullets.map((line, i) => (
+                  <li key={line} className="flex items-start gap-3">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-orange/15 font-mono text-xs font-bold text-brand-orange">
+                      {i + 1}
+                    </div>
                     {line}
                   </li>
                 ))}
               </ul>
+              <a
+                href={path("/casos-de-uso/")}
+                className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-orange transition-colors hover:text-brand-orange/80"
+              >
+                {locale === "en" ? "See more use cases" : "Ver mais casos de uso"}
+                <span aria-hidden>→</span>
+              </a>
             </div>
 
-            <div className="flex-1 w-full relative z-10 flex justify-center lg:justify-start">
-              <div className="w-full max-w-md aspect-4/5 bg-surface-section border border-white/10 rounded-2xl relative overflow-hidden shadow-2xl group-hover:border-white/30 transition-colors">
+            <div className="relative z-10 flex w-full flex-1 justify-center lg:justify-start">
+              <div className="relative aspect-4/5 w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-[#0b0e14] shadow-2xl transition-colors group-hover:border-white/30">
                 {prioCaseImageUrl ? (
                   <Image
                     src={prioCaseImageUrl}
                     alt={
                       homeContent?.showcaseMedia?.enterpriseCases?.prioCaseImage?.alt?.trim() ||
-                      "Case Prio"
+                      "Case Prio — loja corporativa white-label"
                     }
                     fill
                     sizes="(min-width: 1024px) 448px, 100vw"
-                    className="object-cover"
+                    className="object-contain object-top"
                     unoptimized
                   />
                 ) : (

@@ -28,6 +28,7 @@ The site is served at `http://localhost:3000/landing/` when using the default ca
 | Validate landing routes | `npm run validate:landing-routes` — valida rotas internas (sitemap, fallbacks de menu, blog CTAs); `--smoke [baseUrl]` faz smoke HTTP opcional (`scripts/validate-landing-routes.mjs`) |
 | Generate OG images | `npm run generate:og` — rasteriza os templates SVG em PNG 1200×630 para `public/og/*.png` via `sharp` (roda automaticamente no `build`; `scripts/generate-og-images.mjs`) |
 | Generate ICP showcase images | `npm run generate:icp-screens` — compõe screenshots de `public/screens/` em mockups enquadrados por vertical (`public/screens/icp/{slug}-{hero,how,benefits}.webp`) via `sharp`; consumidos pelos componentes `src/components/icp/` (`scripts/generate-icp-showcase-images.mjs`). Revisão humana após gerar |
+| Import dashboard screenshots | `npm run import:dash-screens` — converte o zip categorizado (`4unik_dashboard_screenshots_categorized.zip`) em WebP em `public/screens/dash/` + `public/screens/flows/`, e GIFs em `.webm`/`.mp4` + poster (`scripts/import-dashboard-screens.mjs`; requer `sharp` + `ffmpeg`). Não corre no build |
 | Patch legacy HTML (raiz) | `npm run patch:legacy-html` — atualiza canonical + links para `plataforma.4unik.com.br/landing` nos HTML estáticos da raiz, sem injetar meta refresh (`scripts/patch-legacy-html-redirects.mjs`) |
 | Blog image presets | `npm run blog:image-presets` (`scripts/blog-image-presets.ts`) |
 | Smoke do gerador de imagens | `npm run smoke:nano-banana` (`scripts/smoke-nano-banana.mjs`) |

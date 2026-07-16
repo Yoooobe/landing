@@ -169,10 +169,10 @@ export default function IcpProfileHero({ locale, hero, visual }: Props) {
             </div>
             <Image
               src={withBasePath(visual.images.hero)}
-              alt={hero.title}
+              alt={`${visual.chromeLabel} — ${hero.title}`}
               width={1280}
               height={860}
-              className="h-auto w-full object-cover"
+              className="h-auto w-full object-contain bg-[#0b0e14]"
               sizes="(min-width: 1024px) 560px, 92vw"
               priority
               fetchPriority="high"

@@ -348,15 +348,20 @@ export default function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-1 text-[0.9rem] font-medium tracking-wide">
+          <nav className="hidden lg:flex items-center gap-1 text-[0.9rem] font-medium tracking-wide" aria-label={locale === "en" ? "Primary" : "Principal"}>
             {navSections.map((section, sectionIndex) => (
               <div key={`${section.title}-${sectionIndex}`} className="relative group">
-                <button className="flex items-center gap-1.5 text-white/70 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full transition-all">
+                <button
+                  type="button"
+                  className="flex items-center gap-1.5 rounded-full px-4 py-2 text-white/70 transition-all hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
                   {section.title}{" "}
-                  <ChevronDown className="w-3.5 h-3.5 opacity-70 transition-transform group-hover:rotate-180" />
+                  <ChevronDown className="w-3.5 h-3.5 opacity-70 transition-transform group-hover:rotate-180" aria-hidden />
                 </button>
 
-                <div className={dropdownPanelClasses(sectionIndex, navSections.length)}>
+                <div className={dropdownPanelClasses(sectionIndex, navSections.length)} role="menu" aria-label={section.title}>
                   <div
                     className={`relative ${dropdownWidthClass(
                       section,
@@ -364,7 +369,7 @@ export default function Header() {
                       navSections.length,
                     )} p-2 rounded-2xl bg-surface-page/95 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl`}
                   >
-                    <div className={dropdownTriangleClasses(sectionIndex, navSections.length)} />
+                    <div className={dropdownTriangleClasses(sectionIndex, navSections.length)} aria-hidden />
 
                     <div className="flex flex-col gap-1 relative z-10">
                       {section.items.map((item, itemIndex) => {
@@ -377,7 +382,7 @@ export default function Header() {
                             href={item.href}
                             locale={locale}
                             openInNewTab={item.openInNewTab}
-                            className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/5 transition-colors group/item"
+                            className="group/item flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
                           >
                             <div className="mt-0.5 bg-white/5 p-2.5 rounded-lg text-white/80 group-hover/item:scale-110 transition-transform">
                               <Icon className="w-5 h-5" />
@@ -407,7 +412,7 @@ export default function Header() {
             ))}
             <Link
               href={path("/blog/")}
-              className="hidden lg:inline-flex text-[0.9rem] font-medium text-white/70 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full transition-colors"
+              className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
             >
               {m.nav.blog}
             </Link>
@@ -415,14 +420,14 @@ export default function Header() {
               <button
                 type="button"
                 onClick={() => scrollToPrimaryContact()}
-                className="hidden lg:inline-flex text-[0.9rem] font-medium text-white/70 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full transition-colors"
+                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
               >
                 {m.conversionDock.contactNav}
               </button>
             ) : (
               <Link
                 href={contactHref}
-                className="hidden lg:inline-flex text-[0.9rem] font-medium text-white/70 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full transition-colors"
+                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
               >
                 {m.conversionDock.contactNav}
               </Link>
@@ -433,7 +438,7 @@ export default function Header() {
           <div className="flex items-center gap-3 z-10 shrink-0 md:gap-4">
             <Link
               href={toggleLocalePath(pathname)}
-              className="hidden text-[0.88rem] font-medium text-white/70 hover:text-white transition-colors md:block"
+              className="hidden text-[0.88rem] font-medium text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 md:block"
               hrefLang={locale === "pt" ? "en" : "pt-BR"}
             >
               {locale === "pt" ? m.nav.langToEn : m.nav.langToPt}
@@ -443,27 +448,33 @@ export default function Header() {
               source="header-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full bg-white hover:bg-brand-orange text-brand-navy-dark hover:text-white px-6 py-2.5 text-[0.95rem] font-semibold transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] whitespace-nowrap"
+              className="whitespace-nowrap rounded-full bg-white px-6 py-2.5 text-[0.95rem] font-semibold text-brand-navy-dark shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all hover:bg-brand-orange hover:text-white hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
             >
               {m.nav.requestDemo}
             </TrackedOutboundLink>
             {/* Mobile Menu Toggle */}
             <button
-              className="lg:hidden text-white/80 hover:text-white p-2 transition-colors ml-2"
+              type="button"
+              className="ml-2 p-2 text-white/80 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 lg:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-nav-menu"
+              aria-label={isMobileMenuOpen ? (locale === "en" ? "Close menu" : "Fechar menu") : locale === "en" ? "Open menu" : "Abrir menu"}
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden /> : <Menu className="w-6 h-6" aria-hidden />}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div 
-        className={`fixed inset-0 z-40 bg-surface-deep/95 backdrop-blur-xl lg:hidden transition-all duration-300 ${
-          isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+      <div
+        id="mobile-nav-menu"
+        className={`fixed inset-0 z-40 bg-surface-deep/95 backdrop-blur-xl transition-all duration-300 lg:hidden ${
+          isMobileMenuOpen ? "visible opacity-100" : "invisible opacity-0"
         }`}
-        style={{ top: "80px" }} // Offset for header
+        style={{ top: "80px" }}
+        hidden={!isMobileMenuOpen}
       >
         <div className="flex flex-col h-full overflow-y-auto px-6 py-8 pb-24">
           <nav className="flex flex-col gap-6">

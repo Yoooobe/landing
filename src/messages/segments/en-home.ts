@@ -15,6 +15,7 @@ export const enHome = {
       "Full platform or execution layer via API. You set goals and points; we handle logistics and delivery—in Brazil and worldwide.",
     ctaDemo: "Book a demo",
     ctaExplore: "See the platform",
+    ctaDemoHint: "30 min · no commitment",
     floatAdhesion: "Team adoption",
     floatAdhesionSub: "↑ Average in the first 30 days",
     floatRh: "Manual HR workload",
