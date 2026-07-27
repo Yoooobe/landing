@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-07-15T18:22:09.490Z",
+  "zip": "4unik_dashboard_screenshots_categorized.zip",
+  "paths": {
+    "dash": "/screens/dash/",
+    "dashDetail": "/screens/dash/detail/",
+    "flows": "/screens/flows/"
+  }
+}
