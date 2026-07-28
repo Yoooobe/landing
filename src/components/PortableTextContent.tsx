@@ -23,17 +23,23 @@ function isBlogCtaBlock(item: BlogPostBodyItem): item is BlogCtaBlock {
 }
 
 function renderSpan(
-  span: PortableTextSpan,
+  span: PortableTextSpan | null | undefined | string,
   markDefs: PortableTextMarkDefinition[] | undefined,
   key: string,
 ): ReactNode {
+  if (!span) return "";
+  if (typeof span === "string") return span;
   const base = span.text || "";
-  return (span.marks || []).reduce<ReactNode>((node, mark) => {
+  const marks: string[] = Array.isArray(span.marks) ? (span.marks as string[]) : [];
+  const validMarkDefs = Array.isArray(markDefs) ? markDefs : undefined;
+
+  return marks.reduce<ReactNode>((node, mark) => {
+    if (!mark) return node;
     if (mark === "strong") return <strong key={`${key}-${mark}`}>{node}</strong>;
     if (mark === "em") return <em key={`${key}-${mark}`}>{node}</em>;
     if (mark === "underline") return <span key={`${key}-${mark}`} className="underline">{node}</span>;
 
-    const def = markDefs?.find((item) => item._key === mark && item._type === "link");
+    const def = validMarkDefs?.find((item) => item._key === mark && item._type === "link");
     if (def?.href) {
       return (
         <a
@@ -53,9 +59,11 @@ function renderSpan(
 }
 
 function renderBlock(block: PortableTextBlock) {
-  const content = (block.children || []).map((span, index) =>
+  const children = Array.isArray(block.children) ? block.children : [];
+  const content = children.map((span, index) =>
     renderSpan(span, block.markDefs, `${block._key || "block"}-${index}`),
   );
+
 
   if (block.style === "h2") {
     return <h2 className="mt-12 text-3xl font-black font-heading text-white">{content}</h2>;
