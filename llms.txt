@@ -1,7 +1,7 @@
 # 4Unik (4unik) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
-> Gerado por `scripts/generate-llms-txt.ts` em 2026-07-28T23:02:16.921Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
+> Gerado por `scripts/generate-llms-txt.ts` em 2026-07-28T23:07:23.602Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
 
 ## O que é
 
@@ -71,6 +71,10 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - 3 (EN): https://plataforma.4unik.com.br/landing/en/blog/3/
 - 4 (PT): https://plataforma.4unik.com.br/landing/blog/4/
 - 4 (EN): https://plataforma.4unik.com.br/landing/en/blog/4/
+- 4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2 (PT): https://plataforma.4unik.com.br/landing/blog/4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2/
+- 4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2 (EN): https://plataforma.4unik.com.br/landing/en/blog/4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2/
+- 4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2 (PT): https://plataforma.4unik.com.br/landing/blog/4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2/
+- 4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2 (EN): https://plataforma.4unik.com.br/landing/en/blog/4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2/
 - 5 (PT): https://plataforma.4unik.com.br/landing/blog/5/
 - 5 (EN): https://plataforma.4unik.com.br/landing/en/blog/5/
 - 6 (PT): https://plataforma.4unik.com.br/landing/blog/6/
@@ -79,6 +83,64 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - 7 (EN): https://plataforma.4unik.com.br/landing/en/blog/7/
 - 8 (PT): https://plataforma.4unik.com.br/landing/blog/8/
 - 8 (EN): https://plataforma.4unik.com.br/landing/en/blog/8/
+- brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil (PT): https://plataforma.4unik.com.br/landing/blog/brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil/
+- brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil (EN): https://plataforma.4unik.com.br/landing/en/blog/brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil/
+- campanha-de-metas-trimestrais-conecte-okrs-a-recompensas-individuais (PT): https://plataforma.4unik.com.br/landing/blog/campanha-de-metas-trimestrais-conecte-okrs-a-recompensas-individuais/
+- campanha-de-metas-trimestrais-conecte-okrs-a-recompensas-individuais (EN): https://plataforma.4unik.com.br/landing/en/blog/campanha-de-metas-trimestrais-conecte-okrs-a-recompensas-individuais/
+- campanha-de-vendas-gamificada-ranking-missoes-e-premios-que-o-time-aceita-fb3 (PT): https://plataforma.4unik.com.br/landing/blog/campanha-de-vendas-gamificada-ranking-missoes-e-premios-que-o-time-aceita-fb3/
+- campanha-de-vendas-gamificada-ranking-missoes-e-premios-que-o-time-aceita-fb3 (EN): https://plataforma.4unik.com.br/landing/en/blog/campanha-de-vendas-gamificada-ranking-missoes-e-premios-que-o-time-aceita-fb3/
+- convencoes-e-feiras-resgate-ja-ou-entrega-depois-a-solucao-4unik-para-brindes (PT): https://plataforma.4unik.com.br/landing/blog/convencoes-e-feiras-resgate-ja-ou-entrega-depois-a-solucao-4unik-para-brindes/
+- convencoes-e-feiras-resgate-ja-ou-entrega-depois-a-solucao-4unik-para-brindes (EN): https://plataforma.4unik.com.br/landing/en/blog/convencoes-e-feiras-resgate-ja-ou-entrega-depois-a-solucao-4unik-para-brindes/
+- dashboards-da-4unik-como-tomar-decisoes-de-rh-baseadas-em-dados (PT): https://plataforma.4unik.com.br/landing/blog/dashboards-da-4unik-como-tomar-decisoes-de-rh-baseadas-em-dados/
+- dashboards-da-4unik-como-tomar-decisoes-de-rh-baseadas-em-dados (EN): https://plataforma.4unik.com.br/landing/en/blog/dashboards-da-4unik-como-tomar-decisoes-de-rh-baseadas-em-dados/
+- definitive-guide-hr-gamification (PT): https://plataforma.4unik.com.br/landing/blog/definitive-guide-hr-gamification/
+- definitive-guide-hr-gamification (EN): https://plataforma.4unik.com.br/landing/en/blog/definitive-guide-hr-gamification/
+- engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6 (PT): https://plataforma.4unik.com.br/landing/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/
+- engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6 (EN): https://plataforma.4unik.com.br/landing/en/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/
+- engaja-time-como-a-gamificacao-transforma-o-rh-em-motor-de-resultados-fb1 (PT): https://plataforma.4unik.com.br/landing/blog/engaja-time-como-a-gamificacao-transforma-o-rh-em-motor-de-resultados-fb1/
+- engaja-time-como-a-gamificacao-transforma-o-rh-em-motor-de-resultados-fb1 (EN): https://plataforma.4unik.com.br/landing/en/blog/engaja-time-como-a-gamificacao-transforma-o-rh-em-motor-de-resultados-fb1/
+- gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3 (PT): https://plataforma.4unik.com.br/landing/blog/gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3/
+- gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3 (EN): https://plataforma.4unik.com.br/landing/en/blog/gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3/
+- gamified-welcome-kit-onboarding-people-will-talk-about-fb4 (PT): https://plataforma.4unik.com.br/landing/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/
+- gamified-welcome-kit-onboarding-people-will-talk-about-fb4 (EN): https://plataforma.4unik.com.br/landing/en/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/
+- gestao-de-pessoas-e-performance-gamificacao-alem-da-avaliacao-anual-fb7 (PT): https://plataforma.4unik.com.br/landing/blog/gestao-de-pessoas-e-performance-gamificacao-alem-da-avaliacao-anual-fb7/
+- gestao-de-pessoas-e-performance-gamificacao-alem-da-avaliacao-anual-fb7 (EN): https://plataforma.4unik.com.br/landing/en/blog/gestao-de-pessoas-e-performance-gamificacao-alem-da-avaliacao-anual-fb7/
+- guia-definitivo-gamificacao-rh-moderno (PT): https://plataforma.4unik.com.br/landing/blog/guia-definitivo-gamificacao-rh-moderno/
+- guia-definitivo-gamificacao-rh-moderno (EN): https://plataforma.4unik.com.br/landing/en/blog/guia-definitivo-gamificacao-rh-moderno/
+- how-gamification-turns-hr-into-a-results-engine-fb1 (PT): https://plataforma.4unik.com.br/landing/blog/how-gamification-turns-hr-into-a-results-engine-fb1/
+- how-gamification-turns-hr-into-a-results-engine-fb1 (EN): https://plataforma.4unik.com.br/landing/en/blog/how-gamification-turns-hr-into-a-results-engine-fb1/
+- kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos (PT): https://plataforma.4unik.com.br/landing/blog/kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos/
+- kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos (EN): https://plataforma.4unik.com.br/landing/en/blog/kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos/
+- loja-corporativa-em-eventos-engajamento-do-stand-ao-pos-evento (PT): https://plataforma.4unik.com.br/landing/blog/loja-corporativa-em-eventos-engajamento-do-stand-ao-pos-evento/
+- loja-corporativa-em-eventos-engajamento-do-stand-ao-pos-evento (EN): https://plataforma.4unik.com.br/landing/en/blog/loja-corporativa-em-eventos-engajamento-do-stand-ao-pos-evento/
+- okrs-and-gamification-linking-company-goals-to-4unik-rewards (PT): https://plataforma.4unik.com.br/landing/blog/okrs-and-gamification-linking-company-goals-to-4unik-rewards/
+- okrs-and-gamification-linking-company-goals-to-4unik-rewards (EN): https://plataforma.4unik.com.br/landing/en/blog/okrs-and-gamification-linking-company-goals-to-4unik-rewards/
+- okrs-and-gamification-linking-company-goals-to-4unik-rewards-fb5 (PT): https://plataforma.4unik.com.br/landing/blog/okrs-and-gamification-linking-company-goals-to-4unik-rewards-fb5/
+- okrs-and-gamification-linking-company-goals-to-4unik-rewards-fb5 (EN): https://plataforma.4unik.com.br/landing/en/blog/okrs-and-gamification-linking-company-goals-to-4unik-rewards-fb5/
+- okrs-e-gamificacao-conectar-metas-da-empresa-a-recompensas-na-4unik-fb5 (PT): https://plataforma.4unik.com.br/landing/blog/okrs-e-gamificacao-conectar-metas-da-empresa-a-recompensas-na-4unik-fb5/
+- okrs-e-gamificacao-conectar-metas-da-empresa-a-recompensas-na-4unik-fb5 (EN): https://plataforma.4unik.com.br/landing/en/blog/okrs-e-gamificacao-conectar-metas-da-empresa-a-recompensas-na-4unik-fb5/
+- onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento (PT): https://plataforma.4unik.com.br/landing/blog/onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento/
+- onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento (EN): https://plataforma.4unik.com.br/landing/en/blog/onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento/
+- people-management-and-performance-gamification-beyond-the-annual-review-fb7 (PT): https://plataforma.4unik.com.br/landing/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/
+- people-management-and-performance-gamification-beyond-the-annual-review-fb7 (EN): https://plataforma.4unik.com.br/landing/en/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/
+- premiacao-de-eventos-pontos-viram-recompensas-e-engajamento-real (PT): https://plataforma.4unik.com.br/landing/blog/premiacao-de-eventos-pontos-viram-recompensas-e-engajamento-real/
+- premiacao-de-eventos-pontos-viram-recompensas-e-engajamento-real (EN): https://plataforma.4unik.com.br/landing/en/blog/premiacao-de-eventos-pontos-viram-recompensas-e-engajamento-real/
+- recognition-360-peer-to-peer (PT): https://plataforma.4unik.com.br/landing/blog/recognition-360-peer-to-peer/
+- recognition-360-peer-to-peer (EN): https://plataforma.4unik.com.br/landing/en/blog/recognition-360-peer-to-peer/
+- reconhecimento-360-peer-to-peer (PT): https://plataforma.4unik.com.br/landing/blog/reconhecimento-360-peer-to-peer/
+- reconhecimento-360-peer-to-peer (EN): https://plataforma.4unik.com.br/landing/en/blog/reconhecimento-360-peer-to-peer/
+- rewards-logistics-sla-d1 (PT): https://plataforma.4unik.com.br/landing/blog/rewards-logistics-sla-d1/
+- rewards-logistics-sla-d1 (EN): https://plataforma.4unik.com.br/landing/en/blog/rewards-logistics-sla-d1/
+- roi-de-engajamento-metricas-que-o-rh-pode-apresentar-na-reuniao-de-diretoria-fb6 (PT): https://plataforma.4unik.com.br/landing/blog/roi-de-engajamento-metricas-que-o-rh-pode-apresentar-na-reuniao-de-diretoria-fb6/
+- roi-de-engajamento-metricas-que-o-rh-pode-apresentar-na-reuniao-de-diretoria-fb6 (EN): https://plataforma.4unik.com.br/landing/en/blog/roi-de-engajamento-metricas-que-o-rh-pode-apresentar-na-reuniao-de-diretoria-fb6/
+- sla-logistica-premiacao-d1 (PT): https://plataforma.4unik.com.br/landing/blog/sla-logistica-premiacao-d1/
+- sla-logistica-premiacao-d1 (EN): https://plataforma.4unik.com.br/landing/en/blog/sla-logistica-premiacao-d1/
+- welcome-kit-gamificado-onboarding-que-vira-historia-no-coffee-break-fb4 (PT): https://plataforma.4unik.com.br/landing/blog/welcome-kit-gamificado-onboarding-que-vira-historia-no-coffee-break-fb4/
+- welcome-kit-gamificado-onboarding-que-vira-historia-no-coffee-break-fb4 (EN): https://plataforma.4unik.com.br/landing/en/blog/welcome-kit-gamificado-onboarding-que-vira-historia-no-coffee-break-fb4/
+- welcome-kits-first-impression (PT): https://plataforma.4unik.com.br/landing/blog/welcome-kits-first-impression/
+- welcome-kits-first-impression (EN): https://plataforma.4unik.com.br/landing/en/blog/welcome-kits-first-impression/
+- welcome-kits-primeira-impressao (PT): https://plataforma.4unik.com.br/landing/blog/welcome-kits-primeira-impressao/
+- welcome-kits-primeira-impressao (EN): https://plataforma.4unik.com.br/landing/en/blog/welcome-kits-primeira-impressao/
 
 ## Tópicos para citação factual
 
