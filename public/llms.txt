@@ -1,7 +1,7 @@
 # 4Unik (4unik) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
-> Gerado por `scripts/generate-llms-txt.ts` em 2026-07-28T01:42:55.395Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
+> Gerado por `scripts/generate-llms-txt.ts` em 2026-07-28T23:05:16.558Z (base canónica: `http://localhost:3000/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
 
 ## O que é
 
@@ -11,26 +11,26 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 
 ## URLs canónicas (derivadas do build)
 
-- Site (PT): https://plataforma.4unik.com.br/landing/
-- Site (EN): https://plataforma.4unik.com.br/landing/en/
-- API e integrações: https://plataforma.4unik.com.br/landing/api-integracoes/ | https://plataforma.4unik.com.br/landing/en/api-integracoes/
-- Hub Workvivo: https://plataforma.4unik.com.br/landing/api-integracoes/workvivo/ | https://plataforma.4unik.com.br/landing/en/api-integracoes/workvivo/
-- Plataforma (overview): https://plataforma.4unik.com.br/landing/plataforma/ | https://plataforma.4unik.com.br/landing/en/plataforma/
-- Inteligência: https://plataforma.4unik.com.br/landing/inteligencia/ | https://plataforma.4unik.com.br/landing/en/inteligencia/
-- Infraestrutura de recompensas / Reward infrastructure (pilar AEO): https://plataforma.4unik.com.br/landing/infraestrutura-de-recompensas/ | https://plataforma.4unik.com.br/landing/en/reward-infrastructure/
-- Casos de uso: https://plataforma.4unik.com.br/landing/casos-de-uso/ | https://plataforma.4unik.com.br/landing/en/casos-de-uso/
-- Para plataformas e SaaS: https://plataforma.4unik.com.br/landing/para-plataformas/ | https://plataforma.4unik.com.br/landing/en/para-plataformas/
-- Para educação e e-learning: https://plataforma.4unik.com.br/landing/educacao/ | https://plataforma.4unik.com.br/landing/en/educacao/
-- Para times de vendas: https://plataforma.4unik.com.br/landing/vendas/ | https://plataforma.4unik.com.br/landing/en/vendas/
-- Para criadores e comunidades: https://plataforma.4unik.com.br/landing/comunidades/ | https://plataforma.4unik.com.br/landing/en/comunidades/
-- Para eventos: https://plataforma.4unik.com.br/landing/eventos/ | https://plataforma.4unik.com.br/landing/en/eventos/
-- Gamificação para RH: https://plataforma.4unik.com.br/landing/gamificacao-para-rh/ | https://plataforma.4unik.com.br/landing/en/gamificacao-para-rh/
-- Blog: https://plataforma.4unik.com.br/landing/blog/ | https://plataforma.4unik.com.br/landing/en/blog/
-- robots.txt: https://plataforma.4unik.com.br/landing/robots.txt
-- sitemap: https://plataforma.4unik.com.br/landing/sitemap.xml
+- Site (PT): http://localhost:3000/landing/
+- Site (EN): http://localhost:3000/landing/en/
+- API e integrações: http://localhost:3000/landing/api-integracoes/ | http://localhost:3000/landing/en/api-integracoes/
+- Hub Workvivo: http://localhost:3000/landing/api-integracoes/workvivo/ | http://localhost:3000/landing/en/api-integracoes/workvivo/
+- Plataforma (overview): http://localhost:3000/landing/plataforma/ | http://localhost:3000/landing/en/plataforma/
+- Inteligência: http://localhost:3000/landing/inteligencia/ | http://localhost:3000/landing/en/inteligencia/
+- Infraestrutura de recompensas / Reward infrastructure (pilar AEO): http://localhost:3000/landing/infraestrutura-de-recompensas/ | http://localhost:3000/landing/en/reward-infrastructure/
+- Casos de uso: http://localhost:3000/landing/casos-de-uso/ | http://localhost:3000/landing/en/casos-de-uso/
+- Para plataformas e SaaS: http://localhost:3000/landing/para-plataformas/ | http://localhost:3000/landing/en/para-plataformas/
+- Para educação e e-learning: http://localhost:3000/landing/educacao/ | http://localhost:3000/landing/en/educacao/
+- Para times de vendas: http://localhost:3000/landing/vendas/ | http://localhost:3000/landing/en/vendas/
+- Para criadores e comunidades: http://localhost:3000/landing/comunidades/ | http://localhost:3000/landing/en/comunidades/
+- Para eventos: http://localhost:3000/landing/eventos/ | http://localhost:3000/landing/en/eventos/
+- Gamificação para RH: http://localhost:3000/landing/gamificacao-para-rh/ | http://localhost:3000/landing/en/gamificacao-para-rh/
+- Blog: http://localhost:3000/landing/blog/ | http://localhost:3000/landing/en/blog/
+- robots.txt: http://localhost:3000/landing/robots.txt
+- sitemap: http://localhost:3000/landing/sitemap.xml
 
-- Pricing (PT/EN): https://plataforma.4unik.com.br/landing/pricing/ | https://plataforma.4unik.com.br/landing/en/pricing/
-- Security (PT/EN): https://plataforma.4unik.com.br/landing/seguranca/ | https://plataforma.4unik.com.br/landing/en/seguranca/
+- Pricing (PT/EN): http://localhost:3000/landing/pricing/ | http://localhost:3000/landing/en/pricing/
+- Security (PT/EN): http://localhost:3000/landing/seguranca/ | http://localhost:3000/landing/en/seguranca/
 
 ## Soluções por perfil (resumo citável)
 
@@ -50,35 +50,97 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 
 ### Subpáginas da plataforma
 
-- motor-gamificacao (PT): https://plataforma.4unik.com.br/landing/plataforma/motor-gamificacao/
-- motor-gamificacao (EN): https://plataforma.4unik.com.br/landing/en/plataforma/motor-gamificacao/
-- campanhas-gamificacao (PT): https://plataforma.4unik.com.br/landing/plataforma/campanhas-gamificacao/
-- campanhas-gamificacao (EN): https://plataforma.4unik.com.br/landing/en/plataforma/campanhas-gamificacao/
-- controle-carteiras (PT): https://plataforma.4unik.com.br/landing/plataforma/controle-carteiras/
-- controle-carteiras (EN): https://plataforma.4unik.com.br/landing/en/plataforma/controle-carteiras/
-- painel-gestor (PT): https://plataforma.4unik.com.br/landing/plataforma/painel-gestor/
-- painel-gestor (EN): https://plataforma.4unik.com.br/landing/en/plataforma/painel-gestor/
-- loja-resgate (PT): https://plataforma.4unik.com.br/landing/plataforma/loja-resgate/
-- loja-resgate (EN): https://plataforma.4unik.com.br/landing/en/plataforma/loja-resgate/
+- motor-gamificacao (PT): http://localhost:3000/landing/plataforma/motor-gamificacao/
+- motor-gamificacao (EN): http://localhost:3000/landing/en/plataforma/motor-gamificacao/
+- campanhas-gamificacao (PT): http://localhost:3000/landing/plataforma/campanhas-gamificacao/
+- campanhas-gamificacao (EN): http://localhost:3000/landing/en/plataforma/campanhas-gamificacao/
+- controle-carteiras (PT): http://localhost:3000/landing/plataforma/controle-carteiras/
+- controle-carteiras (EN): http://localhost:3000/landing/en/plataforma/controle-carteiras/
+- painel-gestor (PT): http://localhost:3000/landing/plataforma/painel-gestor/
+- painel-gestor (EN): http://localhost:3000/landing/en/plataforma/painel-gestor/
+- loja-resgate (PT): http://localhost:3000/landing/plataforma/loja-resgate/
+- loja-resgate (EN): http://localhost:3000/landing/en/plataforma/loja-resgate/
 
 ### Posts do blog (slugs do CMS + fallback editorial)
 
-- 1 (PT): https://plataforma.4unik.com.br/landing/blog/1/
-- 1 (EN): https://plataforma.4unik.com.br/landing/en/blog/1/
-- 2 (PT): https://plataforma.4unik.com.br/landing/blog/2/
-- 2 (EN): https://plataforma.4unik.com.br/landing/en/blog/2/
-- 3 (PT): https://plataforma.4unik.com.br/landing/blog/3/
-- 3 (EN): https://plataforma.4unik.com.br/landing/en/blog/3/
-- 4 (PT): https://plataforma.4unik.com.br/landing/blog/4/
-- 4 (EN): https://plataforma.4unik.com.br/landing/en/blog/4/
-- 5 (PT): https://plataforma.4unik.com.br/landing/blog/5/
-- 5 (EN): https://plataforma.4unik.com.br/landing/en/blog/5/
-- 6 (PT): https://plataforma.4unik.com.br/landing/blog/6/
-- 6 (EN): https://plataforma.4unik.com.br/landing/en/blog/6/
-- 7 (PT): https://plataforma.4unik.com.br/landing/blog/7/
-- 7 (EN): https://plataforma.4unik.com.br/landing/en/blog/7/
-- 8 (PT): https://plataforma.4unik.com.br/landing/blog/8/
-- 8 (EN): https://plataforma.4unik.com.br/landing/en/blog/8/
+- 1 (PT): http://localhost:3000/landing/blog/1/
+- 1 (EN): http://localhost:3000/landing/en/blog/1/
+- 2 (PT): http://localhost:3000/landing/blog/2/
+- 2 (EN): http://localhost:3000/landing/en/blog/2/
+- 3 (PT): http://localhost:3000/landing/blog/3/
+- 3 (EN): http://localhost:3000/landing/en/blog/3/
+- 4 (PT): http://localhost:3000/landing/blog/4/
+- 4 (EN): http://localhost:3000/landing/en/blog/4/
+- 4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2 (PT): http://localhost:3000/landing/blog/4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2/
+- 4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2 (EN): http://localhost:3000/landing/en/blog/4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2/
+- 4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2 (PT): http://localhost:3000/landing/blog/4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2/
+- 4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2 (EN): http://localhost:3000/landing/en/blog/4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2/
+- 5 (PT): http://localhost:3000/landing/blog/5/
+- 5 (EN): http://localhost:3000/landing/en/blog/5/
+- 6 (PT): http://localhost:3000/landing/blog/6/
+- 6 (EN): http://localhost:3000/landing/en/blog/6/
+- 7 (PT): http://localhost:3000/landing/blog/7/
+- 7 (EN): http://localhost:3000/landing/en/blog/7/
+- 8 (PT): http://localhost:3000/landing/blog/8/
+- 8 (EN): http://localhost:3000/landing/en/blog/8/
+- brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil (PT): http://localhost:3000/landing/blog/brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil/
+- brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil (EN): http://localhost:3000/landing/en/blog/brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil/
+- campanha-de-metas-trimestrais-conecte-okrs-a-recompensas-individuais (PT): http://localhost:3000/landing/blog/campanha-de-metas-trimestrais-conecte-okrs-a-recompensas-individuais/
+- campanha-de-metas-trimestrais-conecte-okrs-a-recompensas-individuais (EN): http://localhost:3000/landing/en/blog/campanha-de-metas-trimestrais-conecte-okrs-a-recompensas-individuais/
+- campanha-de-vendas-gamificada-ranking-missoes-e-premios-que-o-time-aceita-fb3 (PT): http://localhost:3000/landing/blog/campanha-de-vendas-gamificada-ranking-missoes-e-premios-que-o-time-aceita-fb3/
+- campanha-de-vendas-gamificada-ranking-missoes-e-premios-que-o-time-aceita-fb3 (EN): http://localhost:3000/landing/en/blog/campanha-de-vendas-gamificada-ranking-missoes-e-premios-que-o-time-aceita-fb3/
+- convencoes-e-feiras-resgate-ja-ou-entrega-depois-a-solucao-4unik-para-brindes (PT): http://localhost:3000/landing/blog/convencoes-e-feiras-resgate-ja-ou-entrega-depois-a-solucao-4unik-para-brindes/
+- convencoes-e-feiras-resgate-ja-ou-entrega-depois-a-solucao-4unik-para-brindes (EN): http://localhost:3000/landing/en/blog/convencoes-e-feiras-resgate-ja-ou-entrega-depois-a-solucao-4unik-para-brindes/
+- dashboards-da-4unik-como-tomar-decisoes-de-rh-baseadas-em-dados (PT): http://localhost:3000/landing/blog/dashboards-da-4unik-como-tomar-decisoes-de-rh-baseadas-em-dados/
+- dashboards-da-4unik-como-tomar-decisoes-de-rh-baseadas-em-dados (EN): http://localhost:3000/landing/en/blog/dashboards-da-4unik-como-tomar-decisoes-de-rh-baseadas-em-dados/
+- definitive-guide-hr-gamification (PT): http://localhost:3000/landing/blog/definitive-guide-hr-gamification/
+- definitive-guide-hr-gamification (EN): http://localhost:3000/landing/en/blog/definitive-guide-hr-gamification/
+- engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6 (PT): http://localhost:3000/landing/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/
+- engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6 (EN): http://localhost:3000/landing/en/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/
+- engaja-time-como-a-gamificacao-transforma-o-rh-em-motor-de-resultados-fb1 (PT): http://localhost:3000/landing/blog/engaja-time-como-a-gamificacao-transforma-o-rh-em-motor-de-resultados-fb1/
+- engaja-time-como-a-gamificacao-transforma-o-rh-em-motor-de-resultados-fb1 (EN): http://localhost:3000/landing/en/blog/engaja-time-como-a-gamificacao-transforma-o-rh-em-motor-de-resultados-fb1/
+- gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3 (PT): http://localhost:3000/landing/blog/gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3/
+- gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3 (EN): http://localhost:3000/landing/en/blog/gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3/
+- gamified-welcome-kit-onboarding-people-will-talk-about-fb4 (PT): http://localhost:3000/landing/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/
+- gamified-welcome-kit-onboarding-people-will-talk-about-fb4 (EN): http://localhost:3000/landing/en/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/
+- gestao-de-pessoas-e-performance-gamificacao-alem-da-avaliacao-anual-fb7 (PT): http://localhost:3000/landing/blog/gestao-de-pessoas-e-performance-gamificacao-alem-da-avaliacao-anual-fb7/
+- gestao-de-pessoas-e-performance-gamificacao-alem-da-avaliacao-anual-fb7 (EN): http://localhost:3000/landing/en/blog/gestao-de-pessoas-e-performance-gamificacao-alem-da-avaliacao-anual-fb7/
+- guia-definitivo-gamificacao-rh-moderno (PT): http://localhost:3000/landing/blog/guia-definitivo-gamificacao-rh-moderno/
+- guia-definitivo-gamificacao-rh-moderno (EN): http://localhost:3000/landing/en/blog/guia-definitivo-gamificacao-rh-moderno/
+- how-gamification-turns-hr-into-a-results-engine-fb1 (PT): http://localhost:3000/landing/blog/how-gamification-turns-hr-into-a-results-engine-fb1/
+- how-gamification-turns-hr-into-a-results-engine-fb1 (EN): http://localhost:3000/landing/en/blog/how-gamification-turns-hr-into-a-results-engine-fb1/
+- kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos (PT): http://localhost:3000/landing/blog/kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos/
+- kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos (EN): http://localhost:3000/landing/en/blog/kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos/
+- loja-corporativa-em-eventos-engajamento-do-stand-ao-pos-evento (PT): http://localhost:3000/landing/blog/loja-corporativa-em-eventos-engajamento-do-stand-ao-pos-evento/
+- loja-corporativa-em-eventos-engajamento-do-stand-ao-pos-evento (EN): http://localhost:3000/landing/en/blog/loja-corporativa-em-eventos-engajamento-do-stand-ao-pos-evento/
+- okrs-and-gamification-linking-company-goals-to-4unik-rewards (PT): http://localhost:3000/landing/blog/okrs-and-gamification-linking-company-goals-to-4unik-rewards/
+- okrs-and-gamification-linking-company-goals-to-4unik-rewards (EN): http://localhost:3000/landing/en/blog/okrs-and-gamification-linking-company-goals-to-4unik-rewards/
+- okrs-and-gamification-linking-company-goals-to-4unik-rewards-fb5 (PT): http://localhost:3000/landing/blog/okrs-and-gamification-linking-company-goals-to-4unik-rewards-fb5/
+- okrs-and-gamification-linking-company-goals-to-4unik-rewards-fb5 (EN): http://localhost:3000/landing/en/blog/okrs-and-gamification-linking-company-goals-to-4unik-rewards-fb5/
+- okrs-e-gamificacao-conectar-metas-da-empresa-a-recompensas-na-4unik-fb5 (PT): http://localhost:3000/landing/blog/okrs-e-gamificacao-conectar-metas-da-empresa-a-recompensas-na-4unik-fb5/
+- okrs-e-gamificacao-conectar-metas-da-empresa-a-recompensas-na-4unik-fb5 (EN): http://localhost:3000/landing/en/blog/okrs-e-gamificacao-conectar-metas-da-empresa-a-recompensas-na-4unik-fb5/
+- onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento (PT): http://localhost:3000/landing/blog/onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento/
+- onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento (EN): http://localhost:3000/landing/en/blog/onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento/
+- people-management-and-performance-gamification-beyond-the-annual-review-fb7 (PT): http://localhost:3000/landing/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/
+- people-management-and-performance-gamification-beyond-the-annual-review-fb7 (EN): http://localhost:3000/landing/en/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/
+- premiacao-de-eventos-pontos-viram-recompensas-e-engajamento-real (PT): http://localhost:3000/landing/blog/premiacao-de-eventos-pontos-viram-recompensas-e-engajamento-real/
+- premiacao-de-eventos-pontos-viram-recompensas-e-engajamento-real (EN): http://localhost:3000/landing/en/blog/premiacao-de-eventos-pontos-viram-recompensas-e-engajamento-real/
+- recognition-360-peer-to-peer (PT): http://localhost:3000/landing/blog/recognition-360-peer-to-peer/
+- recognition-360-peer-to-peer (EN): http://localhost:3000/landing/en/blog/recognition-360-peer-to-peer/
+- reconhecimento-360-peer-to-peer (PT): http://localhost:3000/landing/blog/reconhecimento-360-peer-to-peer/
+- reconhecimento-360-peer-to-peer (EN): http://localhost:3000/landing/en/blog/reconhecimento-360-peer-to-peer/
+- rewards-logistics-sla-d1 (PT): http://localhost:3000/landing/blog/rewards-logistics-sla-d1/
+- rewards-logistics-sla-d1 (EN): http://localhost:3000/landing/en/blog/rewards-logistics-sla-d1/
+- roi-de-engajamento-metricas-que-o-rh-pode-apresentar-na-reuniao-de-diretoria-fb6 (PT): http://localhost:3000/landing/blog/roi-de-engajamento-metricas-que-o-rh-pode-apresentar-na-reuniao-de-diretoria-fb6/
+- roi-de-engajamento-metricas-que-o-rh-pode-apresentar-na-reuniao-de-diretoria-fb6 (EN): http://localhost:3000/landing/en/blog/roi-de-engajamento-metricas-que-o-rh-pode-apresentar-na-reuniao-de-diretoria-fb6/
+- sla-logistica-premiacao-d1 (PT): http://localhost:3000/landing/blog/sla-logistica-premiacao-d1/
+- sla-logistica-premiacao-d1 (EN): http://localhost:3000/landing/en/blog/sla-logistica-premiacao-d1/
+- welcome-kit-gamificado-onboarding-que-vira-historia-no-coffee-break-fb4 (PT): http://localhost:3000/landing/blog/welcome-kit-gamificado-onboarding-que-vira-historia-no-coffee-break-fb4/
+- welcome-kit-gamificado-onboarding-que-vira-historia-no-coffee-break-fb4 (EN): http://localhost:3000/landing/en/blog/welcome-kit-gamificado-onboarding-que-vira-historia-no-coffee-break-fb4/
+- welcome-kits-first-impression (PT): http://localhost:3000/landing/blog/welcome-kits-first-impression/
+- welcome-kits-first-impression (EN): http://localhost:3000/landing/en/blog/welcome-kits-first-impression/
+- welcome-kits-primeira-impressao (PT): http://localhost:3000/landing/blog/welcome-kits-primeira-impressao/
+- welcome-kits-primeira-impressao (EN): http://localhost:3000/landing/en/blog/welcome-kits-primeira-impressao/
 
 ## Tópicos para citação factual
 

@@ -21,6 +21,8 @@ export NEXT_PUBLIC_SITE_URL="https://plataforma.4unik.com.br/landing"
 export NEXT_PUBLIC_SANITY_PROJECT_ID="${NEXT_PUBLIC_SANITY_PROJECT_ID:?Defina NEXT_PUBLIC_SANITY_PROJECT_ID em .env.local}"
 export NEXT_PUBLIC_SANITY_DATASET="${NEXT_PUBLIC_SANITY_DATASET:-production}"
 export NEXT_PUBLIC_SANITY_API_VERSION="${NEXT_PUBLIC_SANITY_API_VERSION:-2024-03-17}"
+export SANITY_API_WRITE_TOKEN="${SANITY_API_WRITE_TOKEN:-}"
+
 
 # Páginas /pricing/ e /seguranca/ — gate em docs/content-approval-queue.md (indexação liberada 2026-06-03).
 export NEXT_PUBLIC_INDEX_GROWTH_PAGES="${NEXT_PUBLIC_INDEX_GROWTH_PAGES:-true}"
