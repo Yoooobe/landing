@@ -38,33 +38,37 @@ Ambos os streams reportam à mesma propriedade `327916606`; para isolar a landin
   - `generate_lead` — formulário de lead ([`LeadCaptureForm.tsx`](../../src/components/LeadCaptureForm.tsx)) após POST bem-sucedido; params: `source`, `locale`.
   - `schedule_demo` — cliques em links Calendly ([`TrackedOutboundLink.tsx`](../../src/components/analytics/TrackedOutboundLink.tsx)); params: `source`, `link_url`.
   - `contact_whatsapp` — cliques em `wa.me` / WhatsApp ([`TrackedOutboundLink.tsx`](../../src/components/analytics/TrackedOutboundLink.tsx)); params: `source`, `link_url`.
+  - `contact_email` — cliques em links `mailto:`; params: `source`, `link_url`.
+  - `contact_intent` — intenção de abrir o contacto/formulário (dock/header Contato), antes de submeter ou iniciar um canal; params: `source` (ex.: `header-contact`, `conversion-dock-form`).
 - Constantes e deteção de URL: [`src/lib/analyticsEvents.ts`](../../src/lib/analyticsEvents.ts).
 
 ### Key events no Admin GA4 (manual)
 
-Marcar os três eventos como **key events** após o deploy e um clique/submit de teste:
+Marcar os quatro eventos de conversão explícita como **key events** após o deploy e um clique/submit de teste. `contact_intent` é um sinal de interesse no topo do funil e **não** deve ser marcado como key event.
 
 | Evento | Origem |
 |--------|--------|
 | `generate_lead` | Submit do formulário de lead |
 | `schedule_demo` | CTA “Agendar demo” (Calendly) |
 | `contact_whatsapp` | CTA WhatsApp (`wa.me`) |
+| `contact_email` | CTA de email (`mailto:`) |
+| `contact_intent` | Abertura/intenção de contacto — **soft event, não key event** |
 
 | Passo | Estado |
 |-------|--------|
 | Eventos disparam em produção | Implementado no código |
-| Marcar como key events no Admin | **Feito** (17/jun/2026) — `generate_lead`, `schedule_demo`, `contact_whatsapp` |
+| Marcar como key events no Admin | Executar `node scripts/setup-ga4-admin.mjs` para `generate_lead`, `schedule_demo`, `contact_whatsapp`, `contact_email` |
 
 **Caminho no Admin (interface em inglês):**
 
 1. Abre [GA4 Admin](https://analytics.google.com/analytics/web/#/a66932658p327916606/admin) (ícone engrenagem, canto inferior esquerdo).
 2. Coluna **Property** → secção **Data display** → **Events** (não confundir com “Data streams”).
-3. Aba **Recent events** — quando cada evento aparecer, clica na **estrela** (“Mark as key event”), ou usa **Key events → New key event** com o nome exato (`generate_lead`, `schedule_demo`, `contact_whatsapp`).
+3. Aba **Recent events** — quando cada evento aparecer, clica na **estrela** (“Mark as key event”), ou usa **Key events → New key event** com o nome exato (`generate_lead`, `schedule_demo`, `contact_whatsapp`, `contact_email`).
 
 **Se um evento não aparecer na lista** (normal até haver um hit real em produção):
 
 1. Na mesma página **Admin → Data display → Events**, ou diretamente **Key events → New key event**.
-2. **Event name:** `generate_lead`, `schedule_demo` ou `contact_whatsapp` (um de cada vez).
+2. **Event name:** `generate_lead`, `schedule_demo`, `contact_whatsapp` ou `contact_email` (um de cada vez).
 3. Guarda; o evento passa a key event assim que o primeiro hit chegar ao stream.
 
 Link direto (após login): [Admin → Events](https://analytics.google.com/analytics/web/#/a66932658p327916606/admin/events)
@@ -125,7 +129,7 @@ Checklist no painel da Loja Integrada:
 ### Vínculo Ads ↔ GA4 + conversões (manual, Admin)
 
 1. GA4 Admin (propriedade `327916606`) → **Vínculos de produto → Google Ads** → vincular a conta do `AW-860167767`.
-2. Google Ads → **Ferramentas → Medição → Conversões → Importar → propriedades do GA4**: importar `generate_lead`, `schedule_demo`, `contact_whatsapp`.
+2. Google Ads → **Ferramentas → Medição → Conversões → Importar → propriedades do GA4**: importar `generate_lead`, `schedule_demo`, `contact_whatsapp`, `contact_email`.
 3. Opcional: ativar Sinais do Google na propriedade para listas de remarketing GA4→Ads.
 
 ## Integração 4unik.mail (dashboard local de email, porta 8377)
@@ -137,11 +141,21 @@ O dashboard `~/mkt/gws-4unik/dashboard` conversa com esta stack (implementado ju
 - **Espelhamento**: ao ativar campanha, evento `email_campaign_activated` via Measurement Protocol (requer `api_secret` do stream `G-SMJDYCENBC` no Admin → colocar em `GA4_MP_API_SECRET` no `.env` do dashboard).
 - **Briefing Google Ads por campanha**: IA gera estrutura RSA (headlines/descriptions/keywords/final_url com `utm_source=google&utm_medium=cpc&utm_campaign=<slug>`), exportável em CSV do Ads Editor. Nada é criado na conta Ads automaticamente (sem developer token da Ads API).
 
+### Checklist operacional landing ↔ 4unik.mail
+
+O dashboard `~/mkt/gws-4unik` está **Linked** à landing: lê `leadSubmission` do Sanity e envia `email_campaign_activated` ao mesmo stream GA4. Antes de alterar qualquer lado:
+
+1. Manter `TRACKING_SECRET` e `TRACKING_SYNC_KEY` idênticos no `leads-ingest-api`, dashboard e proxy de tracking; trocar ambos somente com rollout coordenado.
+2. Configurar `TRACKING_BASE_URL=https://plataforma.4unik.com.br/api/email` no dashboard e manter o proxy Nginx de `/api/email/` para `leads-ingest-api`.
+3. Preservar projeto/dataset Sanity `hin8ivz0` / `production` e o documento `leadSubmission`; o dashboard espera `name`/`nome`, `email`, `company`/`empresa`, `phone`/`telefone`, `source`, `locale` e `message`.
+4. Preservar o stream landing `G-SMJDYCENBC`; campanhas de email usam `utm_source=4unik-mail` e emitem `email_campaign_activated` via Measurement Protocol.
+5. Não fazer mudanças incompatíveis no schema do lead nem no contrato dos eventos sem atualizar e testar os dois repositórios.
+
 ## Pendências conhecidas
 
 - **Banner de consentimento LGPD** — tracking carrega sem gate de consentimento (fora de escopo da integração inicial).
 - **GA Data API — acesso à propriedade** — SA `landing-ga4-reader@institucional-480905.iam.gserviceaccount.com` criada; falta **Viewer** na propriedade `327916606` no Admin GA4 (ver [`GCP_SERVICE_ACCOUNT_SETUP.md`](../../GCP_SERVICE_ACCOUNT_SETUP.md) § GA4 Data API).
-- **Key events** (`generate_lead`, `schedule_demo`, `contact_whatsapp`) — marcar manualmente no Admin GA4 (checklist no mesmo guia).
+- **Key events** (`generate_lead`, `schedule_demo`, `contact_whatsapp`, `contact_email`) — verificar no Admin GA4 ou executar `node scripts/setup-ga4-admin.mjs`; `contact_intent` permanece soft event.
 
 ### GA Data API (MCP + CLI)
 

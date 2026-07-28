@@ -96,12 +96,14 @@ async function fetchEventCount(analytics, startDate, endDate, scopeFilter, event
 }
 
 async function fetchConversionEventCounts(analytics, startDate, endDate, scopeFilter) {
-  const [generateLeadEvents, scheduleDemoEvents, contactWhatsappEvents] = await Promise.all([
+  const [generateLeadEvents, scheduleDemoEvents, contactWhatsappEvents, contactEmailEvents] =
+    await Promise.all([
     fetchEventCount(analytics, startDate, endDate, scopeFilter, "generate_lead"),
     fetchEventCount(analytics, startDate, endDate, scopeFilter, "schedule_demo"),
     fetchEventCount(analytics, startDate, endDate, scopeFilter, "contact_whatsapp"),
+    fetchEventCount(analytics, startDate, endDate, scopeFilter, "contact_email"),
   ]);
-  return { generateLeadEvents, scheduleDemoEvents, contactWhatsappEvents };
+  return { generateLeadEvents, scheduleDemoEvents, contactWhatsappEvents, contactEmailEvents };
 }
 
 /**
@@ -193,7 +195,8 @@ export async function fetchGa4LandingMetrics({
     const generateLead = totals.generateLeadEvents || 0;
     const scheduleDemo = totals.scheduleDemoEvents || 0;
     const contactWhatsapp = totals.contactWhatsappEvents || 0;
-    const conversionEventsTotal = generateLead + scheduleDemo + contactWhatsapp;
+    const contactEmail = totals.contactEmailEvents || 0;
+    const conversionEventsTotal = generateLead + scheduleDemo + contactWhatsapp + contactEmail;
 
     return {
       status: "success",
@@ -207,6 +210,7 @@ export async function fetchGa4LandingMetrics({
         leadConversionRate: sessions > 0 ? Number((generateLead / sessions).toFixed(4)) : 0,
         scheduleDemoRate: sessions > 0 ? Number((scheduleDemo / sessions).toFixed(4)) : 0,
         contactWhatsappRate: sessions > 0 ? Number((contactWhatsapp / sessions).toFixed(4)) : 0,
+        contactEmailRate: sessions > 0 ? Number((contactEmail / sessions).toFixed(4)) : 0,
         funnelConversionRate:
           sessions > 0 ? Number((conversionEventsTotal / sessions).toFixed(4)) : 0,
         topTrafficChannels: topChannels,
@@ -245,10 +249,12 @@ export function mockGa4Payload(startDate, endDate) {
       generateLeadEvents: 45,
       scheduleDemoEvents: 28,
       contactWhatsappEvents: 19,
+      contactEmailEvents: 12,
       leadConversionRate: 0.0247,
       scheduleDemoRate: 0.0154,
       contactWhatsappRate: 0.0104,
-      funnelConversionRate: 0.0505,
+      contactEmailRate: 0.0066,
+      funnelConversionRate: 0.0571,
       topTrafficChannels: [{ channel: "Organic Search", sessions: 620 }],
       topLandingPages: ["/landing/api-integracoes", "/landing/casos-de-uso"],
     },

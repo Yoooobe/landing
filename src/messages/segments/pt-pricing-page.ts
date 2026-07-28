@@ -12,18 +12,207 @@ export const ptPricingPage = {
   faq: {
     items: [
       {
-        q: "Os valores na home são os mesmos desta página?",
-        a: "Starter e Pro seguem a mesma referência da home. Scale e condições Enterprise são fechadas com o time comercial conforme volume e integrações.",
+        q: "Como funciona a cobrança pelo uso da API 4unik e integrações com plataformas de gamificação?",
+        a: "Toda e qualquer integração via API da 4unik — seja para conectar com plataformas de gamificação parceiras (como Feedz, Beehome, Catho, Workplace), ERPs, sistemas de RH (Totvs, Senior) ou canais de comunicação (Slack/Teams) — tem cobrança dimensionada conforme volume e tipo de integração no plano Enterprise. Fale com nosso time comercial para receber os valores para o seu caso.",
       },
       {
-        q: "Cobrança por usuário ativo na API?",
-        a: "Sim, nos planos com API a cobrança acompanha usuários ativos no programa — alinhada ao tamanho real da operação, não a um pacote fixo genérico.",
+        q: "Quem é responsável pela emissão da nota fiscal e envio dos brindes?",
+        a: "A 4unik realiza toda a operação fiscal e logística de ponta a ponta. Emitimos as notas fiscais de remessa e entrega necessárias para o envio de cada produto até o endereço final do colaborador em qualquer estado do Brasil.",
       },
       {
-        q: "Posso começar pequeno e migrar de plano?",
-        a: "Sim. A maioria dos clientes começa no Starter ou Pro e evolui quando aumentam colaboradores, campanhas ou integrações.",
+        q: "Como funciona a gestão de estoque e armazenagem dos produtos?",
+        a: "Sua empresa pode utilizar nosso catálogo próprio de produtos ou enviar brindes customizados para o centro de distribuição da 4unik. Todo o inventário é controlado em tempo real no dashboard, com relatórios de giro e alertas de reposição.",
+      },
+      {
+        q: "É possível integrar a plataforma com nosso sistema de RH ou ERP?",
+        a: "Sim. No plano Enterprise oferecemos suporte a integrações via API REST, SSO (SAML/OAuth) e sincronização automatizada para importação e desligamento de colaboradores diretamente do seu sistema de RH. A cobrança por integração via API é combinada com nosso time comercial.",
+      },
+      {
+        q: "Qual o prazo médio de entrega para o colaborador final?",
+        a: "Os pedidos são expedidos em até 24 a 48 horas úteis após o resgate no sistema. O prazo final de transporte varia conforme a região de destino, com médias de 2 a 5 dias úteis para capitais e principais regiões metropolitanas.",
+      },
+      {
+        q: "Como é feita a cobrança mensal do serviço?",
+        a: "A cobrança consiste em uma mensalidade fixa de licença de uso da plataforma (conforme o plano escolhido) acrescida do faturamento do fulfillment, fretes e eventuais integrações via API (valores combinados com nosso time comercial conforme o caso). Todas as faturas são detalhadas no dashboard.",
       },
     ],
+  },
+  plans: {
+    sectionBadge: "Planos e investimentos",
+    sectionTitle: "Engajamento e reconhecimento que impulsionam resultados",
+    sectionSubtitle:
+      "Acreditamos que o reconhecimento é a chave para o engajamento. Escolha a estrutura ideal para o tamanho da sua empresa.",
+    billingToggle: { monthly: "Faturamento Mensal", annual: "Plano Anual", annualBadge: "15% OFF" },
+    popularLabel: "Mais escolhido pelos RHs",
+    periodLabel: "/mês",
+    annualSavingsNote: "Economia de 15% na cobrança anual da assinatura",
+    items: [
+      {
+        id: "essentials",
+        name: "Essentials",
+        monthlyPrice: "R$ 1.800",
+        annualPrice: "R$ 1.530",
+        capacity: "Até 99 usuários",
+        description:
+          "Loja corporativa 100% no-code com catálogo completo de +5.000 produtos e gamificação autocontida. O ponto de partida ideal para pequenas equipes.",
+        valueProposition: "Reconhecimento sem complicação. Comece a valorizar sua equipe hoje.",
+        features: [
+          {
+            label: "Ambiente 100% nativo (No-Code)",
+            hint: "Configure e publique sem depender de time técnico — parametrização 100% visual, sem código.",
+          },
+          {
+            label: "Loja corporativa com catálogo completo (+5.000 produtos)",
+            hint: "Mais de 5.000 produtos físicos, digitais, experiências e kits personalizados prontos para resgate.",
+          },
+          {
+            label: "Operação via Painel do Gestor",
+            hint: "Acompanhe pedidos, campanhas, usuários e indicadores em um único painel de comando, sem múltiplos sistemas paralelos.",
+          },
+          {
+            label: "Gamificação autocontida (pontos e badges)",
+            hint: "Pontos por metas e reconhecimento entre pares, mais badges visuais para conquistas e marcos de carreira — tudo dentro da própria 4unik.",
+          },
+          {
+            label: "PIX com pontos e datas comemorativas",
+            hint: "O colaborador converte pontos em saldo PIX, e a plataforma dispara kits automaticamente em aniversários e datas comemorativas do time.",
+          },
+          {
+            label: "Envio de presentes com logística própria",
+            hint: "Escolha o produto e os destinatários, agende o envio — a 4unik cuida da logística até a casa do colaborador.",
+          },
+          {
+            label: "Criação de landing page de campanha de resgate",
+            hint: "Crie páginas próprias para cada campanha — hackathon, meta comercial, onboarding — com identidade visual e URL amigável, em um wizard guiado.",
+          },
+          {
+            label: "Logística e entrega residencial 4unik",
+            hint: "Entrega direto na casa do colaborador, com frete calculado e rastreio, em qualquer região do Brasil.",
+          },
+          {
+            label: "Relatórios de uso e resgates",
+            hint: "Relatórios de uso, resgates e ROI para embasar decisões do RH e da liderança, sem depender de planilhas soltas.",
+          },
+          {
+            label: "Suporte prioritário via e-mail e chat",
+            hint: "Time de suporte dedicado para resolver dúvidas de operação rapidamente, sem depender de tickets genéricos.",
+          },
+        ],
+        ctaText: "Começar com Essentials",
+      },
+      {
+        id: "scale",
+        name: "Scale",
+        monthlyPrice: "R$ 4.000",
+        annualPrice: "R$ 3.400",
+        capacity: "Até 499 usuários",
+        description:
+          "Gamificação completa e loja corporativa ampliada com +5.000 produtos premium, incluindo resgate de itens digitais. Para empresas em rápido crescimento.",
+        valueProposition: "Engajamento imediato, resultados tangíveis. Gamificação robusta.",
+        isPopular: true,
+        features: [
+          { label: "Tudo do Essentials e mais:" },
+          {
+            label: "Loja corporativa com catálogo completo (+5.000 produtos)",
+            hint: "Mais de 5.000 produtos físicos, digitais, experiências e kits personalizados prontos para resgate.",
+          },
+          {
+            label: "Resgate de produtos digitais na loja corporativa",
+            hint: "Gift cards, créditos e outros itens digitais resgatáveis direto na loja, lado a lado com os produtos físicos.",
+          },
+          {
+            label: "Gamificação autocontida (pontos e badges)",
+            hint: "Pontos por metas e reconhecimento entre pares, mais badges visuais para conquistas e marcos de carreira — tudo dentro da própria 4unik.",
+          },
+          {
+            label: "PIX com pontos e datas comemorativas",
+            hint: "O colaborador converte pontos em saldo PIX, e a plataforma dispara kits automaticamente em aniversários e datas comemorativas do time.",
+          },
+          {
+            label: "Gestão intuitiva de campanhas e metas",
+            hint: "Lance missões e metas por equipe ou indivíduo, com reconhecimento automático por marcos e aniversários, direto pelo painel.",
+          },
+          {
+            label: "Atendimento humanizado para gestores",
+            hint: "Um time de suporte acompanha de perto a operação do seu programa, além do atendimento padrão por e-mail e chat.",
+          },
+        ],
+        ctaText: "Agendar demonstração",
+      },
+      {
+        id: "enterprise",
+        name: "Enterprise",
+        monthlyPrice: "Sob consulta",
+        annualPrice: "Sob consulta",
+        capacity: "A partir de 499 usuários",
+        description:
+          "Automação via APIs 4unik, integrações nativas com plataformas de gamificação e CSM dedicado.",
+        valueProposition: "Transforme sua cultura com engajamento automatizado e sem limites.",
+        features: [
+          { label: "Tudo do Scale e mais:" },
+          {
+            label: "Uso de API 4unik: cobrança sob consulta",
+            hint: "Cobre tráfego de dados em tempo real, endpoints de pontos/extratos e webhooks de resgate. Fale com nosso time comercial para o valor do seu caso.",
+          },
+          {
+            label: "Integração com plataformas de gamificação (Feedz, Beehome, Catho, etc.)",
+            hint: "Conecte-se a plataformas de gamificação e RH que sua empresa já usa — de Feedz e Beehome a Workvivo, Slack e ERPs — sem trocar de ferramenta.",
+          },
+          {
+            label: "Webhooks em tempo real e sincronização de saldo",
+            hint: "Receba eventos de pontos e resgates em tempo real via webhook e mantenha o saldo sempre sincronizado com seu sistema.",
+          },
+          {
+            label: "Integração com logística terceira (gestão própria) como opção",
+            hint: "Prefere usar sua própria transportadora ou ERP de logística? A 4unik conecta com o que você já tem — ou orquestra tudo por conta própria.",
+          },
+          {
+            label: "Gerente de Sucesso (CSM) dedicado e SLA garantido",
+            hint: "Um gerente de sucesso acompanha sua operação, com SLA formal definido em contrato.",
+          },
+        ],
+        ctaText: "Falar com consultor",
+      },
+    ],
+  },
+  variableCosts: {
+    badge: "Valores parametrizados e editáveis no contrato",
+    title: "Custos operacionais e logísticos variáveis",
+    subtitle: "Transparência total: você só paga pela armazenagem e envios efetivamente realizados",
+    items: [
+      {
+        label: "Setup e onboarding",
+        value: "R$ 4.900",
+        unit: "único",
+        description: "Parametrização do ambiente, carregamento de marcas e treinamento.",
+      },
+      {
+        label: "Uso de API / Gamificação",
+        value: "Sob consulta",
+        unit: "usuário/mês",
+        description:
+          "Custo por usuário ativo para toda e qualquer integração via API 4unik (plataformas de gamificação, RHs e ERPs) — fale com nosso time comercial.",
+      },
+      {
+        label: "Fulfillment por envio",
+        value: "R$ 4,50",
+        unit: "+ frete",
+        description: "Separação, manuseio e embalagem padrão por pacote expedido.",
+      },
+      {
+        label: "Armazenagem",
+        value: "R$ 0,65",
+        unit: "un./mês",
+        description: "Guarda segura dos itens no centro de distribuição da 4unik.",
+      },
+      {
+        label: "Colaborador extra",
+        value: "R$ 1,90",
+        unit: "un./mês",
+        description: "Apenas para acessos ativos adicionais além da franquia do plano.",
+      },
+    ],
+    disclaimer: "Impostos não inclusos. Frete e DIFAL repassados conforme tabela vigente. Valores em reais (R$).",
   },
   cta: {
     title: "Quer um orçamento com o seu volume?",

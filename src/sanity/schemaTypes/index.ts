@@ -24,6 +24,8 @@ import { siteSettingsType } from "./siteSettingsType";
 import { splitContentBlock } from "./blocks/splitContentBlock";
 import { statsBlock } from "./blocks/statsBlock";
 import { testimonialBlock } from "./blocks/testimonialBlock";
+import { pricingPlansBlock } from "./blocks/pricingPlansBlock";
+import { variableCostsBlock } from "./blocks/variableCostsBlock";
 import { marketingPageType } from "./marketingPageType";
 import { marketingStrategyType } from "./marketingStrategyType";
 import { workvivoShowcaseMediaType } from "./workvivoShowcaseMediaType";
@@ -54,6 +56,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     platformShowcaseMediaType,
     statsBlock,
     testimonialBlock,
+    pricingPlansBlock,
+    variableCostsBlock,
     seoType,
     siteSettingsType,
     workvivoShowcaseMediaType,

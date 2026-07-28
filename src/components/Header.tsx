@@ -11,16 +11,26 @@ import {
   scrollToPrimaryContact,
   shouldScrollPrimaryContactInPlace,
 } from "@/lib/resolvePrimaryContactHref";
-import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
+import TrackedOutboundLink, {
+  trackContactIntent,
+} from "@/components/analytics/TrackedOutboundLink";
 import { mergeShellMenuSections } from "@/lib/mergeShellMenuSections";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
-import { normalizeWhatsappHref, resolveWhatsappUrl } from "@/lib/whatsapp";
+import { normalizeWhatsappHref } from "@/lib/whatsapp";
 import { resolveRewardsCatalogProductUrl } from "@/lib/rewardsCatalog";
 import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
 import { toggleLocalePath } from "@/lib/locale";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type FocusEvent,
+  type ReactNode,
+} from "react";
 import {
   Boxes,
   Brain,
@@ -99,16 +109,40 @@ function mergeHeaderSections(
   }));
 }
 
-function dropdownPanelClasses(index: number, total: number): string {
+function dropdownPanelClasses(index: number, total: number, isOpen: boolean): string {
+  const base =
+    "absolute top-full z-50 pt-3 transition-all duration-200";
+  const visibility = isOpen
+    ? "visible translate-y-0 opacity-100"
+    : "invisible translate-y-2 opacity-0 pointer-events-none";
+
   if (index === 0) {
-    return "absolute left-0 top-full pt-3 opacity-0 translate-y-3 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50";
+    return `${base} left-0 ${visibility}`;
   }
 
   if (index === total - 1) {
-    return "absolute right-0 top-full pt-3 opacity-0 translate-y-3 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50";
+    return `${base} right-0 ${visibility}`;
   }
 
-  return "absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 translate-y-3 invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-300 z-50";
+  return `${base} left-1/2 -translate-x-1/2 ${visibility}`;
+}
+
+function normalizePathForMatch(value: string): string {
+  const trimmed = value.replace(/\/+$/, "");
+  return trimmed.length > 0 ? trimmed : "/";
+}
+
+function pathMatchesHref(
+  pathname: string | null,
+  href: string,
+  locale: "pt" | "en",
+): boolean {
+  if (!pathname) return false;
+  const resolved = normalizeWhatsappHref(resolveShellHref(href, locale));
+  if (isExternalShellHref(resolved) || resolved.startsWith("#")) return false;
+  const current = normalizePathForMatch(pathname);
+  const target = normalizePathForMatch(resolved);
+  return current === target || current.startsWith(`${target}/`);
 }
 
 function dropdownTriangleClasses(index: number, total: number): string {
@@ -146,6 +180,7 @@ type ShellMenuLinkProps = {
   openInNewTab?: boolean;
   className: string;
   onClick?: () => void;
+  ariaCurrent?: "page" | undefined;
   children: ReactNode;
 };
 
@@ -155,6 +190,7 @@ function ShellMenuLink({
   openInNewTab,
   className,
   onClick,
+  ariaCurrent,
   children,
 }: ShellMenuLinkProps) {
   const resolvedHref = normalizeWhatsappHref(resolveShellHref(href, locale));
@@ -169,6 +205,7 @@ function ShellMenuLink({
         rel={shouldOpenInNewTab ? "noopener noreferrer" : undefined}
         className={className}
         onClick={onClick}
+        aria-current={ariaCurrent}
       >
         {children}
       </a>
@@ -176,7 +213,12 @@ function ShellMenuLink({
   }
 
   return (
-    <Link href={resolvedHref} className={className} onClick={onClick}>
+    <Link
+      href={resolvedHref}
+      className={className}
+      onClick={onClick}
+      aria-current={ariaCurrent}
+    >
       {children}
     </Link>
   );
@@ -189,6 +231,9 @@ export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openMenuIndex, setOpenMenuIndex] = useState<number | null>(null);
+  /** After Escape, ignore hover reopen until the pointer leaves the section. */
+  const megaMenuHoverLockedRef = useRef(false);
 
   const fallbackSections = useMemo<HeaderMenuSection[]>(
     () => [
@@ -303,7 +348,6 @@ export default function Header() {
   );
 
   const demoUrl = sanity?.calendlyUrl?.trim() || DEFAULT_CALENDLY_URL;
-  const whatsappUrl = resolveWhatsappUrl(sanity?.whatsappUrl);
   const contactHref = resolvePrimaryContactHref(pathname, path);
   const contactScrollInPlace = shouldScrollPrimaryContactInPlace(pathname, path);
 
@@ -324,57 +368,149 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (openMenuIndex === null && !isMobileMenuOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      megaMenuHoverLockedRef.current = true;
+      setOpenMenuIndex(null);
+      setIsMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [openMenuIndex, isMobileMenuOpen]);
+
+  useEffect(() => {
+    megaMenuHoverLockedRef.current = false;
+    setOpenMenuIndex(null);
+  }, [pathname]);
+
+  const openMegaMenuFromHover = useCallback((sectionIndex: number) => {
+    if (megaMenuHoverLockedRef.current) return;
+    setOpenMenuIndex(sectionIndex);
+  }, []);
+
+  const openMegaMenuFromFocus = useCallback((sectionIndex: number) => {
+    megaMenuHoverLockedRef.current = false;
+    setOpenMenuIndex(sectionIndex);
+  }, []);
+
+  const closeMegaMenuSection = useCallback((sectionIndex: number) => {
+    megaMenuHoverLockedRef.current = false;
+    setOpenMenuIndex((current) => (current === sectionIndex ? null : current));
+  }, []);
+
+  const isHrefActive = useCallback(
+    (href: string) => pathMatchesHref(pathname, href, locale),
+    [pathname, locale],
+  );
+
+  const blogActive = Boolean(
+    pathname &&
+      (normalizePathForMatch(pathname).endsWith("/blog") ||
+        normalizePathForMatch(pathname).includes("/blog/")),
+  );
+
+  const pricingActive = Boolean(
+    pathname &&
+      (normalizePathForMatch(pathname).endsWith("/pricing") ||
+        normalizePathForMatch(pathname).includes("/pricing/")),
+  );
+
+  const handleMenuBlur = useCallback(
+    (sectionIndex: number, event: FocusEvent<HTMLDivElement>) => {
+      const next = event.relatedTarget as Node | null;
+      if (!event.currentTarget.contains(next)) {
+        setOpenMenuIndex((current) => (current === sectionIndex ? null : current));
+      }
+    },
+    [],
+  );
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 font-sans ${
+      className={`fixed top-0 left-0 right-0 z-50 font-sans transition-all duration-200 ${
         scrolled ? "py-3" : "py-6"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div
-          className={`flex items-center justify-between rounded-full transition-all duration-500 px-6 py-3 ${
+          className={`flex items-center justify-between rounded-full px-6 py-3 transition-all duration-200 ${
             scrolled
-              ? "glass-panel-dark shadow-2xl border-white/15"
+              ? "border border-white/15 bg-surface-panel/60 shadow-lg backdrop-blur-xl"
               : "border border-white/0 bg-transparent"
           }`}
         >
-          {/* Logo — wordmark 4unik */}
+          {/* Logo — lockup 4Unik */}
           <Link href={path("/")} className="z-10 flex min-w-0 shrink-0 items-center">
             <UnikWordmark
               variant="header"
-              alt="4unik"
-              className="shrink-0 drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]"
+              alt="4Unik"
+              className="shrink-0"
             />
           </Link>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1 text-[0.9rem] font-medium tracking-wide" aria-label={locale === "en" ? "Primary" : "Principal"}>
-            {navSections.map((section, sectionIndex) => (
-              <div key={`${section.title}-${sectionIndex}`} className="relative group">
+            {navSections.map((section, sectionIndex) => {
+              const isOpen = openMenuIndex === sectionIndex;
+              const sectionActive = section.items.some((item) => isHrefActive(item.href));
+
+              return (
+              <div
+                key={`${section.title}-${sectionIndex}`}
+                className="relative"
+                onMouseEnter={() => openMegaMenuFromHover(sectionIndex)}
+                onMouseLeave={() => closeMegaMenuSection(sectionIndex)}
+                onFocus={() => openMegaMenuFromFocus(sectionIndex)}
+                onBlur={(event) => handleMenuBlur(sectionIndex, event)}
+              >
                 <button
                   type="button"
-                  className="flex items-center gap-1.5 rounded-full px-4 py-2 text-white/70 transition-all hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 ${
+                    sectionActive || isOpen
+                      ? "bg-brand-orange/10 text-white"
+                      : "text-white/70 hover:bg-white/10 hover:text-white"
+                  }`}
                   aria-haspopup="menu"
-                  aria-expanded="false"
+                  aria-expanded={isOpen}
+                  onClick={() => {
+                    megaMenuHoverLockedRef.current = false;
+                    setOpenMenuIndex((current) =>
+                      current === sectionIndex ? null : sectionIndex,
+                    );
+                  }}
                 >
                   {section.title}{" "}
-                  <ChevronDown className="w-3.5 h-3.5 opacity-70 transition-transform group-hover:rotate-180" aria-hidden />
+                  <ChevronDown
+                    className={`h-3.5 w-3.5 opacity-70 transition-transform duration-200 ${
+                      isOpen ? "rotate-180" : ""
+                    }`}
+                    aria-hidden
+                  />
                 </button>
 
-                <div className={dropdownPanelClasses(sectionIndex, navSections.length)} role="menu" aria-label={section.title}>
+                <div
+                  className={dropdownPanelClasses(sectionIndex, navSections.length, isOpen)}
+                  role="menu"
+                  aria-label={section.title}
+                >
                   <div
                     className={`relative ${dropdownWidthClass(
                       section,
                       sectionIndex,
                       navSections.length,
-                    )} p-2 rounded-2xl bg-surface-page/95 border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl`}
+                    )} rounded-2xl border border-white/10 bg-surface-page/95 p-2 shadow-[0_10px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl`}
                   >
                     <div className={dropdownTriangleClasses(sectionIndex, navSections.length)} aria-hidden />
 
-                    <div className="flex flex-col gap-1 relative z-10">
+                    <div className="relative z-10 flex flex-col gap-1">
                       {section.items.map((item, itemIndex) => {
                         const Icon =
                           HEADER_ICON_MAP[item.icon as keyof typeof HEADER_ICON_MAP] || Layers;
+                        const itemActive = isHrefActive(item.href);
 
                         return (
                           <ShellMenuLink
@@ -382,22 +518,28 @@ export default function Header() {
                             href={item.href}
                             locale={locale}
                             openInNewTab={item.openInNewTab}
-                            className="group/item flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+                            ariaCurrent={itemActive ? "page" : undefined}
+                            onClick={() => setOpenMenuIndex(null)}
+                            className={`group/item flex items-start gap-3 rounded-xl p-3 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 ${
+                              itemActive
+                                ? "bg-brand-orange/10"
+                                : "hover:bg-white/5"
+                            }`}
                           >
-                            <div className="mt-0.5 bg-white/5 p-2.5 rounded-lg text-white/80 group-hover/item:scale-110 transition-transform">
-                              <Icon className="w-5 h-5" />
+                            <div className="mt-0.5 rounded-lg bg-white/5 p-2.5 text-white/80 transition-colors duration-200 group-hover/item:text-brand-orange">
+                              <Icon className="h-5 w-5" />
                             </div>
                             <div>
-                              <div className="text-white font-medium mb-0.5 flex items-center gap-2">
+                              <div className="mb-0.5 flex items-center gap-2 font-medium text-white">
                                 {item.label}
                                 {item.badge ? (
-                                  <span className="bg-white/10 text-white/80 text-[0.6rem] font-bold px-1.5 py-0.5 rounded border border-white/10 uppercase tracking-wider">
+                                  <span className="rounded border border-brand-orange/30 bg-brand-orange/10 px-1.5 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-brand-orange">
                                     {item.badge}
                                   </span>
                                 ) : null}
                               </div>
                               {item.description ? (
-                                <div className="text-white/50 text-xs leading-relaxed">
+                                <div className="text-xs leading-relaxed text-white/50">
                                   {item.description}
                                 </div>
                               ) : null}
@@ -409,25 +551,46 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
+            <Link
+              href={path("/pricing/")}
+              aria-current={pricingActive ? "page" : undefined}
+              className={`hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 ${
+                pricingActive
+                  ? "bg-brand-orange/10 text-white"
+                  : "text-white/70 hover:bg-white/10 hover:text-white"
+              }`}
+            >
+              {m.nav.pricing}
+            </Link>
             <Link
               href={path("/blog/")}
-              className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+              aria-current={blogActive ? "page" : undefined}
+              className={`hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 ${
+                blogActive
+                  ? "bg-brand-orange/10 text-white"
+                  : "text-white/70 hover:bg-white/10 hover:text-white"
+              }`}
             >
               {m.nav.blog}
             </Link>
             {contactScrollInPlace ? (
               <button
                 type="button"
-                onClick={() => scrollToPrimaryContact()}
-                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+                onClick={() => {
+                  trackContactIntent("header-contact");
+                  scrollToPrimaryContact();
+                }}
+                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
               >
                 {m.conversionDock.contactNav}
               </button>
             ) : (
               <Link
                 href={contactHref}
-                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+                onClick={() => trackContactIntent("header-contact")}
+                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
               >
                 {m.conversionDock.contactNav}
               </Link>
@@ -438,7 +601,7 @@ export default function Header() {
           <div className="flex items-center gap-3 z-10 shrink-0 md:gap-4">
             <Link
               href={toggleLocalePath(pathname)}
-              className="hidden text-[0.88rem] font-medium text-white/70 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 md:block"
+              className="hidden text-[0.88rem] font-medium text-white/70 transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 md:block"
               hrefLang={locale === "pt" ? "en" : "pt-BR"}
             >
               {locale === "pt" ? m.nav.langToEn : m.nav.langToPt}
@@ -448,7 +611,7 @@ export default function Header() {
               source="header-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap rounded-full bg-white px-6 py-2.5 text-[0.95rem] font-semibold text-brand-navy-dark shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all hover:bg-brand-orange hover:text-white hover:shadow-[0_0_30px_rgba(249,115,22,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+              className="whitespace-nowrap rounded-full bg-brand-gradient px-6 py-2.5 text-[0.95rem] font-semibold text-white transition-all duration-200 hover:bg-brand-gradient-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
             >
               {m.nav.requestDemo}
             </TrackedOutboundLink>
@@ -487,6 +650,7 @@ export default function Header() {
                   {section.items.map((item, itemIndex) => {
                     const Icon =
                       HEADER_ICON_MAP[item.icon as keyof typeof HEADER_ICON_MAP] || Layers;
+                    const itemActive = isHrefActive(item.href);
 
                     return (
                       <ShellMenuLink
@@ -494,13 +658,18 @@ export default function Header() {
                         href={item.href}
                         locale={locale}
                         openInNewTab={item.openInNewTab}
+                        ariaCurrent={itemActive ? "page" : undefined}
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center gap-3 text-white/80 hover:text-white py-2"
+                        className={`flex items-center gap-3 py-2 transition-colors duration-200 ${
+                          itemActive
+                            ? "text-brand-orange"
+                            : "text-white/80 hover:text-white"
+                        }`}
                       >
-                        <Icon className="w-5 h-5 text-white/70" />
-                        <span className="font-medium text-lg">{item.label}</span>
+                        <Icon className={`h-5 w-5 ${itemActive ? "text-brand-orange" : "text-white/70"}`} />
+                        <span className="text-lg font-medium">{item.label}</span>
                         {item.badge ? (
-                          <span className="bg-white/10 text-white/70 text-[0.6rem] font-bold px-1.5 py-0.5 rounded border border-white/10 uppercase">
+                          <span className="rounded border border-brand-orange/30 bg-brand-orange/10 px-1.5 py-0.5 text-[0.6rem] font-bold uppercase text-brand-orange">
                             {item.badge}
                           </span>
                         ) : null}
@@ -516,6 +685,13 @@ export default function Header() {
             ))}
             <div className="w-full h-px bg-white/10 my-4" />
             <Link
+              href={path("/pricing/")}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center gap-3 text-white font-medium text-lg py-2 border border-white/15 rounded-xl px-4 hover:bg-white/5"
+            >
+              {m.nav.pricing}
+            </Link>
+            <Link
               href={path("/blog/")}
               onClick={() => setIsMobileMenuOpen(false)}
               className="flex items-center gap-3 text-white font-medium text-lg py-2 border border-white/15 rounded-xl px-4 hover:bg-white/5"
@@ -523,49 +699,43 @@ export default function Header() {
               {m.nav.blog}
             </Link>
             <div className="mt-6 space-y-3 border-t border-white/10 pt-6">
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wider">
+              <div className="text-xs font-semibold uppercase tracking-wider text-white/40">
                 {m.conversionDock.mobileGroupTitle}
               </div>
-              {contactScrollInPlace ? (
-                <button
-                  type="button"
-                  onClick={() => {
-                    scrollToPrimaryContact();
-                    setIsMobileMenuOpen(false);
-                  }}
-                  className="flex w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 py-3 text-center text-base font-medium text-white hover:bg-white/10"
-                >
-                  {m.conversionDock.linkForm}
-                </button>
-              ) : (
-                <Link
-                  href={contactHref}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="flex w-full items-center justify-center rounded-xl border border-white/15 bg-white/5 py-3 text-center text-base font-medium text-white hover:bg-white/10"
-                >
-                  {m.conversionDock.linkForm}
-                </Link>
-              )}
-              <TrackedOutboundLink
-                href={whatsappUrl}
-                source="header-mobile-whatsapp"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex w-full items-center justify-center rounded-xl bg-whatsapp py-3 text-center text-base font-medium text-white hover:bg-whatsapp-deep"
-              >
-                {m.conversionDock.linkWhatsapp}
-              </TrackedOutboundLink>
               <TrackedOutboundLink
                 href={demoUrl}
                 source="header-mobile-demo"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex w-full items-center justify-center rounded-xl border border-white/20 py-3 text-center text-base font-medium text-white hover:bg-white/5"
+                className="flex w-full items-center justify-center rounded-xl bg-brand-gradient py-3 text-center text-base font-semibold text-white transition-all duration-200 hover:bg-brand-gradient-hover"
               >
                 {m.conversionDock.linkDemo}
               </TrackedOutboundLink>
+              {contactScrollInPlace ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    trackContactIntent("header-mobile-contact");
+                    scrollToPrimaryContact();
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="flex w-full items-center justify-center rounded-xl border border-brand-orange/35 bg-brand-orange/10 py-3 text-center text-base font-medium text-white transition-colors duration-200 hover:bg-brand-orange/15"
+                >
+                  {m.conversionDock.linkForm}
+                </button>
+              ) : (
+                <Link
+                  href={contactHref}
+                  onClick={() => {
+                    trackContactIntent("header-mobile-contact");
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="flex w-full items-center justify-center rounded-xl border border-brand-orange/35 bg-brand-orange/10 py-3 text-center text-base font-medium text-white transition-colors duration-200 hover:bg-brand-orange/15"
+                >
+                  {m.conversionDock.linkForm}
+                </Link>
+              )}
             </div>
             <div className="mt-8 flex flex-col gap-4">
               <Link

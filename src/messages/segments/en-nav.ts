@@ -6,6 +6,7 @@ export const enNav = {
   login: "Log in",
   requestDemo: "Request a demo",
   blog: "Blog",
+  pricing: "Plans & Pricing",
   mobileLogin: "Log in",
   product: "Product",
   apiIntegrations: "API & integrations",

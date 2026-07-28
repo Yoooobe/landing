@@ -60,6 +60,7 @@ import MarketingPageEmptyState from "@/components/MarketingPageEmptyState";
 import FeatureGridMarketingBlock from "@/components/marketing/FeatureGridMarketingBlock";
 import { PRIMARY_CONTACT_SECTION_ID } from "@/lib/contactAnchor";
 import { marketingExtraAnchorIds, marketingSectionId } from "@/lib/marketing-section-ids";
+import { outboundConversionEventName } from "@/lib/analyticsEvents";
 
 type SupportData = {
   platformShowcaseMedia?: import("@/sanity/lib/types").PlatformShowcaseMediaDoc | null;
@@ -76,14 +77,23 @@ function isExternalHref(href: string): boolean {
   return /^(?:[a-z]+:)?\/\//i.test(href) || href.startsWith("mailto:") || href.startsWith("tel:");
 }
 
-function GenericHeroBlock({ block }: { block: Extract<MarketingPageContentBlock, { _type: "heroBlock" }> }) {
+function GenericHeroBlock({
+  block,
+  pageSlug,
+}: {
+  block: Extract<MarketingPageContentBlock, { _type: "heroBlock" }>;
+  pageSlug: string;
+}) {
   const imageUrl = getSanityImageUrl(block.image, {
     width: 840,
     fit: "max",
     quality: 82,
   });
-  const opensInNewTab = isExternalHref(block.ctaLink || "");
-  const sectionId = block.ctaLink === "#docs" ? "docs" : undefined;
+  const ctaHref = block.ctaLink?.trim() || "";
+  const opensInNewTab = isExternalHref(ctaHref);
+  const sectionId = ctaHref === "#docs" ? "docs" : undefined;
+  const trackOutbound = Boolean(ctaHref && outboundConversionEventName(ctaHref));
+  const heroSource = `marketing-hero-${pageSlug || "page"}-demo`;
 
   return (
     <section
@@ -103,16 +113,28 @@ function GenericHeroBlock({ block }: { block: Extract<MarketingPageContentBlock,
               {block.subheadline}
             </p>
           ) : null}
-          {block.ctaText && block.ctaLink ? (
+          {block.ctaText && ctaHref ? (
             <div className="mt-10">
-              <a
-                href={block.ctaLink}
-                target={opensInNewTab ? "_blank" : undefined}
-                rel={opensInNewTab ? "noopener noreferrer" : undefined}
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-transform hover:scale-[1.02]"
-              >
-                {block.ctaText}
-              </a>
+              {trackOutbound ? (
+                <TrackedOutboundLink
+                  href={ctaHref}
+                  source={heroSource}
+                  target={opensInNewTab ? "_blank" : undefined}
+                  rel={opensInNewTab ? "noopener noreferrer" : undefined}
+                  className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-transform hover:scale-[1.02]"
+                >
+                  {block.ctaText}
+                </TrackedOutboundLink>
+              ) : (
+                <a
+                  href={ctaHref}
+                  target={opensInNewTab ? "_blank" : undefined}
+                  rel={opensInNewTab ? "noopener noreferrer" : undefined}
+                  className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-transform hover:scale-[1.02]"
+                >
+                  {block.ctaText}
+                </a>
+              )}
             </div>
           ) : null}
         </div>
@@ -801,7 +823,7 @@ function renderBlock(
 ) {
   switch (block._type) {
     case "heroBlock":
-      return <GenericHeroBlock block={block} />;
+      return <GenericHeroBlock block={block} pageSlug={pageSlug} />;
     case "featureGridBlock":
       return <FeatureGridMarketingBlock block={block} />;
     case "caseStudyGridBlock":

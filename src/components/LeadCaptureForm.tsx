@@ -13,14 +13,14 @@ import { useCallback, useState } from "react";
 const cardVariants = cva("rounded-2xl border text-left shadow-xl", {
   variants: {
     variant: {
-      home: "border-white/10 bg-white/5 p-5 backdrop-blur-sm md:p-6",
+      home: "border-white/10 border-t-brand-orange/30 bg-white/5 p-5 backdrop-blur-[6px] md:p-6",
       plataforma: "border-slate-200/80 bg-white p-5 text-brand-navy-dark shadow-black/10 md:p-6",
       api: "border-cyan-500/25 bg-surface-page p-5 md:p-6",
       gamificacao:
         "border-fuchsia-500/20 bg-linear-to-br from-yoobe-purple/15 to-fuchsia-600/10 p-5 md:p-6",
       casos: "border-brand-orange/30 bg-brand-navy p-5 md:p-6",
       inteligencia: "border-white/15 bg-white p-5 text-brand-navy-dark md:p-6",
-      marketing: "border-white/10 bg-white/5 p-5 backdrop-blur-sm md:p-6",
+      marketing: "border-white/10 border-t-brand-orange/30 bg-white/5 p-5 backdrop-blur-[6px] md:p-6",
     },
   },
   defaultVariants: { variant: "marketing" },
@@ -42,12 +42,12 @@ const labelVariants = cva("mb-1.5 block text-xs font-semibold uppercase tracking
 });
 
 const inputVariants = cva(
-  "w-full rounded-lg border px-3 py-2.5 text-sm outline-none transition focus:ring-2 focus:ring-offset-0 disabled:opacity-50",
+  "w-full rounded-xl border px-3 py-2.5 text-sm outline-none transition-colors duration-200 focus:ring-2 focus:ring-offset-0 disabled:opacity-50",
   {
     variants: {
       variant: {
         home:
-          "border-white/20 bg-white/5 text-white placeholder:text-white/35 focus:border-white/40 focus:ring-white/25",
+          "border-white/15 bg-white/5 text-white placeholder:text-white/35 focus:border-brand-orange focus:ring-brand-orange/30",
         plataforma:
           "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:border-brand-navy-dark/40 focus:ring-brand-navy-dark/20",
         api: "border-cyan-500/30 bg-surface-base text-white placeholder:text-white/35 focus:border-cyan-400/50 focus:ring-cyan-500/25",
@@ -58,7 +58,7 @@ const inputVariants = cva(
         inteligencia:
           "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:border-brand-navy-dark/40 focus:ring-brand-navy-dark/20",
         marketing:
-          "border-white/20 bg-white/5 text-white placeholder:text-white/35 focus:border-white/40 focus:ring-white/25",
+          "border-white/15 bg-white/5 text-white placeholder:text-white/35 focus:border-brand-orange focus:ring-brand-orange/30",
       },
     },
     defaultVariants: { variant: "marketing" },
@@ -381,15 +381,17 @@ export default function LeadCaptureForm({ variant, source, className }: LeadCapt
         type="submit"
         disabled={status === "submitting"}
         className={cn(
-          "mt-6 inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-bold transition disabled:opacity-60",
-          v === "home" && "bg-yoobe-purple text-white hover:bg-yoobe-purple/90",
+          "mt-6 inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-bold transition-all duration-200 disabled:opacity-60",
+          v === "home" &&
+            "bg-brand-gradient text-white hover:bg-brand-gradient-hover",
           v === "plataforma" && "bg-brand-navy-dark text-white hover:bg-brand-navy-dark/90",
           v === "api" && "bg-cyan-500 text-surface-base hover:bg-cyan-400",
           v === "gamificacao" &&
             "bg-linear-to-r from-yoobe-purple to-fuchsia-600 text-white hover:opacity-95",
           v === "casos" && "bg-brand-orange text-white hover:bg-brand-orange/90",
           v === "inteligencia" && "bg-brand-navy-dark text-white hover:bg-brand-navy-dark/90",
-          v === "marketing" && "bg-brand-orange text-white hover:bg-brand-orange/90",
+          v === "marketing" &&
+            "bg-brand-gradient text-white hover:bg-brand-gradient-hover",
         )}
       >
         {status === "submitting" ? (

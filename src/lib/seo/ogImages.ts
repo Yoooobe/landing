@@ -16,6 +16,8 @@ const ROUTE_OG_BY_KEY: Record<string, string> = {
   comunidades: "/og/4unik-comunidades.png",
   eventos: "/og/4unik-eventos.png",
   "gamificacao-para-rh": "/og/4unik-gamificacao.png",
+  pricing: "/og/4unik-pricing.png",
+  seguranca: "/og/4unik-seguranca.png",
 };
 
 export function resolveRouteOgImagePath(routeKey?: string): string {

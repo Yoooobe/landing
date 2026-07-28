@@ -15,6 +15,7 @@
  *   --publish           Define publishedAt (publica em vez de criar rascunho)
  *   --provider <p>      Provedor de IA: "openai" (padrão se houver OPENAI_API_KEY) ou "gemini"
  *   --gemini-model <m>  Modelo Gemini (padrão: gemini-2.5-pro)
+ *   --money-page pricing  Troca o CTA "platform" do post para `/pricing` (pautas de orçamento/custo)
  *
  * Variáveis de ambiente necessárias:
  *   OPENAI_API_KEY            — chave da API OpenAI (provider openai)
@@ -63,6 +64,8 @@ const SPECIFIC_TOPIC = getArg("--topic", null);
 const SPECIFIC_CATEGORY = getArg("--category", null);
 const DRY_RUN = hasFlag("--dry-run");
 const SHOULD_PUBLISH = hasFlag("--publish");
+/** `--money-page pricing` troca o CTA "platform" do post para apontar para `/pricing` (pautas de orçamento/custo). */
+const MONEY_PAGE_OVERRIDE = getArg("--money-page", null) === "pricing" ? "pricing" : undefined;
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY?.trim() || "";
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY?.trim() || process.env.GOOGLE_API_KEY?.trim() || "";
@@ -265,7 +268,8 @@ async function callGemini(system: string, user: string): Promise<string> {
       generationConfig: {
         temperature: 0.7,
         responseMimeType: "application/json",
-        maxOutputTokens: 8192,
+        // Modelos 2.5 gastam tokens de "thinking" dentro deste limite; 8192 truncava o JSON.
+        maxOutputTokens: 24576,
       },
     }),
   });
@@ -481,7 +485,7 @@ async function main() {
       post._brief = topic;
 
       const rawBody = Array.isArray(post.body) ? (post.body as BlogPostBodyItem[]) : [];
-      const triplet = sanityBlogCtaBlocksForCategory(locale, category);
+      const triplet = sanityBlogCtaBlocksForCategory(locale, category, "gen-cta", MONEY_PAGE_OVERRIDE);
       post.body = injectAiGeneratedBlogCtas(rawBody, triplet, locale);
 
       if (DRY_RUN) {

@@ -1,6 +1,8 @@
 "use client";
 
-import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
+import TrackedOutboundLink, {
+  trackContactIntent,
+} from "@/components/analytics/TrackedOutboundLink";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { useSiteSettings } from "@/contexts/SiteSettingsContext";
 import { resolveWhatsappUrl } from "@/lib/whatsapp";
@@ -30,12 +32,16 @@ export default function GlobalConversionDock() {
 
   function goToForm(e: React.MouseEvent) {
     e.preventDefault();
+    trackContactIntent("conversion-dock-form");
     if (scrollInPlace) {
       scrollToPrimaryContact();
     } else {
       router.push(contactHref);
     }
   }
+
+  const formClassName =
+    "inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-brand-orange/40 bg-surface-panel/90 px-4 text-sm font-bold text-white shadow-lg shadow-black/25 backdrop-blur-sm transition-colors duration-200 hover:border-brand-orange/60 hover:bg-brand-orange/15 sm:h-11 sm:text-[0.85rem]";
 
   return (
     <div
@@ -48,17 +54,13 @@ export default function GlobalConversionDock() {
           source="conversion-dock-whatsapp"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-whatsapp px-4 text-sm font-bold text-white shadow-lg shadow-black/30 transition hover:bg-whatsapp-deep sm:h-11 sm:text-[0.85rem]"
+          className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-whatsapp px-4 text-sm font-bold text-white shadow-lg shadow-black/30 transition-colors duration-200 hover:bg-whatsapp-deep sm:h-11 sm:text-[0.85rem]"
         >
           <MessageCircle className="h-5 w-5 shrink-0" aria-hidden />
           {d.whatsappCta}
         </TrackedOutboundLink>
         {scrollInPlace ? (
-          <button
-            type="button"
-            onClick={goToForm}
-            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-yoobe-purple px-4 text-sm font-bold text-white shadow-lg shadow-yoobe-purple/25 transition hover:bg-yoobe-purple/90 sm:h-11 sm:text-[0.85rem]"
-          >
+          <button type="button" onClick={goToForm} className={formClassName}>
             <Send className="h-4 w-4 shrink-0" aria-hidden />
             {d.formCta}
           </button>
@@ -66,7 +68,8 @@ export default function GlobalConversionDock() {
           <Link
             href={contactHref}
             scroll
-            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-yoobe-purple px-4 text-sm font-bold text-white shadow-lg shadow-yoobe-purple/25 transition hover:bg-yoobe-purple/90 sm:h-11 sm:text-[0.85rem]"
+            onClick={() => trackContactIntent("conversion-dock-form")}
+            className={formClassName}
           >
             <Send className="h-4 w-4 shrink-0" aria-hidden />
             {d.formCta}

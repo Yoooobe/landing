@@ -16,6 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraphPath: "/seguranca/",
     ogLocale: "pt_BR",
+    ogRouteKey: "seguranca",
     robots: growthPageRobots(),
   });
 }

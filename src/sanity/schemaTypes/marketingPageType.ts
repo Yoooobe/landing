@@ -98,6 +98,8 @@ export const marketingPageType = defineType({
         { type: "faqBlock" },
         { type: "statsBlock" },
         { type: "testimonialBlock" },
+        { type: "pricingPlansBlock" },
+        { type: "variableCostsBlock" },
       ],
     }),
   ],

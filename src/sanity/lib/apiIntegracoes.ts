@@ -182,6 +182,24 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       buttonLabel: "Gerar API Keys",
       buttonHref: "https://calendly.com/4unik/30min",
     },
+    faq: [
+      {
+        q: "Como funcionam os webhooks em tempo real?",
+        a: "Você assina eventos como 'colaborador_reconhecido' ou 'meta_batida' e recebe notificações instantâneas via HTTPS — sem precisar dar polling na API.",
+      },
+      {
+        q: "Preciso usar um SDK ou posso integrar via REST puro?",
+        a: "Os dois funcionam. Temos SDKs oficiais para Node.js e Python com tipagem estática, mas a API é RESTful padrão e pode ser consumida diretamente por qualquer linguagem.",
+      },
+      {
+        q: "Tem ambiente de testes antes de ir pra produção?",
+        a: "Sim — o Sandbox dev.4unik permite testar emissão de pontos e resgates sem gastar orçamento real do programa.",
+      },
+      {
+        q: "Existe limite de chamadas (rate limit)?",
+        a: "Sim, mas os rate limits escalam automaticamente para suportar picos de campanhas sazonais e de fim de ano sem travar sua integração.",
+      },
+    ],
   },
   en: {
     seo: {
@@ -363,6 +381,24 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       buttonLabel: "Generate API keys",
       buttonHref: "https://calendly.com/4unik/30min",
     },
+    faq: [
+      {
+        q: "How do real-time webhooks work?",
+        a: "You subscribe to events like 'employee_recognized' or 'goal_hit' and get instant notifications over HTTPS — no need to poll the API.",
+      },
+      {
+        q: "Do I need an SDK, or can I integrate with plain REST?",
+        a: "Both work. We have official SDKs for Node.js and Python with static typing, but the API is standard RESTful and can be consumed directly from any language.",
+      },
+      {
+        q: "Is there a test environment before going to production?",
+        a: "Yes — the dev.4unik sandbox lets you test point issuance and redemptions without spending real program budget.",
+      },
+      {
+        q: "Is there a rate limit?",
+        a: "Yes, but rate limits scale automatically to handle seasonal and year-end campaign spikes without breaking your integration.",
+      },
+    ],
   },
 };
 

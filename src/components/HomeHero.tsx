@@ -38,6 +38,8 @@ function resolvePublicHref(href: string | undefined, fallback: string): string {
   return href;
 }
 
+const enterTransition = { duration: 0.28, ease: [0.22, 1, 0.36, 1] as const };
+
 export default function HomeHero({ cmsHero = null, homeContent = null }: Props) {
   const { locale, m, path } = useLocaleMessages();
   const defaultExploreHref = withBasePath(path("/#platform"));
@@ -113,32 +115,19 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
     <section className="hero-theme-section relative overflow-hidden bg-brand-navy-dark pb-20 pt-24 sm:pb-24 sm:pt-28 md:pb-28 md:pt-32">
       <HeroThemeBackdrop theme="home" />
       <div className="absolute inset-0 z-0">
-        <div className="absolute left-[8%] top-[10%] h-72 w-72 rounded-full bg-brand-orange/18 blur-[110px] mix-blend-screen" />
-        <div className="absolute right-[6%] top-[12%] h-[420px] w-[420px] rounded-full bg-unik-blue/18 blur-[135px] mix-blend-screen" />
-        <div className="absolute bottom-[8%] left-[35%] h-64 w-64 rounded-full bg-demo-cyan/12 blur-[95px] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_38%)]" />
+        <div className="absolute left-[10%] top-[12%] h-72 w-72 rounded-full bg-brand-orange/14 blur-[100px]" />
+        <div className="absolute right-[8%] top-[18%] h-80 w-80 rounded-full bg-unik-blue/12 blur-[110px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_38%)]" />
         <div className="absolute bottom-0 left-0 right-0 z-10 h-1/2 bg-linear-to-t from-brand-navy-dark to-transparent" />
-
-        <svg className="pointer-events-none absolute inset-0 z-1 h-full w-full opacity-20">
-          <path d="M 10 200 C 300 100, 400 400, 800 300 S 1200 100, 1600 250" stroke="rgba(255,255,255,0.15)" strokeWidth="1" fill="none" />
-          <path d="M 50 300 C 250 200, 350 500, 750 400 S 1100 200, 1500 350" stroke="rgba(249,115,22,0.15)" strokeWidth="1" fill="none" />
-          <circle cx="0" cy="0" r="2" fill="#F97316" className="animate-[float_8s_linear_infinite]">
-            <animateMotion dur="8s" repeatCount="indefinite" path="M 10 200 C 300 100, 400 400, 800 300 S 1200 100, 1600 250" />
-          </circle>
-          <circle cx="0" cy="0" r="3" fill="#e75782" className="animate-[float_10s_linear_infinite_2s]">
-            <animateMotion dur="10s" repeatCount="indefinite" path="M 50 300 C 250 200, 350 500, 750 400 S 1100 200, 1500 350" />
-          </circle>
-        </svg>
-
-        <div className="absolute inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBoLTQweiBNMzkuNSAwSDQwdjQwaC0uNXoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4=')] bg-repeat opacity-50"></div>
+        <div className="absolute inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBoLTQweiBNMzkuNSAwSDQwdjQwaC0uNXoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4=')] bg-repeat opacity-40" />
       </div>
 
       <div className="relative z-10 container mx-auto grid items-center gap-10 px-4 sm:gap-14 sm:px-6 lg:grid-cols-[minmax(0,1fr)_560px] lg:px-8">
         <div className="mx-auto max-w-4xl text-center lg:mx-0 lg:max-w-2xl lg:text-left">
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={enterTransition}
             className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-sm sm:mb-6 sm:px-4"
           >
             <Sparkles className="h-3 w-3 shrink-0 text-brand-orange sm:h-3.5 sm:w-3.5" />
@@ -148,22 +137,22 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.08 }}
+            transition={{ ...enterTransition, delay: 0.04 }}
             className="mb-4 hidden justify-center sm:mb-6 sm:flex lg:justify-start"
           >
             <UnikWordmark
               variant="hero"
-              alt="4unik"
-              className="mx-0 drop-shadow-[0_10px_30px_rgba(143,211,255,0.14)]"
+              alt="4Unik"
+              className="mx-0"
             />
           </motion.div>
 
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+            transition={{ ...enterTransition, delay: 0.06 }}
             className="mb-5 font-heading text-[2.35rem] font-black leading-[1.05] tracking-tight text-white sm:mb-6 sm:text-6xl md:text-7xl lg:text-[5.2rem]"
           >
             {hasCmsHero ? (
@@ -182,18 +171,18 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ ...enterTransition, delay: 0.1 }}
             className="mb-6 max-w-2xl font-sans text-base font-light leading-relaxed text-white/72 sm:mb-8 sm:text-lg md:text-[1.45rem]"
           >
             {heroSubheadline}
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ ...enterTransition, delay: 0.14 }}
             className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4 lg:justify-start"
           >
             <TrackedOutboundLink
@@ -201,14 +190,14 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
               source="home-hero-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-base font-bold text-brand-navy-dark shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all hover:bg-brand-orange hover:text-white hover:shadow-[0_0_60px_rgba(249,115,22,0.4)] sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-gradient px-6 py-3.5 text-base font-bold text-white transition-all duration-200 hover:bg-brand-gradient-hover sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
             >
               {primaryLabel}
               <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
             </TrackedOutboundLink>
             <a
               href={exploreHref}
-              className="w-full rounded-full border border-white/20 px-6 py-3.5 text-base font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+              className="w-full rounded-full border border-white/20 px-6 py-3.5 text-base font-medium text-white backdrop-blur-sm transition-colors duration-200 hover:border-brand-orange/35 hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
             >
               {h.ctaExplore}
             </a>
@@ -218,9 +207,9 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
           ) : null}
 
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.36 }}
+            transition={{ ...enterTransition, delay: 0.18 }}
             className="mt-5 grid grid-cols-2 gap-3 sm:mt-8 sm:flex sm:flex-wrap sm:items-center sm:justify-center lg:justify-start"
           >
             {heroProofItems.map((item) => (
@@ -240,15 +229,15 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
+          transition={{ ...enterTransition, delay: 0.12 }}
           className="relative mx-auto mt-2 w-full max-w-[560px] sm:mt-0"
         >
           {mainVisualUrl ? (
             <>
-              <div className="absolute inset-0 rounded-[2.2rem] bg-linear-to-br from-brand-orange/20 via-unik-blue/18 to-demo-cyan/18 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 shadow-2xl backdrop-blur-md">
+              <div className="absolute inset-0 rounded-[2.2rem] bg-brand-orange/12 blur-2xl" />
+              <div className="relative overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 shadow-xl backdrop-blur-md">
                 <div className="border-b border-white/10 bg-white/5 px-4 py-3 sm:px-5 sm:py-4">
                   <span className="text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-brand-orange/90 sm:text-[0.68rem] sm:tracking-[0.24em]">
                     {narrativeEyebrow}
@@ -278,25 +267,25 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
             )}
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.55, duration: 0.8 }}
-            className="glass-panel-dark absolute -top-5 right-4 z-10 hidden min-w-[170px] rounded-2xl px-5 py-4 md:block"
+            transition={{ ...enterTransition, delay: 0.22 }}
+            className="glass-panel-dark absolute -top-5 right-4 z-10 hidden min-w-[170px] rounded-2xl px-5 py-4 transition-transform duration-200 hover:-translate-y-0.5 md:block"
           >
             <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
               {h.floatAdhesion}
             </span>
             <span className="mt-1 block text-3xl font-bold text-white">{h.floatAdhesionValue}</span>
-            <span className="text-[10px] text-green-400">{h.floatAdhesionSub}</span>
+            <span className="text-[10px] text-white/55">{h.floatAdhesionSub}</span>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.72, duration: 0.8 }}
-            className="glass-panel-dark absolute bottom-6 -left-4 z-10 hidden min-w-[190px] rounded-2xl px-5 py-4 md:block"
+            transition={{ ...enterTransition, delay: 0.26 }}
+            className="glass-panel-dark absolute bottom-6 -left-4 z-10 hidden min-w-[190px] rounded-2xl px-5 py-4 transition-transform duration-200 hover:-translate-y-0.5 md:block"
           >
-            <span className="text-xs font-bold uppercase tracking-wider text-yoobe-neon-pink">
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
               {h.floatRh}
             </span>
             <span className="mt-1 block text-3xl font-bold text-white">{h.floatRhValue}</span>
@@ -305,13 +294,13 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
 
           {supportingImageUrl ? (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.84, duration: 0.8 }}
-              className="absolute -bottom-8 right-4 w-full max-w-[180px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/5 p-2 shadow-xl backdrop-blur-sm sm:-bottom-12 sm:right-6 sm:max-w-[260px]"
+              transition={{ ...enterTransition, delay: 0.3 }}
+              className="absolute -bottom-8 right-4 w-full max-w-[180px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/5 p-2 shadow-lg backdrop-blur-sm transition-transform duration-200 hover:-translate-y-0.5 sm:-bottom-12 sm:right-6 sm:max-w-[260px]"
             >
               <div className="mb-2 rounded-xl border border-white/10 bg-black/20 px-3 py-2">
-                <span className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-blue-300">
+                <span className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-brand-orange/90">
                   {h.floatEnps}
                 </span>
                 <span className="mt-1 block text-lg font-semibold text-white">{h.floatEnpsValue}</span>

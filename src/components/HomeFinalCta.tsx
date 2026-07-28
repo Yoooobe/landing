@@ -65,7 +65,7 @@ export default function HomeFinalCta({
                 source="home-final-cta-demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-xl bg-yoobe-purple px-8 font-sans text-base font-bold text-white shadow-xl shadow-yoobe-purple/20 transition-all hover:scale-105 hover:bg-yoobe-purple/90 sm:w-auto"
+                className="inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-xl bg-brand-gradient px-8 font-sans text-base font-bold text-white transition-all duration-200 hover:bg-brand-gradient-hover sm:w-auto"
               >
                 {c.demo}
               </TrackedOutboundLink>
@@ -74,7 +74,7 @@ export default function HomeFinalCta({
                 source="home-final-cta-whatsapp"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-xl bg-whatsapp px-8 font-sans text-base font-bold text-white shadow-xl shadow-whatsapp/20 transition-all hover:scale-105 hover:bg-whatsapp-deep sm:w-auto"
+                className="inline-flex h-12 w-full items-center justify-center whitespace-nowrap rounded-xl bg-whatsapp px-8 font-sans text-base font-bold text-white transition-colors duration-200 hover:bg-whatsapp-deep sm:w-auto"
               >
                 {c.whatsapp}
               </TrackedOutboundLink>

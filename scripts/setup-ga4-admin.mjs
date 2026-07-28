@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Configura GA4 Admin: Viewer para SA + key event generate_lead.
+ * Configura GA4 Admin: Viewer para SA + eventos-chave do funil.
  * Requer OAuth com scopes analytics (uma vez):
  *
  *   gcloud auth application-default login \
@@ -15,7 +15,7 @@ const GA_PROPERTY_ID = process.env.GA_PROPERTY_ID || "327916606";
 const SA_EMAIL =
   process.env.GA4_READER_SA_EMAIL ||
   "landing-ga4-reader@institucional-480905.iam.gserviceaccount.com";
-const KEY_EVENT = "generate_lead";
+const KEY_EVENTS = ["generate_lead", "schedule_demo", "contact_whatsapp", "contact_email"];
 const DRY_RUN = process.argv.includes("--dry-run");
 
 const SCOPES = [
@@ -55,11 +55,11 @@ async function ensureViewerAccess(admin) {
   return { created: true, binding: created.data };
 }
 
-async function ensureKeyEvent(admin) {
+async function ensureKeyEvent(admin, eventName) {
   const parent = `properties/${GA_PROPERTY_ID}`;
   const { data } = await admin.properties.conversionEvents.list({ parent });
   const existing = (data.conversionEvents ?? []).find(
-    (e) => e.eventName === KEY_EVENT,
+    (e) => e.eventName === eventName,
   );
   if (existing) {
     console.log(`OK Key event já existe: ${existing.name}`);
@@ -67,14 +67,14 @@ async function ensureKeyEvent(admin) {
   }
 
   if (DRY_RUN) {
-    console.log(`[dry-run] Criaria conversion event ${KEY_EVENT}`);
+    console.log(`[dry-run] Criaria conversion event ${eventName}`);
     return { created: false, dryRun: true };
   }
 
   const created = await admin.properties.conversionEvents.create({
     parent,
     requestBody: {
-      eventName: KEY_EVENT,
+      eventName,
     },
   });
   console.log(`OK Key event criado: ${created.data.name}`);
@@ -98,7 +98,9 @@ async function main() {
   }
 
   await ensureViewerAccess(admin);
-  await ensureKeyEvent(admin);
+  for (const eventName of KEY_EVENTS) {
+    await ensureKeyEvent(admin, eventName);
+  }
   console.log("\nsetup-ga4-admin: concluído. Teste: npm run fetch:ga4-snapshot");
 }
 

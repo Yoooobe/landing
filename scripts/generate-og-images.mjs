@@ -27,6 +27,8 @@ const VARIANTS = [
   { id: "4unik-vendas", subtitle: "Sales incentives integrated with your CRM: instant rewards." },
   { id: "4unik-comunidades", subtitle: "A VIP store for fans and communities, fulfillment included." },
   { id: "4unik-eventos", subtitle: "Event giveaways without logistics chaos: booth pickup or delivery." },
+  { id: "4unik-pricing", subtitle: "Enterprise reward infrastructure plans tailored to your program." },
+  { id: "4unik-seguranca", subtitle: "Security, governance, SSO, and LGPD for reward programs." },
 ];
 
 function escapeXml(text) {

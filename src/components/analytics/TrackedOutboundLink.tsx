@@ -1,6 +1,6 @@
 "use client";
 
-import { outboundConversionEventName } from "@/lib/analyticsEvents";
+import { GA_CONVERSION_EVENTS, outboundConversionEventName } from "@/lib/analyticsEvents";
 import { normalizeWhatsappHref } from "@/lib/whatsapp";
 import { sendGAEvent } from "@next/third-parties/google";
 import type { ComponentProps } from "react";
@@ -9,6 +9,11 @@ export function trackOutboundConversion(href: string, source: string) {
   const event = outboundConversionEventName(href);
   if (!event) return;
   sendGAEvent("event", event, { source, link_url: href });
+}
+
+/** Soft funnel signal: user chose to open the contact / lead form path. */
+export function trackContactIntent(source: string) {
+  sendGAEvent("event", GA_CONVERSION_EVENTS.contactIntent, { source });
 }
 
 type TrackedOutboundLinkProps = ComponentProps<"a"> & {

@@ -495,6 +495,26 @@ export function resolveBlogSlugFromCategory(category: string): BlogFallbackSlug 
   return BLOG_CATEGORY_TO_FALLBACK_SLUG[category] ?? "1";
 }
 
+/**
+ * Copy do CTA "platform" quando o post é de intenção de orçamento/custo e deve
+ * apontar para `/pricing` em vez da página de Plataforma (`--money-page pricing`).
+ */
+const PRICING_CTA_COPY: Record<"pt" | "en", CtaCopy> = {
+  pt: {
+    eyebrow: "Planos & preços · 4unik",
+    title: "Veja os planos e preços da 4unik",
+    description:
+      "Compare Starter, Pro e Enterprise e escolha a estrutura ideal para o tamanho do seu programa de recompensas.",
+    ctaLabel: "Ver planos e preços",
+  },
+  en: {
+    eyebrow: "Plans & pricing · 4unik",
+    title: "See 4unik's plans and pricing",
+    description: "Compare Starter, Pro and Enterprise plans and pick the right fit for your rewards program.",
+    ctaLabel: "View plans & pricing",
+  },
+};
+
 function blogCtaBodyLineToSanityBlock(line: BlogCtaBodySpecLine, key: string): BlogCtaBlock {
   return {
     _key: key,
@@ -518,9 +538,10 @@ export function sanityBlogCtaBlocksForCategory(
   locale: "pt" | "en",
   category: string,
   keyPrefix = "gen-cta",
+  moneyPageOverride?: "pricing",
 ): [BlogCtaBlock, BlogCtaBlock, BlogCtaBlock] {
   const slug = resolveBlogSlugFromCategory(category);
-  const triplet = buildBlogCtaBodyLines(slug, locale);
+  const triplet = buildBlogCtaBodyLines(slug, locale, moneyPageOverride);
   const id = `${keyPrefix}-${slug}`;
   return [
     blogCtaBodyLineToSanityBlock(triplet[0], `${id}-0`),
@@ -532,21 +553,36 @@ export function sanityBlogCtaBlocksForCategory(
 /**
  * Três blocos `blogCta` (plataforma, feature, demo) alinhados às páginas da landing e ao slug do post.
  */
-export function buildBlogCtaBodyLines(slug: string, locale: "pt" | "en"): [BlogCtaBodySpecLine, BlogCtaBodySpecLine, BlogCtaBodySpecLine] {
+export function buildBlogCtaBodyLines(
+  slug: string,
+  locale: "pt" | "en",
+  moneyPageOverride?: "pricing",
+): [BlogCtaBodySpecLine, BlogCtaBodySpecLine, BlogCtaBodySpecLine] {
   const key: BlogFallbackSlug = isBlogFallbackSlug(slug) ? slug : "1";
   const paths = BLOG_CTA_PATHS_BY_SLUG[key];
   const copy = TRIPLET_COPY[key][locale];
   const imgUrl = BLOG_FALLBACK_IMG[paths.img];
 
-  const platform: BlogCtaBodySpecLine = {
-    type: "blogCta",
-    variant: "platform",
-    eyebrow: copy.platform.eyebrow,
-    title: copy.platform.title,
-    description: copy.platform.description,
-    ctaLabel: copy.platform.ctaLabel,
-    ctaHref: blogLandingHref(locale, paths.platform),
-  };
+  const platform: BlogCtaBodySpecLine =
+    moneyPageOverride === "pricing"
+      ? {
+          type: "blogCta",
+          variant: "platform",
+          eyebrow: PRICING_CTA_COPY[locale].eyebrow,
+          title: PRICING_CTA_COPY[locale].title,
+          description: PRICING_CTA_COPY[locale].description,
+          ctaLabel: PRICING_CTA_COPY[locale].ctaLabel,
+          ctaHref: blogLandingHref(locale, "/pricing"),
+        }
+      : {
+          type: "blogCta",
+          variant: "platform",
+          eyebrow: copy.platform.eyebrow,
+          title: copy.platform.title,
+          description: copy.platform.description,
+          ctaLabel: copy.platform.ctaLabel,
+          ctaHref: blogLandingHref(locale, paths.platform),
+        };
 
   const feature: BlogCtaBodySpecLine = {
     type: "blogCta",

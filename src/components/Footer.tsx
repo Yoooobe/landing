@@ -201,7 +201,7 @@ export default function Footer() {
             <div className="mb-3">
               <UnikWordmark
                 variant="footer"
-                alt="4unik"
+                alt="4Unik"
                 className="opacity-95"
               />
             </div>
@@ -231,7 +231,7 @@ export default function Footer() {
                   href={item.href}
                   locale={locale}
                   openInNewTab={item.openInNewTab}
-                  className="text-sm hover:text-brand-orange transition-colors"
+                  className="text-sm transition-colors duration-200 hover:text-brand-orange"
                 >
                   {item.label}
                 </FooterShellLink>
@@ -248,7 +248,7 @@ export default function Footer() {
                 <FooterShellLink
                   href={privacyUrl}
                   locale={locale}
-                  className="hover:text-white transition-colors"
+                  className="transition-colors duration-200 hover:text-brand-orange"
                 >
                   {f.legal}
                 </FooterShellLink>
@@ -257,7 +257,7 @@ export default function Footer() {
                 <FooterShellLink
                   href={termsUrl}
                   locale={locale}
-                  className="hover:text-white transition-colors"
+                  className="transition-colors duration-200 hover:text-brand-orange"
                 >
                   {f.terms}
                 </FooterShellLink>

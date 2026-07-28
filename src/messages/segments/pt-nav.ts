@@ -6,6 +6,7 @@ export const ptNav = {
   login: "Entrar",
   requestDemo: "Solicitar demo",
   blog: "Blog",
+  pricing: "Planos & Preços",
   mobileLogin: "Fazer Login",
   product: "Produto",
   apiIntegrations: "API e integrações",

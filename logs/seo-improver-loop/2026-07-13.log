@@ -1,0 +1,32 @@
+⚠ claude.ai connectors are disabled because ANTHROPIC_API_KEY or another auth source is set and takes precedence over your claude.ai login · Unset it to load your organization's connectors
+Credit balance is too low
+Rodada do seo-improver-loop concluída até onde a sessão permitiu — **todas as escritas (arquivos, Sanity, MCP GA4/GSC) foram bloqueadas por permissão**, então mediu-se e preparou-se tudo, mas nada foi aplicado em disco. Resumo:
+
+## Medição (Step 1) — via snapshot existente `ga4-snapshots/2026-07-14.json`
+
+| Período | Sessões | `generate_lead` | `schedule_demo` | `contact_whatsapp` | Funil/sessão |
+|---|---|---|---|---|---|
+| A (10–11/jun) | 20 | 0 | 0 | 0 | 0% |
+| B (12/jun–14/jul) | 99 | 0 | 3 | 13 | ~16% |
+
+- **Funil saiu de zero para 16 eventos** — os key events marcados em 17/jun estão captando em produção.
+- **`generate_lead` = 0 não é bug**: verifiquei o código — `LeadCaptureForm.tsx` dispara `sendGAEvent` no sucesso do POST, e o fallback de `config/leads-ingest.json` está correto. Zero hits = zero submissões reais do formulário; vale conferir o volume no ingest.
+- Canais: Direct/Unassigned dominam; **orgânico ainda não é motor de tráfego**.
+- GSC: não rodou nesta sessão (MCP e scripts com `GOOGLE_APPLICATION_CREDENTIALS` bloqueados). Último estado: 19/19 em 17/jun. O log de 13/jul do loop headless falhou com "Credit balance is too low".
+
+## Orquestração e priorização (Steps 2–3)
+
+- Backlog "Next Up" (valores Scale/Enterprise em `/pricing`, SLA/certificações em `/seguranca`) tem **gate Jurídico/Financeiro** — não auto-aplicável por regra da skill.
+- Única melhoria de baixo risco elegível: **ampliar FAQs de `/pricing` e `/seguranca` de 3→5 perguntas** (PT+EN) — as demais páginas têm 4–6. Confirmei que os FAQs alimentam JSON-LD `FAQPage` automaticamente via `buildFaqPageJsonLd`, então é ganho direto de AEO.
+
+## Aplicação e relatório (Steps 4–6) — **bloqueados**
+
+Preparei e tentei aplicar, mas a permissão de escrita não foi concedida para:
+
+1. **4 edits de FAQ** em `src/messages/segments/{pt,en}-pricing-page.ts` e `{pt,en}-seguranca-page.ts` — perguntas novas sem valores de plano nem alegações de SLA/certificação (respeitando os gates): logística de recompensas incluída, começar sem falar com vendas, LGPD/DPA, controle de acesso por perfil.
+2. **Atualização do relatório** `docs/reviews/agent-seo-traffic-2026-07.md` com a seção "Reavaliação 14/jul" (tabela acima, veredito, ações).
+
+Nenhum PR foi aberto (não houve mudança estrutural a propor, e sem os edits aplicados não há diff).
+
+**Para concluir a rodada**: rode novamente com permissão de escrita concedida (ou em modo acceptEdits) que eu aplico os 4 edits de FAQ e a atualização do relatório — o conteúdo já está pronto. Veredito provisório permanece: infra de medição comprovada, crescimento orgânico ainda não comprovado; reavaliar ~15/ago com GSC obrigatório.
+seo-improver-loop run finished at Tue Jul 14 00:03:11 -03 2026

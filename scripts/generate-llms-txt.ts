@@ -110,6 +110,7 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - Para times de vendas: ${url("/vendas")} | ${url("/en/vendas")}
 - Para criadores e comunidades: ${url("/comunidades")} | ${url("/en/comunidades")}
 - Para eventos: ${url("/eventos")} | ${url("/en/eventos")}
+- Gamificação para RH: ${url("/gamificacao-para-rh")} | ${url("/en/gamificacao-para-rh")}
 - Blog: ${url("/blog")} | ${url("/en/blog")}
 - robots.txt: ${base}/robots.txt
 - sitemap: ${base}/sitemap.xml

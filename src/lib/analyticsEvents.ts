@@ -1,9 +1,11 @@
-/** GA4 conversion event names (key events in Admin). */
+/** GA4 conversion / soft-intent event names (key events in Admin where noted). */
 export const GA_CONVERSION_EVENTS = {
   generateLead: "generate_lead",
   scheduleDemo: "schedule_demo",
   contactWhatsapp: "contact_whatsapp",
   contactEmail: "contact_email",
+  /** Soft intent: user opened contact form path (dock, header Contato). Not a key event. */
+  contactIntent: "contact_intent",
 } as const;
 
 export type GaConversionEventName =

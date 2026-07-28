@@ -381,6 +381,53 @@ export type LegacySectionBlockDoc = {
   note?: string;
 };
 
+export type PricingPlanFeatureDoc = {
+  _key?: string;
+  label?: string;
+  hint?: string;
+};
+
+export type PricingPlanItemDoc = {
+  _key?: string;
+  planId?: string;
+  name?: string;
+  monthlyPrice?: string;
+  annualPrice?: string;
+  capacity?: string;
+  description?: string;
+  valueProposition?: string;
+  isPopular?: boolean;
+  features?: PricingPlanFeatureDoc[];
+  ctaText?: string;
+};
+
+export type PricingPlansBlockDoc = {
+  _key?: string;
+  _type: "pricingPlansBlock";
+  billingToggleMonthlyLabel?: string;
+  billingToggleAnnualLabel?: string;
+  billingToggleAnnualBadge?: string;
+  plans?: PricingPlanItemDoc[];
+};
+
+export type VariableCostItemDoc = {
+  _key?: string;
+  label?: string;
+  value?: string;
+  unit?: string;
+  description?: string;
+};
+
+export type VariableCostsBlockDoc = {
+  _key?: string;
+  _type: "variableCostsBlock";
+  badge?: string;
+  title?: string;
+  subtitle?: string;
+  items?: VariableCostItemDoc[];
+  disclaimer?: string;
+};
+
 export type MarketingPageContentBlock =
   | HeroBlockDoc
   | FeatureGridBlockDoc
@@ -392,7 +439,9 @@ export type MarketingPageContentBlock =
   | CtaBlockDoc
   | FaqBlockDoc
   | StatsBlockDoc
-  | TestimonialBlockDoc;
+  | TestimonialBlockDoc
+  | PricingPlansBlockDoc
+  | VariableCostsBlockDoc;
 
 export type MarketingPageDoc = {
   _id: string;
@@ -845,6 +894,7 @@ export type ResolvedApiIntegracoesContent = {
     buttonLabel: string;
     buttonHref: string;
   };
+  faq: Array<{ q: string; a: string }>;
 };
 
 export type GamificacaoSeoDoc = {

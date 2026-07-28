@@ -9,6 +9,8 @@ export type CarouselScreen = {
   label: string;
   step: string;
   accent: string;
+  /** Optional descriptive alt; falls back to `label`. */
+  alt?: string;
 };
 
 type VariantConfig = {
@@ -121,6 +123,12 @@ type Props = {
   /** Incrementar quando o pai muda o slide por ação do utilizador (ex.: clique num card) para pausar o autoplay. */
   interactionNonce?: number;
   autoplayResumeDelayMs?: number;
+  /** Desligar o timer interno quando o pai controla o avanço (ex.: WorkflowShowcase). */
+  autoplay?: boolean;
+  /** Overrides do chrome do browser — sobrepõem-se ao variant. */
+  urlBarOverride?: string;
+  badgeTextOverride?: string;
+  demoLabelOverride?: string;
 };
 
 const GAMIFICATION_SCREENS_EN: CarouselScreen[] = [
@@ -154,6 +162,10 @@ export default function FeatureScreensCarousel({
   onActiveIndexChange,
   interactionNonce,
   autoplayResumeDelayMs = DEFAULT_AUTOPLAY_RESUME_MS,
+  autoplay = true,
+  urlBarOverride,
+  badgeTextOverride,
+  demoLabelOverride,
 }: Props) {
   const isControlled =
     typeof controlledActive === "number" && typeof onActiveIndexChange === "function";
@@ -169,11 +181,22 @@ export default function FeatureScreensCarousel({
     customScreens ??
     (variant === "gamification" && locale === "en" ? GAMIFICATION_SCREENS_EN : cfg.screens);
   const demoLabel =
-    variant === "gamification" && locale === "en"
+    demoLabelOverride ??
+    (variant === "gamification" && locale === "en"
       ? "Live demo · Gamification engine"
-      : cfg.demoLabel;
+      : cfg.demoLabel);
   const urlBar =
-    variant === "gamification" && locale === "en" ? "app.4unik.io · Gamification" : cfg.urlBar;
+    urlBarOverride ??
+    (variant === "gamification" && locale === "en" ? "app.4unik.io · Gamification" : cfg.urlBar);
+  const badgeText =
+    badgeTextOverride ??
+    (locale === "en" && variant === "member"
+      ? "Employee"
+      : locale === "en" && variant === "admin"
+      ? "Manager"
+      : locale === "en" && variant === "gamification"
+      ? "Gamification"
+      : cfg.badgeText);
 
   const len = screens.length;
   const active = isControlled
@@ -210,7 +233,7 @@ export default function FeatureScreensCarousel({
   }, [interactionNonce, autoplayResumeDelayMs]);
 
   useEffect(() => {
-    if (len === 0) return;
+    if (!autoplay || len === 0) return;
     const t = setInterval(() => {
       if (Date.now() < pausedUntilRef.current) return;
       if (isControlled) {
@@ -221,7 +244,7 @@ export default function FeatureScreensCarousel({
       }
     }, intervalMs);
     return () => clearInterval(t);
-  }, [intervalMs, len, isControlled]);
+  }, [intervalMs, len, isControlled, autoplay]);
 
   const screen = screens[active];
   if (!screen) return null;
@@ -257,13 +280,7 @@ export default function FeatureScreensCarousel({
             <span className="font-mono text-[0.6rem] tracking-wider text-white/45">{urlBar}</span>
           </div>
           <span className={`rounded-full border px-2 py-0.5 font-mono text-[0.58rem] font-bold uppercase tracking-widest ${cfg.badgeClass}`}>
-            {locale === "en" && variant === "member"
-              ? "Employee"
-              : locale === "en" && variant === "admin"
-              ? "Manager"
-              : locale === "en" && variant === "gamification"
-              ? "Gamification"
-              : cfg.badgeText}
+            {badgeText}
           </span>
         </div>
 
@@ -283,7 +300,7 @@ export default function FeatureScreensCarousel({
             >
               <ZoomableScreenshot
                 src={screen.src}
-                alt={screen.label}
+                alt={screen.alt ?? screen.label}
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 imgClassName="object-contain object-top"
                 className="absolute inset-0 h-full w-full"

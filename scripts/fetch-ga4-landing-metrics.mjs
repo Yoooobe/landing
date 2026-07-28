@@ -60,8 +60,8 @@ const PERIODS = [
 
 function buildMarkdownTable(results) {
   const lines = [
-    "| Período | Janela | Utilizadores ativos | Sessões | Novos utilizadores | `generate_lead` | `schedule_demo` | `contact_whatsapp` | Taxa funil/sessão | Notas |",
-    "|---------|--------|---------------------|---------|-------------------|-----------------|-----------------|-------------------|-------------------|-------|",
+    "| Período | Janela | Utilizadores ativos | Sessões | Novos utilizadores | `generate_lead` | `schedule_demo` | `contact_whatsapp` | `contact_email` | Total funil | Taxa funil/sessão | Notas |",
+    "|---------|--------|---------------------|---------|-------------------|-----------------|-----------------|-------------------|-----------------|-------------|-------------------|-------|",
   ];
 
   for (const { period, result } of results) {
@@ -72,9 +72,12 @@ function buildMarkdownTable(results) {
         ? ""
         : ` ⚠️ ${result.reason}: ${result.note ?? ""}`;
     const funnelTotal =
-      (m.generateLeadEvents ?? 0) + (m.scheduleDemoEvents ?? 0) + (m.contactWhatsappEvents ?? 0);
+      (m.generateLeadEvents ?? 0) +
+      (m.scheduleDemoEvents ?? 0) +
+      (m.contactWhatsappEvents ?? 0) +
+      (m.contactEmailEvents ?? 0);
     lines.push(
-      `| **${period.id} — ${period.label}** | ${window} | ${formatNum(m.activeUsers)} | ${formatNum(m.sessions)} | ${formatNum(m.newUsers)} | ${formatNum(m.generateLeadEvents)} | ${formatNum(m.scheduleDemoEvents)} | ${formatNum(m.contactWhatsappEvents)} | ${formatRate(m.sessions, funnelTotal)} | ${period.notes}${status} |`,
+      `| **${period.id} — ${period.label}** | ${window} | ${formatNum(m.activeUsers)} | ${formatNum(m.sessions)} | ${formatNum(m.newUsers)} | ${formatNum(m.generateLeadEvents)} | ${formatNum(m.scheduleDemoEvents)} | ${formatNum(m.contactWhatsappEvents)} | ${formatNum(m.contactEmailEvents)} | ${formatNum(funnelTotal)} | ${formatRate(m.sessions, funnelTotal)} | ${period.notes}${status} |`,
     );
   }
 

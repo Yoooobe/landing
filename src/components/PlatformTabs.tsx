@@ -7,16 +7,25 @@ import { withBasePath } from "@/lib/basePath";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
+
+type TabId = "gestao" | "loja" | "campanhas";
+
+const TAB_ROUTES: Record<TabId, string> = {
+  gestao: "/plataforma/painel-gestor/",
+  loja: "/plataforma/loja-resgate/",
+  campanhas: "/plataforma/campanhas-gamificacao/",
+};
 
 export default function PlatformTabs({
   homeContent = null,
 }: {
   homeContent?: ResolvedHomeContent | null;
 }) {
-  const { m } = useLocaleMessages();
+  const { m, path } = useLocaleMessages();
   const t = m.platformTabs;
-  const [activeTab, setActiveTab] = useState("gestao");
+  const [activeTab, setActiveTab] = useState<TabId>("gestao");
   const managementImageUrl =
     getSanityImageUrl(
       homeContent?.showcaseMedia?.platformTabs?.managementImage,
@@ -33,64 +42,72 @@ export default function PlatformTabs({
       { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.2 }, quality: 85 },
     ) ?? withBasePath("/screens/flows/campanha-passo-1.webp");
 
+  const tabs: Array<{ id: TabId; label: string }> = [
+    { id: "gestao", label: t.tabGestao },
+    { id: "loja", label: t.tabLoja },
+    { id: "campanhas", label: t.tabCampanhas },
+  ];
+
+  const tabButtonClass = (id: TabId) =>
+    `rounded-full px-6 py-3 font-bold transition-all duration-200 ${
+      activeTab === id
+        ? "bg-brand-gradient text-white"
+        : "border border-white/15 bg-white/5 text-white/70 backdrop-blur-md hover:border-brand-orange/25 hover:bg-white/10"
+    }`;
+
   return (
     <section id="preview" className="relative overflow-hidden bg-brand-navy-dark py-24">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="mb-16 text-center">
-          <div className="mb-4 inline-block rounded-full border border-yoobe-purple/30 bg-yoobe-purple/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-yoobe-purple">
+          <div className="mb-4 inline-block rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-brand-orange">
             {t.badge}
           </div>
           <h2 className="mb-6 font-heading text-3xl font-black text-white md:text-5xl">{t.title}</h2>
         </div>
 
-        <div className="mb-12 flex flex-wrap justify-center gap-4">
-          <button
-            type="button"
-            onClick={() => setActiveTab("gestao")}
-            className={`rounded-full px-6 py-3 font-bold transition-all ${activeTab === "gestao" ? "scale-105 bg-white text-black shadow-lg" : "border border-white/10 bg-white/5 text-white/70 backdrop-blur-md hover:bg-white/10"}`}
-          >
-            {t.tabGestao}
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab("loja")}
-            className={`rounded-full px-6 py-3 font-bold transition-all ${activeTab === "loja" ? "scale-105 bg-white text-black shadow-lg" : "border border-white/10 bg-white/5 text-white/70 backdrop-blur-md hover:bg-white/10"}`}
-          >
-            {t.tabLoja}
-          </button>
-          <button
-            type="button"
-            onClick={() => setActiveTab("campanhas")}
-            className={`rounded-full px-6 py-3 font-bold transition-all ${activeTab === "campanhas" ? "scale-105 bg-white text-black shadow-lg" : "border border-white/10 bg-white/5 text-white/70 backdrop-blur-md hover:bg-white/10"}`}
-          >
-            {t.tabCampanhas}
-          </button>
+        <div className="mb-12 flex flex-wrap justify-center gap-4" role="tablist" aria-label={t.title}>
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={tabButtonClass(tab.id)}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
 
         <div className="relative min-h-[400px]">
           {activeTab === "gestao" && (
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="grid items-center gap-12 md:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="grid items-center gap-12 md:grid-cols-2"
+            >
               <div>
                 <h3 className="mb-4 font-heading text-3xl font-bold text-white">{t.gestao.title}</h3>
                 <p className="mb-6 font-sans leading-relaxed text-white/60">{t.gestao.body}</p>
                 <ul className="mb-8 space-y-4 font-sans">
                   {t.gestao.bullets.map((line) => (
                     <li key={line} className="flex items-center text-white/80">
-                      <span className="mr-3 text-green-400">✓</span>
+                      <span className="mr-3 text-brand-orange">✓</span>
                       {line}
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#gestao"
-                  className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-bold text-white transition-colors hover:bg-white/5 font-sans"
+                <Link
+                  href={path(TAB_ROUTES.gestao)}
+                  className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-sans font-bold text-white transition-colors duration-200 hover:border-brand-orange/40 hover:bg-white/5"
                 >
                   {t.gestao.cta}
-                </a>
+                </Link>
               </div>
               <div className="relative">
-                <div className="pointer-events-none absolute -inset-3 rounded-[2rem] bg-unik-blue/20 blur-2xl opacity-60" />
-                <div className="glass-panel-dark relative rounded-2xl border-t border-t-white/20 p-4 shadow-2xl md:p-6">
+                <div className="glass-panel-dark relative rounded-2xl p-4 shadow-xl transition-colors duration-200 hover:border-brand-orange/25 md:p-6">
                   <div className="mb-4 flex items-center gap-2">
                     <div className="flex gap-1.5">
                       <div className="h-3 w-3 rounded-full bg-red-400/90" />
@@ -118,28 +135,32 @@ export default function PlatformTabs({
           )}
 
           {activeTab === "loja" && (
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="grid items-center gap-12 md:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="grid items-center gap-12 md:grid-cols-2"
+            >
               <div>
                 <h3 className="mb-4 font-heading text-3xl font-bold text-white">{t.loja.title}</h3>
                 <p className="mb-6 font-sans leading-relaxed text-white/60">{t.loja.body}</p>
                 <ul className="mb-8 space-y-4 font-sans">
                   {t.loja.bullets.map((line) => (
                     <li key={line} className="flex items-center text-white/80">
-                      <span className="mr-3 text-green-400">✓</span>
+                      <span className="mr-3 text-brand-orange">✓</span>
                       {line}
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#loja"
-                  className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-colors hover:bg-brand-orange-dark font-sans"
+                <Link
+                  href={path(TAB_ROUTES.loja)}
+                  className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-gradient px-8 font-sans font-bold text-white transition-all duration-200 hover:bg-brand-gradient-hover"
                 >
                   {t.loja.cta}
-                </a>
+                </Link>
               </div>
               <div className="relative">
-                <div className="pointer-events-none absolute -inset-3 rounded-[2rem] bg-demo-cyan/20 blur-2xl opacity-60" />
-                <div className="glass-panel-dark relative rounded-2xl border-t border-t-white/20 p-4 shadow-2xl md:p-6">
+                <div className="glass-panel-dark relative rounded-2xl p-4 shadow-xl transition-colors duration-200 hover:border-brand-orange/25 md:p-6">
                   <div className="mb-4 flex items-center gap-2">
                     <div className="flex gap-1.5">
                       <div className="h-3 w-3 rounded-full bg-red-400/90" />
@@ -167,28 +188,32 @@ export default function PlatformTabs({
           )}
 
           {activeTab === "campanhas" && (
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="grid items-center gap-12 md:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className="grid items-center gap-12 md:grid-cols-2"
+            >
               <div>
                 <h3 className="mb-4 font-heading text-3xl font-bold text-white">{t.campanhas.title}</h3>
                 <p className="mb-6 font-sans leading-relaxed text-white/60">{t.campanhas.body}</p>
                 <ul className="mb-8 space-y-4 font-sans">
                   {t.campanhas.bullets.map((line) => (
                     <li key={line} className="flex items-center text-white/80">
-                      <span className="mr-3 text-green-400">✓</span>
+                      <span className="mr-3 text-brand-orange">✓</span>
                       {line}
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#gamificacao"
-                  className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-bold text-white transition-colors hover:bg-white/5 font-sans"
+                <Link
+                  href={path(TAB_ROUTES.campanhas)}
+                  className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-sans font-bold text-white transition-colors duration-200 hover:border-brand-orange/40 hover:bg-white/5"
                 >
                   {t.campanhas.cta}
-                </a>
+                </Link>
               </div>
               <div className="relative">
-                <div className="pointer-events-none absolute -inset-3 rounded-[2rem] bg-brand-orange/20 blur-2xl opacity-60" />
-                <div className="glass-panel-dark relative rounded-2xl border-t border-t-white/20 p-4 shadow-2xl md:p-6">
+                <div className="glass-panel-dark relative rounded-2xl p-4 shadow-xl transition-colors duration-200 hover:border-brand-orange/25 md:p-6">
                   <div className="mb-4 flex items-center gap-2">
                     <div className="flex gap-1.5">
                       <div className="h-3 w-3 rounded-full bg-red-400/90" />

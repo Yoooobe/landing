@@ -1,0 +1,9 @@
+Error: 
+   0: [91m`claude` was not found on PATH.
+      Install it and re-run — see https://docs.claude.com/en/docs/claude-code[0m
+
+Location:
+   [35m/rustc/ac68faa20c58cbccd01ee7208bf3b6e93a7d7f96/library/core/src/ops/function.rs[0m:[35m250[0m
+
+Backtrace omitted. Run with RUST_BACKTRACE=1 environment variable to display it.
+Run with RUST_BACKTRACE=full to include source snippets.

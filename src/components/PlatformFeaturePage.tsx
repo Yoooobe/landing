@@ -3,10 +3,10 @@ import LeadCaptureForm from "@/components/LeadCaptureForm";
 import FadeUp from "@/components/ui/FadeUp";
 import FeatureFlowVideoPlayer from "@/components/ui/FeatureFlowVideoPlayer";
 import ScreenshotCard from "@/components/ui/ScreenshotCard";
+import WorkflowShowcase from "@/components/ui/WorkflowShowcase";
 import type { PlatformFeaturePageContent } from "@/content/platformFeaturePages";
 import { withBasePath } from "@/lib/basePath";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -33,8 +33,6 @@ export default function PlatformFeaturePage({
   heroImageOverride = null,
   galleryOverrides = [],
 }: Props) {
-  const hasWorkflowImages = content.workflow.some((step) => Boolean(step.imageSrc));
-
   return (
     <div className="min-h-screen bg-brand-navy-dark text-white">
       <section className="relative overflow-hidden border-b border-white/5 pt-32 pb-18">
@@ -124,44 +122,13 @@ export default function PlatformFeaturePage({
 
       <section className="border-b border-white/5 py-18">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeUp className="mb-8 max-w-3xl">
-            <h2 className="text-3xl font-black md:text-4xl">{content.workflowTitle}</h2>
+          <FadeUp>
+            <WorkflowShowcase
+              title={content.workflowTitle}
+              steps={content.workflow}
+              badge={content.badge}
+            />
           </FadeUp>
-          <div
-            className={`grid gap-4 ${
-              hasWorkflowImages
-                ? "md:grid-cols-2 xl:grid-cols-4"
-                : "md:grid-cols-2 xl:grid-cols-4"
-            }`}
-          >
-            {content.workflow.map((step, index) => (
-              <FadeUp
-                key={step.title}
-                delay={index * 0.07}
-                className="glass-panel-dark group overflow-hidden rounded-[1.75rem] border-t border-t-white/12 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(0,0,0,0.4)]"
-              >
-                {step.imageSrc ? (
-                  <div className="relative aspect-16/10 w-full overflow-hidden border-b border-white/8 bg-[#0b0e14]">
-                    <Image
-                      src={withBasePath(step.imageSrc)}
-                      alt={step.imageAlt ?? step.title}
-                      fill
-                      sizes="(min-width: 1280px) 22vw, (min-width: 768px) 45vw, 100vw"
-                      className="object-contain object-top transition-transform duration-500 group-hover:scale-105"
-                      unoptimized
-                    />
-                  </div>
-                ) : null}
-                <div className="p-6">
-                  <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-brand-orange/30 bg-brand-orange/12 text-sm font-bold text-brand-orange backdrop-blur-sm">
-                    0{index + 1}
-                  </div>
-                  <h3 className="text-lg font-bold text-white">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/58">{step.body}</p>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
         </div>
       </section>
 

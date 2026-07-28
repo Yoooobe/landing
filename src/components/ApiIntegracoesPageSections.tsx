@@ -1,6 +1,8 @@
+import ApiCodeAndFaqSection from "@/components/ApiCodeAndFaqSection";
 import ApiFeaturesGrid from "@/components/ApiFeaturesGrid";
 import ApiHero from "@/components/ApiHero";
 import ApiPlatformModules from "@/components/ApiPlatformModules";
+import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import IntegrationsTicker from "@/components/IntegrationsTicker";
 import LeadCaptureForm from "@/components/LeadCaptureForm";
 import NativeIntegrations from "@/components/NativeIntegrations";
@@ -29,6 +31,7 @@ export default function ApiIntegracoesPageSections({
       />
       <IntegrationsTicker />
       <ApiFeaturesGrid content={content.features} showcaseItems={showcaseMedia?.features?.items} />
+      <ApiCodeAndFaqSection content={content} />
       <NativeIntegrations content={content.integrations} showcasePlatforms={showcaseMedia?.integrations?.platforms} />
       <ApiPlatformModules content={content.modules} showcaseItems={showcaseMedia?.modules?.items} />
 
@@ -47,14 +50,15 @@ export default function ApiIntegracoesPageSections({
           </div>
           <p className="mt-10 text-center text-sm text-white/45">{leadCopy.altTechnical}</p>
           <div className="mt-4 flex justify-center">
-            <a
+            <TrackedOutboundLink
               href={content.finalCta.buttonHref}
+              source="api-page-final-demo"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center rounded-xl bg-cyan-500 px-8 text-base font-bold text-surface-base shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all hover:scale-105 hover:bg-cyan-400"
             >
               {content.finalCta.buttonLabel}
-            </a>
+            </TrackedOutboundLink>
           </div>
         </div>
       </section>

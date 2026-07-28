@@ -1,7 +1,7 @@
 # 4Unik (4unik) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
-> Gerado por `scripts/generate-llms-txt.ts` em 2026-07-16T04:48:01.048Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
+> Gerado por `scripts/generate-llms-txt.ts` em 2026-07-28T01:42:55.395Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
 
 ## O que é
 
@@ -24,10 +24,13 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - Para times de vendas: https://plataforma.4unik.com.br/landing/vendas/ | https://plataforma.4unik.com.br/landing/en/vendas/
 - Para criadores e comunidades: https://plataforma.4unik.com.br/landing/comunidades/ | https://plataforma.4unik.com.br/landing/en/comunidades/
 - Para eventos: https://plataforma.4unik.com.br/landing/eventos/ | https://plataforma.4unik.com.br/landing/en/eventos/
+- Gamificação para RH: https://plataforma.4unik.com.br/landing/gamificacao-para-rh/ | https://plataforma.4unik.com.br/landing/en/gamificacao-para-rh/
 - Blog: https://plataforma.4unik.com.br/landing/blog/ | https://plataforma.4unik.com.br/landing/en/blog/
 - robots.txt: https://plataforma.4unik.com.br/landing/robots.txt
 - sitemap: https://plataforma.4unik.com.br/landing/sitemap.xml
 
+- Pricing (PT/EN): https://plataforma.4unik.com.br/landing/pricing/ | https://plataforma.4unik.com.br/landing/en/pricing/
+- Security (PT/EN): https://plataforma.4unik.com.br/landing/seguranca/ | https://plataforma.4unik.com.br/landing/en/seguranca/
 
 ## Soluções por perfil (resumo citável)
 

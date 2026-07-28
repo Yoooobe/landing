@@ -10,6 +10,14 @@ type Props = {
   includeScale?: boolean;
 };
 
+const cardBase =
+  "flex flex-col rounded-3xl border border-sky-border bg-white p-8 shadow-[0_4px_24px_rgba(22,40,58,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-accent-sky-border-hover hover:shadow-[0_12px_40px_rgba(22,40,58,0.12)]";
+
+const checkIcon = "mr-3 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-check-mint-bg text-xs text-check-mint";
+
+const secondaryCta =
+  "mt-auto block w-full rounded-xl border border-ink-deep/15 bg-transparent py-4 text-center font-bold text-ink-deep transition-colors hover:bg-sky-mist font-sans";
+
 export default function PricingPlansGrid({ includeScale = false }: Props) {
   const { m } = useLocaleMessages();
   const p = m.pricing;
@@ -25,19 +33,19 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="flex flex-col rounded-3xl border border-white/10 bg-surface-elevated p-8"
+        className={cardBase}
       >
-        <h3 className="mb-2 font-heading text-2xl font-bold text-white">{p.starter.name}</h3>
-        <p className="mb-6 font-sans text-sm text-white/50">{p.starter.blurb}</p>
+        <h3 className="mb-2 font-heading text-2xl font-bold text-ink-deep">{p.starter.name}</h3>
+        <p className="mb-6 font-sans text-sm text-ink-muted">{p.starter.blurb}</p>
         <div className="mb-6">
-          <span className="text-2xl font-bold text-white/70">{p.currency}</span>
-          <span className="text-5xl font-black tracking-tight text-white"> {p.starter.price}</span>
-          <span className="text-sm text-white/50">{p.starter.period}</span>
+          <span className="text-2xl font-bold text-ink-muted">{p.currency}</span>
+          <span className="text-5xl font-black tracking-tight text-ink-deep"> {p.starter.price}</span>
+          <span className="text-sm text-ink-muted">{p.starter.period}</span>
         </div>
         <ul className="mb-8 flex-1 space-y-4 font-sans">
           {p.starter.bullets.map((line) => (
-            <li key={line} className="flex items-center text-white/80">
-              <span className="mr-3 text-green-400">✓</span>
+            <li key={line} className="flex items-center text-ink-deep/80">
+              <span className={checkIcon}>✓</span>
               {line}
             </li>
           ))}
@@ -47,7 +55,7 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
           source="pricing-plan-starter"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
+          className={secondaryCta}
         >
           {p.starter.cta}
         </TrackedOutboundLink>
@@ -58,22 +66,22 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="relative flex flex-col rounded-3xl border border-brand-orange bg-linear-to-b from-surface-tier-from to-surface-elevated p-8 shadow-[0_0_40px_rgba(249,115,22,0.15)] md:-translate-y-4"
+        className="relative flex flex-col rounded-3xl border-2 border-brand-orange bg-white p-8 shadow-[0_8px_40px_rgba(249,143,22,0.18)] transition-all duration-300 hover:scale-[1.015] hover:shadow-[0_16px_50px_rgba(249,143,22,0.24)] md:-translate-y-4"
       >
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
           {p.popular}
         </div>
-        <h3 className="mb-2 font-heading text-2xl font-bold text-white">{p.pro.name}</h3>
-        <p className="mb-6 font-sans text-sm text-white/50">{p.pro.blurb}</p>
+        <h3 className="mb-2 font-heading text-2xl font-bold text-ink-deep">{p.pro.name}</h3>
+        <p className="mb-6 font-sans text-sm text-ink-muted">{p.pro.blurb}</p>
         <div className="mb-6">
-          <span className="text-2xl font-bold text-white/70">{p.currency}</span>
-          <span className="text-5xl font-black tracking-tight text-white"> {p.pro.price}</span>
-          <span className="text-sm text-white/50">{p.pro.period}</span>
+          <span className="text-2xl font-bold text-ink-muted">{p.currency}</span>
+          <span className="text-5xl font-black tracking-tight text-ink-deep"> {p.pro.price}</span>
+          <span className="text-sm text-ink-muted">{p.pro.period}</span>
         </div>
         <ul className="mb-8 flex-1 space-y-4 font-sans">
           {p.pro.bullets.map((line) => (
-            <li key={line} className="flex items-center text-white/80">
-              <span className="mr-3 text-brand-orange">✓</span>
+            <li key={line} className="flex items-center text-ink-deep/80">
+              <span className={checkIcon}>✓</span>
               {line}
             </li>
           ))}
@@ -95,17 +103,17 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
-          className="flex flex-col rounded-3xl border border-white/10 bg-surface-elevated p-8"
+          className={cardBase}
         >
-          <h3 className="mb-2 font-heading text-2xl font-bold text-white">{scale.name}</h3>
-          <p className="mb-6 font-sans text-sm text-white/50">{scale.blurb}</p>
+          <h3 className="mb-2 font-heading text-2xl font-bold text-ink-deep">{scale.name}</h3>
+          <p className="mb-6 font-sans text-sm text-ink-muted">{scale.blurb}</p>
           <div className="mb-6">
-            <span className="text-3xl font-black tracking-tight text-white">{scale.priceLabel}</span>
+            <span className="text-3xl font-black tracking-tight text-ink-deep">{scale.priceLabel}</span>
           </div>
           <ul className="mb-8 flex-1 space-y-4 font-sans">
             {scale.bullets.map((line) => (
-              <li key={line} className="flex items-center text-white/80">
-                <span className="mr-3 text-green-400">✓</span>
+              <li key={line} className="flex items-center text-ink-deep/80">
+                <span className={checkIcon}>✓</span>
                 {line}
               </li>
             ))}
@@ -115,7 +123,7 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
             source="pricing-plan-scale"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
+            className={secondaryCta}
           >
             {scale.cta}
           </TrackedOutboundLink>
@@ -127,17 +135,17 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: includeScale ? 0.2 : 0.2 }}
-        className="flex flex-col rounded-3xl border border-white/10 bg-surface-elevated p-8"
+        className={cardBase}
       >
-        <h3 className="mb-2 font-heading text-2xl font-bold text-white">{p.enterprise.name}</h3>
-        <p className="mb-6 font-sans text-sm text-white/50">{p.enterprise.blurb}</p>
+        <h3 className="mb-2 font-heading text-2xl font-bold text-ink-deep">{p.enterprise.name}</h3>
+        <p className="mb-6 font-sans text-sm text-ink-muted">{p.enterprise.blurb}</p>
         <div className="mb-6">
-          <span className="text-4xl font-black tracking-tight text-white">{p.enterprise.priceLabel}</span>
+          <span className="text-4xl font-black tracking-tight text-ink-deep">{p.enterprise.priceLabel}</span>
         </div>
         <ul className="mb-8 flex-1 space-y-4 font-sans">
           {p.enterprise.bullets.map((line) => (
-            <li key={line} className="flex items-center text-white/80">
-              <span className="mr-3 text-green-400">✓</span>
+            <li key={line} className="flex items-center text-ink-deep/80">
+              <span className={checkIcon}>✓</span>
               {line}
             </li>
           ))}
@@ -147,7 +155,7 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
           source="pricing-plan-enterprise"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto block w-full rounded-xl border border-white/20 bg-transparent py-4 text-center font-bold text-white transition-colors hover:bg-white/5 font-sans"
+          className={secondaryCta}
         >
           {p.enterprise.cta}
         </TrackedOutboundLink>

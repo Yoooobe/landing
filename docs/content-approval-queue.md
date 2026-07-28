@@ -41,12 +41,29 @@ Enquanto `NEXT_PUBLIC_INDEX_GROWTH_PAGES` não estiver `true`, `/pricing/` e `/s
 
 ## Pricing (`/pricing/`, `/en/pricing/`)
 
+> **Atualização 2026-07-24 — decisão direta do fundador:** a página dedicada
+> `/pricing/` foi reestruturada (Essentials/Scale/Enterprise, com toggle
+> mensal/anual) e passou a publicar o valor de cobrança de API por usuário
+> ativo (R$ 4,90/usuário/mês) e uma seção de custos operacionais/logísticos
+> variáveis (setup, fulfillment, armazenagem, colaborador extra), conteúdo
+> em `src/messages/segments/pt-pricing-page.ts` / `en-pricing-page.ts`
+> (`plans`, `variableCosts`). Isso foi autorizado diretamente pelo
+> fundador/dono do produto nesta sessão — **não passou pelo fluxo formal de
+> sign-off Comercial/Financeiro/Jurídico/Marca abaixo**, que continua
+> valendo para a home e para qualquer novo claim além do que já está
+> publicado aqui. A tabela abaixo reflete o estado anterior (home,
+> `m.pricing.starter/pro/enterprise`), que **não foi alterado** por esta
+> mudança — a home e a página dedicada agora mostram planos com nomes e
+> preços diferentes entre si.
+
 | Campo | Valor na KB (referência) | Na landing hoje | Status |
 | --- | --- | --- | --- |
-| Starter | R$ 990–999/mês, ≤100 users | Igual à home (`m.pricing.starter`) | ✅ Aprovado (home + página dedicada) |
-| Pro / Business | R$ 2.490–2.999/mês | Igual à home (`m.pricing.pro`) | ✅ Aprovado |
-| Scale | R$ 7.999/mês, GraphQL/analytics | **Sob consulta** na página dedicada | ⏸ Não publicar valor até Financeiro |
-| Enterprise | R$ 24.999/mês, SLA 99,95% | **Sob consulta** (sem % SLA na UI) | ⏸ Não publicar valor/SLA até Comercial + Jurídico |
+| Starter | R$ 990–999/mês, ≤100 users | Igual à home (`m.pricing.starter`) — **não usado na página `/pricing` dedicada desde 2026-07-24** | ✅ Aprovado (home) |
+| Pro / Business | R$ 2.490–2.999/mês | Igual à home (`m.pricing.pro`) — **não usado na página `/pricing` dedicada desde 2026-07-24** | ✅ Aprovado (home) |
+| Scale | R$ 7.999/mês, GraphQL/analytics | Home: **sob consulta**. Página dedicada: **Essentials/Scale/Enterprise com preços próprios** (ver acima) | ⏸ Home ainda sem valor até Financeiro; página dedicada já publica valores por decisão do fundador |
+| Enterprise | R$ 24.999/mês, SLA 99,95% | Home: **sob consulta** (sem % SLA). Página dedicada: sob consulta + bullet de API R$4,90/usuário/mês | ⏸ SLA % continua fora da UI em ambas |
+| API por usuário ativo | — | **Retirado da UI no mesmo dia (2026-07-24).** O valor de API não é mais exibido em nenhum lugar da página (planos, custos variáveis, FAQ) — texto agora redireciona para "fale com nosso time comercial" | ⏸ **Não publicar valor de API** até nova decisão do fundador — retração 2026-07-24 |
+| Custos operacionais variáveis | — | Setup R$4.900, fulfillment R$4,50+frete, armazenagem R$0,65/un/mês, colaborador extra R$1,90/un/mês continuam publicados na página dedicada (só a linha de API/Gamificação virou "Sob consulta") | ✅ Publicado 2026-07-24 (decisão do fundador, fora do fluxo formal) — exceto API, ver linha acima |
 | Comparativo setup | R$ 80k–150k vs build interno | Não exposto | ❌ Pendente |
 | Comparativo % vs Shopify/VTEX | Notebook competitors | Não exposto | ❌ Pendente |
 
@@ -83,6 +100,7 @@ Enquanto `NEXT_PUBLIC_INDEX_GROWTH_PAGES` não estiver `true`, `/pricing/` e `/s
 | ICP RH | `/rh/`, `/en/rh/` | Copy + aprovação; matriz em `icp-messaging-guide.md` |
 | ICP Marketing | `/marketing/`, `/en/marketing/` | Idem |
 | Calculadora ROI | `/recursos/roi/` (proposta) | Fórmula e métricas — Financeiro; sem ROI garantido em JSON-LD |
+| Calculadora de orçamento de kits | `/recursos/calculadora-kits/` (proposta) | Faixas de custo — Financeiro; CTA — Comercial; escopo em `docs/proposals/calculadora-orcamento-kits.md` (sem ROI, só faixas de mercado) |
 
 ---
 
