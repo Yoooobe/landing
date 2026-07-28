@@ -13,13 +13,15 @@
  *   --category "<cat>"  Restringe geração a uma categoria específica
  *   --dry-run           Exibe o JSON gerado sem publicar no Sanity
  *   --publish           Define publishedAt (publica em vez de criar rascunho)
- *   --provider <p>      Provedor de IA: "openai" (padrão se houver OPENAI_API_KEY) ou "gemini"
+ *   --provider <p>      Provedor de IA: "openai" (padrão se houver OPENAI_API_KEY), "gemini" ou "kimi"
  *   --gemini-model <m>  Modelo Gemini (padrão: gemini-2.5-pro)
+ *   --kimi-model <m>    Modelo Kimi (padrão: kimi-k3; use k3-256k para contexto curto/econômico)
  *   --money-page pricing  Troca o CTA "platform" do post para `/pricing` (pautas de orçamento/custo)
  *
  * Variáveis de ambiente necessárias:
  *   OPENAI_API_KEY            — chave da API OpenAI (provider openai)
  *   GEMINI_API_KEY ou GOOGLE_API_KEY — chave da Gemini API (provider gemini)
+ *   KIMI_API_KEY              — chave da Kimi API (provider kimi)
  *   NEXT_PUBLIC_SANITY_PROJECT_ID — ID do projeto Sanity
  *   NEXT_PUBLIC_SANITY_DATASET    — dataset do Sanity (ex: production)
  *   SANITY_API_TOKEN ou SANITY_API_WRITE_TOKEN — token com permissão de escrita
@@ -30,10 +32,35 @@
  */
 
 import { Buffer } from "node:buffer";
+import fs from "node:fs";
+import path from "node:path";
 import { createClient, type SanityClient } from "@sanity/client";
 import { injectAiGeneratedBlogCtas } from "@/lib/aiBlogCtaInject";
 import { sanityBlogCtaBlocksForCategory } from "@/lib/blogLandingLinks";
 import type { BlogPostBodyItem } from "@/sanity/lib/types";
+
+function loadEnvFile(filePath: string) {
+  if (!fs.existsSync(filePath)) return;
+  const content = fs.readFileSync(filePath, "utf-8");
+  for (const line of content.split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const eqIdx = trimmed.indexOf("=");
+    if (eqIdx === -1) continue;
+    const key = trimmed.slice(0, eqIdx).trim();
+    let val = trimmed.slice(eqIdx + 1).trim();
+    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+      val = val.slice(1, -1);
+    }
+    if (!process.env[key]) {
+      process.env[key] = val;
+    }
+  }
+}
+
+loadEnvFile(path.resolve(process.cwd(), ".env.local"));
+loadEnvFile(path.resolve(process.cwd(), ".env.blog-agent"));
+
 
 type GeneratedAiPost = {
   title: string;
@@ -69,15 +96,19 @@ const MONEY_PAGE_OVERRIDE = getArg("--money-page", null) === "pricing" ? "pricin
 
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY?.trim() || "";
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY?.trim() || process.env.GOOGLE_API_KEY?.trim() || "";
+const KIMI_API_KEY = process.env.KIMI_API_KEY?.trim() || "";
 const PROVIDER_ARG = (getArg("--provider", null) ?? "").toLowerCase();
 const GEMINI_MODEL = getArg("--gemini-model", "gemini-2.5-pro") ?? "gemini-2.5-pro";
-// Provedor resolvido: respeita --provider; caso contrário usa OpenAI se houver chave, senão Gemini.
-const PROVIDER: "openai" | "gemini" =
-  PROVIDER_ARG === "gemini" || PROVIDER_ARG === "openai"
-    ? (PROVIDER_ARG as "openai" | "gemini")
+const KIMI_MODEL = getArg("--kimi-model", "kimi-k3") ?? "kimi-k3";
+// Provedor resolvido: respeita --provider; caso contrário usa OpenAI se houver chave, senão Gemini, senão Kimi.
+const PROVIDER: "openai" | "gemini" | "kimi" =
+  PROVIDER_ARG === "gemini" || PROVIDER_ARG === "openai" || PROVIDER_ARG === "kimi"
+    ? (PROVIDER_ARG as "openai" | "gemini" | "kimi")
     : OPENAI_API_KEY
       ? "openai"
-      : "gemini";
+      : GEMINI_API_KEY
+        ? "gemini"
+        : "kimi";
 
 const SANITY_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 const SANITY_DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
@@ -90,6 +121,10 @@ if (PROVIDER === "openai" && !OPENAI_API_KEY) {
 }
 if (PROVIDER === "gemini" && !GEMINI_API_KEY) {
   console.error("❌ GEMINI_API_KEY/GOOGLE_API_KEY não definida para --provider gemini.");
+  process.exit(1);
+}
+if (PROVIDER === "kimi" && !KIMI_API_KEY) {
+  console.error("❌ KIMI_API_KEY não definida para --provider kimi.");
   process.exit(1);
 }
 
@@ -289,6 +324,42 @@ async function callGemini(system: string, user: string): Promise<string> {
     .trim();
 }
 
+async function callKimi(system: string, user: string): Promise<string> {
+  let apiModel = KIMI_MODEL;
+  if (apiModel === "kimi-k3") {
+    apiModel = "k3";
+  } else if (apiModel === "kimi-k3-256k") {
+    apiModel = "k3-256k";
+  }
+
+  const response = await fetch("https://api.kimi.com/coding/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${KIMI_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: apiModel,
+      messages: [
+        { role: "system", content: system },
+        { role: "user", content: user },
+      ],
+      temperature: 1,
+      max_tokens: 5000,
+    }),
+  });
+
+  if (!response.ok) {
+    const err = await response.text();
+    throw new Error(`Kimi API error: ${response.status} — ${err}`);
+  }
+
+  const data = (await response.json()) as {
+    choices?: Array<{ message?: { content?: string } }>;
+  };
+  return data.choices?.[0]?.message?.content?.trim() ?? "";
+}
+
 // ──────────────────────────────────────────────
 // Generate a blog post via the selected provider
 // ──────────────────────────────────────────────
@@ -342,9 +413,11 @@ REGRAS DO CAMPO "body" (Portable Text para Sanity):
 - Conteúdo mínimo equivalente a ~900 palavras. Inclua exemplos práticos e, na secção "${helpsTitle}", bullets que liguem funcionalidades da 4unik (missões, loja, QR em eventos, campanhas, dashboards, integrações, logística) ao problema do post.`;
 
   const content =
-    PROVIDER === "gemini"
-      ? await callGemini(SYSTEM_PROMPT, userPrompt)
-      : await callOpenAI(SYSTEM_PROMPT, userPrompt);
+    PROVIDER === "kimi"
+      ? await callKimi(SYSTEM_PROMPT, userPrompt)
+      : PROVIDER === "gemini"
+        ? await callGemini(SYSTEM_PROMPT, userPrompt)
+        : await callOpenAI(SYSTEM_PROMPT, userPrompt);
 
   if (!content) throw new Error("Resposta vazia do provedor de IA");
 
@@ -461,7 +534,7 @@ function pickTopics(count: number) {
 async function main() {
   console.log(`\n🚀 Blog Engaja, time! — Agente de geração de conteúdo 4unik`);
   console.log(
-    `   Provedor: ${PROVIDER}${PROVIDER === "gemini" ? ` (${GEMINI_MODEL})` : ""} | Locale: ${LOCALE} | Posts: ${COUNT} | Dry-run: ${DRY_RUN} | Publicar: ${SHOULD_PUBLISH}\n`,
+    `   Provedor: ${PROVIDER}${PROVIDER === "gemini" ? ` (${GEMINI_MODEL})` : PROVIDER === "kimi" ? ` (${KIMI_MODEL})` : ""} | Locale: ${LOCALE} | Posts: ${COUNT} | Dry-run: ${DRY_RUN} | Publicar: ${SHOULD_PUBLISH}\n`,
   );
 
   const topics = pickTopics(COUNT);

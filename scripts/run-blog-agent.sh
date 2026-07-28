@@ -16,8 +16,8 @@ set -a
 [ -f .env.blog-agent ] && . .env.blog-agent
 set +a
 
-if [ -z "${OPENAI_API_KEY:-}" ] && [ -z "${GEMINI_API_KEY:-}" ] && [ -z "${GOOGLE_API_KEY:-}" ]; then
-  echo "[$(date '+%F %T')] ERRO: sem OPENAI_API_KEY/GEMINI_API_KEY — defina em .env.blog-agent"
+if [ -z "${OPENAI_API_KEY:-}" ] && [ -z "${GEMINI_API_KEY:-}" ] && [ -z "${GOOGLE_API_KEY:-}" ] && [ -z "${KIMI_API_KEY:-}" ]; then
+  echo "[$(date '+%F %T')] ERRO: sem OPENAI_API_KEY/GEMINI_API_KEY/KIMI_API_KEY — defina em .env.blog-agent"
   exit 1
 fi
 
