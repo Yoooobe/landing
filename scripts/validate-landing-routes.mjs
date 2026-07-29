@@ -27,6 +27,8 @@ const SITEMAP_ROUTE_PAIRS = [
   ["/comunidades/", "/en/comunidades/"],
   ["/eventos/", "/en/eventos/"],
   ["/gamificacao-para-rh/", "/en/gamificacao-para-rh/"],
+  ["/calculadora-roi/", "/en/calculadora-roi/"],
+
   ["/blog/", "/en/blog/"],
   ["/plataforma/motor-gamificacao/", "/en/plataforma/motor-gamificacao/"],
   ["/plataforma/campanhas-gamificacao/", "/en/plataforma/campanhas-gamificacao/"],

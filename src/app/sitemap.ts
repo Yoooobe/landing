@@ -49,6 +49,13 @@ const routePairs: RoutePair[] = [
     priority: 0.75,
     changeFrequency: "weekly",
   },
+  {
+    pt: "/calculadora-roi/",
+    en: "/en/calculadora-roi/",
+    priority: 0.88,
+    changeFrequency: "weekly",
+  },
+
   { pt: "/blog/", en: "/en/blog/", priority: 0.8, changeFrequency: "weekly" },
   {
     pt: "/plataforma/motor-gamificacao/",
