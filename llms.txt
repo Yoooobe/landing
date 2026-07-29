@@ -1,7 +1,7 @@
 # 4Unik (4unik) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
-> Gerado por `scripts/generate-llms-txt.ts` em 2026-07-29T00:06:22.447Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
+> Gerado por `scripts/generate-llms-txt.ts` em 2026-07-29T00:29:21.934Z (base canónica: `https://plataforma.4unik.com.br/landing`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
 
 ## O que é
 
@@ -75,6 +75,8 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - 4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2 (EN): https://plataforma.4unik.com.br/landing/en/blog/4unik-at-events-points-qr-codes-and-live-reward-swaps-fb2/
 - 4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2 (PT): https://plataforma.4unik.com.br/landing/blog/4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2/
 - 4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2 (EN): https://plataforma.4unik.com.br/landing/en/blog/4unik-em-eventos-pontos-qr-code-e-troca-de-brindes-ao-vivo-fb2/
+- 4unik-vs-lobby-gamificacao-e-entrega-d1-na-logistica-de-swags (PT): https://plataforma.4unik.com.br/landing/blog/4unik-vs-lobby-gamificacao-e-entrega-d1-na-logistica-de-swags/
+- 4unik-vs-lobby-gamificacao-e-entrega-d1-na-logistica-de-swags (EN): https://plataforma.4unik.com.br/landing/en/blog/4unik-vs-lobby-gamificacao-e-entrega-d1-na-logistica-de-swags/
 - 5 (PT): https://plataforma.4unik.com.br/landing/blog/5/
 - 5 (EN): https://plataforma.4unik.com.br/landing/en/blog/5/
 - 6 (PT): https://plataforma.4unik.com.br/landing/blog/6/
