@@ -20,7 +20,7 @@ import path from "node:path";
 import { callKimiApi, callKimiJson } from "../src/lib/kimiClient";
 
 const args = process.argv.slice(2);
-const getArg = (flag, fallback = "") => {
+const getArg = (flag: string, fallback = "") => {
   const idx = args.indexOf(flag);
   return idx !== -1 && args[idx + 1] ? args[idx + 1] : fallback;
 };
