@@ -1,3 +1,3 @@
-:HL["/landing/_next/static/chunks/079yhpd3hsfi3.css","style"]
+:HL["/landing/_next/static/chunks/11o33va_7vi2m.css","style"]
 :HL["/landing/brand/4unik-wordmark@2x.webp","image",{"fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"v-GuCLgULdhcZNTYA7Lcu"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"Kt9E8ZQ5eScdfNj4Q6fGO"}
