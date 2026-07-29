@@ -11,7 +11,6 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Calculadora de ROI de Engajamento Corporativo e RH | 4unik",
       description:
         "Simule o retorno financeiro da plataforma 4unik: redução de turnover, otimização de logística de brindes e ganho de produtividade com gamificação.",
-      openGraphTitle: "Calculadora de ROI de Engajamento Corporativo | 4unik",
       openGraphDescription:
         "Calcule quanto sua empresa pode economizar com gamificação corporativa, retenção de talentos e logística de recompensas.",
     },

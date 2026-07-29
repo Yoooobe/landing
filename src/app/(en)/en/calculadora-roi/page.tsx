@@ -11,7 +11,6 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Employee Engagement ROI Calculator | 4unik",
       description:
         "Calculate your return on investment with 4unik: reduce turnover, streamline reward logistics, and boost productivity with corporate gamification.",
-      openGraphTitle: "Employee Engagement ROI Calculator | 4unik",
       openGraphDescription:
         "Estimate your annual savings with corporate gamification, talent retention, and automated reward logistics.",
     },
