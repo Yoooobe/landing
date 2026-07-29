@@ -14,6 +14,8 @@
     "lint": "eslint",
     "seed:sanity": "node scripts/seed-sanity-content.mjs",
     "sync:blog-fallback": "npx tsx scripts/sync-blog-fallback-to-sanity.ts",
+    "sync:obsidian": "node scripts/obsidian-sync-landing.mjs",
+
     "sanity:cors": "node --env-file=.env.local ./node_modules/.bin/sanity cors add http://localhost:3000 && node --env-file=.env.local ./node_modules/.bin/sanity cors add http://127.0.0.1:3000 && node --env-file=.env.local ./node_modules/.bin/sanity cors add https://plataforma.4unik.com.br",
     "env:init": "node scripts/init-env-local.mjs",
     "env:check": "node scripts/check-local-env.mjs",
