@@ -44,6 +44,14 @@ export const enSegurancaPage = {
         q: "Where is data stored?",
         a: "Region, subprocessors, and DPA details are handled in the commercial phase and contract docs.",
       },
+      {
+        q: "How does the platform handle LGPD and personal data?",
+        a: "Processing follows LGPD principles — data minimization, defined purpose, and audit trail. DPA, subprocessors, and legal bases are formalized in contract documentation.",
+      },
+      {
+        q: "Is there role-based access control?",
+        a: "Yes. Roles and permissions separate what managers, HR, and employees can see and do — budget, approvals, and reports stay restricted to the right roles.",
+      },
     ],
   },
   cta: {
