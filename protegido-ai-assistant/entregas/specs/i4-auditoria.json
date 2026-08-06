@@ -1,0 +1,63 @@
+{
+  "slug": "i4-auditoria",
+  "pieces": [
+    {
+      "format": "feed45",
+      "variant": "card1-capa",
+      "eyebrow": "Governança",
+      "headline": "Seu programa passaria numa auditoria?",
+      "image": "assets/generated_images/v2/i4-auditoria_a_9x16.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "card2-perguntas",
+      "image": "assets/generated_images/v2/i4-auditoria_b_9x16.png",
+      "eyebrow": "As quatro perguntas",
+      "headline": "Quem aprovou. Quanto custou. Para quem foi. Quando chegou.",
+      "body": "Se a resposta mora em três e-mails e uma planilha, não passa."
+    },
+    {
+      "format": "feed45",
+      "variant": "card3-cta",
+      "image": "assets/generated_images/v2/i4-auditoria_c_9x16.png",
+      "eyebrow": "Por padrão",
+      "headline": "Perfis, permissões e histórico completo para auditoria.",
+      "body": "Não como projeto extra.",
+      "cta": "Falar com especialista"
+    },
+    {
+      "format": "story",
+      "variant": "frame1-quiz",
+      "eyebrow": "Governança",
+      "headline": "Você rastreia quem aprovou a última premiação em menos de um minuto?",
+      "image": "assets/generated_images/v2/i4-auditoria_a_9x16.png"
+    },
+    {
+      "format": "story",
+      "variant": "frame2-risco",
+      "image": "assets/generated_images/v2/i4-auditoria_b_9x16.png",
+      "headline": "Reconhecimento sem trilha de auditoria vira risco na hora da revisão."
+    },
+    {
+      "format": "story",
+      "variant": "frame3-cta",
+      "eyebrow": "Por padrão",
+      "headline": "Perfis, permissões e histórico completo.",
+      "cta": "Falar com especialista",
+      "image": "assets/generated_images/v2/i4-auditoria_c_9x16.png"
+    },
+    {
+      "format": "email",
+      "variant": "hero",
+      "image": "assets/generated_images/v2/i4-auditoria_d_16x9.png",
+      "eyebrow": "Governança",
+      "headline": "Seu programa passaria numa auditoria?"
+    },
+    {
+      "format": "og",
+      "image": "assets/generated_images/v2/i4-auditoria_d_16x9.png",
+      "eyebrow": "Governança",
+      "headline": "Seu programa passaria numa auditoria?"
+    }
+  ]
+}

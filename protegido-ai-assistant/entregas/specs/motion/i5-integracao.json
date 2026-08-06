@@ -1,0 +1,70 @@
+{
+  "slug": "i5-integracao",
+  "handle": "@4unikoficial",
+  "scenes": [
+    {
+      "frames": [
+        0,
+        112
+      ],
+      "dir": -1,
+      "image": "assets/generated_images/v2/i5-integracao_a_9x16.png",
+      "eyebrow": "API & Webhooks",
+      "headline": "Não é para trocar o seu sistema.",
+      "body": "É para conectar no que já existe."
+    },
+    {
+      "frames": [
+        100,
+        232
+      ],
+      "dir": -1,
+      "eyebrow": "Três caminhos",
+      "headline": "Via API. Via intranet ou HRIS. Via console 4Unik.",
+      "body": "O time continua onde já está.",
+      "image": "assets/generated_images/v2/i5-integracao_b_9x16.png"
+    },
+    {
+      "frames": [
+        220,
+        352
+      ],
+      "dir": -1,
+      "eyebrow": "Painel do gestor",
+      "headline": "Pedidos, catálogo e campanhas num painel só.",
+      "screenshot": "assets/screenshots/crops/dashboard-modulos.png",
+      "body": "Interface do produto — números da própria demonstração."
+    },
+    {
+      "frames": [
+        340,
+        472
+      ],
+      "dir": -1,
+      "eyebrow": "Portfólio",
+      "headline": "89 cases publicados.",
+      "items": [
+        "Google",
+        "Microsoft",
+        "Itaú",
+        "Bradesco",
+        "Mercado Livre",
+        "Magazine Luiza",
+        "Hapvida",
+        "Mercedes-Benz"
+      ],
+      "image": "assets/generated_images/v2/i5-integracao_c_9x16.png"
+    },
+    {
+      "frames": [
+        460,
+        568
+      ],
+      "dir": -1,
+      "eyebrow": "Para o time técnico",
+      "headline": "O reconhecimento passa a acontecer sozinho.",
+      "cta": "Solicitar acesso à API",
+      "image": "assets/generated_images/v2/i5-integracao_a_9x16.png"
+    }
+  ]
+}

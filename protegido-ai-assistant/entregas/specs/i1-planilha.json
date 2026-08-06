@@ -1,0 +1,79 @@
+{
+  "slug": "i1-planilha",
+  "pieces": [
+    {
+      "format": "feed45",
+      "variant": "card1-capa",
+      "eyebrow": "Infraestrutura de recompensas",
+      "headline": "Reconhecimento em planilha não escala.",
+      "image": "assets/generated_images/v2/i1-planilha_a_9x16.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "card2",
+      "image": "assets/generated_images/v2/i1-planilha_b_9x16.png",
+      "eyebrow": "O custo escondido",
+      "headline": "Cada premiação vira seis tarefas manuais.",
+      "body": "Aprovar, cotar, comprar, embalar, despachar, rastrear."
+    },
+    {
+      "format": "feed45",
+      "variant": "card3",
+      "image": "assets/generated_images/v2/i1-planilha_a_9x16.png",
+      "eyebrow": "Onde trava",
+      "headline": "O gargalo não é o orçamento. É a operação."
+    },
+    {
+      "format": "feed45",
+      "variant": "card4",
+      "eyebrow": "O que muda",
+      "headline": "A 4Unik automatiza o caminho inteiro.",
+      "body": "Quatro campos no painel. O resto é operação nossa.",
+      "screenshot": "assets/screenshots/crops/wizard-passos.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "card5-cta",
+      "headline": "Sua equipe reconhecida, sua empresa crescendo.",
+      "cta": "Agendar demonstração",
+      "image": "assets/generated_images/v2/i1-planilha_c_9x16.png"
+    },
+    {
+      "format": "story",
+      "variant": "frame1-enquete",
+      "eyebrow": "Enquete",
+      "headline": "Como vocês controlam o reconhecimento hoje?",
+      "body": "Espaço reservado no terço inferior para o sticker de enquete: Planilha · Plataforma.",
+      "image": "assets/generated_images/v2/i1-planilha_a_9x16.png"
+    },
+    {
+      "format": "story",
+      "variant": "frame2-virada",
+      "headline": "Planilha guarda o registro. Ela não faz a entrega chegar.",
+      "body": "Aprovar, cotar, comprar, embalar, despachar, rastrear — tudo no colo do RH.",
+      "image": "assets/generated_images/v2/i1-planilha_b_9x16.png"
+    },
+    {
+      "format": "story",
+      "variant": "frame3-cta",
+      "headline": "Da meta batida ao presente entregue, sem tarefa manual.",
+      "cta": "Ver a plataforma",
+      "image": "assets/generated_images/v2/i1-planilha_c_9x16.png"
+    },
+    {
+      "format": "email",
+      "variant": "hero",
+      "image": "assets/generated_images/v2/i1-planilha_d_16x9.png",
+      "eyebrow": "Infraestrutura de recompensas",
+      "headline": "Reconhecimento em planilha não escala.",
+      "cta": "Agendar demonstração"
+    },
+    {
+      "format": "og",
+      "image": "assets/generated_images/v2/i1-planilha_d_16x9.png",
+      "eyebrow": "Infraestrutura de recompensas",
+      "headline": "Reconhecimento em planilha não escala.",
+      "body": "Você define metas e regras. A plataforma cuida do catálogo, da logística e da entrega."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "slug": "i2-jornada",
+  "handle": "@4unikoficial",
+  "scenes": [
+    {
+      "frames": [
+        0,
+        96
+      ],
+      "dir": -1,
+      "image": "assets/generated_images/v2/i2-jornada_b_9x16.png",
+      "eyebrow": "Como funciona",
+      "headline": "Quatro passos. Nenhum deles é operacional."
+    },
+    {
+      "frames": [
+        84,
+        192
+      ],
+      "dir": -1,
+      "eyebrow": "1 · Conecte",
+      "headline": "Intranet, HRIS ou console 4Unik.",
+      "body": "API e webhooks prontos para o seu stack.",
+      "image": "assets/generated_images/v2/i2-jornada_a_9x16.png"
+    },
+    {
+      "frames": [
+        180,
+        312
+      ],
+      "dir": -1,
+      "eyebrow": "2 · Configure",
+      "headline": "Regras de pontos, benefícios e catálogo.",
+      "screenshot": "assets/screenshots/crops/campanha-form-h.png",
+      "body": "No painel, sem chamado para TI."
+    },
+    {
+      "frames": [
+        300,
+        408
+      ],
+      "dir": -1,
+      "eyebrow": "3 · Engaje",
+      "headline": "Metas, missões e reconhecimento entre pares.",
+      "body": "Os pontos são creditados automaticamente.",
+      "image": "assets/generated_images/v2/i2-jornada_b_9x16.png"
+    },
+    {
+      "frames": [
+        396,
+        504
+      ],
+      "dir": -1,
+      "eyebrow": "4 · Entregue",
+      "headline": "O colaborador escolhe. A logística é nossa.",
+      "cta": "Solicitar acesso à API",
+      "image": "assets/generated_images/v2/i2-jornada_c_9x16.png"
+    }
+  ]
+}

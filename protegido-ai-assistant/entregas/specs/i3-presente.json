@@ -1,0 +1,82 @@
+{
+  "slug": "i3-presente",
+  "pieces": [
+    {
+      "format": "feed45",
+      "variant": "post-unico",
+      "eyebrow": "Loja de recompensas corporativa",
+      "headline": "Ponto que não vira presente é só número na tela.",
+      "body": "O colaborador escolhe. A entrega acontece.",
+      "cta": "Ver a plataforma",
+      "image": "assets/generated_images/v2/i3-presente_a_9x16.png"
+    },
+    {
+      "format": "feed11",
+      "variant": "post-unico",
+      "eyebrow": "Loja de recompensas corporativa",
+      "headline": "Ponto que não vira presente é só número na tela.",
+      "cta": "Ver a plataforma",
+      "image": "assets/generated_images/v2/i3-presente_a_9x16.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "carrossel1",
+      "eyebrow": "Ciclo completo",
+      "headline": "Meta batida.",
+      "image": "assets/generated_images/v2/i3-presente_b_9x16.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "carrossel2",
+      "eyebrow": "Ciclo completo",
+      "headline": "Pontos creditados.",
+      "body": "O colaborador abre o catálogo e escolhe.",
+      "image": "assets/generated_images/v2/i3-presente_a_9x16.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "carrossel3",
+      "image": "assets/generated_images/v2/i3-presente_c_9x16.png",
+      "eyebrow": "Ciclo completo",
+      "headline": "Entregue.",
+      "body": "No Brasil e no mundo, sem ninguém preencher planilha.",
+      "cta": "Ver a plataforma"
+    },
+    {
+      "format": "story",
+      "variant": "frame1",
+      "headline": "Meta batida.",
+      "body": "Sem ninguém preencher planilha.",
+      "image": "assets/generated_images/v2/i3-presente_b_9x16.png"
+    },
+    {
+      "format": "story",
+      "variant": "frame2",
+      "headline": "Ele escolhe no catálogo.",
+      "body": "Loja de resgate — tela real da plataforma.",
+      "screenshot": "assets/screenshots/crops/member-store-grade.png"
+    },
+    {
+      "format": "story",
+      "variant": "frame3-cta",
+      "headline": "Entrega a caminho. No Brasil e no mundo.",
+      "cta": "Ver a plataforma",
+      "image": "assets/generated_images/v2/i3-presente_c_9x16.png"
+    },
+    {
+      "format": "email",
+      "variant": "hero",
+      "image": "assets/generated_images/v2/i3-presente_d_16x9.png",
+      "eyebrow": "Loja de recompensas corporativa",
+      "headline": "Ponto que não vira presente é só número na tela.",
+      "cta": "Ver a plataforma"
+    },
+    {
+      "format": "og",
+      "image": "assets/generated_images/v2/i3-presente_d_16x9.png",
+      "eyebrow": "Loja de recompensas corporativa",
+      "headline": "Ponto que não vira presente é só número na tela.",
+      "body": "Catálogo, logística e entrega numa coisa só."
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "playwright": "^1.60.0",
+    "apify-client": "^2.23.4"
+  }
+}

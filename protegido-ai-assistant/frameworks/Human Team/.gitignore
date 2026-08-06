@@ -1,0 +1,10 @@
+node_modules/
+.env
+*.log
+squads/*/output/
+Campanhas/*
+!Campanhas/README.md
+_opensquad/_memory/company.md
+_opensquad/_memory/preferences.md
+_opensquad/_browser_profile/
+_opensquad/logs/

@@ -1,0 +1,101 @@
+{
+  "slug": "i5-integracao",
+  "pieces": [
+    {
+      "format": "feed45",
+      "variant": "post-unico",
+      "eyebrow": "API & Webhooks",
+      "headline": "Não é para trocar o seu sistema.",
+      "body": "É para conectar no que já existe.",
+      "cta": "Solicitar acesso à API",
+      "image": "assets/generated_images/v2/i5-integracao_a_9x16.png"
+    },
+    {
+      "format": "feed11",
+      "variant": "post-unico",
+      "eyebrow": "API & Webhooks",
+      "headline": "Não é para trocar o seu sistema.",
+      "body": "É para conectar no que já existe.",
+      "cta": "Solicitar acesso à API",
+      "image": "assets/generated_images/v2/i5-integracao_a_9x16.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "carrossel1-capa",
+      "eyebrow": "API & Webhooks",
+      "headline": "Não é para trocar o seu sistema.",
+      "image": "assets/generated_images/v2/i5-integracao_a_9x16.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "carrossel2-caminhos",
+      "image": "assets/generated_images/v2/i5-integracao_b_9x16.png",
+      "eyebrow": "Três caminhos",
+      "headline": "Via API. Via intranet ou HRIS. Via console 4Unik.",
+      "body": "O time continua onde já está."
+    },
+    {
+      "format": "feed45",
+      "variant": "carrossel3-clientes",
+      "image": "assets/generated_images/v2/i5-integracao_c_9x16.png",
+      "eyebrow": "Portfólio",
+      "headline": "89 cases.",
+      "body": "Marcas atendidas pela operação da 4Unik.",
+      "brands": [
+        "Google",
+        "Microsoft",
+        "Itaú",
+        "Bradesco",
+        "Mercado Livre",
+        "Magazine Luiza",
+        "Hapvida",
+        "Mercedes-Benz"
+      ]
+    },
+    {
+      "format": "feed45",
+      "variant": "carrossel4-cta",
+      "image": "assets/generated_images/v2/i5-integracao_b_9x16.png",
+      "eyebrow": "Para o time técnico",
+      "headline": "O reconhecimento passa a acontecer sozinho.",
+      "cta": "Solicitar acesso à API"
+    },
+    {
+      "format": "story",
+      "variant": "frame1-pergunta",
+      "eyebrow": "Primeira reunião",
+      "headline": "“Vamos ter que trocar de sistema?” Não.",
+      "image": "assets/generated_images/v2/i5-integracao_a_9x16.png"
+    },
+    {
+      "format": "story",
+      "variant": "frame2-painel",
+      "screenshot": "assets/screenshots/crops/dashboard-modulos.png",
+      "eyebrow": "Painel do gestor",
+      "headline": "Pedidos, catálogo e campanhas num painel só.",
+      "body": "Interface do produto — números da própria demonstração."
+    },
+    {
+      "format": "story",
+      "variant": "frame3-cta",
+      "image": "assets/generated_images/v2/i5-integracao_b_9x16.png",
+      "eyebrow": "API & Webhooks",
+      "headline": "Integração com intranet e HRIS.",
+      "body": "E console próprio, se for o caso.",
+      "cta": "Solicitar acesso à API"
+    },
+    {
+      "format": "email",
+      "variant": "hero",
+      "image": "assets/generated_images/v2/i5-integracao_d_16x9.png",
+      "eyebrow": "API & Webhooks",
+      "headline": "Conecte no que já existe."
+    },
+    {
+      "format": "og",
+      "image": "assets/generated_images/v2/i5-integracao_d_16x9.png",
+      "eyebrow": "API & Webhooks",
+      "headline": "Conecte no que já existe."
+    }
+  ]
+}

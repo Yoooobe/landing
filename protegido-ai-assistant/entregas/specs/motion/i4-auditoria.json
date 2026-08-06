@@ -1,0 +1,47 @@
+{
+  "slug": "i4-auditoria",
+  "handle": "@4unikoficial",
+  "scenes": [
+    {
+      "frames": [
+        0,
+        112
+      ],
+      "dir": -1,
+      "image": "assets/generated_images/v2/i4-auditoria_a_9x16.png",
+      "eyebrow": "Governança",
+      "headline": "Seu programa passaria numa auditoria?"
+    },
+    {
+      "frames": [
+        100,
+        236
+      ],
+      "dir": -1,
+      "eyebrow": "As quatro perguntas",
+      "headline": "Quem aprovou. Quanto custou. Para quem foi. Quando chegou.",
+      "body": "Se a resposta mora em três e-mails e uma planilha, não passa.",
+      "image": "assets/generated_images/v2/i4-auditoria_b_9x16.png"
+    },
+    {
+      "frames": [
+        224,
+        332
+      ],
+      "dir": -1,
+      "headline": "Reconhecimento sem trilha de auditoria vira risco na hora da revisão.",
+      "image": "assets/generated_images/v2/i4-auditoria_a_9x16.png"
+    },
+    {
+      "frames": [
+        320,
+        428
+      ],
+      "dir": -1,
+      "eyebrow": "Por padrão",
+      "headline": "Perfis, permissões e histórico completo.",
+      "cta": "Falar com especialista",
+      "image": "assets/generated_images/v2/i4-auditoria_c_9x16.png"
+    }
+  ]
+}

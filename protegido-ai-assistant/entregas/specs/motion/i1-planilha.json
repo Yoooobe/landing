@@ -1,0 +1,55 @@
+{
+  "slug": "i1-planilha",
+  "handle": "@4unikoficial",
+  "scenes": [
+    {
+      "frames": [
+        0,
+        112
+      ],
+      "dir": -1,
+      "image": "assets/generated_images/v2/i1-planilha_a_9x16.png",
+      "eyebrow": "Infraestrutura de recompensas",
+      "headline": "Reconhecimento em planilha não escala."
+    },
+    {
+      "frames": [
+        100,
+        236
+      ],
+      "dir": -1,
+      "eyebrow": "O custo escondido",
+      "headline": "Cada premiação vira seis tarefas manuais.",
+      "items": [
+        "Aprovar",
+        "Cotar",
+        "Comprar",
+        "Embalar",
+        "Despachar",
+        "Rastrear"
+      ],
+      "image": "assets/generated_images/v2/i1-planilha_b_9x16.png"
+    },
+    {
+      "frames": [
+        224,
+        356
+      ],
+      "dir": -1,
+      "eyebrow": "O que muda",
+      "headline": "A 4Unik automatiza o caminho inteiro.",
+      "screenshot": "assets/screenshots/crops/wizard-passos.png",
+      "body": "Quatro campos no painel. O resto é operação nossa."
+    },
+    {
+      "frames": [
+        344,
+        450
+      ],
+      "dir": -1,
+      "headline": "Sua equipe reconhecida, sua empresa crescendo.",
+      "cta": "Agendar demonstração",
+      "image": "assets/generated_images/v2/i1-planilha_c_9x16.png"
+    }
+  ]
+}

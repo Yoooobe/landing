@@ -1,0 +1,95 @@
+/* =========================================================
+   4Unik — Design System tokens
+   Fonte: plataforma.4unik.com.br + 4unik.com.br
+   Primária: dark #0B0A14 | Acento: azul/roxo #6455D4 | Verde: #00D294
+   Fonte: Plus Jakarta Sans
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* ─────────── Brand ─────────── */
+  --brand-primary-dark:   #0B0A14;
+  --brand-secondary-blue: #6455D4;
+  --brand-accent-green:   #00D294;
+  --brand-accent-orange:  #EC7C0E; /* Manter para alertas/destaques pontuais, se houver */
+  --brand-white:          #FFFFFF;
+  --brand-grey-muted:     #9C9EA5;
+  --brand-dark-blue:      #2D285B;
+
+  /* Gradiente da marca — extraído do logo oficial (2026-08-06).
+     Identidade (logo, brindes, Instagram). Não confundir com o azul/roxo,
+     que é a linguagem da interface da Plataforma. */
+  --brand-gradient-start: #FFEB00;
+  --brand-gradient-mid:   #FFAF00;
+  --brand-gradient-end:   #BC4319;
+
+  --primary:              var(--brand-secondary-blue);
+  --primary-hover:        var(--brand-dark-blue);
+  --primary-pressed:      var(--brand-secondary-blue);
+  --primary-soft:         #6455d414;
+  --on-primary:           #FFFFFF;
+
+  --accent:               var(--brand-accent-green);
+  --accent-gold:          var(--brand-accent-orange);
+  --accent-mint:          var(--brand-accent-green);
+
+  /* Gradientes */
+  --gradient-seal:        linear-gradient(90deg, var(--brand-secondary-blue) 0%, var(--brand-dark-blue) 100%);
+  --gradient-brand:       linear-gradient(225deg, var(--brand-gradient-start) 0%, var(--brand-gradient-mid) 45%, var(--brand-gradient-end) 100%);
+  --glow-blue:            #6455D42e; /* Ajustado para o azul/roxo da 4Unik */
+
+  /* Status */
+  --status-success:       #00D294;
+  --status-warning:       #EC7C0E;
+  --status-danger:        #EE0F1F;
+  --status-danger-soft:   #FF6568;
+
+  /* ─────────── Surfaces ─────────── */
+  --surface-void:         #0B0A14;
+  --surface-ink:          #08090D;
+  --surface-panel:        #101116;
+  --surface-panel-2:      #19182C;
+  --surface-light:        #F9FAFC; /* Manter se houver seções claras */
+  --surface-soft:         #F0F2F5;
+  --surface-soft-2:       #F4F5F7;
+  --surface-white:        #FFFFFF;
+  --surface:              var(--surface-void); /* Default dark surface */
+  --surface-raised:       var(--surface-panel);
+
+  /* Text */
+  --text-primary:         var(--brand-white); /* Primário em dark */
+  --text-secondary:       var(--brand-grey-muted); /* Secundário em dark */
+  --text-muted:           #9C9EA5; /* Meta / captions em dark, pode ser similar ao grey-muted */
+  --text-on-dark:         #FFFFFF;
+  --border-hairline:      #E3E4E7; /* Ajustar para contraste em dark, se necessário */
+  --border-focus:         var(--brand-secondary-blue);
+
+  /* ─────────── Typography ─────────── */
+  --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono:    ui-monospace, 'SF Mono', Menlo, monospace;
+
+  --display-xl:   2.75rem;
+  --display-lg:   2.25rem;
+  --display-md:   1.75rem;
+  --display-sm:   1.5rem;
+  --headline-lg:  1.375rem;
+  --headline-md:  1.125rem;
+  --body-lg:      1rem;
+  --body-md:      0.875rem;
+  --body-sm:      0.8125rem;
+  --label-md:     0.75rem;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semibold:600;
+  --weight-bold:    700;
+  --weight-extrabold:800;
+
+  /* Criativos 1080px — mínimos */
+  --creative-headline: 64px;
+  --creative-body:     36px;
+  --creative-eyebrow:  30px;
+  --creative-cta:      34px;
+}

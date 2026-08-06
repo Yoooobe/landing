@@ -1,0 +1,15 @@
+{
+  "name": "opensquad-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix dashboard run dev",
+    "build": "npm --prefix dashboard run build",
+    "preview": "npm --prefix dashboard run preview",
+    "create-campaign-folder": "node scripts/create-campaign-folder.js",
+    "render-project-document": "node scripts/render-project-document.js"
+  },
+  "dependencies": {
+    "playwright": "^1.58.2"
+  }
+}

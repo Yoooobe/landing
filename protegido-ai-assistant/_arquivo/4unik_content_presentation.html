@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propostas de Conteúdo 4Unik</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-primary-dark:   #0B0A14;
+            --brand-secondary-blue: #6455D4;
+            --brand-accent-green:   #00D294;
+            --brand-accent-orange:  #EC7C0E;
+            --brand-white:          #FFFFFF;
+            --brand-grey-muted:     #9C9EA5;
+            --brand-dark-blue:      #2D285B;
+            --text-primary-light:   #191A1F;
+            --surface-panel:        #101116;
+            --surface-light:        #F9FAFC;
+
+            --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--brand-white);
+            background-color: var(--brand-primary-dark);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: var(--surface-panel);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: var(--brand-secondary-blue);
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: var(--brand-white);
+            background: linear-gradient(90deg, var(--brand-secondary-blue) 0%, var(--brand-accent-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: var(--brand-secondary-blue);
+            border-bottom: 2px solid var(--brand-dark-blue);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: var(--brand-accent-green);
+            margin-top: 30px;
+        }
+        h4 {
+            font-size: 1.2em;
+            color: var(--brand-accent-orange);
+            margin-top: 25px;
+        }
+        p {
+            margin-bottom: 1em;
+            color: var(--brand-grey-muted);
+        }
+        .idea-section {
+            background-color: #1a1a2e; /* slightly lighter dark */
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid var(--brand-dark-blue);
+        }
+        .content-format {
+            margin-bottom: 20px;
+            border-left: 3px solid var(--brand-accent-green);
+            padding-left: 15px;
+        }
+        .prompt-section {
+            background-color: #0d0d1a; /* even darker */
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            border: 1px dashed var(--brand-secondary-blue);
+        }
+        code {
+            background-color: #2D285B;
+            color: var(--brand-white);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'SF Mono', monospace;
+            font-size: 0.9em;
+        }
+        pre code {
+            display: block;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 6px;
+            border: 1px solid var(--brand-dark-blue);
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: var(--brand-grey-muted);
+        }
+        ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            color: var(--brand-grey-muted);
+        }
+        .cta {
+            background-color: var(--brand-accent-green);
+            color: var(--brand-primary-dark);
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta:hover {
+            background-color: #00e6a8;
+        }
+        .image-adaptation {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: var(--brand-grey-muted);
+        }
+        .image-adaptation strong {
+            color: var(--brand-white);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #555;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* ---------- aviso de rodada encerrada ---------- */
+        .superseded {
+            border: 1px solid #c8802a;
+            background: #241a0e;
+            border-radius: 10px;
+            padding: 22px 24px;
+            margin: 0 0 34px;
+        }
+        .superseded h2 {
+            margin: 0 0 10px;
+            padding: 0;
+            border: 0;
+            font-size: 19px;
+            color: #e6a34d;
+        }
+        .superseded p { margin: 0 0 12px; font-size: 14px; line-height: 1.65; }
+        .superseded p:last-child { margin-bottom: 0; }
+        .superseded a { color: #00D294; }
+        .superseded ul { margin: 10px 0 0 18px; font-size: 14px; line-height: 1.75; }
+        .superseded code {
+            background: #12100c; border: 1px solid #3b2f1c; border-radius: 4px;
+            padding: 1px 5px; font-size: 12.5px;
+        }
+        .superseded table {
+            width: 100%; border-collapse: collapse; margin: 12px 0 0; font-size: 13px;
+        }
+        .superseded th, .superseded td {
+            border: 1px solid #3b2f1c; padding: 7px 10px; text-align: left; vertical-align: top;
+        }
+        .superseded th { color: #e6a34d; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="superseded">
+      <h2>Rodada de ideação encerrada — esta página é arquivo histórico.</h2>
+      <p>Primeira rodada de cinco propostas, anterior à releitura do DNA. Nenhuma peça publicada saiu desta página no formato em que ela está aqui; as ideias foram reescritas com outra voz, outro recorte e outras imagens.</p>
+      <p>Produção fechada em 06/08/2026: 55 peças estáticas e 5 Reels em <code>entregas/2026-08-06_*</code>.
+      Publicação de 11/08 a 10/09. O documento vivo é
+      <a href="../4unik_kit_conteudo_ago2026.html">4unik_kit_conteudo_ago2026.html</a> —
+      status, calendário, pendências e passo a passo. As peças finais estão em
+      <a href="../entregas/CONTACT-SHEET.html">entregas/CONTACT-SHEET.html</a>.</p>
+      <p><b>Para onde foi cada ideia:</b></p>
+      <table>
+        <tr><th>Ideia desta página</th><th>Virou</th></tr>
+        <tr><td>1 · Revolução na Gestão de Pessoas</td><td><code>i1-planilha</code> — “Reconhecimento em planilha não escala.”</td></tr>
+        <tr><td>2 · Prova social: 89 cases</td><td>Absorvida pelo <code>i5-integracao</code>, card “89 cases.” do carrossel</td></tr>
+        <tr><td>3 · Integração Perfeita</td><td><code>i5-integracao</code> — “Não é para trocar o seu sistema.”</td></tr>
+        <tr><td>4 · Engajamento que Gera Performance</td><td><code>i2-jornada</code> — “Quatro passos. Nenhum deles é operacional.”</td></tr>
+        <tr><td>5 · Segurança e Governança</td><td><code>i4-auditoria</code> — “Seu programa passaria numa auditoria?”</td></tr>
+        <tr><td>—</td><td><code>i3-presente</code> — “Ponto que não vira presente é só número na tela.” (nasceu depois, sem origem aqui)</td></tr>
+      </table>
+      <p><b>O que não pode ser reaproveitado daqui:</b></p>
+      <ul>
+        <li>Os prompts pedem <code>high contrast dark environment</code> e <code>low key dark ambient</code> — foi exatamente isso que produziu os fundos escuros que precisaram ser refeitos. O brief em uso agora é <code>bright and airy, natural daylight</code>, em <code>tools/image-brief.json</code>.</li>
+        <li>Cenas com dashboard holográfico, interface da 4Unik ou o logo no centro da imagem. Tela de produto em peça pública só entra como print real da plataforma, nunca como imagem gerada.</li>
+        <li>As imagens <code>idea*_vision*.png</code> são 1024×1024 — não servem para 4:5, 9:16 nem 16:9 sem perder metade da cena.</li>
+        <li>O link <code>plataforma.4unik.com.br/landing/</code> rotulado como “Documentação e API para Devs”: não existe página pública de documentação com esse endereço.</li>
+        <li>As headlines com dois-pontos e voz corporativa genérica (“Revolução na Gestão de Pessoas”, “Integração Perfeita”). A voz aprovada é a frase curta e concreta que está nas peças finais.</li>
+      </ul>
+    </div>
+
+        <h1>Propostas de Conteúdo para 4Unik AI Assistant</h1>
+        <p>A seguir, apresento 5 ideias de conteúdo totalmente alinhadas ao DNA da 4Unik, adaptadas para diferentes canais (feed, stories, e-mail marketing) e com sugestões de prompts de imagem para Higgsfield.</p>
+
+        <div class="idea-section">
+            <h2>1. Revolução na Gestão de Pessoas: Sem Operação Manual</h2>
+            <p><strong>Pilar:</strong> Eficiência / Automação</p>
+            <p>Destaca como a 4Unik elimina a carga operacional do RH através da automação inteligente, liberando tempo para o estratégico.</p>
+
+            <h3>Para Feed (Post):</h3>
+            <h4>Headline:</h4>
+            <p><strong>RH estratégico, não operacional: como a 4Unik automatiza o reconhecimento.</strong></p>
+            <h4>Corpo:</h4>
+            <p>A gestão de reconhecimento de equipes pode consumir um tempo valioso do seu RH. Planilhas, logística manual, aprovações demoradas… a 4Unik transforma isso. Nossa plataforma cuida de toda a operação, da definição de pontos à entrega de recompensas, no Brasil e no mundo. Seu RH foca no que realmente importa: engajamento e performance.</p>
+            <h4>CTA:</h4>
+            <p><a href="https://calendly.com/4unik/30min" class="cta">Agendar Demonstração</a></p>
+
+            <h3>Para Stories:</h3>
+            <ol>
+                <li><strong>Story 1 (Problema):</strong> "Seu RH ainda gasta horas com reconhecimento manual?" (Imagem de um gestor de RH sobrecarregado por papéis/telas).</li>
+                <li><strong>Story 2 (Solução):</strong> "Imagine um reconhecimento 100% automatizado..." (Animação de um sistema fluído da 4Unik).</li>
+                <li><strong>Story 3 (Benefício):</strong> "...focando só na estratégia de pessoas." (Imagem de uma equipe engajada e feliz).</li>
+                <li><strong>CTA:</strong> "Liberte seu RH! Agende a demo da 4Unik."</li>
+            </ol>
+
+            <h3>Para E-mail Marketing:</h3>
+            <h4>Assunto:</h4>
+            <p><strong>[Nome da Empresa], liberte seu RH do reconhecimento manual.</strong></p>
+            <h4>Preview:</h4>
+            <p>Descubra como a 4Unik automatiza a logística e premiação de equipes.</p>
+            <h4>Corpo:</h4>
+            <p>Prezado(a) [Nome do Contato],</p>
+            <p>Sabemos que o reconhecimento é vital para a cultura e performance da sua equipe. Mas a operação por trás dele não precisa ser um fardo para o seu RH.</p>
+            <p>A 4Unik oferece a infraestrutura completa para você escalar programas de reconhecimento sem sobrecarga manual. Da gamificação à entrega de recompensas global, tudo é automatizado e integrado aos seus sistemas.</p>
+            <p>Quer ver como funciona? Agende uma demonstração de 30 minutos e descubra como otimizar o tempo do seu RH e impulsionar o engajamento.</p>
+            <p>Atenciosamente,<br>Equipe 4Unik</p>
+            <h4>CTA:</h4>
+            <p><a href="https://calendly.com/4unik/30min" class="cta">Agendar Demonstração</a></p>
+
+            <h3>Sugestão de Prompts de Imagem (Higgsfield - `nano_banana_2`):</h3>
+            <h4>Imagem Principal (Base para Feed e Stories):</h4>
+            <pre><code>[formato: 4:5]
+[cena: Ambiente de escritório moderno e tecnológico com um gestor de RH concentrado, de perfil, interagindo com um dashboard holográfico da 4Unik. Ao fundo, uma equipe colaborativa em work-from-anywhere. Linhas de código e fluxos de dados discretos conectando elementos.]
+[luz: clean studio light, soft key, high contrast dark environment]
+[paleta: brand-primary-dark, brand-secondary-blue, brand-accent-green, brand-white]
+[espaço: negative space on upper third for headline overlay, some space on lower third for CTA]
+[estilo: modern B2B tech brand marketing, professional, integrated, scalable, minimal, not generic stock photo]
+[evitar: blurry, low-res, watermark, outdated office, unreadable text, distorted logo, informal elements, cheesy smiles]</code></pre>
+            <p class="image-adaptation"><strong>Adaptação para redes sociais:</strong></p>
+            <ul>
+                <li><strong>Feed (4:5):</strong> Usar a imagem completa, com a headline sobre o terço superior livre.</li>
+                <li><strong>Stories (9:16):</strong> Recortar a imagem focando no gestor e no dashboard para o primeiro frame, e na equipe colaborativa para o segundo e terceiro, com overlays de texto.</li>
+            </ul>
+        </div>
+
+        <div class="idea-section">
+            <h2>2. Prova social: 89 cases publicados</h2>
+            <p><strong>Pilar:</strong> Casos de Sucesso / Confiança / Segurança</p>
+            <p>Usar a prova social que existe e é verificável: 89 cases publicados em 4unik.com.br/portfolio/, com marcas reconhecíveis. Sem atribuir números ou resultados que não estejam documentados.</p>
+
+            <h3>Para Feed (Carrossel):</h3>
+            <p><strong>Slide 1 (Capa):</strong></p>
+            <h4>Headline:</h4>
+            <p><strong>Transformando o RH: Conheça os cases de sucesso da 4Unik.</strong></p>
+            <h4>Corpo (no carrossel):</h4>
+            <ul>
+                <li><strong>Slide 2 (Portfólio):</strong> "89 cases publicados. Google, Microsoft, Itaú, Vale, Nestlé, Nike, Globo — todos com peças produzidas e entregues pela 4Unik."</li>
+                <li><strong>Slide 3 (O que muda):</strong> "Aprovar, cotar, comprar, embalar, enviar, rastrear. A 4Unik assume a operação inteira — o RH fica com a decisão."</li>
+                <li><strong>Slide 4 (Convite):</strong> "Sua empresa também pode escalar o reconhecimento sem operação manual."</li>
+            </ul>
+            <h4>CTA:</h4>
+            <p><a href="https://www.4unik.com.br/portfolio" class="cta">Ver os cases</a></p>
+
+            <h3>Para Stories:</h3>
+            <ol>
+                <li><strong>Story 1 (Hook):</strong> "Grandes empresas confiam na 4Unik. Veja por quê." (Logo da 4Unik com logos de clientes ao redor).</li>
+                <li><strong>Story 2 (Escala do portfólio):</strong> "89 cases publicados." (Grade de logos reais do portfólio — sem número inventado ao lado).</li>
+                <li><strong>Story 3 (O que a 4Unik assume):</strong> "Cotação, produção, estoque, envio, rastreio." (Peça de UI da plataforma mostrando o fluxo).</li>
+                <li><strong>CTA:</strong> "Conheça o impacto: Acesse nosso site!"</li>
+            </ol>
+
+            <h3>Para E-mail Marketing:</h3>
+            <h4>Assunto:</h4>
+            <p><strong>89 cases publicados. O seu pode ser o próximo.</strong></p>
+            <h4>Preview:</h4>
+            <p>Veja quem já tirou o reconhecimento da planilha.</p>
+            <h4>Corpo:</h4>
+            <p>Prezado(a) [Nome do Contato],</p>
+            <p>São 89 cases publicados no nosso portfólio — entre eles Hapvida, Prio, Itaú, Vale, Nestlé e Globo. Empresas que decidiram parar de tratar reconhecimento como tarefa manual.</p>
+            <p>O que a plataforma assume no lugar do seu time:</p>
+            <ul>
+                <li>Integração com os sistemas de RH que vocês já usam (intranet, HRIS, API).</li>
+                <li>Cotação, produção, estoque, envio e rastreio das recompensas.</li>
+                <li>Carteiras, regras de campanha e loja de resgate configuráveis.</li>
+            </ul>
+            <p>Quer saber mais sobre como entregamos resultados? Acesse nossos cases de sucesso.</p>
+            <p>Atenciosamente,<br>Equipe 4Unik</p>
+            <h4>CTA:</h4>
+            <p><a href="https://www.4unik.com.br/portfolio" class="cta">Ver o portfólio</a></p>
+
+            <h3>Sugestão de Prompts de Imagem (Higgsfield - `nano_banana_2`):</h3>
+            <h4>Imagem 1 (Base para Capa de Carrossel/Feed):</h4>
+            <pre><code>[formato: 4:5]
+[cena: Composição elegante de um dashboard da 4Unik com gráficos de engajamento em segundo plano. Em primeiro plano, uma grade de cartões neutros e vazios sugerindo uma parede de cases — SEM texto, SEM marcas, SEM logos de terceiros. Os logos reais entram depois, na composição, a partir dos arquivos oficiais. Estilo de ilustração de dados abstratos e conexões digitais.]
+[luz: soft ambient, focused highlights on logos and dashboard elements]
+[paleta: brand-primary-dark, brand-secondary-blue, brand-accent-green, brand-white, brand-grey-muted]
+[espaço: balanced composition, clear area for headline on top]
+[estilo: modern B2B tech, data visualization, clean interface, professional, not generic clip-art]
+[evitar: blurry, low-res, watermark, unreadable text, distorted logos, unrealistic interfaces]</code></pre>
+            <p class="image-adaptation"><strong>Adaptação para redes sociais:</strong></p>
+            <ul>
+                <li><strong>Feed (4:5):</strong> Usar a imagem completa, com a headline sobre a área superior.</li>
+                <li><strong>Carrossel:</strong> Recortar seções do dashboard e dos logos para slides individuais.</li>
+            </ul>
+        </div>
+
+        <div class="idea-section">
+            <h2>3. Integração Perfeita: Conecte a 4Unik ao seu Ecossistema</h2>
+            <p><strong>Pilar:</strong> Inovação / Tecnologia / Eficiência</p>
+            <p>Explorar a facilidade de integração da plataforma com qualquer sistema de RH, intranet ou ferramenta existente via API.</p>
+
+            <h3>Para Feed (Post):</h3>
+            <h4>Headline:</h4>
+            <p><strong>Sua infraestrutura de RH unificada: Integração sem limites com a 4Unik.</strong></p>
+            <h4>Corpo:</h4>
+            <p>Sua empresa já investiu em sistemas de RH e comunicação. A boa notícia é que a 4Unik não vem para substituir, mas para potencializar! Nossa API robusta permite integrar o motor de gamificação, loja de recompensas e logística em qualquer intranet, HRIS ou plataforma de engajamento que você já usa. Sem atrito, sem lock-in. Apenas mais inteligência para seu ecossistema.</p>
+            <h4>CTA:</h4>
+            <p><a href="https://plataforma.4unik.com.br/landing/" class="cta">Documentação e API para Devs</a></p>
+
+            <h3>Para Stories:</h3>
+            <ol>
+                <li><strong>Story 1 (Dúvida):</strong> "Sua nova solução de RH integra com o que você já usa?" (Imagem de ícones de diferentes sistemas de RH com um ponto de interrogação).</li>
+                <li><strong>Story 2 (Resposta):</strong> "A API da 4Unik conecta tudo!" (Animação de linhas conectando diversos ícones de sistemas ao logo da 4Unik).</li>
+                <li><strong>Story 3 (Benefício):</strong> "Reconhecimento fluído, sem duplicidade de trabalho." (Imagem de uma interface limpa da 4Unik integrada a outra plataforma).</li>
+                <li><strong>CTA:</strong> "Potencialize seu stack! Veja nossa API."</li>
+            </ol>
+
+            <h3>Para E-mail Marketing:</h3>
+            <h4>Assunto:</h4>
+            <p><strong>[Nome da Empresa]: Integração que potencializa seu RH, não complica.</strong></p>
+            <h4>Preview:</h4>
+            <p>Descubra como a API da 4Unik unifica suas plataformas de RH e engajamento.</p>
+            <h4>Corpo:</h4>
+            <p>Prezado(a) [Nome do Contato],</p>
+            <p>Em um cenário de múltiplos sistemas, a integração é a chave. A 4Unik foi projetada para se encaixar perfeitamente no seu stack de RH e comunicação. Através de nossa API flexível, você pode:</p>
+            <ul>
+                <li>Acionar premiações em tempo real.</li>
+                <li>Sincronizar dados de colaboradores.</li>
+                <li>Oferecer nossa loja de recompensas dentro da sua intranet.</li>
+            </ul>
+            <p>Simplifique a gestão e maximize o impacto do reconhecimento. Saiba mais sobre nossas capacidades de integração.</p>
+            <p>Atenciosamente,<br>Equipe 4Unik</p>
+            <h4>CTA:</h4>
+            <p><a href="https://plataforma.4unik.com.br/landing/" class="cta">Solicitar Acesso à API</a></p>
+
+            <h3>Sugestão de Prompts de Imagem (Higgsfield - `nano_banana_2`):</h3>
+            <h4>Imagem Principal (Base para Feed e Stories):</h4>
+            <pre><code>[formato: 4:5]
+[cena: Cena abstrata e futurista de uma rede de conexões digitais. O logo da 4Unik no centro, emitindo linhas de energia que se conectam a ícones estilizados de diversas plataformas (HRIS, Intranet, CRM, Ferramentas de Engajamento). Iluminação em tons de azul e verde, com um glow sutil. Foco na interconectividade e fluidez.]
+[luz: digital glow, high tech, low key dark ambient]
+[paleta: brand-primary-dark, brand-secondary-blue, brand-accent-green, brand-white]
+[espaço: central focus on the 4Unik logo and connections, negative space around edges]
+[estilo: abstract tech, clean, modern, B2B, interconnected systems, network, professional]
+[evitar: blurry, low-res, watermark, messy interface, tangled wires, generic office, distorted logos, unrealistic data flows]</code></pre>
+            <p class="image-adaptation"><strong>Adaptação para redes sociais:</strong></p>
+            <ul>
+                <li><strong>Feed (4:5):</strong> Usar a imagem completa.</li>
+                <li><strong>Stories (9:16):</strong> Focar nos elementos de conexão e nos ícones das plataformas para criar uma sequência visual de integração.</li>
+            </ul>
+        </div>
+
+        <div class="idea-section">
+            <h2>4. Engajamento que Gera Performance</h2>
+            <p><strong>Pilar:</strong> Engajamento / Performance</p>
+            <p>Explorar como a gamificação e os programas de reconhecimento da 4Unik resultam em equipes mais engajadas e melhores resultados para a empresa.</p>
+
+            <h3>Para Feed (Post):</h3>
+            <h4>Headline:</h4>
+            <p><strong>O segredo das equipes de alta performance: Reconhecimento estratégico com a 4Unik.</strong></p>
+            <h4>Corpo:</h4>
+            <p>Engajar sua equipe vai além de bônus anuais. É sobre criar uma cultura de reconhecimento contínuo, onde cada meta, cada conquista é celebrada. A plataforma da 4Unik oferece gamificação inteligente e programas de recompensas que motivam, inspiram e, mais importante, geram resultados tangíveis: maior produtividade, menos turnover, melhor ENPS. Invista no que realmente move seu time.</p>
+            <h4>CTA:</h4>
+            <p><a href="https://plataforma.4unik.com.br/landing/" class="cta">Conhecer Funcionalidades</a></p>
+
+            <h3>Para Stories:</h3>
+            <ol>
+                <li><strong>Story 1 (Citação/Dados):</strong> "Equipes reconhecidas são 2x mais produtivas. Fato." (Citação em destaque sobre fundo de dashboard).</li>
+                <li><strong>Story 2 (Como):</strong> "Nossa gamificação inspira e motiva. 🚀" (Animação de barras de progresso subindo, com avatares de colaboradores).</li>
+                <li><strong>Story 3 (Resultado):</strong> "Engajamento = performance real para sua empresa." (Imagem de um líder de equipe apresentando resultados positivos).</li>
+                <li><strong>CTA:</strong> "Transforme seu time! Agende uma demo."</li>
+            </ol>
+
+            <h3>Para E-mail Marketing:</h3>
+            <h4>Assunto:</h4>
+            <p><strong>Desbloqueie a alta performance da sua equipe com a 4Unik.</strong></p>
+            <h4>Preview:</h4>
+            <p>Gamificação e reconhecimento: veja como a 4Unik impulsiona sua equipe.</p>
+            <h4>Corpo:</h4>
+            <p>Prezado(a) [Nome do Contato],</p>
+            <p>Você busca uma equipe mais engajada e com resultados superiores? O reconhecimento eficaz é o catalisador para isso.</p>
+            <p>A plataforma 4Unik oferece as ferramentas para criar programas de gamificação e recompensas que:</p>
+            <ul>
+                <li>Incentivam a colaboração e a superação de metas.</li>
+                <li>Melhoram o clima organizacional e a satisfação (ENPS).</li>
+                <li>Reduzem a rotatividade e atraem os melhores talentos.</li>
+            </ul>
+            <p>Invista no potencial humano da sua empresa. Agende uma demonstração e veja na prática como a 4Unik pode gerar mais performance para sua equipe.</p>
+            <p>Atenciosamente,<br>Equipe 4Unik</p>
+            <h4>CTA:</h4>
+            <p><a href="https://plataforma.4unik.com.br/landing/" class="cta">Estratégias de Gamificação →</a></p>
+
+            <h3>Sugestão de Prompts de Imagem (Higgsfield - `nano_banana_2`):</h3>
+            <h4>Imagem 1 (Base para Feed e Stories):</h4>
+            <pre><code>[formato: 4:5]
+[cena: Equipe diversa e moderna celebrando uma conquista em um ambiente de trabalho vibrante e iluminado. Ao fundo, elementos de gamificação digital (badges, barras de progresso) se integram sutilmente à cena. Foco na alegria e senso de realização. A imagem deve transmitir colaboração e sucesso.]
+[luz: bright, dynamic, natural light, some accent lights in blue/green]
+[paleta: brand-white, brand-secondary-blue, brand-accent-green, touches of brand-accent-orange for energy]
+[espaço: central composition on the team, open space for text overlays]
+[estilo: modern corporate lifestyle, authentic, energetic, collaborative, professional, not staged stock photo]
+[evitar: blurry, low-res, watermark, overly generic smiles, stiff poses, outdated office, fake digital effects]</code></pre>
+            <p class="image-adaptation"><strong>Adaptação para redes sociais:</strong></p>
+            <ul>
+                <li><strong>Feed (4:5):</strong> Imagem completa.</li>
+                <li><strong>Stories (9:16):</strong> Focar nos rostos dos colaboradores felizes para um frame, e nos elementos de gamificação para outro.</li>
+            </ul>
+        </div>
+
+        <div class="idea-section">
+            <h2>5. Segurança e Governança: A Base da sua Infraestrutura de Recompensas</h2>
+            <p><strong>Pilar:</strong> Confiança / Segurança / Inovação</p>
+            <p>Abordar a robustez da 4Unik em termos de segurança de dados, conformidade e governança para empresas de grande porte.</p>
+
+            <h3>Para Feed (Post):</h3>
+            <h4>Headline:</h4>
+            <p><strong>Proteção de dados e conformidade: A segurança que seu RH merece.</strong></p>
+            <h4>Corpo:</h4>
+            <p>Em um mundo onde a segurança de dados é primordial, a 4Unik constrói sua infraestrutura de recompensas sobre pilares sólidos de governança. Perfis e permissões granulares, histórico de auditoria completo, criptografia e conformidade com as melhores práticas de mercado. Tenha a tranquilidade de saber que os dados da sua equipe estão seguros e sua operação, sob controle total. Conte com a 4Unik para uma gestão de reconhecimento impecável e segura.</p>
+            <h4>CTA:</h4>
+            <p><a href="https://plataforma.4unik.com.br/landing/" class="cta">Ver Segurança e Governança</a></p>
+
+            <h3>Para Stories:</h3>
+            <ol>
+                <li><strong>Story 1 (Mito):</strong> "Segurança e flexibilidade no RH não combinam?" (Imagem abstrata de cadeados e fluxos de dados complexos).</li>
+                <li><strong>Story 2 (Realidade):</strong> "Com a 4Unik, você tem os dois. ✅" (Animação de um escudo digital com o logo da 4Unik no centro).</li>
+                <li><strong>Story 3 (Benefício):</strong> "Dados protegidos, conformidade garantida, controle total." (Dashboard da 4Unik mostrando painéis de segurança/governança).</li>
+                <li><strong>CTA:</strong> "Infraestrutura segura. Conheça a 4Unik."</li>
+            </ol>
+
+            <h3>Para E-mail Marketing:</h3>
+            <h4>Assunto:</h4>
+            <p><strong>[Nome da Empresa], sua infraestrutura de recompensas com segurança total.</strong></p>
+            <h4>Preview:</h4>
+            <p>Descubra as camadas de segurança e governança da plataforma 4Unik.</p>
+            <h4>Corpo:</h4>
+            <p>Prezado(a) [Nome do Contato],</p>
+            <p>A segurança dos dados dos seus colaboradores é uma prioridade inegociável. Na 4Unik, investimos na mais alta tecnologia e nas melhores práticas para garantir a proteção e a governança de sua infraestrutura de recompensas.</p>
+            <p>Nossa plataforma oferece:</p>
+            <ul>
+                <li>Controles de acesso rigorosos e permissões personalizadas.</li>
+                <li>Registros de auditoria detalhados para total rastreabilidade.</li>
+                <li>Conformidade com padrões de segurança líderes de mercado.</li>
+            </ul>
+            <p>Construa um programa de reconhecimento sem preocupações. Fale com um especialista e saiba mais sobre nosso compromisso com a segurança.</p>
+            <p>Atenciosamente,<br>Equipe 4Unik</p>
+            <h4>CTA:</h4>
+            <p><a href="https://calendly.com/4unik/30min" class="cta">Falar com Especialista</a></p>
+
+            <h3>Sugestão de Prompts de Imagem (Higgsfield - `nano_banana_2`):</h3>
+            <h4>Imagem Principal (Base para Feed e Stories):</h4>
+            <pre><code>[formato: 4:5]
+[cena: Cena de tecnologia abstrata com elementos de segurança digital: um escudo estilizado com o logo da 4Unik no centro, cercado por fluxos de dados criptografados e cadeados digitais luminosos. Foco na proteção e inovação. Paleta de cores em tons de azul e roxo, com um brilho sutil verde de segurança.]
+[luz: cinematic, tech glow, high contrast dark]
+[paleta: brand-primary-dark, brand-secondary-blue, brand-dark-blue, brand-accent-green, brand-white]
+[espaço: central composition, strong visual metaphor for protection]
+[estilo: modern tech, cybersecurity, abstract digital art, clean, professional, B2B]
+[evitar: blurry, low-res, watermark, generic stock shield, cartoonish elements, exaggerated glowing effects, unrealistic interfaces, human figures]</code></pre>
+            <p class="image-adaptation"><strong>Adaptação para redes sociais:</strong></p>
+            <ul>
+                <li><strong>Feed (4:5):</strong> Imagem completa.</li>
+                <li><strong>Stories (9:16):</strong> Focar nos detalhes do escudo e dos fluxos de dados para criar uma sensação de proteção e complexidade tecnológica.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

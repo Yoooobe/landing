@@ -1,0 +1,48 @@
+{
+  "slug": "i3-presente",
+  "handle": "@4unikoficial",
+  "scenes": [
+    {
+      "frames": [
+        0,
+        112
+      ],
+      "dir": -1,
+      "image": "assets/generated_images/v2/i3-presente_a_9x16.png",
+      "eyebrow": "Loja de recompensas corporativa",
+      "headline": "Ponto que não vira presente é só número na tela."
+    },
+    {
+      "frames": [
+        100,
+        208
+      ],
+      "dir": -1,
+      "eyebrow": "Ciclo completo",
+      "headline": "Meta batida.",
+      "body": "Sem ninguém preencher planilha.",
+      "image": "assets/generated_images/v2/i3-presente_b_9x16.png"
+    },
+    {
+      "frames": [
+        196,
+        328
+      ],
+      "dir": -1,
+      "eyebrow": "Ciclo completo",
+      "headline": "Ele escolhe no catálogo.",
+      "screenshot": "assets/screenshots/crops/member-store-grade.png",
+      "body": "Loja de resgate — tela real da plataforma."
+    },
+    {
+      "frames": [
+        316,
+        424
+      ],
+      "dir": -1,
+      "headline": "Entrega a caminho. No Brasil e no mundo.",
+      "cta": "Ver a plataforma",
+      "image": "assets/generated_images/v2/i3-presente_c_9x16.png"
+    }
+  ]
+}

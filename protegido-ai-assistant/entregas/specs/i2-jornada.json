@@ -1,0 +1,90 @@
+{
+  "slug": "i2-jornada",
+  "pieces": [
+    {
+      "format": "feed45",
+      "variant": "card1-capa",
+      "eyebrow": "Como funciona",
+      "headline": "Quatro passos. Nenhum deles é operacional.",
+      "image": "assets/generated_images/v2/i2-jornada_b_9x16.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "card2-conecte",
+      "image": "assets/generated_images/v2/i2-jornada_a_9x16.png",
+      "eyebrow": "1 · Conecte",
+      "headline": "Intranet, HRIS ou console 4Unik.",
+      "body": "API e webhooks prontos para o seu stack."
+    },
+    {
+      "format": "feed45",
+      "variant": "card3-configure",
+      "eyebrow": "2 · Configure",
+      "headline": "Regras de pontos, benefícios e catálogo.",
+      "body": "Campanha configurada no painel, sem chamado para TI.",
+      "screenshot": "assets/screenshots/crops/campanha-form.png"
+    },
+    {
+      "format": "feed45",
+      "variant": "card4-engaje",
+      "image": "assets/generated_images/v2/i2-jornada_b_9x16.png",
+      "eyebrow": "3 · Engaje",
+      "headline": "Metas, missões e reconhecimento entre pares.",
+      "body": "Os pontos são creditados automaticamente."
+    },
+    {
+      "format": "feed45",
+      "variant": "card5-cta",
+      "image": "assets/generated_images/v2/i2-jornada_c_9x16.png",
+      "eyebrow": "4 · Entregue",
+      "headline": "O colaborador escolhe. A logística é nossa.",
+      "cta": "Solicitar acesso à API"
+    },
+    {
+      "format": "story",
+      "variant": "frame1-conecte",
+      "eyebrow": "1/4",
+      "headline": "Conecte.",
+      "body": "Intranet, HRIS ou console. Sem trocar de sistema.",
+      "image": "assets/generated_images/v2/i2-jornada_a_9x16.png"
+    },
+    {
+      "format": "story",
+      "variant": "frame2-configure",
+      "image": "assets/generated_images/v2/i2-jornada_b_9x16.png",
+      "eyebrow": "2/4",
+      "headline": "Configure.",
+      "body": "Regras de pontos, benefícios e catálogo."
+    },
+    {
+      "format": "story",
+      "variant": "frame3-engaje",
+      "image": "assets/generated_images/v2/i2-jornada_a_9x16.png",
+      "eyebrow": "3/4",
+      "headline": "Engaje.",
+      "body": "Metas e missões creditam pontos sozinhas."
+    },
+    {
+      "format": "story",
+      "variant": "frame4-cta",
+      "eyebrow": "4/4",
+      "headline": "Entregue.",
+      "body": "Ele escolhe, a gente entrega.",
+      "cta": "Conhecer funcionalidades",
+      "image": "assets/generated_images/v2/i2-jornada_c_9x16.png"
+    },
+    {
+      "format": "email",
+      "variant": "hero",
+      "image": "assets/generated_images/v2/i2-jornada_d_16x9.png",
+      "eyebrow": "Como funciona",
+      "headline": "Quatro passos. Nenhum deles é operacional."
+    },
+    {
+      "format": "og",
+      "image": "assets/generated_images/v2/i2-jornada_d_16x9.png",
+      "eyebrow": "Como funciona",
+      "headline": "Quatro passos. Nenhum deles é operacional."
+    }
+  ]
+}

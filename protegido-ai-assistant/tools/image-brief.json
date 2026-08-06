@@ -1,0 +1,37 @@
+{
+  "_nota": "Brief do layer de imagem. Consumido por tools/generate-images.mjs. Modelo z_image, 0.15 crédito por peça.",
+  "model": "z_image",
+  "sufixo": "Editorial corporate photography, candid documentary moment, well exposed, high key lighting, luminous and airy. Subtle violet #6455D4 and mint #00D294 accents in the scene. Nobody looks at the camera, no posed expressions, no forced smiles. Screens are turned away or heavily out of focus, no readable interface anywhere. Clean uncluttered space in the lower third of the frame. Absolutely no text, no letters, no numbers, no logos, no watermarks, no signage anywhere in the image.",
+  "conceitos": {
+    "i1-planilha": [
+      { "id": "a", "ar": "9:16", "cena": "Bright airy modern Brazilian office with large windows. A woman in her 30s in smart casual clothing at a standing desk, mid-gesture explaining something to a colleague beside her, relaxed genuine warmth between them." },
+      { "id": "b", "ar": "9:16", "cena": "Overhead view of a bright wooden desk covered with small unbranded gift boxes, kraft paper, packing tape and a notebook. Two pairs of hands sorting and stacking them, warm daylight, busy but organised." },
+      { "id": "c", "ar": "9:16", "cena": "A small diverse Brazilian team of four laughing together around a table in a bright office kitchen area, one of them holding a plain small gift box, candid unposed moment of real joy, soft daylight." },
+      { "id": "d", "ar": "16:9", "cena": "Wide view of a bright open plan Brazilian office, a woman at a clean desk in the right third turning toward a colleague, other people softly blurred in the background, generous clean space on the left." }
+    ],
+    "i2-jornada": [
+      { "id": "a", "ar": "9:16", "cena": "Close on the hands of two colleagues at a bright desk, one pointing at a laptop the other is typing on, sleeves rolled up, daylight from a window, sense of two people building something together." },
+      { "id": "b", "ar": "9:16", "cena": "An IT professional and an HR manager standing shoulder to shoulder in a bright glass meeting room, both looking at a wall screen turned away from camera, engaged and confident, daylight flooding the room." },
+      { "id": "c", "ar": "9:16", "cena": "A person at home in a bright living room opening a well designed plain cardboard package on a table, genuine unposed delight, warm afternoon daylight through a window." },
+      { "id": "d", "ar": "16:9", "cena": "Wide bright glass meeting room, two colleagues in the left third mid-discussion at a table, clean empty wall and daylight filling the right two thirds." }
+    ],
+    "i3-presente": [
+      { "id": "a", "ar": "9:16", "cena": "A colleague handing a beautifully wrapped plain gift box to another across a bright office desk, both caught mid-laugh looking at each other, warm daylight, real candid warmth." },
+      { "id": "b", "ar": "9:16", "cena": "A Brazilian team of five in a bright office celebrating a result, hands coming together over a table, real unposed energy, professional clothing, daylight and mint coloured wall behind." },
+      { "id": "c", "ar": "9:16", "cena": "A person receiving a package from a courier at the bright doorway of an apartment, genuine happy expression looking at the box not the camera, natural daylight in the hallway." },
+      { "id": "d", "ar": "16:9", "cena": "Wide bright office scene, a plain wrapped gift box in sharp focus on a desk in the right third, a happy team softly blurred behind, clean space on the left." }
+    ],
+    "i4-auditoria": [
+      { "id": "a", "ar": "9:16", "cena": "Two composed Brazilian executives, a woman and a man in their 40s, reviewing printed reports together at a bright glass meeting room table, calm assured body language, daylight." },
+      { "id": "b", "ar": "9:16", "cena": "Close on hands holding a tablet turned away from the camera and a pen resting on a printed report on a bright desk, reassuring and orderly, soft daylight, mint accent in the background." },
+      { "id": "c", "ar": "9:16", "cena": "An IT security professional in her 30s at a bright workstation, leaning back with arms crossed in a satisfied confident posture, looking off frame, luminous modern office, violet accent light on the wall behind." },
+      { "id": "d", "ar": "16:9", "cena": "Wide bright boardroom with a large blank wall screen, two leaders seated in the right third reviewing documents, clean daylight space on the left." }
+    ],
+    "i5-integracao": [
+      { "id": "a", "ar": "9:16", "cena": "A developer and an HR manager side by side at a bright shared desk, laptops open and turned away from camera, mid-conversation and clearly collaborating, daylight, violet and mint accents in the room." },
+      { "id": "b", "ar": "9:16", "cena": "A developer in his 30s at a bright standing desk, headphones around his neck, focused and satisfied looking at a laptop turned away from the camera, plants and daylight around him." },
+      { "id": "c", "ar": "9:16", "cena": "A diverse group of professionals walking through a bright modern office corridor in gentle motion blur, large windows and a clean mint accent wall, sense of momentum and scale." },
+      { "id": "d", "ar": "16:9", "cena": "Wide bright modern office, a developer and an HR manager collaborating at a desk in the right third, clean daylight and empty wall on the left." }
+    ]
+  }
+}

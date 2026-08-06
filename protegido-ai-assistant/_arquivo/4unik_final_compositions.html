@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composições Finais 4Unik - Feed & Stories</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-primary-dark:   #0B0A14;
+            --brand-secondary-blue: #6455D4;
+            --brand-accent-green:   #00D294;
+            --brand-accent-orange:  #EC7C0E;
+            --brand-white:          #FFFFFF;
+            --brand-grey-muted:     #9C9EA5;
+            --brand-dark-blue:      #2D285B;
+            --text-primary-light:   #191A1F;
+            --surface-panel:        #101116;
+            --surface-light:        #F9FAFC;
+
+            --font-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+            --font-body:    'Plus Jakarta Sans', system-ui, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--brand-white);
+            background-color: var(--brand-primary-dark);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 20px auto;
+            background-color: var(--surface-panel);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
+            color: var(--brand-secondary-blue);
+            margin-bottom: 0.5em;
+        }
+        h1 {
+            font-size: 2.5em;
+            text-align: center;
+            color: var(--brand-white);
+            background: linear-gradient(90deg, var(--brand-secondary-blue) 0%, var(--brand-accent-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: var(--brand-secondary-blue);
+            border-bottom: 2px solid var(--brand-dark-blue);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: var(--brand-accent-green);
+            margin-top: 30px;
+        }
+        h4 {
+            font-size: 1.2em;
+            color: var(--brand-accent-orange);
+            margin-top: 25px;
+        }
+        p {
+            margin-bottom: 1em;
+            color: var(--brand-grey-muted);
+        }
+        .section-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .content-block {
+            flex: 1;
+            min-width: 45%;
+            background-color: #1a1a2e; /* slightly lighter dark */
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--brand-dark-blue);
+            display: flex;
+            flex-direction: column;
+        }
+        .content-block h3 {
+            color: var(--brand-accent-orange);
+            margin-top: 0;
+            border-bottom: 1px solid var(--brand-dark-blue);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 125%; /* 4:5 aspect ratio */
+            overflow: hidden;
+            border-radius: 4px;
+            border: 1px solid var(--brand-grey-muted);
+            margin-bottom: 20px;
+        }
+        .image-wrapper.story {
+            padding-bottom: 177.77%; /* 9:16 aspect ratio */
+        }
+        .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+        }
+        .text-overlay .headline {
+            font-family: var(--font-display);
+            font-size: 2.2em; /* Adjusted for image scale */
+            font-weight: 800;
+            color: var(--brand-white);
+            text-align: center;
+            margin-top: 10%;
+        }
+        .text-overlay .body-text {
+            font-family: var(--font-body);
+            font-size: 1em;
+            color: var(--brand-white);
+            text-align: center;
+            margin-top: 10px;
+        }
+        .text-overlay .cta {
+            background-color: var(--brand-accent-green);
+            color: var(--brand-primary-dark);
+            padding: 8px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            align-self: center;
+            margin-bottom: 10%;
+            transition: background-color 0.3s ease;
+        }
+        .cta:hover {
+            background-color: #00e6a8;
+        }
+        .brand-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(var(--brand-primary-dark-rgb, 11, 10, 20), 0.8);
+            color: var(--brand-white);
+            text-align: center;
+            padding: 8px 0;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+        .brand-bar strong {
+            color: var(--brand-accent-green);
+        }
+        .story-frame-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .story-frame {
+            position: relative;
+            width: 250px; /* Fixed width for story frame */
+            height: 444px; /* 9:16 aspect ratio */
+            overflow: hidden;
+            border-radius: 8px;
+            border: 1px solid var(--brand-dark-blue);
+            background-color: var(--brand-primary-dark);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .story-frame img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7); /* Darken image for text legibility */
+        }
+        .story-frame .text-content {
+            position: relative;
+            z-index: 1;
+            color: var(--brand-white);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .story-frame .story-cta {
+            position: relative;
+            z-index: 1;
+            background-color: var(--brand-accent-green);
+            color: var(--brand-primary-dark);
+            padding: 6px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .story-frame .story-cta:hover {
+            background-color: #00e6a8;
+        }
+        .story-frame .story-body {
+            font-family: var(--font-body);
+            font-size: 0.9em;
+            color: var(--brand-grey-muted);
+            margin-top: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.8em;
+            color: #555;padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+
+        /* ---------- aviso de rodada encerrada ---------- */
+        .superseded {
+            border: 1px solid #c8802a;
+            background: #241a0e;
+            border-radius: 10px;
+            padding: 22px 24px;
+            margin: 0 0 34px;
+        }
+        .superseded h2 {
+            margin: 0 0 10px;
+            padding: 0;
+            border: 0;
+            font-size: 19px;
+            color: #e6a34d;
+        }
+        .superseded p { margin: 0 0 12px; font-size: 14px; line-height: 1.65; }
+        .superseded p:last-child { margin-bottom: 0; }
+        .superseded a { color: #00D294; }
+        .superseded ul { margin: 10px 0 0 18px; font-size: 14px; line-height: 1.75; }
+        .superseded code {
+            background: #12100c; border: 1px solid #3b2f1c; border-radius: 4px;
+            padding: 1px 5px; font-size: 12.5px;
+        }
+        .superseded table {
+            width: 100%; border-collapse: collapse; margin: 12px 0 0; font-size: 13px;
+        }
+        .superseded th, .superseded td {
+            border: 1px solid #3b2f1c; padding: 7px 10px; text-align: left; vertical-align: top;
+        }
+        .superseded th { color: #e6a34d; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="superseded">
+      <h2>Composições substituídas — esta página é arquivo histórico.</h2>
+      <p>Simulações de composição da rodada A/B, montadas em HTML antes do compositor existir. As composições que valem hoje saem de <code>tools/compose.mjs</code> e <code>tools/motion.mjs</code>, a partir dos specs em <code>entregas/specs/</code> — não deste arquivo.</p>
+      <p>Produção fechada em 06/08/2026: 55 peças estáticas e 5 Reels em <code>entregas/2026-08-06_*</code>.
+      Publicação de 11/08 a 10/09. O documento vivo é
+      <a href="../4unik_kit_conteudo_ago2026.html">4unik_kit_conteudo_ago2026.html</a> —
+      status, calendário, pendências e passo a passo. As peças finais estão em
+      <a href="../entregas/CONTACT-SHEET.html">entregas/CONTACT-SHEET.html</a>.</p>
+      <p><b>Para onde foi cada ideia:</b> a Ideia 1 virou <code>i1-planilha</code> (“Reconhecimento em planilha não
+      escala.”) e a Ideia 3 virou <code>i5-integracao</code> (“Não é para trocar o seu sistema.”). O teste A/B não
+      foi decidido por esta página: as duas visões foram descartadas junto com os prompts, e a direção final
+      saiu da releitura do DNA.</p>
+      <p><b>O que não pode ser reaproveitado daqui:</b></p>
+      <ul>
+        <li>Os prompts pedem <code>high contrast dark environment</code> e <code>low key dark ambient</code> — foi exatamente isso que produziu os fundos escuros que precisaram ser refeitos. O brief em uso agora é <code>bright and airy, natural daylight</code>, em <code>tools/image-brief.json</code>.</li>
+        <li>Cenas com dashboard holográfico, interface da 4Unik ou o logo no centro da imagem. Tela de produto em peça pública só entra como print real da plataforma, nunca como imagem gerada.</li>
+        <li>As imagens <code>idea*_vision*.png</code> são 1024×1024 — não servem para 4:5, 9:16 nem 16:9 sem perder metade da cena.</li>
+        <li>O link <code>plataforma.4unik.com.br/landing/</code> rotulado como “Documentação e API para Devs”: não existe página pública de documentação com esse endereço.</li>
+        <li>As headlines com dois-pontos e voz corporativa genérica (“Revolução na Gestão de Pessoas”, “Integração Perfeita”). A voz aprovada é a frase curta e concreta que está nas peças finais.</li>
+      </ul>
+    </div>
+
+        <h1>Composições Finais 4Unik - Teste A/B</h1>
+        <p>Aqui estão as propostas de conteúdo para Feed e Stories das Ideias 1 e 3, com suas respectivas Visões (A e B). As composições buscam simular o resultado final, integrando as imagens geradas pelo Higgsfield com os textos de copy e elementos do design system 4Unik, focando nas melhores práticas para cada formato de social media.</p>
+
+        <h2>Posts para Feed (Formato 4:5)</h2>
+
+        <div class="section-group">
+            <div class="content-block">
+                <h3>Ideia 1 - Visão A (Foco Interface Digital/RH)</h3>
+                <div class="image-wrapper">
+                    <img src="../assets/generated_images/idea1_visionA.png" alt="Imagem Ideia 1 - Visão A">
+                    <div class="text-overlay">
+                        <div class="headline">RH estratégico, não operacional: como a 4Unik automatiza o reconhecimento.</div>
+                        <div class="body-text">A 4Unik transforma o reconhecimento de equipes com automação inteligente. Seu RH foca no que importa: engajamento e performance.</div>
+                        <a href="https://calendly.com/4unik/30min" class="cta">Agendar Demonstração</a>
+                    </div>
+                    <div class="brand-bar">4Unik.com.br | <strong>@4unikoficial</strong></div>
+                </div>
+                <h4>Legenda Sugerida (Feed):</h4>
+                <p>A gestão de reconhecimento de equipes pode consumir um tempo valioso do seu RH. Planilhas, logística manual, aprovações demoradas… a 4Unik transforma isso. Nossa plataforma cuida de toda a operação, da definição de pontos à entrega de recompensas, no Brasil e no mundo. Seu RH foca no que realmente importa: engajamento e performance.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Ideia 1 - Visão B (Foco Humano/Benefício Tangível)</h3>
+                <div class="image-wrapper">
+                    <img src="../assets/generated_images/idea1_visionB.png" alt="Imagem Ideia 1 - Visão B">
+                    <div class="text-overlay">
+                        <div class="headline">RH com mais tempo para pessoas: A 4Unik otimiza sua operação.</div>
+                        <div class="body-text">Libere seu RH das tarefas operacionais e impulsione a felicidade e produtividade da sua equipe com a 4Unik.</div>
+                        <a href="https://calendly.com/4unik/30min" class="cta">Agendar Demonstração</a>
+                    </div>
+                    <div class="brand-bar">4Unik.com.br | <strong>@4unikoficial</strong></div>
+                </div>
+                <h4>Legenda Sugerida (Feed):</h4>
+                <p>Seu RH merece focar no que faz de melhor: cuidar das pessoas. Com a 4Unik, eliminamos as barreiras operacionais do reconhecimento. Menos planilhas, menos burocracia, mais tempo para engajar, desenvolver e reter talentos. Nossa plataforma é a infraestrutura que permite ao seu RH ser verdadeiramente estratégico, com impacto direto na felicidade e produtividade da sua equipe.</p>
+            </div>
+        </div>
+
+        <div class="section-group">
+            <div class="content-block">
+                <h3>Ideia 3 - Visão A (Foco Rede de Conexões Digitais)</h3>
+                <div class="image-wrapper">
+                    <img src="../assets/generated_images/idea3_visionA.png" alt="Imagem Ideia 3 - Visão A">
+                    <div class="text-overlay">
+                        <div class="headline">Sua infraestrutura de RH unificada: Integração sem limites com a 4Unik.</div>
+                        <div class="body-text">Potencialize seu ecossistema de RH com a API robusta da 4Unik. Integração sem atrito, mais inteligência.</div>
+                        <a href="https://plataforma.4unik.com.br/landing/" class="cta">Documentação e API para Devs</a>
+                    </div>
+                    <div class="brand-bar">4Unik.com.br | <strong>@4unikoficial</strong></div>
+                </div>
+                <h4>Legenda Sugerida (Feed):</h4>
+                <p>Sua empresa já investiu em sistemas de RH e comunicação. A boa notícia é que a 4Unik não vem para substituir, mas para potencializar! Nossa API robusta permite integrar o motor de gamificação, loja de recompensas e logística em qualquer intranet, HRIS ou plataforma de engajamento que você já usa. Sem atrito, sem lock-in. Apenas mais inteligência para seu ecossistema.</p>
+            </div>
+
+            <div class="content-block">
+                <h3>Ideia 3 - Visão B (Foco Experiência do Usuário/Seamless)</h3>
+                <div class="image-wrapper">
+                    <img src="../assets/generated_images/idea3_visionB.png" alt="Imagem Ideia 3 - Visão B">
+                    <div class="text-overlay">
+                        <div class="headline">Reconhecimento sem atrito: Experiência fluida em todas as suas plataformas.</div>
+                        <div class="body-text">Colaboradores engajados, recompensas acessíveis. A integração da 4Unik proporciona uma experiência unificada e sem emendas.</div>
+                        <a href="https://plataforma.4unik.com.br/landing/" class="cta">Ver a Plataforma em Ação</a>
+                    </div>
+                    <div class="brand-bar">4Unik.com.br | <strong>@4unikoficial</strong></div>
+                </div>
+                <h4>Legenda Sugerida (Feed):</h4>
+                <p>Imagine o colaborador acessando programas de reconhecimento e resgatando recompensas diretamente da intranet ou do app de RH que ele já utiliza. A 4Unik torna isso realidade! Com nossa integração perfeita, a experiência é tão fluida que parece uma única plataforma. Menos cliques, mais engajamento, e seu time sempre conectado à cultura da empresa, onde quer que ele esteja.</p>
+            </div>
+        </div>
+
+        <h2>Composições para Stories (Formato 9:16)</h2>
+
+        <h3>Ideia 1 - Visão A (Foco Interface Digital/RH)</h3>
+        <div class="story-frame-group">
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea1_visionA.png" alt="Story Frame 1A-1">
+                <div class="text-content">
+                    Seu RH ainda gasta horas com reconhecimento manual?
+                </div>
+            </div>
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea1_visionA.png" alt="Story Frame 1A-2">
+                <div class="text-content">
+                    Imagine um reconhecimento <br>100% automatizado...
+                </div>
+            </div>
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea1_visionA.png" alt="Story Frame 1A-3">
+                <div class="text-content">
+                    ...focando só na <br>estratégia de pessoas.
+                    <a href="https://plataforma.4unik.com.br/landing/" class="story-cta">Liberte seu RH!</a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Ideia 1 - Visão B (Foco Humano/Benefício Tangível)</h3>
+        <div class="story-frame-group">
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea1_visionB.png" alt="Story Frame 1B-1">
+                <div class="text-content">
+                    RH livre para <br>cuidar de pessoas.
+                </div>
+            </div>
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea1_visionB.png" alt="Story Frame 1B-2">
+                <div class="text-content">
+                    Menos burocracia,<br>mais engajamento.
+                </div>
+            </div>
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea1_visionB.png" alt="Story Frame 1B-3">
+                <div class="text-content">
+                    Equipes mais felizes, <br>resultados reais!
+                    <a href="https://plataforma.4unik.com.br/landing/" class="story-cta">Agende uma Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Ideia 3 - Visão A (Foco Rede de Conexões Digitais)</h3>
+        <div class="story-frame-group">
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea3_visionA.png" alt="Story Frame 3A-1">
+                <div class="text-content">
+                    Sua infraestrutura de RH: <br>tudo conectado.
+                </div>
+            </div>
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea3_visionA.png" alt="Story Frame 3A-2">
+                <div class="text-content">
+                    Integração sem limites <br>com a 4Unik API.
+                </div>
+            </div>
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea3_visionA.png" alt="Story Frame 3A-3">
+                <div class="text-content">
+                    Potencialize seu stack <br>de RH agora!
+                    <a href="https://plataforma.4unik.com.br/landing/" class="story-cta">Documentação API</a>
+                </div>
+            </div>
+        </div>
+
+        <h3>Ideia 3 - Visão B (Foco Experiência do Usuário/Seamless)</h3>
+        <div class="story-frame-group">
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea3_visionB.png" alt="Story Frame 3B-1">
+                <div class="text-content">
+                    Reconhecimento fluído <br>em todas as telas.
+                </div>
+            </div>
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea3_visionB.png" alt="Story Frame 3B-2">
+                <div class="text-content">
+                    Seu time engajado <br>onde quer que esteja.
+                </div>
+            </div>
+            <div class="story-frame">
+                <img src="../assets/generated_images/idea3_visionB.png" alt="Story Frame 3B-3">
+                <div class="text-content">
+                    Experiência unificada, <br>impacto real!
+                    <a href="https://plataforma.4unik.com.br/landing/" class="story-cta">Ver Plataforma</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 4Unik. Todos os direitos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>

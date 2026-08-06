@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+.mcp.json
+
+# matéria-prima regerável por tools/generate-images.mjs — não versionar
+assets/generated_images/
