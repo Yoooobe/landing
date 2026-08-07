@@ -77,6 +77,10 @@ async function main() {
     if (normalized.startsWith("404/") || normalized.startsWith("_not-found/")) {
       continue;
     }
+    // /campanha/ é HTML solto em public/ — página de trabalho, noindex, fora do GA
+    if (normalized.startsWith("campanha/")) {
+      continue;
+    }
     marketing.push(normalized);
   }
 

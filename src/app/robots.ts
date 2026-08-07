@@ -18,6 +18,8 @@ export default function robots(): MetadataRoute.Robots {
           `${BASE_PATH}/studio/`,
           `${BASE_PATH}/workvivo/`,
           `${BASE_PATH}/en/workvivo/`,
+          // material de campanha ainda não publicado — URL de trabalho, não vitrine
+          `${BASE_PATH}/campanha/`,
         ],
       },
     ],

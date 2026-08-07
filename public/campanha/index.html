@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4Unik · Kit de Conteúdo — Agosto 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary-dark:#0B0A14;
+  --ink:#08090D;
+  --panel:#101116;
+  --panel-2:#15161E;
+  --blue:#6455D4;
+  --dark-blue:#2D285B;
+  --green:#00D294;
+  --orange:#EC7C0E;
+  --white:#FFFFFF;
+  --muted:#9C9EA5;
+  --line:rgba(255,255,255,.08);
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  margin:0;background:var(--primary-dark);color:var(--white);
+  font-family:var(--font);line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(900px 500px at 12% -8%, rgba(100,85,212,.28), transparent 60%),
+    radial-gradient(700px 420px at 92% 8%, rgba(0,210,148,.10), transparent 62%);
+}
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px}
+
+/* ---------- NAV ---------- */
+nav{
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+  background:rgba(8,9,13,.82);border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex;align-items:center;gap:24px;height:64px;overflow-x:auto}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;flex:none}
+.brand .mark{
+  width:28px;height:28px;border-radius:8px;flex:none;
+  background:linear-gradient(135deg,var(--blue),var(--dark-blue));
+  display:grid;place-items:center;font-size:15px;font-weight:800;color:#fff;
+}
+nav a{color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:600;white-space:nowrap;transition:color .18s}
+nav a:hover{color:var(--white)}
+
+/* ---------- HERO ---------- */
+header{padding:80px 0 56px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--green);
+  border:1px solid rgba(0,210,148,.28);background:rgba(0,210,148,.07);
+  padding:7px 14px;border-radius:999px;
+}
+h1{
+  font-size:clamp(38px,5.6vw,64px);line-height:1.04;letter-spacing:-.035em;
+  font-weight:800;margin:22px 0 18px;max-width:16ch;
+}
+h1 em{
+  font-style:normal;
+  background:linear-gradient(92deg,var(--blue) 0%,var(--green) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.lead{font-size:18px;color:var(--muted);max-width:64ch;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:40px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.stat b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em;color:var(--white)}
+.stat span{font-size:12.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+
+/* ---------- SECTIONS ---------- */
+section{padding:56px 0;border-top:1px solid var(--line)}
+.sec-title{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.sec-title h2{font-size:clamp(24px,3vw,32px);letter-spacing:-.025em;margin:0;font-weight:800}
+.sec-title .num{font-family:var(--mono);font-size:13px;color:var(--blue);font-weight:600}
+.sec-sub{color:var(--muted);max-width:70ch;margin:0 0 32px}
+
+/* ---------- CROP SYSTEM ---------- */
+.crop-grid{display:grid;grid-template-columns:300px 1fr;gap:36px;align-items:start}
+@media(max-width:860px){.crop-grid{grid-template-columns:1fr}}
+.frame{
+  position:relative;width:100%;max-width:280px;aspect-ratio:9/16;border-radius:14px;overflow:hidden;
+  background:linear-gradient(170deg,#1b1733,#0B0A14 55%,#0d1a17);
+  border:1px solid rgba(100,85,212,.5);
+}
+.frame .band{position:absolute;left:0;right:0;background:repeating-linear-gradient(45deg,rgba(236,124,14,.16) 0 6px,transparent 6px 12px)}
+.frame .band.t{top:0;height:13%}
+.frame .band.b{bottom:0;height:13%}
+.frame .box{position:absolute;left:0;right:0;border:1.5px dashed;display:flex;align-items:flex-start;justify-content:flex-end}
+.frame .box span{font-family:var(--mono);font-size:9.5px;padding:3px 6px;font-weight:600}
+.frame .b45{top:14.8%;height:70.3%;border-color:var(--green);color:var(--green)}
+.frame .b45 span{background:rgba(0,210,148,.16)}
+.frame .b11{top:21.9%;height:56.2%;border-color:var(--orange);color:var(--orange)}
+.frame .b11 span{background:rgba(236,124,14,.16)}
+.frame .subject{
+  position:absolute;left:12%;right:12%;top:26%;height:44%;border-radius:10px;
+  background:radial-gradient(circle at 50% 40%,rgba(100,85,212,.55),rgba(100,85,212,0) 70%);
+  display:grid;place-items:center;font-size:11px;color:#cfc9ff;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:12px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:700}
+td code{font-family:var(--mono);font-size:12.5px;color:var(--green)}
+tbody tr:hover{background:rgba(255,255,255,.025)}
+
+/* ---------- IDEA CARDS ---------- */
+.idea{
+  background:var(--panel);border:1px solid var(--line);border-radius:20px;
+  padding:0;margin-bottom:28px;overflow:hidden;
+}
+.idea-head{padding:28px 30px 24px;border-bottom:1px solid var(--line);position:relative}
+.idea-head::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--blue),var(--green))}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px;border:1px solid}
+.tag.pillar{color:var(--blue);border-color:rgba(100,85,212,.45);background:rgba(100,85,212,.12)}
+.tag.funnel{color:var(--muted);border-color:var(--line);background:rgba(255,255,255,.03)}
+.tag.fmt{color:var(--green);border-color:rgba(0,210,148,.3);background:rgba(0,210,148,.08)}
+.idea-head h3{font-size:clamp(21px,2.6vw,28px);letter-spacing:-.025em;margin:0 0 10px;font-weight:800;line-height:1.15}
+.idea-head p{margin:0;color:var(--muted);max-width:72ch;font-size:15px}
+.idea-num{
+  position:absolute;right:26px;top:22px;font-family:var(--mono);font-size:46px;font-weight:700;
+  color:rgba(255,255,255,.06);letter-spacing:-.04em;line-height:1;
+}
+
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+@media(max-width:980px){.cols{grid-template-columns:1fr}}
+.col{padding:26px 30px;border-right:1px solid var(--line)}
+.col:last-child{border-right:none}
+@media(max-width:980px){.col{border-right:none;border-bottom:1px solid var(--line)}}
+.col h4{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;margin:0 0 4px;
+  display:flex;align-items:center;gap:8px;
+}
+.col h4 .dot{width:7px;height:7px;border-radius:50%}
+.col .spec{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin:0 0 16px}
+.c-feed h4{color:var(--blue)} .c-feed .dot{background:var(--blue)}
+.c-story h4{color:var(--green)} .c-story .dot{background:var(--green)}
+.c-mail h4{color:var(--orange)} .c-mail .dot{background:var(--orange)}
+
+.slide{
+  background:var(--panel-2);border:1px solid var(--line);border-left:2px solid rgba(100,85,212,.6);
+  border-radius:0 10px 10px 0;padding:12px 14px;margin-bottom:9px;font-size:13.5px;
+}
+.c-story .slide{border-left-color:rgba(0,210,148,.6)}
+.c-mail .slide{border-left-color:rgba(236,124,14,.6)}
+.slide .k{
+  display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:5px;font-weight:600;
+}
+.slide strong{color:var(--white);font-weight:700}
+.slide em{font-style:normal;color:var(--green)}
+.cta-pill{
+  display:inline-block;margin-top:4px;font-size:12.5px;font-weight:700;color:var(--white);
+  background:linear-gradient(90deg,var(--blue),var(--dark-blue));padding:8px 15px;border-radius:8px;
+}
+.caption{
+  margin-top:14px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.025);
+  border:1px dashed var(--line);border-radius:10px;padding:12px 14px;white-space:pre-line;
+}
+.caption b{color:var(--white)}
+.hash{color:var(--blue);font-weight:600}
+
+/* ---------- PROMPTS ---------- */
+.prompts{padding:26px 30px;border-top:1px solid var(--line);background:rgba(8,9,13,.45)}
+.prompts > h4{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--white);
+  margin:0 0 16px;font-weight:800;display:flex;align-items:center;gap:9px;
+}
+.prompts > h4::before{content:"";width:16px;height:2px;background:linear-gradient(90deg,var(--blue),var(--green))}
+.prompt{position:relative;background:var(--ink);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.prompt-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px 14px;border-bottom:1px solid var(--line);background:rgba(100,85,212,.07);
+}
+.prompt-bar .lbl{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--blue)}
+.prompt-bar .lbl b{color:var(--white)}
+.copy{
+  border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--muted);
+  font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  padding:6px 11px;border-radius:7px;cursor:pointer;transition:.18s;flex:none;
+}
+.copy:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.copy.ok{background:var(--green);color:#062;border-color:var(--green)}
+.prompt pre{
+  margin:0;padding:14px;font-family:var(--mono);font-size:12px;line-height:1.65;
+  color:#cdd2dc;white-space:pre-wrap;word-break:break-word;
+}
+.neg{color:#FF6568}
+
+/* ---------- MISC ---------- */
+.note{
+  border:1px solid rgba(236,124,14,.35);background:rgba(236,124,14,.08);
+  border-radius:12px;padding:16px 18px;font-size:14px;color:#f2d5b4;
+}
+.note b{color:var(--orange)}
+.checklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
+.check{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;
+  font-size:13.5px;color:var(--muted);display:flex;gap:11px;align-items:flex-start;
+}
+.check b{color:var(--white);display:block;font-size:14px;margin-bottom:2px}
+.check .ic{color:var(--green);font-weight:800;flex:none}
+pre.sh{
+  background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:16px;
+  font-family:var(--mono);font-size:12.5px;color:#cdd2dc;overflow-x:auto;line-height:1.7;
+}
+pre.sh .cmt{color:#5d6270}
+footer{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer b{color:var(--white)}
+footer a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(0,210,148,.35)}
+footer a:hover{border-bottom-color:var(--green)}
+
+/* ---------- STATUS / PAINEL ---------- */
+.pill{
+  display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid;
+}
+.pill.ok{color:var(--green);border-color:rgba(0,210,148,.35);background:rgba(0,210,148,.1)}
+.pill.wait{color:var(--muted);border-color:var(--line);background:rgba(255,255,255,.03)}
+.pill.block{color:var(--orange);border-color:rgba(236,124,14,.4);background:rgba(236,124,14,.1)}
+.todo{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.todo li{
+  display:flex;gap:12px;background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;padding:14px 16px;font-size:14.5px;color:var(--muted);
+}
+.todo li b{color:var(--white);display:block;margin-bottom:2px;font-size:14.5px}
+.todo li .ic{flex:none;font-weight:800;font-size:15px;line-height:1.5}
+.todo li.open{border-color:rgba(236,124,14,.35)}
+.todo li.open .ic{color:var(--orange)}
+.todo li.done .ic{color:var(--green)}
+.todo li.done b{color:var(--muted);font-weight:600}
+.steps{counter-reset:s;display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.steps li{
+  counter-increment:s;position:relative;padding:14px 18px 14px 56px;
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  font-size:14.5px;color:var(--muted);
+}
+.steps li::before{
+  content:counter(s,decimal-leading-zero);position:absolute;left:18px;top:14px;
+  font-family:var(--mono);font-size:12px;font-weight:700;color:var(--blue);
+}
+.steps li b{color:var(--white)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.col h4{font-size:15px;margin:0 0 12px;letter-spacing:-.01em}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand"><span class="mark">4</span>Unik</div>
+    <a href="#status">Status</a>
+    <a href="#calendario">Calendário</a>
+    <a href="#todo">To-do</a>
+    <a href="#publicacao">Publicação</a>
+    <a href="#i1">01 Planilha</a>
+    <a href="#i2">02 Jornada</a>
+    <a href="#i3">03 Entrega</a>
+    <a href="#i4">04 Auditoria</a>
+    <a href="#i5">05 Integração</a>
+    <a href="#sistema">Recortes</a>
+    <a href="#producao">Produção</a>
+    <a href="contact-sheet.html">Peças</a>
+  </div>
+</nav>
+
+<header class="wrap">
+  <span class="eyebrow">Infraestrutura de recompensas · Agosto 2026</span>
+  <h1>Cinco ideias. <em>Produção fechada.</em> Pronto para publicar.</h1>
+  <p class="lead">Cinco conceitos de conteúdo — um por pilar do DNA — cada um desdobrado em post de feed, sequência de stories, Reel e peça de e-mail marketing. Tudo composto e revisado: <b>55 PNG e 5 MP4</b> em <span class="mono">entregas/2026-08-06_*</span>. A partir daqui o trabalho não é mais criar peça, é publicar na ordem certa e registrar o que cada uma trouxe.</p>
+  <div class="stats">
+    <div class="stat"><b>55</b><span>peças estáticas compostas</span></div>
+    <div class="stat"><b>5</b><span>Reels renderizados (mudos)</span></div>
+    <div class="stat"><b>5</b><span>semanas de calendário</span></div>
+    <div class="stat"><b>1</b><span>pendência bloqueando</span></div>
+  </div>
+</header>
+
+<section id="status" class="wrap">
+  <div class="sec-title"><span class="num">01</span><h2>Status da campanha</h2></div>
+  <p class="sec-sub">Onde cada conceito está agora. “Composto” significa arte final gerada, tipografia dentro dos mínimos do DNA e legenda escrita em <span class="mono">LEGENDAS.md</span> dentro da pasta da entrega. Nada aqui depende de nova geração de imagem.</p>
+
+  <table>
+    <thead>
+      <tr><th>#</th><th>Conceito</th><th>Peças</th><th>Reel</th><th>E-mail</th><th>Situação</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="mono">i1</td><td><b>planilha</b><br><span class="mono">Reconhecimento em planilha não escala</span></td>
+        <td class="mono">5 feed · 3 story · 1 OG</td><td class="mono">1</td><td class="mono">1</td>
+        <td><span class="pill ok">pronto</span></td>
+      </tr>
+      <tr>
+        <td class="mono">i2</td><td><b>jornada</b><br><span class="mono">Quatro passos, nenhum operacional</span></td>
+        <td class="mono">5 feed · 4 story · 1 OG</td><td class="mono">1</td><td class="mono">1</td>
+        <td><span class="pill ok">pronto</span></td>
+      </tr>
+      <tr>
+        <td class="mono">i3</td><td><b>presente</b><br><span class="mono">Ponto que não vira presente</span></td>
+        <td class="mono">5 feed · 3 story · 1 OG</td><td class="mono">1</td><td class="mono">1</td>
+        <td><span class="pill ok">pronto</span> <span class="mono">categorias conferidas 06/08</span></td>
+      </tr>
+      <tr>
+        <td class="mono">i4</td><td><b>auditoria</b><br><span class="mono">Seu programa passaria numa auditoria?</span></td>
+        <td class="mono">3 feed · 3 story · 1 OG</td><td class="mono">1</td><td class="mono">1</td>
+        <td><span class="pill ok">pronto</span></td>
+      </tr>
+      <tr>
+        <td class="mono">i5</td><td><b>integração</b><br><span class="mono">Não é para trocar o seu sistema</span></td>
+        <td class="mono">6 feed · 3 story · 1 OG</td><td class="mono">1</td><td class="mono">1</td>
+        <td><span class="pill block">e-mail bloqueado</span> <span class="mono">falta depoimento</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <b>Único bloqueio real:</b> o e-mail do i5 tem um bloco de depoimento sem depoimento. Precisa de <b>frase, nome e cargo</b> por escrito de quem assina. Prazo: <b>10/09</b>. Se não vier, o e-mail sai só com o bloco de marcas — e não se substitui o depoimento por um número genérico.
+  </div>
+</section>
+
+<section id="calendario" class="wrap">
+  <div class="sec-title"><span class="num">02</span><h2>Calendário de publicação</h2></div>
+  <p class="sec-sub">Um conceito por semana, na ordem do funil: topo primeiro, decisão por último. Terça é o dia do Reel (alcance), quinta é o dia do feed e do e-mail (conversão). Reel e carrossel nunca no mesmo dia — dividem alcance entre si.</p>
+
+  <table>
+    <thead>
+      <tr><th>Semana</th><th>Terça</th><th>Quinta</th><th>Conceito</th><th>Etapa do funil</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="mono">1</td><td><b>11/08</b> — Reel i1 + stories</td><td><b>13/08</b> — feed i1 + e-mail</td><td class="mono">i1-planilha</td><td>topo · dor</td></tr>
+      <tr><td class="mono">2</td><td><b>18/08</b> — Reel i2 + stories</td><td><b>20/08</b> — feed i2 + e-mail</td><td class="mono">i2-jornada</td><td>meio · educação</td></tr>
+      <tr><td class="mono">3</td><td><b>25/08</b> — Reel i3 + stories</td><td><b>27/08</b> — feed i3 + e-mail</td><td class="mono">i3-presente</td><td>meio · desejo</td></tr>
+      <tr><td class="mono">4</td><td><b>01/09</b> — Reel i4 + stories</td><td><b>03/09</b> — feed i4 + e-mail</td><td class="mono">i4-auditoria</td><td>fundo · objeção</td></tr>
+      <tr><td class="mono">5</td><td><b>08/09</b> — Reel i5 + stories</td><td><b>10/09</b> — feed i5 + e-mail</td><td class="mono">i5-integracao</td><td>fundo · decisão</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note">
+    <b>Atenção na semana 5:</b> a data do e-mail do i5 (10/09) é exatamente o prazo do depoimento. Cobrar até <b>08/09</b> para dar tempo de recompor a peça, ou decidir nesse dia que o e-mail sai sem o bloco.
+  </div>
+</section>
+
+<section id="todo" class="wrap">
+  <div class="sec-title"><span class="num">03</span><h2>O que ainda falta</h2></div>
+  <p class="sec-sub">Lista curta e honesta. O que está marcado como feito foi verificado no arquivo, não presumido.</p>
+
+  <div class="two">
+    <div class="col">
+      <h4>Em aberto</h4>
+      <ul class="todo">
+        <li class="open"><span class="ic">○</span><div><b>Depoimento do e-mail i5</b>Frase, nome e cargo por escrito. Prazo 10/09. Bloqueia a última peça da campanha.</div></li>
+        <li class="open"><span class="ic">○</span><div><b>Trilha de cada Reel</b>Os MP4 saem mudos de propósito. A música se escolhe na biblioteca licenciada do Instagram, na hora de postar.</div></li>
+        <li class="open"><span class="ic">○</span><div><b>Registrar resultado das enquetes</b>Cada sequência de stories tem sticker de enquete ou quiz. Anotar o resultado — é o insumo do próximo mês.</div></li>
+        <li class="open"><span class="ic">○</span><div><b>Ler o LEGENDAS.md antes de cada post</b>Cada pasta tem regras específicas do conceito no fim do arquivo. Não postar de memória.</div></li>
+      </ul>
+    </div>
+    <div class="col">
+      <h4>Fechado</h4>
+      <ul class="todo">
+        <li class="done"><span class="ic">✓</span><div><b>55 peças estáticas compostas</b>Tipografia dentro dos mínimos do DNA, sem estouro em nenhuma peça.</div></li>
+        <li class="done"><span class="ic">✓</span><div><b>5 Reels renderizados</b>1080×1920, h264, sem áudio.</div></li>
+        <li class="done"><span class="ic">✓</span><div><b>Imagens regeradas em 9:16 e 16:9</b>As antigas eram quadradas e escuras demais — o recorte comia metade da cena.</div></li>
+        <li class="done"><span class="ic">✓</span><div><b>Categorias do e-mail i3 conferidas</b>Kits Gourmet, Garrafas e Squeezes, Bolsas e Mochilas — nomes e links do catálogo real, verificados em 06/08.</div></li>
+        <li class="done"><span class="ic">✓</span><div><b>Contact sheet gerado</b><span class="mono">entregas/CONTACT-SHEET.html</span> — as 55 peças numa página só.</div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="publicacao" class="wrap">
+  <div class="sec-title"><span class="num">04</span><h2>Passo a passo da publicação</h2></div>
+  <p class="sec-sub">Dois roteiros que se repetem em todas as cinco semanas. Trocar só o prefixo do conceito nos nomes de arquivo.</p>
+
+  <div class="two">
+    <div class="col">
+      <h4>Terça — Reel + stories</h4>
+      <ol class="steps">
+        <li>Subir <b><span class="mono">*_reel.mp4</span></b> como Reel. Ele está mudo: escolher a trilha na biblioteca do Instagram antes de avançar.</li>
+        <li>Definir a capa manualmente com <b><span class="mono">*_reel-capa.png</span></b> — não aceitar o frame automático.</li>
+        <li>Colar a legenda do bloco <b>Reel</b> do <span class="mono">LEGENDAS.md</span>, com os hashtags que já estão no arquivo.</li>
+        <li>Subir os <b>stories na ordem dos frames</b> (frame1 → frame2 → frame3-cta) e aplicar o sticker indicado em cada um.</li>
+        <li>Sticker de link <b>só no último frame</b>, apontando para <span class="mono">calendly.com/4unik/30min</span>.</li>
+      </ol>
+    </div>
+    <div class="col">
+      <h4>Quinta — feed + e-mail + LinkedIn</h4>
+      <ol class="steps">
+        <li>Subir os cards <b><span class="mono">*_feed45_*</span></b> na ordem numérica do carrossel. A ordem carrega o argumento.</li>
+        <li>Colar a legenda do bloco <b>Feed</b>. Um CTA só — o do arquivo.</li>
+        <li>Disparar o e-mail: hero <b><span class="mono">*_email_hero.png</span></b> mais o corpo descrito no <span class="mono">LEGENDAS.md</span>, com assunto e preheader do arquivo.</li>
+        <li>Publicar no LinkedIn usando <b><span class="mono">*_og.png</span></b> (1200×630) e a legenda do bloco correspondente.</li>
+        <li>No fim do dia, anotar alcance e salvamentos do Reel de terça ao lado do conceito na tabela de status.</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Regras que não se negociam na hora de postar:</b> nenhum número de resultado inventado; nenhuma tela de produto gerada por IA — só print real; nome de cliente só com autorização escrita; handle sempre <span class="mono">@4unikoficial</span>; acentuação correta em tudo que é visível.
+  </div>
+</section>
+
+<section id="sistema" class="wrap">
+  <div class="sec-title"><span class="num">05</span><h2>O sistema de recortes</h2></div>
+  <p class="sec-sub">A regra que faz duas imagens virarem seis peças: o sujeito da cena precisa viver dentro da faixa central do master vertical, e as faixas superior e inferior ficam livres para tipografia (headline, CTA, brand bar) e para a interface do Instagram Stories.</p>
+
+  <div class="crop-grid">
+    <div>
+      <div class="frame">
+        <div class="band t"></div>
+        <div class="box b45"><span>4:5</span></div>
+        <div class="box b11"><span>1:1</span></div>
+        <div class="subject">zona do sujeito</div>
+        <div class="band b"></div>
+      </div>
+      <div class="legend">
+        <span><i style="background:repeating-linear-gradient(45deg,#EC7C0E 0 3px,transparent 3px 6px)"></i>tipografia / UI</span>
+        <span><i style="background:#00D294"></i>recorte 4:5</span>
+        <span><i style="background:#EC7C0E"></i>recorte 1:1</span>
+      </div>
+    </div>
+
+    <div>
+      <table>
+        <thead><tr><th>Formato</th><th>Dimensão</th><th>Master</th><th>Recorte (x,y)</th></tr></thead>
+        <tbody>
+          <tr><td>Stories / Reels cover</td><td><code>1080×1920</code></td><td>A · 9:16</td><td>sem recorte</td></tr>
+          <tr><td>Feed carrossel / post</td><td><code>1080×1350</code></td><td>A · 9:16</td><td><code>crop=1080:1350:0:285</code></td></tr>
+          <tr><td>Feed quadrado</td><td><code>1080×1080</code></td><td>A · 9:16</td><td><code>crop=1080:1080:0:420</code></td></tr>
+          <tr><td>E-mail hero</td><td><code>1200×600</code></td><td>B · 16:9</td><td><code>crop=1920:960:0:60</code> → resize</td></tr>
+          <tr><td>LinkedIn / X</td><td><code>1200×627</code></td><td>B · 16:9</td><td>centro + resize</td></tr>
+          <tr><td>OG / blog</td><td><code>1200×630</code></td><td>B · 16:9</td><td>centro + resize</td></tr>
+        </tbody>
+      </table>
+      <p class="sec-sub" style="margin-top:18px;font-size:13.5px">Gerar o master A em 1080×1920 (ou maior, mesma proporção) e o master B em 1920×1080 com a <b>mesma cena, mesma luz e mesma paleta</b> — é o reenquadramento que mantém a campanha coesa entre feed e e-mail. A tipografia nunca vai no prompt: entra depois, na composição HTML→PNG via Playwright, com Plus Jakarta Sans e a brand bar.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-title"><span class="num">06</span><h2>As cinco ideias</h2></div>
+  <p class="sec-sub">Uma ideia por pilar de conteúdo do DNA, cobrindo o funil de ponta a ponta: da dor operacional do RH até a decisão técnica de integração.</p>
+
+  <!-- ============ IDEIA 1 ============ -->
+  <article class="idea" id="i1">
+    <div class="idea-head">
+      <span class="idea-num">01</span>
+      <div class="tags">
+        <span class="tag pillar">Eficiência / Automação</span>
+        <span class="tag funnel">Topo · Dor</span>
+        <span class="tag fmt">Carrossel 5 cards</span>
+      </div>
+      <h3>“Reconhecimento em planilha não escala.”</h3>
+      <p>Ataca o hábito que sustenta o status quo do ICP: controlar reconhecimento com planilha, e-mail e três fornecedores. A planilha guarda registro — ela não aprova, não compra, não embala e não entrega. É o ângulo mais direto para quebrar inércia sem prometer resultado numérico.</p>
+    </div>
+
+    <div class="cols">
+      <div class="col c-feed">
+        <h4><span class="dot"></span>Feed</h4>
+        <p class="spec">Carrossel 4:5 · 1080×1350 · 5 cards</p>
+        <div class="slide"><span class="k">Card 1 · capa</span><span class="k" style="color:#6455D4">Infraestrutura de recompensas</span><strong>Reconhecimento em planilha não escala.</strong></div>
+        <div class="slide"><span class="k">Card 2</span>Cada premiação vira seis tarefas manuais: aprovar, cotar, comprar, embalar, despachar, rastrear.</div>
+        <div class="slide"><span class="k">Card 3</span><strong>O gargalo não é o orçamento. É a operação.</strong></div>
+        <div class="slide"><span class="k">Card 4</span>A 4Unik automatiza o caminho inteiro — da meta batida à entrega na casa do colaborador.</div>
+        <div class="slide"><span class="k">Card 5 · CTA</span>Sua equipe reconhecida, sua empresa crescendo.<br><span class="cta-pill">Agendar demonstração</span></div>
+        <div class="caption"><b>Legenda:</b>
+Planilha é um bom registro. É um péssimo motor.
+
+Toda premiação que passa por ela vira uma fila de tarefas manuais no colo do RH: aprovar, cotar, comprar, embalar, despachar e rastrear. O programa até existe — mas cresce no ritmo de quem consegue operá-lo à mão.
+
+A 4Unik é infraestrutura de recompensas: você define metas, regras e pontos; a plataforma cuida do catálogo, da logística e da entrega — no Brasil e no mundo.
+
+Agende uma demonstração: plataforma.4unik.com.br
+<span class="hash">#reconhecimento #RH #engajamento #gestãodepessoas #automação</span></div>
+      </div>
+
+      <div class="col c-story">
+        <h4><span class="dot"></span>Stories</h4>
+        <p class="spec">3 frames · 9:16 · 1080×1920</p>
+        <div class="slide"><span class="k">Frame 1 · enquete</span><strong>Como vocês controlam o reconhecimento hoje?</strong><br>Sticker de enquete: <em>Planilha</em> · <em>Plataforma</em></div>
+        <div class="slide"><span class="k">Frame 2 · virada</span>Planilha guarda o registro.<br><strong>Ela não faz a entrega chegar.</strong></div>
+        <div class="slide"><span class="k">Frame 3 · CTA</span>Da meta batida ao presente entregue, sem tarefa manual.<br><span class="cta-pill">Sticker de link → Ver a plataforma</span></div>
+      </div>
+
+      <div class="col c-mail">
+        <h4><span class="dot"></span>E-mail</h4>
+        <p class="spec">Nutrição topo · hero 1200×600</p>
+        <div class="slide"><span class="k">Assunto</span><strong>Quantas horas do seu RH moram numa planilha?</strong></div>
+        <div class="slide"><span class="k">Preheader</span>Reconhecer é estratégico. Operar reconhecimento, não.</div>
+        <div class="slide"><span class="k">Bloco 1 · hero</span>Imagem master B + headline <strong>“Reconhecimento em planilha não escala.”</strong></div>
+        <div class="slide"><span class="k">Bloco 2 · corpo</span>Lista das seis tarefas manuais por premiação, com ícones em <em>#00D294</em>.</div>
+        <div class="slide"><span class="k">Bloco 3 · solução</span>Os 4 passos da jornada em linha: Conecte · Configure · Engaje · Entregue.</div>
+        <div class="slide"><span class="k">Bloco 4 · CTA</span><span class="cta-pill">Agendar demonstração</span></div>
+      </div>
+    </div>
+
+    <div class="prompts">
+      <h4>Prompts Higgsfield · nano_banana_2</h4>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER A</b> · 9:16 · 1080×1920 · stories + feed</span><button class="copy">Copiar</button></div>
+        <pre>Vertical 9:16 editorial photograph for a premium B2B technology brand. A single HR manager, 35 to 45 years old, seen from a three-quarter rear angle at a modern dark office desk at night, face lit only by screen glow, calm and focused expression, no eye contact with camera. Two competing light sources define the frame: on the left, a cold pale grid of stacked abstract spreadsheet-like panels, cluttered and slightly chaotic, with no legible text; on the right, a single clean floating holographic dashboard rendered in violet #6455D4 and mint green #00D294 with soft ambient bloom. Deep near-black background #0B0A14, large soft violet glow behind the subject, subtle desk reflections. Cinematic soft key light, high contrast dark grade, shallow depth of field, 50mm lens look. Subject and both light sources confined to the central band of the frame; wide clean empty negative space across the top third and the bottom fifth. Style: restrained editorial brand campaign for enterprise software, sophisticated, not generic stock photography.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, logo, generic stock photo, outdated office, cheesy smile, person looking at camera, cartoonish style, cluttered abstract shapes without purpose, low-res, blurry.</span></pre>
+      </div>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER B</b> · 16:9 · 1920×1080 · e-mail + LinkedIn</span><button class="copy">Copiar</button></div>
+        <pre>Horizontal 16:9 editorial photograph, same scene and same lighting as the vertical version, reframed wide. A modern dark office desk at night occupying the right two thirds: an HR manager seen from a three-quarter rear angle, face lit by screen glow, with a cold cluttered grid of abstract spreadsheet-like panels on one side and a single clean floating holographic dashboard in violet #6455D4 and mint green #00D294 on the other, no legible text anywhere. The left third is deep near-black #0B0A14 empty space with a soft violet ambient glow, reserved for headline typography. Cinematic soft key light, high contrast dark grade, shallow depth of field, wide 35mm lens look. Style: restrained editorial brand campaign for enterprise software.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, logo, generic stock photo, cheesy smile, person looking at camera, low-res, blurry.</span></pre>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ IDEIA 2 ============ -->
+  <article class="idea" id="i2">
+    <div class="idea-head">
+      <span class="idea-num">02</span>
+      <div class="tags">
+        <span class="tag pillar">Inovação / Tecnologia</span>
+        <span class="tag funnel">Meio · Educação</span>
+        <span class="tag fmt">Carrossel 5 cards</span>
+      </div>
+      <h3>“Quatro passos. Nenhum deles é operacional.”</h3>
+      <p>Traduz a jornada oficial — conecte, configure, engaje, entregue — em conteúdo. É a peça que responde a ansiedade número um do ICP (“é complexo demais para implementar?”) mostrando que o esforço está na configuração, não na operação recorrente.</p>
+    </div>
+
+    <div class="cols">
+      <div class="col c-feed">
+        <h4><span class="dot"></span>Feed</h4>
+        <p class="spec">Carrossel 4:5 · 1080×1350 · 5 cards</p>
+        <div class="slide"><span class="k">Card 1 · capa</span><span class="k" style="color:#6455D4">Como funciona</span><strong>Quatro passos. Nenhum deles é operacional.</strong></div>
+        <div class="slide"><span class="k">Card 2</span><strong>1 · Conecte</strong><br>Intranet, HRIS ou console 4Unik. API e webhooks prontos para o seu stack.</div>
+        <div class="slide"><span class="k">Card 3</span><strong>2 · Configure</strong><br>Regras de pontos, benefícios e catálogo — do jeito da sua política interna.</div>
+        <div class="slide"><span class="k">Card 4</span><strong>3 · Engaje</strong><br>Metas, missões e reconhecimento entre pares creditam pontos automaticamente.</div>
+        <div class="slide"><span class="k">Card 5 · CTA</span><strong>4 · Entregue</strong><br>O colaborador escolhe. A logística é nossa.<br><span class="cta-pill">Solicitar acesso à API</span></div>
+        <div class="caption"><b>Legenda:</b>
+Todo programa de reconhecimento tem uma parte estratégica e uma parte operacional. A 4Unik existe para você ficar só com a primeira.
+
+1 · Conecte — intranet, HRIS ou o console 4Unik, via API e webhooks.
+2 · Configure — regras de pontos, benefícios e catálogo.
+3 · Engaje — metas, missões e reconhecimento entre pares creditam pontos.
+4 · Entregue — o colaborador escolhe no catálogo e a entrega acontece.
+
+Depois do passo 2, o programa roda. O RH volta para a estratégia de pessoas.
+
+Documentação e API para devs: plataforma.4unik.com.br
+<span class="hash">#API #integração #RH #HRIS #reconhecimento #automação</span></div>
+      </div>
+
+      <div class="col c-story">
+        <h4><span class="dot"></span>Stories</h4>
+        <p class="spec">4 frames · 9:16 · barra de progresso 1/4→4/4</p>
+        <div class="slide"><span class="k">Frame 1</span><strong>Conecte.</strong> Intranet, HRIS ou console. <em>Sem trocar de sistema.</em></div>
+        <div class="slide"><span class="k">Frame 2</span><strong>Configure.</strong> Regras de pontos, benefícios e catálogo.</div>
+        <div class="slide"><span class="k">Frame 3</span><strong>Engaje.</strong> Metas e missões creditam pontos sozinhas.</div>
+        <div class="slide"><span class="k">Frame 4 · CTA</span><strong>Entregue.</strong> Ele escolhe, a gente entrega.<br><span class="cta-pill">Sticker de link → Conhecer funcionalidades</span></div>
+      </div>
+
+      <div class="col c-mail">
+        <h4><span class="dot"></span>E-mail</h4>
+        <p class="spec">Sequência educativa · 4 blocos numerados</p>
+        <div class="slide"><span class="k">Assunto</span><strong>Conecte, configure, engaje, entregue.</strong></div>
+        <div class="slide"><span class="k">Preheader</span>Os quatro passos para tirar o reconhecimento da planilha.</div>
+        <div class="slide"><span class="k">Bloco 1 · hero</span>Master B + headline <strong>“Quatro passos. Nenhum deles é operacional.”</strong></div>
+        <div class="slide"><span class="k">Blocos 2–5</span>Um passo por bloco, número grande em <em>#6455D4</em>, uma linha de corpo cada.</div>
+        <div class="slide"><span class="k">Bloco 6 · CTA duplo</span><span class="cta-pill">Agendar demonstração</span> + link discreto “Documentação e API para devs”</div>
+      </div>
+    </div>
+
+    <div class="prompts">
+      <h4>Prompts Higgsfield · nano_banana_2</h4>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER A</b> · 9:16 · 1080×1920 · stories + feed</span><button class="copy">Copiar</button></div>
+        <pre>Vertical 9:16 abstract 3D render for a premium B2B technology brand. Four distinct glowing nodes arranged along a single flowing light path that ascends through the centre of the frame, each node a different geometric form — a connector ring, a settings lattice, a cluster of small orbiting particles, and a sealed premium box shape — connected by a continuous ribbon of light that shifts from violet #6455D4 at the bottom to mint green #00D294 at the top. Everything floats above a polished near-black surface #0B0A14 with soft reflections and a large ambient violet glow. Isometric-leaning perspective, clean studio lighting, matte materials with subtle glass accents, extremely precise and minimal, no clutter. All four nodes confined to the central band of the frame; generous empty negative space at the top third and bottom fifth. Style: modern enterprise infrastructure visualisation, premium and restrained.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, logo, human faces, cartoonish style, rainbow colours, cluttered particles, busy background, low-res, blurry.</span></pre>
+      </div>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER B</b> · 16:9 · 1920×1080 · e-mail + LinkedIn</span><button class="copy">Copiar</button></div>
+        <pre>Horizontal 16:9 abstract 3D render, same visual system as the vertical version, reframed wide. Four glowing nodes — a connector ring, a settings lattice, a cluster of orbiting particles, and a sealed premium box shape — arranged left to right along a horizontal ribbon of light that shifts from violet #6455D4 to mint green #00D294, floating above a polished near-black surface #0B0A14 with soft reflections and ambient violet glow. Isometric-leaning perspective, clean studio lighting, matte materials with glass accents, minimal composition. Nodes occupy the lower two thirds; the upper third is clean empty dark space reserved for headline typography.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, logo, human faces, cartoonish style, rainbow colours, busy background, low-res, blurry.</span></pre>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ IDEIA 3 ============ -->
+  <article class="idea" id="i3">
+    <div class="idea-head">
+      <span class="idea-num">03</span>
+      <div class="tags">
+        <span class="tag pillar">Engajamento / Performance</span>
+        <span class="tag funnel">Meio · Desejo</span>
+        <span class="tag fmt">Post único + carrossel curto</span>
+      </div>
+      <h3>“Ponto que não vira presente é só número na tela.”</h3>
+      <p>O único conceito emocional do conjunto — e o que melhor separa a 4Unik de um painel de gamificação. Fecha o ciclo: meta batida → pontos creditados → catálogo → entrega no Brasil e no mundo. É a peça de alcance orgânico da campanha.</p>
+    </div>
+
+    <div class="cols">
+      <div class="col c-feed">
+        <h4><span class="dot"></span>Feed</h4>
+        <p class="spec">Post único 4:5 · 1080×1350</p>
+        <div class="slide"><span class="k">Eyebrow</span>Loja de recompensas corporativa</div>
+        <div class="slide"><span class="k">Headline</span><strong>Ponto que não vira presente é só número na tela.</strong></div>
+        <div class="slide"><span class="k">Body</span>Na 4Unik o colaborador escolhe no catálogo e a entrega acontece — no Brasil e no mundo.</div>
+        <div class="slide"><span class="k">CTA</span><span class="cta-pill">Ver a plataforma</span></div>
+        <div class="slide"><span class="k">Alternativa · carrossel 3</span>“Meta batida.” → “Pontos creditados.” → “Entregue.”</div>
+        <div class="caption"><b>Legenda:</b>
+O painel mostra o saldo. O colaborador quer a caixa na porta.
+
+Um programa de reconhecimento só é percebido como real no momento da entrega — e é exatamente aí que a maioria trava, presa em cotação, fornecedor e frete.
+
+A 4Unik conecta catálogo, logística e entrega numa coisa só. O colaborador escolhe; nós cuidamos do resto, aqui e fora do Brasil.
+
+Conheça o catálogo: plataforma.4unik.com.br
+<span class="hash">#recompensas #reconhecimento #logística #engajamento #experiênciadocolaborador</span></div>
+      </div>
+
+      <div class="col c-story">
+        <h4><span class="dot"></span>Stories</h4>
+        <p class="spec">3 frames · 9:16 · ritmo de sequência</p>
+        <div class="slide"><span class="k">Frame 1</span><strong>Meta batida.</strong> <em>Sem ninguém preencher planilha.</em></div>
+        <div class="slide"><span class="k">Frame 2</span><strong>Pontos creditados.</strong> O colaborador abre o catálogo e escolhe.</div>
+        <div class="slide"><span class="k">Frame 3 · CTA</span><strong>Entrega a caminho.</strong> No Brasil e no mundo.<br><span class="cta-pill">Sticker de link → Ver a plataforma</span></div>
+      </div>
+
+      <div class="col c-mail">
+        <h4><span class="dot"></span>E-mail</h4>
+        <p class="spec">Vitrine · hero 1200×600 + grade 3 colunas</p>
+        <div class="slide"><span class="k">Assunto</span><strong>O que sua equipe escolheria?</strong></div>
+        <div class="slide"><span class="k">Preheader</span>Catálogo, logística e entrega global — sem trabalho manual do RH.</div>
+        <div class="slide"><span class="k">Bloco 1 · hero</span>Master B + headline <strong>“Ponto que não vira presente é só número na tela.”</strong></div>
+        <div class="slide"><span class="k">Bloco 2 · grade</span>Três categorias reais do catálogo, cards escuros com borda <em>#6455D4</em>.</div>
+        <div class="slide"><span class="k">Bloco 3 · reforço</span>Faixa “Entrega no Brasil e no mundo” sobre <em>#2D285B</em>.</div>
+        <div class="slide"><span class="k">Bloco 4 · CTA</span><span class="cta-pill">Ver a plataforma</span></div>
+      </div>
+    </div>
+
+    <div class="prompts">
+      <h4>Prompts Higgsfield · nano_banana_2</h4>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER A</b> · 9:16 · 1080×1920 · stories + feed</span><button class="copy">Copiar</button></div>
+        <pre>Vertical 9:16 cinematic product photograph for a premium B2B technology brand. Close, intimate shot of two hands receiving an unbranded matte dark premium gift box with a clean satin ribbon, held at chest height, warm soft key light falling on the box lid, hands and forearms only, no face visible. Behind the box, far out of focus, a dark interior dissolves into a soft violet #6455D4 ambient glow with a faint suggestion of curved light routes travelling across the background like flight paths, and a single small mint green #00D294 point of light. Deep near-black background #0B0A14, high contrast dark grade, shallow depth of field, 85mm lens look, subtle film grain. The box and hands sit inside the central band of the frame; clean empty negative space across the top third and bottom fifth. Style: premium editorial brand campaign, tactile and warm, not generic stock photography.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, brand logo on the box, generic stock photo, christmas decoration, cheesy smile, faces, cartoonish style, cluttered background, low-res, blurry.</span></pre>
+      </div>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER B</b> · 16:9 · 1920×1080 · e-mail + LinkedIn</span><button class="copy">Copiar</button></div>
+        <pre>Horizontal 16:9 cinematic product photograph, same scene, lighting and grade as the vertical version, reframed wide. Two hands receiving an unbranded matte dark premium gift box with a satin ribbon, positioned in the right third of the frame, warm soft key light on the lid, no face visible. The left two thirds fall into deep near-black #0B0A14 with a soft violet #6455D4 ambient glow and faint out-of-focus curved light routes crossing the darkness, leaving clean empty space for headline typography. High contrast dark grade, shallow depth of field, 50mm lens look, subtle film grain.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, brand logo on the box, generic stock photo, christmas decoration, faces, cartoonish style, low-res, blurry.</span></pre>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ IDEIA 4 ============ -->
+  <article class="idea" id="i4">
+    <div class="idea-head">
+      <span class="idea-num">04</span>
+      <div class="tags">
+        <span class="tag pillar">Confiança / Segurança</span>
+        <span class="tag funnel">Fundo · Objeção</span>
+        <span class="tag fmt">Carrossel 3 cards</span>
+      </div>
+      <h3>“Seu programa de reconhecimento passaria numa auditoria?”</h3>
+      <p>Peça de objeção, escrita para quem assina — diretoria, compliance, financeiro. Governança é diferencial real da 4Unik (perfis, permissões, histórico auditável) e é o argumento que destrava contrato em empresa grande. Conteúdo desconfortável na medida, sem tom alarmista.</p>
+    </div>
+
+    <div class="cols">
+      <div class="col c-feed">
+        <h4><span class="dot"></span>Feed</h4>
+        <p class="spec">Carrossel 4:5 · 1080×1350 · 3 cards</p>
+        <div class="slide"><span class="k">Card 1 · capa</span><span class="k" style="color:#6455D4">Governança</span><strong>Seu programa de reconhecimento passaria numa auditoria?</strong></div>
+        <div class="slide"><span class="k">Card 2</span>Quem aprovou. Quanto custou. Para quem foi. Quando chegou.<br><strong>Se a resposta mora em três e-mails e uma planilha, não passa.</strong></div>
+        <div class="slide"><span class="k">Card 3 · CTA</span>Perfis, permissões e histórico completo para auditoria — por padrão, não como projeto extra.<br><span class="cta-pill">Falar com especialista</span></div>
+        <div class="caption"><b>Legenda:</b>
+Quatro perguntas que toda auditoria faz sobre premiação: quem aprovou, quanto custou, para quem foi e quando chegou.
+
+Se a resposta está espalhada entre e-mails, planilhas e o WhatsApp do fornecedor, o programa funciona — mas não se sustenta numa revisão.
+
+Na 4Unik, perfis, permissões e histórico completo vêm por padrão. Cada aprovação, cada ponto e cada entrega ficam registrados no mesmo lugar, com o controle de acesso que a empresa definir.
+
+Fale com um especialista: plataforma.4unik.com.br
+<span class="hash">#governança #compliance #RH #segurançadedados #reconhecimento</span></div>
+      </div>
+
+      <div class="col c-story">
+        <h4><span class="dot"></span>Stories</h4>
+        <p class="spec">3 frames · 9:16 · sticker de quiz</p>
+        <div class="slide"><span class="k">Frame 1 · quiz</span><strong>Você rastreia quem aprovou a última premiação em menos de um minuto?</strong><br>Sticker: <em>Sim</em> · <em>Não faço ideia</em></div>
+        <div class="slide"><span class="k">Frame 2</span>Reconhecimento sem trilha de auditoria vira risco na hora da revisão.</div>
+        <div class="slide"><span class="k">Frame 3 · CTA</span>Perfis, permissões e histórico completo — por padrão.<br><span class="cta-pill">Sticker de link → Falar com especialista</span></div>
+      </div>
+
+      <div class="col c-mail">
+        <h4><span class="dot"></span>E-mail</h4>
+        <p class="spec">Fundo de funil · diretoria e compliance</p>
+        <div class="slide"><span class="k">Assunto</span><strong>Reconhecimento com trilha de auditoria.</strong></div>
+        <div class="slide"><span class="k">Preheader</span>Quem aprovou, quanto custou, para quem foi e quando chegou — em um só lugar.</div>
+        <div class="slide"><span class="k">Bloco 1 · hero</span>Master B + headline <strong>“Seu programa passaria numa auditoria?”</strong></div>
+        <div class="slide"><span class="k">Bloco 2 · checklist</span>As quatro perguntas, cada uma com check em <em>#00D294</em>.</div>
+        <div class="slide"><span class="k">Bloco 3 · prova</span>Perfis e permissões · histórico para auditoria · segurança de dados · escala.</div>
+        <div class="slide"><span class="k">Bloco 4 · CTA</span><span class="cta-pill">Falar com especialista</span></div>
+      </div>
+    </div>
+
+    <div class="prompts">
+      <h4>Prompts Higgsfield · nano_banana_2</h4>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER A</b> · 9:16 · 1080×1920 · stories + feed</span><button class="copy">Copiar</button></div>
+        <pre>Vertical 9:16 abstract 3D render for a premium enterprise security brand. A series of concentric translucent glass layers stacked in depth, forming a protective structure around a single small solid core that glows mint green #00D294. Each layer carries a faint etched pattern of clean permission-like grid lines, no legible text, edges lit in violet #6455D4. The structure floats in a deep near-black void #0B0A14 with a broad soft violet ambient glow and a single crisp rim light. Precise, calm, architectural, matte and glass materials, clean studio lighting, high contrast dark grade. The whole structure is confined to the central band of the frame; wide empty negative space at the top third and bottom fifth. Style: premium enterprise infrastructure visualisation, restrained and serious, not sci-fi cliché.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, logo, padlock cliché, hacker imagery, hoodie, matrix code, green digital rain, cartoonish style, busy background, low-res, blurry.</span></pre>
+      </div>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER B</b> · 16:9 · 1920×1080 · e-mail + LinkedIn</span><button class="copy">Copiar</button></div>
+        <pre>Horizontal 16:9 abstract 3D render, same visual system as the vertical version, reframed wide. Concentric translucent glass layers with faintly etched clean grid patterns, edges lit violet #6455D4, protecting a small solid core glowing mint green #00D294, positioned in the right third of the frame. The left two thirds are a deep near-black void #0B0A14 with a broad soft violet ambient glow, clean and empty for headline typography. Architectural composition, matte and glass materials, clean studio lighting, high contrast dark grade.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, logo, padlock cliché, hacker imagery, matrix code, cartoonish style, low-res, blurry.</span></pre>
+      </div>
+    </div>
+  </article>
+
+  <!-- ============ IDEIA 5 ============ -->
+  <article class="idea" id="i5">
+    <div class="idea-head">
+      <span class="idea-num">05</span>
+      <div class="tags">
+        <span class="tag pillar">Casos de sucesso / Integração</span>
+        <span class="tag funnel">Fundo · Decisão</span>
+        <span class="tag fmt">Post único + carrossel</span>
+      </div>
+      <h3>“Não é para trocar o seu sistema. É para conectar no que já existe.”</h3>
+      <p>Mata a objeção de implantação e conversa com o time técnico que valida a compra. É também a peça onde entram os cases reais de escala — nomes de clientes só depois de aprovação formal, e nunca acompanhados de número inventado.</p>
+    </div>
+
+    <div class="cols">
+      <div class="col c-feed">
+        <h4><span class="dot"></span>Feed</h4>
+        <p class="spec">Post único 4:5 · ou carrossel 4 com print do dashboard</p>
+        <div class="slide"><span class="k">Eyebrow</span>API &amp; Webhooks</div>
+        <div class="slide"><span class="k">Headline</span><strong>Não é para trocar o seu sistema. É para conectar no que já existe.</strong></div>
+        <div class="slide"><span class="k">Body</span>Intranet, HRIS ou console próprio. O time continua onde já está — o reconhecimento passa a acontecer sozinho.</div>
+        <div class="slide"><span class="k">CTA</span><span class="cta-pill">Solicitar acesso à API</span></div>
+        <div class="slide"><span class="k">Card extra · prova</span>Faixa de clientes atendidos em grande escala <em>(validar autorização de uso da marca antes de publicar)</em>.</div>
+        <div class="caption"><b>Legenda:</b>
+A pergunta que mais aparece na primeira reunião: “vamos ter que trocar de sistema?”
+
+Não. A 4Unik conecta na intranet, no HRIS ou nas plataformas de engajamento que a empresa já usa, via API e webhooks — e também opera sozinha pelo console, se for o caso.
+
+O colaborador continua entrando onde sempre entrou. O que muda é o que acontece depois: pontos creditados automaticamente, catálogo disponível e logística resolvida.
+
+Documentação e API para devs: plataforma.4unik.com.br
+<span class="hash">#API #webhooks #integração #HRIS #intranet #tecnologiaparaRH</span></div>
+      </div>
+
+      <div class="col c-story">
+        <h4><span class="dot"></span>Stories</h4>
+        <p class="spec">3 frames · 9:16 · usar screenshot real da plataforma</p>
+        <div class="slide"><span class="k">Frame 1</span><strong>“Vamos ter que trocar de sistema?”</strong> <em>Não.</em></div>
+        <div class="slide"><span class="k">Frame 2 · screenshot</span>Dashboard do Gestor real, com destaque em uma funcionalidade só — <em>nunca gerar UI por IA</em>.</div>
+        <div class="slide"><span class="k">Frame 3 · CTA</span>API, webhooks e integração com intranet e HRIS.<br><span class="cta-pill">Sticker de link → Solicitar acesso à API</span></div>
+      </div>
+
+      <div class="col c-mail">
+        <h4><span class="dot"></span>E-mail</h4>
+        <p class="spec">Fundo de funil · técnico e comercial</p>
+        <div class="slide"><span class="k">Assunto</span><strong>Sua stack não precisa mudar.</strong></div>
+        <div class="slide"><span class="k">Preheader</span>API, webhooks e integração com intranet e HRIS.</div>
+        <div class="slide"><span class="k">Bloco 1 · hero</span>Master B + headline <strong>“Conecte no que já existe.”</strong></div>
+        <div class="slide"><span class="k">Bloco 2 · três caminhos</span>Via API · via intranet/HRIS · via console 4Unik.</div>
+        <div class="slide"><span class="k">Bloco 3 · prova social</span>Depoimento real de cliente, com nome e cargo autorizados.</div>
+        <div class="slide"><span class="k">Bloco 4 · CTA duplo</span><span class="cta-pill">Agendar demonstração</span> + “Documentação e API para devs →”</div>
+      </div>
+    </div>
+
+    <div class="prompts">
+      <h4>Prompts Higgsfield · nano_banana_2</h4>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER A</b> · 9:16 · 1080×1920 · stories + feed</span><button class="copy">Copiar</button></div>
+        <pre>Vertical 9:16 editorial photograph for a premium B2B technology brand. A modern dark meeting room seen at eye level: in the mid-ground, three floating translucent interface panels of different sizes hover side by side, rendered as clean abstract dashboards with soft violet #6455D4 accent bars and one mint green #00D294 highlight, containing no legible text. A thin continuous ribbon of light connects the three panels, suggesting integration between separate systems. Two colleagues stand far in the background, heavily out of focus, silhouetted against the glow, no faces readable. Deep near-black environment #0B0A14, soft ambient violet glow, cinematic soft key light, high contrast dark grade, shallow depth of field, 35mm lens look. Panels and figures confined to the central band; clean empty negative space at the top third and bottom fifth. Style: restrained enterprise brand campaign, sophisticated, not generic stock photography.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, logo, third-party software UI, generic stock photo, handshake, cheesy smile, people looking at camera, outdated office, cartoonish style, low-res, blurry.</span></pre>
+      </div>
+      <div class="prompt">
+        <div class="prompt-bar"><span class="lbl"><b>MASTER B</b> · 16:9 · 1920×1080 · e-mail + LinkedIn</span><button class="copy">Copiar</button></div>
+        <pre>Horizontal 16:9 editorial photograph, same scene, lighting and grade as the vertical version, reframed wide. A modern dark meeting room: three floating translucent abstract interface panels with violet #6455D4 accent bars and one mint green #00D294 highlight, connected by a thin continuous ribbon of light, arranged across the right two thirds of the frame, no legible text. Two colleagues far out of focus in the background, silhouetted, no readable faces. The left third stays deep near-black #0B0A14 with a soft violet ambient glow, clean and empty for headline typography. Cinematic soft key light, high contrast dark grade, shallow depth of field, 35mm lens look.
+<span class="neg">Negative: text, letters, numbers, typography, watermark, logo, third-party software UI, generic stock photo, handshake, cheesy smile, outdated office, low-res, blurry.</span></pre>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section id="producao" class="wrap">
+  <div class="sec-title"><span class="num">07</span><h2>Produção</h2></div>
+  <p class="sec-sub">O pipeline como ele ficou depois da regeração de agosto. Só é preciso rodar de novo se alguma copy mudar — as imagens já estão em <span class="mono">assets/generated_images/v2/</span> nos tamanhos certos.</p>
+
+  <pre class="sh"><span class="cmt"># 1 · gerar as imagens (só se faltar alguma; pula o que já existe)</span>
+<span class="cmt">#    modelo z_image · 4 cenas por conceito · a,b,c em 9:16 e d em 16:9</span>
+node tools/generate-images.mjs                 <span class="cmt"># tudo</span>
+node tools/generate-images.mjs i3-presente     <span class="cmt"># só um conceito</span>
+
+<span class="cmt"># 2 · ligar as imagens nas specs (preserva os prints reais)</span>
+node tools/remap-images.mjs
+
+<span class="cmt"># 3 · compor as peças estáticas (Playwright HTML→PNG)</span>
+<span class="cmt">#    avisa em ⚠ se a copy não couber nos mínimos do DNA</span>
+node tools/compose.mjs entregas/specs/i3-presente.json \
+  --out entregas/2026-08-06_i3-presente
+
+<span class="cmt"># 4 · renderizar o Reel (frames HTML → ffmpeg · 1080×1920 · sem áudio)</span>
+node tools/motion.mjs entregas/specs/motion/i3-presente.json \
+  --out entregas/2026-08-06_i3-presente
+
+<span class="cmt"># 5 · revisar tudo numa página só</span>
+node tools/contact-sheet.mjs                   <span class="cmt"># → entregas/CONTACT-SHEET.html</span></pre>
+
+  <div class="note" style="margin:26px 0">
+    <b>Antes de publicar — quatro checagens que não são opcionais.</b><br>
+    1 · Nenhuma peça aqui carrega número de performance, porque não há dado auditado para sustentar. Se entrar métrica, tem que vir de case fechado.<br>
+    2 · Nomes de clientes (ideia 05) só vão ao ar com autorização formal de uso de marca — dada em 06/08 para o bloco de marcas.<br>
+    3 · Interface da plataforma em criativo é sempre screenshot real — UI gerada por IA quebra o DNA e vira risco de promessa de funcionalidade inexistente.<br>
+    4 · O painel do gestor fica em domínio de produto não divulgado. Descrever a função, nunca o endereço. Em peça pública só entram <span class="mono">4unik.com.br</span> e <span class="mono">plataforma.4unik.com.br</span>.
+  </div>
+
+  <div class="checklist">
+    <div class="check"><span class="ic">✓</span><span><b>Teste de substituição</b>Trocar “4Unik” por qualquer software de RH e o conceito deixa de fazer sentido.</span></div>
+    <div class="check"><span class="ic">✓</span><span><b>Acentuação</b>100% do português revisado — sem “voce”, “nao”, “reuniao”.</span></div>
+    <div class="check"><span class="ic">✓</span><span><b>Um CTA por frame</b>Nenhuma peça com dois CTAs competindo no mesmo destaque.</span></div>
+    <div class="check"><span class="ic">✓</span><span><b>Tamanhos mínimos</b>Headline 64 · body 36 · eyebrow 30 · CTA 34 em 1080px.</span></div>
+    <div class="check"><span class="ic">✓</span><span><b>Brand bar</b>Logo 4Unik + URL legíveis, sem fade, sem distorção.</span></div>
+    <div class="check"><span class="ic">✓</span><span><b>Sujeito enquadrado</b>Recorte 9:16 com <span class="mono">object-position: center 38%</span> — nenhum rosto cortado no topo.</span></div>
+    <div class="check"><span class="ic">✓</span><span><b>Fundo visível no Reel</b>Scrim aberto no topo: a foto aparece atrás da tipografia, nada de frame preto.</span></div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <b>4Unik · Kit de conteúdo — agosto de 2026.</b> Cinco conceitos, um por pilar do DNA · 55 peças estáticas · 5 Reels · publicação de 11/08 a 10/09.<br>
+  Construído sobre <code>dna/4unik-dna.md</code>, <code>4unik-voice.md</code>, <code>4unik-visual.md</code>, <code>4unik-anti-patterns.md</code> e <code>4unik-prompts.md</code>.<br>
+  Regras de cada post em <code>entregas/2026-08-06_&lt;conceito&gt;/LEGENDAS.md</code> · calendário em <code>entregas/CALENDARIO.md</code> · painel em <code>entregas/CAMPANHAS-ADS.md</code>.<br><br>
+  <b>Arquivo histórico</b> — em <code>_arquivo/</code> no repositório, rodadas anteriores à releitura do DNA, mantidas só como registro. Nada delas vai para produção:
+  ideação inicial, teste A/B e composições A/B — só no repositório, fora desta página.
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var pre = btn.closest('.prompt').querySelector('pre');
+    navigator.clipboard.writeText(pre.innerText.trim()).then(function(){
+      var old = btn.textContent;
+      btn.textContent = 'Copiado';
+      btn.classList.add('ok');
+      setTimeout(function(){ btn.textContent = old; btn.classList.remove('ok'); }, 1600);
+    });
+  });
+});
+</script>
+</body>
+</html>
