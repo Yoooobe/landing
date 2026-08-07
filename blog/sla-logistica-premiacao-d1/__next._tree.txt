@@ -1,5 +1,5 @@
 :HL["/landing/_next/static/chunks/01s7gld5~ix7l.css","style"]
-:HL["/landing/_next/static/chunks/11o33va_7vi2m.css","style"]
+:HL["/landing/_next/static/chunks/0xbf76~p.~_or.css","style"]
 :HL["/landing/_next/static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/landing/brand/4unik-wordmark@2x.webp","image",{"fetchPriority":"high"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"(pt)","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"sla-logistica-premiacao-d1","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"iZD0qcv1GcdVYRfZn1zkv"}
+0:{"tree":{"name":"","param":null,"prefetchHints":0,"slots":{"children":{"name":"(pt)","param":null,"prefetchHints":16,"slots":{"children":{"name":"blog","param":null,"prefetchHints":0,"slots":{"children":{"name":"slug","param":{"type":"d","key":"sla-logistica-premiacao-d1","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}}}},"staleTime":300,"buildId":"isRio_w9kLcjofm-LjN--"}

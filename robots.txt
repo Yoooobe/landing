@@ -3,5 +3,6 @@ Allow: /
 Disallow: /landing/studio/
 Disallow: /landing/workvivo/
 Disallow: /landing/en/workvivo/
+Disallow: /landing/campanha/
 
 Sitemap: https://plataforma.4unik.com.br/landing/sitemap.xml
