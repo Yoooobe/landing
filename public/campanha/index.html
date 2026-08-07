@@ -11,17 +11,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --primary-dark:#0B0A14;
-  --ink:#08090D;
-  --panel:#101116;
-  --panel-2:#15161E;
-  --blue:#6455D4;
+  /* tema claro: --white é "texto forte" e --primary-dark é "fundo da página";
+     os nomes vêm do tema escuro original e continuam com o mesmo papel. */
+  --primary-dark:#F6F6F9;
+  --ink:#FFFFFF;
+  --panel:#FFFFFF;
+  --panel-2:#FFFFFF;
+  --blue:#4B3FB0;
   --dark-blue:#2D285B;
-  --green:#00D294;
-  --orange:#EC7C0E;
-  --white:#FFFFFF;
-  --muted:#9C9EA5;
-  --line:rgba(255,255,255,.08);
+  --green:#00785A;
+  --orange:#B35F07;
+  --white:#14151C;
+  --on-accent:#FFFFFF;
+  --muted:#63656F;
+  --line:#E3E3EA;
   --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
 }
@@ -34,15 +37,15 @@ body{
 body::before{
   content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background:
-    radial-gradient(900px 500px at 12% -8%, rgba(100,85,212,.28), transparent 60%),
-    radial-gradient(700px 420px at 92% 8%, rgba(0,210,148,.10), transparent 62%);
+    radial-gradient(900px 500px at 12% -8%, rgba(100,85,212,.10), transparent 60%),
+    radial-gradient(700px 420px at 92% 8%, rgba(0,210,148,.07), transparent 62%);
 }
 .wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 24px}
 
 /* ---------- NAV ---------- */
 nav{
   position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
-  background:rgba(8,9,13,.82);border-bottom:1px solid var(--line);
+  background:rgba(246,246,249,.86);border-bottom:1px solid var(--line);
 }
 nav .wrap{display:flex;align-items:center;gap:24px;height:64px;overflow-x:auto}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;flex:none}
@@ -113,7 +116,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}
 th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:700}
 td code{font-family:var(--mono);font-size:12.5px;color:var(--green)}
-tbody tr:hover{background:rgba(255,255,255,.025)}
+tbody tr:hover{background:#FAFAFC}
 
 /* ---------- IDEA CARDS ---------- */
 .idea{
@@ -125,13 +128,13 @@ tbody tr:hover{background:rgba(255,255,255,.025)}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px;border:1px solid}
 .tag.pillar{color:var(--blue);border-color:rgba(100,85,212,.45);background:rgba(100,85,212,.12)}
-.tag.funnel{color:var(--muted);border-color:var(--line);background:rgba(255,255,255,.03)}
+.tag.funnel{color:var(--muted);border-color:var(--line);background:#F2F2F6}
 .tag.fmt{color:var(--green);border-color:rgba(0,210,148,.3);background:rgba(0,210,148,.08)}
 .idea-head h3{font-size:clamp(21px,2.6vw,28px);letter-spacing:-.025em;margin:0 0 10px;font-weight:800;line-height:1.15}
 .idea-head p{margin:0;color:var(--muted);max-width:72ch;font-size:15px}
 .idea-num{
   position:absolute;right:26px;top:22px;font-family:var(--mono);font-size:46px;font-weight:700;
-  color:rgba(255,255,255,.06);letter-spacing:-.04em;line-height:1;
+  color:rgba(20,21,28,.05);letter-spacing:-.04em;line-height:1;
 }
 
 .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
@@ -162,18 +165,18 @@ tbody tr:hover{background:rgba(255,255,255,.025)}
 .slide strong{color:var(--white);font-weight:700}
 .slide em{font-style:normal;color:var(--green)}
 .cta-pill{
-  display:inline-block;margin-top:4px;font-size:12.5px;font-weight:700;color:var(--white);
+  display:inline-block;margin-top:4px;font-size:12.5px;font-weight:700;color:var(--on-accent);
   background:linear-gradient(90deg,var(--blue),var(--dark-blue));padding:8px 15px;border-radius:8px;
 }
 .caption{
-  margin-top:14px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.025);
+  margin-top:14px;font-size:13px;color:var(--muted);background:#FAFAFC;
   border:1px dashed var(--line);border-radius:10px;padding:12px 14px;white-space:pre-line;
 }
 .caption b{color:var(--white)}
 .hash{color:var(--blue);font-weight:600}
 
 /* ---------- PROMPTS ---------- */
-.prompts{padding:26px 30px;border-top:1px solid var(--line);background:rgba(8,9,13,.45)}
+.prompts{padding:26px 30px;border-top:1px solid var(--line);background:#FAFAFC}
 .prompts > h4{
   font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--white);
   margin:0 0 16px;font-weight:800;display:flex;align-items:center;gap:9px;
@@ -187,22 +190,22 @@ tbody tr:hover{background:rgba(255,255,255,.025)}
 .prompt-bar .lbl{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--blue)}
 .prompt-bar .lbl b{color:var(--white)}
 .copy{
-  border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--muted);
+  border:1px solid var(--line);background:#F2F2F6;color:var(--muted);
   font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
   padding:6px 11px;border-radius:7px;cursor:pointer;transition:.18s;flex:none;
 }
 .copy:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
-.copy.ok{background:var(--green);color:#062;border-color:var(--green)}
+.copy.ok{background:var(--green);color:#fff;border-color:var(--green)}
 .prompt pre{
   margin:0;padding:14px;font-family:var(--mono);font-size:12px;line-height:1.65;
-  color:#cdd2dc;white-space:pre-wrap;word-break:break-word;
+  color:#3B3E4A;white-space:pre-wrap;word-break:break-word;
 }
-.neg{color:#FF6568}
+.neg{color:#C42B2E}
 
 /* ---------- MISC ---------- */
 .note{
   border:1px solid rgba(236,124,14,.35);background:rgba(236,124,14,.08);
-  border-radius:12px;padding:16px 18px;font-size:14px;color:#f2d5b4;
+  border-radius:12px;padding:16px 18px;font-size:14px;color:#4A3210;
 }
 .note b{color:var(--orange)}
 .checklist{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px}
@@ -212,11 +215,13 @@ tbody tr:hover{background:rgba(255,255,255,.025)}
 }
 .check b{color:var(--white);display:block;font-size:14px;margin-bottom:2px}
 .check .ic{color:var(--green);font-weight:800;flex:none}
+/* terminal continua escuro de propósito: é o único bloco da página que
+   representa algo que roda fora dela. */
 pre.sh{
-  background:var(--ink);border:1px solid var(--line);border-radius:12px;padding:16px;
-  font-family:var(--mono);font-size:12.5px;color:#cdd2dc;overflow-x:auto;line-height:1.7;
+  background:#14151C;border:1px solid #14151C;border-radius:12px;padding:16px;
+  font-family:var(--mono);font-size:12.5px;color:#E4E6EC;overflow-x:auto;line-height:1.7;
 }
-pre.sh .cmt{color:#5d6270}
+pre.sh .cmt{color:#8A8D99}
 footer{padding:48px 0 64px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
 footer b{color:var(--white)}
 footer a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(0,210,148,.35)}
@@ -228,7 +233,7 @@ footer a:hover{border-bottom-color:var(--green)}
   letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid;
 }
 .pill.ok{color:var(--green);border-color:rgba(0,210,148,.35);background:rgba(0,210,148,.1)}
-.pill.wait{color:var(--muted);border-color:var(--line);background:rgba(255,255,255,.03)}
+.pill.wait{color:var(--muted);border-color:var(--line);background:#F2F2F6}
 .pill.block{color:var(--orange);border-color:rgba(236,124,14,.4);background:rgba(236,124,14,.1)}
 .todo{display:grid;gap:10px;margin:0;padding:0;list-style:none}
 .todo li{
