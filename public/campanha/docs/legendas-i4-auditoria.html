@@ -1,0 +1,256 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Ideia 04 — Seu programa passaria numa auditoria? · 4Unik</title>
+<meta name="description" content="Legenda pronta de cada peça, estrutura do e-mail e as regras que valem na hora de postar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F6F9;--panel:#FFFFFF;--ink:#14151C;--muted:#63656F;--line:#E3E3EA;
+  --blue:#4B3FB0;--green:#00785A;--orange:#B35F07;
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:rgba(246,246,249,.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+nav a{color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:500}
+nav a:hover{color:var(--ink)}
+nav .brand{font-weight:800;color:var(--ink);font-size:15px;margin-right:auto}
+nav .brand .mark{color:var(--blue)}
+header.doc{padding:44px 0 8px}
+header.doc .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--blue);font-weight:600}
+header.doc h1{font-size:clamp(26px,4vw,38px);line-height:1.14;letter-spacing:-.02em;margin:10px 0 12px}
+header.doc .desc{color:var(--muted);font-size:15.5px;max-width:60ch;margin:0}
+.barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 8px;
+  padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.barra .caminho{font-family:var(--mono);font-size:12px;color:var(--muted);margin-right:auto;
+  word-break:break-all}
+.btn{font-family:var(--font);font-size:12.5px;font-weight:600;cursor:pointer;
+  padding:7px 13px;border-radius:8px;border:1px solid var(--line);
+  background:#FAFAFC;color:var(--ink)}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.aviso{margin:0 0 26px;font-size:13px;color:var(--muted)}
+main{padding:8px 0 60px}
+main h2{font-size:23px;letter-spacing:-.01em;margin:38px 0 12px;padding-top:10px;
+  border-top:1px solid var(--line)}
+main h1{font-size:27px;margin:30px 0 12px}
+main h3{font-size:17px;margin:26px 0 8px}
+main h4{font-size:14.5px;margin:20px 0 6px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;font-family:var(--mono)}
+main p{margin:0 0 14px}
+main a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(75,63,176,.3)}
+main a:hover{border-bottom-color:var(--blue)}
+main ul,main ol{margin:0 0 16px;padding-left:22px}
+main li{margin:0 0 6px}
+main li.task{list-style:none;position:relative;padding-left:26px}
+main li.task::before{content:'';position:absolute;left:0;top:5px;width:15px;height:15px;
+  border:1.5px solid var(--line);border-radius:4px;background:#fff}
+main li.task.feito::before{content:'✓';background:var(--green);border-color:var(--green);
+  color:#fff;font-size:11px;font-weight:700;line-height:15px;text-align:center}
+main li.task.feito{color:var(--muted)}
+main hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+main blockquote{margin:0 0 18px;padding:12px 16px;background:#FAFAFC;
+  border-left:3px solid var(--blue);border-radius:0 10px 10px 0;color:var(--muted)}
+main blockquote p{margin:0 0 6px}
+main blockquote p:last-child{margin:0}
+code{font-family:var(--mono);font-size:.88em;background:#F2F2F6;
+  border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--blue)}
+pre.code{background:#14151C;border-radius:12px;padding:16px;overflow-x:auto;margin:0 0 18px}
+pre.code code{background:none;border:0;padding:0;color:#E4E6EC;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 20px;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  background:#FAFAFC;font-weight:700;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td code{color:var(--green)}
+textarea{display:none;width:100%;min-height:70vh;margin:0 0 20px;padding:18px;
+  font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;resize:vertical}
+body.fonte main>:not(textarea){display:none}
+body.fonte textarea{display:block}
+footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:13px}
+footer a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(0,120,90,.3)}
+@media(max-width:640px){.barra .caminho{width:100%;margin-bottom:6px}}
+</style></head><body>
+<nav><div class="wrap">
+  <span class="brand"><span class="mark">4</span>Unik · documentos</span>
+  <a href="index.html">Índice</a>
+  <!-- caminhos do pacote; tools/publish-kit.py reescreve para index.html /
+       contact-sheet.html ao copiar para public/campanha/ -->
+  <a href="../">Kit</a>
+  <a href="../contact-sheet.html">Peças</a>
+</div></nav>
+<div class="wrap">
+<header class="doc">
+  <span class="kicker">Legendas, peça a peça</span>
+  <h1>Ideia 04 — Seu programa passaria numa auditoria?</h1>
+  <p class="desc">Legenda pronta de cada peça, estrutura do e-mail e as regras que valem na hora de postar.</p>
+  <div class="barra">
+    <span class="caminho">entregas/2026-08-06_i4-auditoria/LEGENDAS.md · 89 linhas</span>
+    <button class="btn" id="ver">Ver a fonte</button>
+    <button class="btn" id="copiar">Copiar</button>
+    <button class="btn" id="baixar">Baixar .md</button>
+  </div>
+  <p class="aviso"><a href="../contact-sheet.html#i4-auditoria">ver as peças deste conceito</a> · O arquivo de verdade é <code>entregas/2026-08-06_i4-auditoria/LEGENDAS.md</code> no repositório. O que você digitar aqui serve para redigir e copiar — esta página não grava.</p>
+</header>
+<main>
+<h1 id="ideia-04-seu-programa-passaria-numa-auditoria">Ideia 04 — "Seu programa passaria numa auditoria?"</h1>
+<p>Pilar: Confiança / Segurança · Funil: fundo (objeção) · Composição: 2026-08-06</p>
+<p>Peça escrita para quem assina — diretoria, compliance, financeiro. Governança (perfis, permissões, histórico auditável) é o argumento que destrava contrato em empresa grande. Desconfortável na medida, sem tom alarmista.</p>
+<hr>
+<h2 id="feed-carrossel-4-5-1080-1350">Feed — carrossel 4:5 (1080×1350)</h2>
+<p>Ordem de upload:</p>
+<ol><li><code>i4-auditoria_feed45_card1-capa.png</code></li><li><code>i4-auditoria_feed45_card2-perguntas.png</code></li><li><code>i4-auditoria_feed45_card3-cta.png</code></li></ol>
+<h3 id="legenda">Legenda</h3>
+<blockquote><p>Quatro perguntas que toda auditoria faz sobre premiação: quem aprovou, quanto custou, para quem foi e quando chegou.</p>
+<p>Se a resposta está espalhada entre e-mails, planilhas e o WhatsApp do fornecedor, o programa funciona — mas não se sustenta numa revisão.</p>
+<p>Na 4Unik, perfis, permissões e histórico completo vêm por padrão. Cada aprovação, cada ponto e cada entrega ficam registrados no mesmo lugar, com o controle de acesso que a empresa definir.</p>
+<p>Fale com um especialista: plataforma.4unik.com.br</p>
+<p>#governança #compliance #RH #segurançadedados #reconhecimento</p></blockquote>
+<hr>
+<h2 id="stories-3-frames-1080-1920">Stories — 3 frames (1080×1920)</h2>
+<div class="tw"><table><thead><tr><th>Arquivo</th><th>Sticker</th></tr></thead><tbody><tr><td><code>i4-auditoria_story_frame1-quiz.png</code></td><td>Enquete: <strong>Sim</strong> · <strong>Não faço ideia</strong></td></tr><tr><td><code>i4-auditoria_story_frame2-risco.png</code></td><td>—</td></tr><tr><td><code>i4-auditoria_story_frame3-cta.png</code></td><td>Link → <code>calendly.com/4unik/30min</code> ("Falar com especialista")</td></tr></tbody></table></div>
+<p>No frame 1 o sticker de enquete entra na faixa livre acima da headline — a copy já está posicionada baixa para deixar espaço.</p>
+<hr>
+<h2 id="e-mail-fundo-de-funil-diretoria-e-compliance">E-mail — fundo de funil (diretoria e compliance)</h2>
+<ul><li><strong>Assunto</strong>: Reconhecimento com trilha de auditoria.</li><li><strong>Preheader</strong>: Quem aprovou, quanto custou, para quem foi e quando chegou — em um só lugar.</li><li><strong>Bloco 1 · hero</strong>: <code>i4-auditoria_email_hero.png</code> (1200×600)</li><li><strong>Bloco 2 · checklist</strong>: as quatro perguntas, cada uma com check em <code>#00D294</code>.</li><li><strong>Bloco 3 · prova</strong>: perfis e permissões · histórico para auditoria · segurança de dados · escala.</li><li><strong>Bloco 4 · CTA</strong>: "Falar com especialista" → <code>calendly.com/4unik/30min</code></li></ul>
+<hr>
+<h2 id="og-blog">OG / blog</h2>
+<p><code>i4-auditoria_og.png</code> (1200×630)</p>
+<hr>
+<h2 id="reel-9-16-1080-1920-14s">Reel — 9:16 (1080×1920 · 14s)</h2>
+<p><code>i4-auditoria_reel.mp4</code> · capa <code>i4-auditoria_reel-capa.png</code></p>
+<p>Quatro cenas: a pergunta → as quatro perguntas da auditoria → o risco → o que a plataforma entrega por padrão. Sem print: a peça é argumento, não demonstração.</p>
+<p><strong>Legenda:</strong> a mesma do carrossel.</p>
+<p><strong>Trilha:</strong> biblioteca do Instagram no momento do post.</p>
+<hr>
+<h2 id="checklist-de-publicacao">Checklist de publicação</h2>
+<ul><li class="task">Nenhum número de resultado — não há dado auditado.</li><li class="task">Não prometer conformidade com norma específica (LGPD, SOC 2, ISO) sem certificação confirmada pelo jurídico.</li><li class="task">Handle <code>@4unikoficial</code> na brand bar.</li><li class="task">Tom sóbrio: a peça aponta risco, não faz ameaça.</li></ul>
+<textarea id="fonte" spellcheck="false"># Ideia 04 — "Seu programa passaria numa auditoria?"
+
+Pilar: Confiança / Segurança · Funil: fundo (objeção) · Composição: 2026-08-06
+
+Peça escrita para quem assina — diretoria, compliance, financeiro. Governança
+(perfis, permissões, histórico auditável) é o argumento que destrava contrato em
+empresa grande. Desconfortável na medida, sem tom alarmista.
+
+---
+
+## Feed — carrossel 4:5 (1080×1350)
+
+Ordem de upload:
+
+1. `i4-auditoria_feed45_card1-capa.png`
+2. `i4-auditoria_feed45_card2-perguntas.png`
+3. `i4-auditoria_feed45_card3-cta.png`
+
+### Legenda
+
+&gt; Quatro perguntas que toda auditoria faz sobre premiação: quem aprovou, quanto
+&gt; custou, para quem foi e quando chegou.
+&gt;
+&gt; Se a resposta está espalhada entre e-mails, planilhas e o WhatsApp do
+&gt; fornecedor, o programa funciona — mas não se sustenta numa revisão.
+&gt;
+&gt; Na 4Unik, perfis, permissões e histórico completo vêm por padrão. Cada
+&gt; aprovação, cada ponto e cada entrega ficam registrados no mesmo lugar, com o
+&gt; controle de acesso que a empresa definir.
+&gt;
+&gt; Fale com um especialista: plataforma.4unik.com.br
+&gt;
+&gt; #governança #compliance #RH #segurançadedados #reconhecimento
+
+---
+
+## Stories — 3 frames (1080×1920)
+
+| Arquivo | Sticker |
+|---|---|
+| `i4-auditoria_story_frame1-quiz.png` | Enquete: **Sim** · **Não faço ideia** |
+| `i4-auditoria_story_frame2-risco.png` | — |
+| `i4-auditoria_story_frame3-cta.png` | Link → `calendly.com/4unik/30min` ("Falar com especialista") |
+
+No frame 1 o sticker de enquete entra na faixa livre acima da headline — a copy
+já está posicionada baixa para deixar espaço.
+
+---
+
+## E-mail — fundo de funil (diretoria e compliance)
+
+- **Assunto**: Reconhecimento com trilha de auditoria.
+- **Preheader**: Quem aprovou, quanto custou, para quem foi e quando chegou — em
+  um só lugar.
+- **Bloco 1 · hero**: `i4-auditoria_email_hero.png` (1200×600)
+- **Bloco 2 · checklist**: as quatro perguntas, cada uma com check em `#00D294`.
+- **Bloco 3 · prova**: perfis e permissões · histórico para auditoria ·
+  segurança de dados · escala.
+- **Bloco 4 · CTA**: "Falar com especialista" → `calendly.com/4unik/30min`
+
+---
+
+## OG / blog
+
+`i4-auditoria_og.png` (1200×630)
+
+---
+
+## Reel — 9:16 (1080×1920 · 14s)
+
+`i4-auditoria_reel.mp4` · capa `i4-auditoria_reel-capa.png`
+
+Quatro cenas: a pergunta → as quatro perguntas da auditoria → o risco → o que a
+plataforma entrega por padrão. Sem print: a peça é argumento, não demonstração.
+
+**Legenda:** a mesma do carrossel.
+
+**Trilha:** biblioteca do Instagram no momento do post.
+
+---
+
+## Checklist de publicação
+
+- [ ] Nenhum número de resultado — não há dado auditado.
+- [ ] Não prometer conformidade com norma específica (LGPD, SOC 2, ISO) sem
+      certificação confirmada pelo jurídico.
+- [ ] Handle `@4unikoficial` na brand bar.
+- [ ] Tom sóbrio: a peça aponta risco, não faz ameaça.
+</textarea>
+</main>
+<footer>
+  <a href="index.html">← todos os documentos</a> · <a href="../index.html">kit da campanha</a> · <a href="../contact-sheet.html">as 55 peças</a>
+</footer>
+</div>
+<script>
+(function(){
+  var ver=document.getElementById('ver'),ta=document.getElementById('fonte');
+  ver.onclick=function(){
+    var on=document.body.classList.toggle('fonte');
+    ver.classList.toggle('on',on);
+    ver.textContent=on?'Ver formatado':'Ver a fonte';
+  };
+  document.getElementById('copiar').onclick=function(){
+    var b=this;navigator.clipboard.writeText(ta.value).then(function(){
+      b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600);
+    });
+  };
+  document.getElementById('baixar').onclick=function(){
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([ta.value],{type:'text/markdown'}));
+    a.download="LEGENDAS.md";a.click();URL.revokeObjectURL(a.href);
+  };
+})();
+</script>
+</body></html>

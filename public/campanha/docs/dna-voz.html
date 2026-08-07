@@ -1,0 +1,325 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>2 · Voz e tom · 4Unik</title>
+<meta name="description" content="Como a marca escreve, o que ela nunca diz e a lista de anti-slop.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F6F9;--panel:#FFFFFF;--ink:#14151C;--muted:#63656F;--line:#E3E3EA;
+  --blue:#4B3FB0;--green:#00785A;--orange:#B35F07;
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:rgba(246,246,249,.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+nav a{color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:500}
+nav a:hover{color:var(--ink)}
+nav .brand{font-weight:800;color:var(--ink);font-size:15px;margin-right:auto}
+nav .brand .mark{color:var(--blue)}
+header.doc{padding:44px 0 8px}
+header.doc .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--blue);font-weight:600}
+header.doc h1{font-size:clamp(26px,4vw,38px);line-height:1.14;letter-spacing:-.02em;margin:10px 0 12px}
+header.doc .desc{color:var(--muted);font-size:15.5px;max-width:60ch;margin:0}
+.barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 8px;
+  padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.barra .caminho{font-family:var(--mono);font-size:12px;color:var(--muted);margin-right:auto;
+  word-break:break-all}
+.btn{font-family:var(--font);font-size:12.5px;font-weight:600;cursor:pointer;
+  padding:7px 13px;border-radius:8px;border:1px solid var(--line);
+  background:#FAFAFC;color:var(--ink)}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.aviso{margin:0 0 26px;font-size:13px;color:var(--muted)}
+main{padding:8px 0 60px}
+main h2{font-size:23px;letter-spacing:-.01em;margin:38px 0 12px;padding-top:10px;
+  border-top:1px solid var(--line)}
+main h1{font-size:27px;margin:30px 0 12px}
+main h3{font-size:17px;margin:26px 0 8px}
+main h4{font-size:14.5px;margin:20px 0 6px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;font-family:var(--mono)}
+main p{margin:0 0 14px}
+main a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(75,63,176,.3)}
+main a:hover{border-bottom-color:var(--blue)}
+main ul,main ol{margin:0 0 16px;padding-left:22px}
+main li{margin:0 0 6px}
+main li.task{list-style:none;position:relative;padding-left:26px}
+main li.task::before{content:'';position:absolute;left:0;top:5px;width:15px;height:15px;
+  border:1.5px solid var(--line);border-radius:4px;background:#fff}
+main li.task.feito::before{content:'✓';background:var(--green);border-color:var(--green);
+  color:#fff;font-size:11px;font-weight:700;line-height:15px;text-align:center}
+main li.task.feito{color:var(--muted)}
+main hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+main blockquote{margin:0 0 18px;padding:12px 16px;background:#FAFAFC;
+  border-left:3px solid var(--blue);border-radius:0 10px 10px 0;color:var(--muted)}
+main blockquote p{margin:0 0 6px}
+main blockquote p:last-child{margin:0}
+code{font-family:var(--mono);font-size:.88em;background:#F2F2F6;
+  border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--blue)}
+pre.code{background:#14151C;border-radius:12px;padding:16px;overflow-x:auto;margin:0 0 18px}
+pre.code code{background:none;border:0;padding:0;color:#E4E6EC;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 20px;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  background:#FAFAFC;font-weight:700;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td code{color:var(--green)}
+textarea{display:none;width:100%;min-height:70vh;margin:0 0 20px;padding:18px;
+  font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;resize:vertical}
+body.fonte main>:not(textarea){display:none}
+body.fonte textarea{display:block}
+footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:13px}
+footer a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(0,120,90,.3)}
+@media(max-width:640px){.barra .caminho{width:100%;margin-bottom:6px}}
+</style></head><body>
+<nav><div class="wrap">
+  <span class="brand"><span class="mark">4</span>Unik · documentos</span>
+  <a href="index.html">Índice</a>
+  <!-- caminhos do pacote; tools/publish-kit.py reescreve para index.html /
+       contact-sheet.html ao copiar para public/campanha/ -->
+  <a href="../">Kit</a>
+  <a href="../contact-sheet.html">Peças</a>
+</div></nav>
+<div class="wrap">
+<header class="doc">
+  <span class="kicker">DNA da marca</span>
+  <h1>2 · Voz e tom</h1>
+  <p class="desc">Como a marca escreve, o que ela nunca diz e a lista de anti-slop.</p>
+  <div class="barra">
+    <span class="caminho">dna/4unik-voice.md · 145 linhas</span>
+    <button class="btn" id="ver">Ver a fonte</button>
+    <button class="btn" id="copiar">Copiar</button>
+    <button class="btn" id="baixar">Baixar .md</button>
+  </div>
+  <p class="aviso">O arquivo de verdade é <code>dna/4unik-voice.md</code> no repositório. O que você digitar aqui serve para redigir e copiar — esta página não grava.</p>
+</header>
+<main>
+<h1 id="4unik-voz-e-tom">4UNIK — VOZ E TOM</h1>
+<blockquote><p>Como a 4Unik fala. Todo copy (ads, carrossel, caption, story, landing, comunicação interna) deve passar por este filtro.   Última atualização: 2026-08-05.</p></blockquote>
+<hr>
+<h2 id="1-personalidade-em-uma-frase">1. PERSONALIDADE EM UMA FRASE</h2>
+<p>Inovador e estratégico, comunicando eficiência e escala na gestão de reconhecimento de equipes, com uma voz clara, profissional e focada em resultados.</p>
+<hr>
+<h2 id="2-tom">2. TOM</h2>
+<div class="tw"><table><thead><tr><th>Dimensão</th><th>Posição</th><th>Notas</th></tr></thead><tbody><tr><td>Formal ↔ Informal</td><td>Centro-formal</td><td>Linguagem clara e direta, profissional mas acessível</td></tr><tr><td>Técnico ↔ Simples</td><td>Técnico com clareza</td><td>Explica funcionalidades e integrações de forma compreensível</td></tr><tr><td>Frio ↔ Quente</td><td>Profissional e direto</td><td>Foco em solução, sem artificialismos; valoriza o tempo do leitor</td></tr><tr><td>Hype ↔ Sóbrio</td><td>Sóbrio e confiante</td><td>Baseado em dados e cases, sem promessas exageradas</td></tr><tr><td>Juridiquês ↔ Humano</td><td>Direto e descomplicado</td><td>Evita jargões desnecessários; explica termos técnicos</td></tr></tbody></table></div>
+<h3 id="adjetivos-da-marca">Adjetivos da marca</h3>
+<p>Inovadora · Eficiente · Escalável · Segura · Integrada · Global · Estratégica · Transparente · Clara.</p>
+<h3 id="anti-adjetivos">Anti-adjetivos</h3>
+<p>Burocrática · Genérica · Inflexível · "SaaS" sem personalidade · Cheio de jargões.</p>
+<hr>
+<h2 id="3-cadencia">3. CADÊNCIA</h2>
+<ul><li>Frases diretas e concisas, com desenvolvimento em blocos lógicos.</li><li>Uma ideia principal por parágrafo em textos longos.</li><li>Uso de listas para destacar funcionalidades, etapas ou benefícios.</li><li>Evitar paredes de texto sem respiro visual, especialmente em criativos.</li><li>Linguagem que ressoa com decisores de RH e líderes de equipe.</li></ul>
+<h3 id="padrao-de-comunicacao-observado-em-materiais-de-marketing">Padrão de comunicação (observado em materiais de marketing)</h3>
+<ol><li>Gancho (problema do RH/gestor ou benefício da 4Unik) (1-2 linhas)</li><li>Contexto / desafio do reconhecimento e engajamento.</li><li>Solução 4Unik (plataforma, automação, integração).</li><li>Benefícios e resultados (escalabilidade, performance, ENPS).</li><li>CTA claro para próxima etapa (demo, plataforma).</li></ol>
+<hr>
+<h2 id="4-vocabulario-preferido">4. VOCABULÁRIO PREFERIDO</h2>
+<p><strong>Usar:</strong> reconhecimento, engajamento, plataforma, infraestrutura, gamificação, logística, integração, API, performance, escalabilidade, segurança, governança, otimização, RH, colaborador, equipe, metas, pontos, catálogo, demonstração, stack, HRIS, intranet, automação, eficiência.</p>
+<p><strong>Preferir em vez de:</strong>   "solução mágica" → "infraestrutura de recompensas estratégica"   "simples" → "intuitiva / descomplicada"   "apenas brindes" → "catálogo de recompensas completo e estratégico"</p>
+<p><strong>Evitar:</strong></p>
+<ul><li>Termos excessivamente coloquiais ou informais demais.</li><li>Jargões sem contexto ou explicação (ex. "lock-in" sem clarificação).</li><li>Promessas exageradas ou sem base em dados/cases.</li><li>Linguagem de startup vazia ("unicórnio", "próximo nível" sem substância).</li><li>Emoticons excessivos ou linguagem adolescente.</li></ul>
+<hr>
+<h2 id="5-anti-slop-proibicoes-verbais">5. ANTI-SLOP (proibições verbais)</h2>
+<p>Nunca usar:</p>
+<ul><li>“Revolucionário”, “disruptivo”, “único no mundo” sem provas auditadas.</li><li>“Garantimos 100% de aumento no ENPS” (sem base em dados específicos).</li><li>"Somos o RH" / linguagem de departamento interno da empresa do cliente.</li><li>"Hack de engajamento", "segredo da gestão de pessoas".</li><li>Copy genérica de SaaS (“eleve seu potencial”, “transforme sua empresa”) sem contextualização com a proposta de valor da 4Unik.</li><li>Inglês desnecessário (insight e stack ok se usados com parcimônia e contexto; preferir português).</li></ul>
+<hr>
+<h2 id="6-voz-em-comunicacao-atendimento-social-interna">6. VOZ EM COMUNICAÇÃO (atendimento, social, interna)</h2>
+<p>Tom da plataforma (especialista online):</p>
+<ul><li>Saudação profissional e direta.</li><li>Resposta clara e focada na solução.</li><li>Explicação dos benefícios da plataforma e como resolvem o desafio.</li><li>Oferta de agendamento de demo ou acesso a documentação/API.</li></ul>
+<hr>
+<h2 id="7-voz-em-ads-criativos">7. VOZ EM ADS / CRIATIVOS</h2>
+<ul><li>Headline: Benefício ou solução clara (máx. ~8–10 palavras fortes).</li><li>Body: Problema do RH/gestor + solução da 4Unik + prova/caso ou funcionalidade.</li><li>CTA: "Agendar demonstração" / "Ver a plataforma" / "Solicitar Acesso à API" / "Conhecer Funcionalidades".</li><li>Eyebrow: "Reconhecimento de Equipes" / "Infraestrutura de Recompensas" / "Gestão de Engajamento".</li></ul>
+<hr>
+<h2 id="8-teste-rapido-de-voz">8. TESTE RÁPIDO DE VOZ</h2>
+<p>Antes de publicar, pergunte:</p>
+<ol><li>Um gestor de RH ou líder de equipe entenderia em 5 segundos?</li><li>Soa como 4Unik (inovador, eficiente, escalável) ou como software genérico?</li><li>Há alguma promessa sem base em dados ou cases comprovados?</li><li>A acentuação está correta em todo o texto?</li></ol>
+<hr>
+<h2 id="9-voz-real-vs-voz-alvo-observado-em-2026-08-06">9. VOZ REAL vs. VOZ-ALVO (observado em 2026-08-06)</h2>
+<p>As seções 1–8 descrevem a <strong>voz-alvo da Plataforma</strong>. O que o Instagram @4unikoficial publica hoje é outro registro — mais comercial e caloroso, da frente de brindes. Registrar a diferença evita gerar conteúdo que não parece da marca ou, pior, reescrever a marca sem que ninguém tenha decidido isso.</p>
+<div class="tw"><table><thead><tr><th></th><th>Voz-alvo (Plataforma)</th><th>Voz real (Instagram/brindes)</th></tr></thead><tbody><tr><td>Registro</td><td>Sóbria, técnica, consultiva</td><td>Comercial, calorosa, vendedora</td></tr><tr><td>Emojis</td><td>Evitar</td><td>Frequentes (🎁 💙 📦 🚚 🇧🇷 😉)</td></tr><tr><td>Frase típica</td><td>"Infraestrutura de recompensas que gera performance."</td><td>"Faça como a @trentooficial e surpreenda seus clientes! 🎁"</td></tr><tr><td>Prova</td><td>Case com link, métrica auditada</td><td>Cliente citado com @</td></tr><tr><td>CTA</td><td>"Agendar demonstração"</td><td>"Chama no direct" / "Solicite seu orçamento"</td></tr><tr><td>Abrangência</td><td>Escala, integração, segurança</td><td>"Entregas para todo o Brasil 📦🚚🇧🇷"</td></tr></tbody></table></div>
+<p><strong>Como decidir no briefing:</strong></p>
+<ul><li>Peça <strong>plataforma</strong> → seções 1–8 deste arquivo. Sem emoji, CTA de demonstração.</li><li>Peça <strong>brindes / Instagram</strong> → registro observado acima é legítimo; mantenha o português correto e as regras de anti-slop (§5), que valem para as duas frentes.</li><li>Peça <strong>ponte entre as duas</strong> (o ângulo mais forte da marca): abrir pela operação física real — armazém, montagem, envio para todo o Brasil — e fechar na plataforma que a controla. É a única narrativa que um concorrente só-de-software não consegue copiar.</li></ul>
+<p>O que <strong>nunca</strong> varia entre as frentes: acentuação correta, zero número inventado, zero promessa de garantia, nada de jargão de SaaS genérico.</p>
+<textarea id="fonte" spellcheck="false"># 4UNIK — VOZ E TOM
+
+&gt; Como a 4Unik fala. Todo copy (ads, carrossel, caption, story,
+&gt; landing, comunicação interna) deve passar por este filtro.  
+&gt; Última atualização: 2026-08-05.
+
+---
+
+## 1. PERSONALIDADE EM UMA FRASE
+
+Inovador e estratégico, comunicando eficiência e escala na gestão de
+reconhecimento de equipes, com uma voz clara, profissional e focada
+em resultados.
+
+---
+
+## 2. TOM
+
+| Dimensão | Posição | Notas |
+|---|---|---|
+| Formal ↔ Informal | Centro-formal | Linguagem clara e direta, profissional mas acessível |
+| Técnico ↔ Simples | Técnico com clareza | Explica funcionalidades e integrações de forma compreensível |
+| Frio ↔ Quente | Profissional e direto | Foco em solução, sem artificialismos; valoriza o tempo do leitor |
+| Hype ↔ Sóbrio | Sóbrio e confiante | Baseado em dados e cases, sem promessas exageradas |
+| Juridiquês ↔ Humano | Direto e descomplicado | Evita jargões desnecessários; explica termos técnicos |
+
+### Adjetivos da marca
+Inovadora · Eficiente · Escalável · Segura · Integrada · Global · Estratégica · Transparente · Clara.
+
+### Anti-adjetivos
+Burocrática · Genérica · Inflexível · "SaaS" sem personalidade · Cheio de jargões.
+
+---
+
+## 3. CADÊNCIA
+
+- Frases diretas e concisas, com desenvolvimento em blocos lógicos.
+- Uma ideia principal por parágrafo em textos longos.
+- Uso de listas para destacar funcionalidades, etapas ou benefícios.
+- Evitar paredes de texto sem respiro visual, especialmente em criativos.
+- Linguagem que ressoa com decisores de RH e líderes de equipe.
+
+### Padrão de comunicação (observado em materiais de marketing)
+1. Gancho (problema do RH/gestor ou benefício da 4Unik) (1-2 linhas)
+2. Contexto / desafio do reconhecimento e engajamento.
+3. Solução 4Unik (plataforma, automação, integração).
+4. Benefícios e resultados (escalabilidade, performance, ENPS).
+5. CTA claro para próxima etapa (demo, plataforma).
+
+---
+
+## 4. VOCABULÁRIO PREFERIDO
+
+**Usar:** reconhecimento, engajamento, plataforma, infraestrutura,
+gamificação, logística, integração, API, performance, escalabilidade,
+segurança, governança, otimização, RH, colaborador, equipe, metas, pontos,
+catálogo, demonstração, stack, HRIS, intranet, automação, eficiência.
+
+**Preferir em vez de:**  
+"solução mágica" → "infraestrutura de recompensas estratégica"  
+"simples" → "intuitiva / descomplicada"  
+"apenas brindes" → "catálogo de recompensas completo e estratégico"
+
+**Evitar:**
+- Termos excessivamente coloquiais ou informais demais.
+- Jargões sem contexto ou explicação (ex. "lock-in" sem clarificação).
+- Promessas exageradas ou sem base em dados/cases.
+- Linguagem de startup vazia ("unicórnio", "próximo nível" sem substância).
+- Emoticons excessivos ou linguagem adolescente.
+
+---
+
+## 5. ANTI-SLOP (proibições verbais)
+
+Nunca usar:
+- “Revolucionário”, “disruptivo”, “único no mundo” sem provas auditadas.
+- “Garantimos 100% de aumento no ENPS” (sem base em dados específicos).
+- "Somos o RH" / linguagem de departamento interno da empresa do cliente.
+- "Hack de engajamento", "segredo da gestão de pessoas".
+- Copy genérica de SaaS (“eleve seu potencial”, “transforme sua empresa”)
+  sem contextualização com a proposta de valor da 4Unik.
+- Inglês desnecessário (insight e stack ok se usados com parcimônia e contexto; preferir português).
+
+---
+
+## 6. VOZ EM COMUNICAÇÃO (atendimento, social, interna)
+
+Tom da plataforma (especialista online):
+- Saudação profissional e direta.
+- Resposta clara e focada na solução.
+- Explicação dos benefícios da plataforma e como resolvem o desafio.
+- Oferta de agendamento de demo ou acesso a documentação/API.
+
+---
+
+## 7. VOZ EM ADS / CRIATIVOS
+
+- Headline: Benefício ou solução clara (máx. ~8–10 palavras fortes).
+- Body: Problema do RH/gestor + solução da 4Unik + prova/caso ou funcionalidade.
+- CTA: "Agendar demonstração" / "Ver a plataforma" / "Solicitar Acesso à API"
+  / "Conhecer Funcionalidades".
+- Eyebrow: "Reconhecimento de Equipes" / "Infraestrutura de Recompensas" /
+  "Gestão de Engajamento".
+
+---
+
+## 8. TESTE RÁPIDO DE VOZ
+
+Antes de publicar, pergunte:
+1. Um gestor de RH ou líder de equipe entenderia em 5 segundos?
+2. Soa como 4Unik (inovador, eficiente, escalável) ou como software genérico?
+3. Há alguma promessa sem base em dados ou cases comprovados?
+4. A acentuação está correta em todo o texto?
+
+---
+
+## 9. VOZ REAL vs. VOZ-ALVO (observado em 2026-08-06)
+
+As seções 1–8 descrevem a **voz-alvo da Plataforma**. O que o Instagram
+@4unikoficial publica hoje é outro registro — mais comercial e caloroso, da
+frente de brindes. Registrar a diferença evita gerar conteúdo que não parece
+da marca ou, pior, reescrever a marca sem que ninguém tenha decidido isso.
+
+| | Voz-alvo (Plataforma) | Voz real (Instagram/brindes) |
+|---|---|---|
+| Registro | Sóbria, técnica, consultiva | Comercial, calorosa, vendedora |
+| Emojis | Evitar | Frequentes (🎁 💙 📦 🚚 🇧🇷 😉) |
+| Frase típica | "Infraestrutura de recompensas que gera performance." | "Faça como a @trentooficial e surpreenda seus clientes! 🎁" |
+| Prova | Case com link, métrica auditada | Cliente citado com @ |
+| CTA | "Agendar demonstração" | "Chama no direct" / "Solicite seu orçamento" |
+| Abrangência | Escala, integração, segurança | "Entregas para todo o Brasil 📦🚚🇧🇷" |
+
+**Como decidir no briefing:**
+
+- Peça **plataforma** → seções 1–8 deste arquivo. Sem emoji, CTA de demonstração.
+- Peça **brindes / Instagram** → registro observado acima é legítimo; mantenha o
+  português correto e as regras de anti-slop (§5), que valem para as duas frentes.
+- Peça **ponte entre as duas** (o ângulo mais forte da marca): abrir pela
+  operação física real — armazém, montagem, envio para todo o Brasil — e fechar
+  na plataforma que a controla. É a única narrativa que um concorrente
+  só-de-software não consegue copiar.
+
+O que **nunca** varia entre as frentes: acentuação correta, zero número
+inventado, zero promessa de garantia, nada de jargão de SaaS genérico.
+</textarea>
+</main>
+<footer>
+  <a href="index.html">← todos os documentos</a> · <a href="../index.html">kit da campanha</a> · <a href="../contact-sheet.html">as 55 peças</a>
+</footer>
+</div>
+<script>
+(function(){
+  var ver=document.getElementById('ver'),ta=document.getElementById('fonte');
+  ver.onclick=function(){
+    var on=document.body.classList.toggle('fonte');
+    ver.classList.toggle('on',on);
+    ver.textContent=on?'Ver formatado':'Ver a fonte';
+  };
+  document.getElementById('copiar').onclick=function(){
+    var b=this;navigator.clipboard.writeText(ta.value).then(function(){
+      b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600);
+    });
+  };
+  document.getElementById('baixar').onclick=function(){
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([ta.value],{type:'text/markdown'}));
+    a.download="4unik-voice.md";a.click();URL.revokeObjectURL(a.href);
+  };
+})();
+</script>
+</body></html>
