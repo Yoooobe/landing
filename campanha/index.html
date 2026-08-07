@@ -116,6 +116,10 @@ table{width:100%;border-collapse:collapse;font-size:14px}
 th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);font-weight:700}
 td code{font-family:var(--mono);font-size:12.5px;color:var(--green)}
+/* .mono era usada em dezenas de trechos sem nenhuma regra — o texto saía igual ao corpo */
+.mono{font-family:var(--mono);font-size:.92em}
+a.mono{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(100,85,212,.35)}
+a.mono:hover{border-bottom-color:var(--blue)}
 tbody tr:hover{background:#FAFAFC}
 
 /* ---------- IDEA CARDS ---------- */
@@ -130,6 +134,8 @@ tbody tr:hover{background:#FAFAFC}
 .tag.pillar{color:var(--blue);border-color:rgba(100,85,212,.45);background:rgba(100,85,212,.12)}
 .tag.funnel{color:var(--muted);border-color:var(--line);background:#F2F2F6}
 .tag.fmt{color:var(--green);border-color:rgba(0,210,148,.3);background:rgba(0,210,148,.08)}
+.tag.doc{color:var(--blue);border-color:rgba(100,85,212,.45);background:#fff;text-decoration:none}
+.tag.doc:hover{background:rgba(100,85,212,.10)}
 .idea-head h3{font-size:clamp(21px,2.6vw,28px);letter-spacing:-.025em;margin:0 0 10px;font-weight:800;line-height:1.15}
 .idea-head p{margin:0;color:var(--muted);max-width:72ch;font-size:15px}
 .idea-num{
@@ -279,6 +285,7 @@ footer a:hover{border-bottom-color:var(--green)}
     <a href="#sistema">Recortes</a>
     <a href="#producao">Produção</a>
     <a href="contact-sheet.html">Peças</a>
+    <a href="docs/index.html" target="_blank" rel="noopener">Documentos ↗</a>
   </div>
 </nav>
 
@@ -296,7 +303,7 @@ footer a:hover{border-bottom-color:var(--green)}
 
 <section id="status" class="wrap">
   <div class="sec-title"><span class="num">01</span><h2>Status da campanha</h2></div>
-  <p class="sec-sub">Onde cada conceito está agora. “Composto” significa arte final gerada, tipografia dentro dos mínimos do DNA e legenda escrita em <span class="mono">LEGENDAS.md</span> dentro da pasta da entrega. Nada aqui depende de nova geração de imagem.</p>
+  <p class="sec-sub">Onde cada conceito está agora. “Composto” significa arte final gerada, tipografia dentro dos mínimos do DNA e legenda escrita em <a class="mono" href="docs/index.html#legendas" target="_blank" rel="noopener">LEGENDAS.md</a> dentro da pasta da entrega. Nada aqui depende de nova geração de imagem.</p>
 
   <table>
     <thead>
@@ -369,7 +376,7 @@ footer a:hover{border-bottom-color:var(--green)}
         <li class="open"><span class="ic">○</span><div><b>Depoimento do e-mail i5</b>Frase, nome e cargo por escrito. Prazo 10/09. Bloqueia a última peça da campanha.</div></li>
         <li class="open"><span class="ic">○</span><div><b>Trilha de cada Reel</b>Os MP4 saem mudos de propósito. A música se escolhe na biblioteca licenciada do Instagram, na hora de postar.</div></li>
         <li class="open"><span class="ic">○</span><div><b>Registrar resultado das enquetes</b>Cada sequência de stories tem sticker de enquete ou quiz. Anotar o resultado — é o insumo do próximo mês.</div></li>
-        <li class="open"><span class="ic">○</span><div><b>Ler o LEGENDAS.md antes de cada post</b>Cada pasta tem regras específicas do conceito no fim do arquivo. Não postar de memória.</div></li>
+        <li class="open"><span class="ic">○</span><div><b>Ler o <a href="docs/index.html#legendas" target="_blank" rel="noopener">LEGENDAS.md</a> antes de cada post</b>Cada pasta tem regras específicas do conceito no fim do arquivo. Não postar de memória.</div></li>
       </ul>
     </div>
     <div class="col">
@@ -395,7 +402,7 @@ footer a:hover{border-bottom-color:var(--green)}
       <ol class="steps">
         <li>Subir <b><span class="mono">*_reel.mp4</span></b> como Reel. Ele está mudo: escolher a trilha na biblioteca do Instagram antes de avançar.</li>
         <li>Definir a capa manualmente com <b><span class="mono">*_reel-capa.png</span></b> — não aceitar o frame automático.</li>
-        <li>Colar a legenda do bloco <b>Reel</b> do <span class="mono">LEGENDAS.md</span>, com os hashtags que já estão no arquivo.</li>
+        <li>Colar a legenda do bloco <b>Reel</b> do <a class="mono" href="docs/index.html#legendas" target="_blank" rel="noopener">LEGENDAS.md</a>, com os hashtags que já estão no arquivo.</li>
         <li>Subir os <b>stories na ordem dos frames</b> (frame1 → frame2 → frame3-cta) e aplicar o sticker indicado em cada um.</li>
         <li>Sticker de link <b>só no último frame</b>, apontando para <span class="mono">calendly.com/4unik/30min</span>.</li>
       </ol>
@@ -405,7 +412,7 @@ footer a:hover{border-bottom-color:var(--green)}
       <ol class="steps">
         <li>Subir os cards <b><span class="mono">*_feed45_*</span></b> na ordem numérica do carrossel. A ordem carrega o argumento.</li>
         <li>Colar a legenda do bloco <b>Feed</b>. Um CTA só — o do arquivo.</li>
-        <li>Disparar o e-mail: hero <b><span class="mono">*_email_hero.png</span></b> mais o corpo descrito no <span class="mono">LEGENDAS.md</span>, com assunto e preheader do arquivo.</li>
+        <li>Disparar o e-mail: hero <b><span class="mono">*_email_hero.png</span></b> mais o corpo descrito no <a class="mono" href="docs/index.html#legendas" target="_blank" rel="noopener">LEGENDAS.md</a>, com assunto e preheader do arquivo.</li>
         <li>Publicar no LinkedIn usando <b><span class="mono">*_og.png</span></b> (1200×630) e a legenda do bloco correspondente.</li>
         <li>No fim do dia, anotar alcance e salvamentos do Reel de terça ao lado do conceito na tabela de status.</li>
       </ol>
@@ -466,6 +473,7 @@ footer a:hover{border-bottom-color:var(--green)}
         <span class="tag pillar">Eficiência / Automação</span>
         <span class="tag funnel">Topo · Dor</span>
         <span class="tag fmt">Carrossel 5 cards</span>
+        <a class="tag doc" href="docs/legendas-i1-planilha.html" target="_blank" rel="noopener">Legendas ↗</a>
       </div>
       <h3>“Reconhecimento em planilha não escala.”</h3>
       <p>Ataca o hábito que sustenta o status quo do ICP: controlar reconhecimento com planilha, e-mail e três fornecedores. A planilha guarda registro — ela não aprova, não compra, não embala e não entrega. É o ângulo mais direto para quebrar inércia sem prometer resultado numérico.</p>
@@ -534,6 +542,7 @@ Agende uma demonstração: plataforma.4unik.com.br
         <span class="tag pillar">Inovação / Tecnologia</span>
         <span class="tag funnel">Meio · Educação</span>
         <span class="tag fmt">Carrossel 5 cards</span>
+        <a class="tag doc" href="docs/legendas-i2-jornada.html" target="_blank" rel="noopener">Legendas ↗</a>
       </div>
       <h3>“Quatro passos. Nenhum deles é operacional.”</h3>
       <p>Traduz a jornada oficial — conecte, configure, engaje, entregue — em conteúdo. É a peça que responde a ansiedade número um do ICP (“é complexo demais para implementar?”) mostrando que o esforço está na configuração, não na operação recorrente.</p>
@@ -605,6 +614,7 @@ Documentação e API para devs: plataforma.4unik.com.br
         <span class="tag pillar">Engajamento / Performance</span>
         <span class="tag funnel">Meio · Desejo</span>
         <span class="tag fmt">Post único + carrossel curto</span>
+        <a class="tag doc" href="docs/legendas-i3-presente.html" target="_blank" rel="noopener">Legendas ↗</a>
       </div>
       <h3>“Ponto que não vira presente é só número na tela.”</h3>
       <p>O único conceito emocional do conjunto — e o que melhor separa a 4Unik de um painel de gamificação. Fecha o ciclo: meta batida → pontos creditados → catálogo → entrega no Brasil e no mundo. É a peça de alcance orgânico da campanha.</p>
@@ -673,6 +683,7 @@ Conheça o catálogo: plataforma.4unik.com.br
         <span class="tag pillar">Confiança / Segurança</span>
         <span class="tag funnel">Fundo · Objeção</span>
         <span class="tag fmt">Carrossel 3 cards</span>
+        <a class="tag doc" href="docs/legendas-i4-auditoria.html" target="_blank" rel="noopener">Legendas ↗</a>
       </div>
       <h3>“Seu programa de reconhecimento passaria numa auditoria?”</h3>
       <p>Peça de objeção, escrita para quem assina — diretoria, compliance, financeiro. Governança é diferencial real da 4Unik (perfis, permissões, histórico auditável) e é o argumento que destrava contrato em empresa grande. Conteúdo desconfortável na medida, sem tom alarmista.</p>
@@ -739,6 +750,7 @@ Fale com um especialista: plataforma.4unik.com.br
         <span class="tag pillar">Casos de sucesso / Integração</span>
         <span class="tag funnel">Fundo · Decisão</span>
         <span class="tag fmt">Post único + carrossel</span>
+        <a class="tag doc" href="docs/legendas-i5-integracao.html" target="_blank" rel="noopener">Legendas ↗</a>
       </div>
       <h3>“Não é para trocar o seu sistema. É para conectar no que já existe.”</h3>
       <p>Mata a objeção de implantação e conversa com o time técnico que valida a compra. É também a peça onde entram os cases reais de escala — nomes de clientes só depois de aprovação formal, e nunca acompanhados de número inventado.</p>
@@ -845,8 +857,14 @@ node tools/contact-sheet.mjs                   <span class="cmt"># → entregas/
 
 <footer class="wrap">
   <b>4Unik · Kit de conteúdo — agosto de 2026.</b> Cinco conceitos, um por pilar do DNA · 55 peças estáticas · 5 Reels · publicação de 11/08 a 10/09.<br>
-  Construído sobre <code>dna/4unik-dna.md</code>, <code>4unik-voice.md</code>, <code>4unik-visual.md</code>, <code>4unik-anti-patterns.md</code> e <code>4unik-prompts.md</code>.<br>
-  Regras de cada post em <code>entregas/2026-08-06_&lt;conceito&gt;/LEGENDAS.md</code> · calendário em <code>entregas/CALENDARIO.md</code> · painel em <code>entregas/CAMPANHAS-ADS.md</code>.<br><br>
+  Construído sobre <a href="docs/dna-estrategia.html" target="_blank" rel="noopener"><code>dna/4unik-dna.md</code></a>,
+  <a href="docs/dna-voz.html" target="_blank" rel="noopener"><code>4unik-voice.md</code></a>,
+  <a href="docs/dna-visual.html" target="_blank" rel="noopener"><code>4unik-visual.md</code></a>,
+  <a href="docs/dna-anti-patterns.html" target="_blank" rel="noopener"><code>4unik-anti-patterns.md</code></a> e
+  <a href="docs/dna-prompts.html" target="_blank" rel="noopener"><code>4unik-prompts.md</code></a>.<br>
+  Regras de cada post em <a href="docs/index.html#legendas" target="_blank" rel="noopener"><code>entregas/2026-08-06_&lt;conceito&gt;/LEGENDAS.md</code></a> ·
+  calendário em <a href="docs/calendario.html" target="_blank" rel="noopener"><code>entregas/CALENDARIO.md</code></a> ·
+  painel em <a href="docs/painel.html" target="_blank" rel="noopener"><code>entregas/CAMPANHAS-ADS.md</code></a>.<br><br>
   <b>Arquivo histórico</b> — em <code>_arquivo/</code> no repositório, rodadas anteriores à releitura do DNA, mantidas só como registro. Nada delas vai para produção:
   ideação inicial, teste A/B e composições A/B — só no repositório, fora desta página.
 </footer>

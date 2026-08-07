@@ -1,0 +1,371 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Painel de campanhas · 4Unik</title>
+<meta name="description" content="Status de cada conceito, o que ainda falta e o passo a passo de cada post.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F6F9;--panel:#FFFFFF;--ink:#14151C;--muted:#63656F;--line:#E3E3EA;
+  --blue:#4B3FB0;--green:#00785A;--orange:#B35F07;
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:rgba(246,246,249,.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+nav a{color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:500}
+nav a:hover{color:var(--ink)}
+nav .brand{font-weight:800;color:var(--ink);font-size:15px;margin-right:auto}
+nav .brand .mark{color:var(--blue)}
+header.doc{padding:44px 0 8px}
+header.doc .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--blue);font-weight:600}
+header.doc h1{font-size:clamp(26px,4vw,38px);line-height:1.14;letter-spacing:-.02em;margin:10px 0 12px}
+header.doc .desc{color:var(--muted);font-size:15.5px;max-width:60ch;margin:0}
+.barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 8px;
+  padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.barra .caminho{font-family:var(--mono);font-size:12px;color:var(--muted);margin-right:auto;
+  word-break:break-all}
+.btn{font-family:var(--font);font-size:12.5px;font-weight:600;cursor:pointer;
+  padding:7px 13px;border-radius:8px;border:1px solid var(--line);
+  background:#FAFAFC;color:var(--ink)}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.aviso{margin:0 0 26px;font-size:13px;color:var(--muted)}
+main{padding:8px 0 60px}
+main h2{font-size:23px;letter-spacing:-.01em;margin:38px 0 12px;padding-top:10px;
+  border-top:1px solid var(--line)}
+main h1{font-size:27px;margin:30px 0 12px}
+main h3{font-size:17px;margin:26px 0 8px}
+main h4{font-size:14.5px;margin:20px 0 6px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;font-family:var(--mono)}
+main p{margin:0 0 14px}
+main a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(75,63,176,.3)}
+main a:hover{border-bottom-color:var(--blue)}
+main ul,main ol{margin:0 0 16px;padding-left:22px}
+main li{margin:0 0 6px}
+main li.task{list-style:none;position:relative;padding-left:26px}
+main li.task::before{content:'';position:absolute;left:0;top:5px;width:15px;height:15px;
+  border:1.5px solid var(--line);border-radius:4px;background:#fff}
+main li.task.feito::before{content:'✓';background:var(--green);border-color:var(--green);
+  color:#fff;font-size:11px;font-weight:700;line-height:15px;text-align:center}
+main li.task.feito{color:var(--muted)}
+main hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+main blockquote{margin:0 0 18px;padding:12px 16px;background:#FAFAFC;
+  border-left:3px solid var(--blue);border-radius:0 10px 10px 0;color:var(--muted)}
+main blockquote p{margin:0 0 6px}
+main blockquote p:last-child{margin:0}
+code{font-family:var(--mono);font-size:.88em;background:#F2F2F6;
+  border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--blue)}
+pre.code{background:#14151C;border-radius:12px;padding:16px;overflow-x:auto;margin:0 0 18px}
+pre.code code{background:none;border:0;padding:0;color:#E4E6EC;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 20px;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  background:#FAFAFC;font-weight:700;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td code{color:var(--green)}
+textarea{display:none;width:100%;min-height:70vh;margin:0 0 20px;padding:18px;
+  font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;resize:vertical}
+body.fonte main>:not(textarea){display:none}
+body.fonte textarea{display:block}
+footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:13px}
+footer a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(0,120,90,.3)}
+@media(max-width:640px){.barra .caminho{width:100%;margin-bottom:6px}}
+</style></head><body>
+<nav><div class="wrap">
+  <span class="brand"><span class="mark">4</span>Unik · documentos</span>
+  <a href="index.html">Índice</a>
+  <!-- caminhos do pacote; tools/publish-kit.py reescreve para index.html /
+       contact-sheet.html ao copiar para public/campanha/ -->
+  <a href="../">Kit</a>
+  <a href="../contact-sheet.html">Peças</a>
+</div></nav>
+<div class="wrap">
+<header class="doc">
+  <span class="kicker">Campanha de agosto/2026</span>
+  <h1>Painel de campanhas</h1>
+  <p class="desc">Status de cada conceito, o que ainda falta e o passo a passo de cada post.</p>
+  <div class="barra">
+    <span class="caminho">entregas/CAMPANHAS-ADS.md · 187 linhas · atualizado em 2026-08-06</span>
+    <button class="btn" id="ver">Ver a fonte</button>
+    <button class="btn" id="copiar">Copiar</button>
+    <button class="btn" id="baixar">Baixar .md</button>
+  </div>
+  <p class="aviso">O arquivo de verdade é <code>entregas/CAMPANHAS-ADS.md</code> no repositório. O que você digitar aqui serve para redigir e copiar — esta página não grava.</p>
+</header>
+<main>
+<h1 id="campanhas-ads">Campanhas &amp; Ads</h1>
+<p>Painel de acompanhamento da produção de conteúdo da 4Unik. Cada campanha nasce de um pilar do DNA, é composta em <code>protegido-ai-assistant/entregas/</code> e sai daqui para o Instagram, o LinkedIn e o e-mail.</p>
+<p><strong>Página interna.</strong> Traz copy não publicada e pendências de autorização — manter fora do sitemap e com <code>noindex</code>.</p>
+<hr>
+<h2 id="status-geral">Status geral</h2>
+<div class="tw"><table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td>Campanha ativa</td><td>Agosto/2026 — "Infraestrutura de recompensas"</td></tr><tr><td>Conceitos</td><td>5 (um por pilar do DNA, cobrindo o funil de topo a fundo)</td></tr><tr><td>Peças prontas</td><td>55 PNG + 5 Reels MP4</td></tr><tr><td>Revisão visual</td><td>Aprovada em 06/08/2026</td></tr><tr><td>Primeira publicação</td><td>terça, 11/08/2026</td></tr><tr><td>Última publicação</td><td>quinta, 10/09/2026</td></tr><tr><td>Bloqueios abertos</td><td>1 — depoimento do e-mail i5</td></tr></tbody></table></div>
+<p>Composição fechada: nenhuma peça depende de nova geração de imagem. O que falta é autorização de conteúdo e execução do calendário.</p>
+<hr>
+<h2 id="as-cinco-campanhas">As cinco campanhas</h2>
+<div class="tw"><table><thead><tr><th>#</th><th>Conceito</th><th>Pilar · Funil</th><th>Peças</th><th>Status</th></tr></thead><tbody><tr><td><strong>i1</strong></td><td>"Reconhecimento em planilha não escala."</td><td>Eficiência · <strong>topo / dor</strong></td><td>5 feed · 3 stories · e-mail · OG · Reel 15s</td><td>✅ pronto</td></tr><tr><td><strong>i2</strong></td><td>"Quatro passos. Nenhum deles é operacional."</td><td>Educação · <strong>meio</strong></td><td>5 feed · 4 stories · e-mail · OG · Reel 17s</td><td>✅ pronto</td></tr><tr><td><strong>i3</strong></td><td>"Ponto que não vira presente é só número na tela."</td><td>Desejo · <strong>meio</strong></td><td>5 feed · 3 stories · e-mail · OG · Reel 14s</td><td>✅ pronto</td></tr><tr><td><strong>i4</strong></td><td>"Seu programa passaria numa auditoria?"</td><td>Objeção · <strong>fundo</strong></td><td>3 feed · 3 stories · e-mail · OG · Reel 14s</td><td>✅ pronto</td></tr><tr><td><strong>i5</strong></td><td>"Não é para trocar o seu sistema."</td><td>Decisão · <strong>fundo</strong></td><td>6 feed · 3 stories · e-mail · OG · Reel 19s</td><td>⚠️ e-mail bloqueado</td></tr></tbody></table></div>
+<p>Arquivos em <code>entregas/2026-08-06_&lt;conceito&gt;/</code>. A copy completa, a ordem de upload dos cards e a estrutura do e-mail estão no <code>LEGENDAS.md</code> de cada pasta.</p>
+<h3 id="por-que-essa-ordem">Por que essa ordem</h3>
+<p><strong>i1</strong> abre porque é dor pura e não exige que ninguém saiba o que a 4Unik faz — a enquete do story 1 mede em 24h se o argumento prende. <strong>i2</strong> responde a objeção que o i1 cria ("então é um sistema novo para implantar?"). <strong>i3</strong> é o único conceito de desejo e cai bem depois de dois posts racionais. <strong>i4</strong> e <strong>i5</strong> são de fundo: governança e integração, para quem assina e para quem valida tecnicamente.</p>
+<hr>
+<h2 id="calendario">Calendário</h2>
+<p>Um conceito por semana, dois toques: <strong>terça o Reel</strong>, <strong>quinta o feed e o e-mail</strong>. O Reel é o único formato que o Instagram entrega para quem não segue o perfil — por isso abre a semana. O carrossel converte quem já chegou.</p>
+<div class="tw"><table><thead><tr><th>Semana</th><th>Data</th><th>Canal</th><th>Peça</th><th>Status</th></tr></thead><tbody><tr><td>1</td><td><strong>ter 11/08</strong></td><td>Reel + 3 stories</td><td><code>i1-planilha_reel.mp4</code></td><td>⏳ agendado</td></tr><tr><td>1</td><td><strong>qui 13/08</strong></td><td>Feed carrossel 5 + e-mail</td><td><code>i1-planilha</code></td><td>⏳ agendado</td></tr><tr><td>2</td><td><strong>ter 18/08</strong></td><td>Reel + 4 stories</td><td><code>i2-jornada_reel.mp4</code></td><td>⏳ agendado</td></tr><tr><td>2</td><td><strong>qui 20/08</strong></td><td>Feed carrossel 5 + e-mail + LinkedIn</td><td><code>i2-jornada</code></td><td>⏳ agendado</td></tr><tr><td>3</td><td><strong>ter 25/08</strong></td><td>Reel + 3 stories</td><td><code>i3-presente_reel.mp4</code></td><td>⏳ agendado</td></tr><tr><td>3</td><td><strong>qui 27/08</strong></td><td>Feed post único + carrossel 3</td><td><code>i3-presente</code></td><td>⏳ agendado</td></tr><tr><td>4</td><td><strong>ter 01/09</strong></td><td>Reel + 3 stories</td><td><code>i4-auditoria_reel.mp4</code></td><td>⏳ agendado</td></tr><tr><td>4</td><td><strong>qui 03/09</strong></td><td>Feed carrossel 3 + e-mail + LinkedIn</td><td><code>i4-auditoria</code></td><td>⏳ agendado</td></tr><tr><td>5</td><td><strong>ter 08/09</strong></td><td>Reel + 3 stories</td><td><code>i5-integracao_reel.mp4</code></td><td>⏳ agendado</td></tr><tr><td>5</td><td><strong>qui 10/09</strong></td><td>Feed post único + carrossel 4 + e-mail + LinkedIn</td><td><code>i5-integracao</code></td><td>⚠️ depende do depoimento</td></tr></tbody></table></div>
+<p>Datas são proposta — a <strong>ordem</strong> é que importa, e ela segue o funil. O perfil publica pouco e tem média de ~10 likes em 30 posts: cadência agressiva não resolve isso e queima o material.</p>
+<hr>
+<h2 id="to-do">To-do</h2>
+<h3 id="bloqueia-publicacao">Bloqueia publicação</h3>
+<ul><li class="task"><strong>Depoimento do e-mail i5</strong> — falta a frase, o nome e o cargo de quem assina, liberados por escrito. Prazo: <strong>10/09</strong>. Se não vier, o e-mail sai com o bloco de marcas e <strong>sem</strong> o depoimento; não substituir por número genérico. A autorização de uso de marca já foi concedida em 06/08 e a faixa de clientes já está composta.</li></ul>
+<h3 id="resolvido">Resolvido</h3>
+<ul><li class="task feito">Faixa de clientes i5 autorizada e composta — 8 marcas em texto (06/08)</li><li class="task feito">Categorias do e-mail i3 conferidas contra o catálogo real (06/08) — Kits Gourmet Personalizado · Garrafas e Squeezes · Bolsas e Mochilas Personalizadas</li><li class="task feito">Imagens regeradas em alta exposição, 9:16 e 16:9 reais (06/08)</li><li class="task feito">5 Reels renderizados em 1080×1920, mudos</li><li class="task feito">Revisão visual das 55 peças aprovada (06/08)</li></ul>
+<h3 id="a-cada-publicacao">A cada publicação</h3>
+<ul><li class="task">Ler o <code>LEGENDAS.md</code> do conceito antes de subir qualquer coisa</li><li class="task">Escolher a trilha na biblioteca do Instagram no momento do post</li><li class="task">Registrar o resultado da enquete/quiz do story (i1 frame 1, i4 frame 1)</li></ul>
+<hr>
+<h2 id="passo-a-passo-de-publicacao">Passo a passo de publicação</h2>
+<h3 id="terca-reel-stories">Terça — Reel + stories</h3>
+<ol><li>Abrir a pasta do conceito (<code>entregas/2026-08-06_&lt;conceito&gt;/</code>).</li><li>Subir o <code>_reel.mp4</code>. <strong>O arquivo sai mudo de propósito</strong> — áudio embutido não conta como áudio da plataforma e derruba a distribuição.</li><li>Escolher a trilha na <strong>biblioteca do Instagram</strong>, na hora do post.</li><li>Definir a capa: o <code>_reel-capa.png</code> da mesma pasta (upload manual, não usar frame automático).</li><li>Colar a legenda do <code>LEGENDAS.md</code> — ela já vem com hashtags e o CTA.</li><li>Poucas horas depois, subir os stories na ordem dos frames.</li><li>Colocar o <strong>sticker de enquete/quiz</strong> onde o <code>LEGENDAS.md</code> indica. É o que gera alcance — não substituir por texto estático.</li><li><strong>Link sticker só no último frame.</strong> Um CTA por frame.</li></ol>
+<h3 id="quinta-feed-e-mail-linkedin">Quinta — feed + e-mail + LinkedIn</h3>
+<ol><li>Subir os cards do carrossel <strong>na ordem numerada do nome do arquivo</strong> (<code>card1-capa</code> → <code>card5-cta</code>).</li><li>Legenda: a do <code>LEGENDAS.md</code>, sem editar o CTA.</li><li>E-mail: hero <code>_email_hero.png</code> + a estrutura de corpo descrita no <code>LEGENDAS.md</code> (assunto e preheader já definidos lá).</li><li>LinkedIn: subir o <code>_og.png</code> (1200×630 cobre o formato — não vale gerar arquivo novo por 3px).</li></ol>
+<h3 id="regra-que-nao-se-negocia">Regra que não se negocia</h3>
+<p><strong>Não publicar Reel e carrossel do mesmo conceito no mesmo dia.</strong> O segundo post divide o alcance do primeiro em vez de somar. Story isolado sem post não sustenta o argumento — sempre no mesmo dia do Reel.</p>
+<hr>
+<h2 id="restricoes-de-conteudo">Restrições de conteúdo</h2>
+<p>Valem para toda peça, todo canal, sem exceção.</p>
+<div class="tw"><table><thead><tr><th>Regra</th><th>Por quê</th></tr></thead><tbody><tr><td><strong>Zero número de resultado inventado</strong></td><td>Não há dado auditado. Métrica só entra vinda de case fechado, com fonte.</td></tr><tr><td><strong>Nenhuma UI gerada por IA</strong></td><td>Interface da plataforma em criativo é sempre print real. UI sintética vira promessa de funcionalidade inexistente.</td></tr><tr><td><strong>Marca de cliente só com autorização</strong></td><td>Nome de cliente entra como texto, nunca como logo de terceiro, e nunca com número ou depoimento atrelado sem fonte.</td></tr><tr><td><strong>Painel do gestor não se divulga</strong></td><td>Domínio de produto. Descrever a funcionalidade, nunca o endereço.</td></tr><tr><td><strong>Acentuação correta do português</strong></td><td>Sem "voce", "nao", "reuniao", "solucao". Revisão obrigatória antes do upload.</td></tr><tr><td><strong>Reels saem mudos</strong></td><td>Trilha licenciada é escolhida na biblioteca do Instagram no momento do post.</td></tr><tr><td><strong>Um CTA por frame</strong></td><td>Dois CTAs competindo no mesmo destaque anulam os dois.</td></tr></tbody></table></div>
+<p>Tamanhos mínimos de tipografia em 1080px: <strong>headline 64 · body 36 · eyebrow 30 · CTA 34</strong>. O compositor recusa peça que não caiba.</p>
+<hr>
+<h2 id="revisao-visual">Revisão visual</h2>
+<p><code>entregas/CONTACT-SHEET.html</code> abre as 55 peças numa página só, agrupadas por conceito e na ordem de upload. Arquivo local, miniaturas embutidas — abrir direto no navegador, sem servidor.</p>
+<hr>
+<h2 id="como-regerar-depois-de-editar-a-copy">Como regerar depois de editar a copy</h2>
+<pre class="code" data-lang="bash"><code>cd protegido-ai-assistant/tools
+node compose.mjs ../entregas/specs/i1-planilha.json         # peças estáticas
+node motion.mjs  ../entregas/specs/motion/i1-planilha.json  # Reel
+node contact-sheet.mjs                                      # folha de contato</code></pre>
+<p>A folha de contato <strong>não</strong> é automática: se a copy mudar, recompor os specs e gerar de novo.</p>
+<textarea id="fonte" spellcheck="false">---
+title: "Campanhas &amp; Ads — painel de publicação"
+description: "Status das campanhas da 4Unik, calendário de publicação, pendências e o passo a passo de cada post."
+slug: "campanhas-ads"
+updated: "2026-08-06"
+audience: "interno"
+noindex: true
+---
+
+# Campanhas &amp; Ads
+
+Painel de acompanhamento da produção de conteúdo da 4Unik. Cada campanha nasce
+de um pilar do DNA, é composta em `protegido-ai-assistant/entregas/` e sai daqui
+para o Instagram, o LinkedIn e o e-mail.
+
+**Página interna.** Traz copy não publicada e pendências de autorização — manter
+fora do sitemap e com `noindex`.
+
+---
+
+## Status geral
+
+| | |
+|---|---|
+| Campanha ativa | Agosto/2026 — "Infraestrutura de recompensas" |
+| Conceitos | 5 (um por pilar do DNA, cobrindo o funil de topo a fundo) |
+| Peças prontas | 55 PNG + 5 Reels MP4 |
+| Revisão visual | Aprovada em 06/08/2026 |
+| Primeira publicação | terça, 11/08/2026 |
+| Última publicação | quinta, 10/09/2026 |
+| Bloqueios abertos | 1 — depoimento do e-mail i5 |
+
+Composição fechada: nenhuma peça depende de nova geração de imagem. O que falta
+é autorização de conteúdo e execução do calendário.
+
+---
+
+## As cinco campanhas
+
+| # | Conceito | Pilar · Funil | Peças | Status |
+|---|---|---|---|---|
+| **i1** | "Reconhecimento em planilha não escala." | Eficiência · **topo / dor** | 5 feed · 3 stories · e-mail · OG · Reel 15s | ✅ pronto |
+| **i2** | "Quatro passos. Nenhum deles é operacional." | Educação · **meio** | 5 feed · 4 stories · e-mail · OG · Reel 17s | ✅ pronto |
+| **i3** | "Ponto que não vira presente é só número na tela." | Desejo · **meio** | 5 feed · 3 stories · e-mail · OG · Reel 14s | ✅ pronto |
+| **i4** | "Seu programa passaria numa auditoria?" | Objeção · **fundo** | 3 feed · 3 stories · e-mail · OG · Reel 14s | ✅ pronto |
+| **i5** | "Não é para trocar o seu sistema." | Decisão · **fundo** | 6 feed · 3 stories · e-mail · OG · Reel 19s | ⚠️ e-mail bloqueado |
+
+Arquivos em `entregas/2026-08-06_&lt;conceito&gt;/`. A copy completa, a ordem de upload
+dos cards e a estrutura do e-mail estão no `LEGENDAS.md` de cada pasta.
+
+### Por que essa ordem
+
+**i1** abre porque é dor pura e não exige que ninguém saiba o que a 4Unik faz — a
+enquete do story 1 mede em 24h se o argumento prende. **i2** responde a objeção
+que o i1 cria ("então é um sistema novo para implantar?"). **i3** é o único
+conceito de desejo e cai bem depois de dois posts racionais. **i4** e **i5** são
+de fundo: governança e integração, para quem assina e para quem valida
+tecnicamente.
+
+---
+
+## Calendário
+
+Um conceito por semana, dois toques: **terça o Reel**, **quinta o feed e o
+e-mail**. O Reel é o único formato que o Instagram entrega para quem não segue o
+perfil — por isso abre a semana. O carrossel converte quem já chegou.
+
+| Semana | Data | Canal | Peça | Status |
+|---|---|---|---|---|
+| 1 | **ter 11/08** | Reel + 3 stories | `i1-planilha_reel.mp4` | ⏳ agendado |
+| 1 | **qui 13/08** | Feed carrossel 5 + e-mail | `i1-planilha` | ⏳ agendado |
+| 2 | **ter 18/08** | Reel + 4 stories | `i2-jornada_reel.mp4` | ⏳ agendado |
+| 2 | **qui 20/08** | Feed carrossel 5 + e-mail + LinkedIn | `i2-jornada` | ⏳ agendado |
+| 3 | **ter 25/08** | Reel + 3 stories | `i3-presente_reel.mp4` | ⏳ agendado |
+| 3 | **qui 27/08** | Feed post único + carrossel 3 | `i3-presente` | ⏳ agendado |
+| 4 | **ter 01/09** | Reel + 3 stories | `i4-auditoria_reel.mp4` | ⏳ agendado |
+| 4 | **qui 03/09** | Feed carrossel 3 + e-mail + LinkedIn | `i4-auditoria` | ⏳ agendado |
+| 5 | **ter 08/09** | Reel + 3 stories | `i5-integracao_reel.mp4` | ⏳ agendado |
+| 5 | **qui 10/09** | Feed post único + carrossel 4 + e-mail + LinkedIn | `i5-integracao` | ⚠️ depende do depoimento |
+
+Datas são proposta — a **ordem** é que importa, e ela segue o funil. O perfil
+publica pouco e tem média de ~10 likes em 30 posts: cadência agressiva não
+resolve isso e queima o material.
+
+---
+
+## To-do
+
+### Bloqueia publicação
+
+- [ ] **Depoimento do e-mail i5** — falta a frase, o nome e o cargo de quem
+      assina, liberados por escrito. Prazo: **10/09**. Se não vier, o e-mail sai
+      com o bloco de marcas e **sem** o depoimento; não substituir por número
+      genérico. A autorização de uso de marca já foi concedida em 06/08 e a
+      faixa de clientes já está composta.
+
+### Resolvido
+
+- [x] Faixa de clientes i5 autorizada e composta — 8 marcas em texto (06/08)
+- [x] Categorias do e-mail i3 conferidas contra o catálogo real (06/08) —
+      Kits Gourmet Personalizado · Garrafas e Squeezes · Bolsas e Mochilas
+      Personalizadas
+- [x] Imagens regeradas em alta exposição, 9:16 e 16:9 reais (06/08)
+- [x] 5 Reels renderizados em 1080×1920, mudos
+- [x] Revisão visual das 55 peças aprovada (06/08)
+
+### A cada publicação
+
+- [ ] Ler o `LEGENDAS.md` do conceito antes de subir qualquer coisa
+- [ ] Escolher a trilha na biblioteca do Instagram no momento do post
+- [ ] Registrar o resultado da enquete/quiz do story (i1 frame 1, i4 frame 1)
+
+---
+
+## Passo a passo de publicação
+
+### Terça — Reel + stories
+
+1. Abrir a pasta do conceito (`entregas/2026-08-06_&lt;conceito&gt;/`).
+2. Subir o `_reel.mp4`. **O arquivo sai mudo de propósito** — áudio embutido não
+   conta como áudio da plataforma e derruba a distribuição.
+3. Escolher a trilha na **biblioteca do Instagram**, na hora do post.
+4. Definir a capa: o `_reel-capa.png` da mesma pasta (upload manual, não usar
+   frame automático).
+5. Colar a legenda do `LEGENDAS.md` — ela já vem com hashtags e o CTA.
+6. Poucas horas depois, subir os stories na ordem dos frames.
+7. Colocar o **sticker de enquete/quiz** onde o `LEGENDAS.md` indica. É o que
+   gera alcance — não substituir por texto estático.
+8. **Link sticker só no último frame.** Um CTA por frame.
+
+### Quinta — feed + e-mail + LinkedIn
+
+1. Subir os cards do carrossel **na ordem numerada do nome do arquivo**
+   (`card1-capa` → `card5-cta`).
+2. Legenda: a do `LEGENDAS.md`, sem editar o CTA.
+3. E-mail: hero `_email_hero.png` + a estrutura de corpo descrita no
+   `LEGENDAS.md` (assunto e preheader já definidos lá).
+4. LinkedIn: subir o `_og.png` (1200×630 cobre o formato — não vale gerar
+   arquivo novo por 3px).
+
+### Regra que não se negocia
+
+**Não publicar Reel e carrossel do mesmo conceito no mesmo dia.** O segundo post
+divide o alcance do primeiro em vez de somar. Story isolado sem post não
+sustenta o argumento — sempre no mesmo dia do Reel.
+
+---
+
+## Restrições de conteúdo
+
+Valem para toda peça, todo canal, sem exceção.
+
+| Regra | Por quê |
+|---|---|
+| **Zero número de resultado inventado** | Não há dado auditado. Métrica só entra vinda de case fechado, com fonte. |
+| **Nenhuma UI gerada por IA** | Interface da plataforma em criativo é sempre print real. UI sintética vira promessa de funcionalidade inexistente. |
+| **Marca de cliente só com autorização** | Nome de cliente entra como texto, nunca como logo de terceiro, e nunca com número ou depoimento atrelado sem fonte. |
+| **Painel do gestor não se divulga** | Domínio de produto. Descrever a funcionalidade, nunca o endereço. |
+| **Acentuação correta do português** | Sem "voce", "nao", "reuniao", "solucao". Revisão obrigatória antes do upload. |
+| **Reels saem mudos** | Trilha licenciada é escolhida na biblioteca do Instagram no momento do post. |
+| **Um CTA por frame** | Dois CTAs competindo no mesmo destaque anulam os dois. |
+
+Tamanhos mínimos de tipografia em 1080px: **headline 64 · body 36 · eyebrow 30 ·
+CTA 34**. O compositor recusa peça que não caiba.
+
+---
+
+## Revisão visual
+
+`entregas/CONTACT-SHEET.html` abre as 55 peças numa página só, agrupadas por
+conceito e na ordem de upload. Arquivo local, miniaturas embutidas — abrir
+direto no navegador, sem servidor.
+
+---
+
+## Como regerar depois de editar a copy
+
+```bash
+cd protegido-ai-assistant/tools
+node compose.mjs ../entregas/specs/i1-planilha.json         # peças estáticas
+node motion.mjs  ../entregas/specs/motion/i1-planilha.json  # Reel
+node contact-sheet.mjs                                      # folha de contato
+```
+
+A folha de contato **não** é automática: se a copy mudar, recompor os specs e
+gerar de novo.
+</textarea>
+</main>
+<footer>
+  <a href="index.html">← todos os documentos</a> · <a href="../index.html">kit da campanha</a> · <a href="../contact-sheet.html">as 55 peças</a>
+</footer>
+</div>
+<script>
+(function(){
+  var ver=document.getElementById('ver'),ta=document.getElementById('fonte');
+  ver.onclick=function(){
+    var on=document.body.classList.toggle('fonte');
+    ver.classList.toggle('on',on);
+    ver.textContent=on?'Ver formatado':'Ver a fonte';
+  };
+  document.getElementById('copiar').onclick=function(){
+    var b=this;navigator.clipboard.writeText(ta.value).then(function(){
+      b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600);
+    });
+  };
+  document.getElementById('baixar').onclick=function(){
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([ta.value],{type:'text/markdown'}));
+    a.download="CAMPANHAS-ADS.md";a.click();URL.revokeObjectURL(a.href);
+  };
+})();
+</script>
+</body></html>

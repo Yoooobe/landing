@@ -1,0 +1,253 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>4 · Anti-patterns · 4Unik</title>
+<meta name="description" content="O que nunca entra numa peça — e a auditoria que roda antes de publicar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F6F9;--panel:#FFFFFF;--ink:#14151C;--muted:#63656F;--line:#E3E3EA;
+  --blue:#4B3FB0;--green:#00785A;--orange:#B35F07;
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:rgba(246,246,249,.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+nav a{color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:500}
+nav a:hover{color:var(--ink)}
+nav .brand{font-weight:800;color:var(--ink);font-size:15px;margin-right:auto}
+nav .brand .mark{color:var(--blue)}
+header.doc{padding:44px 0 8px}
+header.doc .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--blue);font-weight:600}
+header.doc h1{font-size:clamp(26px,4vw,38px);line-height:1.14;letter-spacing:-.02em;margin:10px 0 12px}
+header.doc .desc{color:var(--muted);font-size:15.5px;max-width:60ch;margin:0}
+.barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 8px;
+  padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.barra .caminho{font-family:var(--mono);font-size:12px;color:var(--muted);margin-right:auto;
+  word-break:break-all}
+.btn{font-family:var(--font);font-size:12.5px;font-weight:600;cursor:pointer;
+  padding:7px 13px;border-radius:8px;border:1px solid var(--line);
+  background:#FAFAFC;color:var(--ink)}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.aviso{margin:0 0 26px;font-size:13px;color:var(--muted)}
+main{padding:8px 0 60px}
+main h2{font-size:23px;letter-spacing:-.01em;margin:38px 0 12px;padding-top:10px;
+  border-top:1px solid var(--line)}
+main h1{font-size:27px;margin:30px 0 12px}
+main h3{font-size:17px;margin:26px 0 8px}
+main h4{font-size:14.5px;margin:20px 0 6px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;font-family:var(--mono)}
+main p{margin:0 0 14px}
+main a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(75,63,176,.3)}
+main a:hover{border-bottom-color:var(--blue)}
+main ul,main ol{margin:0 0 16px;padding-left:22px}
+main li{margin:0 0 6px}
+main li.task{list-style:none;position:relative;padding-left:26px}
+main li.task::before{content:'';position:absolute;left:0;top:5px;width:15px;height:15px;
+  border:1.5px solid var(--line);border-radius:4px;background:#fff}
+main li.task.feito::before{content:'✓';background:var(--green);border-color:var(--green);
+  color:#fff;font-size:11px;font-weight:700;line-height:15px;text-align:center}
+main li.task.feito{color:var(--muted)}
+main hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+main blockquote{margin:0 0 18px;padding:12px 16px;background:#FAFAFC;
+  border-left:3px solid var(--blue);border-radius:0 10px 10px 0;color:var(--muted)}
+main blockquote p{margin:0 0 6px}
+main blockquote p:last-child{margin:0}
+code{font-family:var(--mono);font-size:.88em;background:#F2F2F6;
+  border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--blue)}
+pre.code{background:#14151C;border-radius:12px;padding:16px;overflow-x:auto;margin:0 0 18px}
+pre.code code{background:none;border:0;padding:0;color:#E4E6EC;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 20px;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  background:#FAFAFC;font-weight:700;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td code{color:var(--green)}
+textarea{display:none;width:100%;min-height:70vh;margin:0 0 20px;padding:18px;
+  font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;resize:vertical}
+body.fonte main>:not(textarea){display:none}
+body.fonte textarea{display:block}
+footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:13px}
+footer a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(0,120,90,.3)}
+@media(max-width:640px){.barra .caminho{width:100%;margin-bottom:6px}}
+</style></head><body>
+<nav><div class="wrap">
+  <span class="brand"><span class="mark">4</span>Unik · documentos</span>
+  <a href="index.html">Índice</a>
+  <!-- caminhos do pacote; tools/publish-kit.py reescreve para index.html /
+       contact-sheet.html ao copiar para public/campanha/ -->
+  <a href="../">Kit</a>
+  <a href="../contact-sheet.html">Peças</a>
+</div></nav>
+<div class="wrap">
+<header class="doc">
+  <span class="kicker">DNA da marca</span>
+  <h1>4 · Anti-patterns</h1>
+  <p class="desc">O que nunca entra numa peça — e a auditoria que roda antes de publicar.</p>
+  <div class="barra">
+    <span class="caminho">dna/4unik-anti-patterns.md · 95 linhas</span>
+    <button class="btn" id="ver">Ver a fonte</button>
+    <button class="btn" id="copiar">Copiar</button>
+    <button class="btn" id="baixar">Baixar .md</button>
+  </div>
+  <p class="aviso">O arquivo de verdade é <code>dna/4unik-anti-patterns.md</code> no repositório. O que você digitar aqui serve para redigir e copiar — esta página não grava.</p>
+</header>
+<main>
+<h1 id="4unik-anti-patterns">4UNIK — ANTI-PATTERNS</h1>
+<blockquote><p>O que NUNCA fazer. Visual + verbal + comunicacional. Última atualização: 2026-08-05.</p></blockquote>
+<hr>
+<h2 id="1-teste-de-substituicao">1. TESTE DE SUBSTITUIÇÃO</h2>
+<p>Se trocar "4Unik" por qualquer software genérico de RH e o criativo continuar fazendo sentido idêntico, o conceito falhou. Refaça com ângulo próprio (automação, integração, escala, cases reais, tom de voz único).</p>
+<hr>
+<h2 id="2-anti-patterns-verbais">2. ANTI-PATTERNS VERBAIS</h2>
+<div class="tw"><table><thead><tr><th>Nunca</th><th>Por quê</th><th>Em vez disso</th></tr></thead><tbody><tr><td>"Garantimos 100% de engajamento"</td><td>Engajamento depende de vários fatores</td><td>"Nossa plataforma otimiza o engajamento e a performance"</td></tr><tr><td>"Somos o RH" / brasão público</td><td>Confunde com departamento interno do cliente ou órgão público</td><td>"Parceiro estratégico para o RH e a gestão de pessoas"</td></tr><tr><td>"Solução mágica" / "hack de engajamento"</td><td>Quebra confiança, soa superficial</td><td>"Automação inteligente", "método comprovado"</td></tr><tr><td>Jargões sem tradução</td><td>Afasta o ICP</td><td>Termo + 1 linha de explicação em português claro</td></tr><tr><td>Inventar depoimento / número</td><td>Risco ético e legal</td><td>Usar só prova real e dados auditados</td></tr><tr><td>Inglês de startup vazio</td><td>Fora da voz, genérico</td><td>Português direto e profissional</td></tr></tbody></table></div>
+<hr>
+<h2 id="3-anti-patterns-visuais">3. ANTI-PATTERNS VISUAIS</h2>
+<ul><li>Logo distorcido, recolorido ou com cores fora da paleta oficial 4Unik.</li><li><strong>Recolorir o símbolo para azul/roxo.</strong> O logo é gradiente quente (<code>#FFEB00</code> → <code>#BC4319</code>); o azul <code>#6455D4</code> é da interface da Plataforma, não da marca. Ver <code>4unik-visual.md</code> §2.</li><li><strong>Ampliar os lockups acima do tamanho nativo</strong> (187px e 121px de largura) — serrilha. Em peça 1080px, usar 1:1 ou partir de <code>4unik-simbolo.png</code> (700px).</li><li><strong>Lockup errado para o fundo</strong>: <code>4unik-lockup-fundo-escuro.png</code> (wordmark branco) só sobre escuro; <code>-fundo-claro.png</code> (wordmark cinza) só sobre claro.</li><li>Usar identidade visual antiga ou de outra marca (ex.: paletas sem conexão).</li><li>Texto ilegível no celular (&lt; mínimos do <code>4unik-visual.md</code>).</li><li>Stock de "pessoas sorrindo no escritório" genérico ou clichês corporativos vazios.</li><li>Bordas brancas / letterbox acidental ou elementos visuais sem propósito.</li><li>Marca d'água genérica AI ostensiva ou elementos que pareçam "amadores".</li><li>Mais de um CTA competindo no mesmo frame ou em destaque igual.</li><li>Opacity baixa em logo ou texto principal que comprometa a legibilidade.</li></ul>
+<hr>
+<h2 id="4-anti-patterns-de-conteudo-de-produto">4. ANTI-PATTERNS DE CONTEÚDO DE PRODUTO</h2>
+<ul><li>Afirmar resultados de performance específicos sem fonte ou case comprovado.</li><li>Dar "consultoria de RH definitiva" em criativo de social media.</li><li>Orientar integração complexa como se fosse simples demais sem ressalvas.</li><li>Copiar interfaces de outros softwares sem contextualização ou atribuição.</li><li>Prometer funcionalidades que não estão disponíveis na plataforma 4Unik.</li><li><strong>Interface da 4Unik gerada por IA.</strong> Tela de produto em peça pública sai de print real — inventário em <code>4unik-refs.md</code> §5. Modelo de imagem só entra em cena abstrata ou fotográfica, nunca desenhando a UI.</li><li><strong>Print com dado interno visível</strong>: e-mail de admin, SKU, preço de teste, nome de empresa cliente. Recortar fora antes de compor.</li><li><strong>Número de tela apresentado como resultado.</strong> O painel público roda dados de demonstração; se o print aparece, a legenda diz que os números são ilustrativos.</li></ul>
+<hr>
+<h2 id="5-anti-patterns-de-funil">5. ANTI-PATTERNS DE FUNIL</h2>
+<ul><li>Pedir formulário longo antes de oferecer qualquer valor ou contexto.</li><li>Tom de cobrança agressiva no primeiro contato ou em comunicações de marketing.</li><li>Prometer prazo fixo de implementação ou resultados instantâneos.</li><li>Comunicação que não se alinha à jornada do cliente da 4Unik (conecte, configure, engaje, entregue).</li></ul>
+<hr>
+<h2 id="6-checklist-pre-publicacao-auditoria-rapida">6. CHECKLIST PRÉ-PUBLICAÇÃO (auditoria rápida)</h2>
+<ol><li>Acentuação correta em 100% do português.</li><li>Nenhuma promessa sem base em dados ou cases comprovados.</li><li>Visual alinhado aos tokens 4Unik.</li><li>Logo e CTA legíveis.</li><li>Conceito passa no teste de substituição.</li><li>Se cita caso real: fato checável, sem sensacionalismo vazio.</li><li>Se usa prova social: fonte real.</li></ol>
+<hr>
+<h2 id="7-auditoria-rapida-pos-render">7. AUDITORIA RÁPIDA PÓS-RENDER</h2>
+<ul><li class="task">Background preenche o frame.</li><li class="task">Texto sem corte / sem colidir com sujeito.</li><li class="task">Contraste ok.</li><li class="task">CTA completo.</li><li class="task">Brand bar presente (se aplicável ao formato).</li><li class="task">Nada de referência a outras marcas de software/SaaS alheias.</li></ul>
+<textarea id="fonte" spellcheck="false"># 4UNIK — ANTI-PATTERNS
+
+&gt; O que NUNCA fazer. Visual + verbal + comunicacional.
+&gt; Última atualização: 2026-08-05.
+
+---
+
+## 1. TESTE DE SUBSTITUIÇÃO
+
+Se trocar "4Unik" por qualquer software genérico de RH e o criativo
+continuar fazendo sentido idêntico, o conceito falhou. Refaça com ângulo
+próprio (automação, integração, escala, cases reais, tom de voz único).
+
+---
+
+## 2. ANTI-PATTERNS VERBAIS
+
+| Nunca | Por quê | Em vez disso |
+|---|---|---|
+| "Garantimos 100% de engajamento" | Engajamento depende de vários fatores | "Nossa plataforma otimiza o engajamento e a performance" |
+| "Somos o RH" / brasão público | Confunde com departamento interno do cliente ou órgão público | "Parceiro estratégico para o RH e a gestão de pessoas" |
+| "Solução mágica" / "hack de engajamento" | Quebra confiança, soa superficial | "Automação inteligente", "método comprovado" |
+| Jargões sem tradução | Afasta o ICP | Termo + 1 linha de explicação em português claro |
+| Inventar depoimento / número | Risco ético e legal | Usar só prova real e dados auditados |
+| Inglês de startup vazio | Fora da voz, genérico | Português direto e profissional |
+
+---
+
+## 3. ANTI-PATTERNS VISUAIS
+
+- Logo distorcido, recolorido ou com cores fora da paleta oficial 4Unik.
+- **Recolorir o símbolo para azul/roxo.** O logo é gradiente quente
+  (`#FFEB00` → `#BC4319`); o azul `#6455D4` é da interface da Plataforma, não da
+  marca. Ver `4unik-visual.md` §2.
+- **Ampliar os lockups acima do tamanho nativo** (187px e 121px de largura) —
+  serrilha. Em peça 1080px, usar 1:1 ou partir de `4unik-simbolo.png` (700px).
+- **Lockup errado para o fundo**: `4unik-lockup-fundo-escuro.png` (wordmark
+  branco) só sobre escuro; `-fundo-claro.png` (wordmark cinza) só sobre claro.
+- Usar identidade visual antiga ou de outra marca (ex.: paletas sem conexão).
+- Texto ilegível no celular (&lt; mínimos do `4unik-visual.md`).
+- Stock de "pessoas sorrindo no escritório" genérico ou clichês corporativos vazios.
+- Bordas brancas / letterbox acidental ou elementos visuais sem propósito.
+- Marca d'água genérica AI ostensiva ou elementos que pareçam "amadores".
+- Mais de um CTA competindo no mesmo frame ou em destaque igual.
+- Opacity baixa em logo ou texto principal que comprometa a legibilidade.
+
+---
+
+## 4. ANTI-PATTERNS DE CONTEÚDO DE PRODUTO
+
+- Afirmar resultados de performance específicos sem fonte ou case comprovado.
+- Dar "consultoria de RH definitiva" em criativo de social media.
+- Orientar integração complexa como se fosse simples demais sem ressalvas.
+- Copiar interfaces de outros softwares sem contextualização ou atribuição.
+- Prometer funcionalidades que não estão disponíveis na plataforma 4Unik.
+- **Interface da 4Unik gerada por IA.** Tela de produto em peça pública sai de
+  print real — inventário em `4unik-refs.md` §5. Modelo de imagem só entra em
+  cena abstrata ou fotográfica, nunca desenhando a UI.
+- **Print com dado interno visível**: e-mail de admin, SKU, preço de teste,
+  nome de empresa cliente. Recortar fora antes de compor.
+- **Número de tela apresentado como resultado.** O painel público roda dados de
+  demonstração; se o print aparece, a legenda diz que os números são ilustrativos.
+
+---
+
+## 5. ANTI-PATTERNS DE FUNIL
+
+- Pedir formulário longo antes de oferecer qualquer valor ou contexto.
+- Tom de cobrança agressiva no primeiro contato ou em comunicações de marketing.
+- Prometer prazo fixo de implementação ou resultados instantâneos.
+- Comunicação que não se alinha à jornada do cliente da 4Unik (conecte, configure, engaje, entregue).
+
+---
+
+## 6. CHECKLIST PRÉ-PUBLICAÇÃO (auditoria rápida)
+
+1. Acentuação correta em 100% do português.
+2. Nenhuma promessa sem base em dados ou cases comprovados.
+3. Visual alinhado aos tokens 4Unik.
+4. Logo e CTA legíveis.
+5. Conceito passa no teste de substituição.
+6. Se cita caso real: fato checável, sem sensacionalismo vazio.
+7. Se usa prova social: fonte real.
+
+---
+
+## 7. AUDITORIA RÁPIDA PÓS-RENDER
+
+- [ ] Background preenche o frame.
+- [ ] Texto sem corte / sem colidir com sujeito.
+- [ ] Contraste ok.
+- [ ] CTA completo.
+- [ ] Brand bar presente (se aplicável ao formato).
+- [ ] Nada de referência a outras marcas de software/SaaS alheias.
+</textarea>
+</main>
+<footer>
+  <a href="index.html">← todos os documentos</a> · <a href="../index.html">kit da campanha</a> · <a href="../contact-sheet.html">as 55 peças</a>
+</footer>
+</div>
+<script>
+(function(){
+  var ver=document.getElementById('ver'),ta=document.getElementById('fonte');
+  ver.onclick=function(){
+    var on=document.body.classList.toggle('fonte');
+    ver.classList.toggle('on',on);
+    ver.textContent=on?'Ver formatado':'Ver a fonte';
+  };
+  document.getElementById('copiar').onclick=function(){
+    var b=this;navigator.clipboard.writeText(ta.value).then(function(){
+      b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600);
+    });
+  };
+  document.getElementById('baixar').onclick=function(){
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([ta.value],{type:'text/markdown'}));
+    a.download="4unik-anti-patterns.md";a.click();URL.revokeObjectURL(a.href);
+  };
+})();
+</script>
+</body></html>
