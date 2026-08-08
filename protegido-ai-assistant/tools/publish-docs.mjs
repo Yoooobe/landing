@@ -30,6 +30,13 @@ const DOCS = [
   },
   {
     grupo: 'campanha',
+    slug: 'automacao',
+    file: 'entregas/AUTOMACAO.md',
+    nome: 'Automação de publicação',
+    desc: 'O que dá para automatizar, o que nunca vai dar e como ligar um agendador às contas.',
+  },
+  {
+    grupo: 'campanha',
     slug: 'entregas',
     file: 'entregas/README.md',
     nome: 'Como ler as entregas',

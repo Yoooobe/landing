@@ -1,0 +1,401 @@
+<!doctype html><html lang="pt-BR"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+<title>Automação de publicação · 4Unik</title>
+<meta name="description" content="O que dá para automatizar, o que nunca vai dar e como ligar um agendador às contas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F6F6F9;--panel:#FFFFFF;--ink:#14151C;--muted:#63656F;--line:#E3E3EA;
+  --blue:#4B3FB0;--green:#00785A;--orange:#B35F07;
+  --font:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:20;background:rgba(246,246,249,.88);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:20px;height:60px}
+nav a{color:var(--muted);text-decoration:none;font-size:13.5px;font-weight:500}
+nav a:hover{color:var(--ink)}
+nav .brand{font-weight:800;color:var(--ink);font-size:15px;margin-right:auto}
+nav .brand .mark{color:var(--blue)}
+header.doc{padding:44px 0 8px}
+header.doc .kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--blue);font-weight:600}
+header.doc h1{font-size:clamp(26px,4vw,38px);line-height:1.14;letter-spacing:-.02em;margin:10px 0 12px}
+header.doc .desc{color:var(--muted);font-size:15.5px;max-width:60ch;margin:0}
+.barra{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 8px;
+  padding:14px 16px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.barra .caminho{font-family:var(--mono);font-size:12px;color:var(--muted);margin-right:auto;
+  word-break:break-all}
+.btn{font-family:var(--font);font-size:12.5px;font-weight:600;cursor:pointer;
+  padding:7px 13px;border-radius:8px;border:1px solid var(--line);
+  background:#FAFAFC;color:var(--ink)}
+.btn:hover{border-color:var(--blue);color:var(--blue)}
+.btn.on{background:var(--blue);border-color:var(--blue);color:#fff}
+.aviso{margin:0 0 26px;font-size:13px;color:var(--muted)}
+main{padding:8px 0 60px}
+main h2{font-size:23px;letter-spacing:-.01em;margin:38px 0 12px;padding-top:10px;
+  border-top:1px solid var(--line)}
+main h1{font-size:27px;margin:30px 0 12px}
+main h3{font-size:17px;margin:26px 0 8px}
+main h4{font-size:14.5px;margin:20px 0 6px;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.05em;font-family:var(--mono)}
+main p{margin:0 0 14px}
+main a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(75,63,176,.3)}
+main a:hover{border-bottom-color:var(--blue)}
+main ul,main ol{margin:0 0 16px;padding-left:22px}
+main li{margin:0 0 6px}
+main li.task{list-style:none;position:relative;padding-left:26px}
+main li.task::before{content:'';position:absolute;left:0;top:5px;width:15px;height:15px;
+  border:1.5px solid var(--line);border-radius:4px;background:#fff}
+main li.task.feito::before{content:'✓';background:var(--green);border-color:var(--green);
+  color:#fff;font-size:11px;font-weight:700;line-height:15px;text-align:center}
+main li.task.feito{color:var(--muted)}
+main hr{border:0;border-top:1px solid var(--line);margin:26px 0}
+main blockquote{margin:0 0 18px;padding:12px 16px;background:#FAFAFC;
+  border-left:3px solid var(--blue);border-radius:0 10px 10px 0;color:var(--muted)}
+main blockquote p{margin:0 0 6px}
+main blockquote p:last-child{margin:0}
+code{font-family:var(--mono);font-size:.88em;background:#F2F2F6;
+  border:1px solid var(--line);border-radius:5px;padding:1px 5px;color:var(--blue)}
+pre.code{background:#14151C;border-radius:12px;padding:16px;overflow-x:auto;margin:0 0 18px}
+pre.code code{background:none;border:0;padding:0;color:#E4E6EC;font-size:12.5px;line-height:1.7}
+.tw{overflow-x:auto;margin:0 0 20px;border:1px solid var(--line);border-radius:12px;
+  background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  background:#FAFAFC;font-weight:700;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+td code{color:var(--green)}
+textarea{display:none;width:100%;min-height:70vh;margin:0 0 20px;padding:18px;
+  font-family:var(--mono);font-size:12.5px;line-height:1.7;color:var(--ink);
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;resize:vertical}
+body.fonte main>:not(textarea){display:none}
+body.fonte textarea{display:block}
+footer{border-top:1px solid var(--line);padding:26px 0 50px;color:var(--muted);font-size:13px}
+footer a{color:var(--green);text-decoration:none;border-bottom:1px solid rgba(0,120,90,.3)}
+@media(max-width:640px){.barra .caminho{width:100%;margin-bottom:6px}}
+</style></head><body>
+<nav><div class="wrap">
+  <span class="brand"><span class="mark">4</span>Unik · documentos</span>
+  <a href="index.html">Índice</a>
+  <!-- caminhos do pacote; tools/publish-kit.py reescreve para index.html /
+       contact-sheet.html ao copiar para public/campanha/ -->
+  <a href="../">Kit</a>
+  <a href="../contact-sheet.html">Peças</a>
+</div></nav>
+<div class="wrap">
+<header class="doc">
+  <span class="kicker">Campanha de agosto/2026</span>
+  <h1>Automação de publicação</h1>
+  <p class="desc">O que dá para automatizar, o que nunca vai dar e como ligar um agendador às contas.</p>
+  <div class="barra">
+    <span class="caminho">entregas/AUTOMACAO.md · 213 linhas · atualizado em 2026-08-06</span>
+    <button class="btn" id="ver">Ver a fonte</button>
+    <button class="btn" id="copiar">Copiar</button>
+    <button class="btn" id="baixar">Baixar .md</button>
+  </div>
+  <p class="aviso">O arquivo de verdade é <code>entregas/AUTOMACAO.md</code> no repositório. O que você digitar aqui serve para redigir e copiar — esta página não grava.</p>
+</header>
+<main>
+<h1 id="automacao-de-publicacao">Automação de publicação</h1>
+<blockquote><p>Roteiro de configuração. Nada aqui está ligado ainda — é a decisão e o passo a passo, para quando ela for tomada. Última atualização: 2026-08-06.</p></blockquote>
+<hr>
+<h2 id="1-o-que-a-api-publica-e-o-que-ela-nao-publica">1. O que a API publica e o que ela não publica</h2>
+<p>Esta é a informação que decide tudo o mais. Não é limitação de ferramenta: é da API da Meta. Qualquer serviço contratado esbarra no mesmo teto.</p>
+<div class="tw"><table><thead><tr><th>O que vai ao ar</th><th>Automatizável</th><th>Por quê</th></tr></thead><tbody><tr><td>5 carrosséis de feed 4:5</td><td><strong>sim</strong>, ponta a ponta</td><td>a API publica carrossel com até 10 imagens</td></tr><tr><td>5 posts de LinkedIn (OG 1200×630)</td><td><strong>sim</strong></td><td>post de imagem única em Página de empresa</td></tr><tr><td>5 e-mails de nutrição</td><td><strong>sim</strong>, em outra ferramenta</td><td>não passa por rede social</td></tr><tr><td><strong>5 Reels</strong></td><td><strong>não</strong> — só sem trilha</td><td>a API não anexa áudio da biblioteca licenciada do Instagram</td></tr><tr><td><strong>16 Stories</strong></td><td><strong>não</strong> — só sem sticker</td><td>enquete, quiz e link sticker não existem na API</td></tr></tbody></table></div>
+<p>O <code>CALENDARIO.md</code> já manda escolher a trilha na hora de postar, e o <code>LEGENDAS.md</code> de cada conceito pede enquete no primeiro story e link sticker no último frame. Ou seja, o calendário se parte em dois:</p>
+<ul><li><strong>Terça — Reel + Stories:</strong> continua manual, no celular. O agendador serve como lembrete e como cofre das legendas.</li><li><strong>Quinta — Feed + e-mail + LinkedIn:</strong> automatiza inteiro.</li></ul>
+<p>Postar o Reel pela API para "não dar trabalho" custaria a trilha, que é o que carrega o alcance de Reel. Não compensa.</p>
+<hr>
+<h2 id="2-antes-de-escolher-a-ferramenta-pre-requisitos">2. Antes de escolher a ferramenta — pré-requisitos</h2>
+<p>Valem para qualquer agendador. Sem isto, nenhum conecta.</p>
+<ul><li class="task"><code>@4unikoficial</code> precisa ser conta <strong>Profissional</strong> (Comercial ou Criador de conteúdo), não pessoal. Instagram → Configurações → Tipo de conta.</li><li class="task">A conta precisa estar <strong>vinculada a uma Página do Facebook</strong> da 4Unik. A maioria dos agendadores ainda exige esse vínculo, mesmo com o login novo do Instagram para empresas.</li><li class="task">Quem for conectar precisa ser <strong>administrador</strong> da Página do Facebook e da Página da empresa no LinkedIn — não basta ser editor.</li><li class="task">Definir <strong>de qual conta sai a conexão</strong>. Se sair da conta pessoal de alguém, a automação quebra quando essa pessoa sair da empresa. Usar um login de empresa.</li></ul>
+<hr>
+<h2 id="3-caminho-recomendado-agendador-pronto">3. Caminho recomendado — agendador pronto</h2>
+<p>Para agosto. O primeiro post é 11/08; não há prazo para revisão de app da Meta.</p>
+<h3 id="3-1-escolha">3.1 Escolha</h3>
+<div class="tw"><table><thead><tr><th>Ferramenta</th><th>A favor</th><th>Contra</th></tr></thead><tbody><tr><td><strong>Metricool</strong></td><td>analytics de Instagram e LinkedIn no mesmo painel; modo notificação para Reel e Story; interface em português</td><td>mais caro que o Publer</td></tr><tr><td><strong>Publer</strong></td><td>mais barato; primeiro comentário automático; recorrência de post</td><td>analytics fraco</td></tr><tr><td><strong>Buffer</strong></td><td>o mais simples de todos</td><td>cobertura de Story e Reel mais limitada</td></tr></tbody></table></div>
+<p>Faixa de preço das três: US$ 10–25 por mês, por conjunto de contas. Confirmar o valor no site antes de assinar — muda com frequência.</p>
+<h3 id="3-2-configuracao-passo-a-passo">3.2 Configuração, passo a passo</h3>
+<ol><li>Criar a conta com um e-mail <strong>da empresa</strong>, nunca pessoal.</li><li>Conectar o Instagram: o agendador abre o login do Facebook, você escolhe a Página e a conta do Instagram ligada a ela. Conceder todas as permissões que ele pedir — negar uma quebra o agendamento sem avisar direito.</li><li>Conectar o LinkedIn: escolher <strong>Página da empresa</strong>, não o perfil pessoal.</li><li>Ativar as <strong>notificações no celular</strong> (app do agendador). É por elas que o Reel e o Story chegam na terça.</li><li>Definir fuso horário como <strong>America/Sao_Paulo</strong>. Erro comum: a conta nasce em UTC e todo post sai três horas adiantado.</li></ol>
+<h3 id="3-3-como-carregar-as-cinco-semanas">3.3 Como carregar as cinco semanas</h3>
+<p>As peças já estão publicadas e acessíveis. Para cada post, a arte sai de <code>plataforma.4unik.com.br/landing/campanha/contact-sheet.html</code> — clicar na peça abre o PNG em tamanho real, e o MP4 do Reel toca na própria página.</p>
+<p>Para cada linha do <code>CALENDARIO.md</code>:</p>
+<ol><li>Abrir o <code>LEGENDAS.md</code> do conceito e copiar a legenda do formato.</li><li>Baixar as artes do contact sheet, <strong>na ordem dos cards</strong> — carrossel fora de ordem inverte o argumento.</li><li>Agendar:<ul><li><strong>Feed (quinta):</strong> carrossel, na ordem, legenda colada, primeiro comentário vazio. Publicação automática.</li><li><strong>Reel (terça):</strong> modo notificação. O agendador guarda o MP4 e a legenda e te avisa na hora; você escolhe a trilha no app e publica.</li><li><strong>Stories (terça):</strong> modo notificação, um por frame. Enquete no frame 1, link sticker só no último.</li><li><strong>LinkedIn (quinta):</strong> imagem <code>_og.png</code>, legenda adaptada do <code>LEGENDAS.md</code>.</li></ul></li><li>Conferir contra o bloco de regras no fim do <code>LEGENDAS.md</code> antes de salvar.</li></ol>
+<h3 id="3-4-limite-que-importa">3.4 Limite que importa</h3>
+<p>A API do Instagram aceita <strong>50 publicações por 24 horas</strong> por conta. A campanha usa 2 por semana. Folga total — só vira problema se alguém disparar um backlog inteiro de uma vez.</p>
+<hr>
+<h2 id="4-caminho-2-api-direto-para-setembro-em-diante">4. Caminho 2 — API direto, para setembro em diante</h2>
+<p>Sem custo mensal e integrado ao pipeline em <code>tools/</code>. Não dá para agosto porque depende de revisão da Meta, que leva de duas a quatro semanas e pode voltar pedindo correção.</p>
+<p>Metade do trabalho já está feita sem querer: a API exige que a mídia esteja numa <strong>URL pública</strong> que os servidores da Meta consigam baixar, e as peças já estão em <code>plataforma.4unik.com.br/landing/campanha/pecas/</code>. O <code>noindex</code> não atrapalha — ele fala com buscador, não com o robô da Meta.</p>
+<h3 id="4-1-o-que-precisa-acontecer">4.1 O que precisa acontecer</h3>
+<ol><li>Criar um app do tipo <strong>Business</strong> no painel de desenvolvedores da Meta.</li><li><strong>Verificação de negócio</strong> da 4Unik (CNPJ e documentos). É a etapa lenta.</li><li>Pedir revisão da permissão de publicação de conteúdo do Instagram, com vídeo demonstrando o fluxo. A Meta renomeia essa permissão de tempos em tempos — conferir o nome atual na documentação antes de submeter.</li><li>Gerar um token de longa duração e guardar fora do repositório.</li></ol>
+<h3 id="4-2-como-o-post-funciona">4.2 Como o post funciona</h3>
+<p>Publicar é sempre em dois tempos, nunca numa chamada só:</p>
+<ol><li><strong>Criar o contêiner</strong> — <code>POST /{ig-user-id}/media</code> com a URL da imagem ou do vídeo e a legenda. Devolve um id.</li><li><strong>Publicar</strong> — <code>POST /{ig-user-id}/media_publish</code> com esse id.</li></ol>
+<p>Detalhes que mordem:</p>
+<ul><li><strong>Carrossel</strong> são três passos: um contêiner por imagem com <code>is_carousel_item=true</code>, depois um contêiner <code>media_type=CAROUSEL</code> listando os filhos, depois o publish.</li><li><strong>Vídeo é assíncrono.</strong> O contêiner de Reel nasce em processamento; é preciso consultar o status até virar pronto antes de publicar. Publicar cedo demais devolve erro.</li><li><strong>LinkedIn é outra história.</strong> Postar em Página de empresa pela API exige entrar no programa de parceiros do LinkedIn e ser aprovado. É mais burocrático que a Meta. Manter o LinkedIn no agendador mesmo depois de automatizar o Instagram é uma decisão razoável.</li></ul>
+<h3 id="4-3-onde-isso-moraria">4.3 Onde isso moraria</h3>
+<p>Um <code>tools/publish-social.mjs</code> lendo os mesmos <code>entregas/specs/*.json</code> e o <code>CALENDARIO.md</code> que já governam a composição. A fonte da verdade não muda: quem manda continua sendo o spec, e a publicação vira só mais uma saída do pipeline, ao lado do PNG e do MP4.</p>
+<hr>
+<h2 id="5-e-mail">5. E-mail</h2>
+<p>Os cinco e-mails saem da ferramenta que a 4Unik já usa. Independentemente de qual seja, cada um precisa do mesmo conjunto, e tudo isso já está escrito no <code>LEGENDAS.md</code> do conceito, na seção <strong>E-mail</strong>:</p>
+<ul><li><strong>Assunto</strong> e <strong>preheader</strong> — os dois já definidos, não reescrever na hora.</li><li><strong>Hero</strong> — o <code>_email_hero.png</code> (1200×600), que precisa ser hospedado pela ferramenta ou apontado para <code>plataforma.4unik.com.br/landing/campanha/pecas/</code>.</li><li><strong>Corpo</strong> — a estrutura de blocos descrita no <code>LEGENDAS.md</code>, na ordem.</li><li><strong>CTA</strong> — um só por e-mail, com o link que o documento manda.</li><li><strong>Rodapé</strong> — <code>@4unikoficial</code>, descadastro e endereço da empresa. Obrigatório por lei e por reputação de entrega.</li></ul>
+<h3 id="5-1-pendencia-que-bloqueia">5.1 Pendência que bloqueia</h3>
+<p>O e-mail do <strong>i5-integracao</strong> espera um depoimento: <strong>frase, nome e cargo</strong> de quem assina, por escrito. Prazo <strong>10/09</strong>. Se não vier, o e-mail sai com o bloco de marcas e sem o depoimento — não substituir por número genérico nem por depoimento anônimo.</p>
+<h3 id="5-2-antes-do-primeiro-disparo">5.2 Antes do primeiro disparo</h3>
+<ul><li class="task">Autenticação de domínio (SPF, DKIM e DMARC) no domínio remetente. Sem isso, e-mail corporativo para caixa corporativa cai em spam.</li><li class="task">Teste de entrega para Gmail, Outlook e um domínio corporativo qualquer.</li><li class="task">Conferir o hero no cliente de e-mail: o Outlook desktop não respeita várias regras de CSS que funcionam no Gmail.</li></ul>
+<hr>
+<h2 id="6-depois-de-publicar">6. Depois de publicar</h2>
+<p>O <code>CAMPANHAS-ADS.md</code> tem a linha de cada post à espera do resultado. Registrar lá, não numa planilha à parte:</p>
+<ul><li>alcance e salvamentos de cada Reel;</li><li>resultado das enquetes dos Stories — é a resposta mais barata que a campanha produz sobre o que o público reconhece como dor;</li><li>abertura e clique de cada e-mail;</li><li>reuniões marcadas pelo Calendly no período.</li></ul>
+<p>O funil da campanha vai de topo (i1) a fundo (i5). Se o fundo converter e o topo não engajar, o problema é de alcance. Se o topo engajar e o fundo não converter, o problema é da oferta — e isso muda o próximo mês, não este.</p>
+<textarea id="fonte" spellcheck="false">---
+title: "Automação de publicação — roteiro de configuração"
+description: "O que dá para automatizar na campanha, o que nunca vai dar, e o passo a passo para ligar um agendador ao Instagram e ao LinkedIn."
+slug: "automacao"
+updated: "2026-08-06"
+audience: "interno"
+noindex: true
+---
+
+# Automação de publicação
+
+&gt; Roteiro de configuração. Nada aqui está ligado ainda — é a decisão e o passo a
+&gt; passo, para quando ela for tomada.
+&gt; Última atualização: 2026-08-06.
+
+---
+
+## 1. O que a API publica e o que ela não publica
+
+Esta é a informação que decide tudo o mais. Não é limitação de ferramenta: é da
+API da Meta. Qualquer serviço contratado esbarra no mesmo teto.
+
+| O que vai ao ar | Automatizável | Por quê |
+|---|---|---|
+| 5 carrosséis de feed 4:5 | **sim**, ponta a ponta | a API publica carrossel com até 10 imagens |
+| 5 posts de LinkedIn (OG 1200×630) | **sim** | post de imagem única em Página de empresa |
+| 5 e-mails de nutrição | **sim**, em outra ferramenta | não passa por rede social |
+| **5 Reels** | **não** — só sem trilha | a API não anexa áudio da biblioteca licenciada do Instagram |
+| **16 Stories** | **não** — só sem sticker | enquete, quiz e link sticker não existem na API |
+
+O `CALENDARIO.md` já manda escolher a trilha na hora de postar, e o `LEGENDAS.md`
+de cada conceito pede enquete no primeiro story e link sticker no último frame.
+Ou seja, o calendário se parte em dois:
+
+- **Terça — Reel + Stories:** continua manual, no celular. O agendador serve
+  como lembrete e como cofre das legendas.
+- **Quinta — Feed + e-mail + LinkedIn:** automatiza inteiro.
+
+Postar o Reel pela API para "não dar trabalho" custaria a trilha, que é o que
+carrega o alcance de Reel. Não compensa.
+
+---
+
+## 2. Antes de escolher a ferramenta — pré-requisitos
+
+Valem para qualquer agendador. Sem isto, nenhum conecta.
+
+- [ ] `@4unikoficial` precisa ser conta **Profissional** (Comercial ou Criador de
+      conteúdo), não pessoal. Instagram → Configurações → Tipo de conta.
+- [ ] A conta precisa estar **vinculada a uma Página do Facebook** da 4Unik. A
+      maioria dos agendadores ainda exige esse vínculo, mesmo com o login novo
+      do Instagram para empresas.
+- [ ] Quem for conectar precisa ser **administrador** da Página do Facebook e da
+      Página da empresa no LinkedIn — não basta ser editor.
+- [ ] Definir **de qual conta sai a conexão**. Se sair da conta pessoal de
+      alguém, a automação quebra quando essa pessoa sair da empresa. Usar um
+      login de empresa.
+
+---
+
+## 3. Caminho recomendado — agendador pronto
+
+Para agosto. O primeiro post é 11/08; não há prazo para revisão de app da Meta.
+
+### 3.1 Escolha
+
+| Ferramenta | A favor | Contra |
+|---|---|---|
+| **Metricool** | analytics de Instagram e LinkedIn no mesmo painel; modo notificação para Reel e Story; interface em português | mais caro que o Publer |
+| **Publer** | mais barato; primeiro comentário automático; recorrência de post | analytics fraco |
+| **Buffer** | o mais simples de todos | cobertura de Story e Reel mais limitada |
+
+Faixa de preço das três: US$ 10–25 por mês, por conjunto de contas. Confirmar o
+valor no site antes de assinar — muda com frequência.
+
+### 3.2 Configuração, passo a passo
+
+1. Criar a conta com um e-mail **da empresa**, nunca pessoal.
+2. Conectar o Instagram: o agendador abre o login do Facebook, você escolhe a
+   Página e a conta do Instagram ligada a ela. Conceder todas as permissões que
+   ele pedir — negar uma quebra o agendamento sem avisar direito.
+3. Conectar o LinkedIn: escolher **Página da empresa**, não o perfil pessoal.
+4. Ativar as **notificações no celular** (app do agendador). É por elas que o
+   Reel e o Story chegam na terça.
+5. Definir fuso horário como **America/Sao_Paulo**. Erro comum: a conta nasce em
+   UTC e todo post sai três horas adiantado.
+
+### 3.3 Como carregar as cinco semanas
+
+As peças já estão publicadas e acessíveis. Para cada post, a arte sai de
+`plataforma.4unik.com.br/landing/campanha/contact-sheet.html` — clicar na peça
+abre o PNG em tamanho real, e o MP4 do Reel toca na própria página.
+
+Para cada linha do `CALENDARIO.md`:
+
+1. Abrir o `LEGENDAS.md` do conceito e copiar a legenda do formato.
+2. Baixar as artes do contact sheet, **na ordem dos cards** — carrossel fora de
+   ordem inverte o argumento.
+3. Agendar:
+   - **Feed (quinta):** carrossel, na ordem, legenda colada, primeiro comentário
+     vazio. Publicação automática.
+   - **Reel (terça):** modo notificação. O agendador guarda o MP4 e a legenda e
+     te avisa na hora; você escolhe a trilha no app e publica.
+   - **Stories (terça):** modo notificação, um por frame. Enquete no frame 1,
+     link sticker só no último.
+   - **LinkedIn (quinta):** imagem `_og.png`, legenda adaptada do `LEGENDAS.md`.
+4. Conferir contra o bloco de regras no fim do `LEGENDAS.md` antes de salvar.
+
+### 3.4 Limite que importa
+
+A API do Instagram aceita **50 publicações por 24 horas** por conta. A campanha
+usa 2 por semana. Folga total — só vira problema se alguém disparar um backlog
+inteiro de uma vez.
+
+---
+
+## 4. Caminho 2 — API direto, para setembro em diante
+
+Sem custo mensal e integrado ao pipeline em `tools/`. Não dá para agosto porque
+depende de revisão da Meta, que leva de duas a quatro semanas e pode voltar
+pedindo correção.
+
+Metade do trabalho já está feita sem querer: a API exige que a mídia esteja numa
+**URL pública** que os servidores da Meta consigam baixar, e as peças já estão em
+`plataforma.4unik.com.br/landing/campanha/pecas/`. O `noindex` não atrapalha —
+ele fala com buscador, não com o robô da Meta.
+
+### 4.1 O que precisa acontecer
+
+1. Criar um app do tipo **Business** no painel de desenvolvedores da Meta.
+2. **Verificação de negócio** da 4Unik (CNPJ e documentos). É a etapa lenta.
+3. Pedir revisão da permissão de publicação de conteúdo do Instagram, com vídeo
+   demonstrando o fluxo. A Meta renomeia essa permissão de tempos em tempos —
+   conferir o nome atual na documentação antes de submeter.
+4. Gerar um token de longa duração e guardar fora do repositório.
+
+### 4.2 Como o post funciona
+
+Publicar é sempre em dois tempos, nunca numa chamada só:
+
+1. **Criar o contêiner** — `POST /{ig-user-id}/media` com a URL da imagem ou do
+   vídeo e a legenda. Devolve um id.
+2. **Publicar** — `POST /{ig-user-id}/media_publish` com esse id.
+
+Detalhes que mordem:
+
+- **Carrossel** são três passos: um contêiner por imagem com
+  `is_carousel_item=true`, depois um contêiner `media_type=CAROUSEL` listando os
+  filhos, depois o publish.
+- **Vídeo é assíncrono.** O contêiner de Reel nasce em processamento; é preciso
+  consultar o status até virar pronto antes de publicar. Publicar cedo demais
+  devolve erro.
+- **LinkedIn é outra história.** Postar em Página de empresa pela API exige
+  entrar no programa de parceiros do LinkedIn e ser aprovado. É mais burocrático
+  que a Meta. Manter o LinkedIn no agendador mesmo depois de automatizar o
+  Instagram é uma decisão razoável.
+
+### 4.3 Onde isso moraria
+
+Um `tools/publish-social.mjs` lendo os mesmos `entregas/specs/*.json` e o
+`CALENDARIO.md` que já governam a composição. A fonte da verdade não muda: quem
+manda continua sendo o spec, e a publicação vira só mais uma saída do pipeline,
+ao lado do PNG e do MP4.
+
+---
+
+## 5. E-mail
+
+Os cinco e-mails saem da ferramenta que a 4Unik já usa. Independentemente de
+qual seja, cada um precisa do mesmo conjunto, e tudo isso já está escrito no
+`LEGENDAS.md` do conceito, na seção **E-mail**:
+
+- **Assunto** e **preheader** — os dois já definidos, não reescrever na hora.
+- **Hero** — o `_email_hero.png` (1200×600), que precisa ser hospedado pela
+  ferramenta ou apontado para
+  `plataforma.4unik.com.br/landing/campanha/pecas/`.
+- **Corpo** — a estrutura de blocos descrita no `LEGENDAS.md`, na ordem.
+- **CTA** — um só por e-mail, com o link que o documento manda.
+- **Rodapé** — `@4unikoficial`, descadastro e endereço da empresa. Obrigatório
+  por lei e por reputação de entrega.
+
+### 5.1 Pendência que bloqueia
+
+O e-mail do **i5-integracao** espera um depoimento: **frase, nome e cargo** de
+quem assina, por escrito. Prazo **10/09**. Se não vier, o e-mail sai com o bloco
+de marcas e sem o depoimento — não substituir por número genérico nem por
+depoimento anônimo.
+
+### 5.2 Antes do primeiro disparo
+
+- [ ] Autenticação de domínio (SPF, DKIM e DMARC) no domínio remetente. Sem
+      isso, e-mail corporativo para caixa corporativa cai em spam.
+- [ ] Teste de entrega para Gmail, Outlook e um domínio corporativo qualquer.
+- [ ] Conferir o hero no cliente de e-mail: o Outlook desktop não respeita várias
+      regras de CSS que funcionam no Gmail.
+
+---
+
+## 6. Depois de publicar
+
+O `CAMPANHAS-ADS.md` tem a linha de cada post à espera do resultado. Registrar
+lá, não numa planilha à parte:
+
+- alcance e salvamentos de cada Reel;
+- resultado das enquetes dos Stories — é a resposta mais barata que a campanha
+  produz sobre o que o público reconhece como dor;
+- abertura e clique de cada e-mail;
+- reuniões marcadas pelo Calendly no período.
+
+O funil da campanha vai de topo (i1) a fundo (i5). Se o fundo converter e o topo
+não engajar, o problema é de alcance. Se o topo engajar e o fundo não converter,
+o problema é da oferta — e isso muda o próximo mês, não este.
+</textarea>
+</main>
+<footer>
+  <a href="index.html">← todos os documentos</a> · <a href="../index.html">kit da campanha</a> · <a href="../contact-sheet.html">as 55 peças</a>
+</footer>
+</div>
+<script>
+(function(){
+  var ver=document.getElementById('ver'),ta=document.getElementById('fonte');
+  ver.onclick=function(){
+    var on=document.body.classList.toggle('fonte');
+    ver.classList.toggle('on',on);
+    ver.textContent=on?'Ver formatado':'Ver a fonte';
+  };
+  document.getElementById('copiar').onclick=function(){
+    var b=this;navigator.clipboard.writeText(ta.value).then(function(){
+      b.textContent='Copiado';setTimeout(function(){b.textContent='Copiar'},1600);
+    });
+  };
+  document.getElementById('baixar').onclick=function(){
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([ta.value],{type:'text/markdown'}));
+    a.download="AUTOMACAO.md";a.click();URL.revokeObjectURL(a.href);
+  };
+})();
+</script>
+</body></html>
