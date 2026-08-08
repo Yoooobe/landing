@@ -6,29 +6,6 @@ Site de marketing estático da Yoobe / plataforma 4unik. Next.js com export est�
 
 Repo: `Yoooobe/landing`
 
-## Stack
-
-- **Framework**: Next.js 16 (App Router), React 19, TypeScript
-- **Estilo**: Tailwind CSS v4, Framer Motion, Base UI
-- **CMS**: Sanity (`hin8ivz0`)
-- **Analytics**: GA4 (`G-SMJDYCENBC`, property `327916606`)
-- **Build**: static export (`output: "export"`)
-- **Package manager**: npm
-
-## Comandos
-
-```bash
-npm run dev             # dev server (requer env Sanity)
-npm run build           # build estático → out/
-npm run lint
-npm run deploy:production
-npm run generate:blog-posts   # AI → Sanity (requer OPENAI_API_KEY)
-npm run generate:og           # gera OG images PNG
-npm run validate:landing-routes
-npm run env:check
-npm run fetch:ga4-snapshot
-```
-
 ## Variáveis de ambiente
 
 ```
@@ -39,22 +16,6 @@ SANITY_API_WRITE_TOKEN
 NEXT_PUBLIC_GA_ID
 NEXT_PUBLIC_SITE_URL        # define basePath dinamicamente
 NEXT_PUBLIC_INDEX_GROWTH_PAGES
-```
-
-## Estrutura
-
-```
-src/
-├── app/          # pages (App Router) — static export
-├── components/   # UI + marketing components
-│   └── icp/      # páginas por perfil de cliente
-├── config/       # manifests de ícones, ICP visuals
-├── lib/          # site.ts, seo/, publicSite.ts
-└── sanity/       # schemas + queries GROQ
-skills/           # skills de marketing para agentes
-mcps/
-└── 4unik-marketing/   # MCP local: GA4 + knowledge base
-docs/             # documentação do projeto
 ```
 
 ## MCPs disponíveis
