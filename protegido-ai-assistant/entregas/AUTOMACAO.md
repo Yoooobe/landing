@@ -164,35 +164,102 @@ ao lado do PNG e do MP4.
 
 ---
 
-## 5. E-mail
+## 5. E-mail — a 4Unik usa Google Workspace
 
-Os cinco e-mails saem da ferramenta que a 4Unik já usa. Independentemente de
-qual seja, cada um precisa do mesmo conjunto, e tudo isso já está escrito no
-`LEGENDAS.md` do conceito, na seção **E-mail**:
+O Workspace é uma **caixa de correio**, não uma plataforma de e-mail marketing.
+Ele entrega bem porque cada mensagem é uma conversa entre duas pessoas; disparo
+de campanha é outro comportamento, e é o comportamento que o filtro mede.
 
-- **Assunto** e **preheader** — os dois já definidos, não reescrever na hora.
-- **Hero** — o `_email_hero.png` (1200×600), que precisa ser hospedado pela
-  ferramenta ou apontado para
+O que o Workspace não tem, e a campanha precisa:
+
+- descadastro com um clique, que o próprio Gmail exige de quem manda em volume;
+- controle de quem já se descadastrou — no Gmail comum, ninguém;
+- abertura e clique por destinatário, que alimentam o `CAMPANHAS-ADS.md`;
+- separação entre a reputação do disparo e a reputação do e-mail de trabalho.
+
+Esse último é o risco de verdade. Se a campanha sair de `@4unik.com.br` e uma
+parte marcar como spam, quem passa a cair na lixeira é a conversa comercial do
+dia a dia — proposta, contrato, resposta a cliente. O prejuízo não fica na
+campanha.
+
+### 5.1 Antes de escolher, falta uma decisão
+
+Nenhum documento da campanha diz **para quem** esses cinco e-mails vão. Sem isso
+não dá para escolher o caminho, porque a resposta muda tudo. Definir:
+
+- de onde vem a lista e quantos contatos tem;
+- se essas pessoas pediram para receber ou se é prospecção fria.
+
+### 5.2 Caminho A — lista pequena, ou prospecção 1 a 1
+
+Se forem algumas dezenas de contatos e a mensagem for de vendas, cabe no
+Workspace, usando o **envio múltiplo do Gmail** (mail merge). Ele está nos
+planos Business Standard para cima, insere o link de descadastro sozinho e
+segura até 1.500 destinatários por dia.
+
+O que ele não faz: relatório de abertura e clique. O retorno vem por resposta e
+por reunião marcada no Calendly, e é assim que se registra no painel.
+
+Nesse caminho, o e-mail deveria ser mais simples do que está composto — texto
+com um link, não peça desenhada. Hero de campanha em mensagem 1 a 1 é o que
+denuncia disparo em massa.
+
+### 5.3 Caminho B — lista de verdade
+
+A partir de algumas centenas de contatos que optaram por receber, entra uma
+ferramenta de envio. As gratuitas resolvem a campanha inteira: **Brevo** dá 300
+e-mails por dia sem custo, **MailerSend** algo próximo. São cinco disparos em
+cinco semanas — não chega perto do teto.
+
+Isso **não substitui** o Workspace. Convive:
+
+| Sai de | O quê |
+|---|---|
+| Google Workspace, `@4unik.com.br` | conversa, proposta, resposta a cliente |
+| Ferramenta de envio, subdomínio | os cinco e-mails da campanha |
+
+**Usar um subdomínio** para o disparo — `news.4unik.com.br` ou
+`email.4unik.com.br`. É o que isola as duas reputações: se a campanha se
+queimar, o e-mail de trabalho continua entregando. Configurar o subdomínio no
+DNS pede acesso ao painel do domínio, não ao Workspace.
+
+### 5.4 O que cada e-mail precisa
+
+Já está escrito no `LEGENDAS.md` do conceito, na seção **E-mail**:
+
+- **Assunto** e **preheader** — os dois definidos, não reescrever na hora.
+- **Hero** — o `_email_hero.png` (1200×600), exibido a 600px de largura.
+  Hospedar na ferramenta ou apontar para
   `plataforma.4unik.com.br/landing/campanha/pecas/`.
-- **Corpo** — a estrutura de blocos descrita no `LEGENDAS.md`, na ordem.
+- **Corpo** — os blocos descritos no `LEGENDAS.md`, na ordem.
 - **CTA** — um só por e-mail, com o link que o documento manda.
-- **Rodapé** — `@4unikoficial`, descadastro e endereço da empresa. Obrigatório
-  por lei e por reputação de entrega.
+- **Rodapé** — `@4unikoficial`, descadastro e endereço da empresa. Os dois
+  últimos são obrigação legal, não enfeite.
 
-### 5.1 Pendência que bloqueia
+Montando o HTML: tabela, largura máxima 600px, CSS em atributo `style` na
+própria tag. Nada de `<style>` no topo nem de imagem como plano de fundo — o
+Outlook para desktop ignora os dois e a peça chega quebrada. Toda imagem com
+`alt` que faça sentido lido sozinho, porque metade das caixas abre com imagem
+bloqueada.
+
+### 5.5 Pendência que bloqueia
 
 O e-mail do **i5-integracao** espera um depoimento: **frase, nome e cargo** de
 quem assina, por escrito. Prazo **10/09**. Se não vier, o e-mail sai com o bloco
 de marcas e sem o depoimento — não substituir por número genérico nem por
 depoimento anônimo.
 
-### 5.2 Antes do primeiro disparo
+### 5.6 Antes do primeiro disparo
 
-- [ ] Autenticação de domínio (SPF, DKIM e DMARC) no domínio remetente. Sem
-      isso, e-mail corporativo para caixa corporativa cai em spam.
-- [ ] Teste de entrega para Gmail, Outlook e um domínio corporativo qualquer.
-- [ ] Conferir o hero no cliente de e-mail: o Outlook desktop não respeita várias
-      regras de CSS que funcionam no Gmail.
+- [ ] Decidir o caminho, o que depende de saber quem recebe (§5.1).
+- [ ] SPF, DKIM e DMARC do remetente. O Workspace já assina o domínio
+      principal; a ferramenta de envio precisa da assinatura dela no
+      subdomínio. Conferir também se a política de DMARC do domínio não
+      derruba o que sai do subdomínio.
+- [ ] Descadastro funcionando e testado — clicar e ver o contato sair.
+- [ ] Teste de entrega para Gmail, Outlook e um domínio corporativo qualquer,
+      olhando a caixa de entrada e a de promoções.
+- [ ] Abrir o hero no Outlook para desktop antes de disparar.
 
 ---
 
