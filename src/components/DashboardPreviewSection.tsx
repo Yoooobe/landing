@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/basePath";
+import Image from "next/image";
 import { ZoomableScreenshot } from "@/components/ui/ScreenshotLightbox";
 import { motion } from "framer-motion";
 
@@ -206,6 +208,49 @@ export default function DashboardPreviewSection() {
                 ))}
               </div>
               <span className="text-[0.6rem] font-mono text-gray-400">Últimos 30 dias</span>
+            </div>
+          </motion.div>
+
+          {/* Floating Mobile Smartphone device mockup (reference sualoja4unik style) */}
+          <motion.div
+            initial={{ opacity: 0, x: -30, y: 30 }}
+            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.45, duration: 0.8, type: "spring" }}
+            className="absolute -bottom-8 -left-1 z-30 hidden w-[180px] sm:w-[210px] md:block lg:-left-6 lg:w-[230px]"
+            style={{ animation: "float 8s ease-in-out infinite 1s" }}
+          >
+            <div className="relative overflow-hidden rounded-[2.2rem] border-[5px] border-slate-900 bg-slate-950 shadow-[0_25px_60px_rgba(0,0,0,0.65)] ring-1 ring-white/20">
+              {/* Dynamic Island / Notch */}
+              <div className="absolute top-2 left-1/2 -translate-x-1/2 z-40 h-3 w-16 rounded-full bg-slate-900 border border-white/10 flex items-center justify-end px-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500/80" />
+              </div>
+
+              {/* Mobile Bar */}
+              <div className="bg-yoobe-purple/95 px-3 pt-6 pb-2 text-white text-center border-b border-white/10">
+                <span className="font-heading font-black text-[0.65rem] tracking-wider uppercase">4Unik Mobile App</span>
+              </div>
+
+              {/* Mobile Real Screenshot */}
+              <div className="relative w-full bg-slate-900" style={{ aspectRatio: "9/17.5" }}>
+                <Image
+                  src={withBasePath("/screens/member-store-home.webp")}
+                  alt="App Mobile 4unik com loja e recompensas"
+                  fill
+                  className="object-cover object-top"
+                  sizes="230px"
+                />
+                {/* Floating balance badge overlay */}
+                <div className="absolute bottom-3 left-2 right-2 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/15 p-2 text-center text-white shadow-lg">
+                  <div className="text-[0.55rem] font-medium text-gray-300">Saldo de Recompensas</div>
+                  <div className="font-heading text-sm font-black text-brand-orange">1.250 4UCoins</div>
+                </div>
+              </div>
+
+              {/* Home Indicator */}
+              <div className="bg-slate-950 py-1.5 flex justify-center">
+                <div className="h-1 w-16 rounded-full bg-white/40" />
+              </div>
             </div>
           </motion.div>
         </div>

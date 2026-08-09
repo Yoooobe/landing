@@ -1,6 +1,8 @@
 "use client";
 
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
+import { withBasePath } from "@/lib/basePath";
+import Image from "next/image";
 import ShowcaseImage from "@/components/ui/ShowcaseImage";
 import type { ResolvedHomeContent } from "@/sanity/lib/types";
 import {
@@ -120,16 +122,46 @@ export default function AiRoadmap({
                     className={`absolute top-0 right-0 w-32 h-32 blur-3xl rounded-full -mr-10 -mt-10 pointer-events-none group-hover:scale-150 transition-transform duration-700 ${tone.glowClass}`}
                   ></div>
 
-                  {visual?.image ? (
-                    <div className="relative mb-5 h-36 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-                      <ShowcaseImage
-                        image={visual.image}
-                        alt={visual.image.alt?.trim() || stage.title}
-                        variant="card"
-                        sizes="(min-width: 1024px) 240px, 100vw"
-                      />
+                  {/* Mockup de tela real estilizada com browser chrome (substitui placeholders abstratos) */}
+                  <div className="relative mb-5 h-36 overflow-hidden rounded-xl border border-white/15 bg-slate-950 shadow-md group-hover:border-white/30 transition-colors">
+                    {/* Browser chrome header */}
+                    <div className="flex items-center justify-between border-b border-white/10 bg-slate-900/90 px-3 py-1.5 z-10 relative">
+                      <div className="flex items-center gap-1">
+                        <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/80" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
+                      </div>
+                      <span className="font-mono text-[0.52rem] text-white/50 tracking-wider">
+                        {["gestor.4unik.io · campanhas", "gestor.4unik.io · catálogo", "gestor.4unik.io · regras", "gestor.4unik.io · insights"][i]}
+                      </span>
                     </div>
-                  ) : null}
+
+                    {/* Screenshot real */}
+                    <div className="relative h-full w-full bg-slate-900">
+                      {visual?.image ? (
+                        <ShowcaseImage
+                          image={visual.image}
+                          alt={visual.image.alt?.trim() || stage.title}
+                          variant="card"
+                          sizes="(min-width: 1024px) 240px, 100vw"
+                        />
+                      ) : (
+                        <Image
+                          src={withBasePath([
+                            "/screens/admin-campaign-identity.webp",
+                            "/screens/admin-campaign-products.webp",
+                            "/screens/admin-campaign-config-desktop.webp",
+                            "/screens/dash/dashboard-geral.webp",
+                          ][i] || "/screens/admin-dashboard.webp")}
+                          alt={stage.title}
+                          fill
+                          className="object-cover object-top opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500"
+                          sizes="240px"
+                        />
+                      )}
+                      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent" />
+                    </div>
+                  </div>
 
                   <div className="flex items-center justify-between mb-6 gap-3">
                     <h4 className="text-xl font-bold font-heading">{stage.title}</h4>
