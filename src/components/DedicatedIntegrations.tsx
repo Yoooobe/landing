@@ -101,20 +101,27 @@ export default function DedicatedIntegrations({
 
             <p className="text-white/60 font-sans mb-8 min-h-[60px] relative z-10">{w.body}</p>
 
-            <div className="w-full aspect-4/3 bg-white border border-white/10 rounded-2xl relative overflow-hidden mb-8 shadow-inner font-sans max-w-sm mx-auto group-hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] transition-shadow">
-              <Image
-                src={workvivoPreviewUrl}
-                alt={
-                  homeContent?.showcaseMedia?.dedicatedIntegrations?.workvivo?.previewImage?.alt?.trim() ||
-                  w.title
-                }
-                fill
-                sizes="(min-width: 1024px) 384px, 100vw"
-                className="object-contain"
-                unoptimized
-              />
-              <div className="absolute top-3 right-3 bg-brand-navy-dark text-white text-[10px] px-3 py-1.5 rounded-lg font-mono shadow-2xl flex items-center gap-2 border border-white/10">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+            <div className="w-full aspect-16/10 border border-white/12 bg-slate-950 rounded-2xl relative overflow-hidden mb-8 shadow-2xl font-sans max-w-sm mx-auto group-hover:border-blue-500/40 transition-colors">
+              <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-3 py-1.5 z-10 relative">
+                <div className="flex items-center gap-1">
+                  <span className="h-2 w-2 rounded-full bg-red-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-green-500/80" />
+                </div>
+                <span className="font-mono text-[0.55rem] text-white/45 tracking-wider">workvivo.com · feed</span>
+              </div>
+              <div className="relative h-[calc(100%-26px)] w-full bg-slate-900">
+                <Image
+                  src={withBasePath("/screens/dash/campanhas-landing-pages.webp")}
+                  alt="Integração Workvivo — feed e resgate 4unik"
+                  fill
+                  sizes="(min-width: 1024px) 384px, 100vw"
+                  className="object-cover object-top"
+                  unoptimized
+                />
+              </div>
+              <div className="absolute top-8 right-3 bg-slate-950/90 text-white text-[10px] px-3 py-1.5 rounded-lg font-mono shadow-2xl flex items-center gap-2 border border-white/15 backdrop-blur-md z-20">
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                 {w.realtime}
               </div>
             </div>
@@ -162,75 +169,29 @@ export default function DedicatedIntegrations({
 
             <p className="text-white/60 font-sans mb-8 min-h-[60px] relative z-10">{b.body}</p>
 
-            <div className="w-full aspect-4/3 bg-surface-section border border-white/10 rounded-2xl relative overflow-hidden mb-8 shadow-inner flex items-center justify-center font-sans max-w-sm mx-auto group-hover:border-yellow-400/20 transition-colors">
-              {beehomePreviewUrl ? (
+            <div className="w-full aspect-16/10 border border-white/12 bg-slate-950 rounded-2xl relative overflow-hidden mb-8 shadow-2xl font-sans max-w-sm mx-auto group-hover:border-yellow-400/40 transition-colors">
+              <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-3 py-1.5 z-10 relative">
+                <div className="flex items-center gap-1">
+                  <span className="h-2 w-2 rounded-full bg-red-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-green-500/80" />
+                </div>
+                <span className="font-mono text-[0.55rem] text-white/45 tracking-wider">beehome.io · portal</span>
+              </div>
+              <div className="relative h-[calc(100%-26px)] w-full bg-slate-900">
                 <Image
-                  src={beehomePreviewUrl}
-                  alt={
-                    homeContent?.showcaseMedia?.dedicatedIntegrations?.beehome?.previewImage?.alt?.trim() ||
-                    b.title
-                  }
+                  src={withBasePath("/screens/hapvida/hapvida-vendas-on-login.webp")}
+                  alt="Integração Beehome — portal corporativo e resgate 4unik"
                   fill
                   sizes="(min-width: 1024px) 384px, 100vw"
-                  className="object-cover"
+                  className="object-cover object-top"
                   unoptimized
                 />
-              ) : (
-                <>
-                  <div className="w-full px-8 relative z-10 flex flex-col items-center gap-6">
-                    <div className="w-full bg-white/5 border border-white/10 backdrop-blur-md rounded-xl p-4 flex items-center justify-between shadow-lg">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded bg-yellow-400/20 text-yellow-400 flex items-center justify-center font-black">
-                          B
-                        </div>
-                        <div className="text-sm font-bold text-white">{b.coinsLabel}</div>
-                      </div>
-                      <div className="text-yellow-400 text-lg font-black tracking-tighter">B$ 1.250</div>
-                    </div>
-
-                    <div className="h-12 flex flex-col items-center justify-center opacity-60">
-                      <div className="w-0.5 h-full bg-linear-to-b from-yellow-400/50 to-brand-orange/50 relative">
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white shadow-[0_0_10px_#fff] animate-[pulse_1s_ease-out_infinite]"></div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white shadow-[0_0_10px_#fff] animate-[pulse_1s_ease-out_infinite_0.3s]"></div>
-                        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-brand-orange shadow-[0_0_10px_#f97316] animate-[pulse_1s_ease-out_infinite_0.6s]"></div>
-                      </div>
-                      <span className="text-[10px] text-white/40 uppercase tracking-widest mt-2 font-mono">{b.connectionLabel}</span>
-                    </div>
-
-                    <div className="w-full bg-linear-to-br from-brand-charcoal to-surface-tier-from border border-brand-orange/30 backdrop-blur-md rounded-xl p-4 flex items-center justify-between shadow-[0_0_20px_rgba(249,115,22,0.15)] group-hover:shadow-[0_0_30px_rgba(249,115,22,0.25)] transition-shadow">
-                      <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded bg-brand-orange text-white flex items-center justify-center font-black text-xl">
-                          Y.
-                        </div>
-                        <div>
-                          <div className="text-sm font-bold text-white leading-tight">{b.yoobeStore}</div>
-                          <div className="text-[10px] text-brand-orange uppercase">{b.yoobeStoreSub}</div>
-                        </div>
-                      </div>
-                      <div className="w-8 h-8 flex items-center justify-center text-xl">📦</div>
-                    </div>
-                  </div>
-
-                  <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" style={{ zIndex: 0 }}>
-                    <path
-                      d="M 0 50 C 100 50, 200 150, 400 100"
-                      stroke="#FBBF24"
-                      strokeWidth="2"
-                      fill="none"
-                      strokeDasharray="4 4"
-                      className="animate-[pulse_3s_linear_infinite]"
-                    />
-                    <path
-                      d="M 0 300 C 100 200, 200 250, 400 350"
-                      stroke="#F97316"
-                      strokeWidth="2"
-                      fill="none"
-                      strokeDasharray="4 4"
-                      className="animate-[pulse_3s_linear_infinite_1s]"
-                    />
-                  </svg>
-                </>
-              )}
+              </div>
+              <div className="absolute top-8 right-3 bg-slate-950/90 text-white text-[10px] px-3 py-1.5 rounded-lg font-mono shadow-2xl flex items-center gap-2 border border-white/15 backdrop-blur-md z-20">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                Sincronizado
+              </div>
             </div>
 
             <ul className="space-y-3 font-sans text-sm text-white/70 mt-auto">

@@ -122,133 +122,35 @@ export default function HowItWorks({
           transition={{ duration: 0.8, delay: reduceMotion ? 0 : 0.3 }}
           className="relative mx-auto mt-16 hidden w-full max-w-5xl md:block"
         >
-          {architectureImageUrl ? (
-            <div className="relative aspect-21/9 overflow-hidden rounded-3xl border border-white/5 bg-[#0b0e14] shadow-2xl">
+          <div className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.65)] backdrop-blur-md">
+            <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-5 py-3">
+              <div className="flex items-center gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+              </div>
+              <span className="font-mono text-[0.62rem] text-white/50 tracking-wider">
+                gestor.4unik.io · Motor de Regras & Orquestração
+              </span>
+              <span className="rounded-full border border-yoobe-neon-pink/30 bg-yoobe-neon-pink/15 px-3 py-1 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-yoobe-neon-pink">
+                Arquitetura Fim a Fim
+              </span>
+            </div>
+            <div className="relative aspect-16/9 w-full overflow-hidden bg-slate-900">
               <Image
-                src={architectureImageUrl}
+                src={architectureImageUrl || withBasePath("/screens/admin-dashboard.webp")}
                 alt={
                   homeContent?.showcaseMedia?.howItWorks?.architectureImage?.alt?.trim() ||
-                  h.mockInfrastructure
+                  "Arquitetura da Plataforma 4unik — Motor de Gamificação, Carteiras e Loja Corporativa"
                 }
                 fill
                 sizes="(min-width: 1024px) 960px, 100vw"
-                className="object-contain object-top"
+                className="object-cover object-top"
                 unoptimized
               />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-slate-950/60 to-transparent" />
             </div>
-          ) : (
-            <>
-              <div className="pointer-events-none absolute top-1/2 left-1/2 h-3/4 w-3/4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-yoobe-neon-pink/10 blur-[100px]" />
-
-              <div className="relative flex aspect-21/9 items-center overflow-hidden rounded-3xl border border-white/5 bg-white/2 p-8 shadow-2xl backdrop-blur-sm">
-                <svg className="pointer-events-none absolute inset-0 h-full w-full" style={{ zIndex: 0 }} aria-hidden>
-                  <path d="M 150 150 C 300 150, 200 200, 350 200" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="none" strokeDasharray="6 6" className="motion-safe:animate-[pulse_3s_ease-in-out_infinite]" />
-                  <path d="M 150 250 C 300 250, 200 200, 350 200" stroke="rgba(255,255,255,0.15)" strokeWidth="2" fill="none" strokeDasharray="6 6" className="motion-safe:animate-[pulse_3s_ease-in-out_infinite_1s]" />
-                  <path d="M 650 200 C 800 200, 700 150, 850 150" stroke="rgba(249,115,22,0.3)" strokeWidth="3" fill="none" strokeDasharray="8 8" className="motion-safe:animate-[pulse_2s_ease-in-out_infinite]" />
-                  <path d="M 650 200 C 800 200, 700 250, 850 250" stroke="rgba(249,115,22,0.3)" strokeWidth="3" fill="none" strokeDasharray="8 8" className="motion-safe:animate-[pulse_2s_ease-in-out_infinite_0.5s]" />
-                  {!reduceMotion ? (
-                    <>
-                      <circle cx="0" cy="0" r="4" fill="#F97316">
-                        <animateMotion dur="3s" repeatCount="indefinite" path="M 150 150 C 300 150, 200 200, 350 200" />
-                      </circle>
-                      <circle cx="0" cy="0" r="4" fill="#F97316">
-                        <animateMotion dur="4s" repeatCount="indefinite" path="M 150 250 C 300 250, 200 200, 350 200" />
-                      </circle>
-                      <circle cx="0" cy="0" r="5" fill="#e75782">
-                        <animateMotion dur="2.5s" repeatCount="indefinite" path="M 650 200 C 800 200, 700 150, 850 150" />
-                      </circle>
-                      <circle cx="0" cy="0" r="5" fill="#e75782">
-                        <animateMotion dur="2.2s" repeatCount="indefinite" path="M 650 200 C 800 200, 700 250, 850 250" />
-                      </circle>
-                    </>
-                  ) : null}
-                </svg>
-
-                <div className="relative z-10 flex w-full items-center justify-between px-8">
-                  <div className="flex w-1/4 flex-col gap-6">
-                    <div className="flex transform items-center gap-3 rounded-2xl border border-white/10 bg-surface-elevated p-4 shadow-lg -rotate-2 transition-transform hover:rotate-0">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-500/20 font-black text-blue-400">W</div>
-                      <div className="flex-1">
-                        <div className="mb-2 h-2 w-16 rounded-full bg-white/20" />
-                        <div className="h-1.5 w-10 rounded-full bg-white/10" />
-                      </div>
-                    </div>
-                    <div className="flex transform items-center gap-3 rounded-2xl border border-white/10 bg-surface-elevated p-4 shadow-lg rotate-2 transition-transform hover:rotate-0">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-yoobe-neon-pink/20 font-black text-yoobe-neon-pink">H</div>
-                      <div className="flex-1">
-                        <div className="mb-2 h-2 w-20 rounded-full bg-white/20" />
-                        <div className="h-1.5 w-12 rounded-full bg-white/10" />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="group relative w-1/3">
-                    <div className="absolute -inset-1 rounded-[32px] bg-linear-to-r from-yoobe-purple to-brand-orange opacity-50 blur-sm transition duration-500 group-hover:opacity-100" />
-                    <div className="relative flex flex-col items-center rounded-[28px] border border-white/10 bg-surface-section/90 p-6 shadow-2xl backdrop-blur-xl">
-                      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-brand-orange to-yoobe-neon-pink shadow-[0_0_20px_rgba(249,115,22,0.5)]">
-                        <span className="font-heading text-2xl font-black text-white">Y.</span>
-                      </div>
-                      <h4 className="mb-1 font-heading text-lg font-bold text-white">{h.mockInfrastructure}</h4>
-                      <p className="mb-6 text-center font-sans text-xs text-white/50">{h.mockEngine}</p>
-
-                      <div className="w-full space-y-3">
-                        <div className="flex items-center justify-between text-xs">
-                          <span className="text-white/70">{h.mockPoints}</span>
-                          <span className="font-mono text-green-400">OK</span>
-                        </div>
-                        <div
-                          className="h-1.5 w-full overflow-hidden rounded-full bg-white/5"
-                          role="progressbar"
-                          aria-valuenow={85}
-                          aria-valuemin={0}
-                          aria-valuemax={100}
-                          aria-label={h.mockPoints}
-                        >
-                          <motion.div
-                            className="h-1.5 rounded-full bg-brand-orange"
-                            initial={{ width: reduceMotion ? "85%" : 0 }}
-                            whileInView={{ width: "85%" }}
-                            viewport={{ once: true }}
-                            transition={{ duration: reduceMotion ? 0 : 1.1, delay: 0.2 }}
-                          />
-                        </div>
-
-                        <div className="flex items-center justify-between border-t border-white/5 pt-2 text-xs">
-                          <span className="text-white/70">{h.mockWebhook}</span>
-                          <span className="font-mono text-yoobe-purple">SYNC</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex w-1/4 flex-col gap-6">
-                    <div className="flex transform flex-col gap-3 rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg backdrop-blur-md rotate-2 transition-transform hover:rotate-0">
-                      <div className="flex items-center justify-between">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-orange/20 text-sm text-brand-orange">🛒</div>
-                        <span className="text-[10px] font-bold tracking-wider text-white/50 uppercase">{h.mockItems}</span>
-                      </div>
-                      <div className="flex h-12 w-full items-center justify-center rounded-lg border border-white/5 bg-linear-to-br from-white/5 to-transparent text-xs text-white/40">
-                        {h.mockCatalog}
-                      </div>
-                    </div>
-
-                    <div className="flex transform flex-col gap-3 rounded-2xl border border-white/10 bg-surface-elevated p-4 shadow-lg -rotate-1 transition-transform hover:rotate-0">
-                      <div className="mb-1 flex items-center gap-2">
-                        <div className="h-2 w-2 rounded-full bg-yoobe-neon-pink motion-safe:animate-pulse" />
-                        <span className="text-xs font-bold text-white/70">{h.mockRoi}</span>
-                      </div>
-                      <div className="flex h-8 items-end gap-1">
-                        <div className="h-1/3 w-1/4 rounded-t-sm bg-yoobe-purple/40" />
-                        <div className="h-2/3 w-1/4 rounded-t-sm bg-yoobe-purple/60" />
-                        <div className="h-full w-1/4 rounded-t-sm bg-yoobe-neon-pink/80" />
-                        <div className="h-[120%] w-1/4 rounded-t-sm bg-brand-orange shadow-[0_0_10px_rgba(249,115,22,0.5)]" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
+          </div>
         </motion.div>
       </div>
     </section>

@@ -22,14 +22,12 @@ export default function EnterpriseCases({
     homeContent?.showcaseMedia?.enterpriseCases?.hapvidaLogoImage,
   );
   const hapvidaCaseImageUrl =
-    getSanityImageUrl(homeContent?.showcaseMedia?.enterpriseCases?.hapvidaCaseImage) ??
     withBasePath("/screens/hapvida/hapvida-vendas-on-login.webp");
   const prioLogoUrl = getSanityImageUrl(
     homeContent?.showcaseMedia?.enterpriseCases?.prioLogoImage,
   );
-  const prioCaseImageUrl = getSanityImageUrl(
-    homeContent?.showcaseMedia?.enterpriseCases?.prioCaseImage,
-  );
+  const prioCaseImageUrl =
+    withBasePath("/screens/prio/priostore-hero.webp");
   return (
     <section className="py-24 bg-surface-base relative border-t border-white/5 overflow-hidden">
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-yoobe-neon-pink/5 rounded-full blur-[120px] pointer-events-none"></div>
