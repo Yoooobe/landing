@@ -17,9 +17,9 @@ gera rascunhos e muda o status para `rascunho`.
 
 | # | Pauta (`--topic`) | Categoria (`--category`) | Status |
 |---|---|---|---|
-| 1 | Quanto as empresas gastam com brindes por colaborador no Brasil em 2026 | Eventos & Brindes | publicado (`/blog/brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil/`) — revisão 2026-07-24: removido R$180–450 inventado; faixas R$50/100/200 como planejamento; sem ROI/D+1 |
-| 2 | O que empresas como Google e Nubank colocam no kit de boas-vindas dos colaboradores | Eventos & Brindes | publicado (`/blog/kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos/`) — revisão 2026-07-24: kits Google/Nubank como padrões ilustrativos, não inventário auditado |
-| 3 | Onboarding remoto: o que mudou nos kits de boas-vindas desde 2020 | Engajamento | publicado (`/blog/onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento/`) — revisão 2026-07-24: removidos ROI garantido e SLA D+1 |
+| 1 | Quanto as empresas gastam com brindes por colaborador no Brasil em 2026 | Eventos & Brindes | rascunho (`brindes-corporativos-em-2026-quanto-investir-por-colaborador-no-brasil`) — publicação cancelada 2026-07-29; correções editoriais mantidas no draft |
+| 2 | O que empresas como Google e Nubank colocam no kit de boas-vindas dos colaboradores | Eventos & Brindes | rascunho (`kit-de-boas-vindas-inspire-se-no-google-e-nubank-para-engajar-novatos`) — publicação cancelada 2026-07-29; correções editoriais mantidas no draft |
+| 3 | Onboarding remoto: o que mudou nos kits de boas-vindas desde 2020 | Engajamento | rascunho (`onboarding-remoto-kits-de-boas-vindas-pos-2020-e-o-novo-engajamento`) — publicação cancelada 2026-07-29; correções editoriais mantidas no draft |
 
 ## Cluster 2 — Ocasião
 
