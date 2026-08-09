@@ -236,83 +236,98 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
         >
           {mainVisualUrl ? (
             <>
-              <div className="absolute inset-0 rounded-[2.2rem] bg-brand-orange/12 blur-2xl" />
-              <div className="relative overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 shadow-xl backdrop-blur-md">
-                <div className="border-b border-white/10 bg-white/5 px-4 py-3 sm:px-5 sm:py-4">
-                  <span className="text-[0.6rem] font-semibold uppercase tracking-[0.18em] text-brand-orange/90 sm:text-[0.68rem] sm:tracking-[0.24em]">
-                    {narrativeEyebrow}
+              <div className="absolute -inset-2 rounded-[2.2rem] bg-linear-to-r from-brand-orange/20 via-yoobe-purple/20 to-unik-blue/20 blur-2xl animate-pulse" />
+              <div className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.65)] backdrop-blur-md">
+                <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-2.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="font-mono text-[0.62rem] tracking-wider text-white/45">
+                    gestor.4unik.io · Plataforma
                   </span>
-                  <p className="mt-2 max-w-md text-base font-semibold text-white sm:text-lg md:text-xl">
-                    {narrativePanelTitle}
-                  </p>
+                  <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
+                    Ao vivo
+                  </span>
                 </div>
-                <div className="p-2 sm:p-3">
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                   <Image
                     src={mainVisualUrl}
                     alt={mainVisualAlt}
-                    width={1120}
-                    height={760}
+                    fill
                     sizes="(min-width: 1280px) 560px, (min-width: 1024px) 46vw, 92vw"
-                    className="h-full w-full rounded-[1.4rem] object-cover object-[50%_16%]"
+                    className="h-full w-full object-cover object-[50%_16%]"
                     priority
                     fetchPriority="high"
                     decoding="async"
                     unoptimized
                   />
+                  <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/40 via-transparent to-transparent" />
                 </div>
               </div>
             </>
-            ) : (
-              <FeatureScreensCarousel variant="member" locale={locale} />
-            )}
+          ) : (
+            <FeatureScreensCarousel variant="member" locale={locale} />
+          )}
 
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.85, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ ...enterTransition, delay: 0.22 }}
-            className="glass-panel-dark absolute -top-5 right-4 z-10 hidden min-w-[170px] rounded-2xl px-5 py-4 transition-transform duration-200 hover:-translate-y-0.5 md:block"
+            className="glass-panel-dark absolute -top-5 right-2 z-20 hidden min-w-[170px] rounded-2xl border border-white/15 bg-slate-900/90 p-4 shadow-[0_15px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl md:block"
+            style={{ animation: "float 6s ease-in-out infinite" }}
           >
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-              {h.floatAdhesion}
-            </span>
-            <span className="mt-1 block text-3xl font-bold text-white">{h.floatAdhesionValue}</span>
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-brand-orange">
+                {h.floatAdhesion}
+              </span>
+              <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            </div>
+            <span className="block text-2xl font-black text-white">{h.floatAdhesionValue}</span>
             <span className="text-[10px] text-white/55">{h.floatAdhesionSub}</span>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.85, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ ...enterTransition, delay: 0.26 }}
-            className="glass-panel-dark absolute bottom-6 -left-4 z-10 hidden min-w-[190px] rounded-2xl px-5 py-4 transition-transform duration-200 hover:-translate-y-0.5 md:block"
+            className="glass-panel-dark absolute bottom-4 -left-6 z-20 hidden min-w-[190px] rounded-2xl border border-white/15 bg-slate-900/90 p-4 shadow-[0_15px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl md:block"
+            style={{ animation: "float 8s ease-in-out infinite 1s" }}
           >
-            <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
-              {h.floatRh}
-            </span>
-            <span className="mt-1 block text-3xl font-bold text-white">{h.floatRhValue}</span>
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-brand-orange">
+                {h.floatRh}
+              </span>
+              <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
+            </div>
+            <span className="block text-2xl font-black text-white">{h.floatRhValue}</span>
             <span className="text-[10px] text-white/55">{h.floatRhSub}</span>
           </motion.div>
 
           {supportingImageUrl ? (
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.85, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ ...enterTransition, delay: 0.3 }}
-              className="absolute -bottom-8 right-4 w-full max-w-[180px] overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/5 p-2 shadow-lg backdrop-blur-sm transition-transform duration-200 hover:-translate-y-0.5 sm:-bottom-12 sm:right-6 sm:max-w-[260px]"
+              className="absolute -bottom-8 right-2 z-20 w-full max-w-[200px] overflow-hidden rounded-2xl border border-white/15 bg-slate-900/90 p-2 shadow-[0_20px_50px_rgba(0,0,0,0.6)] backdrop-blur-xl sm:-bottom-10 sm:right-4 sm:max-w-[240px]"
+              style={{ animation: "float 7s ease-in-out infinite 2s" }}
             >
-              <div className="mb-2 rounded-xl border border-white/10 bg-black/20 px-3 py-2">
-                <span className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-brand-orange/90">
-                  {h.floatEnps}
-                </span>
-                <span className="mt-1 block text-lg font-semibold text-white">{h.floatEnpsValue}</span>
+              <div className="flex items-center justify-between border-b border-white/10 bg-slate-900/90 px-3 py-1.5 mb-1.5">
+                <div className="flex items-center gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/80" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
+                </div>
+                <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">loja.4unik.io</span>
               </div>
-              <div className="overflow-hidden rounded-[1.1rem]">
+              <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-slate-900">
                 <Image
                   src={supportingImageUrl}
                   alt={h.supportingImage?.alt?.trim() || `${h.brand} supporting mockup`}
-                  width={SANITY_HOME_HERO_SUPPORTING_WIDTH}
-                  height={520}
-                  sizes="(min-width: 1024px) 260px, 45vw"
-                  className="h-full w-full rounded-[1.2rem] object-cover object-[52%_18%]"
+                  fill
+                  sizes="(min-width: 1024px) 240px, 45vw"
+                  className="h-full w-full object-cover object-[52%_18%]"
                   decoding="async"
                   loading="lazy"
                   unoptimized
