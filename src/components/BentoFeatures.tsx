@@ -14,9 +14,20 @@ import type { ReactNode } from "react";
 function BentoMediaFrame({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <div
-      className={`relative mt-6 aspect-4/3 w-full shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-brand-charcoal/80 shadow-lg ${className}`}
+      className={`relative mt-6 aspect-16/10 w-full shrink-0 overflow-hidden rounded-2xl border border-white/12 bg-slate-950 shadow-xl ${className}`}
     >
-      {children}
+      {/* Browser chrome header */}
+      <div className="flex items-center justify-between border-b border-white/10 bg-slate-900/90 px-3 py-1.5 relative z-10">
+        <div className="flex items-center gap-1">
+          <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" />
+          <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/80" />
+          <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
+        </div>
+        <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">gestor.4unik.io</span>
+      </div>
+      <div className="relative h-[calc(100%-24px)] w-full">
+        {children}
+      </div>
     </div>
   );
 }

@@ -23,18 +23,18 @@ export default function PlataformaHero() {
         initial={{ opacity: 0, x: -60, y: 20 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ delay: 0.6, duration: 0.9, type: "spring" }}
-        className="absolute left-[2%] top-[28%] hidden w-[240px] overflow-hidden rounded-2xl border border-white/12 shadow-[0_20px_60px_rgba(0,0,0,0.55)] xl:block"
+        className="absolute left-[2%] top-[25%] hidden w-[240px] overflow-hidden rounded-2xl border border-white/12 bg-slate-950 shadow-[0_25px_70px_rgba(0,0,0,0.6)] xl:block"
         style={{ animation: "float 9s ease-in-out infinite 0.5s" }}
       >
-        <div className="flex items-center gap-1.5 border-b border-white/10 bg-gray-900/95 px-3 py-2">
-          <span className="h-2 w-2 rounded-full bg-red-500/70" />
-          <span className="h-2 w-2 rounded-full bg-yellow-500/70" />
-          <span className="h-2 w-2 rounded-full bg-green-500/70" />
-          <span className="ml-1.5 font-mono text-[0.52rem] tracking-wider text-white/30">
+        <div className="flex items-center gap-1.5 border-b border-white/10 bg-slate-900/95 px-3 py-2">
+          <span className="h-2 w-2 rounded-full bg-red-500/80" />
+          <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
+          <span className="h-2 w-2 rounded-full bg-green-500/80" />
+          <span className="ml-1.5 font-mono text-[0.52rem] tracking-wider text-white/40">
             gestor.4unik.io
           </span>
         </div>
-        <div className="relative overflow-hidden bg-gray-900" style={{ aspectRatio: "4/3" }}>
+        <div className="relative overflow-hidden bg-slate-900" style={{ aspectRatio: "16/10" }}>
           <Image
             src={withBasePath("/screens/admin-dashboard.webp")}
             alt={h.titleLine1}
@@ -44,7 +44,7 @@ export default function PlataformaHero() {
             priority
           />
         </div>
-        <div className="flex items-center justify-between bg-surface-section/95 px-3 py-1.5">
+        <div className="flex items-center justify-between bg-slate-900/95 px-3 py-1.5 border-t border-white/10">
           <span className="text-[0.55rem] font-semibold text-brand-orange">Dashboard</span>
           <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 text-[0.5rem] font-bold uppercase tracking-widest text-brand-orange">
             Ao vivo
@@ -57,27 +57,27 @@ export default function PlataformaHero() {
         initial={{ opacity: 0, x: 60, y: 20 }}
         animate={{ opacity: 1, x: 0, y: 0 }}
         transition={{ delay: 0.85, duration: 0.9, type: "spring" }}
-        className="absolute right-[2%] top-[22%] hidden w-[220px] overflow-hidden rounded-2xl border border-white/12 shadow-[0_20px_60px_rgba(0,0,0,0.55)] xl:block"
+        className="absolute right-[2%] top-[25%] hidden w-[240px] overflow-hidden rounded-2xl border border-white/12 bg-slate-950 shadow-[0_25px_70px_rgba(0,0,0,0.6)] xl:block"
         style={{ animation: "float 11s ease-in-out infinite 1.5s" }}
       >
-        <div className="flex items-center gap-1.5 border-b border-white/10 bg-gray-900/95 px-3 py-2">
-          <span className="h-2 w-2 rounded-full bg-red-500/70" />
-          <span className="h-2 w-2 rounded-full bg-yellow-500/70" />
-          <span className="h-2 w-2 rounded-full bg-green-500/70" />
-          <span className="ml-1.5 font-mono text-[0.52rem] tracking-wider text-white/30">
-            Campanha
+        <div className="flex items-center gap-1.5 border-b border-white/10 bg-slate-900/95 px-3 py-2">
+          <span className="h-2 w-2 rounded-full bg-red-500/80" />
+          <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
+          <span className="h-2 w-2 rounded-full bg-green-500/80" />
+          <span className="ml-1.5 font-mono text-[0.52rem] tracking-wider text-white/40">
+            gestor.4unik.io · Editor
           </span>
         </div>
-        <div className="relative overflow-hidden bg-gray-900" style={{ aspectRatio: "4/3" }}>
+        <div className="relative overflow-hidden bg-slate-900" style={{ aspectRatio: "16/10" }}>
           <Image
             src={withBasePath("/screens/admin-campaign-identity.webp")}
             alt={h.titleGradient}
             fill
             className="object-cover object-top"
-            sizes="220px"
+            sizes="240px"
           />
         </div>
-        <div className="flex items-center justify-between bg-surface-section/95 px-3 py-1.5">
+        <div className="flex items-center justify-between bg-slate-900/95 px-3 py-1.5 border-t border-white/10">
           <span className="text-[0.55rem] font-semibold text-unik-blue-soft">
             Editor
           </span>

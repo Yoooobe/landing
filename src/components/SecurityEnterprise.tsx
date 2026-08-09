@@ -36,19 +36,29 @@ export default function SecurityEnterprise({
             </div>
 
             <div className="md:w-1/2 flex flex-col gap-4 w-full relative z-10">
-              <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl border border-white/10 bg-surface-mid">
-                <Image
-                  src={securityPanelImageUrl}
-                  alt={
-                    showcaseMedia?.securityPanelImage?.alt?.trim() ||
-                    sec.title ||
-                    "Painel visual da segurança enterprise"
-                  }
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-contain"
-                  unoptimized
-                />
+              <div className="relative aspect-16/10 w-full overflow-hidden rounded-2xl border border-white/12 bg-slate-950 shadow-xl">
+                <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-3 py-1.5 z-10 relative">
+                  <div className="flex items-center gap-1">
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/80" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">gestor.4unik.io · segurança</span>
+                </div>
+                <div className="relative h-[calc(100%-24px)] w-full bg-slate-900">
+                  <Image
+                    src={securityPanelImageUrl}
+                    alt={
+                      showcaseMedia?.securityPanelImage?.alt?.trim() ||
+                      sec.title ||
+                      "Painel visual da segurança enterprise"
+                    }
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover object-top"
+                    unoptimized
+                  />
+                </div>
               </div>
 
               {sec.items.map((item, i) => {

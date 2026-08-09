@@ -287,7 +287,7 @@ export default function FeatureScreensCarousel({
         {/* Screen area */}
         <div
           className={`relative ${isLight ? "bg-slate-50" : "bg-gray-900"}`}
-          style={{ aspectRatio: "16/11" }}
+          style={{ aspectRatio: "16/10" }}
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -302,7 +302,7 @@ export default function FeatureScreensCarousel({
                 src={screen.src}
                 alt={screen.alt ?? screen.label}
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                imgClassName="object-contain object-top"
+                imgClassName="object-cover object-top"
                 className="absolute inset-0 h-full w-full"
                 priority={active === 0}
               />

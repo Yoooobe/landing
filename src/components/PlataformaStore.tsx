@@ -75,24 +75,32 @@ export default function PlataformaStore({
               className="relative rounded-3xl overflow-hidden bg-surface-mid border border-white/10 shadow-2xl"
             >
               {storeMockupImageUrl ? (
-                <div className="relative aspect-5/4 w-full overflow-hidden">
-                  <Image
-                    src={storeMockupImageUrl}
-                    alt={
-                      showcaseMedia?.storeMockupImage?.alt?.trim() ||
-                      s.badge ||
-                      "Mockup da loja de recompensas"
-                    }
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-contain"
-                    unoptimized
-                  />
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-950">
+                  <div className="flex items-center justify-between border-b border-white/10 bg-slate-900/90 px-4 py-2">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2 w-2 rounded-full bg-red-500/80" />
+                      <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
+                      <span className="h-2 w-2 rounded-full bg-green-500/80" />
+                    </div>
+                    <span className="font-mono text-[0.6rem] text-white/45 tracking-wider">loja.4unik.io</span>
+                  </div>
+                  <div className="relative h-[calc(100%-32px)] w-full">
+                    <Image
+                      src={storeMockupImageUrl}
+                      alt={
+                        showcaseMedia?.storeMockupImage?.alt?.trim() ||
+                        s.badge ||
+                        "Mockup da loja de recompensas"
+                      }
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      className="object-cover object-top"
+                      unoptimized
+                    />
+                  </div>
                 </div>
               ) : (
-                <div className="p-4">
-                  <FeatureScreensCarousel variant="member" intervalMs={4000} />
-                </div>
+                <FeatureScreensCarousel variant="member" intervalMs={4000} />
               )}
             </motion.div>
           </div>

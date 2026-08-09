@@ -31,9 +31,24 @@ export default function LogisticsFulfillment({
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative mb-10 overflow-hidden rounded-[2rem] border border-brand-navy/10 bg-[#0b0e14] shadow-2xl"
+          className="relative mb-10 overflow-hidden rounded-[2rem] border border-brand-navy/12 bg-slate-950 shadow-2xl"
         >
-          <div className="relative aspect-16/7 w-full">
+          {/* Browser chrome header */}
+          <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-5 py-3">
+            <div className="flex items-center gap-1.5">
+              <div className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+              <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+              <div className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+            </div>
+            <div className="flex items-center gap-2 rounded-full bg-white/6 px-3 py-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
+              <span className="font-mono text-[0.6rem] text-white/50 tracking-wider">gestor.4unik.io · envios</span>
+            </div>
+            <span className="rounded-full border border-brand-orange/30 bg-brand-orange/10 px-2 py-0.5 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-brand-orange">
+              Rastreamento
+            </span>
+          </div>
+          <div className="relative aspect-16/9 w-full bg-slate-900">
             <Image
               src={logisticsPanelImageUrl}
               alt={
@@ -42,7 +57,7 @@ export default function LogisticsFulfillment({
               }
               fill
               sizes="100vw"
-              className="object-contain object-top"
+              className="object-cover object-top"
               unoptimized
             />
           </div>

@@ -154,7 +154,7 @@ async function buildVariant(sharp, { width, height, accent, accentSoft, label, s
   };
 
   const shot = await sharp(readFileSync(sourcePath))
-    .resize(content.w, content.h, { fit: "contain", position, background: { r: 11, g: 14, b: 20, alpha: 1 } })
+    .resize(content.w, content.h, { fit: "cover", position: "top", background: { r: 11, g: 14, b: 20, alpha: 1 } })
     .composite([{ input: bottomRoundedMask(content.w, content.h, 20), blend: "dest-in" }])
     .png()
     .toBuffer();

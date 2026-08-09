@@ -399,7 +399,7 @@ export default function PlatformFlowsShowcase({ locale = "pt" }: Props) {
                         src={step.img}
                         alt={step.title}
                         sizes="(min-width: 1024px) 55vw, 100vw"
-                        imgClassName="object-contain object-top"
+                        imgClassName="object-cover object-top"
                         className="absolute inset-0 h-full w-full"
                         unoptimized
                       />

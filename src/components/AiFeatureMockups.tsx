@@ -84,17 +84,36 @@ export default function AiFeatureMockups() {
           </button>
         </div>
 
-        {/* Screenshot da plataforma (por aba) */}
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-[#0b0e14] shadow-2xl" style={{ aspectRatio: "16 / 10" }}>
-          <Image
-            key={shot.src}
-            src={withBasePath(shot.src)}
-            alt={shot.alt}
-            fill
-            className="object-contain object-top"
-            sizes="(min-width: 1024px) 80vw, 100vw"
-            priority={activeTab === "campaign"}
-          />
+        {/* Screenshot da plataforma (por aba) com browser chrome */}
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-white/12 bg-slate-950 shadow-2xl">
+          {/* Top browser bar */}
+          <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-3">
+            <div className="flex items-center gap-1.5">
+              <div className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+              <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+              <div className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+            </div>
+            <div className="flex items-center gap-2 rounded-full bg-white/6 px-3 py-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-yoobe-purple animate-pulse" />
+              <span className="font-mono text-[0.6rem] text-white/50 tracking-wider">
+                gestor.4unik.io · AI Orquestração
+              </span>
+            </div>
+            <span className="rounded-full border border-yoobe-purple/30 bg-yoobe-purple/10 px-2 py-0.5 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-yoobe-purple">
+              IA Ativa
+            </span>
+          </div>
+          <div className="relative w-full bg-slate-900" style={{ aspectRatio: "16 / 10" }}>
+            <Image
+              key={shot.src}
+              src={withBasePath(shot.src)}
+              alt={shot.alt}
+              fill
+              className="object-cover object-top"
+              sizes="(min-width: 1024px) 80vw, 100vw"
+              priority={activeTab === "campaign"}
+            />
+          </div>
         </div>
       </div>
     </section>
