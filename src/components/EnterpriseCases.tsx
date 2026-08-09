@@ -128,18 +128,33 @@ export default function EnterpriseCases({
             </div>
 
             <div className="relative z-10 flex w-full flex-1 justify-center lg:justify-end">
-              <div className="relative aspect-4/5 w-full max-w-md overflow-hidden rounded-2xl border border-blue-500/20 bg-[#0b0e14] shadow-2xl transition-colors group-hover:border-blue-500/40">
-                <Image
-                  src={hapvidaCaseImageUrl}
-                  alt={
-                    homeContent?.showcaseMedia?.enterpriseCases?.hapvidaCaseImage?.alt?.trim() ||
-                    "Portal Hapvida VENDAS ON (Beehome)"
-                  }
-                  fill
-                  sizes="(min-width: 1024px) 448px, 100vw"
-                  className="object-contain object-top"
-                  unoptimized
-                />
+              <div className="relative overflow-hidden rounded-[1.8rem] border border-blue-500/20 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-colors group-hover:border-blue-500/40 w-full max-w-md">
+                <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-2.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="font-mono text-[0.6rem] tracking-wider text-blue-400/80">
+                    hapvida.yoobe.app
+                  </span>
+                  <span className="rounded-full border border-blue-500/30 bg-blue-500/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-blue-300">
+                    Ao vivo
+                  </span>
+                </div>
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
+                  <Image
+                    src={hapvidaCaseImageUrl}
+                    alt={
+                      homeContent?.showcaseMedia?.enterpriseCases?.hapvidaCaseImage?.alt?.trim() ||
+                      "Portal Hapvida VENDAS ON (Beehome)"
+                    }
+                    fill
+                    sizes="(min-width: 1024px) 448px, 100vw"
+                    className="object-cover object-top"
+                    unoptimized
+                  />
+                </div>
               </div>
             </div>
           </motion.div>
@@ -225,87 +240,33 @@ export default function EnterpriseCases({
             </div>
 
             <div className="relative z-10 flex w-full flex-1 justify-center lg:justify-start">
-              <div className="relative aspect-4/5 w-full max-w-md overflow-hidden rounded-2xl border border-white/10 bg-[#0b0e14] shadow-2xl transition-colors group-hover:border-white/30">
-                {prioCaseImageUrl ? (
+              <div className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm transition-colors group-hover:border-white/30 w-full max-w-md">
+                <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-2.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
+                    priostore.com.br
+                  </span>
+                  <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
+                    Store
+                  </span>
+                </div>
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                   <Image
-                    src={prioCaseImageUrl}
+                    src={prioCaseImageUrl || withBasePath("/screens/prio/priostore-hero.webp")}
                     alt={
                       homeContent?.showcaseMedia?.enterpriseCases?.prioCaseImage?.alt?.trim() ||
                       "Case Prio — loja corporativa white-label"
                     }
                     fill
                     sizes="(min-width: 1024px) 448px, 100vw"
-                    className="object-contain object-top"
+                    className="object-cover object-top"
                     unoptimized
                   />
-                ) : (
-                  <>
-                    <div className="h-16 border-b border-white/5 bg-black flex items-center justify-between px-6">
-                      <div className="text-white font-black text-xl tracking-tighter">
-                        PRIO<span className="text-white/50 font-normal">STORE</span>
-                      </div>
-                      <div className="w-6 h-6 rounded text-white/50 border border-white/20 flex items-center justify-center text-xs">
-                        ≡
-                      </div>
-                    </div>
-                    <div className="p-5 bg-surface-base">
-                      <div className="w-full rounded-xl bg-linear-to-br from-gray-800 to-black border border-white/10 mb-4 relative overflow-hidden">
-                        <div className="relative w-full aspect-[1024/565]">
-                          <Image
-                            src={withBasePath("/screens/prio/priostore-hero.webp")}
-                            alt="Home da Prio Store — vitrine Exclusive Merchandising"
-                            fill
-                            sizes="(min-width: 1024px) 400px, 90vw"
-                            className="object-cover"
-                            unoptimized
-                          />
-                        </div>
-                        <div className="flex flex-col px-4 py-3 border-t border-white/10 bg-black/60">
-                          <span className="text-white font-black text-base leading-tight">{p.mockHeroTitle}</span>
-                          <span className="text-white/60 text-xs font-mono">{p.mockHeroSubtitle}</span>
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="h-32 rounded-xl bg-white/5 border border-white/5 p-3 flex flex-col group-hover:bg-white/10 transition-colors relative">
-                          <div className="relative flex-1 rounded overflow-hidden mb-2">
-                            <Image
-                              src={withBasePath("/screens/prio/priostore-product.webp")}
-                              alt="Página de produto na Prio Store — moleskine I love PRIO"
-                              fill
-                              sizes="200px"
-                              className="object-cover"
-                              unoptimized
-                            />
-                          </div>
-                          <div className="w-full h-2 bg-white/20 rounded-full mb-1"></div>
-                          <div className="w-1/2 h-2 bg-brand-orange/50 rounded-full"></div>
-                        </div>
-                        <div className="h-32 rounded-xl bg-white/5 border border-white/5 p-3 flex flex-col group-hover:bg-white/10 transition-colors relative">
-                          <div className="relative flex-1 rounded overflow-hidden mb-2">
-                            <Image
-                              src={withBasePath("/screens/prio/priostore-catalog.webp")}
-                              alt="Catálogo Moda PRIO na Prio Store"
-                              fill
-                              sizes="200px"
-                              className="object-cover"
-                              unoptimized
-                            />
-                          </div>
-                          <div className="w-full h-2 bg-white/20 rounded-full mb-1"></div>
-                          <div className="w-2/3 h-2 bg-brand-orange/50 rounded-full"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="absolute -right-6 top-24 bg-black/80 backdrop-blur-md border border-white/20 px-4 py-3 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)] transform group-hover:scale-105 transition-transform z-20">
-                      <div className="text-[10px] text-white/50 uppercase font-bold mb-1">{p.mockDeliveryLabel}</div>
-                      <div className="text-sm font-black text-white flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> {p.mockDeliveryStatus}
-                      </div>
-                    </div>
-                  </>
-                )}
+                </div>
               </div>
             </div>
           </motion.div>

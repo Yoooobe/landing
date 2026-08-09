@@ -29,9 +29,22 @@ export default function AdminDashboardHighlight({
             className="w-full lg:w-[60%] order-2 lg:order-1 relative"
           >
             <div className="absolute -inset-1 rounded-[2rem] bg-linear-to-r from-brand-orange via-unik-blue to-demo-cyan opacity-20 blur transition duration-1000 group-hover:opacity-40 group-hover:duration-200"></div>
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-surface-page shadow-2xl">
+            <div className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+              <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-2.5">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+                </div>
+                <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
+                  gestor.4unik.io · Painel do Gestor
+                </span>
+                <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
+                  Ao vivo
+                </span>
+              </div>
               {adminDashboardImageUrl ? (
-                <div className="relative aspect-16/10 w-full overflow-hidden bg-[#0b0e14]">
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                   <Image
                     src={adminDashboardImageUrl}
                     alt={
@@ -40,7 +53,7 @@ export default function AdminDashboardHighlight({
                     }
                     fill
                     sizes="(min-width: 1024px) 60vw, 100vw"
-                    className="object-contain object-top"
+                    className="object-cover object-top"
                     unoptimized
                   />
                 </div>

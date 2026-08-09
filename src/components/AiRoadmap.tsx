@@ -137,7 +137,7 @@ export default function AiRoadmap({
                     </div>
 
                     {/* Screenshot real */}
-                    <div className="relative h-full w-full bg-slate-900">
+                    <div className="relative h-[calc(100%-24px)] w-full bg-slate-900">
                       {visual?.image ? (
                         <ShowcaseImage
                           image={visual.image}

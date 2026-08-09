@@ -31,7 +31,7 @@ export default function LogisticsFulfillment({
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative mb-10 overflow-hidden rounded-[2rem] border border-brand-navy/12 bg-slate-950 shadow-2xl"
+          className="relative mb-10 overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm"
         >
           {/* Browser chrome header */}
           <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-5 py-3">

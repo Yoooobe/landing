@@ -10,7 +10,7 @@ import { Webhook, Terminal, Code2 } from "lucide-react";
 import type { ResolvedApiIntegracoesContent, SanityImageDoc } from "@/sanity/lib/types";
 import { getSanityImageUrl } from "@/sanity/lib/image";
 
-const FALLBACK_HERO_VISUAL = "/screens/api-integracoes-hero-request.png";
+const FALLBACK_HERO_VISUAL = "/screens/pix-step-1-banks.webp";
 
 export default function ApiHero({
   content,
@@ -104,16 +104,31 @@ export default function ApiHero({
               transition={{ delay: 0.12, duration: 0.7 }}
               className="relative w-full"
             >
-              <div className="relative aspect-1024/358 w-full overflow-hidden rounded-2xl border border-cyan-500/15 bg-surface-base shadow-[0_28px_80px_rgba(0,0,0,0.55)] ring-1 ring-white/10">
-                <Image
-                  src={heroVisualUrl}
-                  alt={integrationVisualAlt}
-                  fill
-                  className="object-contain object-center"
-                  sizes="(min-width: 1280px) 56rem, (min-width: 1024px) 50vw, 96vw"
-                  unoptimized
-                  priority
-                />
+              <div className="relative overflow-hidden rounded-[1.8rem] border border-cyan-500/20 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.6)] ring-1 ring-white/10">
+                <div className="flex items-center justify-between border-b border-white/10 bg-slate-900/90 px-4 py-2.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                    <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+                  </div>
+                  <span className="font-mono text-[0.6rem] tracking-wider text-cyan-400/70">
+                    api.4unik.io · POST /v1/rewards/issue
+                  </span>
+                  <span className="rounded-full border border-cyan-500/30 bg-cyan-500/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-cyan-300">
+                    API v2
+                  </span>
+                </div>
+                <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
+                  <Image
+                    src={heroVisualUrl}
+                    alt={integrationVisualAlt}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(min-width: 1280px) 56rem, (min-width: 1024px) 50vw, 96vw"
+                    unoptimized
+                    priority
+                  />
+                </div>
               </div>
             </motion.div>
           </div>

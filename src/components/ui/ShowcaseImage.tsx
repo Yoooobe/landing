@@ -45,8 +45,8 @@ export default function ShowcaseImage({
   const url = getSanityImageUrl(image, PRESET_BY_VARIANT[variant]);
   if (!url) return null;
 
-  const objectFit = (fit ?? (variant === "banner" ? "cover" : "contain")) === "cover"
-    ? "object-cover"
+  const objectFit = (fit ?? (variant === "thumb" ? "contain" : "cover")) === "cover"
+    ? "object-cover object-top"
     : "object-contain";
   const { width, height } = DIMENSIONS_BY_VARIANT[variant];
 

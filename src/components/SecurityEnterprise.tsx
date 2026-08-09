@@ -36,7 +36,7 @@ export default function SecurityEnterprise({
             </div>
 
             <div className="md:w-1/2 flex flex-col gap-4 w-full relative z-10">
-              <div className="relative aspect-16/10 w-full overflow-hidden rounded-2xl border border-white/12 bg-slate-950 shadow-xl">
+              <div className="relative aspect-16/10 w-full overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm">
                 <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-3 py-1.5 z-10 relative">
                   <div className="flex items-center gap-1">
                     <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" />

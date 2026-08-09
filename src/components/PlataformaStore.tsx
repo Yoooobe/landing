@@ -72,7 +72,7 @@ export default function PlataformaStore({
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative rounded-3xl overflow-hidden bg-surface-mid border border-white/10 shadow-2xl"
+              className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm"
             >
               {storeMockupImageUrl ? (
                 <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-950">

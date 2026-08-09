@@ -107,24 +107,29 @@ export default function PlatformTabs({
                 </Link>
               </div>
               <div className="relative">
-                <div className="glass-panel-dark relative rounded-2xl p-4 shadow-xl transition-colors duration-200 hover:border-brand-orange/25 md:p-6">
-                  <div className="mb-4 flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <div className="h-3 w-3 rounded-full bg-red-400/90" />
-                      <div className="h-3 w-3 rounded-full bg-yellow-400/90" />
-                      <div className="h-3 w-3 rounded-full bg-green-400/90" />
+                <div className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                  <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-2.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                     </div>
-                    <span className="ml-2 font-mono text-xs font-bold text-white/55">{t.gestao.mockTitle}</span>
+                    <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
+                      gestor.4unik.io · Dashboard
+                    </span>
+                    <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
+                      Ao vivo
+                    </span>
                   </div>
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-white/10 bg-[#0b0e14] md:aspect-8/5">
+                  <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                     <ZoomableScreenshot
                       src={managementImageUrl}
                       alt={
                         homeContent?.showcaseMedia?.platformTabs?.managementImage?.alt?.trim() ||
                         t.gestao.mockTitle
                       }
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      imgClassName="object-contain object-top"
+                      sizes="(min-width: 768px) 45vw, 100vw"
+                      imgClassName="object-cover object-top"
                       className="absolute inset-0 h-full w-full"
                       unoptimized
                     />
@@ -160,24 +165,29 @@ export default function PlatformTabs({
                 </Link>
               </div>
               <div className="relative">
-                <div className="glass-panel-dark relative rounded-2xl p-4 shadow-xl transition-colors duration-200 hover:border-brand-orange/25 md:p-6">
-                  <div className="mb-4 flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <div className="h-3 w-3 rounded-full bg-red-400/90" />
-                      <div className="h-3 w-3 rounded-full bg-yellow-400/90" />
-                      <div className="h-3 w-3 rounded-full bg-green-400/90" />
+                <div className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                  <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-2.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                     </div>
-                    <span className="ml-2 font-mono text-xs font-bold text-white/55">{t.loja.mockTitle}</span>
+                    <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
+                      loja.4unik.io · Membro
+                    </span>
+                    <span className="rounded-full border border-yoobe-purple/30 bg-yoobe-purple/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-yoobe-purple">
+                      Loja
+                    </span>
                   </div>
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-white/10 bg-[#0b0e14] md:aspect-8/5">
+                  <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                     <ZoomableScreenshot
                       src={storeImageUrl}
                       alt={
                         homeContent?.showcaseMedia?.platformTabs?.storeImage?.alt?.trim() ||
                         t.loja.mockTitle
                       }
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      imgClassName="object-contain object-top"
+                      sizes="(min-width: 768px) 45vw, 100vw"
+                      imgClassName="object-cover object-top"
                       className="absolute inset-0 h-full w-full"
                       unoptimized
                     />
@@ -213,24 +223,29 @@ export default function PlatformTabs({
                 </Link>
               </div>
               <div className="relative">
-                <div className="glass-panel-dark relative rounded-2xl p-4 shadow-xl transition-colors duration-200 hover:border-brand-orange/25 md:p-6">
-                  <div className="mb-4 flex items-center gap-2">
-                    <div className="flex gap-1.5">
-                      <div className="h-3 w-3 rounded-full bg-red-400/90" />
-                      <div className="h-3 w-3 rounded-full bg-yellow-400/90" />
-                      <div className="h-3 w-3 rounded-full bg-green-400/90" />
+                <div className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm">
+                  <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-2.5">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/80" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                     </div>
-                    <span className="ml-2 font-mono text-xs font-bold text-white/55">{t.campanhas.mockTitle}</span>
+                    <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
+                      gestor.4unik.io · Campanhas
+                    </span>
+                    <span className="rounded-full border border-unik-blue/30 bg-unik-blue/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-unik-blue-soft">
+                      Editor
+                    </span>
                   </div>
-                  <div className="relative min-h-[320px] overflow-hidden rounded-xl border border-white/10 bg-[#0b0e14] md:aspect-8/5">
+                  <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                     <ZoomableScreenshot
                       src={campaignsImageUrl}
                       alt={
                         homeContent?.showcaseMedia?.platformTabs?.campaignsImage?.alt?.trim() ||
                         t.campanhas.mockTitle
                       }
-                      sizes="(min-width: 768px) 40vw, 100vw"
-                      imgClassName="object-contain object-top"
+                      sizes="(min-width: 768px) 45vw, 100vw"
+                      imgClassName="object-cover object-top"
                       className="absolute inset-0 h-full w-full"
                       unoptimized
                     />

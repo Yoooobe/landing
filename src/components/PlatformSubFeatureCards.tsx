@@ -23,8 +23,8 @@ const FEATURE_CARDS: FeatureCard[] = [
     icon: Gamepad2,
     iconColor: "text-brand-orange",
     borderHover: "hover:border-brand-orange/40",
-    imageSrc: "/screens/gamif-bolsa.webp",
-    imageAlt: "Motor de Gamificação — Bolsa de Pontos e métricas em tempo real",
+    imageSrc: "/screens/flows/campanha-passo-1.webp",
+    imageAlt: "Motor de Gamificação — Regras e mecânicas de pontuação",
     href: "/plataforma/motor-gamificacao/",
     titleKey: "motor",
     descKey: "motor",
@@ -33,8 +33,8 @@ const FEATURE_CARDS: FeatureCard[] = [
     icon: Wallet,
     iconColor: "text-yoobe-purple",
     borderHover: "hover:border-yoobe-purple/40",
-    imageSrc: "/screens/gamif-niveis.webp",
-    imageAlt: "Controle de Carteiras — níveis, multiplicadores e progressão",
+    imageSrc: "/screens/flows/brinde-passo-1.webp",
+    imageAlt: "Controle de Carteiras — Saldos e distribuição de pontos",
     href: "/plataforma/controle-carteiras/",
     titleKey: "wallets",
     descKey: "wallets",
@@ -44,7 +44,7 @@ const FEATURE_CARDS: FeatureCard[] = [
     iconColor: "text-unik-blue",
     borderHover: "hover:border-unik-blue/40",
     imageSrc: "/screens/dash/dashboard-geral.webp",
-    imageAlt: "Painel do Gestor — dashboard geral",
+    imageAlt: "Painel do Gestor — Dashboard e métricas em tempo real",
     href: "/plataforma/painel-gestor/",
     titleKey: "manager",
     descKey: "manager",
@@ -54,7 +54,7 @@ const FEATURE_CARDS: FeatureCard[] = [
     iconColor: "text-demo-cyan",
     borderHover: "hover:border-demo-cyan/40",
     imageSrc: "/screens/member-store-home.webp",
-    imageAlt: "Loja Corporativa — home da loja de resgate",
+    imageAlt: "Loja Corporativa — Resgate de prêmios e produtos",
     href: "/plataforma/loja-resgate/",
     titleKey: "store",
     descKey: "store",
@@ -78,13 +78,17 @@ export default function PlatformSubFeatureCards() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {FEATURE_CARDS.map((card, i) => {
             const Icon = card.icon;
             const navEntry = m.nav[card.titleKey];
             const title = navEntry.title;
             const desc = navEntry.desc;
             const href = resolveShellHref(card.href, locale);
+            const domainPill =
+              card.titleKey === "store"
+                ? "loja.4unik.io"
+                : `gestor.4unik.io · ${title}`;
 
             return (
               <motion.div
@@ -95,23 +99,29 @@ export default function PlatformSubFeatureCards() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <div
-                  className={`group glass-panel-dark flex flex-col overflow-hidden rounded-3xl border-t border-t-white/15 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_48px_rgba(0,0,0,0.45)] ${card.borderHover}`}
+                  className={`group glass-panel-dark flex flex-col overflow-hidden rounded-2xl border border-white/12 bg-slate-950 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_rgba(0,0,0,0.55)] ${card.borderHover}`}
                 >
-                  <div
-                    className={`relative w-full overflow-hidden bg-[#0b0e14] ${
-                      card.imageSrc.includes("gamif-")
-                        ? "aspect-4/5 sm:aspect-3/4"
-                        : "aspect-16/10"
-                    }`}
-                  >
+                  {/* Browser Chrome Header (ICP Communities Standard) */}
+                  <div className="flex items-center justify-between border-b border-white/10 bg-slate-900/90 px-3 py-2 z-10">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-1.5 w-1.5 rounded-full bg-red-500/80" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/80" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
+                    </div>
+                    <span className="font-mono text-[0.52rem] text-white/45 tracking-wider truncate max-w-[120px]">
+                      {domainPill}
+                    </span>
+                  </div>
+
+                  <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                     <ZoomableScreenshot
                       src={card.imageSrc}
                       alt={card.imageAlt}
                       sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      imgClassName="object-contain object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                      imgClassName="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                       className="absolute inset-0 h-full w-full"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-surface-panel/90 via-transparent to-transparent" />
+                    <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-transparent" />
                   </div>
 
                   <Link href={href} className="flex flex-col gap-3 p-5">
@@ -124,7 +134,7 @@ export default function PlatformSubFeatureCards() {
                       </h3>
                     </div>
                     <p className="text-sm leading-relaxed text-white/50">{desc}</p>
-                    <div className="flex items-center gap-1.5 text-xs font-semibold text-white/40 transition-colors group-hover:text-white/70">
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-white/40 transition-colors group-hover:text-white/80">
                       {locale === "en" ? "Learn more" : "Ver mais"}
                       <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                     </div>

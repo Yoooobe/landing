@@ -48,14 +48,24 @@ export default function GamificationDuality() {
             </h3>
             <p className="text-white/60 font-sans mb-8 min-h-[50px]">{d.sideA.body}</p>
 
-            <div className="relative mb-8 mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-2xl border border-white/5 bg-[#0b0e14] shadow-inner">
-              <Image
-                src={withBasePath("/screens/gamif-niveis.webp")}
-                alt="Painel de níveis e progressão do motor de gamificação"
-                fill
-                className="object-contain object-top"
-                sizes="(min-width: 1024px) 30vw, 80vw"
-              />
+            <div className="relative mb-8 overflow-hidden rounded-2xl border border-white/12 bg-slate-950 shadow-xl">
+              <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-3.5 py-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-red-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-green-500/80" />
+                </div>
+                <span className="font-mono text-[0.55rem] text-white/45 tracking-wider">gestor.4unik.io · Motor</span>
+              </div>
+              <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
+                <Image
+                  src={withBasePath("/screens/flows/campanha-passo-1.webp")}
+                  alt="Painel de níveis e progressão do motor de gamificação"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(min-width: 1024px) 35vw, 90vw"
+                />
+              </div>
             </div>
 
             <ul className="space-y-3 font-sans text-sm text-white/70">
@@ -85,14 +95,24 @@ export default function GamificationDuality() {
             </h3>
             <p className="text-white/60 font-sans mb-8 min-h-[50px]">{d.sideB.body}</p>
 
-            <div className="relative mb-8 aspect-16/10 w-full overflow-hidden rounded-2xl border border-white/5 bg-[#0b0e14] shadow-inner">
-              <Image
-                src={withBasePath("/screens/pix-step-1-banks.webp")}
-                alt="Integração via API — seleção de bancos no fluxo Pix"
-                fill
-                className="object-contain object-top"
-                sizes="(min-width: 1024px) 45vw, 100vw"
-              />
+            <div className="relative mb-8 overflow-hidden rounded-2xl border border-white/12 bg-slate-950 shadow-xl">
+              <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-3.5 py-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="h-2 w-2 rounded-full bg-red-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
+                  <span className="h-2 w-2 rounded-full bg-green-500/80" />
+                </div>
+                <span className="font-mono text-[0.55rem] text-white/45 tracking-wider">api.4unik.io · Webhook</span>
+              </div>
+              <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
+                <Image
+                  src={withBasePath("/screens/pix-step-1-banks.webp")}
+                  alt="Integração via API — seleção de bancos no fluxo Pix"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(min-width: 1024px) 35vw, 90vw"
+                />
+              </div>
             </div>
 
             <ul className="space-y-3 font-sans text-sm text-white/70">
