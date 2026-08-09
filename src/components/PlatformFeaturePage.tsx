@@ -6,7 +6,21 @@ import ScreenshotCard from "@/components/ui/ScreenshotCard";
 import WorkflowShowcase from "@/components/ui/WorkflowShowcase";
 import type { PlatformFeaturePageContent } from "@/content/platformFeaturePages";
 import { withBasePath } from "@/lib/basePath";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Building2,
+  ExternalLink,
+  Gift,
+  LayoutDashboard,
+  Megaphone,
+  PackageCheck,
+  ShoppingBag,
+  Tag,
+  Truck,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 import Link from "next/link";
 
 type Props = {
@@ -18,6 +32,32 @@ type Props = {
   /** Optional Sanity overrides per gallery item (absolute URLs, index-aligned). */
   galleryOverrides?: ReadonlyArray<string | null | undefined>;
 };
+
+function getGalleryIcon(title: string, index: number): LucideIcon {
+  const lower = title.toLowerCase();
+  if (lower.includes("dash")) return LayoutDashboard;
+  if (lower.includes("pedido")) return PackageCheck;
+  if (lower.includes("produto") || lower.includes("catálogo")) return ShoppingBag;
+  if (lower.includes("cupom") || lower.includes("promo")) return Tag;
+  if (lower.includes("envio") || lower.includes("logíst")) return Truck;
+  if (lower.includes("empresa") || lower.includes("unidade")) return Building2;
+  if (lower.includes("usuá") || lower.includes("acesso")) return Users;
+  if (lower.includes("campan") || lower.includes("edição")) return Megaphone;
+  if (lower.includes("brinde") || lower.includes("presente")) return Gift;
+
+  const fallbacks = [
+    LayoutDashboard,
+    PackageCheck,
+    ShoppingBag,
+    Tag,
+    Truck,
+    Building2,
+    Users,
+    Megaphone,
+    Gift,
+  ];
+  return fallbacks[index % fallbacks.length];
+}
 
 function resolveScreenshotSrc(override: string | null | undefined, fallback: string): string {
   return override ? override : withBasePath(fallback);
@@ -159,7 +199,7 @@ export default function PlatformFeaturePage({
 
       <section className="border-b border-white/5 py-18">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <FadeUp className="mb-8 max-w-3xl">
+          <FadeUp className="mb-10 max-w-3xl">
             <h2 className="text-3xl font-black md:text-4xl">{content.galleryTitle}</h2>
           </FadeUp>
           <div
@@ -169,18 +209,31 @@ export default function PlatformFeaturePage({
                 : "lg:grid-cols-3"
             }`}
           >
-            {content.gallery.map((item, index) => (
-              <FadeUp key={item.src} delay={index * 0.06}>
-                <ScreenshotCard
-                  src={resolveScreenshotSrc(galleryOverrides[index], item.src)}
-                  alt={item.alt}
-                  aspectRatio="16/10"
-                  sizes="(min-width: 1024px) 30vw, 100vw"
-                  caption={item.caption}
-                  className="transition-transform duration-300 hover:-translate-y-1"
-                />
-              </FadeUp>
-            ))}
+            {content.gallery.map((item, index) => {
+              const Icon = getGalleryIcon(item.alt, index);
+              return (
+                <FadeUp key={item.alt || index} delay={index * 0.05}>
+                  <div className="glass-panel-dark flex flex-col justify-between rounded-[1.75rem] border border-white/12 bg-slate-950/80 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                    <div>
+                      <div className="mb-4 flex items-center justify-between">
+                        <div className="inline-flex rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
+                          <Icon className="h-6 w-6 text-brand-orange" />
+                        </div>
+                        <span className="font-mono text-[0.65rem] font-bold uppercase tracking-widest text-white/35">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                      </div>
+                      <h3 className="font-heading text-lg font-bold text-white">{item.alt}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-white/60">{item.caption}</p>
+                    </div>
+                    <div className="mt-6 flex items-center gap-2 border-t border-white/8 pt-3 font-mono text-[0.62rem] text-white/40">
+                      <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
+                      <span>Recurso do Painel</span>
+                    </div>
+                  </div>
+                </FadeUp>
+              );
+            })}
           </div>
         </div>
       </section>

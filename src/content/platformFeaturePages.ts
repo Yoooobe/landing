@@ -409,7 +409,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       mp4: "/screens/flows/fluxo-campanha.mp4",
       poster: "/screens/flows/fluxo-campanha-poster.webp",
     },
-    galleryTitle: "Telas reais do painel do gestor",
+    galleryTitle: "Módulos e recursos do painel do gestor",
     gallery: [
       {
         src: "/screens/dash/dashboard-geral.webp",
@@ -945,7 +945,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       mp4: "/screens/flows/fluxo-campanha.mp4",
       poster: "/screens/flows/fluxo-campanha-poster.webp",
     },
-    galleryTitle: "Real manager dashboard screens",
+    galleryTitle: "Manager dashboard modules & features",
     gallery: [
       {
         src: "/screens/dash/dashboard-geral.webp",
