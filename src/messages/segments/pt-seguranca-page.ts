@@ -44,6 +44,14 @@ export const ptSegurancaPage = {
         q: "Onde ficam os dados?",
         a: "Detalhes de região, subprocessadores e DPA são tratados na fase comercial e documentação contratual.",
       },
+      {
+        q: "Como a plataforma trata LGPD e dados pessoais?",
+        a: "O tratamento segue princípios da LGPD — minimização de dados, finalidade definida e trilha de auditoria. DPA, subprocessadores e bases legais são formalizados na documentação contratual.",
+      },
+      {
+        q: "Existe controle de acesso por perfil de usuário?",
+        a: "Sim. Perfis e permissões separam o que gestores, RH e colaboradores veem e fazem — orçamento, aprovações e relatórios ficam restritos aos papéis certos.",
+      },
     ],
   },
   cta: {
