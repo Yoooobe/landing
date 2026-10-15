@@ -35,6 +35,14 @@ export const enPricingPage = {
         q: "How is the monthly service billed?",
         a: "Billing consists of a fixed platform license fee (per the chosen plan) plus fulfillment, shipping, and any API integrations (pricing worked out with our sales team). All invoices are itemized on the dashboard.",
       },
+      {
+        q: "Is reward delivery logistics included?",
+        a: "Yes — inventory, kit assembly, shipping, and tracking are part of the platform operation. The logistics design (volumes, regions, lead times) is tailored to your scenario in the commercial proposal.",
+      },
+      {
+        q: "Do I need to talk to sales to get started?",
+        a: "You can explore the platform and validate your use case in a guided demo before any contract. To launch the program, sales shapes the plan around your catalog, integrations, and logistics.",
+      },
     ],
   },
   plans: {

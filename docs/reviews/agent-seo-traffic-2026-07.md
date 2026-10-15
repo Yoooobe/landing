@@ -83,3 +83,37 @@ Atualizar esta secção com:
 4. Veredito final: infra vs crescimento orgânico.
 
 Ver também [`REAVALIACAO-2026-07.md`](REAVALIACAO-2026-07.md).
+
+---
+
+## 7. Reavaliação 14/jul
+
+**Snapshot GA4:** [`ga4-snapshots/2026-07-14.json`](ga4-snapshots/2026-07-14.json) · rodada do `seo-improver-loop` de 13–14/jul (medição em 13/jul; escrita aplicada em 15/jul).
+
+| Período | Janela | Sessões | `generate_lead` | `schedule_demo` | `contact_whatsapp` | Taxa funil/sessão |
+|---------|--------|---------|-----------------|-----------------|-------------------|-------------------|
+| A | 10–11/jun | 20 | 0 | 0 | 0 | 0.00% |
+| B | 12/jun–14/jul | 99 | 0 | 3 | 13 | ~16% |
+
+- **Funil saiu de zero para 16 eventos** — os key events marcados em 17/jun estão captando em produção.
+- **`generate_lead` = 0 não é bug**: `LeadCaptureForm.tsx` dispara `sendGAEvent` no sucesso do POST e o fallback de `config/leads-ingest.json` está correto. Zero hits = zero submissões reais no período medido; conferir volume no ingest (Sanity `leadSubmission`).
+- **Canais:** Direct/Unassigned dominam; orgânico ainda não é motor de tráfego.
+- **GSC:** não rodou nesta rodada (credencial bloqueada na sessão headless). Último estado: 19/19 em 17/jun. Obrigatório na próxima.
+
+### Entregas desta rodada
+
+| Entrega | Estado |
+|---------|--------|
+| FAQs `/pricing` e `/seguranca` 3→5 perguntas (PT+EN, JSON-LD `FAQPage` via `buildFaqPageJsonLd`) | Feito — logística incluída, começar sem vendas, LGPD/DPA, acesso por perfil (sem valores de plano nem claims de SLA/certificação) |
+| Titles com keywords-alvo (gamificação corporativa, loja corporativa, recompensas; motor de gamificação) | Feito (`bc7ca549`, `60149bd5`) |
+| Backlog "Next Up" (valores Scale/Enterprise, SLA/certificações) | Mantido com gate Jurídico/Financeiro — não auto-aplicável |
+
+### Veredito provisório (14/jul)
+
+**Infra de medição:** comprovada (funil captando em produção).  
+**Crescimento orgânico:** ainda **não comprovado** — reavaliar ~**15/ago** com GSC obrigatório.
+
+### Nota operacional
+
+Rodada headless de 14/jul falhou por limite de uso do claude.ai (`monthly spend limit`); cron semanal segue ativo (segundas 9h). Elevar o limite ou aguardar o reset antes de 20/07.
+

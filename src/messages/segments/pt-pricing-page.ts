@@ -35,6 +35,14 @@ export const ptPricingPage = {
         q: "Como é feita a cobrança mensal do serviço?",
         a: "A cobrança consiste em uma mensalidade fixa de licença de uso da plataforma (conforme o plano escolhido) acrescida do faturamento do fulfillment, fretes e eventuais integrações via API (valores combinados com nosso time comercial conforme o caso). Todas as faturas são detalhadas no dashboard.",
       },
+      {
+        q: "A logística de entrega das recompensas está incluída?",
+        a: "Sim — estoque, montagem de kits, envio e rastreio fazem parte da operação da plataforma. O desenho logístico (volumes, praças e prazos) é ajustado ao seu cenário na proposta comercial.",
+      },
+      {
+        q: "Preciso falar com vendas para começar?",
+        a: "Você pode explorar a plataforma e validar o caso de uso na demonstração guiada antes de qualquer contrato. Para ativar o programa, o time comercial monta o plano com catálogo, integrações e logística do seu caso.",
+      },
     ],
   },
   plans: {
