@@ -1,27 +1,17 @@
 Yoobe
 =====
 
-{{#equals locale "en"}}
+
 Thank you, {{name}}!
 
 We received your request from {{company}}. Our team will review it and get back to you shortly.
-{{#if message_preview}}
+{{#message_preview}}
 Your message:
 {{message_preview}}
-{{/if}}
+{{/message_preview}}
 
 Book a demo: {{demo_url}}
-{{else}}
-Obrigado, {{name}}!
 
-Recebemos seu pedido de contato de {{company}}. Nosso time vai analisar e responder em breve.
-{{#if message_preview}}
-Sua mensagem:
-{{message_preview}}
-{{/if}}
-
-Agendar demonstração: {{demo_url}}
-{{/equals}}
 
 ---
 {{site_url}}
