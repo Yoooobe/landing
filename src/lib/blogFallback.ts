@@ -229,9 +229,9 @@ const ptSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Artigo revisado por especialistas da Yoobe. Saiba mais sobre nossa plataforma em " },
-        { text: "about the author", href: "https://www.yoobe.co/platform/" },
+        { text: "about the author", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -312,9 +312,9 @@ const ptSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Artigo revisado pela equipe de eventos da Yoobe. Saiba mais em " },
-        { text: "about the author", href: "https://www.yoobe.co/platform/" },
+        { text: "about the author", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -375,9 +375,9 @@ const ptSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Artigo revisado pelo time de liderança de receita da Yoobe. Saiba mais em " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -438,9 +438,9 @@ const ptSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Artigo revisado pela equipe de People & RH da Yoobe. Saiba mais em " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -501,9 +501,9 @@ const ptSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Artigo revisado pelo comitê de estratégia da Yoobe. Saiba mais em " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -566,9 +566,9 @@ const ptSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Análise financeira revisada por especialistas da Yoobe. Saiba mais em " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -627,9 +627,9 @@ const ptSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Artigo revisado pelo time de gestão de talentos da Yoobe. Saiba mais em " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -714,9 +714,9 @@ const ptSeed: readonly SeedPost[] = [
         type: "rich",
         segments: [
           { text: "Estudo de caso revisado por especialistas em T&D da Yoobe. Saiba mais em " },
-          { text: "about us", href: "https://www.yoobe.co/platform/" },
+          { text: "about us", href: "/platform/" },
           { text: " or " },
-          { text: "contact", href: "https://www.yoobe.co/" },
+          { text: "contact", href: "/" },
           { text: "." },
         ],
       },
@@ -802,9 +802,9 @@ const enSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Editorial reviewed by Yoobe Reward Infrastructure specialists. Learn more about us and our team on " },
-        { text: "about the author", href: "https://www.yoobe.co/platform/" },
+        { text: "about the author", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -876,9 +876,9 @@ const enSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Guide authored by Daniel Agrici and reviewed by Yoobe event specialists. To learn more about us and our team, visit " },
-        { text: "about the author", href: "https://www.yoobe.co/platform/" },
+        { text: "about the author", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -941,9 +941,9 @@ const enSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Written by Daniel Agrici and reviewed by Yoobe revenue leaders. Learn more about us and our team on " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -1006,9 +1006,9 @@ const enSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Report by Daniel Agrici and reviewed by Yoobe HR specialists. Find out more about us and our team at " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -1071,9 +1071,9 @@ const enSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Analysis by Daniel Agrici and reviewed by Yoobe strategy leads. Learn more about us and our team on " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -1136,9 +1136,9 @@ const enSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Study prepared by Daniel Agrici and reviewed by Yoobe financial analysts. Learn more about us and our team on " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -1199,9 +1199,9 @@ const enSeed: readonly SeedPost[] = [
       ]},
       { type: "rich", segments: [
         { text: "Post by Daniel Agrici and reviewed by Yoobe talent leads. Learn more about us and our team on " },
-        { text: "about us", href: "https://www.yoobe.co/platform/" },
+        { text: "about us", href: "/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://www.yoobe.co/" },
+        { text: "contact", href: "/" },
         { text: "." },
       ]},
       {
@@ -1288,9 +1288,9 @@ const enSeed: readonly SeedPost[] = [
         type: "rich",
         segments: [
           { text: "Case study written by Daniel Agrici and reviewed by Yoobe L&D specialists. Find out more about us and our team on " },
-          { text: "about us", href: "https://www.yoobe.co/platform/" },
+          { text: "about us", href: "/platform/" },
           { text: " or " },
-          { text: "contact", href: "https://www.yoobe.co/" },
+          { text: "contact", href: "/" },
           { text: "." },
         ],
       },

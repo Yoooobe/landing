@@ -7,28 +7,28 @@ export const BLOG_AUTHORS: Record<string, BlogAuthorProfile> = {
     role: "Especialistas em reward infrastructure e engajamento",
     bio:
       "Equipe editorial da Yoobe que traduz práticas de gamificação, reconhecimento e recompensas em guias aplicáveis para RH, plataformas e operações. Content revisado com foco em integrações API-first e métricas auditáveis.",
-    profileUrl: "https://www.yoobe.co/",
+    profileUrl: "/",
   },
   "Yoobe-team": {
     name: "Yoobe Editorial Team",
     role: "Reward infrastructure & engagement specialists",
     bio:
       "Yoobe editorial team publishing practical guides on gamification, recognition, and programmable rewards for HR, platforms, and operations. Content is reviewed for API-first integration patterns and measurable outcomes.",
-    profileUrl: "https://www.yoobe.co/",
+    profileUrl: "/",
   },
   "rh-growth": {
     name: "Ana Luísa Mendes",
     role: "Estrategista de People & Growth, Yoobe",
     bio:
       "Mais de 8 anos em programas de reconhecimento e cultura em empresas de tecnologia. Na Yoobe, foca em playbooks de engajamento, OKRs comportamentais e métricas de retenção ligadas a reward infrastructure.",
-    profileUrl: "https://www.yoobe.co/",
+    profileUrl: "/",
   },
   "events-ops": {
     name: "Bruno Ferreira",
     role: "Lead de Experiências & Eventos, Yoobe",
     bio:
       "Projeta jornadas ao vivo com QR, pontuação e resgate na loja corporativa. Especialista em operação de convenções, feiras internas e campanhas sazonais com logística integrada.",
-    profileUrl: "https://www.yoobe.co/",
+    profileUrl: "/",
   },
 };
 

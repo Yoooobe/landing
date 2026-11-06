@@ -142,7 +142,7 @@ export function buildBlogPostingJsonLd(
         "@type": "Person",
         name: authorProfile.name,
         ...(authorProfile.role ? { jobTitle: authorProfile.role } : {}),
-        ...(authorProfile.profileUrl ? { url: authorProfile.profileUrl } : {}),
+        ...(authorProfile.profileUrl ? { url: pageAbsoluteUrl(authorProfile.profileUrl) } : {}),
         ...(authorAvatarUrl
           ? { image: { "@type": "ImageObject", url: authorAvatarUrl } }
           : {}),

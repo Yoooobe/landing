@@ -14,7 +14,8 @@ function site(files) {
   }
   return dir;
 }
-const run = (dir) => spawnSync(process.execPath, [script, dir], { encoding: "utf8" });
+const run = (dir, site = "https://www.yoobe.co") =>
+  spawnSync(process.execPath, [script, dir], { encoding: "utf8", env: { ...process.env, NEXT_PUBLIC_SITE_URL: site } });
 
 test("fails on relative hrefs that resolve outside the site root", () => {
   const dir = site({ "index.html": "<a href=\"/a/\">a</a>", "a/index.html": "<a href=\"platform\">x</a>" });
@@ -41,4 +42,14 @@ test("passes when every internal and same-domain link resolves", () => {
     "sitemap.xml": "<loc>https://www.yoobe.co/ok/</loc>",
   });
   assert.equal(run(dir).status, 0);
+});
+
+test("checks absolute URLs of the build's own host (NEXT_PUBLIC_SITE_URL), not other yoobe.co hosts", () => {
+  const dir = site({
+    "index.html": "<a href=\"https://www.yoobe.co/static-page-only/\">home</a><a href=\"https://corporate.yoobe.co/missing/\">x</a>",
+  });
+  const r = run(dir, "https://corporate.yoobe.co");
+  assert.equal(r.status, 1);
+  assert.match(r.stderr, /ABS \/missing\//);
+  assert.doesNotMatch(r.stderr, /static-page-only/);
 });

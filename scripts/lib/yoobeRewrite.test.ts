@@ -12,7 +12,7 @@ test("rewriteBrand swaps the brand name keeping sentences readable", () => {
 test("rewriteBrand rewrites 4unik URLs, emails, calendly and whatsapp", () => {
   assert.equal(
     rewriteBrand("https://plataforma.4unik.com.br/landing/en/plataforma/loja-resgate/"),
-    "https://www.yoobe.co/platform/rewards-store/",
+    "https://corporate.yoobe.co/platform/rewards-store/",
   );
   assert.equal(rewriteBrand("https://catalogo.4unik.com.br/product"), "https://catalogo.yoobe.co/product");
   assert.equal(rewriteBrand("fale com comercial@4unik.com.br"), "fale com vendas@yoobe.co");
@@ -45,5 +45,5 @@ test("rewriteDoc rewrites nested strings but keeps system fields and asset refs"
   assert.equal(out.image.alt, "Mockup da Yoobe");
   assert.equal(out.cta.href, "/platform/rewards-store/");
   assert.equal(out.cta.label, "See Yoobe");
-  assert.equal(out.body[0].children[0].text, "Visit https://www.yoobe.co/pricing/");
+  assert.equal(out.body[0].children[0].text, "Visit https://corporate.yoobe.co/pricing/");
 });

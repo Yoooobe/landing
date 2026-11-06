@@ -1,4 +1,4 @@
 {
-  "defaultSiteUrl": "https://www.yoobe.co",
-  "note": "Fallback quando NEXT_PUBLIC_SITE_URL não está definido. Produção canónica: https://www.yoobe.co (sem basePath)."
+  "defaultSiteUrl": "https://corporate.yoobe.co",
+  "note": "Fallback quando NEXT_PUBLIC_SITE_URL não está definido. Site corporativo: https://corporate.yoobe.co (yoobe.co serve a página estática em sites/yoobe-co-en)."
 }

@@ -4,19 +4,6 @@
   "framework": null,
   "routes": [
     {
-      "src": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "yoobe.co"
-        }
-      ],
-      "status": 308,
-      "headers": {
-        "Location": "https://www.yoobe.co/$1"
-      }
-    },
-    {
       "src": "/gamification/?",
       "status": 308,
       "headers": {

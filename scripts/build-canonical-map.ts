@@ -10,7 +10,7 @@ import { ROUTE_TABLE } from "../src/lib/routes";
 import { getFallbackBlogPosts } from "../src/lib/blogFallback";
 import { rewriteBrand } from "./lib/yoobeRewrite";
 
-const SITE = "https://www.yoobe.co";
+const SITE = "https://corporate.yoobe.co";
 
 /** Post EN do 4unik com slug de um tema e conteúdo de outro (título levemente diferente do original). */
 const CONTENT_OVERRIDES: Record<string, string> = {

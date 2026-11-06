@@ -1,13 +1,13 @@
 import { toYoobePath } from "../../src/lib/routes";
 
-const SITE = "https://www.yoobe.co";
+const SITE = "https://corporate.yoobe.co";
 
 type Rule = [RegExp, string | ((...m: string[]) => string)];
 
 const RULES: Rule[] = [
   [/https?:\/\/plataforma\.4unik\.com\.br\/landing(\/[^\s"'`)<>]*)?/g, (_m, rest) => SITE + toYoobePath(rest || "/")],
   [/https?:\/\/plataforma\.4unik\.com\.br/g, SITE],
-  [/plataforma\.4unik\.com\.br(\/landing)?/g, "www.yoobe.co"],
+  [/plataforma\.4unik\.com\.br(\/landing)?/g, "corporate.yoobe.co"],
   [/https:\/\/calendly\.com\/4unik\/30min/g, "https://calendly.com/yoobeco/demo"],
   [/https?:\/\/catalogo\.4unik\.com\.br/g, "https://catalogo.yoobe.co"],
   [/catalogo\.4unik\.com\.br/g, "catalogo.yoobe.co"],

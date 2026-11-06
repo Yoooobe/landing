@@ -3,7 +3,7 @@
  * Varre o export (out/) e falha se algum link interno não tiver arquivo correspondente:
  * - href/src começando com "/" em .html (e prefixos legados /en/, /landing/);
  * - href relativo (sem "/", "#", http, mailto:, tel:, data:, javascript:);
- * - URLs absolutas do próprio domínio (https://www.yoobe.co/...) em .html, .txt e .xml.
+ * - URLs absolutas do próprio site (origem de NEXT_PUBLIC_SITE_URL) em .html, .txt e .xml.
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative, resolve } from "node:path";
@@ -34,7 +34,11 @@ function resolves(pathname) {
 }
 
 const ATTR = /\s(?:href|src)="([^"]*)"/g;
-const ABS = /https:\/\/(?:www\.)?yoobe\.co(\/[^\s"'<>)\]\\]*)?/g;
+const siteOrigin = new URL(
+  process.env.NEXT_PUBLIC_SITE_URL?.trim() ||
+    JSON.parse(readFileSync(join(root, "config", "public-site.json"), "utf8")).defaultSiteUrl,
+).origin;
+const ABS = new RegExp(`${siteOrigin.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(\\/[^\\s"'<>)\\]\\\\]*)?`, "g");
 const problems = new Map();
 const note = (key, file) => {
   if (!problems.has(key)) problems.set(key, relative(outDir, file));
