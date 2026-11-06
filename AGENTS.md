@@ -22,6 +22,8 @@ The site is served at `http://localhost:3000/landing/` when using the default ca
 | Lint | `npm run lint` |
 | Build (static export) | `npm run build` (requires Sanity env vars) |
 | Deploy (GH Pages) | `npm run deploy:gh-pages` / `npm run deploy:production` (sem Actions; ver `docs/github-actions-billing-recovery.md` se CI bloqueado) |
+| Deploy landing 4unik (Vercel) | `npm run deploy:vercel` — publica `out/` no projeto **`4unik-landing`** (`plataforma.4unik.com.br`), com os ficheiros aninhados em `/landing/` via `scripts/stage-vercel-out.mjs` |
+| Deploy página yoobe.co (Vercel) | `npm run deploy:yoobe-co` — publica `sites/yoobe-co/` (HTML estático) no projeto **`landing`**, que responde por `yoobe.co` / `www.yoobe.co` |
 | Sync blog fallback → Sanity | `npm run sync:blog-fallback` — cria/atualiza só `blogPost.landing.*` (não sobrescreve outros posts); ver `docs/cms.md` |
 | Generate blog posts (IA → Sanity) | `npm run generate:blog-posts` (needs `OPENAI_API_KEY` + Sanity write token unless `--dry-run`; see `docs/cms.md`). **Revisão humana obrigatória** antes de `--publish` — checklist em `docs/cms.md` → *Checklist de revisão editorial*. |
 | Validate blog CTA landing paths | `npm run validate:blog-ctas` (no network; checks `BLOG_CTA_PATHS_BY_SLUG` vs `src/app/(pt)/…/page.tsx`) |
@@ -69,6 +71,7 @@ MCP local **`4unik-marketing`**: [`mcps/4unik-marketing/`](mcps/4unik-marketing/
 
 ### Gotchas
 
+- **Dois projetos Vercel, dois sites**: `4unik-landing` serve a landing Next (`plataforma.4unik.com.br`, ficheiros sob `/landing/`) e `landing` serve o HTML estático institucional da Yoobe (`sites/yoobe-co/` → `yoobe.co`). O repo está ligado a `4unik-landing`; para o `yoobe.co` usar sempre `npm run deploy:yoobe-co` (passa `--project landing`). Trocar os projetos publica o site errado no domínio errado.
 - **Sanity env vars required**: `NEXT_PUBLIC_SANITY_DATASET` and `NEXT_PUBLIC_SANITY_PROJECT_ID` must be set for both `npm run dev` and `npm run build`. Without them, the `/studio` route crashes. Use `production` and `placeholder` as dummy values for local dev if real credentials aren't available.
 - **Dev CSS / Turbopack**: com `basePath` `/landing`, o Turbopack pode lançar `No link element found for chunk …globals….css` ao recarregar estilos (HMR). Em dev, `assetPrefix` fica desligado em `next.config.ts` para mitigar; se ainda falhar, pare todos os `next dev`, apague `.next` e reinicie. Evite `npm run dev:webpack` — quebra `isomorphic-dompurify` no RSC.
 - **Páginas de crescimento (pricing, segurança)**: gate em [`docs/content-approval-queue.md`](docs/content-approval-queue.md). Links no footer sempre; sitemap + `robots: index` quando `NEXT_PUBLIC_INDEX_GROWTH_PAGES=true` (secret no deploy). RH/Marketing/ROI calculadora: só backlog.

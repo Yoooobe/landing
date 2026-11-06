@@ -1,0 +1,52 @@
+{
+  "generatedAt": "2026-08-09T23:13:39.985Z",
+  "snapshotDate": "2026-08-09",
+  "allSuccess": false,
+  "periods": [
+    {
+      "id": "A",
+      "label": "Baseline",
+      "startDate": "2026-06-10",
+      "endDate": "2026-06-11",
+      "filterMode": "stream",
+      "notes": "Pós-fix tag GA4",
+      "result": {
+        "status": "mock_fallback",
+        "reason": "missing_credentials",
+        "note": "Defina GOOGLE_APPLICATION_CREDENTIALS com o JSON da service account landing-ga4-reader.",
+        "gaPropertyId": "327916606",
+        "period": "2026-06-10 a 2026-06-11"
+      }
+    },
+    {
+      "id": "B",
+      "label": "Pós-conteúdo",
+      "startDate": "2026-06-12",
+      "endDate": "2026-08-09",
+      "filterMode": "stream",
+      "notes": "Home redesign + motor/campanhas",
+      "result": {
+        "status": "mock_fallback",
+        "reason": "missing_credentials",
+        "note": "Defina GOOGLE_APPLICATION_CREDENTIALS com o JSON da service account landing-ga4-reader.",
+        "gaPropertyId": "327916606",
+        "period": "2026-06-12 a 2026-08-09"
+      }
+    },
+    {
+      "id": "C",
+      "label": "Pré-stream",
+      "startDate": "2026-06-03",
+      "endDate": "2026-06-09",
+      "filterMode": "hostname",
+      "notes": "hostName = plataforma.4unik.com.br",
+      "result": {
+        "status": "mock_fallback",
+        "reason": "missing_credentials",
+        "note": "Defina GOOGLE_APPLICATION_CREDENTIALS com o JSON da service account landing-ga4-reader.",
+        "gaPropertyId": "327916606",
+        "period": "2026-06-03 a 2026-06-09"
+      }
+    }
+  ]
+}

@@ -419,15 +419,37 @@ REGRAS DO CAMPO "body" (Portable Text para Sanity):
         ? await callGemini(SYSTEM_PROMPT, userPrompt)
         : await callOpenAI(SYSTEM_PROMPT, userPrompt);
 
+function sanitizeGeneratedAiPost(post: GeneratedAiPost): GeneratedAiPost {
+  if (Array.isArray(post.body)) {
+    for (const block of post.body) {
+      if (block._type === "block" && Array.isArray(block.children)) {
+        for (const child of block.children) {
+          if (child._type === "span" && typeof child.text === "string") {
+            child.text = child.text
+              .replaceAll(" [ORIGINAL DATA] [UNIQUE INSIGHT]", "")
+              .replaceAll("[ORIGINAL DATA] [UNIQUE INSIGHT]", "")
+              .replaceAll(" [1]", "")
+              .replaceAll(" [2]", "")
+              .replaceAll(" [3]", "");
+          }
+        }
+      }
+    }
+  }
+  return post;
+}
+
   if (!content) throw new Error("Resposta vazia do provedor de IA");
 
+  let parsed: GeneratedAiPost;
   try {
-    return JSON.parse(content) as GeneratedAiPost;
+    parsed = JSON.parse(content) as GeneratedAiPost;
   } catch {
     const match = content.match(/\{[\s\S]*\}/);
-    if (match) return JSON.parse(match[0]) as GeneratedAiPost;
-    throw new Error(`Não foi possível fazer parse do JSON: ${content.slice(0, 200)}`);
+    if (match) parsed = JSON.parse(match[0]) as GeneratedAiPost;
+    else throw new Error(`Não foi possível fazer parse do JSON: ${content.slice(0, 200)}`);
   }
+  return sanitizeGeneratedAiPost(parsed);
 }
 
 /**

@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "knowledge-studio": {
+      "command": "node",
+      "args": [
+        "--no-warnings",
+        "--experimental-strip-types",
+        "/Users/genautech/knowledge-studio/mcp/server.ts"
+      ]
+    }
+  }
+}

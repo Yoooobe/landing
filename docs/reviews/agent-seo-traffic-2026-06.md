@@ -114,13 +114,13 @@ Configurar 301 conforme [`infra/plataforma-4unik-nginx-redirects.conf`](../../in
 
 ### Tabela snapshot GA4 (Data API)
 
-_Último snapshot: 2026-07-14._
+_Último snapshot: 2026-08-09 (parcial — ver notas na tabela)._
 
-| Período | Janela | Utilizadores ativos | Sessões | Novos utilizadores | `generate_lead` | `schedule_demo` | `contact_whatsapp` | Taxa funil/sessão | Notas |
-|---------|--------|---------------------|---------|-------------------|-----------------|-----------------|-------------------|-------------------|-------|
-| **A — Baseline** | 2026-06-10 – 2026-06-11 | 13 | 20 | 13 | 0 | 0 | 0 | 0.00% | Pós-fix tag GA4 |
-| **B — Pós-conteúdo** | 2026-06-12 – 2026-07-14 | 53 | 99 | 44 | 0 | 3 | 13 | 16.16% | Home redesign + motor/campanhas |
-| **C — Pré-stream** | 2026-06-03 – 2026-06-09 | 0 | 0 | 0 | 0 | 0 | 0 | — | hostName = plataforma.4unik.com.br |
+| Período | Janela | Utilizadores ativos | Sessões | Novos utilizadores | `generate_lead` | `schedule_demo` | `contact_whatsapp` | `contact_email` | Total funil | Taxa funil/sessão | Notas |
+|---------|--------|---------------------|---------|-------------------|-----------------|-----------------|-------------------|-----------------|-------------|-------------------|-------|
+| **A — Baseline** | 2026-06-10 – 2026-06-11 | — | — | — | — | — | — | — | 0 | — | Pós-fix tag GA4 ⚠️ missing_credentials: Defina GOOGLE_APPLICATION_CREDENTIALS com o JSON da service account landing-ga4-reader. |
+| **B — Pós-conteúdo** | 2026-06-12 – 2026-08-09 | — | — | — | — | — | — | — | 0 | — | Home redesign + motor/campanhas ⚠️ missing_credentials: Defina GOOGLE_APPLICATION_CREDENTIALS com o JSON da service account landing-ga4-reader. |
+| **C — Pré-stream** | 2026-06-03 – 2026-06-09 | — | — | — | — | — | — | — | 0 | — | hostName = plataforma.4unik.com.br ⚠️ missing_credentials: Defina GOOGLE_APPLICATION_CREDENTIALS com o JSON da service account landing-ga4-reader. |
 
 **Métricas derivadas a calcular:**
 
