@@ -2,62 +2,62 @@
 
 > Yoobe Inc. (Delaware, USA) — reward infrastructure for employee engagement: gamification engine, corporate rewards store, wallets, swag catalog, and fulfillment, available as a full platform or via API.
 
-Website: https://www.yoobe.co/
+Website: https://corporate.yoobe.co/
 Swag & corporate gifts catalog: https://catalogo.yoobe.co/
 Contact: vendas@yoobe.co · WhatsApp +55 41 98760-7512 · Book a demo: https://calendly.com/yoobeco/demo
 
 ## Platform
 
-- [Platform overview](https://www.yoobe.co/platform/)
-- [Gamification engine](https://www.yoobe.co/platform/gamification-engine/)
-- [Gamification campaigns](https://www.yoobe.co/platform/campaigns/)
-- [Wallet control](https://www.yoobe.co/platform/wallets/)
-- [Rewards store](https://www.yoobe.co/platform/rewards-store/)
-- [Manager dashboard](https://www.yoobe.co/platform/manager-dashboard/)
-- [Reward infrastructure](https://www.yoobe.co/reward-infrastructure/)
-- [AI & intelligence](https://www.yoobe.co/intelligence/)
+- [Platform overview](https://corporate.yoobe.co/platform/)
+- [Gamification engine](https://corporate.yoobe.co/platform/gamification-engine/)
+- [Gamification campaigns](https://corporate.yoobe.co/platform/campaigns/)
+- [Wallet control](https://corporate.yoobe.co/platform/wallets/)
+- [Rewards store](https://corporate.yoobe.co/platform/rewards-store/)
+- [Manager dashboard](https://corporate.yoobe.co/platform/manager-dashboard/)
+- [Reward infrastructure](https://corporate.yoobe.co/reward-infrastructure/)
+- [AI & intelligence](https://corporate.yoobe.co/intelligence/)
 
 ## Solutions
 
-- [Gamification for HR](https://www.yoobe.co/gamification-for-hr/)
-- [Platforms & SaaS (rewards API)](https://www.yoobe.co/for-platforms/)
-- [Education & e-learning](https://www.yoobe.co/solutions/education/)
-- [Sales incentives](https://www.yoobe.co/solutions/sales/)
-- [Creators & communities](https://www.yoobe.co/solutions/communities/)
-- [Events](https://www.yoobe.co/solutions/events/)
-- [Use cases](https://www.yoobe.co/use-cases/)
+- [Gamification for HR](https://corporate.yoobe.co/gamification-for-hr/)
+- [Platforms & SaaS (rewards API)](https://corporate.yoobe.co/for-platforms/)
+- [Education & e-learning](https://corporate.yoobe.co/solutions/education/)
+- [Sales incentives](https://corporate.yoobe.co/solutions/sales/)
+- [Creators & communities](https://corporate.yoobe.co/solutions/communities/)
+- [Events](https://corporate.yoobe.co/solutions/events/)
+- [Use cases](https://corporate.yoobe.co/use-cases/)
 
 ## API & integrations
 
-- [API, webhooks & integrations](https://www.yoobe.co/integrations/)
-- [Workvivo integration](https://www.yoobe.co/integrations/workvivo/)
+- [API, webhooks & integrations](https://corporate.yoobe.co/integrations/)
+- [Workvivo integration](https://corporate.yoobe.co/integrations/workvivo/)
 
 ## Company
 
-- [Plans & pricing](https://www.yoobe.co/pricing/)
-- [Security & governance](https://www.yoobe.co/security/)
-- [ROI calculator](https://www.yoobe.co/roi-calculator/)
-- [Blog](https://www.yoobe.co/blog/)
+- [Plans & pricing](https://corporate.yoobe.co/pricing/)
+- [Security & governance](https://corporate.yoobe.co/security/)
+- [ROI calculator](https://corporate.yoobe.co/roi-calculator/)
+- [Blog](https://corporate.yoobe.co/blog/)
 
 ## Blog
 
-- [Grupo Boticário Case: data security video training with gamification and final rewards](https://www.yoobe.co/blog/grupo-boticario-case-data-security-video-training-with-gamification-and-final/)
-- [How gamification turns HR into a results engine](https://www.yoobe.co/blog/how-gamification-turns-hr-into-a-results-engine-fb1/)
-- [The Definitive Guide to Gamification in Modern HR](https://www.yoobe.co/blog/definitive-guide-to-gamification-in-modern-hr/)
-- [Onboarding Kit 2026: What to Include and How Much It Costs per Employee](https://www.yoobe.co/blog/onboarding-kit-2026-what-to-include-and-cost-per-employee/)
-- [Year-End Gifts for Remote Teams: A Practical Guide by Price Range](https://www.yoobe.co/blog/year-end-gifts-for-remote-teams-practical-guide-by-price-range/)
-- [Yoobe vs Lobby: Gamification and Next-Day Delivery in Swag Logistics](https://www.yoobe.co/blog/yoobe-vs-lobby-gamification-and-d1-swag-logistics/)
-- [Conventions and Trade Shows: Redeem Now or Deliver Later? Yoobe's Swag Solution](https://www.yoobe.co/blog/conventions-and-trade-shows-redeem-now-or-ship-later/)
-- [Corporate Store at Events: Engagement from the Booth to the Post-Event](https://www.yoobe.co/blog/corporate-store-at-events-engagement-from-booth-to-post-event/)
-- [Event Rewards: Turning Points into Prizes and Real Engagement](https://www.yoobe.co/blog/event-rewards-points-become-real-rewards-and-engagement/)
-- [Quarterly Goals Campaign: Connect OKRs to Individual Rewards](https://www.yoobe.co/blog/quarterly-goals-campaign-connect-okrs-to-individual-rewards/)
-- [Yoobe Dashboards: How to Make Data-Driven HR Decisions](https://www.yoobe.co/blog/yoobe-dashboards-data-driven-hr-decisions/)
-- [Yoobe at events: points, QR codes and live reward swaps](https://www.yoobe.co/blog/yoobe-at-events-points-qr-codes-and-live-reward-swaps-fb2/)
-- [Gamified sales campaign: rankings, missions and prizes teams accept](https://www.yoobe.co/blog/gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3/)
-- [Logistics SLA in Rewards Programs: Why Next-Day (D+1) Changes Everything](https://www.yoobe.co/blog/rewards-logistics-sla-d1/)
-- [Gamified welcome kit: onboarding people will talk about](https://www.yoobe.co/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/)
-- [360 Recognition: The Power of Peer-to-Peer Feedback](https://www.yoobe.co/blog/recognition-360-peer-to-peer/)
-- [OKRs and gamification: linking company goals to Yoobe rewards](https://www.yoobe.co/blog/okrs-and-gamification-linking-company-goals-to-yoobe-rewards-fb5/)
-- [Welcome Kits: Making the Best First Impression](https://www.yoobe.co/blog/welcome-kits-first-impression/)
-- [Engagement ROI: metrics HR can take to the leadership meeting](https://www.yoobe.co/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/)
-- [People management and performance: gamification beyond the annual review](https://www.yoobe.co/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/)
+- [Grupo Boticário Case: data security video training with gamification and final rewards](https://corporate.yoobe.co/blog/grupo-boticario-case-data-security-video-training-with-gamification-and-final/)
+- [How gamification turns HR into a results engine](https://corporate.yoobe.co/blog/how-gamification-turns-hr-into-a-results-engine-fb1/)
+- [The Definitive Guide to Gamification in Modern HR](https://corporate.yoobe.co/blog/definitive-guide-to-gamification-in-modern-hr/)
+- [Onboarding Kit 2026: What to Include and How Much It Costs per Employee](https://corporate.yoobe.co/blog/onboarding-kit-2026-what-to-include-and-cost-per-employee/)
+- [Year-End Gifts for Remote Teams: A Practical Guide by Price Range](https://corporate.yoobe.co/blog/year-end-gifts-for-remote-teams-practical-guide-by-price-range/)
+- [Yoobe vs Lobby: Gamification and Next-Day Delivery in Swag Logistics](https://corporate.yoobe.co/blog/yoobe-vs-lobby-gamification-and-d1-swag-logistics/)
+- [Conventions and Trade Shows: Redeem Now or Deliver Later? Yoobe's Swag Solution](https://corporate.yoobe.co/blog/conventions-and-trade-shows-redeem-now-or-ship-later/)
+- [Corporate Store at Events: Engagement from the Booth to the Post-Event](https://corporate.yoobe.co/blog/corporate-store-at-events-engagement-from-booth-to-post-event/)
+- [Event Rewards: Turning Points into Prizes and Real Engagement](https://corporate.yoobe.co/blog/event-rewards-points-become-real-rewards-and-engagement/)
+- [Quarterly Goals Campaign: Connect OKRs to Individual Rewards](https://corporate.yoobe.co/blog/quarterly-goals-campaign-connect-okrs-to-individual-rewards/)
+- [Yoobe Dashboards: How to Make Data-Driven HR Decisions](https://corporate.yoobe.co/blog/yoobe-dashboards-data-driven-hr-decisions/)
+- [Yoobe at events: points, QR codes and live reward swaps](https://corporate.yoobe.co/blog/yoobe-at-events-points-qr-codes-and-live-reward-swaps-fb2/)
+- [Gamified sales campaign: rankings, missions and prizes teams accept](https://corporate.yoobe.co/blog/gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3/)
+- [Logistics SLA in Rewards Programs: Why Next-Day (D+1) Changes Everything](https://corporate.yoobe.co/blog/rewards-logistics-sla-d1/)
+- [Gamified welcome kit: onboarding people will talk about](https://corporate.yoobe.co/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/)
+- [360 Recognition: The Power of Peer-to-Peer Feedback](https://corporate.yoobe.co/blog/recognition-360-peer-to-peer/)
+- [OKRs and gamification: linking company goals to Yoobe rewards](https://corporate.yoobe.co/blog/okrs-and-gamification-linking-company-goals-to-yoobe-rewards-fb5/)
+- [Welcome Kits: Making the Best First Impression](https://corporate.yoobe.co/blog/welcome-kits-first-impression/)
+- [Engagement ROI: metrics HR can take to the leadership meeting](https://corporate.yoobe.co/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/)
+- [People management and performance: gamification beyond the annual review](https://corporate.yoobe.co/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/)
