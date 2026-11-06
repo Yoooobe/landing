@@ -2,24 +2,16 @@
   "buildCommand": "npm run build",
   "outputDirectory": "out",
   "framework": null,
-  "trailingSlash": true,
-  "redirects": [
+  "routes": [
     {
-      "source": "/:path*",
-      "has": [
-        {
-          "type": "host",
-          "value": "yoobe.co"
-        }
-      ],
-      "destination": "https://www.yoobe.co/:path*",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/studio/:path+",
-      "destination": "/studio/"
-    }
+      "src": "/(.*)",
+      "has": [{ "type": "host", "value": "yoobe.co" }],
+      "status": 308,
+      "headers": { "Location": "https://www.yoobe.co/$1" }
+    },
+    { "handle": "filesystem" },
+    { "src": "/studio/(.*)", "dest": "/studio/index.html" },
+    { "src": "/(.*[^/])", "status": 308, "headers": { "Location": "/$1/" } },
+    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
   ]
 }
