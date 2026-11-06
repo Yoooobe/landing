@@ -2,22 +2,20 @@
 
 ## Projeto
 
-Site de marketing da **Yoobe Inc.** (Delaware) em **inglês, na raiz** de `https://www.yoobe.co`. Next.js 16 static export, Sanity CMS, Tailwind 4, tema coral (`brand-primary #ff6b57`) sobre navy (`brand-ink #0a1f5c`), fonte Outfit.
+Site corporativo da **Yoobe Inc.** (Delaware) em **inglês**, publicado em `https://corporate.yoobe.co` (projeto Vercel `yoobe-corporate`). Next.js 16 static export, Sanity CMS, Tailwind 4, tema coral (`brand-primary #ff6b57`) sobre navy (`brand-ink #0a1f5c`), fonte Outfit.
 
 Repo: `Yoooobe/landing` · branch `main` = yoobe.co · branch `4unik-legacy` = plataforma.4unik.com.br congelado (publicado via branch `gh-pages`, nunca a partir do `main`).
 
 ## Deploy
 
-> **Produção hoje (desde 2026-11-06):** `sites/yoobe-co-en/` — página estática antiga, traduzida para inglês. O site Next novo (raiz do repo) ainda está em melhorias; só publicar em produção com ok explícito do usuário.
-> Publicar a página estática: `cd sites/yoobe-co-en && vercel deploy --prod --scope yoobe-devs-s-team` (precisa de `.vercel/project.json` do projeto `landing`).
-
-- yoobe.co: `npm run deploy:yoobe-co` (preview) / `bash scripts/deploy-yoobe-co.sh --prod` → projeto Vercel `landing` (time `yoobe-devs-s-team`).
-- Leads: projeto Vercel `yoobe-leads-ingest` (código em `leads-ingest-api/`), notifica `genau@yoobe.co`.
+- **corporate.yoobe.co** (este site Next): projeto Vercel `yoobe-corporate`. Preview: `vercel deploy`; produção: `bash scripts/deploy-yoobe-co.sh --prod` (usa o link em `.vercel/project.json` → `yoobe-corporate`). DNS: registro A `corporate.yoobe.co → 76.76.21.21` na zona Cloud DNS `yoobe-co` (projeto GCP `crypto-quasar-327717`).
+- **yoobe.co / www.yoobe.co**: projeto Vercel `landing`, serve a página estática `sites/yoobe-co-en/` (antiga, em inglês). Publicar: `cd sites/yoobe-co-en && vercel deploy --prod --scope yoobe-devs-s-team`. Não publicar o site Next no `landing` sem ok explícito do usuário.
+- Leads: projeto Vercel `yoobe-leads-ingest` (código em `leads-ingest-api/`), notifica `genau@yoobe.co`; `ALLOWED_ORIGINS` inclui corporate.yoobe.co e www.yoobe.co.
 
 ## Variáveis de ambiente
 
 ```
-NEXT_PUBLIC_SITE_URL=https://www.yoobe.co   # sem basePath
+NEXT_PUBLIC_SITE_URL=https://corporate.yoobe.co   # sem basePath
 NEXT_PUBLIC_SANITY_PROJECT_ID=hin8ivz0
 NEXT_PUBLIC_SANITY_DATASET=yoobe            # nunca production (é do 4unik)
 SANITY_READ_TOKEN                            # posts têm _id com ponto → leitura exige token
