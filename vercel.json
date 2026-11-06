@@ -6,9 +6,20 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "yoobe.co" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "yoobe.co"
+        }
+      ],
       "destination": "https://www.yoobe.co/:path*",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/studio/:path+",
+      "destination": "/studio/"
     }
   ]
 }
