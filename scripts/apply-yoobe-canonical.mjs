@@ -5,8 +5,8 @@
  *
  * uso: node scripts/apply-yoobe-canonical.mjs <dir gh-pages> <yoobe-canonical-map.json>
  */
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { join, relative } from "node:path";
 
 const CANONICAL = /<link rel="canonical" href="[^"]*"\s*\/?>/;
 
@@ -16,9 +16,31 @@ export function applyCanonical(html, url) {
   return html.replace("</head>", `${tag}</head>`);
 }
 
+/** Páginas en/**\/index.html (paths relativos ao site) sem entrada no mapa. */
+export function listUnmapped(files, map) {
+  return files
+    .filter((f) => f.startsWith("en/") && f.endsWith("/index.html") || f === "en/index.html")
+    .map((f) => `/${f.replace(/index\.html$/, "")}`)
+    .filter((p) => !(p in map));
+}
+
+function walkHtml(dir, base = dir, acc = []) {
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) walkHtml(p, base, acc);
+    else if (name === "index.html") acc.push(relative(base, p));
+  }
+  return acc;
+}
+
 if (process.argv[1]?.endsWith("apply-yoobe-canonical.mjs") && process.argv[2]) {
   const [dir, mapPath] = process.argv.slice(2);
   const map = JSON.parse(readFileSync(mapPath, "utf8"));
+  const unmapped = listUnmapped(walkHtml(dir), map);
+  if (unmapped.length) {
+    console.error(`apply-yoobe-canonical: páginas EN sem mapa: ${unmapped.join(", ")}`);
+    process.exit(1);
+  }
   let changed = 0;
   const missing = [];
   for (const [path, url] of Object.entries(map)) {
