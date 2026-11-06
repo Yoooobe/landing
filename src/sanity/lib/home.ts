@@ -127,7 +127,7 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     hero: {
       ...enHome.hero,
       ctaDemoHref: "https://calendly.com/yoobeco/demo",
-      ctaExploreHref: `${BASE_PATH}/en/#platform`,
+      ctaExploreHref: `${BASE_PATH}/#platform`,
       floatAdhesionValue: "92%",
       floatRhValue: "0%",
       floatEnpsValue: "+42 pts",
