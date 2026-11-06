@@ -41,7 +41,7 @@ const VARIANTS: Record<string, VariantConfig> = {
   },
   member: {
     screens: [
-      { src: "/screens/member-store-home.webp", label: "Rewards store", step: "01", accent: "Custom catalog" },
+      { src: "/screens/prio/priostore-catalog.webp", label: "Rewards store", step: "01", accent: "Custom catalog" },
       { src: "/screens/member-orders.webp", label: "My account", step: "02", accent: "Orders & returns" },
       { src: "/screens/member-points.webp", label: "Points history", step: "03", accent: "Real-time balance" },
     ],
@@ -54,9 +54,9 @@ const VARIANTS: Record<string, VariantConfig> = {
   },
   admin: {
     screens: [
-      { src: "/screens/dash/dashboard-geral.webp", label: "Overview dashboard", step: "01", accent: "Last 30 days" },
-      { src: "/screens/dash/produtos.webp", label: "Product catalog", step: "02", accent: "Stock & options" },
-      { src: "/screens/dash/pedidos.webp", label: "Orders & shipping", step: "03", accent: "Real-time operations" },
+      { src: "/screens/gamif-bolsa.webp", label: "Overview dashboard", step: "01", accent: "Last 30 days" },
+      { src: "/screens/admin-campaign-products.webp", label: "Product catalog", step: "02", accent: "Stock & options" },
+      { src: "/loja-corporativa/admin-settings.webp", label: "Orders & shipping", step: "03", accent: "Real-time operations" },
     ],
     urlBar: "admin.yoobe.co",
     badgeText: "Manager",
@@ -67,10 +67,10 @@ const VARIANTS: Record<string, VariantConfig> = {
   },
   campaign: {
     screens: [
-      { src: "/screens/flows/campanha-passo-1.webp", label: "Basics", step: "01", accent: "Slug + branding" },
-      { src: "/screens/flows/campanha-passo-2.webp", label: "Welcome message", step: "02", accent: "Campaign copy" },
-      { src: "/screens/flows/campanha-passo-3.webp", label: "Company & products", step: "03", accent: "Redemption showcase" },
-      { src: "/screens/flows/campanha-passo-4.webp", label: "Final settings", step: "04", accent: "Publish campaign" },
+      { src: "/screens/admin-campaign-identity.webp", label: "Basics", step: "01", accent: "Slug + branding" },
+      { src: "/screens/admin-campaign-identity.webp", label: "Welcome message", step: "02", accent: "Campaign copy" },
+      { src: "/screens/admin-campaign-products.webp", label: "Company & products", step: "03", accent: "Redemption showcase" },
+      { src: "/screens/admin-campaign-config-desktop.webp", label: "Final settings", step: "04", accent: "Publish campaign" },
     ],
     urlBar: "admin.yoobe.co · Campaign",
     badgeText: "Campaign",

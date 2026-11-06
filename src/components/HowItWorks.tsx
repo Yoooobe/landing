@@ -138,7 +138,7 @@ export default function HowItWorks({
             </div>
             <div className="relative aspect-16/9 w-full overflow-hidden bg-slate-900">
               <Image
-                src={architectureImageUrl || withBasePath("/screens/admin-dashboard.webp")}
+                src={architectureImageUrl || withBasePath("/screens/gamif-bolsa.webp")}
                 alt={
                   homeContent?.showcaseMedia?.howItWorks?.architectureImage?.alt?.trim() ||
                   "Arquitetura da Plataforma Yoobe — Motor de Gamificação, Carteiras e Loja Corporativa"

@@ -166,7 +166,7 @@ export default function DashboardPreviewSection() {
             {/* Screenshot */}
             <div className="relative w-full bg-slate-900" style={{ aspectRatio: "16/10" }}>
               <ZoomableScreenshot
-                src="/screens/dash/dashboard-geral.webp"
+                src="/screens/gamif-bolsa.webp"
                 alt="Dashboard do gestor Yoobe"
                 sizes="(min-width: 1024px) 70vw, 100vw"
                 imgClassName="object-cover object-top"
@@ -216,7 +216,7 @@ export default function DashboardPreviewSection() {
               {/* Mobile Real Screenshot */}
               <div className="relative w-full bg-slate-900" style={{ aspectRatio: "9/17.5" }}>
                 <Image
-                  src={withBasePath("/screens/member-store-home.webp")}
+                  src={withBasePath("/screens/prio/priostore-catalog.webp")}
                   alt="Yoobe mobile app with store and rewards"
                   fill
                   className="object-cover object-top"

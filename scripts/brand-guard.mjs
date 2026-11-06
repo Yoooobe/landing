@@ -7,6 +7,11 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { extname, join, relative } from "node:path";
 
 const dir = process.argv[2] || "out";
+const blockedLists = process.argv.flatMap((a, i) => (process.argv[i - 1] === "--blocked" ? [a] : []));
+/** Imagens com marca 4unik (paths locais ou ids de asset Sanity "image-<hash>-<WxH>-<ext>") → busca pelo path/hash. */
+const blockedNeedles = blockedLists
+  .flatMap((f) => JSON.parse(readFileSync(f, "utf8")))
+  .map((id) => (id.startsWith("image-") ? id.split("-")[1] : id));
 const PATTERN = /4\s*-?\s*unik/i;
 const TEXT_EXT = new Set([".html", ".htm", ".txt", ".xml", ".json", ".js", ".mjs", ".css", ".svg", ".webmanifest", ".rsc", ""]);
 
@@ -21,7 +26,11 @@ function walk(current) {
       continue;
     }
     if (!TEXT_EXT.has(extname(name).toLowerCase())) continue;
-    const lines = readFileSync(path, "utf8").split("\n");
+    const text = readFileSync(path, "utf8");
+    for (const needle of blockedNeedles) {
+      if (text.includes(needle)) hits.push(`${rel}  imagem bloqueada: ${needle}`);
+    }
+    const lines = text.split("\n");
     lines.forEach((line, i) => {
       const m = PATTERN.exec(line);
       if (m) {

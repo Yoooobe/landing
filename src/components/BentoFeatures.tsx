@@ -50,9 +50,9 @@ export default function BentoFeatures({
   );
   const apiCardImageUrl = getSanityImageUrl(homeContent?.showcaseMedia?.bento?.apiCardImage);
 
-  const dashboardFallback = withBasePath("/screens/admin-dashboard.webp");
+  const dashboardFallback = withBasePath("/screens/gamif-bolsa.webp");
   const gamificationFallback = withBasePath("/screens/gamif-bolsa.webp");
-  const storeFallback = withBasePath("/screens/member-store-home.webp");
+  const storeFallback = withBasePath("/screens/prio/priostore-catalog.webp");
   const apiFallback = withBasePath("/screens/pix-step-1-banks.webp");
 
   return (

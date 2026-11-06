@@ -30,17 +30,17 @@ export default function PlatformTabs({
     getSanityImageUrl(
       homeContent?.showcaseMedia?.platformTabs?.managementImage,
       { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.16 }, quality: 85 },
-    ) ?? withBasePath("/screens/dash/dashboard-geral.webp");
+    ) ?? withBasePath("/screens/gamif-bolsa.webp");
   const storeImageUrl =
     getSanityImageUrl(
       homeContent?.showcaseMedia?.platformTabs?.storeImage,
       { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.18 }, quality: 85 },
-    ) ?? withBasePath("/screens/member-store-home.webp");
+    ) ?? withBasePath("/screens/prio/priostore-catalog.webp");
   const campaignsImageUrl =
     getSanityImageUrl(
       homeContent?.showcaseMedia?.platformTabs?.campaignsImage,
       { width: 1360, height: 860, fit: "crop", crop: "focalpoint", focalPoint: { x: 0.5, y: 0.2 }, quality: 85 },
-    ) ?? withBasePath("/screens/flows/campanha-passo-1.webp");
+    ) ?? withBasePath("/screens/admin-campaign-identity.webp");
 
   const tabs: Array<{ id: TabId; label: string }> = [
     { id: "gestao", label: t.tabGestao },

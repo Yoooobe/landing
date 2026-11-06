@@ -151,8 +151,8 @@ export default function AiRoadmap({
                             "/screens/admin-campaign-identity.webp",
                             "/screens/admin-campaign-products.webp",
                             "/screens/admin-campaign-config-desktop.webp",
-                            "/screens/dash/dashboard-geral.webp",
-                          ][i] || "/screens/admin-dashboard.webp")}
+                            "/screens/gamif-bolsa.webp",
+                          ][i] || "/screens/gamif-bolsa.webp")}
                           alt={stage.title}
                           fill
                           className="object-cover object-top opacity-90 group-hover:scale-105 group-hover:opacity-100 transition-all duration-500"

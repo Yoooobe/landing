@@ -75,9 +75,9 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     heroGlowSecondaryClass: "bg-demo-cyan/12",
     chromeLabel: "api.yoobe.co",
     images: {
-      hero: "/screens/icp/para-plataformas-hero.webp",
-      how: "/screens/icp/para-plataformas-how.webp",
-      benefits: "/screens/icp/para-plataformas-benefits.webp",
+      hero: "/screens/pix-step-1-banks.webp",
+      how: "/screens/admin-campaign-products.webp",
+      benefits: "/loja-corporativa/cart.webp",
     },
     floatingCards: [
       {
@@ -109,9 +109,9 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     heroGlowSecondaryClass: "bg-fuchsia-500/12",
     chromeLabel: "app.yoobe.co · trilha",
     images: {
-      hero: "/screens/icp/educacao-hero.webp",
-      how: "/screens/icp/educacao-how.webp",
-      benefits: "/screens/icp/educacao-benefits.webp",
+      hero: "/screens/gamif-niveis.webp",
+      how: "/screens/gamif-regras.webp",
+      benefits: "/loja-corporativa/gift-wizard-name.webp",
     },
     floatingCards: [
       {
@@ -143,9 +143,9 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     heroGlowSecondaryClass: "bg-yoobe-neon-pink/12",
     chromeLabel: "admin.yoobe.co · metas",
     images: {
-      hero: "/screens/icp/vendas-hero.webp",
-      how: "/screens/icp/vendas-how.webp",
-      benefits: "/screens/icp/vendas-benefits.webp",
+      hero: "/screens/gamif-bolsa.webp",
+      how: "/screens/gamif-regras.webp",
+      benefits: "/screens/gamif-moeda.webp",
     },
     floatingCards: [
       {
@@ -177,9 +177,9 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     heroGlowSecondaryClass: "bg-yoobe-purple/14",
     chromeLabel: "store.yoobe.co · VIP",
     images: {
-      hero: "/screens/icp/comunidades-hero.webp",
-      how: "/screens/icp/comunidades-how.webp",
-      benefits: "/screens/icp/comunidades-benefits.webp",
+      hero: "/screens/prio/priostore-hero.webp",
+      how: "/screens/gamif-aparencia.webp",
+      benefits: "/screens/prio/priostore-product.webp",
     },
     floatingCards: [
       {
@@ -211,9 +211,9 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     heroGlowSecondaryClass: "bg-unik-blue/14",
     chromeLabel: "store.yoobe.co · evento",
     images: {
-      hero: "/screens/icp/eventos-hero.webp",
-      how: "/screens/icp/eventos-how.webp",
-      benefits: "/screens/icp/eventos-benefits.webp",
+      hero: "/screens/admin-campaign-config-mobile.webp",
+      how: "/loja-corporativa/gift-wizard-review.webp",
+      benefits: "/loja-corporativa/admin-settings.webp",
     },
     floatingCards: [
       {

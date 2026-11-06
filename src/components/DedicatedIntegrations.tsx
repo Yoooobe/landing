@@ -112,7 +112,7 @@ export default function DedicatedIntegrations({
               </div>
               <div className="relative h-[calc(100%-26px)] w-full bg-slate-900">
                 <Image
-                  src={withBasePath("/screens/dash/campanhas-landing-pages.webp")}
+                  src={withBasePath("/screens/admin-campaign-identity.webp")}
                   alt="Workvivo integration — feed and Yoobe redemption"
                   fill
                   sizes="(min-width: 1024px) 384px, 100vw"

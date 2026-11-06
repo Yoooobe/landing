@@ -43,35 +43,35 @@ const FLOWS: FlowConfig[] = [
         number: "01",
         title: "Basics e slug",
         desc: "Name, friendly URL, and branding for the redemption landing page.",
-        img: "/screens/flows/campanha-passo-1.webp",
+        img: "/screens/admin-campaign-identity.webp",
         accent: "#2563eb",
       },
       {
         number: "02",
         title: "Welcome message",
         desc: "Banner, títulos e copy que explicam a mecânica ao participante.",
-        img: "/screens/flows/campanha-passo-2.webp",
+        img: "/screens/admin-campaign-identity.webp",
         accent: "#8338ec",
       },
       {
         number: "03",
         title: "Company & products",
         desc: "Escolha a empresa e monte a vitrine de recompensas.",
-        img: "/screens/flows/campanha-passo-3.webp",
+        img: "/screens/admin-campaign-products.webp",
         accent: "#ff6b57",
       },
       {
         number: "04",
         title: "Final settings",
         desc: "Regras, vigência e publicação da campanha.",
-        img: "/screens/flows/campanha-passo-4.webp",
+        img: "/screens/admin-campaign-config-desktop.webp",
         accent: "#22d3ee",
       },
     ],
     video: {
-      webm: "/screens/flows/fluxo-campanha.webm",
-      mp4: "/screens/flows/fluxo-campanha.mp4",
-      poster: "/screens/flows/fluxo-campanha-poster.webp",
+      webm: "",
+      mp4: "",
+      poster: "/screens/admin-campaign-config-desktop.webp",
     },
   },
   {
@@ -85,35 +85,35 @@ const FLOWS: FlowConfig[] = [
         number: "01",
         title: "Empresa e notas",
         desc: "Selecione a empresa, nome do brinde e notas internas.",
-        img: "/screens/flows/brinde-passo-1.webp",
+        img: "/loja-corporativa/gift-wizard-name.webp",
         accent: "#2563eb",
       },
       {
         number: "02",
         title: "Seleção do produto",
         desc: "Escolha o item do catálogo que será enviado.",
-        img: "/screens/flows/brinde-passo-2.webp",
+        img: "/loja-corporativa/gift-wizard-name.webp",
         accent: "#8338ec",
       },
       {
         number: "03",
         title: "Destinatário",
         desc: "Informe quem recebe o brinde e os dados de entrega.",
-        img: "/screens/flows/brinde-passo-3.webp",
+        img: "/loja-corporativa/gift-wizard-review.webp",
         accent: "#ff6b57",
       },
       {
         number: "04",
         title: "Envio e finalização",
         desc: "Método de envio e confirmação do pedido.",
-        img: "/screens/flows/brinde-passo-4.webp",
+        img: "/loja-corporativa/gift-wizard-review.webp",
         accent: "#22d3ee",
       },
     ],
     video: {
-      webm: "/screens/flows/fluxo-brinde.webm",
-      mp4: "/screens/flows/fluxo-brinde.mp4",
-      poster: "/screens/flows/fluxo-brinde-poster.webp",
+      webm: "",
+      mp4: "",
+      poster: "/loja-corporativa/gift-wizard-review.webp",
     },
   },
 ];
@@ -156,6 +156,17 @@ function FlowVideoPlayer({
   return (
     <div className="glass-panel-dark relative overflow-hidden rounded-2xl border-t border-t-white/15 shadow-xl">
       <div className="relative aspect-video w-full bg-[#0b0e14]">
+        {!video.mp4 && !video.webm ? (
+          <Image
+            src={withBasePath(video.poster)}
+            alt={locale === "en" ? `Screenshot of the “${label}” flow` : `Screenshot do fluxo “${label}”`}
+            fill
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="object-contain object-top"
+            unoptimized
+          />
+        ) : null}
+        {video.mp4 || video.webm ? (<>
         {!playing ? (
           <button
             type="button"
@@ -195,6 +206,7 @@ function FlowVideoPlayer({
           <source src={withBasePath(video.webm)} type="video/webm" />
           <source src={withBasePath(video.mp4)} type="video/mp4" />
         </video>
+        </>) : null}
       </div>
       <div className="flex items-center justify-between border-t border-white/10 px-4 py-2.5">
         <span className="text-[0.68rem] font-semibold uppercase tracking-wider text-white/45">

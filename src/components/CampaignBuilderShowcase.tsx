@@ -21,7 +21,7 @@ const STEPS: Step[] = [
     desc: "Set the campaign name, slug, and branding. The wizard guides each field so the redemption landing page ships with a friendly URL and consistent branding.",
     tag: "Branding",
     tagColor: "#2563eb",
-    img: "/screens/flows/campanha-passo-1.webp",
+    img: "/screens/admin-campaign-identity.webp",
     accentColor: "#2563eb",
   },
   {
@@ -30,7 +30,7 @@ const STEPS: Step[] = [
     desc: "Set the banner, headlines, and messages for the experience. Explain the action, the goal, and the campaign mechanics to participants, employees, or partners.",
     tag: "Content",
     tagColor: "#8338ec",
-    img: "/screens/flows/campanha-passo-2.webp",
+    img: "/screens/admin-campaign-identity.webp",
     accentColor: "#8338ec",
   },
   {
@@ -39,7 +39,7 @@ const STEPS: Step[] = [
     desc: "Pick the company and the products that will stock the redemption page. Build the campaign showcase and set up the reward journey.",
     tag: "Products",
     tagColor: "#ff6b57",
-    img: "/screens/flows/campanha-passo-3.webp",
+    img: "/screens/admin-campaign-products.webp",
     accentColor: "#ff6b57",
   },
   {
@@ -48,7 +48,7 @@ const STEPS: Step[] = [
     desc: "Publish the campaign with dates, redemption rules, and final tweaks. Yoobe runs the operation through redemption and shipping.",
     tag: "Publishing",
     tagColor: "#22d3ee",
-    img: "/screens/flows/campanha-passo-4.webp",
+    img: "/screens/admin-campaign-config-desktop.webp",
     accentColor: "#22d3ee",
   },
 ];

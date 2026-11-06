@@ -86,7 +86,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "resgates e engajamento em uma só operação.",
     description:
       "Use a Yoobe como motor de gamificação e engajamento ou conecte plataformas que você já tem. A loja corporativa vira a camada de resgate com rastreio completo para presentear times, colaboradores e parceiros. Campanhas com páginas próprias ativam hackathons, desafios, onboarding e metas comerciais — sem operação paralela.",
-    imageSrc: "/screens/flows/campanha-passo-1.webp",
+    imageSrc: "/screens/admin-campaign-identity.webp",
     imageAlt: "Wizard de criação de campanha na Yoobe — dados iniciais e slug",
     stats: [
       {
@@ -137,25 +137,25 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Basics e slug",
         body: "Defina o objetivo da ação, nome, URL amigável e identidade da landing de resgate.",
-        imageSrc: "/screens/flows/campanha-passo-1.webp",
+        imageSrc: "/screens/admin-campaign-identity.webp",
         imageAlt: "Passo 1 — dados iniciais da campanha",
       },
       {
         title: "Mensagem e identidade",
         body: "Personalize banner, títulos e copy para participantes entenderem a mecânica.",
-        imageSrc: "/screens/flows/campanha-passo-2.webp",
+        imageSrc: "/screens/admin-campaign-identity.webp",
         imageAlt: "Passo 2 — mensagem de boas-vindas",
       },
       {
         title: "Company & products",
         body: "Associe a empresa e monte a vitrine de recompensas da página de resgate.",
-        imageSrc: "/screens/flows/campanha-passo-3.webp",
+        imageSrc: "/screens/admin-campaign-products.webp",
         imageAlt: "Passo 3 — empresa e produtos",
       },
       {
         title: "Publishing e entrega",
         body: "Publique com vigência e regras; acompanhe resgates e envios até a conclusão.",
-        imageSrc: "/screens/flows/campanha-passo-4.webp",
+        imageSrc: "/screens/admin-campaign-config-desktop.webp",
         imageAlt: "Passo 4 — configurações finais",
       },
     ],
@@ -163,29 +163,29 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       title: "Fluxo completo de criação de campanha",
       body: "Veja o wizard do gestor em ação — do slug à publicação da landing de resgate.",
       playLabel: "Reproduzir fluxo de campanha",
-      webm: "/screens/flows/fluxo-campanha.webm",
-      mp4: "/screens/flows/fluxo-campanha.mp4",
-      poster: "/screens/flows/fluxo-campanha-poster.webp",
+      webm: "",
+      mp4: "",
+      poster: "/screens/admin-campaign-config-desktop.webp",
     },
     galleryTitle: "Telas reais da jornada de campanha",
     gallery: [
       {
-        src: "/screens/flows/campanha-passo-1.webp",
+        src: "/screens/admin-campaign-identity.webp",
         alt: "Wizard — dados iniciais e slug",
         caption: "Criação da página de campanha com identidade, slug e branding coerente.",
       },
       {
-        src: "/screens/flows/campanha-passo-3.webp",
+        src: "/screens/admin-campaign-products.webp",
         alt: "Wizard — empresa e produtos",
         caption: "Curadoria do catálogo que abastece a página de resgate daquela campanha.",
       },
       {
-        src: "/screens/dash/detail/editar-campanha.webp",
+        src: "/screens/admin-campaign-config-desktop.webp",
         alt: "Edição avançada de campanha no painel",
         caption: "Edição detalhada de regras, vigência e configuração após a publicação.",
       },
       {
-        src: "/screens/dash/campanhas-landing-pages.webp",
+        src: "/screens/admin-campaign-identity.webp",
         alt: "Lista de campanhas e landing pages",
         caption: "Visão consolidada das campanhas e landings ativas no painel do gestor.",
       },
@@ -268,7 +268,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Consulte carteira e extrato",
         body: "O participante acompanha saldo, histórico e origem dos créditos antes de decidir como usar os pontos.",
-        imageSrc: "/screens/dash/detail/area-cliente-pedidos-loja.webp",
+        imageSrc: "/loja-corporativa/cart.webp",
         imageAlt: "Área do cliente — pedidos e saldo na loja",
       },
       {
@@ -280,7 +280,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Acompanhe pedido e histórico",
         body: "Participantes e gestores visualizam pedido, extrato e status do resgate, enquanto a operação mantém governança fim a fim.",
-        imageSrc: "/screens/member-order-detail.webp",
+        imageSrc: "/loja-corporativa/admin-settings.webp",
         imageAlt: "Detalhe do pedido resgatado",
       },
     ],
@@ -297,12 +297,12 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         caption: "Pedidos e resgates vinculados à wallet para acompanhar consumo e status da jornada.",
       },
       {
-        src: "/screens/member-order-detail.webp",
+        src: "/loja-corporativa/admin-settings.webp",
         alt: "Detalhe do pedido resgatado",
         caption: "Detalhe logístico do resgate para fechar o ciclo entre pontos, loja corporativa e entrega.",
       },
       {
-        src: "/screens/dash/detail/area-cliente-pedidos-loja.webp",
+        src: "/loja-corporativa/cart.webp",
         alt: "Área do cliente com pedidos da loja",
         caption: "Visão do participante na loja: pedidos, status e acompanhamento do resgate.",
       },
@@ -328,7 +328,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "de ponta a ponta em um só painel.",
     description:
       "O painel do gestor da Yoobe reúne performance da operação, catálogo, pedidos, campanhas, usuários e indicadores críticos em uma camada de comando pensada para RH, marketing, people ops e times administrativos.",
-    imageSrc: "/screens/dash/dashboard-geral.webp",
+    imageSrc: "/screens/gamif-bolsa.webp",
     imageAlt: "Overview dashboard do painel do gestor Yoobe",
     stats: [
       {
@@ -379,25 +379,25 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Monitora a saúde da operação",
         body: "Bate o olho no dashboard e identifica desvios em pedidos, catálogo, estoque e engajamento.",
-        imageSrc: "/screens/dash/dashboard-geral.webp",
+        imageSrc: "/screens/gamif-bolsa.webp",
         imageAlt: "Overview dashboard com KPIs",
       },
       {
         title: "Ajusta campanhas e catálogo",
         body: "Revisa identidade, produtos, múltiplos resgates, vigência e regras sem sair da mesma estrutura.",
-        imageSrc: "/screens/dash/detail/editar-campanha.webp",
+        imageSrc: "/screens/admin-campaign-config-desktop.webp",
         imageAlt: "Edição de campanha no painel",
       },
       {
         title: "Acompanha execução",
         body: "Valida pedidos, visualiza usuários, envios e comportamento de resgate por período.",
-        imageSrc: "/screens/dash/pedidos.webp",
+        imageSrc: "/loja-corporativa/admin-settings.webp",
         imageAlt: "Lista de pedidos no painel",
       },
       {
         title: "Fecha o ciclo com dados",
         body: "Usa os indicadores para defender orçamento, priorizar ações e evoluir o programa com mais precisão.",
-        imageSrc: "/screens/dash/usuarios.webp",
+        imageSrc: "/loja-corporativa/admin-settings.webp",
         imageAlt: "Gestão de usuários no painel",
       },
     ],
@@ -405,54 +405,54 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       title: "Fluxo completo no painel do gestor",
       body: "Do dashboard à publicação de campanha — o mesmo centro de comando da operação.",
       playLabel: "Reproduzir demonstração do painel",
-      webm: "/screens/flows/fluxo-campanha.webm",
-      mp4: "/screens/flows/fluxo-campanha.mp4",
-      poster: "/screens/flows/fluxo-campanha-poster.webp",
+      webm: "",
+      mp4: "",
+      poster: "/screens/admin-campaign-config-desktop.webp",
     },
     galleryTitle: "Módulos e recursos do painel do gestor",
     gallery: [
       {
-        src: "/screens/dash/dashboard-geral.webp",
+        src: "/screens/gamif-bolsa.webp",
         alt: "Dashboard com indicadores operacionais",
         caption: "Dashboard com indicadores centrais para gestão contínua do programa.",
       },
       {
-        src: "/screens/dash/pedidos.webp",
+        src: "/loja-corporativa/admin-settings.webp",
         alt: "Orders & shipping",
         caption: "Pedidos e status de envio em tempo real para a operação acompanhar cada resgate.",
       },
       {
-        src: "/screens/dash/produtos.webp",
+        src: "/screens/admin-campaign-products.webp",
         alt: "Product catalog",
         caption: "Gestão do catálogo com estoque, opções e disponibilidade.",
       },
       {
-        src: "/screens/dash/cupons.webp",
+        src: "/screens/gamif-regras.webp",
         alt: "Cupons e promoções",
         caption: "Cupons e regras promocionais conectados às campanhas e à loja.",
       },
       {
-        src: "/screens/dash/envios.webp",
+        src: "/loja-corporativa/cart.webp",
         alt: "Métodos e status de envio",
         caption: "Acompanhamento logístico e métodos de envio no mesmo painel.",
       },
       {
-        src: "/screens/dash/empresas.webp",
+        src: "/loja-corporativa/admin-settings.webp",
         alt: "Gestão de empresas",
         caption: "Empresas e unidades organizacionais vinculadas ao programa.",
       },
       {
-        src: "/screens/dash/usuarios.webp",
+        src: "/loja-corporativa/admin-settings.webp",
         alt: "Users do programa",
         caption: "Usuários, papéis e acesso ao painel e à loja de resgate.",
       },
       {
-        src: "/screens/dash/detail/editar-campanha.webp",
+        src: "/screens/admin-campaign-config-desktop.webp",
         alt: "Detalhe de edição de campanha",
         caption: "Edição profunda de campanha com regras, vigência e preview.",
       },
       {
-        src: "/screens/dash/brindes-presentes.webp",
+        src: "/loja-corporativa/gift-wizard-name.webp",
         alt: "Brindes e presentes",
         caption: "Envio de brindes e presentes com wizard operacional no painel.",
       },
@@ -478,7 +478,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "escolhe o próprio prêmio.",
     description:
       "Uma vitrine totalmente white-label conectada ao your program de pontos. Colaboradores navegam pelo catálogo, resgatam pontos e recebem prêmios físicos ou digitais — sem nenhuma operação manual do RH.",
-    imageSrc: "/screens/member-store-home.webp",
+    imageSrc: "/screens/prio/priostore-catalog.webp",
     imageAlt: "Home da loja de resgate Yoobe — catálogo com produtos em pontos",
     stats: [
       {
@@ -541,7 +541,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Navega na loja",
         body: "O colaborador abre a loja corporativa da empresa, filtra o catálogo e lê os detalhes do produto.",
-        imageSrc: "/screens/member-store-home.webp",
+        imageSrc: "/screens/prio/priostore-catalog.webp",
         imageAlt: "Home da loja de resgate",
       },
       {
@@ -553,7 +553,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Recebe o prêmio",
         body: "O item é enviado para o endereço do colaborador via logística Yoobe ou parceiro de envio.",
-        imageSrc: "/screens/flows/brinde-passo-4.webp",
+        imageSrc: "/loja-corporativa/gift-wizard-review.webp",
         imageAlt: "Confirmação de envio do brinde",
       },
     ],
@@ -561,19 +561,19 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       title: "Fluxo completo de envio de brinde",
       body: "Do wizard do gestor à confirmação do envio — presenteie sem planilhas.",
       playLabel: "Reproduzir fluxo de brinde",
-      webm: "/screens/flows/fluxo-brinde.webm",
-      mp4: "/screens/flows/fluxo-brinde.mp4",
-      poster: "/screens/flows/fluxo-brinde-poster.webp",
+      webm: "",
+      mp4: "",
+      poster: "/loja-corporativa/gift-wizard-review.webp",
     },
     galleryTitle: "A loja em ação",
     gallery: [
       {
-        src: "/screens/member-store-home.webp",
+        src: "/screens/prio/priostore-catalog.webp",
         alt: "Home da loja de resgate",
         caption: "Vitrine white-label com catálogo, pontos e navegação familiar para o colaborador.",
       },
       {
-        src: "/loja-corporativa/product-detail.webp",
+        src: "/screens/prio/priostore-product.webp",
         alt: "Página de produto — Alexa Echo Dot 5 em 4Ucoins",
         caption: "Páginas de produto mostram preço em pontos, estoque, descrição e condições de entrega.",
       },
@@ -583,7 +583,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         caption: "O carrinho exibe itens, subtotal em pontos e estimativa de frete.",
       },
       {
-        src: "/screens/dash/produtos.webp",
+        src: "/screens/admin-campaign-products.webp",
         alt: "Product catalog no painel",
         caption: "Gestão do catálogo no painel: estoque, opções e disponibilidade.",
       },
@@ -593,7 +593,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         caption: "Gestores revisam o presente antes de salvar. O agendamento do envio é opcional.",
       },
       {
-        src: "/screens/flows/brinde-passo-2.webp",
+        src: "/loja-corporativa/gift-wizard-name.webp",
         alt: "Seleção de produto no wizard de brinde",
         caption: "Wizard de brinde: escolha do produto no catálogo antes do envio.",
       },
@@ -622,7 +622,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "redemptions, and engagement in one operation.",
     description:
       "Yoobe can run as your native gamification and engagement layer or connect to external engagement platforms. It turns the corporate store into an auditable redemption layer for teams, employees, and partners while campaign-specific landing pages support hackathons, internal challenges, recognition programs, onboarding, and performance goals.",
-    imageSrc: "/screens/flows/campanha-passo-1.webp",
+    imageSrc: "/screens/admin-campaign-identity.webp",
     imageAlt: "Yoobe campaign creation wizard — initial data and slug",
     stats: [
       {
@@ -673,25 +673,25 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Initial data and slug",
         body: "Define the objective, friendly URL, and identity of the redemption landing page.",
-        imageSrc: "/screens/flows/campanha-passo-1.webp",
+        imageSrc: "/screens/admin-campaign-identity.webp",
         imageAlt: "Step 1 — campaign initial data",
       },
       {
         title: "Messaging and identity",
         body: "Set banner, titles, and copy so participants understand the mechanics.",
-        imageSrc: "/screens/flows/campanha-passo-2.webp",
+        imageSrc: "/screens/admin-campaign-identity.webp",
         imageAlt: "Step 2 — welcome messaging",
       },
       {
         title: "Company and products",
         body: "Attach the company and curate the reward catalog for the redemption page.",
-        imageSrc: "/screens/flows/campanha-passo-3.webp",
+        imageSrc: "/screens/admin-campaign-products.webp",
         imageAlt: "Step 3 — company and products",
       },
       {
         title: "Publish and deliver",
         body: "Publish with validity and rules; track redemptions and shipments through delivery.",
-        imageSrc: "/screens/flows/campanha-passo-4.webp",
+        imageSrc: "/screens/admin-campaign-config-desktop.webp",
         imageAlt: "Step 4 — final settings",
       },
     ],
@@ -699,29 +699,29 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       title: "Full campaign creation flow",
       body: "Watch the manager wizard in action — from slug to published redemption landing.",
       playLabel: "Play campaign flow",
-      webm: "/screens/flows/fluxo-campanha.webm",
-      mp4: "/screens/flows/fluxo-campanha.mp4",
-      poster: "/screens/flows/fluxo-campanha-poster.webp",
+      webm: "",
+      mp4: "",
+      poster: "/screens/admin-campaign-config-desktop.webp",
     },
     galleryTitle: "Real campaign workflow screens",
     gallery: [
       {
-        src: "/screens/flows/campanha-passo-1.webp",
+        src: "/screens/admin-campaign-identity.webp",
         alt: "Wizard — initial data and slug",
         caption: "Campaign page creation with identity, slug, and coherent branding.",
       },
       {
-        src: "/screens/flows/campanha-passo-3.webp",
+        src: "/screens/admin-campaign-products.webp",
         alt: "Wizard — company and products",
         caption: "Catalog curation for the specific redemption page tied to the campaign.",
       },
       {
-        src: "/screens/dash/detail/editar-campanha.webp",
+        src: "/screens/admin-campaign-config-desktop.webp",
         alt: "Advanced campaign editing in the dashboard",
         caption: "Deep edit of rules, validity, and configuration after publishing.",
       },
       {
-        src: "/screens/dash/campanhas-landing-pages.webp",
+        src: "/screens/admin-campaign-identity.webp",
         alt: "Campaigns and landing pages list",
         caption: "Consolidated view of active campaigns and landings in the manager dashboard.",
       },
@@ -804,7 +804,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Review wallet and statement",
         body: "Participants check balances, point history, and the origin of each credit before using them.",
-        imageSrc: "/screens/dash/detail/area-cliente-pedidos-loja.webp",
+        imageSrc: "/loja-corporativa/cart.webp",
         imageAlt: "Customer area — store orders and balance",
       },
       {
@@ -816,7 +816,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Track orders and history",
         body: "Participants and managers follow the order, the statement, and redemption status while operations maintain governance end to end.",
-        imageSrc: "/screens/member-order-detail.webp",
+        imageSrc: "/loja-corporativa/admin-settings.webp",
         imageAlt: "Redeemed order detail",
       },
     ],
@@ -833,12 +833,12 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         caption: "Orders and redemptions connected to the wallet so users can understand spend and status.",
       },
       {
-        src: "/screens/member-order-detail.webp",
+        src: "/loja-corporativa/admin-settings.webp",
         alt: "Redeemed order detail",
         caption: "Logistics detail closes the loop between points, the corporate store, and delivery.",
       },
       {
-        src: "/screens/dash/detail/area-cliente-pedidos-loja.webp",
+        src: "/loja-corporativa/cart.webp",
         alt: "Customer area with store orders",
         caption: "Participant view in the store: orders, status, and redemption tracking.",
       },
@@ -864,7 +864,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "end to end in one dashboard.",
     description:
       "Yoobe brings program performance, catalog, orders, campaigns, users, and operational signals into one command layer built for HR, marketing, people ops, and admin teams.",
-    imageSrc: "/screens/dash/dashboard-geral.webp",
+    imageSrc: "/screens/gamif-bolsa.webp",
     imageAlt: "Yoobe manager dashboard overview",
     stats: [
       {
@@ -915,25 +915,25 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Monitor program health",
         body: "Open the dashboard and identify drift in orders, catalog, stock, and engagement.",
-        imageSrc: "/screens/dash/dashboard-geral.webp",
+        imageSrc: "/screens/gamif-bolsa.webp",
         imageAlt: "Dashboard overview with KPIs",
       },
       {
         title: "Adjust campaigns and catalog",
         body: "Review identity, products, multiple redemptions, validity, and rules in the same structure.",
-        imageSrc: "/screens/dash/detail/editar-campanha.webp",
+        imageSrc: "/screens/admin-campaign-config-desktop.webp",
         imageAlt: "Campaign editing in the dashboard",
       },
       {
         title: "Track execution",
         body: "Validate orders, inspect users, shipments, and redemption behavior by date range.",
-        imageSrc: "/screens/dash/pedidos.webp",
+        imageSrc: "/loja-corporativa/admin-settings.webp",
         imageAlt: "Orders list in the dashboard",
       },
       {
         title: "Close the loop with data",
         body: "Use the indicators to defend budgets, prioritize actions, and improve the program.",
-        imageSrc: "/screens/dash/usuarios.webp",
+        imageSrc: "/loja-corporativa/admin-settings.webp",
         imageAlt: "User management in the dashboard",
       },
     ],
@@ -941,54 +941,54 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       title: "Full manager dashboard flow",
       body: "From overview to campaign publish — one command center for the whole operation.",
       playLabel: "Play dashboard demo",
-      webm: "/screens/flows/fluxo-campanha.webm",
-      mp4: "/screens/flows/fluxo-campanha.mp4",
-      poster: "/screens/flows/fluxo-campanha-poster.webp",
+      webm: "",
+      mp4: "",
+      poster: "/screens/admin-campaign-config-desktop.webp",
     },
     galleryTitle: "Manager dashboard modules & features",
     gallery: [
       {
-        src: "/screens/dash/dashboard-geral.webp",
+        src: "/screens/gamif-bolsa.webp",
         alt: "Dashboard with core metrics",
         caption: "Dashboard with the operating metrics that matter most to program owners.",
       },
       {
-        src: "/screens/dash/pedidos.webp",
+        src: "/loja-corporativa/admin-settings.webp",
         alt: "Orders and shipments",
         caption: "Orders and shipping status in real time so ops can track every redemption.",
       },
       {
-        src: "/screens/dash/produtos.webp",
+        src: "/screens/admin-campaign-products.webp",
         alt: "Product catalog",
         caption: "Catalog management with stock, options, and availability.",
       },
       {
-        src: "/screens/dash/cupons.webp",
+        src: "/screens/gamif-regras.webp",
         alt: "Coupons and promotions",
         caption: "Coupons and promo rules connected to campaigns and the store.",
       },
       {
-        src: "/screens/dash/envios.webp",
+        src: "/loja-corporativa/cart.webp",
         alt: "Shipping methods and status",
         caption: "Logistics tracking and shipping methods in the same dashboard.",
       },
       {
-        src: "/screens/dash/empresas.webp",
+        src: "/loja-corporativa/admin-settings.webp",
         alt: "Company management",
         caption: "Companies and organizational units linked to the program.",
       },
       {
-        src: "/screens/dash/usuarios.webp",
+        src: "/loja-corporativa/admin-settings.webp",
         alt: "Program users",
         caption: "Users, roles, and access to the dashboard and redemption store.",
       },
       {
-        src: "/screens/dash/detail/editar-campanha.webp",
+        src: "/screens/admin-campaign-config-desktop.webp",
         alt: "Campaign edit detail",
         caption: "Deep campaign editing with rules, validity, and preview.",
       },
       {
-        src: "/screens/dash/brindes-presentes.webp",
+        src: "/loja-corporativa/gift-wizard-name.webp",
         alt: "Gifts and presents",
         caption: "Gift and present shipping with an operational wizard in the dashboard.",
       },
@@ -1014,7 +1014,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     highlight: "choose their own prize.",
     description:
       "A fully white-labeled storefront connected to your points program. Employees browse the catalog, redeem points, and receive physical or digital rewards — without any manual work from HR.",
-    imageSrc: "/screens/member-store-home.webp",
+    imageSrc: "/screens/prio/priostore-catalog.webp",
     imageAlt: "Yoobe redemption store home — catalog with products priced in points",
     stats: [
       {
@@ -1077,7 +1077,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Browse the store",
         body: "Employee opens the branded store, filters the catalog, and reads product details.",
-        imageSrc: "/screens/member-store-home.webp",
+        imageSrc: "/screens/prio/priostore-catalog.webp",
         imageAlt: "Redemption store home",
       },
       {
@@ -1089,7 +1089,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         title: "Receive the reward",
         body: "The item ships to the employee's door via Yoobe logistics or your delivery partner.",
-        imageSrc: "/screens/flows/brinde-passo-4.webp",
+        imageSrc: "/loja-corporativa/gift-wizard-review.webp",
         imageAlt: "Gift shipping confirmation",
       },
     ],
@@ -1097,19 +1097,19 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       title: "Full gift shipping flow",
       body: "From the manager wizard to shipping confirmation — gift without spreadsheets.",
       playLabel: "Play gift flow",
-      webm: "/screens/flows/fluxo-brinde.webm",
-      mp4: "/screens/flows/fluxo-brinde.mp4",
-      poster: "/screens/flows/fluxo-brinde-poster.webp",
+      webm: "",
+      mp4: "",
+      poster: "/loja-corporativa/gift-wizard-review.webp",
     },
     galleryTitle: "The store in action",
     gallery: [
       {
-        src: "/screens/member-store-home.webp",
+        src: "/screens/prio/priostore-catalog.webp",
         alt: "Redemption store home",
         caption: "White-label storefront with catalog, points, and familiar browsing for employees.",
       },
       {
-        src: "/loja-corporativa/product-detail.webp",
+        src: "/screens/prio/priostore-product.webp",
         alt: "Product page showing Alexa Echo Dot 5 priced in 4Ucoins",
         caption: "Product pages show price in points, stock, description, and delivery conditions.",
       },
@@ -1119,7 +1119,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         caption: "The cart shows item breakdown, subtotal in points, and shipping estimate.",
       },
       {
-        src: "/screens/dash/produtos.webp",
+        src: "/screens/admin-campaign-products.webp",
         alt: "Product catalog in the dashboard",
         caption: "Catalog management in the dashboard: stock, options, and availability.",
       },
@@ -1129,7 +1129,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         caption: "Managers review the gift before saving. Scheduling is optional.",
       },
       {
-        src: "/screens/flows/brinde-passo-2.webp",
+        src: "/loja-corporativa/gift-wizard-name.webp",
         alt: "Product selection in the gift wizard",
         caption: "Gift wizard: pick the catalog product before shipping.",
       },

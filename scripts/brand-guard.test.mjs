@@ -29,3 +29,13 @@ test("passes on a clean directory", () => {
   writeFileSync(join(dir, "index.html"), "<p>Yoobe Inc.</p>");
   assert.equal(run(dir).status, 0);
 });
+
+test("fails when the site references a blocked image (local path or Sanity asset hash)", () => {
+  const dir = mkdtempSync(join(tmpdir(), "bg-"));
+  const list = join(dir, "..", `blocked-${Date.now()}.json`);
+  writeFileSync(list, JSON.stringify(["/screens/admin-dashboard.webp", "image-abc123-1024x600-webp"]));
+  writeFileSync(join(dir, "index.html"), '<img src="https://cdn.sanity.io/images/p/yoobe/abc123-1024x600.webp">');
+  const r = spawnSync(process.execPath, [script, dir, "--blocked", list], { encoding: "utf8" });
+  assert.equal(r.status, 1);
+  assert.match(r.stderr, /abc123/);
+});

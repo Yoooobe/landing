@@ -59,7 +59,7 @@ export default function GamificationDuality() {
               </div>
               <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                 <Image
-                  src={withBasePath("/screens/flows/campanha-passo-1.webp")}
+                  src={withBasePath("/screens/admin-campaign-identity.webp")}
                   alt="Painel de níveis e progressão do motor de gamificação"
                   fill
                   className="object-cover object-top"

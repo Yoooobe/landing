@@ -91,7 +91,7 @@ export default function GamificationHero({
           </div>
           <div style={{ aspectRatio: "16/10" }} className="relative overflow-hidden bg-slate-900">
             <Image
-              src={withBasePath("/screens/admin-dashboard.webp")}
+              src={withBasePath("/screens/gamif-bolsa.webp")}
               alt="Dashboard Yoobe"
               fill
               sizes="240px"

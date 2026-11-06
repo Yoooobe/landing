@@ -36,7 +36,7 @@ export default function PlataformaHero() {
         </div>
         <div className="relative overflow-hidden bg-slate-900" style={{ aspectRatio: "16/10" }}>
           <Image
-            src={withBasePath("/screens/admin-dashboard.webp")}
+            src={withBasePath("/screens/gamif-bolsa.webp")}
             alt={h.titleLine1}
             fill
             className="object-cover object-top"
