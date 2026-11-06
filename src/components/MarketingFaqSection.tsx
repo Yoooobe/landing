@@ -13,7 +13,7 @@ export type MarketingFaqCopy = {
 
 type MarketingFaqSectionProps = {
   faq: MarketingFaqCopy;
-  /** `dark` (default) usa o fundo escuro; `light` casa com secções claras (brand-cream). */
+  /** `dark` (default) usa o fundo escuro; `light` casa com secções claras (brand-surface). */
   tone?: "dark" | "light";
 };
 
@@ -25,7 +25,7 @@ export default function MarketingFaqSection({ faq: f, tone = "dark" }: Marketing
     <section
       className={
         isLight
-          ? "relative z-10 bg-brand-cream py-24"
+          ? "relative z-10 bg-brand-surface py-24"
           : "relative z-10 border-t border-white/5 bg-surface-base py-24"
       }
     >
@@ -34,7 +34,7 @@ export default function MarketingFaqSection({ faq: f, tone = "dark" }: Marketing
           <span
             className={
               isLight
-                ? "mb-4 inline-block rounded-full border border-brand-navy/10 bg-white px-3 py-1 text-sm font-semibold text-brand-warm-gray shadow-sm"
+                ? "mb-4 inline-block rounded-full border border-brand-ink/10 bg-white px-3 py-1 text-sm font-semibold text-brand-warm-gray shadow-sm"
                 : "mb-4 inline-block rounded-full border border-white/10 bg-white/5 px-3 py-1 text-sm font-semibold text-white/70"
             }
           >
@@ -43,7 +43,7 @@ export default function MarketingFaqSection({ faq: f, tone = "dark" }: Marketing
           <h2
             className={
               isLight
-                ? "font-heading text-3xl font-black text-brand-navy md:text-5xl"
+                ? "font-heading text-3xl font-black text-brand-ink md:text-5xl"
                 : "font-heading text-3xl font-black text-white md:text-5xl"
             }
           >
@@ -61,7 +61,7 @@ export default function MarketingFaqSection({ faq: f, tone = "dark" }: Marketing
             const containerClass = isLight
               ? isOpen
                 ? "border-yoobe-purple/40 bg-white shadow-[0_12px_40px_rgba(31,38,135,0.08)]"
-                : "border-brand-navy/10 bg-white/70 hover:border-brand-navy/20"
+                : "border-brand-ink/10 bg-white/70 hover:border-brand-ink/20"
               : isOpen
                 ? "border-yoobe-purple/50 bg-surface-panel shadow-[0_0_20px_rgba(139,92,246,0.1)]"
                 : "border-white/10 bg-transparent hover:border-white/20";
@@ -79,7 +79,7 @@ export default function MarketingFaqSection({ faq: f, tone = "dark" }: Marketing
                   aria-controls={`faq-panel-${idx}`}
                   id={`faq-trigger-${idx}`}
                 >
-                  <span className={`pr-8 font-bold ${isLight ? "text-brand-navy" : "text-white"}`}>
+                  <span className={`pr-8 font-bold ${isLight ? "text-brand-ink" : "text-white"}`}>
                     {faq.q}
                   </span>
                   <ChevronDown

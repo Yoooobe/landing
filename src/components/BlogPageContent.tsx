@@ -64,7 +64,7 @@ function AuthorBadge({ author, aiGenerated }: { author?: string; aiGenerated?: b
         </span>
       )}
       {aiGenerated && (
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold">
+        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold">
           <Zap className="w-3 h-3" />
           IA
         </span>
@@ -95,17 +95,17 @@ function StatsBar({ posts }: { posts: BlogPostDoc[] }) {
   return (
     <div className="flex flex-wrap items-center gap-6 md:gap-10 mt-8 mb-2">
       <div className="flex items-center gap-2">
-        <span className="text-2xl font-black text-brand-orange font-heading">{published}</span>
+        <span className="text-2xl font-black text-brand-primary font-heading">{published}</span>
         <span className="text-sm text-white/40 font-sans">artigos publicados</span>
       </div>
       <div className="w-px h-6 bg-white/10 hidden md:block" />
       <div className="flex items-center gap-2">
-        <span className="text-2xl font-black text-brand-orange font-heading">{categories}</span>
+        <span className="text-2xl font-black text-brand-primary font-heading">{categories}</span>
         <span className="text-sm text-white/40 font-sans">categorias</span>
       </div>
       <div className="w-px h-6 bg-white/10 hidden md:block" />
       <div className="flex items-center gap-2">
-        <span className="text-2xl font-black text-brand-orange font-heading">{totalReadTime}</span>
+        <span className="text-2xl font-black text-brand-primary font-heading">{totalReadTime}</span>
         <span className="text-sm text-white/40 font-sans">min de conteúdo</span>
       </div>
     </div>
@@ -131,12 +131,12 @@ export default function BlogPageContent({ posts }: Props) {
     return (
       <div className="min-h-screen bg-surface-section px-4 pb-24 pt-32 text-white">
         <div className="container mx-auto max-w-3xl text-center">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-xs font-bold tracking-widest uppercase">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-bold tracking-widest uppercase">
             Blog Yoobe
           </span>
           <h1 className="mb-4 text-4xl font-black font-heading">
             Engaja,{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-yoobe-neon-pink">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-yoobe-neon-pink">
               time!
             </span>
           </h1>
@@ -153,12 +153,12 @@ export default function BlogPageContent({ posts }: Props) {
       {/* ── Hero Header ── */}
       <div className="container mx-auto px-4 max-w-6xl mb-10">
         <div className="max-w-3xl">
-          <span className="inline-block px-3 py-1 mb-6 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-xs font-bold tracking-widest uppercase">
+          <span className="inline-block px-3 py-1 mb-6 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-bold tracking-widest uppercase">
             Blog Yoobe · para os heróis do RH
           </span>
           <h1 className="text-4xl md:text-6xl font-black mb-4 font-heading leading-tight">
             Engaja,{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-yoobe-neon-pink">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-yoobe-neon-pink">
               time!
             </span>
           </h1>
@@ -178,7 +178,7 @@ export default function BlogPageContent({ posts }: Props) {
               onClick={() => setActiveCategory(value)}
               className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full border text-sm font-medium font-sans transition-all duration-200 ${
                 activeCategory === value
-                  ? "border-brand-orange bg-brand-orange/10 text-brand-orange"
+                  ? "border-brand-primary bg-brand-primary/10 text-brand-primary"
                   : "border-white/10 bg-white/5 text-white/50 hover:border-white/20 hover:text-white/80"
               }`}
             >
@@ -214,14 +214,14 @@ export default function BlogPageContent({ posts }: Props) {
                     imgClassName="transition-transform duration-700 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="h-full w-full bg-linear-to-br from-brand-orange/30 via-yoobe-neon-pink/20 to-unik-blue/30 flex items-center justify-center">
+                  <div className="h-full w-full bg-linear-to-br from-brand-primary/30 via-yoobe-neon-pink/20 to-unik-blue/30 flex items-center justify-center">
                     <Trophy className="w-24 h-24 text-white/10" />
                   </div>
                 )}
                 <div className="absolute inset-0 hidden bg-linear-to-r from-surface-base via-transparent to-transparent md:block" />
                 <div className="absolute inset-0 bg-linear-to-t from-surface-base via-transparent to-transparent md:hidden" />
                 {featured.featured && (
-                  <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-brand-orange text-white text-xs font-bold tracking-wide">
+                  <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-brand-primary text-white text-xs font-bold tracking-wide">
                     ⭐ Destaque
                   </span>
                 )}
@@ -231,7 +231,7 @@ export default function BlogPageContent({ posts }: Props) {
                   {featured.category}
                 </span>
                 <AuthorBadge author={(featured as BlogPostDoc & { author?: string }).author} aiGenerated={(featured as BlogPostDoc & { aiGenerated?: boolean }).aiGenerated} />
-                <h2 className="text-3xl md:text-4xl font-black mb-4 font-heading group-hover:text-brand-orange transition-colors">
+                <h2 className="text-3xl md:text-4xl font-black mb-4 font-heading group-hover:text-brand-primary transition-colors">
                   {featured.title}
                 </h2>
                 <p className="text-white/60 text-lg mb-6 font-sans line-clamp-3">{featured.excerpt}</p>
@@ -245,7 +245,7 @@ export default function BlogPageContent({ posts }: Props) {
                     <Clock className="w-4 h-4" />
                     {featured.readTimeMinutes} min
                   </div>
-                  <div className="ml-auto flex items-center gap-2 font-medium text-brand-orange group-hover:translate-x-1 transition-transform">
+                  <div className="ml-auto flex items-center gap-2 font-medium text-brand-primary group-hover:translate-x-1 transition-transform">
                     {b.readMore} <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
@@ -274,7 +274,7 @@ export default function BlogPageContent({ posts }: Props) {
                           imgClassName="transition-transform duration-700 group-hover:scale-105"
                         />
                       ) : (
-                        <div className="h-full w-full bg-linear-to-br from-yoobe-purple/30 via-brand-orange/20 to-brand-navy-dark flex items-center justify-center">
+                        <div className="h-full w-full bg-linear-to-br from-yoobe-purple/30 via-brand-primary/20 to-brand-ink-dark flex items-center justify-center">
                           <BookOpen className="w-12 h-12 text-white/10" />
                         </div>
                       )}
@@ -285,7 +285,7 @@ export default function BlogPageContent({ posts }: Props) {
                           {post.category}
                         </span>
                         {postWithExtras.aiGenerated && (
-                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-orange/10 border border-brand-orange/20 text-brand-orange text-xs font-bold">
+                          <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold">
                             <Zap className="w-3 h-3" />
                             IA
                           </span>
@@ -308,7 +308,7 @@ export default function BlogPageContent({ posts }: Props) {
                             {post.readTimeMinutes} min
                           </div>
                         </div>
-                        <div className="flex items-center gap-1 font-medium text-brand-orange group-hover:translate-x-1 transition-transform">
+                        <div className="flex items-center gap-1 font-medium text-brand-primary group-hover:translate-x-1 transition-transform">
                           {b.readMore} <ArrowRight className="w-3.5 h-3.5" />
                         </div>
                       </div>

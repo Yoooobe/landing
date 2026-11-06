@@ -40,7 +40,7 @@ const PROFILES = {
     ],
   },
   vendas: {
-    accent: "#f98f16",
+    accent: "#ff6b57",
     accentSoft: "#ef476f",
     variants: [
       { key: "hero", source: "dash/dashboard-geral.webp", label: "admin.yoobe.co · metas" },

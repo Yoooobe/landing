@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function WalletHighlight() {
   return (
-    <section id="wallet" className="py-24 bg-brand-navy-dark border-t border-white/5 relative overflow-hidden">
+    <section id="wallet" className="py-24 bg-brand-ink-dark border-t border-white/5 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row-reverse gap-16 items-center">
           
@@ -66,9 +66,9 @@ export default function WalletHighlight() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative z-10 bg-brand-navy border border-white/10 rounded-2xl shadow-xl overflow-hidden h-full flex flex-col"
+              className="relative z-10 bg-brand-ink border border-white/10 rounded-2xl shadow-xl overflow-hidden h-full flex flex-col"
             >
-              <div className="bg-brand-navy-dark px-6 py-4 border-b border-white/5 flex justify-between items-center">
+              <div className="bg-brand-ink-dark px-6 py-4 border-b border-white/5 flex justify-between items-center">
                  <h3 className="font-semibold text-white">Wallet Corporativa</h3>
                  <div className="text-sm text-green-400 font-mono">Status: Ativo</div>
               </div>
@@ -81,7 +81,7 @@ export default function WalletHighlight() {
                    </div>
                    <div className="text-right">
                      <div className="text-white/50 text-sm mb-1">Resgatado</div>
-                     <div className="text-lg font-medium text-brand-orange">R$ 5.500,00</div>
+                     <div className="text-lg font-medium text-brand-primary">R$ 5.500,00</div>
                    </div>
                  </div>
 
@@ -102,7 +102,7 @@ export default function WalletHighlight() {
 
                      <div className="relative">
                        <div className="flex justify-between text-xs text-white/50 mb-1">
-                         <span>Maria Santos · Resgates no período</span>
+                         <span>Maria Santos · Resgates in period</span>
                          <span>R$ 1.500 / R$ 5.000</span>
                        </div>
                        <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">

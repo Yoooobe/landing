@@ -25,7 +25,7 @@ export default function PlataformaPageCta({
           source="plataforma-page-demo"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-flex h-11 items-center justify-center rounded-xl border border-white/20 px-6 text-sm font-semibold text-white/90 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+          className="mt-8 inline-flex h-11 items-center justify-center rounded-xl border border-white/20 px-6 text-sm font-semibold text-white/90 transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60"
         >
           {m.plataforma.pageCta.cta}
         </TrackedOutboundLink>

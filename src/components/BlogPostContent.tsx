@@ -50,7 +50,7 @@ export default function BlogPostContent({ post, relatedPosts = [] }: Props) {
           {backLabel}
         </Link>
 
-        <span className="mb-6 inline-flex rounded-full border border-brand-orange/30 bg-brand-orange/10 px-4 py-1 text-xs font-bold uppercase tracking-wide text-brand-orange">
+        <span className="mb-6 inline-flex rounded-full border border-brand-primary/30 bg-brand-primary/10 px-4 py-1 text-xs font-bold uppercase tracking-wide text-brand-primary">
           {post.category}
         </span>
 
@@ -100,9 +100,9 @@ export default function BlogPostContent({ post, relatedPosts = [] }: Props) {
                 <li key={r.slug}>
                   <Link
                     href={path(`/blog/${r.slug}/`)}
-                    className="block rounded-2xl border border-white/10 bg-white/4 p-4 transition-colors hover:border-brand-orange/40 hover:bg-white/6"
+                    className="block rounded-2xl border border-white/10 bg-white/4 p-4 transition-colors hover:border-brand-primary/40 hover:bg-white/6"
                   >
-                    <span className="text-xs font-semibold uppercase tracking-wide text-brand-orange/90">
+                    <span className="text-xs font-semibold uppercase tracking-wide text-brand-primary/90">
                       {r.category}
                     </span>
                     <p className="mt-2 font-heading text-lg font-bold leading-snug text-white">{r.title}</p>

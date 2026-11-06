@@ -18,7 +18,7 @@ export default function BlogAuthorBio({ profile, locale, aiGenerated }: Props) {
   const writtenBy = locale === "pt" ? "Escrito por" : "Written by";
   const aiNote =
     locale === "pt"
-      ? "Conteúdo gerado com apoio de IA e revisado editorialmente."
+      ? "Content gerado com apoio de IA e revisado editorialmente."
       : "AI-assisted content, editorially reviewed.";
 
   return (
@@ -33,19 +33,19 @@ export default function BlogAuthorBio({ profile, locale, aiGenerated }: Props) {
             alt={profile.avatar?.alt || profile.name}
             width={72}
             height={72}
-            className="h-[72px] w-[72px] shrink-0 rounded-full object-cover ring-2 ring-brand-orange/30"
+            className="h-[72px] w-[72px] shrink-0 rounded-full object-cover ring-2 ring-brand-primary/30"
           />
         ) : (
           <div
-            className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full bg-linear-to-br from-brand-orange/20 to-yoobe-purple/30 ring-2 ring-brand-orange/20"
+            className="flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-full bg-linear-to-br from-brand-primary/20 to-yoobe-purple/30 ring-2 ring-brand-primary/20"
             aria-hidden
           >
-            <UserRound className="h-8 w-8 text-brand-orange/80" />
+            <UserRound className="h-8 w-8 text-brand-primary/80" />
           </div>
         )}
 
         <div className="min-w-0 flex-1">
-          <p className="mb-1 text-xs font-bold uppercase tracking-wide text-brand-orange/90">
+          <p className="mb-1 text-xs font-bold uppercase tracking-wide text-brand-primary/90">
             {writtenBy}
           </p>
           <div className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-1">
@@ -58,7 +58,7 @@ export default function BlogAuthorBio({ profile, locale, aiGenerated }: Props) {
                 href={profile.profileUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-sm text-brand-orange/90 transition-colors hover:text-brand-orange"
+                className="inline-flex items-center gap-1 text-sm text-brand-primary/90 transition-colors hover:text-brand-primary"
               >
                 {locale === "pt" ? "Perfil" : "Profile"}
                 <ExternalLink className="h-3.5 w-3.5" />

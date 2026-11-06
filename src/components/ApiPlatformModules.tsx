@@ -8,7 +8,7 @@ const iconMap = {
   package: <Package className="w-8 h-8 text-blue-400" />,
   lineChart: <LineChart className="w-8 h-8 text-green-400" />,
   target: <Target className="w-8 h-8 text-yoobe-neon-pink" />,
-  gift: <Gift className="w-8 h-8 text-brand-orange" />,
+  gift: <Gift className="w-8 h-8 text-brand-primary" />,
   shoppingBag: <ShoppingBag className="w-8 h-8 text-cyan-400" />,
   lock: <Lock className="w-8 h-8 text-yoobe-purple" />,
 } as const;

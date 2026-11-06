@@ -504,7 +504,7 @@ const PRICING_CTA_COPY: Record<"pt" | "en", CtaCopy> = {
     eyebrow: "Planos & preços · Yoobe",
     title: "Veja os planos e preços da Yoobe",
     description:
-      "Compare Starter, Pro e Enterprise e escolha a estrutura ideal para o tamanho do seu programa de recompensas.",
+      "Compare Starter, Pro e Enterprise e escolha a estrutura ideal para o tamanho do your program de recompensas.",
     ctaLabel: "Ver planos e preços",
   },
   en: {

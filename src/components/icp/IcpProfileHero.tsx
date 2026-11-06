@@ -85,7 +85,7 @@ export default function IcpProfileHero({ locale, hero, visual }: Props) {
   const isExternal = /^(?:[a-z]+:)?\/\//i.test(ctaHref);
 
   return (
-    <section className="hero-theme-section relative overflow-hidden bg-brand-navy-dark pb-20 pt-28 md:pb-28 md:pt-32">
+    <section className="hero-theme-section relative overflow-hidden bg-brand-ink-dark pb-20 pt-28 md:pb-28 md:pt-32">
       <HeroThemeBackdrop theme={visual.heroTheme} />
       <div className="absolute inset-0 z-0">
         <div className={`absolute left-[12%] top-[8%] h-[460px] w-[460px] rounded-full blur-[140px] mix-blend-screen ${visual.heroGlowPrimaryClass}`} />

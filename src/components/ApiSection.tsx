@@ -87,7 +87,7 @@ export default function ApiSection() {
                   {"    "}body: JSON.stringify({"{"}
                   {"\n"}
                   {"      "}employee_id: <span className="text-green-300">&apos;emp_482&apos;</span>,{"\n"}
-                  {"      "}points: <span className="text-orange-300">1500</span>,{"\n"}
+                  {"      "}points: <span className="text-rose-300">1500</span>,{"\n"}
                   {"      "}reason: <span className="text-green-300">&apos;{a.codeReason}&apos;</span>
                   {"\n"}
                   {"    "}

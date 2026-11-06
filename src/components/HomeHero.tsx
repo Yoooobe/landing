@@ -112,13 +112,13 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
   ];
 
   return (
-    <section className="hero-theme-section relative overflow-hidden bg-brand-navy-dark pb-20 pt-24 sm:pb-24 sm:pt-28 md:pb-28 md:pt-32">
+    <section className="hero-theme-section relative overflow-hidden bg-brand-ink-dark pb-20 pt-24 sm:pb-24 sm:pt-28 md:pb-28 md:pt-32">
       <HeroThemeBackdrop theme="home" />
       <div className="absolute inset-0 z-0">
-        <div className="absolute left-[10%] top-[12%] h-72 w-72 rounded-full bg-brand-orange/14 blur-[100px]" />
+        <div className="absolute left-[10%] top-[12%] h-72 w-72 rounded-full bg-brand-primary/14 blur-[100px]" />
         <div className="absolute right-[8%] top-[18%] h-80 w-80 rounded-full bg-unik-blue/12 blur-[110px]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_38%)]" />
-        <div className="absolute bottom-0 left-0 right-0 z-10 h-1/2 bg-linear-to-t from-brand-navy-dark to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 z-10 h-1/2 bg-linear-to-t from-brand-ink-dark to-transparent" />
         <div className="absolute inset-0 z-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBoLTQweiBNMzkuNSAwSDQwdjQwaC0uNXoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4=')] bg-repeat opacity-40" />
       </div>
 
@@ -130,7 +130,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
             transition={enterTransition}
             className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 backdrop-blur-sm sm:mb-6 sm:px-4"
           >
-            <Sparkles className="h-3 w-3 shrink-0 text-brand-orange sm:h-3.5 sm:w-3.5" />
+            <Sparkles className="h-3 w-3 shrink-0 text-brand-primary sm:h-3.5 sm:w-3.5" />
             <span className="text-[0.64rem] font-semibold uppercase tracking-[0.16em] text-white/80 sm:text-[0.72rem] sm:tracking-[0.24em]">
               {h.badge}
             </span>
@@ -197,7 +197,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
             </TrackedOutboundLink>
             <a
               href={exploreHref}
-              className="w-full rounded-full border border-white/20 px-6 py-3.5 text-base font-medium text-white backdrop-blur-sm transition-colors duration-200 hover:border-brand-orange/35 hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
+              className="w-full rounded-full border border-white/20 px-6 py-3.5 text-base font-medium text-white backdrop-blur-sm transition-colors duration-200 hover:border-brand-primary/35 hover:bg-white/10 sm:w-auto sm:px-8 sm:py-4 sm:text-lg"
             >
               {h.ctaExplore}
             </a>
@@ -236,7 +236,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
         >
           {mainVisualUrl ? (
             <>
-              <div className="absolute -inset-2 rounded-[2.2rem] bg-linear-to-r from-brand-orange/20 via-yoobe-purple/20 to-unik-blue/20 blur-2xl animate-pulse" />
+              <div className="absolute -inset-2 rounded-[2.2rem] bg-linear-to-r from-brand-primary/20 via-yoobe-purple/20 to-unik-blue/20 blur-2xl animate-pulse" />
               <div className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.65)] backdrop-blur-md">
                 <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-2.5">
                   <div className="flex items-center gap-1.5">
@@ -247,8 +247,8 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
                   <span className="font-mono text-[0.62rem] tracking-wider text-white/45">
                     admin.yoobe.co · Plataforma
                   </span>
-                  <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
-                    Ao vivo
+                  <span className="rounded-full border border-brand-primary/30 bg-brand-primary/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-primary">
+                    Live
                   </span>
                 </div>
                 <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
@@ -279,7 +279,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
             style={{ animation: "float 6s ease-in-out infinite" }}
           >
             <div className="flex items-center justify-between mb-1">
-              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-brand-orange">
+              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-brand-primary">
                 {h.floatAdhesion}
               </span>
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -296,10 +296,10 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
             style={{ animation: "float 8s ease-in-out infinite 1s" }}
           >
             <div className="flex items-center justify-between mb-1">
-              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-brand-orange">
+              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-brand-primary">
                 {h.floatRh}
               </span>
-              <span className="h-2 w-2 rounded-full bg-brand-orange animate-pulse" />
+              <span className="h-2 w-2 rounded-full bg-brand-primary animate-pulse" />
             </div>
             <span className="block text-2xl font-black text-white">{h.floatRhValue}</span>
             <span className="text-[10px] text-white/55">{h.floatRhSub}</span>

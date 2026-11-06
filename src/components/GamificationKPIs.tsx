@@ -57,7 +57,7 @@ export default function GamificationKPIs({
                 <p className="mb-6 flex-1 font-sans text-sm leading-relaxed text-white/60">{kpi.desc}</p>
                 <div className="mt-auto h-1.5 w-full overflow-hidden rounded-full bg-white/5">
                   <div
-                    className="h-full rounded-full bg-linear-to-r from-brand-orange to-yoobe-neon-pink transition-all duration-1000 group-hover:w-full"
+                    className="h-full rounded-full bg-linear-to-r from-brand-primary to-yoobe-neon-pink transition-all duration-1000 group-hover:w-full"
                     style={{ width: `${BAR_WIDTHS[idx]}%` }}
                   ></div>
                 </div>

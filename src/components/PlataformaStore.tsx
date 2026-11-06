@@ -20,7 +20,7 @@ export default function PlataformaStore({
   const storeMockupImageUrl = getSanityImageUrl(showcaseMedia?.storeMockupImage, SANITY_IMAGE_PRESETS.uiScreenshot);
 
   return (
-    <section id="loja" className="py-24 bg-brand-navy relative overflow-hidden">
+    <section id="loja" className="py-24 bg-brand-ink relative overflow-hidden">
       <div
         id="wallet"
         aria-hidden="true"
@@ -37,7 +37,7 @@ export default function PlataformaStore({
             </span>
             <h2 className="text-3xl lg:text-5xl font-black text-white mb-6 leading-tight font-heading">
               {s.titleBefore}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple to-brand-orange">{s.titleGradient}</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple to-brand-primary">{s.titleGradient}</span>
               {s.titleAfter}
             </h2>
             <p className="text-lg text-white/60 leading-relaxed mb-10 font-light">
@@ -55,7 +55,7 @@ export default function PlataformaStore({
                     className="flex items-start gap-4 rounded-2xl border border-white/5 bg-surface-panel p-5 transition-colors hover:bg-white/5"
                   >
                     <div className="p-3 bg-white/5 rounded-xl border border-white/10 shrink-0">
-                      <Icon className={`w-6 h-6 ${i === 0 ? "text-brand-orange" : "text-yoobe-neon-pink"}`} />
+                      <Icon className={`w-6 h-6 ${i === 0 ? "text-brand-primary" : "text-yoobe-neon-pink"}`} />
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-lg mb-1">{feat.title}</h4>

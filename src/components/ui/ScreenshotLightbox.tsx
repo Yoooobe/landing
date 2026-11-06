@@ -81,7 +81,7 @@ export function ScreenshotLightbox({ open, onClose, src, alt }: LightboxProps) {
           <button
             type="button"
             aria-label="Fechar preview"
-            className="absolute inset-0 bg-brand-navy-dark/85 backdrop-blur-md"
+            className="absolute inset-0 bg-brand-ink-dark/85 backdrop-blur-md"
             onClick={onClose}
           />
           <motion.div

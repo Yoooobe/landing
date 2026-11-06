@@ -17,36 +17,36 @@ type Step = {
 const STEPS: Step[] = [
   {
     number: "01",
-    title: "Dados iniciais e slug",
-    desc: "Defina nome, slug e identidade da campanha. O wizard guia cada campo para a landing page de resgate ficar pronta com URL amigável e branding coerente.",
-    tag: "Identidade",
+    title: "Basics & slug",
+    desc: "Set the campaign name, slug, and branding. The wizard guides each field so the redemption landing page ships with a friendly URL and consistent branding.",
+    tag: "Branding",
     tagColor: "#2563eb",
     img: "/screens/flows/campanha-passo-1.webp",
     accentColor: "#2563eb",
   },
   {
     number: "02",
-    title: "Mensagem de boas-vindas",
-    desc: "Configure banner, títulos e mensagens da experiência. Explique a ação, o objetivo e a mecânica da campanha para participantes, colaboradores ou parceiros.",
-    tag: "Conteúdo",
+    title: "Welcome message",
+    desc: "Set the banner, headlines, and messages for the experience. Explain the action, the goal, and the campaign mechanics to participants, employees, or partners.",
+    tag: "Content",
     tagColor: "#8338ec",
     img: "/screens/flows/campanha-passo-2.webp",
     accentColor: "#8338ec",
   },
   {
     number: "03",
-    title: "Empresa e produtos",
-    desc: "Selecione a empresa e os produtos que vão abastecer a página de resgate. Monte a vitrine da campanha e prepare a jornada de premiação.",
-    tag: "Produtos",
-    tagColor: "#f98f16",
+    title: "Company & products",
+    desc: "Pick the company and the products that will stock the redemption page. Build the campaign showcase and set up the reward journey.",
+    tag: "Products",
+    tagColor: "#ff6b57",
     img: "/screens/flows/campanha-passo-3.webp",
-    accentColor: "#f98f16",
+    accentColor: "#ff6b57",
   },
   {
     number: "04",
-    title: "Configurações finais",
-    desc: "Publique a campanha com vigência, regras de resgate e ajustes finais. A Yoobe sustenta a operação até os resgates e envios.",
-    tag: "Publicação",
+    title: "Final settings",
+    desc: "Publish the campaign with dates, redemption rules, and final tweaks. Yoobe runs the operation through redemption and shipping.",
+    tag: "Publishing",
     tagColor: "#22d3ee",
     img: "/screens/flows/campanha-passo-4.webp",
     accentColor: "#22d3ee",
@@ -68,7 +68,7 @@ export default function CampaignBuilderShowcase() {
   const step = STEPS[active];
 
   return (
-    <section className="relative overflow-hidden bg-brand-cream py-20 md:py-28">
+    <section className="relative overflow-hidden bg-brand-surface py-20 md:py-28">
       {/* Dot-grid texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.04]"
@@ -79,7 +79,7 @@ export default function CampaignBuilderShowcase() {
       />
 
       {/* Radial glow top */}
-      <div className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-brand-orange/12 blur-[80px]" />
+      <div className="pointer-events-none absolute -top-32 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-brand-primary/12 blur-[80px]" />
 
       <div className="container relative z-10 mx-auto px-4 lg:px-8 max-w-7xl">
         {/* Header */}
@@ -90,9 +90,9 @@ export default function CampaignBuilderShowcase() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-1.5 shadow-sm mb-5"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-primary animate-pulse" />
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-gray-500">
-              Editor de campanhas
+              Campaign editor
             </span>
           </motion.div>
 
@@ -103,14 +103,14 @@ export default function CampaignBuilderShowcase() {
             transition={{ delay: 0.07 }}
             className="font-heading text-3xl font-black text-gray-900 md:text-5xl mb-4"
           >
-            Crie campanhas em{" "}
+            Build campaigns in{" "}
             <span
               className="bg-clip-text text-transparent"
               style={{
-                backgroundImage: "linear-gradient(135deg, #f98f16, #8338ec)",
+                backgroundImage: "linear-gradient(135deg, #ff6b57, #8338ec)",
               }}
             >
-              4 passos
+              4 steps
             </span>
           </motion.h2>
           <motion.p
@@ -120,7 +120,7 @@ export default function CampaignBuilderShowcase() {
             transition={{ delay: 0.13 }}
             className="text-lg text-gray-500 max-w-2xl mx-auto"
           >
-            Do conceito à página de resgate publicada, com preview em tempo real em desktop e mobile para campanhas de engajamento, metas e desafios.
+            From concept to a published redemption page, with real-time desktop and mobile preview for engagement campaigns, goals, and challenges.
           </motion.p>
         </div>
 
@@ -210,7 +210,7 @@ export default function CampaignBuilderShowcase() {
                   key={i}
                   type="button"
                   onClick={() => { setActive(i); setPaused(true); }}
-                  aria-label={`Passo ${i + 1}`}
+                  aria-label={`Step ${i + 1}`}
                   className="h-1.5 rounded-full transition-all duration-300"
                   style={{
                     width: i === active ? "2rem" : "0.375rem",
@@ -249,7 +249,7 @@ export default function CampaignBuilderShowcase() {
                     style={{ backgroundColor: step.accentColor }}
                   />
                   <span className="font-mono text-[0.6rem] text-gray-400 tracking-wider">
-                    admin.yoobe.co · Campanha
+                    admin.yoobe.co · Campaign
                   </span>
                 </div>
                 <span
@@ -289,13 +289,13 @@ export default function CampaignBuilderShowcase() {
               {/* Footer bar */}
               <div className="flex items-center justify-between border-t border-black/10 bg-gray-50 px-4 py-2">
                 <span className="font-mono text-[0.6rem] text-gray-400">
-                  Passo {step.number} de {STEPS.length}
+                  Step {step.number} of {STEPS.length}
                 </span>
                 <span
                   className="text-[0.62rem] font-semibold"
                   style={{ color: step.accentColor }}
                 >
-                  Preview em tempo real
+                  Real-time preview
                 </span>
               </div>
             </div>

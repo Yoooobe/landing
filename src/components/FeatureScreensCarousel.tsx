@@ -37,47 +37,47 @@ const VARIANTS: Record<string, VariantConfig> = {
     dotColor: "bg-demo-cyan",
     accentTextClass: "text-demo-cyan/80",
     poweredBy: "Pluggy",
-    demoLabel: "Demo ao vivo · Pix Open Finance",
+    demoLabel: "Live demo · Pix Open Finance",
   },
   member: {
     screens: [
-      { src: "/screens/member-store-home.webp", label: "Loja de recompensas", step: "01", accent: "Catálogo personalizado" },
-      { src: "/screens/member-orders.webp", label: "Minha conta", step: "02", accent: "Pedidos & devoluções" },
-      { src: "/screens/member-points.webp", label: "Histórico de pontos", step: "03", accent: "Saldo em tempo real" },
+      { src: "/screens/member-store-home.webp", label: "Rewards store", step: "01", accent: "Custom catalog" },
+      { src: "/screens/member-orders.webp", label: "My account", step: "02", accent: "Orders & returns" },
+      { src: "/screens/member-points.webp", label: "Points history", step: "03", accent: "Real-time balance" },
     ],
     urlBar: "store.yoobe.co",
-    badgeText: "Colaborador",
-    badgeClass: "border-brand-orange/30 bg-brand-orange/10 text-brand-orange",
-    dotColor: "bg-brand-orange",
-    accentTextClass: "text-brand-orange/80",
-    demoLabel: "Demo ao vivo · Experiência do time",
+    badgeText: "Employee",
+    badgeClass: "border-brand-primary/30 bg-brand-primary/10 text-brand-primary",
+    dotColor: "bg-brand-primary",
+    accentTextClass: "text-brand-primary/80",
+    demoLabel: "Live demo · Team experience",
   },
   admin: {
     screens: [
-      { src: "/screens/dash/dashboard-geral.webp", label: "Dashboard geral", step: "01", accent: "Últimos 30 dias" },
-      { src: "/screens/dash/produtos.webp", label: "Catálogo de produtos", step: "02", accent: "Estoque e opções" },
-      { src: "/screens/dash/pedidos.webp", label: "Pedidos e envios", step: "03", accent: "Operação em tempo real" },
+      { src: "/screens/dash/dashboard-geral.webp", label: "Overview dashboard", step: "01", accent: "Last 30 days" },
+      { src: "/screens/dash/produtos.webp", label: "Product catalog", step: "02", accent: "Stock & options" },
+      { src: "/screens/dash/pedidos.webp", label: "Orders & shipping", step: "03", accent: "Real-time operations" },
     ],
     urlBar: "admin.yoobe.co",
-    badgeText: "Gestor",
+    badgeText: "Manager",
     badgeClass: "border-yoobe-purple/30 bg-yoobe-purple/10 text-yoobe-purple",
     dotColor: "bg-yoobe-purple",
     accentTextClass: "text-yoobe-purple/80",
-    demoLabel: "Demo ao vivo · Painel do gestor",
+    demoLabel: "Live demo · Manager dashboard",
   },
   campaign: {
     screens: [
-      { src: "/screens/flows/campanha-passo-1.webp", label: "Dados iniciais", step: "01", accent: "Slug + identidade" },
-      { src: "/screens/flows/campanha-passo-2.webp", label: "Mensagem de boas-vindas", step: "02", accent: "Copy da campanha" },
-      { src: "/screens/flows/campanha-passo-3.webp", label: "Empresa e produtos", step: "03", accent: "Vitrine do resgate" },
-      { src: "/screens/flows/campanha-passo-4.webp", label: "Configurações finais", step: "04", accent: "Publicar campanha" },
+      { src: "/screens/flows/campanha-passo-1.webp", label: "Basics", step: "01", accent: "Slug + branding" },
+      { src: "/screens/flows/campanha-passo-2.webp", label: "Welcome message", step: "02", accent: "Campaign copy" },
+      { src: "/screens/flows/campanha-passo-3.webp", label: "Company & products", step: "03", accent: "Redemption showcase" },
+      { src: "/screens/flows/campanha-passo-4.webp", label: "Final settings", step: "04", accent: "Publish campaign" },
     ],
-    urlBar: "admin.yoobe.co · Campanha",
+    urlBar: "admin.yoobe.co · Campaign",
     badgeText: "Campaign",
-    badgeClass: "border-brand-orange/30 bg-brand-orange/10 text-brand-orange",
-    dotColor: "bg-brand-orange",
-    accentTextClass: "text-brand-orange/80",
-    demoLabel: "Demo ao vivo · Editor de campanhas",
+    badgeClass: "border-brand-primary/30 bg-brand-primary/10 text-brand-primary",
+    dotColor: "bg-brand-primary",
+    accentTextClass: "text-brand-primary/80",
+    demoLabel: "Live demo · Campaign editor",
   },
   gamification: {
     screens: [
@@ -102,9 +102,9 @@ const VARIANTS: Record<string, VariantConfig> = {
     ],
     urlBar: "app.yoobe.co · Gamificação",
     badgeText: "Gamificação",
-    badgeClass: "border-brand-orange/30 bg-brand-orange/10 text-brand-orange",
-    dotColor: "bg-brand-orange",
-    accentTextClass: "text-brand-orange/80",
+    badgeClass: "border-brand-primary/30 bg-brand-primary/10 text-brand-primary",
+    dotColor: "bg-brand-primary",
+    accentTextClass: "text-brand-primary/80",
     demoLabel: "Demo ao vivo · Motor de gamificação",
   },
 };
@@ -257,11 +257,11 @@ export default function FeatureScreensCarousel({
       <div
         className={`pointer-events-none absolute inset-0 rounded-[2.2rem] blur-3xl ${
           variant === "member"
-            ? "bg-linear-to-br from-brand-orange/22 via-unik-blue/14 to-demo-cyan/12"
+            ? "bg-linear-to-br from-brand-primary/22 via-unik-blue/14 to-demo-cyan/12"
             : variant === "admin"
             ? "bg-linear-to-br from-yoobe-purple/24 via-unik-blue/16 to-demo-cyan/12"
             : variant === "gamification"
-            ? "bg-linear-to-br from-brand-orange/26 via-yoobe-purple/18 to-demo-cyan/12"
+            ? "bg-linear-to-br from-brand-primary/26 via-yoobe-purple/18 to-demo-cyan/12"
             : "bg-linear-to-br from-demo-cyan/22 via-unik-blue/16 to-yoobe-purple/12"
         }`}
       />

@@ -19,7 +19,7 @@ export default function WorkvivoRouteRedirect({ href, message }: Props) {
   }, [resolvedHref, router]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-brand-navy-dark px-4 text-center text-sm text-white/55">
+    <div className="flex min-h-screen items-center justify-center bg-brand-ink-dark px-4 text-center text-sm text-white/55">
       {message}
     </div>
   );

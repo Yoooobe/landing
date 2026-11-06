@@ -25,7 +25,7 @@ function StatCard({
       whileInView={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -10% 0px" }}
       transition={{ delay: (index % 6) * 0.07, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-      className={`group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors hover:border-brand-orange/30 ${
+      className={`group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-colors hover:border-brand-primary/30 ${
         isHero ? "p-5 md:p-6" : "p-4 md:p-5"
       }`}
     >
@@ -45,7 +45,7 @@ function StatCard({
       >
         <span>{item.value}</span>
         {item.suffix ? (
-          <span className="ml-1 text-[0.7em] text-brand-orange">{item.suffix}</span>
+          <span className="ml-1 text-[0.7em] text-brand-primary">{item.suffix}</span>
         ) : null}
       </div>
       <div className="mt-2 max-w-[14rem] text-sm leading-snug text-white/60">{item.label}</div>
@@ -75,7 +75,7 @@ export default function StatsBar() {
 
       <div className="container relative mx-auto max-w-6xl px-4">
         <div className="mx-auto mb-10 max-w-2xl text-center md:mb-14">
-          <div className="text-xs font-bold uppercase tracking-widest text-brand-orange">
+          <div className="text-xs font-bold uppercase tracking-widest text-brand-primary">
             {eyebrow}
           </div>
           <h2 className="mt-3 font-heading text-3xl font-black tracking-tight text-white md:text-4xl">
@@ -96,7 +96,7 @@ export default function StatsBar() {
         </div>
 
         <div className="mt-10 mb-6 flex items-center gap-3 md:mt-12">
-          <Globe className="h-4 w-4 shrink-0 text-brand-orange" aria-hidden />
+          <Globe className="h-4 w-4 shrink-0 text-brand-primary" aria-hidden />
           <span className="text-xs font-bold uppercase tracking-widest text-white/50">
             {internationalLabel}
           </span>

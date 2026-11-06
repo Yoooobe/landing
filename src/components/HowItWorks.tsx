@@ -30,7 +30,7 @@ export default function HowItWorks({
           </div>
           <h2 className="mb-6 font-heading text-3xl font-black md:text-5xl">
             {h.titleBefore}{" "}
-            <span className="bg-linear-to-r from-yoobe-neon-pink to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-yoobe-neon-pink to-rose-500 bg-clip-text text-transparent">
               {h.titleGradient}
             </span>
             {h.titleAfter}
@@ -51,13 +51,13 @@ export default function HowItWorks({
             >
               <div className="relative mb-6 flex h-20 w-20 items-center justify-center rounded-full border-2 border-white/10 bg-surface-elevated font-heading text-2xl font-bold text-white shadow-xl">
                 {step.num}
-                <div className="absolute top-0 right-0 h-4 w-4 rounded-full border-2 border-surface-elevated bg-brand-orange shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
+                <div className="absolute top-0 right-0 h-4 w-4 rounded-full border-2 border-surface-elevated bg-brand-primary shadow-[0_0_10px_rgba(255, 107, 87,0.8)]" />
               </div>
               <h3 className="mb-3 font-heading text-xl font-bold text-white">{step.title}</h3>
               <p className="font-sans text-sm leading-relaxed text-white/70">{step.desc}</p>
               <div className="mt-4 h-1.5 w-24 overflow-hidden rounded-full bg-white/10" aria-hidden>
                 <motion.div
-                  className="h-full rounded-full bg-linear-to-r from-brand-orange to-yoobe-neon-pink"
+                  className="h-full rounded-full bg-linear-to-r from-brand-primary to-yoobe-neon-pink"
                   initial={{ width: reduceMotion ? `${((i + 1) / steps.length) * 100}%` : 0 }}
                   whileInView={{ width: `${((i + 1) / steps.length) * 100}%` }}
                   viewport={{ once: true }}
@@ -86,7 +86,7 @@ export default function HowItWorks({
             </ul>
             <a
               href={withBasePath(path("/plataforma/motor-gamificacao"))}
-              className="mt-6 inline-block text-sm font-semibold text-brand-orange hover:underline"
+              className="mt-6 inline-block text-sm font-semibold text-brand-primary hover:underline"
             >
               {m.platformTabs.campanhas.cta} →
             </a>
@@ -108,7 +108,7 @@ export default function HowItWorks({
             </ul>
             <a
               href={withBasePath(path("/api-integracoes"))}
-              className="mt-6 inline-block text-sm font-semibold text-brand-orange hover:underline"
+              className="mt-6 inline-block text-sm font-semibold text-brand-primary hover:underline"
             >
               {m.apiSection.ctaDocs} →
             </a>
@@ -130,7 +130,7 @@ export default function HowItWorks({
                 <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
               </div>
               <span className="font-mono text-[0.62rem] text-white/50 tracking-wider">
-                admin.yoobe.co · Motor de Regras & Orquestração
+                admin.yoobe.co · Rules engine & orchestration
               </span>
               <span className="rounded-full border border-yoobe-neon-pink/30 bg-yoobe-neon-pink/15 px-3 py-1 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-yoobe-neon-pink">
                 Arquitetura Fim a Fim

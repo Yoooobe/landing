@@ -19,7 +19,7 @@ export default function AdminDashboardHighlight({
   );
 
   return (
-    <section id="gestor" className="py-24 bg-brand-navy-dark relative">
+    <section id="gestor" className="py-24 bg-brand-ink-dark relative">
       <div className="container mx-auto px-4 lg:px-8 max-w-7xl">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <motion.div
@@ -28,7 +28,7 @@ export default function AdminDashboardHighlight({
             viewport={{ once: true }}
             className="w-full lg:w-[60%] order-2 lg:order-1 relative"
           >
-            <div className="absolute -inset-1 rounded-[2rem] bg-linear-to-r from-brand-orange via-unik-blue to-demo-cyan opacity-20 blur transition duration-1000 group-hover:opacity-40 group-hover:duration-200"></div>
+            <div className="absolute -inset-1 rounded-[2rem] bg-linear-to-r from-brand-primary via-unik-blue to-demo-cyan opacity-20 blur transition duration-1000 group-hover:opacity-40 group-hover:duration-200"></div>
             <div className="relative overflow-hidden rounded-[1.8rem] border border-white/12 bg-slate-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)] backdrop-blur-sm">
               <div className="flex items-center justify-between border-b border-white/10 bg-slate-900 px-4 py-2.5">
                 <div className="flex items-center gap-1.5">
@@ -37,10 +37,10 @@ export default function AdminDashboardHighlight({
                   <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                 </div>
                 <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
-                  admin.yoobe.co · Painel do Gestor
+                  admin.yoobe.co · Painel do Manager
                 </span>
-                <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
-                  Ao vivo
+                <span className="rounded-full border border-brand-primary/30 bg-brand-primary/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-primary">
+                  Live
                 </span>
               </div>
               {adminDashboardImageUrl ? (
@@ -69,7 +69,7 @@ export default function AdminDashboardHighlight({
             </span>
             <h2 className="text-3xl lg:text-5xl font-black text-white mb-6 font-heading">
               {d.titleBefore}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple via-unik-blue-soft to-brand-orange">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple via-unik-blue-soft to-brand-primary">
                 {d.titleGradient}
               </span>
               {d.titleAfter}
@@ -83,7 +83,7 @@ export default function AdminDashboardHighlight({
                       i === 0
                         ? "bg-unik-blue/20"
                         : i === 1
-                          ? "bg-brand-orange/20"
+                          ? "bg-brand-primary/20"
                           : i === 2
                             ? "bg-yoobe-purple/20"
                             : "bg-green-500/20"
@@ -94,7 +94,7 @@ export default function AdminDashboardHighlight({
                         i === 0
                           ? "bg-unik-blue"
                           : i === 1
-                            ? "bg-brand-orange"
+                            ? "bg-brand-primary"
                             : i === 2
                               ? "bg-yoobe-purple"
                               : "bg-green-500"

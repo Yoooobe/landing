@@ -5,7 +5,7 @@ import JsonLdScript from "@/components/seo/JsonLdScript";
 import ThirdPartyChatLoader from "@/components/ThirdPartyChatLoader";
 import { buildOrganizationJsonLd, buildWebsiteJsonLd } from "@/lib/jsonLd";
 import {
-  jakarta,
+  outfit,
   ROOT_BODY_CLASSNAME,
 } from "@/components/site-settings/rootLayoutTheme";
 import type { ReactNode } from "react";
@@ -24,7 +24,7 @@ export default function LocaleRootLayout({
   return (
     <html
       lang={lang}
-      className={`dark scroll-smooth ${jakarta.variable}`}
+      className={`dark scroll-smooth ${outfit.variable}`}
       suppressHydrationWarning
     >
       <body className={ROOT_BODY_CLASSNAME} suppressHydrationWarning>

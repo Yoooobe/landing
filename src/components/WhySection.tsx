@@ -25,12 +25,12 @@ function StatPill({
       whileInView={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.06, duration: 0.4 }}
-      className="rounded-2xl border border-brand-navy/10 bg-white p-4 text-center shadow-sm"
+      className="rounded-2xl border border-brand-ink/10 bg-white p-4 text-center shadow-sm"
     >
-      <div className="font-heading text-2xl font-black tracking-tight text-brand-navy md:text-3xl">
+      <div className="font-heading text-2xl font-black tracking-tight text-brand-ink md:text-3xl">
         {prefix ? <span className="mr-1 text-sm font-semibold text-brand-warm-gray">{prefix}</span> : null}
         {value}
-        {suffix ? <span className="ml-0.5 text-lg text-brand-orange">{suffix}</span> : null}
+        {suffix ? <span className="ml-0.5 text-lg text-brand-primary">{suffix}</span> : null}
       </div>
       <p className="mt-1 text-xs leading-snug text-brand-warm-gray">{label}</p>
     </motion.div>
@@ -45,18 +45,18 @@ export default function WhySection() {
   );
 
   return (
-    <section id="plataforma" className="relative overflow-hidden border-t border-brand-navy/5 bg-brand-cream py-24">
+    <section id="plataforma" className="relative overflow-hidden border-t border-brand-ink/5 bg-brand-surface py-24">
       <div className="pointer-events-none absolute right-0 top-0 h-96 w-96 rounded-full bg-unik-blue/8 blur-[100px]" />
-      <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-brand-orange/6 blur-[80px]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-64 w-64 rounded-full bg-brand-primary/6 blur-[80px]" />
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <div className="relative z-10 mb-12 text-center">
-          <div className="mb-4 inline-block rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-brand-orange">
+          <div className="mb-4 inline-block rounded-full border border-brand-primary/30 bg-brand-primary/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-brand-primary">
             {w.badge}
           </div>
-          <h2 className="mb-6 font-heading text-3xl font-black text-brand-navy md:text-5xl">
+          <h2 className="mb-6 font-heading text-3xl font-black text-brand-ink md:text-5xl">
             {w.titleBefore}{" "}
-            <span className="bg-linear-to-r from-brand-orange to-unik-blue bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-brand-primary to-unik-blue bg-clip-text text-transparent">
               {w.titleGradient}
             </span>
           </h2>
@@ -84,12 +84,12 @@ export default function WhySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
-              className="rounded-3xl border border-brand-navy/8 bg-white p-8 shadow-sm transition-transform duration-300 hover:-translate-y-2 hover:border-unik-blue/25 hover:shadow-md"
+              className="rounded-3xl border border-brand-ink/8 bg-white p-8 shadow-sm transition-transform duration-300 hover:-translate-y-2 hover:border-unik-blue/25 hover:shadow-md"
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-cream text-3xl shadow-inner">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-surface text-3xl shadow-inner">
                 {ICONS[i]}
               </div>
-              <h3 className="mb-4 font-heading text-2xl font-bold text-brand-navy">{item.title}</h3>
+              <h3 className="mb-4 font-heading text-2xl font-bold text-brand-ink">{item.title}</h3>
               <p className="font-sans leading-relaxed text-brand-warm-gray">{item.desc}</p>
             </motion.div>
           ))}

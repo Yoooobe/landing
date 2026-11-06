@@ -31,7 +31,7 @@ export default function BlogInlineCta({ block }: { block: BlogCtaBlock }) {
       >
         <div className="grid gap-0 md:grid-cols-[1fr_minmax(0,280px)]">
           <div className="flex flex-col justify-center p-6 md:p-8">
-            <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-orange">
+            <p className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand-primary">
               <Icon className="size-4 shrink-0" aria-hidden />
               {eyebrow}
             </p>
@@ -43,7 +43,7 @@ export default function BlogInlineCta({ block }: { block: BlogCtaBlock }) {
               href={href}
               label={label}
               source={`blog-cta-${variant}`}
-              className="inline-flex h-11 w-fit items-center justify-center rounded-xl bg-brand-orange px-5 text-sm font-semibold text-white transition hover:bg-brand-orange/90"
+              className="inline-flex h-11 w-fit items-center justify-center rounded-xl bg-brand-primary px-5 text-sm font-semibold text-white transition hover:bg-brand-primary/90"
             />
           </div>
           {imageUrl ? (
@@ -63,14 +63,14 @@ export default function BlogInlineCta({ block }: { block: BlogCtaBlock }) {
   if (variant === "demo") {
     return (
       <aside
-        className="my-10 rounded-2xl border-2 border-brand-orange/35 bg-linear-to-br from-brand-orange/10 to-transparent p-8 text-center md:p-10"
+        className="my-10 rounded-2xl border-2 border-brand-primary/35 bg-linear-to-br from-brand-primary/10 to-transparent p-8 text-center md:p-10"
         data-blog-cta={variant}
       >
         <div className="mx-auto flex max-w-xl flex-col items-center">
-          <span className="mb-3 inline-flex size-12 items-center justify-center rounded-full border border-brand-orange/40 bg-brand-orange/15 text-brand-orange">
+          <span className="mb-3 inline-flex size-12 items-center justify-center rounded-full border border-brand-primary/40 bg-brand-primary/15 text-brand-primary">
             <CalendarDays className="size-6" aria-hidden />
           </span>
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brand-orange">{eyebrow}</p>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-brand-primary">{eyebrow}</p>
           {title ? (
             <h3 className="mb-3 font-heading text-2xl font-bold text-white md:text-3xl">{title}</h3>
           ) : null}
@@ -79,7 +79,7 @@ export default function BlogInlineCta({ block }: { block: BlogCtaBlock }) {
             href={href}
             label={label}
             source={`blog-cta-${variant}`}
-            className="inline-flex h-12 min-w-[200px] items-center justify-center rounded-xl bg-brand-orange px-8 text-base font-semibold text-white shadow-lg shadow-brand-orange/20 transition hover:bg-brand-orange/90"
+            className="inline-flex h-12 min-w-[200px] items-center justify-center rounded-xl bg-brand-primary px-8 text-base font-semibold text-white shadow-lg shadow-brand-primary/20 transition hover:bg-brand-primary/90"
           />
         </div>
       </aside>
@@ -101,7 +101,7 @@ export default function BlogInlineCta({ block }: { block: BlogCtaBlock }) {
         href={href}
         label={label}
         source={`blog-cta-${variant}`}
-        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-brand-orange/50 hover:bg-white/10"
+        className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:border-brand-primary/50 hover:bg-white/10"
       >
         <>
           <span>{label}</span>

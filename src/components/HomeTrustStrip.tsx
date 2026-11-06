@@ -120,7 +120,7 @@ export default function HomeTrustStrip() {
                   key={item.title}
                   className="flex gap-3 rounded-xl border border-white/5 bg-white/2 p-3 md:flex-col md:items-start"
                 >
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-brand-orange">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-brand-primary">
                     <Icon className="h-4 w-4" aria-hidden />
                   </div>
                   <div className="text-left">

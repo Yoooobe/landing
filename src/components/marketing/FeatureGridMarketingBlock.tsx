@@ -28,7 +28,7 @@ export default async function FeatureGridMarketingBlock({ block }: { block: Feat
   );
 
   return (
-    <section id={sectionId} className="border-b border-white/5 bg-brand-navy-dark py-20">
+    <section id={sectionId} className="border-b border-white/5 bg-brand-ink-dark py-20">
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         {(block.eyebrow || block.title || block.description) && (
           <div className="mx-auto mb-12 max-w-3xl text-center">
@@ -64,16 +64,16 @@ export default async function FeatureGridMarketingBlock({ block }: { block: Feat
           {items.map((item, index) => {
             const Icon = getMarketingLucideIcon(item.icon);
             const cardContent = (
-              <div className="h-full rounded-3xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-brand-orange/30">
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-brand-orange/20 bg-brand-orange/10 [&_svg]:h-full [&_svg]:w-full">
+              <div className="h-full rounded-3xl border border-white/10 bg-white/5 p-8 transition-colors hover:border-brand-primary/30">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-brand-primary/20 bg-brand-primary/10 [&_svg]:h-full [&_svg]:w-full">
                   {item.inlineSvg ? (
                     <span
-                      className="flex h-6 w-6 items-center justify-center text-brand-orange [&_svg]:max-h-6 [&_svg]:max-w-6 [&_svg]:stroke-current"
+                      className="flex h-6 w-6 items-center justify-center text-brand-primary [&_svg]:max-h-6 [&_svg]:max-w-6 [&_svg]:stroke-current"
                       aria-hidden
                       dangerouslySetInnerHTML={{ __html: item.inlineSvg }}
                     />
                   ) : (
-                    <Icon className="h-6 w-6 text-brand-orange" aria-hidden />
+                    <Icon className="h-6 w-6 text-brand-primary" aria-hidden />
                   )}
                 </div>
                 {item.eyebrow ? (

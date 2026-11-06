@@ -59,7 +59,7 @@ export default function TestimonialsSection() {
             >
               <div>
                 <div className="mb-4 flex flex-wrap items-center gap-2">
-                  <div className="text-xl tracking-widest text-brand-orange">★★★★★</div>
+                  <div className="text-xl tracking-widest text-brand-primary">★★★★★</div>
                   {item.verified ? (
                     <span className="inline-flex items-center gap-1 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-2 py-0.5 text-xs font-bold text-emerald-300">
                       <BadgeCheck className="h-3.5 w-3.5" />
@@ -87,7 +87,7 @@ export default function TestimonialsSection() {
                       href={item.caseStudyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand-orange/90 hover:text-brand-orange"
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-brand-primary/90 hover:text-brand-primary"
                     >
                       {caseStudyLabel}
                       <ExternalLink className="h-3 w-3" />

@@ -155,7 +155,7 @@ ${legacyJsLines}
 </head>
 <body>
   <p style="font-family: system-ui, sans-serif; padding: 2rem; color: #444;">A redirecionar…</p>
-  <p><a href="${homeUrlJs}">Ir para a home</a></p>
+  <p><a href="${homeUrlJs}">Go to home</a></p>
 </body>
 </html>
 `;

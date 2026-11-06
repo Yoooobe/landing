@@ -14,8 +14,8 @@ type Props = {
 
 export default function IcpProfileBenefitsSection({ benefits, visual }: Props) {
   return (
-    <section className="relative overflow-hidden bg-brand-cream py-20 md:py-28">
-      <div className="pointer-events-none absolute -right-24 top-1/3 h-72 w-[520px] rounded-full bg-brand-orange/8 blur-[110px]" />
+    <section className="relative overflow-hidden bg-brand-surface py-20 md:py-28">
+      <div className="pointer-events-none absolute -right-24 top-1/3 h-72 w-[520px] rounded-full bg-brand-primary/8 blur-[110px]" />
 
       <div className="container relative z-10 mx-auto grid max-w-6xl items-center gap-12 px-4 md:px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,460px)]">
         <motion.div
@@ -23,11 +23,11 @@ export default function IcpProfileBenefitsSection({ benefits, visual }: Props) {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, type: "spring", stiffness: 90, damping: 18 }}
-          className="order-2 overflow-hidden rounded-[1.8rem] border border-brand-navy/10 bg-white shadow-[0_24px_70px_rgba(31,38,135,0.12)] lg:order-1"
+          className="order-2 overflow-hidden rounded-[1.8rem] border border-brand-ink/10 bg-white shadow-[0_24px_70px_rgba(31,38,135,0.12)] lg:order-1"
         >
           <Image
             src={withBasePath(visual.images.benefits)}
-            alt={`Benefícios na interface — ${benefits.title}`}
+            alt={`Benefits in the product — ${benefits.title}`}
             width={1100}
             height={820}
             className="h-auto w-full object-contain bg-[#0b0e14]"
@@ -46,7 +46,7 @@ export default function IcpProfileBenefitsSection({ benefits, visual }: Props) {
             <span className={`mb-4 inline-flex rounded-full border bg-white px-3 py-1 text-sm font-semibold shadow-sm ${visual.accentBorderClass} ${visual.accentTextClass}`}>
               {benefits.badge}
             </span>
-            <h2 className="font-heading text-3xl font-black text-brand-navy md:text-4xl">
+            <h2 className="font-heading text-3xl font-black text-brand-ink md:text-4xl">
               {benefits.title}
             </h2>
           </motion.div>
@@ -61,13 +61,13 @@ export default function IcpProfileBenefitsSection({ benefits, visual }: Props) {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.45, delay: index * 0.08 }}
-                  className="flex items-start gap-4 rounded-2xl border border-brand-navy/8 bg-white/70 p-4 transition-colors hover:border-brand-navy/15"
+                  className="flex items-start gap-4 rounded-2xl border border-brand-ink/8 bg-white/70 p-4 transition-colors hover:border-brand-ink/15"
                 >
                   <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border ${visual.accentBorderClass} ${visual.accentBgClass} ${visual.accentTextClass}`}>
                     <Icon className="h-5 w-5" />
                   </span>
                   <div>
-                    <h3 className="font-heading text-base font-bold text-brand-navy">{item.title}</h3>
+                    <h3 className="font-heading text-base font-bold text-brand-ink">{item.title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-brand-warm-gray">{item.desc}</p>
                   </div>
                 </motion.div>

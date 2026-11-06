@@ -23,7 +23,7 @@ export default function PlataformaOverviewPage({ showcaseMedia = null, homeConte
   const { m, locale } = useLocaleMessages();
 
   return (
-    <div className="bg-brand-navy-dark text-white min-h-screen">
+    <div className="bg-brand-ink-dark text-white min-h-screen">
       <PlataformaHero />
       <DashboardPreviewSection />
       <PlatformSubFeatureCards />

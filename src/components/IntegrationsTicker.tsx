@@ -75,16 +75,16 @@ export default function IntegrationsTicker({ locale = "pt" }: Props) {
   const headline =
     locale === "en"
       ? "Connects with your entire ecosystem"
-      : "Conecta com todo o seu ecossistema";
+      : "Connects with your whole ecosystem";
   const sub =
     locale === "en"
       ? "Banks, fintechs, and HR platforms already integrated"
-      : "Bancos, fintechs e plataformas de RH já integrados";
+      : "Banks, fintechs, and HR platforms already integrated";
   const bankLabel = locale === "en" ? "Financial" : "Financeiro";
   const hrLabel = locale === "en" ? "HR & Platforms" : "RH & Plataformas";
 
   return (
-    <section className="relative overflow-hidden bg-brand-cream py-16">
+    <section className="relative overflow-hidden bg-brand-surface py-16">
       {/* Subtle pattern */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.035]"
@@ -96,8 +96,8 @@ export default function IntegrationsTicker({ locale = "pt" }: Props) {
       />
 
       {/* Edge fades */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r from-brand-cream to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l from-brand-cream to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-linear-to-r from-brand-surface to-transparent" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-linear-to-l from-brand-surface to-transparent" />
 
       <div className="container relative z-10 mx-auto px-4 text-center mb-10">
         <motion.div
@@ -106,7 +106,7 @@ export default function IntegrationsTicker({ locale = "pt" }: Props) {
           viewport={{ once: true }}
           className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-1.5 shadow-sm mb-4"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
+          <span className="h-1.5 w-1.5 rounded-full bg-brand-primary animate-pulse" />
           <span className="font-mono text-xs font-bold uppercase tracking-widest text-gray-500">
             Open API
           </span>

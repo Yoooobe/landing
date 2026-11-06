@@ -262,7 +262,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       {
         title: "Workvivo",
         description:
-          "Colaborador recebe shoutout, conquista badge ou atinge meta — o gatilho é acionado.",
+          "Employee recebe shoutout, conquista badge ou atinge meta — o gatilho é acionado.",
         icon: "megaphone",
       },
       {
@@ -274,7 +274,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       {
         title: "Loja & resgate",
         description:
-          "Colaborador acessa a loja corporativa, escolhe o produto e finaliza o resgate.",
+          "Employee acessa a loja corporativa, escolhe o produto e finaliza o resgate.",
         icon: "store",
       },
       {
@@ -300,7 +300,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       "Valores do add-on Workvivo × Yoobe: sob consulta — solicite uma proposta alinhada à sua operação.",
     finalTitle: "Pronto para ligar recompensas reais à Workvivo?",
     finalSubtitle:
-      "Agende uma conversa e veja como encaixar a Yoobe no seu programa — na Europa, nos EUA ou na América Latina.",
+      "Agende uma conversa e veja como encaixar a Yoobe no your program — na Europa, nos EUA ou na América Latina.",
     apiLearnMore: "Hub da API e integrações",
   },
   en: {

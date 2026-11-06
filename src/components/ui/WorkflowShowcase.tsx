@@ -123,7 +123,7 @@ export default function WorkflowShowcase({
               key={step.title}
               className="glass-panel-dark rounded-[1.75rem] border-t border-t-white/12 p-6"
             >
-              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-brand-orange/30 bg-brand-orange/12 text-sm font-bold text-brand-orange backdrop-blur-sm">
+              <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-full border border-brand-primary/30 bg-brand-primary/12 text-sm font-bold text-brand-primary backdrop-blur-sm">
                 {String(index + 1).padStart(2, "0")}
               </div>
               <h3 className="text-lg font-bold text-white">{step.title}</h3>
@@ -163,7 +163,7 @@ export default function WorkflowShowcase({
                 aria-controls={panelId}
                 tabIndex={isActive ? 0 : -1}
                 onClick={() => goTo(i)}
-                className={`relative overflow-hidden rounded-3xl border text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 ${
+                className={`relative overflow-hidden rounded-3xl border text-left transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60 ${
                   isActive
                     ? "glass-panel-dark border-white/12 border-t-white/15 shadow-[0_18px_44px_rgba(0,0,0,0.35)]"
                     : "border-white/8 bg-white/[0.03] hover:-translate-y-0.5 hover:bg-white/[0.06]"
@@ -173,7 +173,7 @@ export default function WorkflowShowcase({
                   <span
                     className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-sm font-bold transition-colors duration-300 ${
                       isActive
-                        ? "border-brand-orange/40 bg-brand-orange/15 text-brand-orange"
+                        ? "border-brand-primary/40 bg-brand-primary/15 text-brand-primary"
                         : "border-white/12 bg-white/5 text-white/45"
                     }`}
                   >
@@ -205,10 +205,10 @@ export default function WorkflowShowcase({
                         animate={{ scaleX: 1 }}
                         transition={{ duration: intervalMs / 1000, ease: "linear" }}
                         style={{ originX: 0 }}
-                        className="block h-full bg-brand-orange"
+                        className="block h-full bg-brand-primary"
                       />
                     ) : (
-                      <span className="block h-full w-full bg-brand-orange/60" />
+                      <span className="block h-full w-full bg-brand-primary/60" />
                     )
                   ) : null}
                 </span>

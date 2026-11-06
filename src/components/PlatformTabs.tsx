@@ -52,14 +52,14 @@ export default function PlatformTabs({
     `rounded-full px-6 py-3 font-bold transition-all duration-200 ${
       activeTab === id
         ? "bg-brand-gradient text-white"
-        : "border border-white/15 bg-white/5 text-white/70 backdrop-blur-md hover:border-brand-orange/25 hover:bg-white/10"
+        : "border border-white/15 bg-white/5 text-white/70 backdrop-blur-md hover:border-brand-primary/25 hover:bg-white/10"
     }`;
 
   return (
-    <section id="preview" className="relative overflow-hidden bg-brand-navy-dark py-24">
+    <section id="preview" className="relative overflow-hidden bg-brand-ink-dark py-24">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="mb-16 text-center">
-          <div className="mb-4 inline-block rounded-full border border-brand-orange/30 bg-brand-orange/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-brand-orange">
+          <div className="mb-4 inline-block rounded-full border border-brand-primary/30 bg-brand-primary/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-brand-primary">
             {t.badge}
           </div>
           <h2 className="mb-6 font-heading text-3xl font-black text-white md:text-5xl">{t.title}</h2>
@@ -94,14 +94,14 @@ export default function PlatformTabs({
                 <ul className="mb-8 space-y-4 font-sans">
                   {t.gestao.bullets.map((line) => (
                     <li key={line} className="flex items-center text-white/80">
-                      <span className="mr-3 text-brand-orange">✓</span>
+                      <span className="mr-3 text-brand-primary">✓</span>
                       {line}
                     </li>
                   ))}
                 </ul>
                 <Link
                   href={path(TAB_ROUTES.gestao)}
-                  className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-sans font-bold text-white transition-colors duration-200 hover:border-brand-orange/40 hover:bg-white/5"
+                  className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-sans font-bold text-white transition-colors duration-200 hover:border-brand-primary/40 hover:bg-white/5"
                 >
                   {t.gestao.cta}
                 </Link>
@@ -117,8 +117,8 @@ export default function PlatformTabs({
                     <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
                       admin.yoobe.co · Dashboard
                     </span>
-                    <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
-                      Ao vivo
+                    <span className="rounded-full border border-brand-primary/30 bg-brand-primary/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-primary">
+                      Live
                     </span>
                   </div>
                   <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
@@ -152,7 +152,7 @@ export default function PlatformTabs({
                 <ul className="mb-8 space-y-4 font-sans">
                   {t.loja.bullets.map((line) => (
                     <li key={line} className="flex items-center text-white/80">
-                      <span className="mr-3 text-brand-orange">✓</span>
+                      <span className="mr-3 text-brand-primary">✓</span>
                       {line}
                     </li>
                   ))}
@@ -210,14 +210,14 @@ export default function PlatformTabs({
                 <ul className="mb-8 space-y-4 font-sans">
                   {t.campanhas.bullets.map((line) => (
                     <li key={line} className="flex items-center text-white/80">
-                      <span className="mr-3 text-brand-orange">✓</span>
+                      <span className="mr-3 text-brand-primary">✓</span>
                       {line}
                     </li>
                   ))}
                 </ul>
                 <Link
                   href={path(TAB_ROUTES.campanhas)}
-                  className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-sans font-bold text-white transition-colors duration-200 hover:border-brand-orange/40 hover:bg-white/5"
+                  className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 bg-transparent px-8 font-sans font-bold text-white transition-colors duration-200 hover:border-brand-primary/40 hover:bg-white/5"
                 >
                   {t.campanhas.cta}
                 </Link>

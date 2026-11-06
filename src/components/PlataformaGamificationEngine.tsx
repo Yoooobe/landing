@@ -71,7 +71,7 @@ export default function PlataformaGamificationEngine({
           >
             <motion.div variants={fadeUp}>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-white/70 text-sm font-semibold">
-                <Sparkles className="h-5 w-5 shrink-0 text-brand-orange" aria-hidden />
+                <Sparkles className="h-5 w-5 shrink-0 text-brand-primary" aria-hidden />
                 {g.badge}
               </div>
             </motion.div>
@@ -81,7 +81,7 @@ export default function PlataformaGamificationEngine({
               className="text-3xl md:text-5xl font-black text-white leading-tight font-heading"
             >
               {g.titleBefore}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-red-500">{g.titleGradient}</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-red-500">{g.titleGradient}</span>
               {g.titleAfter}
             </motion.h2>
 
@@ -104,11 +104,11 @@ export default function PlataformaGamificationEngine({
                     aria-pressed={selected}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`rounded-2xl p-6 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-orange/60 ${
+                    className={`rounded-2xl p-6 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary/60 ${
                       i === 0
                         ? selected
-                          ? "border border-brand-orange/35 bg-white/4 border-l-4 border-l-brand-orange shadow-lg shadow-brand-orange/5"
-                          : "border border-white/10 border-l-4 border-l-transparent hover:border-brand-orange/25 hover:border-l-brand-orange/50"
+                          ? "border border-brand-primary/35 bg-white/4 border-l-4 border-l-brand-primary shadow-lg shadow-brand-primary/5"
+                          : "border border-white/10 border-l-4 border-l-transparent hover:border-brand-primary/25 hover:border-l-brand-primary/50"
                         : selected
                           ? "border border-yoobe-purple/35 bg-white/4 border-l-4 border-l-yoobe-purple shadow-lg shadow-yoobe-purple/5"
                           : "border border-white/10 border-l-4 border-l-transparent hover:border-yoobe-purple/25 hover:border-l-yoobe-purple/50"

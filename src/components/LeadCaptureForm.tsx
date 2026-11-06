@@ -13,14 +13,14 @@ import { useCallback, useState } from "react";
 const cardVariants = cva("rounded-2xl border text-left shadow-xl", {
   variants: {
     variant: {
-      home: "border-white/10 border-t-brand-orange/30 bg-white/5 p-5 backdrop-blur-[6px] md:p-6",
-      plataforma: "border-slate-200/80 bg-white p-5 text-brand-navy-dark shadow-black/10 md:p-6",
+      home: "border-white/10 border-t-brand-primary/30 bg-white/5 p-5 backdrop-blur-[6px] md:p-6",
+      plataforma: "border-slate-200/80 bg-white p-5 text-brand-ink-dark shadow-black/10 md:p-6",
       api: "border-cyan-500/25 bg-surface-page p-5 md:p-6",
       gamificacao:
         "border-fuchsia-500/20 bg-linear-to-br from-yoobe-purple/15 to-fuchsia-600/10 p-5 md:p-6",
-      casos: "border-brand-orange/30 bg-brand-navy p-5 md:p-6",
-      inteligencia: "border-white/15 bg-white p-5 text-brand-navy-dark md:p-6",
-      marketing: "border-white/10 border-t-brand-orange/30 bg-white/5 p-5 backdrop-blur-[6px] md:p-6",
+      casos: "border-brand-primary/30 bg-brand-ink p-5 md:p-6",
+      inteligencia: "border-white/15 bg-white p-5 text-brand-ink-dark md:p-6",
+      marketing: "border-white/10 border-t-brand-primary/30 bg-white/5 p-5 backdrop-blur-[6px] md:p-6",
     },
   },
   defaultVariants: { variant: "marketing" },
@@ -30,11 +30,11 @@ const labelVariants = cva("mb-1.5 block text-xs font-semibold uppercase tracking
   variants: {
     variant: {
       home: "text-white/70",
-      plataforma: "text-brand-navy-dark/70",
+      plataforma: "text-brand-ink-dark/70",
       api: "text-cyan-200/80",
       gamificacao: "text-white/75",
       casos: "text-white/70",
-      inteligencia: "text-brand-navy-dark/70",
+      inteligencia: "text-brand-ink-dark/70",
       marketing: "text-white/70",
     },
   },
@@ -47,18 +47,18 @@ const inputVariants = cva(
     variants: {
       variant: {
         home:
-          "border-white/15 bg-white/5 text-white placeholder:text-white/35 focus:border-brand-orange focus:ring-brand-orange/30",
+          "border-white/15 bg-white/5 text-white placeholder:text-white/35 focus:border-brand-primary focus:ring-brand-primary/30",
         plataforma:
-          "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:border-brand-navy-dark/40 focus:ring-brand-navy-dark/20",
+          "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:border-brand-ink-dark/40 focus:ring-brand-ink-dark/20",
         api: "border-cyan-500/30 bg-surface-base text-white placeholder:text-white/35 focus:border-cyan-400/50 focus:ring-cyan-500/25",
         gamificacao:
           "border-white/20 bg-white/10 text-white placeholder:text-white/35 focus:border-fuchsia-400/40 focus:ring-fuchsia-500/25",
         casos:
-          "border-white/15 bg-white/5 text-white placeholder:text-white/35 focus:border-brand-orange/50 focus:ring-brand-orange/25",
+          "border-white/15 bg-white/5 text-white placeholder:text-white/35 focus:border-brand-primary/50 focus:ring-brand-primary/25",
         inteligencia:
-          "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:border-brand-navy-dark/40 focus:ring-brand-navy-dark/20",
+          "border-slate-200 bg-white text-slate-900 placeholder:text-slate-400 focus:border-brand-ink-dark/40 focus:ring-brand-ink-dark/20",
         marketing:
-          "border-white/15 bg-white/5 text-white placeholder:text-white/35 focus:border-brand-orange focus:ring-brand-orange/30",
+          "border-white/15 bg-white/5 text-white placeholder:text-white/35 focus:border-brand-primary focus:ring-brand-primary/30",
       },
     },
     defaultVariants: { variant: "marketing" },
@@ -174,7 +174,7 @@ export default function LeadCaptureForm({ variant, source, className }: LeadCapt
         aria-live="polite"
       >
         <div
-          className="pointer-events-none absolute inset-0 bg-linear-to-br from-emerald-400/15 via-transparent to-brand-orange/10 motion-safe:animate-pulse"
+          className="pointer-events-none absolute inset-0 bg-linear-to-br from-emerald-400/15 via-transparent to-brand-primary/10 motion-safe:animate-pulse"
           aria-hidden
         />
         <div className="relative z-10 flex flex-col items-center">
@@ -355,8 +355,8 @@ export default function LeadCaptureForm({ variant, source, className }: LeadCapt
           className={cn(
             "mt-1 h-4 w-4 shrink-0 rounded border focus:ring-2",
             v === "plataforma" || v === "inteligencia"
-              ? "border-slate-300 text-brand-navy-dark focus:ring-brand-navy-dark/30"
-              : "border-white/30 bg-white/5 text-brand-orange focus:ring-brand-orange/40",
+              ? "border-slate-300 text-brand-ink-dark focus:ring-brand-ink-dark/30"
+              : "border-white/30 bg-white/5 text-brand-primary focus:ring-brand-primary/40",
           )}
           aria-invalid={inputError("consent")}
           aria-describedby={inputError("consent") ? `lead-consent-err-${source}` : undefined}
@@ -384,12 +384,12 @@ export default function LeadCaptureForm({ variant, source, className }: LeadCapt
           "mt-6 inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-bold transition-all duration-200 disabled:opacity-60",
           v === "home" &&
             "bg-brand-gradient text-white hover:bg-brand-gradient-hover",
-          v === "plataforma" && "bg-brand-navy-dark text-white hover:bg-brand-navy-dark/90",
+          v === "plataforma" && "bg-brand-ink-dark text-white hover:bg-brand-ink-dark/90",
           v === "api" && "bg-cyan-500 text-surface-base hover:bg-cyan-400",
           v === "gamificacao" &&
             "bg-linear-to-r from-yoobe-purple to-fuchsia-600 text-white hover:opacity-95",
-          v === "casos" && "bg-brand-orange text-white hover:bg-brand-orange/90",
-          v === "inteligencia" && "bg-brand-navy-dark text-white hover:bg-brand-navy-dark/90",
+          v === "casos" && "bg-brand-primary text-white hover:bg-brand-primary/90",
+          v === "inteligencia" && "bg-brand-ink-dark text-white hover:bg-brand-ink-dark/90",
           v === "marketing" &&
             "bg-brand-gradient text-white hover:bg-brand-gradient-hover",
         )}

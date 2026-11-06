@@ -81,7 +81,7 @@ export default function FeatureFlowVideoPlayer({
           <p className="text-sm font-semibold text-white">{title}</p>
           {body ? <p className="mt-0.5 text-xs leading-relaxed text-white/50">{body}</p> : null}
         </div>
-        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-orange" />
+        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
       </div>
     </div>
   );

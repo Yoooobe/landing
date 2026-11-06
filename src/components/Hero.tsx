@@ -6,7 +6,7 @@ import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-navy-dark">
+    <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden bg-brand-ink-dark">
       {/* Grid Pattern Background */}
       <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "40px 40px", maskImage: "radial-gradient(circle at center, black 20%, transparent 80%)", WebkitMaskImage: "radial-gradient(circle at center, black 20%, transparent 80%)" }} />
 
@@ -19,7 +19,7 @@ export default function Hero() {
             className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-sm"
           >
             <span className="text-sm font-bold uppercase tracking-wider text-white/90 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-brand-orange shadow-[0_0_10px_rgba(249,115,22,0.8)]" />
+              <span className="w-2 h-2 rounded-full bg-brand-primary shadow-[0_0_10px_rgba(255, 107, 87,0.8)]" />
               Reward Infrastructure
             </span>
           </motion.div>
@@ -56,7 +56,7 @@ export default function Hero() {
               source="legacy-hero-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-14 items-center justify-center rounded-full bg-white px-10 font-bold text-brand-navy-dark shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all hover:bg-brand-orange hover:text-white hover:-translate-y-1 hover:shadow-[0_0_60px_rgba(249,115,22,0.4)]"
+              className="inline-flex h-14 items-center justify-center rounded-full bg-white px-10 font-bold text-brand-ink-dark shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all hover:bg-brand-primary hover:text-white hover:-translate-y-1 hover:shadow-[0_0_60px_rgba(255, 107, 87,0.4)]"
             >
               Agendar Demonstração
             </TrackedOutboundLink>
@@ -80,7 +80,7 @@ export default function Hero() {
           <motion.div 
              animate={{ y: [-10, 10, -10] }}
              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-             className="absolute top-0 left-[10%] bg-brand-navy-dark/70 backdrop-blur-xl border border-white/10 border-t-2 border-t-green-500 rounded-2xl p-6 shadow-2xl"
+             className="absolute top-0 left-[10%] bg-brand-ink-dark/70 backdrop-blur-xl border border-white/10 border-t-2 border-t-green-500 rounded-2xl p-6 shadow-2xl"
           >
             <div className="text-xs text-white/60 uppercase tracking-widest mb-1">Pedidos Hoje</div>
             <div className="text-3xl font-bold text-white">148</div>
@@ -91,18 +91,18 @@ export default function Hero() {
           <motion.div 
              animate={{ y: [10, -10, 10] }}
              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-             className="absolute top-[40px] right-[10%] bg-brand-navy-dark/70 backdrop-blur-xl border border-white/10 border-t-2 border-t-brand-orange rounded-2xl p-6 shadow-2xl"
+             className="absolute top-[40px] right-[10%] bg-brand-ink-dark/70 backdrop-blur-xl border border-white/10 border-t-2 border-t-brand-primary rounded-2xl p-6 shadow-2xl"
           >
             <div className="text-xs text-white/60 uppercase tracking-widest mb-1">Faturamento</div>
             <div className="text-3xl font-bold text-white">R$ 54k</div>
-            <div className="mt-2 text-xs bg-brand-orange/15 text-brand-orange px-2 py-1 rounded inline-block">↑ 8% no mês</div>
+            <div className="mt-2 text-xs bg-brand-primary/15 text-brand-primary px-2 py-1 rounded inline-block">↑ 8% no mês</div>
           </motion.div>
 
           {/* Widget 3 */}
           <motion.div 
              animate={{ y: [-15, 15, -15] }}
              transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-             className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-brand-navy-dark/70 backdrop-blur-xl border border-white/10 border-t-2 border-t-yoobe-purple rounded-2xl p-6 shadow-2xl"
+             className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-brand-ink-dark/70 backdrop-blur-xl border border-white/10 border-t-2 border-t-yoobe-purple rounded-2xl p-6 shadow-2xl"
           >
             <div className="text-xs text-white/60 uppercase tracking-widest mb-1">Pontos Trocados</div>
             <div className="text-3xl font-bold text-white">45.000</div>

@@ -20,7 +20,7 @@ export default function SecurityEnterprise({
     withBasePath("/screens/security-panel.webp");
 
   return (
-    <section className="py-24 bg-brand-navy-dark relative border-t border-white/5">
+    <section className="py-24 bg-brand-ink-dark relative border-t border-white/5">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="glass-panel-dark rounded-[2.5rem] p-10 md:p-16 border border-white/10 relative overflow-hidden">
           <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-500/20 rounded-full blur-[100px]"></div>
@@ -43,7 +43,7 @@ export default function SecurityEnterprise({
                     <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/80" />
                     <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
                   </div>
-                  <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">admin.yoobe.co · segurança</span>
+                  <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">admin.yoobe.co · security</span>
                 </div>
                 <div className="relative h-[calc(100%-24px)] w-full bg-slate-900">
                   <Image

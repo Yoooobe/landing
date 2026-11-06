@@ -468,9 +468,9 @@ export default function Header() {
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 ${
+                  className={`flex items-center gap-1.5 rounded-full px-4 py-2 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60 ${
                     sectionActive || isOpen
-                      ? "bg-brand-orange/10 text-white"
+                      ? "bg-brand-primary/10 text-white"
                       : "text-white/70 hover:bg-white/10 hover:text-white"
                   }`}
                   aria-haspopup="menu"
@@ -519,20 +519,20 @@ export default function Header() {
                             openInNewTab={item.openInNewTab}
                             ariaCurrent={itemActive ? "page" : undefined}
                             onClick={() => setOpenMenuIndex(null)}
-                            className={`group/item flex items-start gap-3 rounded-xl p-3 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 ${
+                            className={`group/item flex items-start gap-3 rounded-xl p-3 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60 ${
                               itemActive
-                                ? "bg-brand-orange/10"
+                                ? "bg-brand-primary/10"
                                 : "hover:bg-white/5"
                             }`}
                           >
-                            <div className="mt-0.5 rounded-lg bg-white/5 p-2.5 text-white/80 transition-colors duration-200 group-hover/item:text-brand-orange">
+                            <div className="mt-0.5 rounded-lg bg-white/5 p-2.5 text-white/80 transition-colors duration-200 group-hover/item:text-brand-primary">
                               <Icon className="h-5 w-5" />
                             </div>
                             <div>
                               <div className="mb-0.5 flex items-center gap-2 font-medium text-white">
                                 {item.label}
                                 {item.badge ? (
-                                  <span className="rounded border border-brand-orange/30 bg-brand-orange/10 px-1.5 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-brand-orange">
+                                  <span className="rounded border border-brand-primary/30 bg-brand-primary/10 px-1.5 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-brand-primary">
                                     {item.badge}
                                   </span>
                                 ) : null}
@@ -555,9 +555,9 @@ export default function Header() {
             <Link
               href={path("/pricing/")}
               aria-current={pricingActive ? "page" : undefined}
-              className={`hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 ${
+              className={`hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60 ${
                 pricingActive
-                  ? "bg-brand-orange/10 text-white"
+                  ? "bg-brand-primary/10 text-white"
                   : "text-white/70 hover:bg-white/10 hover:text-white"
               }`}
             >
@@ -566,9 +566,9 @@ export default function Header() {
             <Link
               href={path("/blog/")}
               aria-current={blogActive ? "page" : undefined}
-              className={`hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 ${
+              className={`hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60 ${
                 blogActive
-                  ? "bg-brand-orange/10 text-white"
+                  ? "bg-brand-primary/10 text-white"
                   : "text-white/70 hover:bg-white/10 hover:text-white"
               }`}
             >
@@ -581,7 +581,7 @@ export default function Header() {
                   trackContactIntent("header-contact");
                   scrollToPrimaryContact();
                 }}
-                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60"
               >
                 {m.conversionDock.contactNav}
               </button>
@@ -589,7 +589,7 @@ export default function Header() {
               <Link
                 href={contactHref}
                 onClick={() => trackContactIntent("header-contact")}
-                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+                className="hidden lg:inline-flex rounded-full px-4 py-2 text-[0.9rem] font-medium text-white/70 transition-colors duration-200 hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60"
               >
                 {m.conversionDock.contactNav}
               </Link>
@@ -603,14 +603,14 @@ export default function Header() {
               source="header-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="whitespace-nowrap rounded-full bg-brand-gradient px-6 py-2.5 text-[0.95rem] font-semibold text-white transition-all duration-200 hover:bg-brand-gradient-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60"
+              className="whitespace-nowrap rounded-full bg-brand-gradient px-6 py-2.5 text-[0.95rem] font-semibold text-white transition-all duration-200 hover:bg-brand-gradient-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60"
             >
               {m.nav.requestDemo}
             </TrackedOutboundLink>
             {/* Mobile Menu Toggle */}
             <button
               type="button"
-              className="ml-2 p-2 text-white/80 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 lg:hidden"
+              className="ml-2 p-2 text-white/80 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary/60 lg:hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-nav-menu"
@@ -654,14 +654,14 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`flex items-center gap-3 py-2 transition-colors duration-200 ${
                           itemActive
-                            ? "text-brand-orange"
+                            ? "text-brand-primary"
                             : "text-white/80 hover:text-white"
                         }`}
                       >
-                        <Icon className={`h-5 w-5 ${itemActive ? "text-brand-orange" : "text-white/70"}`} />
+                        <Icon className={`h-5 w-5 ${itemActive ? "text-brand-primary" : "text-white/70"}`} />
                         <span className="text-lg font-medium">{item.label}</span>
                         {item.badge ? (
-                          <span className="rounded border border-brand-orange/30 bg-brand-orange/10 px-1.5 py-0.5 text-[0.6rem] font-bold uppercase text-brand-orange">
+                          <span className="rounded border border-brand-primary/30 bg-brand-primary/10 px-1.5 py-0.5 text-[0.6rem] font-bold uppercase text-brand-primary">
                             {item.badge}
                           </span>
                         ) : null}
@@ -712,7 +712,7 @@ export default function Header() {
                     scrollToPrimaryContact();
                     setIsMobileMenuOpen(false);
                   }}
-                  className="flex w-full items-center justify-center rounded-xl border border-brand-orange/35 bg-brand-orange/10 py-3 text-center text-base font-medium text-white transition-colors duration-200 hover:bg-brand-orange/15"
+                  className="flex w-full items-center justify-center rounded-xl border border-brand-primary/35 bg-brand-primary/10 py-3 text-center text-base font-medium text-white transition-colors duration-200 hover:bg-brand-primary/15"
                 >
                   {m.conversionDock.linkForm}
                 </button>
@@ -723,7 +723,7 @@ export default function Header() {
                     trackContactIntent("header-mobile-contact");
                     setIsMobileMenuOpen(false);
                   }}
-                  className="flex w-full items-center justify-center rounded-xl border border-brand-orange/35 bg-brand-orange/10 py-3 text-center text-base font-medium text-white transition-colors duration-200 hover:bg-brand-orange/15"
+                  className="flex w-full items-center justify-center rounded-xl border border-brand-primary/35 bg-brand-primary/10 py-3 text-center text-base font-medium text-white transition-colors duration-200 hover:bg-brand-primary/15"
                 >
                   {m.conversionDock.linkForm}
                 </Link>

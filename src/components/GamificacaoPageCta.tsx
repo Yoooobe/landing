@@ -17,7 +17,7 @@ export default function GamificacaoPageCta({
   return (
     <section
       id={PRIMARY_CONTACT_SECTION_ID}
-      className="relative overflow-hidden border-t border-white/5 bg-brand-navy py-32 text-center"
+      className="relative overflow-hidden border-t border-white/5 bg-brand-ink py-32 text-center"
     >
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[300px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-[100%] bg-yoobe-purple/20 blur-[100px]" />
       <div className="container relative z-10 mx-auto max-w-3xl px-4">

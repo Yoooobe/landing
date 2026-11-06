@@ -35,7 +35,7 @@ export default function DedicatedIntegrations({
   const Wrapper = embedded ? "div" : "section";
   const wrapperClass = embedded
     ? "relative"
-    : "py-24 bg-brand-navy-dark relative border-t border-white/5 overflow-hidden";
+    : "py-24 bg-brand-ink-dark relative border-t border-white/5 overflow-hidden";
 
   return (
     <Wrapper className={wrapperClass}>
@@ -113,7 +113,7 @@ export default function DedicatedIntegrations({
               <div className="relative h-[calc(100%-26px)] w-full bg-slate-900">
                 <Image
                   src={withBasePath("/screens/dash/campanhas-landing-pages.webp")}
-                  alt="Integração Workvivo — feed e resgate Yoobe"
+                  alt="Workvivo integration — feed and Yoobe redemption"
                   fill
                   sizes="(min-width: 1024px) 384px, 100vw"
                   className="object-cover object-top"
@@ -160,7 +160,7 @@ export default function DedicatedIntegrations({
                   />
                 </div>
               ) : (
-                <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-yellow-400 to-orange-400 flex items-center justify-center font-black text-white text-2xl shadow-lg">
+                <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-yellow-400 to-rose-400 flex items-center justify-center font-black text-white text-2xl shadow-lg">
                   B
                 </div>
               )}
@@ -181,7 +181,7 @@ export default function DedicatedIntegrations({
               <div className="relative h-[calc(100%-26px)] w-full bg-slate-900">
                 <Image
                   src={withBasePath("/screens/hapvida/hapvida-vendas-on-login.webp")}
-                  alt="Integração Beehome — portal corporativo e resgate Yoobe"
+                  alt="Beehome integration — corporate portal and Yoobe redemption"
                   fill
                   sizes="(min-width: 1024px) 384px, 100vw"
                   className="object-cover object-top"

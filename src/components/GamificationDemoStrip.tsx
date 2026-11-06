@@ -14,7 +14,7 @@ export default function GamificationDemoStrip() {
   const items = [
     { label: d.points, value: "12.4k", accent: "text-demo-cyan", progress: 78 },
     { label: d.missions, value: "08", accent: "text-unik-blue-soft", progress: 62 },
-    { label: d.level, value: d.levelValue, accent: "text-brand-orange", progress: 91 },
+    { label: d.level, value: d.levelValue, accent: "text-brand-primary", progress: 91 },
   ];
 
   return (

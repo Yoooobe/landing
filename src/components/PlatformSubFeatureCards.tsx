@@ -21,10 +21,10 @@ type FeatureCard = {
 const FEATURE_CARDS: FeatureCard[] = [
   {
     icon: Gamepad2,
-    iconColor: "text-brand-orange",
-    borderHover: "hover:border-brand-orange/40",
+    iconColor: "text-brand-primary",
+    borderHover: "hover:border-brand-primary/40",
     imageSrc: "/screens/flows/campanha-passo-1.webp",
-    imageAlt: "Motor de Gamificação — Regras e mecânicas de pontuação",
+    imageAlt: "Gamification engine — scoring rules and mechanics",
     href: "/plataforma/motor-gamificacao/",
     titleKey: "motor",
     descKey: "motor",
@@ -34,7 +34,7 @@ const FEATURE_CARDS: FeatureCard[] = [
     iconColor: "text-yoobe-purple",
     borderHover: "hover:border-yoobe-purple/40",
     imageSrc: "/screens/flows/brinde-passo-1.webp",
-    imageAlt: "Controle de Carteiras — Saldos e distribuição de pontos",
+    imageAlt: "Wallet control — balances and points distribution",
     href: "/plataforma/controle-carteiras/",
     titleKey: "wallets",
     descKey: "wallets",
@@ -44,7 +44,7 @@ const FEATURE_CARDS: FeatureCard[] = [
     iconColor: "text-unik-blue",
     borderHover: "hover:border-unik-blue/40",
     imageSrc: "/screens/dash/dashboard-geral.webp",
-    imageAlt: "Painel do Gestor — Dashboard e métricas em tempo real",
+    imageAlt: "Manager dashboard — real-time metrics",
     href: "/plataforma/painel-gestor/",
     titleKey: "manager",
     descKey: "manager",
@@ -54,7 +54,7 @@ const FEATURE_CARDS: FeatureCard[] = [
     iconColor: "text-demo-cyan",
     borderHover: "hover:border-demo-cyan/40",
     imageSrc: "/screens/member-store-home.webp",
-    imageAlt: "Loja Corporativa — Resgate de prêmios e produtos",
+    imageAlt: "Corporate store — reward and product redemption",
     href: "/plataforma/loja-resgate/",
     titleKey: "store",
     descKey: "store",
@@ -65,7 +65,7 @@ export default function PlatformSubFeatureCards() {
   const { m, locale } = useLocaleMessages();
 
   return (
-    <section className="py-20 bg-brand-navy-dark border-t border-white/5">
+    <section className="py-20 bg-brand-ink-dark border-t border-white/5">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white font-heading mb-4">
@@ -149,7 +149,7 @@ export default function PlatformSubFeatureCards() {
           {locale === "en" ? "Want the problem → solution story? " : "Quer a narrativa problema → solução? "}
           <Link
             href={resolveShellHref("/plataforma/campanhas-gamificacao/", locale)}
-            className="font-semibold text-brand-orange hover:text-brand-orange/80 transition-colors"
+            className="font-semibold text-brand-primary hover:text-brand-primary/80 transition-colors"
           >
             {locale === "en" ? "Gamification campaigns" : "Campanhas de gamificação"}
             <ArrowRight className="inline w-3.5 h-3.5 ml-0.5 -mt-0.5" />

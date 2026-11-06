@@ -12,11 +12,11 @@ export default function PlataformaHero() {
   const { m } = useLocaleMessages();
   const h = m.plataforma.hero;
   return (
-    <section className="hero-theme-section relative overflow-hidden bg-brand-navy-dark pb-24 pt-32">
+    <section className="hero-theme-section relative overflow-hidden bg-brand-ink-dark pb-24 pt-32">
       <HeroThemeBackdrop theme="features" />
       {/* Abstract Grid & Glow */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGg0MHY0MEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0wIDM5LjVoNDBWNDBoLTQweiBNMzkuNSAwSDQwdjQwaC0uNXoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wMykiLz48L3N2Zz4=')] bg-repeat opacity-40"></div>
-      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-brand-orange/10 rounded-full blur-[150px] mix-blend-screen pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[150px] mix-blend-screen pointer-events-none"></div>
 
       {/* Floating card — Dashboard (left) */}
       <motion.div
@@ -45,9 +45,9 @@ export default function PlataformaHero() {
           />
         </div>
         <div className="flex items-center justify-between bg-slate-900/95 px-3 py-1.5 border-t border-white/10">
-          <span className="text-[0.55rem] font-semibold text-brand-orange">Dashboard</span>
-          <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 text-[0.5rem] font-bold uppercase tracking-widest text-brand-orange">
-            Ao vivo
+          <span className="text-[0.55rem] font-semibold text-brand-primary">Dashboard</span>
+          <span className="rounded-full border border-brand-primary/30 bg-brand-primary/15 px-2 py-0.5 text-[0.5rem] font-bold uppercase tracking-widest text-brand-primary">
+            Live
           </span>
         </div>
       </motion.div>
@@ -99,10 +99,10 @@ export default function PlataformaHero() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-orange/20 bg-brand-orange/10 backdrop-blur-sm mb-6"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/10 backdrop-blur-sm mb-6"
           >
-             <span className="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
-             <span className="text-brand-orange text-xs font-bold uppercase tracking-wider font-sans">{h.badge}</span>
+             <span className="w-2 h-2 rounded-full bg-brand-primary animate-pulse"></span>
+             <span className="text-brand-primary text-xs font-bold uppercase tracking-wider font-sans">{h.badge}</span>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ export default function PlataformaHero() {
             className="text-5xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tight font-heading"
           >
             {h.titleLine1} <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-red-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-red-500">
               {h.titleGradient}
             </span>
           </motion.h1>

@@ -1,4 +1,4 @@
-import { jakarta, ROOT_BODY_CLASSNAME } from "@/components/site-settings/rootLayoutTheme";
+import { outfit, ROOT_BODY_CLASSNAME } from "@/components/site-settings/rootLayoutTheme";
 import { htmlLangForLocale } from "@/lib/locale";
 import "../globals.css";
 
@@ -10,7 +10,7 @@ export default function StudioRootLayout({
   return (
     <html
       lang={htmlLangForLocale("pt")}
-      className={`dark scroll-smooth ${jakarta.variable}`}
+      className={`dark scroll-smooth ${outfit.variable}`}
       suppressHydrationWarning
     >
       <body className={ROOT_BODY_CLASSNAME} suppressHydrationWarning>

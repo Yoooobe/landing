@@ -28,7 +28,7 @@ export default function EnterpriseTrustStrip() {
                 viewport={{ once: true, margin: "0px 0px -12% 0px" }}
                 transition={{ delay: i * 0.09, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-brand-orange">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-brand-primary">
                   <Icon className="h-5 w-5" aria-hidden />
                 </div>
                 <div>

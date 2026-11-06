@@ -6,7 +6,7 @@ import type { ImageWithEmojiDoc, ResolvedApiIntegracoesContent } from "@/sanity/
 import ShowcaseImage from "@/components/ui/ShowcaseImage";
 
 const iconMap = {
-  plugZap: <PlugZap className="w-6 h-6 text-brand-orange" />,
+  plugZap: <PlugZap className="w-6 h-6 text-brand-primary" />,
   shieldCheck: <ShieldCheck className="w-6 h-6 text-yoobe-neon-pink" />,
   box: <Box className="w-6 h-6 text-cyan-400" />,
   cpu: <Cpu className="w-6 h-6 text-yoobe-purple" />,

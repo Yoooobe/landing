@@ -34,7 +34,7 @@ export default function InteligenciaPageContent({
   const lf = m.leadForm;
 
   return (
-    <div className="bg-brand-navy-dark text-white min-h-screen font-sans selection:bg-brand-orange/30">
+    <div className="bg-brand-ink-dark text-white min-h-screen font-sans selection:bg-brand-primary/30">
       <section className="pt-40 pb-20 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-yoobe-purple/20 blur-[150px] rounded-full pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-cyan-400/10 blur-[130px] rounded-full pointer-events-none -translate-x-1/2"></div>
@@ -92,7 +92,7 @@ export default function InteligenciaPageContent({
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-heading">
               {p.workvivo.titleBefore}{" "}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple to-brand-orange">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple to-brand-primary">
                 {p.workvivo.titleGradient}
               </span>
             </h2>
@@ -125,7 +125,7 @@ export default function InteligenciaPageContent({
 
       <section
         id={primaryContactSectionIdAttr(contactSectionId)}
-        className="py-24 bg-linear-to-b from-brand-navy-dark to-black relative overflow-hidden border-t border-white/5"
+        className="py-24 bg-linear-to-b from-brand-ink-dark to-black relative overflow-hidden border-t border-white/5"
       >
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yoobe-purple/20 blur-[150px] rounded-full pointer-events-none"></div>
         <div className="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
@@ -142,7 +142,7 @@ export default function InteligenciaPageContent({
                 source="inteligencia-page-demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-14 w-full max-w-sm items-center justify-center gap-3 rounded-xl bg-white px-10 font-bold text-brand-navy-dark text-lg shadow-2xl shadow-white/10 transition-all hover:scale-105 font-sans whitespace-nowrap lg:max-w-none"
+                className="inline-flex h-14 w-full max-w-sm items-center justify-center gap-3 rounded-xl bg-white px-10 font-bold text-brand-ink-dark text-lg shadow-2xl shadow-white/10 transition-all hover:scale-105 font-sans whitespace-nowrap lg:max-w-none"
               >
                 {p.cta.button}
                 <ArrowRight className="h-5 w-5 shrink-0" />

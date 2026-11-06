@@ -18,12 +18,12 @@ export default function GamificationDuality() {
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-block px-3 py-1 mb-4 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-sm font-bold tracking-wide uppercase">
+          <span className="inline-block px-3 py-1 mb-4 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-sm font-bold tracking-wide uppercase">
             {d.badge}
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
             {d.titleBefore} <br className="hidden md:block" />
-            <span className="bg-linear-to-r from-brand-orange via-unik-blue-soft to-yoobe-neon-pink bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-brand-primary via-unik-blue-soft to-yoobe-neon-pink bg-clip-text text-transparent">
               {d.titleGradient}
             </span>
           </h2>

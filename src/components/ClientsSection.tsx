@@ -61,7 +61,7 @@ export default function ClientsSection() {
   }, [fallbackLogos, sanity?.clientsLogoCollection?.items]);
 
   return (
-    <section id="clientes" className="relative border-t border-white/5 bg-brand-navy-dark py-24">
+    <section id="clientes" className="relative border-t border-white/5 bg-brand-ink-dark py-24">
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <div className="relative z-10 mb-16 text-center text-white">
           <div className="mb-4 inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1 text-sm font-bold uppercase tracking-wide text-white/80">
@@ -69,7 +69,7 @@ export default function ClientsSection() {
           </div>
           <h2 className="mb-6 font-heading text-3xl font-black md:text-5xl">
             {c.titleBefore}{" "}
-            <span className="bg-linear-to-r from-brand-orange via-unik-blue-soft to-demo-cyan bg-clip-text text-transparent">{c.titleGradient}</span>{" "}
+            <span className="bg-linear-to-r from-brand-primary via-unik-blue-soft to-demo-cyan bg-clip-text text-transparent">{c.titleGradient}</span>{" "}
             {c.titleAfter}
           </h2>
           <p className="mx-auto max-w-2xl font-sans text-lg leading-relaxed text-white/50">{c.sub}</p>

@@ -42,15 +42,15 @@ function escapeXml(text) {
 function buildSvg(subtitle) {
   const sub = escapeXml(subtitle);
   return `<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" rx="32" fill="#07101D"/>
-  <circle cx="955" cy="166" r="195" fill="#1F6FFF" fill-opacity="0.18"/>
-  <circle cx="284" cy="542" r="226" fill="#F97316" fill-opacity="0.22"/>
-  <circle cx="701" cy="484" r="167" fill="#56D5FF" fill-opacity="0.12"/>
+  <rect width="1200" height="630" rx="32" fill="#04103A"/>
+  <circle cx="955" cy="166" r="195" fill="#3B82F6" fill-opacity="0.18"/>
+  <circle cx="284" cy="542" r="226" fill="#ff6b57" fill-opacity="0.22"/>
+  <circle cx="701" cy="484" r="167" fill="#FF3D81" fill-opacity="0.12"/>
   <rect x="72" y="72" width="1056" height="486" rx="28" fill="url(#panelGradient)" stroke="#FFFFFF" stroke-opacity="0.10"/>
   <text x="120" y="212" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="0.2em">YOOBE</text>
   <text x="120" y="320" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">Reward infrastructure</text>
   <text x="120" y="404" fill="#A9B4C6" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500">${sub}</text>
-  <rect x="120" y="458" width="340" height="56" rx="28" fill="#F97316"/>
+  <rect x="120" y="458" width="340" height="56" rx="28" fill="#ff6b57"/>
   <text x="164" y="494" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="700">${escapeXml(OG_SITE_BADGE)}</text>
   <defs>
     <linearGradient id="panelGradient" x1="72" y1="72" x2="1128" y2="558" gradientUnits="userSpaceOnUse">

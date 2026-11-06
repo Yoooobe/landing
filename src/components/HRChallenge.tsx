@@ -7,7 +7,7 @@ const metrics = [
     id: 1,
     icon: <LineChart className="w-6 h-6" />,
     value: "Admin",
-    title: "Painel do Gestor",
+    title: "Painel do Manager",
     description: "Visão absoluta de pedidos, SLAs, orçamentos (R$) e faturamento. Gestão inspirada nos melhores SaaS B2B.",
     color: "text-white",
     bg: "bg-linear-to-br from-surface-hr-from to-surface-hr-to",
@@ -43,7 +43,7 @@ const metrics = [
     title: "Seguro & LGPD",
     description: "Compliance total com SSO (SAML), rotas JWT Auth e servidor Sandbox para testes de integração seguros.",
     color: "text-white",
-    bg: "bg-brand-orange/10",
+    bg: "bg-brand-primary/10",
     colSpan: "md:col-span-1 lg:col-span-1",
     rowSpan: "md:row-span-1"
   },
@@ -51,7 +51,7 @@ const metrics = [
 
 export default function HRChallenge() {
   return (
-    <section className="py-24 bg-brand-navy-dark relative overflow-hidden" id="bento">
+    <section className="py-24 bg-brand-ink-dark relative overflow-hidden" id="bento">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-[0.8rem] font-bold uppercase tracking-wider text-white bg-white/5 border border-white/10 px-4 py-1.5 rounded-full mb-6 backdrop-blur-md">

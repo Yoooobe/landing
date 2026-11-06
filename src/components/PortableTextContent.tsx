@@ -47,7 +47,7 @@ function renderSpan(
           href={def.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-brand-orange underline decoration-brand-orange/40 underline-offset-4 transition-colors hover:text-white"
+          className="text-brand-primary underline decoration-brand-primary/40 underline-offset-4 transition-colors hover:text-white"
         >
           {node}
         </a>
@@ -75,7 +75,7 @@ function renderBlock(block: PortableTextBlock) {
 
   if (block.style === "blockquote") {
     return (
-      <blockquote className="border-l-2 border-brand-orange/60 pl-6 italic text-white/80">
+      <blockquote className="border-l-2 border-brand-primary/60 pl-6 italic text-white/80">
         {content}
       </blockquote>
     );

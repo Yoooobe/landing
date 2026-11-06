@@ -25,13 +25,13 @@ const stageItemIcons = [
   [Sparkles, BrainCircuit, Target, Command],
 ] as const;
 
-const stageBorderColors = ["#f97316", "#9333ea", "#22d3ee", "#34d399"] as const;
+const stageBorderColors = ["#ff6b57", "#9333ea", "#22d3ee", "#34d399"] as const;
 
 const stageToneConfig = {
   orange: {
-    borderColor: "#f97316",
-    glowClass: "bg-brand-orange/10",
-    badgeClass: "border-brand-orange text-brand-orange bg-brand-orange/10",
+    borderColor: "#ff6b57",
+    glowClass: "bg-brand-primary/10",
+    badgeClass: "border-brand-primary text-brand-primary bg-brand-primary/10",
   },
   purple: {
     borderColor: "#9333ea",
@@ -132,7 +132,7 @@ export default function AiRoadmap({
                         <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
                       </div>
                       <span className="font-mono text-[0.52rem] text-white/50 tracking-wider">
-                        {["admin.yoobe.co · campanhas", "admin.yoobe.co · catálogo", "admin.yoobe.co · regras", "admin.yoobe.co · insights"][i]}
+                        {["admin.yoobe.co · campaigns", "admin.yoobe.co · catalog", "admin.yoobe.co · regras", "admin.yoobe.co · insights"][i]}
                       </span>
                     </div>
 

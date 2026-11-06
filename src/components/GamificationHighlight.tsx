@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function GamificationHighlight() {
   return (
-    <section id="gamificacao" className="py-24 bg-brand-navy border-t border-white/5 relative overflow-hidden">
+    <section id="gamificacao" className="py-24 bg-brand-ink border-t border-white/5 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           
@@ -18,9 +18,9 @@ export default function GamificationHighlight() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center rounded-full border border-brand-orange/50 bg-brand-orange/10 px-4 py-1.5"
+              className="inline-flex items-center rounded-full border border-brand-primary/50 bg-brand-primary/10 px-4 py-1.5"
             >
-              <span className="text-sm font-semibold text-brand-orange">
+              <span className="text-sm font-semibold text-brand-primary">
                 Motor de Gamificação
               </span>
             </motion.div>

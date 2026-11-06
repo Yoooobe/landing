@@ -198,7 +198,7 @@ export default function Footer() {
   const termsUrl = sanity?.termsUrl?.trim() || null;
 
   return (
-    <footer className="bg-brand-navy border-t border-white/5 pt-20 pb-10 text-white/70">
+    <footer className="bg-brand-ink border-t border-white/5 pt-20 pb-10 text-white/70">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
@@ -235,7 +235,7 @@ export default function Footer() {
                   href={item.href}
                   locale={locale}
                   openInNewTab={item.openInNewTab}
-                  className="text-sm transition-colors duration-200 hover:text-brand-orange"
+                  className="text-sm transition-colors duration-200 hover:text-brand-primary"
                 >
                   {item.label}
                 </FooterShellLink>
@@ -252,7 +252,7 @@ export default function Footer() {
                 <FooterShellLink
                   href={privacyUrl}
                   locale={locale}
-                  className="transition-colors duration-200 hover:text-brand-orange"
+                  className="transition-colors duration-200 hover:text-brand-primary"
                 >
                   {f.legal}
                 </FooterShellLink>
@@ -261,7 +261,7 @@ export default function Footer() {
                 <FooterShellLink
                   href={termsUrl}
                   locale={locale}
-                  className="transition-colors duration-200 hover:text-brand-orange"
+                  className="transition-colors duration-200 hover:text-brand-primary"
                 >
                   {f.terms}
                 </FooterShellLink>

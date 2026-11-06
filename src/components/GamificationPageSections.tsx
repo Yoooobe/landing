@@ -23,7 +23,7 @@ export default function GamificationPageSections({
   const isMotor = variant === "motor";
 
   return (
-    <div className="min-h-screen bg-brand-navy-dark text-white">
+    <div className="min-h-screen bg-brand-ink-dark text-white">
       <GamificationHero content={content.hero} showcaseImage={showcaseMedia?.hero?.showcaseImage} />
       {!isMotor ? <CampaignBuilderShowcase /> : null}
       <GamificationProblem content={content.problem} />

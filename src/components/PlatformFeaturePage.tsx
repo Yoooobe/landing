@@ -74,9 +74,9 @@ export default function PlatformFeaturePage({
   galleryOverrides = [],
 }: Props) {
   return (
-    <div className="min-h-screen bg-brand-navy-dark text-white">
+    <div className="min-h-screen bg-brand-ink-dark text-white">
       <section className="relative overflow-hidden border-b border-white/5 pt-32 pb-18">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,143,22,0.14),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(96,165,250,0.10),transparent_24%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255, 107, 87,0.14),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(96,165,250,0.10),transparent_24%)]" />
         <div className="container relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
             href={content.backHref}
@@ -93,7 +93,7 @@ export default function PlatformFeaturePage({
               </span>
               <h1 className="max-w-4xl text-4xl font-black leading-tight md:text-6xl">
                 {content.title}{" "}
-                <span className="bg-linear-to-r from-brand-orange via-unik-blue-soft to-demo-cyan bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-brand-primary via-unik-blue-soft to-demo-cyan bg-clip-text text-transparent">
                   {content.highlight}
                 </span>
               </h1>
@@ -119,7 +119,7 @@ export default function PlatformFeaturePage({
             </FadeUp>
 
             <FadeUp delay={0.1} className="relative">
-              <div className="absolute -inset-4 rounded-[2rem] bg-linear-to-r from-brand-orange/20 via-unik-blue/15 to-demo-cyan/20 blur-2xl" />
+              <div className="absolute -inset-4 rounded-[2rem] bg-linear-to-r from-brand-primary/20 via-unik-blue/15 to-demo-cyan/20 blur-2xl" />
               <ScreenshotCard
                 src={resolveScreenshotSrc(heroImageOverride, content.imageSrc)}
                 alt={content.imageAlt}
@@ -146,10 +146,10 @@ export default function PlatformFeaturePage({
                 <FadeUp
                   key={item.title}
                   delay={i * 0.06}
-                  className="glass-panel-dark rounded-[1.75rem] border-t border-t-white/12 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/30"
+                  className="glass-panel-dark rounded-[1.75rem] border-t border-t-white/12 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary/30"
                 >
                   <div className="mb-4 inline-flex rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
-                    <Icon className="h-6 w-6 text-brand-orange" />
+                    <Icon className="h-6 w-6 text-brand-primary" />
                   </div>
                   <h3 className="text-xl font-bold text-white">{item.title}</h3>
                   <p className="mt-3 text-base leading-relaxed text-white/58">{item.body}</p>
@@ -213,11 +213,11 @@ export default function PlatformFeaturePage({
               const Icon = getGalleryIcon(item.alt, index);
               return (
                 <FadeUp key={item.alt || index} delay={index * 0.05}>
-                  <div className="glass-panel-dark flex flex-col justify-between rounded-[1.75rem] border border-white/12 bg-slate-950/80 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <div className="glass-panel-dark flex flex-col justify-between rounded-[1.75rem] border border-white/12 bg-slate-950/80 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary/30 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                     <div>
                       <div className="mb-4 flex items-center justify-between">
                         <div className="inline-flex rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur-sm">
-                          <Icon className="h-6 w-6 text-brand-orange" />
+                          <Icon className="h-6 w-6 text-brand-primary" />
                         </div>
                         <span className="font-mono text-[0.65rem] font-bold uppercase tracking-widest text-white/35">
                           {String(index + 1).padStart(2, "0")}
@@ -227,8 +227,8 @@ export default function PlatformFeaturePage({
                       <p className="mt-2 text-sm leading-relaxed text-white/60">{item.caption}</p>
                     </div>
                     <div className="mt-6 flex items-center gap-2 border-t border-white/8 pt-3 font-mono text-[0.62rem] text-white/40">
-                      <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
-                      <span>Recurso do Painel</span>
+                      <span className="h-1.5 w-1.5 rounded-full bg-brand-primary animate-pulse" />
+                      <span>Dashboard feature</span>
                     </div>
                   </div>
                 </FadeUp>
@@ -261,7 +261,7 @@ export default function PlatformFeaturePage({
                     source={`${leadSource}-primary`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-brand-navy-dark transition-transform hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-brand-ink-dark transition-transform hover:-translate-y-0.5"
                   >
                     {content.primaryCtaLabel}
                     <ExternalLink className="h-4 w-4" />
@@ -269,7 +269,7 @@ export default function PlatformFeaturePage({
                 ) : (
                   <Link
                     href={content.primaryCtaHref}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-semibold text-brand-navy-dark transition-transform hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-brand-ink-dark transition-transform hover:-translate-y-0.5"
                   >
                     {content.primaryCtaLabel}
                     <ArrowRight className="h-4 w-4" />

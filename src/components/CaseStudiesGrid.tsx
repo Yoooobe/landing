@@ -15,7 +15,7 @@ export default function CaseStudiesGrid() {
   const cases = cs.cases;
 
   return (
-    <section className="py-12 pb-32 bg-brand-navy-dark relative z-10">
+    <section className="py-12 pb-32 bg-brand-ink-dark relative z-10">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {cases.map((c, i) => (
@@ -36,7 +36,7 @@ export default function CaseStudiesGrid() {
               <div className={i === 0 || i === cases.length - 1 ? "md:w-1/2" : ""}>
                 <div className="mb-6">
                   <span className="text-3xl font-bold text-white tracking-widest uppercase">{c.company}</span>
-                  <div className="text-xs text-brand-orange font-bold uppercase tracking-wider mt-1">{c.industry}</div>
+                  <div className="text-xs text-brand-primary font-bold uppercase tracking-wider mt-1">{c.industry}</div>
                 </div>
 
                 <h3 className="text-2xl font-bold text-white mb-4 leading-tight">{c.title}</h3>

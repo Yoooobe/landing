@@ -25,7 +25,7 @@ export default function ManagementSection({
   });
 
   return (
-    <section id="gestao" className="relative border-t border-white/5 bg-brand-navy-dark py-24">
+    <section id="gestao" className="relative border-t border-white/5 bg-brand-ink-dark py-24">
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <div className="relative z-10 mb-16 text-center text-white">
           <div className="mb-4 inline-block rounded-full border border-blue-400/30 bg-blue-400/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-blue-400">

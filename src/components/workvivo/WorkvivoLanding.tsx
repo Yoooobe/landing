@@ -97,7 +97,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
   const lf = m.leadForm;
 
   return (
-    <div className="min-h-screen bg-brand-navy-dark text-white">
+    <div className="min-h-screen bg-brand-ink-dark text-white">
 
       {/* ── Hero ─────────────────────────────────────────────────────── */}
       <section
@@ -108,12 +108,12 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
       >
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-1/4 left-1/4 w-[min(90vw,560px)] h-[560px] bg-yoobe-purple/20 rounded-full blur-[120px]" />
-          <div className="absolute bottom-0 right-0 w-[min(80vw,480px)] h-[480px] bg-brand-orange/10 rounded-full blur-[100px]" />
+          <div className="absolute bottom-0 right-0 w-[min(80vw,480px)] h-[480px] bg-brand-primary/10 rounded-full blur-[100px]" />
         </div>
 
         <div className="container mx-auto px-4 max-w-5xl relative z-10">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
-            <span className="inline-flex w-fit items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange">
+            <span className="inline-flex w-fit items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-primary">
               {c.heroBadge}
             </span>
           </div>
@@ -124,7 +124,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
           <p className="text-lg md:text-xl text-white/70 max-w-3xl leading-relaxed mb-4">
             {c.heroSubtitle}
           </p>
-          <p className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-yoobe-neon-pink mb-8 font-heading">
+          <p className="text-xl md:text-2xl font-bold text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-yoobe-neon-pink mb-8 font-heading">
             {c.tagline}
           </p>
 
@@ -138,7 +138,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
                 href="https://www.workvivo.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex shrink-0 items-center justify-center opacity-95 transition-opacity hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-orange rounded-lg"
+                className="flex shrink-0 items-center justify-center opacity-95 transition-opacity hover:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary rounded-lg"
               >
                 <img
                   src={withBasePath("/partners/workvivo-logo-white.svg")}
@@ -255,7 +255,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
             {WORKVIVO_GRID_SHOTS.map((shot) => (
               <figure
                 key={shot.field}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-brand-navy-dark/50 shadow-lg shadow-black/20"
+                className="overflow-hidden rounded-2xl border border-white/10 bg-brand-ink-dark/50 shadow-lg shadow-black/20"
               >
                 <img
                   src={shotUrl(showcaseMedia, shot.field, shot.fallback)}
@@ -337,21 +337,21 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
             </div>
 
             {/* Right: what Yoobe adds */}
-            <div className="rounded-3xl md:rounded-none border border-brand-orange/25 bg-linear-to-br from-brand-orange/10 to-yoobe-neon-pink/5 p-8 relative overflow-hidden">
-              <div className="absolute top-4 right-4 rounded-full bg-brand-orange/15 border border-brand-orange/25 px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-brand-orange">
+            <div className="rounded-3xl md:rounded-none border border-brand-primary/25 bg-linear-to-br from-brand-primary/10 to-yoobe-neon-pink/5 p-8 relative overflow-hidden">
+              <div className="absolute top-4 right-4 rounded-full bg-brand-primary/15 border border-brand-primary/25 px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-brand-primary">
                 Add-on
               </div>
               <div className="flex items-center gap-3 mb-6">
                 <YoobeMark className="h-8 w-8" aria-hidden />
                 <span className="font-black font-heading text-white text-lg">Yoobe</span>
               </div>
-              <p className="text-xs font-bold uppercase tracking-widest text-brand-orange/70 mb-4">
+              <p className="text-xs font-bold uppercase tracking-widest text-brand-primary/70 mb-4">
                 {c.gapAddonLabel}
               </p>
               <ul className="space-y-3">
                 {c.gapAddonItems.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-white/85">
-                    <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-brand-orange" />
+                    <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-brand-primary" />
                     {item}
                   </li>
                 ))}
@@ -375,13 +375,13 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
             {c.triggers.map((trigger) => (
               <div
                 key={trigger.event}
-                className="glass-panel-dark rounded-2xl border border-white/10 p-5 flex flex-col gap-3 hover:border-brand-orange/30 transition-colors"
+                className="glass-panel-dark rounded-2xl border border-white/10 p-5 flex flex-col gap-3 hover:border-brand-primary/30 transition-colors"
               >
                 <p className="text-sm font-semibold text-white/90 leading-snug">{trigger.event}</p>
                 <div className="flex items-center gap-1.5">
-                  <ArrowRight className="w-4 h-4 text-brand-orange shrink-0" />
+                  <ArrowRight className="w-4 h-4 text-brand-primary shrink-0" />
                 </div>
-                <p className="text-sm text-brand-orange font-semibold leading-snug">
+                <p className="text-sm text-brand-primary font-semibold leading-snug">
                   {trigger.result}
                 </p>
               </div>
@@ -427,15 +427,15 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
             {c.pillars.map((pillar, i) => (
               <div
                 key={pillar.title}
-                className="glass-panel-dark rounded-3xl border border-white/10 p-8 hover:border-brand-orange/30 transition-colors"
+                className="glass-panel-dark rounded-3xl border border-white/10 p-8 hover:border-brand-primary/30 transition-colors"
               >
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-orange/15 border border-brand-orange/25">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-primary/15 border border-brand-primary/25">
                   {i === 0 ? (
-                    <Store className="w-6 h-6 text-brand-orange" />
+                    <Store className="w-6 h-6 text-brand-primary" />
                   ) : i === 1 ? (
-                    <Coins className="w-6 h-6 text-brand-orange" />
+                    <Coins className="w-6 h-6 text-brand-primary" />
                   ) : (
-                    <Zap className="w-6 h-6 text-brand-orange" />
+                    <Zap className="w-6 h-6 text-brand-primary" />
                   )}
                 </div>
                 <h3 className="text-xl font-bold font-heading mb-3">{pillar.title}</h3>
@@ -469,8 +469,8 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
                 <div key={step.title} className="flex items-center flex-1 min-w-0">
                   <div className="flex-1 glass-panel-dark rounded-2xl border border-white/10 p-6 flex flex-col h-full min-h-[200px]">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-orange/15 border border-brand-orange/25">
-                        <Icon className="w-5 h-5 text-brand-orange" />
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-brand-primary/15 border border-brand-primary/25">
+                        <Icon className="w-5 h-5 text-brand-primary" />
                       </div>
                       <span className="text-2xl font-black text-white/10 font-heading tabular-nums">
                         {String(index + 1).padStart(2, "0")}
@@ -481,7 +481,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
                   </div>
                   {!isLast && (
                     <div className="flex items-center justify-center w-8 shrink-0">
-                      <ArrowRight className="w-5 h-5 text-brand-orange/50" />
+                      <ArrowRight className="w-5 h-5 text-brand-primary/50" />
                     </div>
                   )}
                 </div>
@@ -497,8 +497,8 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
               return (
                 <div key={step.title}>
                   <div className="glass-panel-dark rounded-2xl border border-white/10 p-5 flex items-start gap-4">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-orange/15 border border-brand-orange/25">
-                      <Icon className="w-5 h-5 text-brand-orange" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-primary/15 border border-brand-primary/25">
+                      <Icon className="w-5 h-5 text-brand-primary" />
                     </div>
                     <div>
                       <div className="flex items-center gap-2 mb-1">
@@ -512,7 +512,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
                   </div>
                   {!isLast && (
                     <div className="flex justify-center py-1">
-                      <ArrowRight className="w-4 h-4 text-brand-orange/40 rotate-90" />
+                      <ArrowRight className="w-4 h-4 text-brand-primary/40 rotate-90" />
                     </div>
                   )}
                 </div>
@@ -526,7 +526,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
       <section className="py-16 md:py-20 border-b border-white/5">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <figure className="order-2 overflow-hidden rounded-2xl border border-white/10 bg-brand-navy-dark/50 shadow-lg shadow-black/20 lg:order-1">
+            <figure className="order-2 overflow-hidden rounded-2xl border border-white/10 bg-brand-ink-dark/50 shadow-lg shadow-black/20 lg:order-1">
               <img
                 src={withBasePath("/workvivo/floui-motivo-ui.webp")}
                 alt={c.orchestrationImageAlt}
@@ -551,7 +551,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
                 href={c.flouiSiteUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex max-w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-orange"
+                className="inline-flex max-w-full items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-primary"
               >
                 <img
                   src={withBasePath("/partners/floui-logo.svg")}
@@ -571,8 +571,8 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
       {/* ── Case PRIO (before Prio Store gallery) ────────────────────── */}
       <section className="border-b border-white/5 bg-surface-page/30 py-12 md:py-14">
         <div className="container mx-auto max-w-4xl px-4">
-          <div className="rounded-3xl border border-brand-orange/20 bg-linear-to-br from-brand-orange/10 to-transparent p-8 md:p-10">
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-brand-orange/80">
+          <div className="rounded-3xl border border-brand-primary/20 bg-linear-to-br from-brand-primary/10 to-transparent p-8 md:p-10">
+            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-brand-primary/80">
               {c.caseStripEyebrow}
             </p>
             <h2 className="mb-4 text-xl font-black font-heading text-white md:text-2xl">
@@ -596,7 +596,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
             {c.storeGallery.map((shot) => (
               <figure
                 key={shot.file}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-brand-navy-dark/50 shadow-lg shadow-black/20"
+                className="overflow-hidden rounded-2xl border border-white/10 bg-brand-ink-dark/50 shadow-lg shadow-black/20"
               >
                 <img
                   src={withBasePath(`/workvivo/${shot.file}`)}
@@ -732,7 +732,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
       {/* ── Final CTA + lead form ────────────────────────────────────── */}
       <section
         id={PRIMARY_CONTACT_SECTION_ID}
-        className="py-20 border-t border-white/5 bg-linear-to-b from-transparent to-brand-navy-dark/80"
+        className="py-20 border-t border-white/5 bg-linear-to-b from-transparent to-brand-ink-dark/80"
       >
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className="text-2xl md:text-4xl font-black font-heading mb-4">{c.finalTitle}</h2>
@@ -749,7 +749,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
               source="workvivo-final-demo"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-14 min-w-[200px] items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white shadow-lg shadow-brand-orange/20 hover:bg-brand-orange-dark transition-colors"
+              className="inline-flex h-14 min-w-[200px] items-center justify-center rounded-xl bg-brand-primary px-8 font-bold text-white shadow-lg shadow-brand-primary/20 hover:bg-brand-primary-dark transition-colors"
             >
               {c.ctaDemo}
             </TrackedOutboundLink>

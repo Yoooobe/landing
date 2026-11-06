@@ -57,7 +57,7 @@ export default function BentoFeatures({
 
   return (
     <section id="platform" className="section-gradient-bg relative overflow-hidden py-24">
-      <div className="pointer-events-none absolute top-0 right-1/4 h-96 w-96 rounded-full bg-brand-orange/10 blur-[100px]"></div>
+      <div className="pointer-events-none absolute top-0 right-1/4 h-96 w-96 rounded-full bg-brand-primary/10 blur-[100px]"></div>
       <div className="pointer-events-none absolute bottom-1/4 left-1/4 h-[500px] w-[500px] rounded-full bg-yoobe-purple/10 blur-[120px]"></div>
 
       <div className="container relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -79,14 +79,14 @@ export default function BentoFeatures({
             className="group flex h-full flex-col overflow-hidden rounded-3xl border border-white/5 glass-panel-dark p-6 sm:p-8"
           >
             <div className="relative z-10 flex flex-1 flex-col">
-              <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-brand-orange to-red-500">
+              <div className="mb-4 flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-brand-primary to-red-500">
                 <LayoutDashboard className="h-6 w-6 text-white" />
               </div>
-              <h3 className="mb-2 font-heading text-xl font-bold text-white transition-colors group-hover:text-brand-orange sm:text-2xl">
+              <h3 className="mb-2 font-heading text-xl font-bold text-white transition-colors group-hover:text-brand-primary sm:text-2xl">
                 {b.card1.title}
               </h3>
               <p className="mb-4 font-sans text-sm leading-relaxed text-white/60">{b.card1.body}</p>
-              <div className="mt-auto flex items-center font-sans text-sm font-semibold text-brand-orange">
+              <div className="mt-auto flex items-center font-sans text-sm font-semibold text-brand-primary">
                 {b.card1.cta} <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>
             </div>

@@ -31,7 +31,7 @@ export default function EnterpriseCases({
   return (
     <section className="py-24 bg-surface-base relative border-t border-white/5 overflow-hidden">
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-yoobe-neon-pink/5 rounded-full blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-brand-orange/5 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -40,7 +40,7 @@ export default function EnterpriseCases({
           </span>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 font-heading">
             {ec.titleBefore}{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple to-brand-orange">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-yoobe-purple to-brand-primary">
               {ec.titleGradient}
             </span>
           </h2>
@@ -137,7 +137,7 @@ export default function EnterpriseCases({
                     hapvida.yoobe.app
                   </span>
                   <span className="rounded-full border border-blue-500/30 bg-blue-500/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-blue-300">
-                    Ao vivo
+                    Live
                   </span>
                 </div>
                 <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
@@ -204,7 +204,7 @@ export default function EnterpriseCases({
                 <span className="px-3 py-1 rounded-full bg-gray-500/10 border border-gray-500/20 text-gray-300 text-xs font-bold uppercase tracking-wider">
                   {p.tag1}
                 </span>
-                <span className="px-3 py-1 rounded-full bg-orange-500/10 border border-brand-orange/20 text-brand-orange text-xs font-bold uppercase tracking-wider">
+                <span className="px-3 py-1 rounded-full bg-rose-500/10 border border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-wider">
                   {p.tag2}
                 </span>
               </div>
@@ -221,7 +221,7 @@ export default function EnterpriseCases({
               <ul className="space-y-4 font-sans text-white/80">
                 {p.bullets.map((line, i) => (
                   <li key={line} className="flex items-start gap-3">
-                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-orange/15 font-mono text-xs font-bold text-brand-orange">
+                    <div className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary/15 font-mono text-xs font-bold text-brand-primary">
                       {i + 1}
                     </div>
                     {line}
@@ -230,7 +230,7 @@ export default function EnterpriseCases({
               </ul>
               <a
                 href={path("/casos-de-uso/")}
-                className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-orange transition-colors hover:text-brand-orange/80"
+                className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-primary transition-colors hover:text-brand-primary/80"
               >
                 {locale === "en" ? "See more use cases" : "Ver mais casos de uso"}
                 <span aria-hidden>→</span>
@@ -248,7 +248,7 @@ export default function EnterpriseCases({
                   <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
                     priostore.com.br
                   </span>
-                  <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
+                  <span className="rounded-full border border-brand-primary/30 bg-brand-primary/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-primary">
                     Store
                   </span>
                 </div>

@@ -37,32 +37,32 @@ const FLOWS: FlowConfig[] = [
     label: "Criar campanha",
     labelEn: "Create campaign",
     icon: Megaphone,
-    accent: "#f98f16",
+    accent: "#ff6b57",
     steps: [
       {
         number: "01",
-        title: "Dados iniciais e slug",
-        desc: "Nome, URL amigável e identidade da landing de resgate.",
+        title: "Basics e slug",
+        desc: "Name, friendly URL, and branding for the redemption landing page.",
         img: "/screens/flows/campanha-passo-1.webp",
         accent: "#2563eb",
       },
       {
         number: "02",
-        title: "Mensagem de boas-vindas",
+        title: "Welcome message",
         desc: "Banner, títulos e copy que explicam a mecânica ao participante.",
         img: "/screens/flows/campanha-passo-2.webp",
         accent: "#8338ec",
       },
       {
         number: "03",
-        title: "Empresa e produtos",
+        title: "Company & products",
         desc: "Escolha a empresa e monte a vitrine de recompensas.",
         img: "/screens/flows/campanha-passo-3.webp",
-        accent: "#f98f16",
+        accent: "#ff6b57",
       },
       {
         number: "04",
-        title: "Configurações finais",
+        title: "Final settings",
         desc: "Regras, vigência e publicação da campanha.",
         img: "/screens/flows/campanha-passo-4.webp",
         accent: "#22d3ee",
@@ -100,7 +100,7 @@ const FLOWS: FlowConfig[] = [
         title: "Destinatário",
         desc: "Informe quem recebe o brinde e os dados de entrega.",
         img: "/screens/flows/brinde-passo-3.webp",
-        accent: "#f98f16",
+        accent: "#ff6b57",
       },
       {
         number: "04",
@@ -229,8 +229,8 @@ export default function PlatformFlowsShowcase({ locale = "pt" }: Props) {
   }, [paused, reduceMotion, flow.steps.length]);
 
   return (
-    <section className="relative overflow-hidden border-t border-white/5 bg-brand-navy-dark py-20 md:py-28">
-      <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[520px] -translate-x-1/2 rounded-full bg-brand-orange/15 blur-[90px]" />
+    <section className="relative overflow-hidden border-t border-white/5 bg-brand-ink-dark py-20 md:py-28">
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[520px] -translate-x-1/2 rounded-full bg-brand-primary/15 blur-[90px]" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-yoobe-purple/12 blur-[100px]" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-4 lg:px-8">
@@ -241,7 +241,7 @@ export default function PlatformFlowsShowcase({ locale = "pt" }: Props) {
             viewport={{ once: true }}
             className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5"
           >
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-orange" />
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-primary" />
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-white/55">
               {locale === "en" ? "Platform flows" : "Fluxos da plataforma"}
             </span>
@@ -256,14 +256,14 @@ export default function PlatformFlowsShowcase({ locale = "pt" }: Props) {
             {locale === "en" ? (
               <>
                 From setup to delivery in{" "}
-                <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg,#f98f16,#8338ec)" }}>
+                <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg,#ff6b57,#8338ec)" }}>
                   4 steps
                 </span>
               </>
             ) : (
               <>
                 Do setup à entrega em{" "}
-                <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg,#f98f16,#8338ec)" }}>
+                <span className="bg-clip-text text-transparent" style={{ backgroundImage: "linear-gradient(135deg,#ff6b57,#8338ec)" }}>
                   4 passos
                 </span>
               </>
@@ -376,7 +376,7 @@ export default function PlatformFlowsShowcase({ locale = "pt" }: Props) {
                     <div className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
                   </div>
                   <span className="font-mono text-[0.6rem] tracking-wider text-white/40">
-                    admin.yoobe.co · {flow.id === "campanha" ? "Campanha" : "Brinde"}
+                    admin.yoobe.co · {flow.id === "campanha" ? "Campaign" : "Brinde"}
                   </span>
                   <span
                     className="rounded-full px-2 py-0.5 font-mono text-[0.58rem] font-bold uppercase tracking-widest"

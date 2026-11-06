@@ -43,7 +43,7 @@ const CTA_7_EN = buildBlogCtaBodyLines("7", "en");
 const CTA_8_EN = buildBlogCtaBodyLines("8", "en");
 
 type SeedPost = Omit<BlogPostDoc, "_id" | "body"> & {
-  /** Conteúdo editorial: parágrafos, H2 e listas com marcadores */
+  /** Content editorial: parágrafos, H2 e listas com marcadores */
   bodySpec: BodySpecLine[];
 };
 
@@ -387,7 +387,7 @@ const ptSeed: readonly SeedPost[] = [
       },
       CTA_3_PT[0],
       { type: "h2", text: "Análise e Síntese de Evidências" },
-      { type: "p", text: "| Função Comercial | Missão Gamificada | Frequência de Pontos |\n|---|---|---|\n| SDR / BDR | 10 Reuniões Agendadas | Semanal |\n| Closer / AE | 3 Propostas Enviadas | Diária |\n| Gestor de Vendas | Higiene de Pipeline | Quinzenal |" },
+      { type: "p", text: "| Função Comercial | Missão Gamificada | Frequência de Pontos |\n|---|---|---|\n| SDR / BDR | 10 Reuniões Agendadas | Semanal |\n| Closer / AE | 3 Propostas Enviadas | Diária |\n| Manager de Vendas | Higiene de Pipeline | Quinzenal |" },
       { type: "h2", text: "Como a Yoobe ajuda neste cenário" },
       CTA_3_PT[1],
       { type: "ul", items: [

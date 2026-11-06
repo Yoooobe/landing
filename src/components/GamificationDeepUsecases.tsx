@@ -63,7 +63,7 @@ export default function GamificationDeepUsecases({
                     <p className="mb-1 text-[10px] font-semibold tracking-wider text-yoobe-purple/80 uppercase">{labels.result}</p>
                     <p className="text-sm font-medium text-white/85">&quot;{item.hook}&quot;</p>
                   </div>
-                  <p className="inline-flex items-center gap-1 text-xs font-semibold text-white/50 transition-colors group-hover:text-brand-orange">
+                  <p className="inline-flex items-center gap-1 text-xs font-semibold text-white/50 transition-colors group-hover:text-brand-primary">
                     {labels.next}
                     <ArrowRight className="h-3 w-3" />
                   </p>

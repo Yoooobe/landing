@@ -100,7 +100,7 @@ function GenericHeroBlock({
       id={sectionId}
       className="relative overflow-hidden border-b border-white/5 bg-surface-base py-24 md:py-32"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.16),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(249,115,22,0.18),transparent_35%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(168,85,247,0.16),transparent_40%),radial-gradient(circle_at_bottom_left,rgba(255, 107, 87,0.18),transparent_35%)]" />
       <div className="container relative z-10 mx-auto grid max-w-6xl gap-10 px-4 md:grid-cols-[minmax(0,1fr)_420px] md:px-6">
         <div className="max-w-3xl">
           {block.headline ? (
@@ -121,7 +121,7 @@ function GenericHeroBlock({
                   source={heroSource}
                   target={opensInNewTab ? "_blank" : undefined}
                   rel={opensInNewTab ? "noopener noreferrer" : undefined}
-                  className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-transform hover:scale-[1.02]"
+                  className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-primary px-8 font-bold text-white transition-transform hover:scale-[1.02]"
                 >
                   {block.ctaText}
                 </TrackedOutboundLink>
@@ -130,7 +130,7 @@ function GenericHeroBlock({
                   href={ctaHref}
                   target={opensInNewTab ? "_blank" : undefined}
                   rel={opensInNewTab ? "noopener noreferrer" : undefined}
-                  className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-transform hover:scale-[1.02]"
+                  className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-primary px-8 font-bold text-white transition-transform hover:scale-[1.02]"
                 >
                   {block.ctaText}
                 </a>
@@ -163,7 +163,7 @@ function GenericRichTextSection({ block }: { block: RichTextSectionDoc }) {
   const imageUrl = getSanityImageUrl(block.image, SANITY_IMAGE_PRESETS.uiScreenshot);
 
   return (
-    <section className="border-b border-white/5 bg-brand-navy-dark py-20">
+    <section className="border-b border-white/5 bg-brand-ink-dark py-20">
       <div className="container mx-auto grid max-w-5xl gap-10 px-4 md:grid-cols-[minmax(0,1fr)_320px] md:px-6">
         <div>
           {block.title ? (
@@ -218,7 +218,7 @@ function GenericSplitContentBlock({ block }: { block: SplitContentBlockDoc }) {
         <ul className="mt-8 space-y-3 text-white/70">
           {block.bullets.map((bullet, index) => (
             <li key={`${bullet}-${index}`} className="flex gap-3">
-              <Sparkles className="mt-1 h-4 w-4 shrink-0 text-brand-orange" />
+              <Sparkles className="mt-1 h-4 w-4 shrink-0 text-brand-primary" />
               <span>{bullet}</span>
             </li>
           ))}
@@ -232,7 +232,7 @@ function GenericSplitContentBlock({ block }: { block: SplitContentBlockDoc }) {
               source="marketing-split-primary"
               target={primaryOpensInNewTab ? "_blank" : undefined}
               rel={primaryOpensInNewTab ? "noopener noreferrer" : undefined}
-              className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-transform hover:scale-[1.02]"
+              className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-primary px-8 font-bold text-white transition-transform hover:scale-[1.02]"
             >
               {block.primaryLabel}
             </TrackedOutboundLink>
@@ -316,7 +316,7 @@ function GenericLogoStripBlock({
       className={
         display === "compact"
           ? "border-b border-t border-white/5 bg-surface-page py-12"
-          : "relative border-t border-white/5 bg-brand-navy-dark py-24"
+          : "relative border-t border-white/5 bg-brand-ink-dark py-24"
       }
     >
       <div className={`container mx-auto px-4 text-center ${display === "grid" ? "max-w-6xl md:px-6" : ""}`}>
@@ -385,7 +385,7 @@ function GenericCaseStudyGridBlock({ block }: { block: CaseStudyGridBlockDoc }) 
   const cases = block.items || [];
 
   return (
-    <section className="border-b border-white/5 bg-brand-navy-dark py-12 pb-32">
+    <section className="border-b border-white/5 bg-brand-ink-dark py-12 pb-32">
       <div className="container mx-auto max-w-7xl px-4">
         {block.title ? (
           <div className="mb-10 text-center">
@@ -409,7 +409,7 @@ function GenericCaseStudyGridBlock({ block }: { block: CaseStudyGridBlockDoc }) 
                         {item.company}
                       </span>
                       {item.industry ? (
-                        <div className="mt-1 text-xs font-bold uppercase tracking-wider text-brand-orange">
+                        <div className="mt-1 text-xs font-bold uppercase tracking-wider text-brand-primary">
                           {item.industry}
                         </div>
                       ) : null}
@@ -481,7 +481,7 @@ function GenericCaseStudyGridBlock({ block }: { block: CaseStudyGridBlockDoc }) 
 
 function GenericStatsBlock({ block }: { block: StatsBlockDoc }) {
   return (
-    <section className="border-b border-white/5 bg-brand-navy py-20">
+    <section className="border-b border-white/5 bg-brand-ink py-20">
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         {block.title ? (
           <h2 className="mb-10 text-center font-heading text-3xl font-black text-white md:text-5xl">
@@ -494,7 +494,7 @@ function GenericStatsBlock({ block }: { block: StatsBlockDoc }) {
               key={item.label || item.value || index}
               className="rounded-3xl border border-white/10 bg-white/5 p-8 text-center shadow-[0_20px_60px_rgba(0,0,0,0.18)]"
             >
-              <div className="text-4xl font-black text-brand-orange">{item.value}</div>
+              <div className="text-4xl font-black text-brand-primary">{item.value}</div>
               <div className="mt-3 text-lg font-semibold text-white">{item.label}</div>
               {item.supportingText ? (
                 <p className="mt-3 text-sm leading-6 text-white/60">{item.supportingText}</p>
@@ -509,7 +509,7 @@ function GenericStatsBlock({ block }: { block: StatsBlockDoc }) {
 
 function GenericTestimonialsBlock({ block }: { block: TestimonialBlockDoc }) {
   return (
-    <section className="border-b border-white/5 bg-brand-navy-dark py-20">
+    <section className="border-b border-white/5 bg-brand-ink-dark py-20">
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         {block.title ? (
           <h2 className="mb-10 text-center font-heading text-3xl font-black text-white md:text-5xl">
@@ -544,7 +544,7 @@ function GenericTestimonialsBlock({ block }: { block: TestimonialBlockDoc }) {
                     href={item.caseStudyUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-2 inline-block text-brand-orange/90 hover:text-brand-orange"
+                    className="mt-2 inline-block text-brand-primary/90 hover:text-brand-primary"
                   >
                     Ver caso
                   </a>
@@ -642,7 +642,7 @@ function GenericCtaBlock({
                 source={`marketing-cta-${pageSlug}-primary`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white transition-transform hover:scale-[1.02]"
+                className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-primary px-8 font-bold text-white transition-transform hover:scale-[1.02]"
               >
                 {block.primaryLabel}
               </TrackedOutboundLink>
@@ -886,7 +886,7 @@ export default function MarketingPageRenderer({
   }
 
   return (
-    <div className="min-h-screen bg-brand-navy-dark text-white">
+    <div className="min-h-screen bg-brand-ink-dark text-white">
       {renderedBlocks.map((entry) => (
         <div key={entry.key}>
           {entry.node}

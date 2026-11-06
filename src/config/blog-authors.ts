@@ -6,7 +6,7 @@ export const BLOG_AUTHORS: Record<string, BlogAuthorProfile> = {
     name: "Time Editorial Yoobe",
     role: "Especialistas em reward infrastructure e engajamento",
     bio:
-      "Equipe editorial da Yoobe que traduz práticas de gamificação, reconhecimento e recompensas em guias aplicáveis para RH, plataformas e operações. Conteúdo revisado com foco em integrações API-first e métricas auditáveis.",
+      "Equipe editorial da Yoobe que traduz práticas de gamificação, reconhecimento e recompensas em guias aplicáveis para RH, plataformas e operações. Content revisado com foco em integrações API-first e métricas auditáveis.",
     profileUrl: "https://www.yoobe.co/",
   },
   "Yoobe-team": {

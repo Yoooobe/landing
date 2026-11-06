@@ -29,7 +29,7 @@ export default function StoreSection({
   const catalogKitsUrl = resolveRewardsCatalogKitsUrl(catalogProductUrl);
 
   return (
-    <section id="loja" className="relative overflow-hidden border-t border-white/5 bg-brand-navy-dark py-24">
+    <section id="loja" className="relative overflow-hidden border-t border-white/5 bg-brand-ink-dark py-24">
       <div className="pointer-events-none absolute bottom-[-20%] right-[-10%] h-[60vw] max-h-[800px] w-[60vw] max-w-[800px] opacity-20 mix-blend-screen">
         <div className="h-full w-full rounded-full bg-linear-to-tl from-green-500/20 to-transparent blur-[100px]"></div>
       </div>
@@ -88,7 +88,7 @@ export default function StoreSection({
             href={catalogProductUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 font-bold text-brand-navy-dark transition-colors hover:bg-gray-100 font-sans"
+            className="inline-flex h-14 items-center justify-center rounded-xl bg-white px-8 font-bold text-brand-ink-dark transition-colors hover:bg-gray-100 font-sans"
           >
             {s.ctaCatalog}
           </a>

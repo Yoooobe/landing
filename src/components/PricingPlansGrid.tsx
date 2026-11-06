@@ -66,9 +66,9 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="relative flex flex-col rounded-3xl border-2 border-brand-orange bg-white p-8 shadow-[0_8px_40px_rgba(249,143,22,0.18)] transition-all duration-300 hover:scale-[1.015] hover:shadow-[0_16px_50px_rgba(249,143,22,0.24)] md:-translate-y-4"
+        className="relative flex flex-col rounded-3xl border-2 border-brand-primary bg-white p-8 shadow-[0_8px_40px_rgba(255, 107, 87,0.18)] transition-all duration-300 hover:scale-[1.015] hover:shadow-[0_16px_50px_rgba(255, 107, 87,0.24)] md:-translate-y-4"
       >
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-primary px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-sm">
           {p.popular}
         </div>
         <h3 className="mb-2 font-heading text-2xl font-bold text-ink-deep">{p.pro.name}</h3>
@@ -91,7 +91,7 @@ export default function PricingPlansGrid({ includeScale = false }: Props) {
           source="pricing-plan-pro"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto block w-full rounded-xl bg-brand-orange py-4 text-center font-bold text-white transition-colors hover:bg-brand-orange-dark font-sans"
+          className="mt-auto block w-full rounded-xl bg-brand-primary py-4 text-center font-bold text-white transition-colors hover:bg-brand-primary-dark font-sans"
         >
           {p.pro.cta}
         </TrackedOutboundLink>

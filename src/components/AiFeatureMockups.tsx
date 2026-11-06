@@ -51,7 +51,7 @@ export default function AiFeatureMockups() {
             onClick={() => setActiveTab("campaign")}
             className={`px-6 py-3 rounded-xl font-semibold transition-all flex items-center gap-2 ${
               activeTab === "campaign"
-                ? "bg-white text-brand-navy-dark shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+                ? "bg-white text-brand-ink-dark shadow-[0_0_20px_rgba(255,255,255,0.2)]"
                 : "bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10"
             }`}
           >

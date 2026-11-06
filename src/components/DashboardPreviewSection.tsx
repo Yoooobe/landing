@@ -16,9 +16,9 @@ type MetricCard = {
 
 const METRICS: MetricCard[] = [
   {
-    label: "Pedidos",
+    label: "Orders",
     value: "13",
-    sub: "no período",
+    sub: "in period",
     color: "#2563eb",
     posClass: "top-[6%] left-[-2%] lg:left-[-5%]",
     delay: 0.2,
@@ -26,13 +26,13 @@ const METRICS: MetricCard[] = [
   {
     label: "Faturamento",
     value: "R$2.400",
-    sub: "no período",
-    color: "#f98f16",
+    sub: "in period",
+    color: "#ff6b57",
     posClass: "top-[6%] right-[-2%] lg:right-[-5%]",
     delay: 0.32,
   },
   {
-    label: "Usuários",
+    label: "Users",
     value: "178",
     sub: "ativos",
     color: "#8338ec",
@@ -42,7 +42,7 @@ const METRICS: MetricCard[] = [
   {
     label: "Pts Resgatados",
     value: "91",
-    sub: "no período",
+    sub: "in period",
     color: "#22d3ee",
     posClass: "bottom-[8%] right-[-2%] lg:right-[-5%]",
     delay: 0.56,
@@ -51,7 +51,7 @@ const METRICS: MetricCard[] = [
 
 export default function DashboardPreviewSection() {
   return (
-    <section className="relative overflow-hidden bg-brand-navy-dark py-20 md:py-32 border-t border-white/5">
+    <section className="relative overflow-hidden bg-brand-ink-dark py-20 md:py-32 border-t border-white/5">
       {/* Dot-grid texture */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.06]"
@@ -62,7 +62,7 @@ export default function DashboardPreviewSection() {
       />
 
       {/* Central glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-orange/12 blur-[120px]" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-brand-primary/12 blur-[120px]" />
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4 lg:px-8">
         {/* Header */}
@@ -73,9 +73,9 @@ export default function DashboardPreviewSection() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 backdrop-blur-md mb-5"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
+            <span className="h-1.5 w-1.5 rounded-full bg-brand-primary animate-pulse" />
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-white/70">
-              Painel em Tempo Real
+              Real-time dashboard
             </span>
           </motion.div>
 
@@ -86,9 +86,9 @@ export default function DashboardPreviewSection() {
             transition={{ delay: 0.07 }}
             className="font-heading text-3xl font-black text-white md:text-5xl mb-4"
           >
-            Visão completa do{" "}
-            <span className="bg-linear-to-r from-unik-blue-soft via-brand-orange to-yoobe-neon-pink bg-clip-text text-transparent">
-              seu programa
+            Full view of{" "}
+            <span className="bg-linear-to-r from-unik-blue-soft via-brand-primary to-yoobe-neon-pink bg-clip-text text-transparent">
+              your program
             </span>
           </motion.h2>
           <motion.p
@@ -98,7 +98,7 @@ export default function DashboardPreviewSection() {
             transition={{ delay: 0.13 }}
             className="text-lg text-white/60 max-w-2xl mx-auto font-sans"
           >
-            Métricas de pedidos, faturamento, usuários e pontos em um único painel — atualizado em tempo real.
+            Orders, revenue, users, and points in one dashboard — updated in real time.
           </motion.p>
         </div>
 
@@ -153,13 +153,13 @@ export default function DashboardPreviewSection() {
                 <div className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
               </div>
               <div className="flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/80 px-4 py-1">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand-primary animate-pulse" />
                 <span className="font-mono text-[0.62rem] text-white/50 tracking-wider">
-                  admin.yoobe.co · Painel Principal
+                  admin.yoobe.co · Main dashboard
                 </span>
               </div>
-              <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-3 py-1 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-brand-orange">
-                Ao vivo
+              <span className="rounded-full border border-brand-primary/30 bg-brand-primary/15 px-3 py-1 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-brand-primary">
+                Live
               </span>
             </div>
 
@@ -179,17 +179,17 @@ export default function DashboardPreviewSection() {
             {/* Footer */}
             <div className="flex items-center justify-between border-t border-white/10 bg-slate-900 px-5 py-2.5">
               <div className="flex items-center gap-3">
-                {["Pedidos", "Faturamento", "Usuários", "Pontos"].map((label, i) => (
+                {["Orders", "Faturamento", "Users", "Points"].map((label, i) => (
                   <span
                     key={label}
                     className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1 text-[0.6rem] font-semibold text-white/80 backdrop-blur-sm"
                   >
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: ["#2563eb","#f98f16","#8338ec","#22d3ee"][i] }} />
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: ["#2563eb","#ff6b57","#8338ec","#22d3ee"][i] }} />
                     {label}
                   </span>
                 ))}
               </div>
-              <span className="text-[0.6rem] font-mono text-white/40">Atualizado agora · Yoobe Engine v2</span>
+              <span className="text-[0.6rem] font-mono text-white/40">Updated just now · Yoobe Engine v2</span>
             </div>
           </motion.div>
 
@@ -210,22 +210,22 @@ export default function DashboardPreviewSection() {
 
               {/* Mobile Bar */}
               <div className="bg-slate-900 px-3 pt-6 pb-2 text-white text-center border-b border-white/10">
-                <span className="font-mono font-bold text-[0.62rem] tracking-wider uppercase text-brand-orange">store.yoobe.co</span>
+                <span className="font-mono font-bold text-[0.62rem] tracking-wider uppercase text-brand-primary">store.yoobe.co</span>
               </div>
 
               {/* Mobile Real Screenshot */}
               <div className="relative w-full bg-slate-900" style={{ aspectRatio: "9/17.5" }}>
                 <Image
                   src={withBasePath("/screens/member-store-home.webp")}
-                  alt="App Mobile Yoobe com loja e recompensas"
+                  alt="Yoobe mobile app with store and rewards"
                   fill
                   className="object-cover object-top"
                   sizes="230px"
                 />
                 {/* Floating balance badge overlay */}
                 <div className="absolute bottom-3 left-2 right-2 rounded-xl bg-slate-950/90 backdrop-blur-md border border-white/15 p-2 text-center text-white shadow-lg">
-                  <div className="text-[0.55rem] font-medium text-gray-300">Saldo do Colaborador</div>
-                  <div className="font-heading text-sm font-black text-brand-orange">1.250 4UCoins</div>
+                  <div className="text-[0.55rem] font-medium text-gray-300">Employee balance</div>
+                  <div className="font-heading text-sm font-black text-brand-primary">1.250 4UCoins</div>
                 </div>
               </div>
 

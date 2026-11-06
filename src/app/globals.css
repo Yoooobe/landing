@@ -7,9 +7,9 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", sans-serif;
-  --font-heading: var(--font-jakarta), "Plus Jakarta Sans", sans-serif;
-  --font-mono: var(--font-jakarta), "Plus Jakarta Sans", monospace;
+  --font-sans: var(--font-outfit), "Outfit", sans-serif;
+  --font-heading: var(--font-outfit), "Outfit", sans-serif;
+  --font-mono: var(--font-outfit), "Outfit", monospace;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -48,14 +48,14 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 
   /* Brand Colors — base alinhada a tom institucional (Yoobe) + acentos Yoobe / demo */
-  --color-brand-orange: #f98f16;
-  --color-brand-orange-dark: #ea580c;
-  --color-brand-orange-light: #fff7ed;
+  --color-brand-primary: #ff6b57;
+  --color-brand-primary-dark: #f04a3a;
+  --color-brand-primary-light: #fff1ee;
   /* Navy com matiz azul (menos preto puro) */
-  --color-brand-navy: #0f172a;
-  --color-brand-navy-dark: #030712;
-  --color-brand-charcoal: #1e293b;
-  --color-brand-cream: #f5f3ef;
+  --color-brand-ink: #0a1f5c;
+  --color-brand-ink-dark: #04103a;
+  --color-brand-charcoal: #142a6b;
+  --color-brand-surface: #f5f3ef;
   --color-brand-warm-gray: #78716c;
 
   --color-yoobe-blue: #1e3a5f;
@@ -63,27 +63,27 @@
   --color-yoobe-purple: #8338ec;
 
   /* Tom Yoobe (institucional) — confiança / links */
-  --color-unik-blue: #2563eb;
-  --color-unik-blue-deep: #1d4ed8;
-  --color-unik-blue-soft: #60a5fa;
+  --color-unik-blue: #3b82f6;
+  --color-unik-blue-deep: #2563eb;
+  --color-unik-blue-soft: #93c5fd;
 
   /* Demo membro / gamificação */
-  --color-demo-cyan: #22d3ee;
-  --color-demo-cyan-deep: #06b6d4;
+  --color-demo-cyan: #fbbf24;
+  --color-demo-cyan-deep: #f59e0b;
 
   /* Superfícies (substitui hex soltos #0a0f18, #121824, #141b2d) */
-  --color-surface-page: #0c1324;
-  --color-surface-base: #0a0f18;
-  --color-surface-elevated: #141b2d;
-  --color-surface-panel: #121824;
-  --color-surface-section: #0d1424;
-  --color-surface-ink: #0a101c;
-  --color-surface-deep: #050a10;
-  --color-surface-tier-from: #1a233a;
-  --color-surface-marketing: #101827;
-  --color-surface-mid: #0d1522;
-  --color-surface-trust: #0a1220;
-  --color-surface-carousel: #1a2236;
+  --color-surface-page: #0b1e55;
+  --color-surface-base: #081747;
+  --color-surface-elevated: #10266a;
+  --color-surface-panel: #0d2160;
+  --color-surface-section: #0a1a4e;
+  --color-surface-ink: #091848;
+  --color-surface-deep: #04103a;
+  --color-surface-tier-from: #132b72;
+  --color-surface-marketing: #0c1f58;
+  --color-surface-mid: #0a1a4e;
+  --color-surface-trust: #091848;
+  --color-surface-carousel: #132b72;
   --color-surface-hr-from: #141415;
   --color-surface-hr-to: #0a0a0b;
   --color-surface-hr-hover: #1c1c1e;
@@ -108,8 +108,8 @@
 }
 
 :root {
-  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-outfit), "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-outfit), "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -134,7 +134,7 @@
   --chart-3: oklch(0.546 0.245 262.881);
   --chart-4: oklch(0.488 0.243 264.376);
   --chart-5: oklch(0.424 0.199 265.638);
-  --radius: 0.625rem;
+  --radius: 1rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -196,26 +196,26 @@
 }
 
 @utility glass-panel-dark {
-  @apply border border-white/10 border-t-brand-orange/20 bg-surface-panel/85 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] backdrop-blur-xl transition-colors duration-200;
+  @apply border border-white/10 border-t-brand-primary/20 bg-surface-panel/85 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] backdrop-blur-xl transition-colors duration-200;
 }
 @utility glass-panel-light {
   @apply bg-white/60 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.07)];
 }
 @utility section-gradient-bg {
-  @apply bg-linear-to-br from-brand-navy-dark via-[#0c1a2e] to-brand-navy;
+  @apply bg-linear-to-br from-brand-ink-dark via-[#0c1a2e] to-brand-ink;
 }
 @utility text-gradient {
-  @apply bg-clip-text text-transparent bg-linear-to-r from-brand-orange via-unik-blue-soft to-demo-cyan;
+  @apply bg-clip-text text-transparent bg-linear-to-r from-brand-primary via-unik-blue-soft to-demo-cyan;
 }
 @utility text-gradient-hero {
-  @apply bg-clip-text text-transparent bg-linear-to-r from-brand-orange via-unik-blue to-demo-cyan;
+  @apply bg-clip-text text-transparent bg-linear-to-r from-brand-primary via-unik-blue to-demo-cyan;
 }
-/* CTA primário V3 — #F97316 → #EA580C (não gold) */
+/* CTA primário V3 — #ff6b57 → #f04a3a (não gold) */
 @utility bg-brand-gradient {
-  background-image: linear-gradient(135deg, #f97316, #ea580c);
+  background-image: linear-gradient(135deg, #ff6b57, #ff3d81);
 }
 @utility bg-brand-gradient-hover {
-  background-image: linear-gradient(135deg, #ea580c, #c2410c);
+  background-image: linear-gradient(135deg, #f04a3a, #e11d74);
 }
 
 .hero-theme-section {
@@ -365,7 +365,7 @@
 }
 
 .hero-theme-home .hero-theme-orb-primary {
-  background: radial-gradient(circle, rgba(249, 143, 22, 0.42) 0%, rgba(249, 143, 22, 0) 68%);
+  background: radial-gradient(circle, rgba(255, 107, 87, 0.42) 0%, rgba(255, 107, 87, 0) 68%);
 }
 
 .hero-theme-home .hero-theme-orb-secondary {
@@ -412,7 +412,7 @@
 }
 
 .hero-theme-features .hero-theme-orb-primary {
-  background: radial-gradient(circle, rgba(249, 143, 22, 0.28) 0%, rgba(249, 143, 22, 0) 68%);
+  background: radial-gradient(circle, rgba(255, 107, 87, 0.28) 0%, rgba(255, 107, 87, 0) 68%);
 }
 
 .hero-theme-features .hero-theme-orb-secondary {
@@ -435,7 +435,7 @@
 }
 
 .hero-theme-icp-sales .hero-theme-orb-primary {
-  background: radial-gradient(circle, rgba(249, 143, 22, 0.4) 0%, rgba(249, 143, 22, 0) 68%);
+  background: radial-gradient(circle, rgba(255, 107, 87, 0.4) 0%, rgba(255, 107, 87, 0) 68%);
 }
 .hero-theme-icp-sales .hero-theme-orb-secondary {
   background: radial-gradient(circle, rgba(239, 71, 111, 0.22) 0%, rgba(239, 71, 111, 0) 68%);

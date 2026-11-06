@@ -19,7 +19,7 @@ type Props = {
 
 export default function HomePage({ homeContent, cmsHero = null, locale }: Props) {
   return (
-    <div className="min-h-screen bg-surface-deep font-sans text-white selection:bg-brand-orange/30">
+    <div className="min-h-screen bg-surface-deep font-sans text-white selection:bg-brand-primary/30">
       <JsonLdScript data={{ ...buildSoftwareApplicationJsonLd(locale) }} />
       <HomeHero cmsHero={cmsHero} homeContent={homeContent} />
       <HomeTrustStrip />

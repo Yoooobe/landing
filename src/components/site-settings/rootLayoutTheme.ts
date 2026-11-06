@@ -1,9 +1,9 @@
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Outfit } from "next/font/google";
 
-export const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+export const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
 });
 
 export const ROOT_BODY_CLASSNAME =
-  "font-sans antialiased min-h-screen flex flex-col bg-brand-navy-dark text-white selection:bg-brand-orange/30";
+  "font-sans antialiased min-h-screen flex flex-col bg-brand-ink-dark text-white selection:bg-brand-primary/30";

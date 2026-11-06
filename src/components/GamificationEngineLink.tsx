@@ -63,7 +63,7 @@ export default function GamificationEngineLink() {
   return (
     <section className="py-24 bg-surface-base border-t border-white/5 relative overflow-hidden">
       {/* Background glow */}
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand-orange/10 rounded-full blur-[100px]" />
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-brand-primary/10 rounded-full blur-[100px]" />
 
       <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
@@ -76,7 +76,7 @@ export default function GamificationEngineLink() {
             viewport={{ once: true, margin: "-80px" }}
           >
             <motion.div variants={itemVariants}>
-              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-4 py-1.5 text-sm font-semibold text-brand-orange">
+              <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-primary/30 bg-brand-primary/10 px-4 py-1.5 text-sm font-semibold text-brand-primary">
                 <Gamepad2 className="w-4 h-4" />
                 {locale === "en" ? "Gamification Engine" : "Motor de Gamificação"}
               </span>
@@ -89,14 +89,14 @@ export default function GamificationEngineLink() {
               {locale === "en" ? (
                 <>
                   Rules, campaigns and{" "}
-                  <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-red-500">
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-red-500">
                     redemptions in one engine
                   </span>
                 </>
               ) : (
                 <>
                   Regras, campanhas e{" "}
-                  <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-red-500">
+                  <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-red-500">
                     resgates em um único motor
                   </span>
                 </>
@@ -120,10 +120,10 @@ export default function GamificationEngineLink() {
                     key={bullet.title}
                     variants={itemVariants}
                     custom={i}
-                    className="flex items-start gap-4 rounded-2xl border border-white/5 bg-white/3 p-5 hover:border-brand-orange/20 transition-colors"
+                    className="flex items-start gap-4 rounded-2xl border border-white/5 bg-white/3 p-5 hover:border-brand-primary/20 transition-colors"
                   >
-                    <div className="shrink-0 mt-0.5 p-2.5 rounded-xl bg-brand-orange/10 border border-brand-orange/20">
-                      <Icon className="w-5 h-5 text-brand-orange" />
+                    <div className="shrink-0 mt-0.5 p-2.5 rounded-xl bg-brand-primary/10 border border-brand-primary/20">
+                      <Icon className="w-5 h-5 text-brand-primary" />
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-base mb-1 font-heading">
@@ -139,7 +139,7 @@ export default function GamificationEngineLink() {
             <motion.div variants={itemVariants}>
               <Link
                 href={engineHref}
-                className="inline-flex items-center gap-2 rounded-full bg-brand-orange px-6 py-3 text-sm font-bold text-brand-navy-dark transition-all hover:scale-105 hover:shadow-[0_0_24px_rgba(249,143,22,0.4)]"
+                className="inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-bold text-brand-ink-dark transition-all hover:scale-105 hover:shadow-[0_0_24px_rgba(255, 107, 87,0.4)]"
               >
                 {locale === "en" ? "Explore the engine" : "Explorar o motor"}
                 <ArrowRight className="w-4 h-4" />

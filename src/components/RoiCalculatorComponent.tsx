@@ -63,18 +63,18 @@ export default function RoiCalculatorComponent({ locale }: Props) {
       <div className="container mx-auto max-w-6xl px-4 md:px-6">
         {/* Header */}
         <div className="mx-auto max-w-3xl text-center">
-          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-orange">
+          <span className="mb-4 inline-flex items-center gap-2 rounded-full border border-brand-primary/30 bg-brand-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-primary">
             <Calculator className="h-4 w-4" />
             {isPt ? "Calculadora de ROI de Engajamento" : "Engagement ROI Calculator"}
           </span>
           <h1 className="mb-6 font-heading text-4xl font-black leading-tight md:text-6xl">
             {isPt ? (
               <>
-                Simule o impacto financeiro da <span className="text-brand-orange">Yoobe</span> no seu time
+                Simule o impacto financeiro da <span className="text-brand-primary">Yoobe</span> no seu time
               </>
             ) : (
               <>
-                Calculate Yoobe’s financial impact on <span className="text-brand-orange">your workforce</span>
+                Calculate Yoobe’s financial impact on <span className="text-brand-primary">your workforce</span>
               </>
             )}
           </h1>
@@ -95,7 +95,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
             transition={{ duration: 0.5 }}
           >
             <h2 className="mb-6 font-heading text-xl font-bold text-white flex items-center gap-2">
-              <Users className="h-5 w-5 text-brand-orange" />
+              <Users className="h-5 w-5 text-brand-primary" />
               {isPt ? "Dados da sua empresa" : "Your company metrics"}
             </h2>
 
@@ -106,7 +106,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
                   <label className="text-sm font-semibold text-white/80">
                     {isPt ? "Número de colaboradores" : "Number of employees"}
                   </label>
-                  <span className="font-heading text-lg font-bold text-brand-orange">{employees}</span>
+                  <span className="font-heading text-lg font-bold text-brand-primary">{employees}</span>
                 </div>
                 <input
                   type="range"
@@ -115,7 +115,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
                   step="10"
                   value={employees}
                   onChange={(e) => setEmployees(Number(e.target.value))}
-                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-white/10 accent-brand-orange"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-white/10 accent-brand-primary"
                 />
                 <div className="mt-1 flex justify-between text-xs text-white/40">
                   <span>20</span>
@@ -130,7 +130,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
                   <label className="text-sm font-semibold text-white/80">
                     {isPt ? "Salário médio mensal" : "Average monthly salary"}
                   </label>
-                  <span className="font-heading text-lg font-bold text-brand-orange">{formatCurrency(avgSalary)}</span>
+                  <span className="font-heading text-lg font-bold text-brand-primary">{formatCurrency(avgSalary)}</span>
                 </div>
                 <input
                   type="range"
@@ -139,7 +139,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
                   step="500"
                   value={avgSalary}
                   onChange={(e) => setAvgSalary(Number(e.target.value))}
-                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-white/10 accent-brand-orange"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-white/10 accent-brand-primary"
                 />
                 <div className="mt-1 flex justify-between text-xs text-white/40">
                   <span>{formatCurrency(2500)}</span>
@@ -154,7 +154,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
                   <label className="text-sm font-semibold text-white/80">
                     {isPt ? "Taxa anual de turnover estimada" : "Estimated annual turnover rate"}
                   </label>
-                  <span className="font-heading text-lg font-bold text-brand-orange">{turnoverRate}%</span>
+                  <span className="font-heading text-lg font-bold text-brand-primary">{turnoverRate}%</span>
                 </div>
                 <input
                   type="range"
@@ -163,11 +163,11 @@ export default function RoiCalculatorComponent({ locale }: Props) {
                   step="1"
                   value={turnoverRate}
                   onChange={(e) => setTurnoverRate(Number(e.target.value))}
-                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-white/10 accent-brand-orange"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-white/10 accent-brand-primary"
                 />
                 <div className="mt-1 flex justify-between text-xs text-white/40">
                   <span>5% (Baixo)</span>
-                  <span>20% (Médio)</span>
+                  <span>20% (Medium)</span>
                   <span>45% (Alto)</span>
                 </div>
               </div>
@@ -189,24 +189,24 @@ export default function RoiCalculatorComponent({ locale }: Props) {
 
           {/* Results Summary Panel */}
           <motion.div
-            className="flex flex-col justify-between rounded-3xl border border-brand-orange/30 bg-gradient-to-b from-brand-orange/15 to-surface-card p-6 shadow-2xl backdrop-blur-xl md:p-8 lg:col-span-6"
+            className="flex flex-col justify-between rounded-3xl border border-brand-primary/30 bg-gradient-to-b from-brand-primary/15 to-surface-card p-6 shadow-2xl backdrop-blur-xl md:p-8 lg:col-span-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <div>
               <div className="mb-4 flex items-center justify-between">
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-orange">
+                <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
                   {isPt ? "Retorno Projetado de Investimento" : "Projected Return on Investment"}
                 </span>
-                <span className="rounded-full bg-brand-orange px-3 py-1 text-xs font-black text-black">
+                <span className="rounded-full bg-brand-primary px-3 py-1 text-xs font-black text-black">
                   {roiMultiple}× ROI
                 </span>
               </div>
 
               <div className="mb-6">
                 <span className="text-sm text-white/60">{isPt ? "Economia Líquida Anual Estimada:" : "Estimated Net Annual Savings:"}</span>
-                <div className="font-heading text-4xl font-black text-brand-orange md:text-5xl">
+                <div className="font-heading text-4xl font-black text-brand-primary md:text-5xl">
                   {formatCurrency(netSavings)}
                 </div>
                 <span className="text-xs text-white/40">
@@ -249,7 +249,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
                 source="roi-calculator-demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-brand-orange px-6 font-heading font-bold text-black shadow-lg transition hover:bg-brand-orange/90"
+                className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-brand-primary px-6 font-heading font-bold text-black shadow-lg transition hover:bg-brand-primary/90"
               >
                 {isPt ? "Agendar Demonstração com este Relatório" : "Schedule Demo with this Report"}
                 <ArrowRight className="h-4 w-4" />
@@ -272,11 +272,11 @@ export default function RoiCalculatorComponent({ locale }: Props) {
               </p>
               <div className="mt-4 flex flex-wrap gap-4 text-xs text-white/50">
                 <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="h-4 w-4 text-brand-orange" />
+                  <ShieldCheck className="h-4 w-4 text-brand-primary" />
                   {isPt ? "Sem compromisso comercial" : "No commitment"}
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <Award className="h-4 w-4 text-brand-orange" />
+                  <Award className="h-4 w-4 text-brand-primary" />
                   {isPt ? "Estudo confidencial em 24h" : "Confidential study in 24h"}
                 </span>
               </div>

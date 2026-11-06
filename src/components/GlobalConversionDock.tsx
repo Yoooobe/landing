@@ -41,7 +41,7 @@ export default function GlobalConversionDock() {
   }
 
   const formClassName =
-    "inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-brand-orange/40 bg-surface-panel/90 px-4 text-sm font-bold text-white shadow-lg shadow-black/25 backdrop-blur-sm transition-colors duration-200 hover:border-brand-orange/60 hover:bg-brand-orange/15 sm:h-11 sm:text-[0.85rem]";
+    "inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl border border-brand-primary/40 bg-surface-panel/90 px-4 text-sm font-bold text-white shadow-lg shadow-black/25 backdrop-blur-sm transition-colors duration-200 hover:border-brand-primary/60 hover:bg-brand-primary/15 sm:h-11 sm:text-[0.85rem]";
 
   return (
     <div

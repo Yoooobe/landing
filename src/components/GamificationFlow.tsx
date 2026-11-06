@@ -6,7 +6,7 @@ import { Gift, LayoutDashboard, Target, Trophy } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import type { ResolvedGamificacaoContent } from "@/sanity/lib/types";
 
-const CONNECTOR_LABELS = ["< 24h", "Automático", "Imediato"] as const;
+const CONNECTOR_LABELS = ["< 24h", "Automatic", "Imediato"] as const;
 
 type StepNum = "01" | "02" | "03" | "04";
 
@@ -35,7 +35,7 @@ const STEP_VISUAL: Record<
   },
   "04": {
     Icon: Gift,
-    headerGradient: "from-brand-orange/45 via-yoobe-neon-pink/25 to-yoobe-neon-pink/30",
+    headerGradient: "from-brand-primary/45 via-yoobe-neon-pink/25 to-yoobe-neon-pink/30",
     iconTint: "text-yoobe-neon-pink/95",
   },
 };

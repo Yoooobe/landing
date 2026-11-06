@@ -18,7 +18,7 @@ export default function PricingLandingPage({ content }: Props) {
 
   return (
     <div className="min-h-screen bg-sky-mist text-ink-deep">
-      <section className="relative overflow-hidden border-b border-white/5 bg-brand-navy-dark py-24 text-white md:py-28">
+      <section className="relative overflow-hidden border-b border-white/5 bg-brand-ink-dark py-24 text-white md:py-28">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(62,143,216,0.16),transparent_45%)]" />
         <div className="container relative z-10 mx-auto max-w-4xl px-4 text-center">
           <div className="mb-4 inline-block rounded-full border border-accent-sky/30 bg-accent-sky/10 px-3 py-1 text-sm font-bold uppercase tracking-wide text-accent-sky">
@@ -63,7 +63,7 @@ export default function PricingLandingPage({ content }: Props) {
             source="pricing-page-demo"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-orange px-8 font-bold text-white hover:bg-brand-orange/90"
+            className="inline-flex h-12 items-center justify-center rounded-xl bg-brand-primary px-8 font-bold text-white hover:bg-brand-primary/90"
           >
             {page.cta.primaryLabel}
           </TrackedOutboundLink>

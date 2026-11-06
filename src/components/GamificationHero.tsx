@@ -21,7 +21,7 @@ export default function GamificationHero({
   const { locale } = useLocaleMessages();
   const showcaseImageUrl = getSanityImageUrl(showcaseImage, { width: 1600, height: 960, fit: "crop", crop: "entropy", quality: 86 });
   return (
-    <section className="hero-theme-section relative overflow-hidden bg-brand-navy-dark pb-24 pt-32">
+    <section className="hero-theme-section relative overflow-hidden bg-brand-ink-dark pb-24 pt-32">
       <HeroThemeBackdrop theme="gamification" />
       <div className="absolute inset-0 z-0">
         <div className="absolute left-1/3 top-1/4 h-[800px] w-[800px] animate-pulse rounded-full bg-yoobe-purple/15 blur-[150px] mix-blend-screen"></div>
@@ -54,11 +54,11 @@ export default function GamificationHero({
           style={{ animation: "float 8s ease-in-out infinite 1s" }}
         >
           <div className="flex w-full items-center justify-between">
-            <div className="font-heading text-xl font-bold text-brand-orange">+500 pts</div>
-            <Star className="h-5 w-5 fill-brand-orange text-brand-orange" />
+            <div className="font-heading text-xl font-bold text-brand-primary">+500 pts</div>
+            <Star className="h-5 w-5 fill-brand-primary text-brand-primary" />
           </div>
           <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-white/10">
-            <div className="h-full w-[75%] rounded-full bg-brand-orange"></div>
+            <div className="h-full w-[75%] rounded-full bg-brand-primary"></div>
           </div>
           <div className="mt-1 font-sans text-[10px] text-white/40">{h.floatProgress}</div>
         </motion.div>
@@ -67,10 +67,10 @@ export default function GamificationHero({
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
-          className="absolute bottom-[20%] left-[20%] hidden h-14 w-14 items-center justify-center rounded-full border-brand-orange/30 glass-panel-dark shadow-[0_0_30px_rgba(249,115,22,0.2)] lg:flex"
+          className="absolute bottom-[20%] left-[20%] hidden h-14 w-14 items-center justify-center rounded-full border-brand-primary/30 glass-panel-dark shadow-[0_0_30px_rgba(255, 107, 87,0.2)] lg:flex"
           style={{ animation: "float 5s ease-in-out infinite 0.5s" }}
         >
-          <Zap className="h-6 w-6 text-brand-orange" />
+          <Zap className="h-6 w-6 text-brand-primary" />
         </motion.div>
 
         {/* Floating card — Admin dashboard (left, xl only) */}
@@ -99,9 +99,9 @@ export default function GamificationHero({
             />
           </div>
           <div className="flex items-center justify-between bg-slate-900/95 px-3 py-1.5 border-t border-white/10">
-            <span className="text-[0.56rem] font-semibold text-brand-orange">Dashboard</span>
-            <span className="rounded-full border border-brand-orange/30 bg-brand-orange/20 px-2 py-0.5 text-[0.5rem] font-bold uppercase tracking-widest text-brand-orange">
-              Ao vivo
+            <span className="text-[0.56rem] font-semibold text-brand-primary">Dashboard</span>
+            <span className="rounded-full border border-brand-primary/30 bg-brand-primary/20 px-2 py-0.5 text-[0.5rem] font-bold uppercase tracking-widest text-brand-primary">
+              Live
             </span>
           </div>
         </motion.div>
@@ -135,7 +135,7 @@ export default function GamificationHero({
             ) : (
               <Image
                 src={withBasePath("/screens/admin-campaign-config-desktop.webp")}
-                alt="Editor de campanha Yoobe"
+                alt="Yoobe campaign editor"
                 fill
                 sizes="300px"
                 className="object-cover object-top"
@@ -144,9 +144,9 @@ export default function GamificationHero({
             <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/40 to-transparent" />
           </div>
           <div className="flex items-center justify-between bg-slate-900/95 px-3 py-1.5 border-t border-white/10">
-            <span className="text-[0.56rem] font-semibold text-yoobe-purple">Preview ao vivo</span>
+            <span className="text-[0.56rem] font-semibold text-yoobe-purple">Live preview</span>
             <span className="rounded-full border border-yoobe-purple/30 bg-yoobe-purple/20 px-2 py-0.5 text-[0.5rem] font-bold uppercase tracking-widest text-yoobe-purple">
-              Campanha
+              Campaign
             </span>
           </div>
         </motion.div>

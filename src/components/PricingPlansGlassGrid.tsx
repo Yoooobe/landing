@@ -27,7 +27,7 @@ function renderHighlightedLabel(label: string) {
       return (
         <span
           key={idx}
-          className="mx-0.5 inline-block rounded-md bg-brand-orange/10 px-1.5 py-px font-bold text-brand-orange"
+          className="mx-0.5 inline-block rounded-md bg-brand-primary/10 px-1.5 py-px font-bold text-brand-primary"
         >
           {part}
         </span>
@@ -65,7 +65,7 @@ const PLAN_VISUALS: Record<string, PlanVisual> = {
   essentials: {
     icon: Building2,
     badgeIcon: Store,
-    badgeTop: "Loja corporativa",
+    badgeTop: "Corporate store",
     badgeBottom: "+5.000 produtos",
     glowBlob: "bg-accent-sky/25",
     glowShadow: "hover:shadow-[0_16px_44px_rgba(62,143,216,0.18)]",
@@ -78,15 +78,15 @@ const PLAN_VISUALS: Record<string, PlanVisual> = {
   scale: {
     icon: Sparkles,
     badgeIcon: Award,
-    badgeTop: "Gamificação completa",
-    badgeBottom: "Loja corporativa",
-    glowBlob: "bg-brand-orange/20",
-    glowShadow: "hover:shadow-[0_14px_36px_rgba(249,143,22,0.16)]",
+    badgeTop: "Full gamification",
+    badgeBottom: "Corporate store",
+    glowBlob: "bg-brand-primary/20",
+    glowShadow: "hover:shadow-[0_14px_36px_rgba(255, 107, 87,0.16)]",
     hoverBorder: "",
-    iconBg: "bg-brand-orange/10",
-    iconColor: "text-brand-orange",
-    wash: "from-brand-orange/[0.07]",
-    panelWash: "from-brand-orange/10",
+    iconBg: "bg-brand-primary/10",
+    iconColor: "text-brand-primary",
+    wash: "from-brand-primary/[0.07]",
+    panelWash: "from-brand-primary/10",
   },
   enterprise: {
     icon: Rocket,
@@ -154,14 +154,14 @@ export default function PricingPlansGlassGrid({ content }: Props) {
               transition={{ delay: i * 0.1 }}
               className={`relative flex flex-col overflow-hidden rounded-3xl bg-linear-to-b ${visual.wash} to-white p-8 shadow-[0_4px_24px_rgba(22,40,58,0.06)] transition-all duration-300 ${visual.glowShadow} ${
                 plan.isPopular
-                  ? "border-2 border-brand-orange shadow-[0_8px_40px_rgba(249,143,22,0.18)] hover:scale-[1.015] md:-translate-y-4"
+                  ? "border-2 border-brand-primary shadow-[0_8px_40px_rgba(255, 107, 87,0.18)] hover:scale-[1.015] md:-translate-y-4"
                   : `border border-sky-border hover:-translate-y-1 ${visual.hoverBorder}`
               }`}
             >
               <div className={`pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full ${visual.glowBlob} blur-3xl`} />
 
               {plan.isPopular ? (
-                <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-brand-orange px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_16px_rgba(249,143,22,0.4)]">
+                <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full bg-brand-primary px-4 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-[0_4px_16px_rgba(255, 107, 87,0.4)]">
                   <span className="relative z-10">{popularLabel}</span>
                   <motion.span
                     aria-hidden
@@ -249,7 +249,7 @@ export default function PricingPlansGlassGrid({ content }: Props) {
                 rel="noopener noreferrer"
                 className={
                   plan.isPopular
-                    ? "relative mt-auto block w-full rounded-xl bg-brand-orange py-4 text-center font-bold text-white transition-colors hover:bg-brand-orange-dark"
+                    ? "relative mt-auto block w-full rounded-xl bg-brand-primary py-4 text-center font-bold text-white transition-colors hover:bg-brand-primary-dark"
                     : "relative mt-auto block w-full rounded-xl border border-ink-deep/15 bg-transparent py-4 text-center font-bold text-ink-deep transition-colors hover:bg-sky-mist"
                 }
               >

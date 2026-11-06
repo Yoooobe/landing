@@ -31,7 +31,7 @@ export default function FourUnikComplementStrip({
     >
       <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="flex flex-col gap-6 rounded-2xl border border-white/10 bg-brand-navy-dark/60 px-6 py-6 backdrop-blur-sm md:flex-row md:items-center md:justify-between md:gap-8"
+          className="flex flex-col gap-6 rounded-2xl border border-white/10 bg-brand-ink-dark/60 px-6 py-6 backdrop-blur-sm md:flex-row md:items-center md:justify-between md:gap-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "0px 0px -10% 0px" }}
@@ -40,7 +40,7 @@ export default function FourUnikComplementStrip({
           <div className="flex-1">
             <p
               id="fourunik-complement-heading"
-              className="text-xs font-semibold uppercase tracking-wider text-brand-orange"
+              className="text-xs font-semibold uppercase tracking-wider text-brand-primary"
             >
               {u.kicker}
             </p>
@@ -65,7 +65,7 @@ export default function FourUnikComplementStrip({
             {pillarLinkLabel ? (
               <Link
                 href={rewardInfrastructurePath(locale)}
-                className="rounded-full border border-brand-orange/40 bg-brand-orange/10 px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-orange/20"
+                className="rounded-full border border-brand-primary/40 bg-brand-primary/10 px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-brand-primary/20"
               >
                 {pillarLinkLabel}
               </Link>
@@ -74,7 +74,7 @@ export default function FourUnikComplementStrip({
               href={u.ctaHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:border-brand-orange/50 hover:bg-white/10"
+              className="rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:border-brand-primary/50 hover:bg-white/10"
             >
               {u.cta}
             </Link>

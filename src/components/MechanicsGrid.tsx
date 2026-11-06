@@ -11,7 +11,7 @@ function MechanicIcon({ index }: { index: number }) {
     case 0:
       return <Coins className={`${c} text-yellow-400`} />;
     case 1:
-      return <Trophy className={`${c} text-brand-orange`} />;
+      return <Trophy className={`${c} text-brand-primary`} />;
     case 2:
       return <Medal className={`${c} text-yoobe-neon-pink`} />;
     case 3:
@@ -26,8 +26,8 @@ function MechanicIcon({ index }: { index: number }) {
 }
 
 const GRADIENTS = [
-  "from-yellow-400/20 to-orange-500/0",
-  "from-brand-orange/20 to-red-500/0",
+  "from-yellow-400/20 to-rose-500/0",
+  "from-brand-primary/20 to-red-500/0",
   "from-yoobe-neon-pink/20 to-pink-600/0",
   "from-blue-400/20 to-indigo-500/0",
   "from-yoobe-purple/20 to-fuchsia-500/0",
@@ -35,7 +35,7 @@ const GRADIENTS = [
 ] as const;
 const BORDERS = [
   "hover:border-yellow-400/50",
-  "hover:border-brand-orange/50",
+  "hover:border-brand-primary/50",
   "hover:border-yoobe-neon-pink/50",
   "hover:border-blue-400/50",
   "hover:border-yoobe-purple/50",
@@ -44,7 +44,7 @@ const BORDERS = [
 const PROGRESS = [72, 88, 64, 91, 78, 85] as const;
 const BAR_COLORS = [
   "bg-yellow-400",
-  "bg-brand-orange",
+  "bg-brand-primary",
   "bg-yoobe-neon-pink",
   "bg-blue-400",
   "bg-yoobe-purple",

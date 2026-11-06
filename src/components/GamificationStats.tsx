@@ -4,7 +4,7 @@ import type { ResolvedGamificacaoContent } from "@/sanity/lib/types";
 
 export default function GamificationStats({ content: s }: { content: ResolvedGamificacaoContent["stats"] }) {
   return (
-    <section className="relative overflow-hidden border-t border-white/5 bg-brand-navy py-24 text-center">
+    <section className="relative overflow-hidden border-t border-white/5 bg-brand-ink py-24 text-center">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-yoobe-purple/10 blur-[100px]"></div>
 
       <div className="container relative z-10 mx-auto max-w-6xl px-4">

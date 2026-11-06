@@ -17,8 +17,8 @@ const gradients: Record<
   { iconWrap: string; title: string }
 > = {
   motor: {
-    iconWrap: "bg-brand-orange/20 border border-brand-orange/30",
-    title: "text-transparent bg-clip-text bg-linear-to-r from-brand-orange to-red-500",
+    iconWrap: "bg-brand-primary/20 border border-brand-primary/30",
+    title: "text-transparent bg-clip-text bg-linear-to-r from-brand-primary to-red-500",
   },
   logistica: {
     iconWrap: "bg-blue-500/20 border border-blue-500/30",

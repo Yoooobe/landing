@@ -135,7 +135,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     workflowTitle: "Como a Yoobe opera uma campanha",
     workflow: [
       {
-        title: "Dados iniciais e slug",
+        title: "Basics e slug",
         body: "Defina o objetivo da ação, nome, URL amigável e identidade da landing de resgate.",
         imageSrc: "/screens/flows/campanha-passo-1.webp",
         imageAlt: "Passo 1 — dados iniciais da campanha",
@@ -147,13 +147,13 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         imageAlt: "Passo 2 — mensagem de boas-vindas",
       },
       {
-        title: "Empresa e produtos",
+        title: "Company & products",
         body: "Associe a empresa e monte a vitrine de recompensas da página de resgate.",
         imageSrc: "/screens/flows/campanha-passo-3.webp",
         imageAlt: "Passo 3 — empresa e produtos",
       },
       {
-        title: "Publicação e entrega",
+        title: "Publishing e entrega",
         body: "Publique com vigência e regras; acompanhe resgates e envios até a conclusão.",
         imageSrc: "/screens/flows/campanha-passo-4.webp",
         imageAlt: "Passo 4 — configurações finais",
@@ -212,10 +212,10 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     description:
       "Na Yoobe, colaboradores e participantes consultam saldo, verificam extrato, acompanham pedidos e usam pontos na loja corporativa com rastreabilidade total. A carteira também pode receber dados de ferramentas externas de gamificação — do crédito ao resgate.",
     imageSrc: "/screens/member-points.webp",
-    imageAlt: "Histórico de pontos na carteira do colaborador",
+    imageAlt: "Points history na carteira do colaborador",
     stats: [
       {
-        label: "Saldo em tempo real",
+        label: "Real-time balance",
         value: "Consulta imediata",
         detail: "Participantes acompanham pontos, saldo e movimentações assim que campanhas e ajustes são processados.",
       },
@@ -288,7 +288,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     gallery: [
       {
         src: "/screens/member-points.webp",
-        alt: "Histórico de pontos do colaborador",
+        alt: "Points history do colaborador",
         caption: "Carteira com saldo, ganho, gasto e histórico por tipo de evento e campanha.",
       },
       {
@@ -319,17 +319,17 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
   },
   manager: {
     seo: {
-      title: "Painel do Gestor | Yoobe",
+      title: "Painel do Manager | Yoobe",
       description:
         "Painel analítico para acompanhar campanhas, pedidos, usuários, produtos, estoque e performance operacional dentro da Yoobe.",
     },
-    badge: "Painel do Gestor",
+    badge: "Painel do Manager",
     title: "O gestor enxerga a operação",
     highlight: "de ponta a ponta em um só painel.",
     description:
       "O painel do gestor da Yoobe reúne performance da operação, catálogo, pedidos, campanhas, usuários e indicadores críticos em uma camada de comando pensada para RH, marketing, people ops e times administrativos.",
     imageSrc: "/screens/dash/dashboard-geral.webp",
-    imageAlt: "Dashboard geral do painel do gestor Yoobe",
+    imageAlt: "Overview dashboard do painel do gestor Yoobe",
     stats: [
       {
         label: "Visão executiva",
@@ -380,7 +380,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         title: "Monitora a saúde da operação",
         body: "Bate o olho no dashboard e identifica desvios em pedidos, catálogo, estoque e engajamento.",
         imageSrc: "/screens/dash/dashboard-geral.webp",
-        imageAlt: "Dashboard geral com KPIs",
+        imageAlt: "Overview dashboard com KPIs",
       },
       {
         title: "Ajusta campanhas e catálogo",
@@ -418,12 +418,12 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       },
       {
         src: "/screens/dash/pedidos.webp",
-        alt: "Pedidos e envios",
+        alt: "Orders & shipping",
         caption: "Pedidos e status de envio em tempo real para a operação acompanhar cada resgate.",
       },
       {
         src: "/screens/dash/produtos.webp",
-        alt: "Catálogo de produtos",
+        alt: "Product catalog",
         caption: "Gestão do catálogo com estoque, opções e disponibilidade.",
       },
       {
@@ -443,7 +443,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       },
       {
         src: "/screens/dash/usuarios.webp",
-        alt: "Usuários do programa",
+        alt: "Users do programa",
         caption: "Usuários, papéis e acesso ao painel e à loja de resgate.",
       },
       {
@@ -477,7 +477,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     title: "A loja de recompensas onde o colaborador",
     highlight: "escolhe o próprio prêmio.",
     description:
-      "Uma vitrine totalmente white-label conectada ao seu programa de pontos. Colaboradores navegam pelo catálogo, resgatam pontos e recebem prêmios físicos ou digitais — sem nenhuma operação manual do RH.",
+      "Uma vitrine totalmente white-label conectada ao your program de pontos. Colaboradores navegam pelo catálogo, resgatam pontos e recebem prêmios físicos ou digitais — sem nenhuma operação manual do RH.",
     imageSrc: "/screens/member-store-home.webp",
     imageAlt: "Home da loja de resgate Yoobe — catálogo com produtos em pontos",
     stats: [
@@ -584,7 +584,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       },
       {
         src: "/screens/dash/produtos.webp",
-        alt: "Catálogo de produtos no painel",
+        alt: "Product catalog no painel",
         caption: "Gestão do catálogo no painel: estoque, opções e disponibilidade.",
       },
       {
@@ -600,7 +600,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ],
     ctaTitle: "Pronto para lançar a loja da sua empresa?",
     ctaBody:
-      "Agende uma conversa e veja como a Yoobe transforma o seu programa de reconhecimento numa loja que os colaboradores realmente usam.",
+      "Agende uma conversa e veja como a Yoobe transforma o your program de reconhecimento numa loja que os colaboradores realmente usam.",
     primaryCtaLabel: "Agendar demonstração",
     primaryCtaHref: "https://calendly.com/yoobeco/demo",
     secondaryCtaLabel: "Explorar a plataforma",
