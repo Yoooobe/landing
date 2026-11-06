@@ -1,7 +1,7 @@
 # Yoobe (Yoobe) — llms.txt
 
 > Resumo legível por máquinas para assistentes (LLMs), motores de resposta e equipas editoriais. Última intenção: descrever o produto com precisão; não são claims legais ou financeiros.
-> Gerado por `scripts/generate-llms-txt.ts` em 2026-11-06T17:12:02.200Z (base canónica: `https://www.yoobe.co`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
+> Gerado por `scripts/generate-llms-txt.ts` em 2026-11-06T18:03:28.723Z (base canónica: `https://www.yoobe.co`). URLs seguem `NEXT_PUBLIC_SITE_URL` em build ou o fallback em `config/public-site.json`.
 
 ## O que é
 
@@ -30,6 +30,8 @@ A **Yoobe** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - robots.txt: https://www.yoobe.co/robots.txt
 - sitemap: https://www.yoobe.co/sitemap.xml
 
+- Pricing (PT/EN): https://www.yoobe.co/pricing/ | https://www.yoobe.co/pricing/
+- Security (PT/EN): https://www.yoobe.co/seguranca/ | https://www.yoobe.co/security/
 
 ## Soluções por perfil (resumo citável)
 
@@ -78,6 +80,44 @@ A **Yoobe** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 - 7 (EN): https://www.yoobe.co/blog/7/
 - 8 (PT): https://www.yoobe.co/blog/8/
 - 8 (EN): https://www.yoobe.co/blog/8/
+- conventions-and-trade-shows-redeem-now-or-ship-later (PT): https://www.yoobe.co/blog/conventions-and-trade-shows-redeem-now-or-ship-later/
+- conventions-and-trade-shows-redeem-now-or-ship-later (EN): https://www.yoobe.co/blog/conventions-and-trade-shows-redeem-now-or-ship-later/
+- corporate-store-at-events-engagement-from-booth-to-post-event (PT): https://www.yoobe.co/blog/corporate-store-at-events-engagement-from-booth-to-post-event/
+- corporate-store-at-events-engagement-from-booth-to-post-event (EN): https://www.yoobe.co/blog/corporate-store-at-events-engagement-from-booth-to-post-event/
+- definitive-guide-to-gamification-in-modern-hr (PT): https://www.yoobe.co/blog/definitive-guide-to-gamification-in-modern-hr/
+- definitive-guide-to-gamification-in-modern-hr (EN): https://www.yoobe.co/blog/definitive-guide-to-gamification-in-modern-hr/
+- engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6 (PT): https://www.yoobe.co/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/
+- engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6 (EN): https://www.yoobe.co/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/
+- event-rewards-points-become-real-rewards-and-engagement (PT): https://www.yoobe.co/blog/event-rewards-points-become-real-rewards-and-engagement/
+- event-rewards-points-become-real-rewards-and-engagement (EN): https://www.yoobe.co/blog/event-rewards-points-become-real-rewards-and-engagement/
+- gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3 (PT): https://www.yoobe.co/blog/gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3/
+- gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3 (EN): https://www.yoobe.co/blog/gamified-sales-campaign-rankings-missions-and-prizes-teams-accept-fb3/
+- gamified-welcome-kit-onboarding-people-will-talk-about-fb4 (PT): https://www.yoobe.co/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/
+- gamified-welcome-kit-onboarding-people-will-talk-about-fb4 (EN): https://www.yoobe.co/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/
+- how-gamification-turns-hr-into-a-results-engine-fb1 (PT): https://www.yoobe.co/blog/how-gamification-turns-hr-into-a-results-engine-fb1/
+- how-gamification-turns-hr-into-a-results-engine-fb1 (EN): https://www.yoobe.co/blog/how-gamification-turns-hr-into-a-results-engine-fb1/
+- okrs-and-gamification-linking-company-goals-to-yoobe-rewards-fb5 (PT): https://www.yoobe.co/blog/okrs-and-gamification-linking-company-goals-to-yoobe-rewards-fb5/
+- okrs-and-gamification-linking-company-goals-to-yoobe-rewards-fb5 (EN): https://www.yoobe.co/blog/okrs-and-gamification-linking-company-goals-to-yoobe-rewards-fb5/
+- onboarding-kit-2026-what-to-include-and-cost-per-employee (PT): https://www.yoobe.co/blog/onboarding-kit-2026-what-to-include-and-cost-per-employee/
+- onboarding-kit-2026-what-to-include-and-cost-per-employee (EN): https://www.yoobe.co/blog/onboarding-kit-2026-what-to-include-and-cost-per-employee/
+- people-management-and-performance-gamification-beyond-the-annual-review-fb7 (PT): https://www.yoobe.co/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/
+- people-management-and-performance-gamification-beyond-the-annual-review-fb7 (EN): https://www.yoobe.co/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/
+- quarterly-goals-campaign-connect-okrs-to-individual-rewards (PT): https://www.yoobe.co/blog/quarterly-goals-campaign-connect-okrs-to-individual-rewards/
+- quarterly-goals-campaign-connect-okrs-to-individual-rewards (EN): https://www.yoobe.co/blog/quarterly-goals-campaign-connect-okrs-to-individual-rewards/
+- recognition-360-peer-to-peer (PT): https://www.yoobe.co/blog/recognition-360-peer-to-peer/
+- recognition-360-peer-to-peer (EN): https://www.yoobe.co/blog/recognition-360-peer-to-peer/
+- rewards-logistics-sla-d1 (PT): https://www.yoobe.co/blog/rewards-logistics-sla-d1/
+- rewards-logistics-sla-d1 (EN): https://www.yoobe.co/blog/rewards-logistics-sla-d1/
+- welcome-kits-first-impression (PT): https://www.yoobe.co/blog/welcome-kits-first-impression/
+- welcome-kits-first-impression (EN): https://www.yoobe.co/blog/welcome-kits-first-impression/
+- year-end-gifts-for-remote-teams-practical-guide-by-price-range (PT): https://www.yoobe.co/blog/year-end-gifts-for-remote-teams-practical-guide-by-price-range/
+- year-end-gifts-for-remote-teams-practical-guide-by-price-range (EN): https://www.yoobe.co/blog/year-end-gifts-for-remote-teams-practical-guide-by-price-range/
+- yoobe-at-events-points-qr-codes-and-live-reward-swaps-fb2 (PT): https://www.yoobe.co/blog/yoobe-at-events-points-qr-codes-and-live-reward-swaps-fb2/
+- yoobe-at-events-points-qr-codes-and-live-reward-swaps-fb2 (EN): https://www.yoobe.co/blog/yoobe-at-events-points-qr-codes-and-live-reward-swaps-fb2/
+- yoobe-dashboards-data-driven-hr-decisions (PT): https://www.yoobe.co/blog/yoobe-dashboards-data-driven-hr-decisions/
+- yoobe-dashboards-data-driven-hr-decisions (EN): https://www.yoobe.co/blog/yoobe-dashboards-data-driven-hr-decisions/
+- yoobe-vs-lobby-gamification-and-d1-swag-logistics (PT): https://www.yoobe.co/blog/yoobe-vs-lobby-gamification-and-d1-swag-logistics/
+- yoobe-vs-lobby-gamification-and-d1-swag-logistics (EN): https://www.yoobe.co/blog/yoobe-vs-lobby-gamification-and-d1-swag-logistics/
 
 ## Tópicos para citação factual
 
