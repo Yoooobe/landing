@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { createClient } from "@sanity/client";
 import { ROUTE_TABLE } from "../src/lib/routes";
+import { getFallbackBlogPosts } from "../src/lib/blogFallback";
 import { rewriteBrand } from "./lib/yoobeRewrite";
 
 const SITE = "https://www.yoobe.co";
@@ -20,11 +21,18 @@ type PostRef = { slug: string; title: string };
 
 const norm = (t: string) => rewriteBrand(t).trim().toLowerCase();
 
+/** Rotas que não indexam no yoobe.co (redirect/noindex): a canonical aponta para a página final. */
+const INDEXABLE_TARGET: Partial<Record<string, string>> = {
+  gamification: "/platform/gamification-engine/",
+  logistics: "/platform/",
+  workvivo: "/integrations/workvivo/",
+};
+
 export function buildCanonicalMap(fourUnikEnPosts: PostRef[], yoobePosts: PostRef[]): Record<string, string> {
   const map: Record<string, string> = {};
   for (const r of ROUTE_TABLE) {
     if (r.key === "blogPost") continue;
-    map[r.legacyEn] = `${SITE}${r.path}`;
+    map[r.legacyEn] = `${SITE}${INDEXABLE_TARGET[r.key] ?? r.path}`;
   }
   const byTitle = new Map(yoobePosts.map((p) => [norm(p.title), p.slug]));
   const bySlug = new Set(yoobePosts.map((p) => p.slug));
@@ -33,8 +41,10 @@ export function buildCanonicalMap(fourUnikEnPosts: PostRef[], yoobePosts: PostRe
     if (!/^\d+$/.test(p.slug)) fourUnikByTitle.set(norm(p.title), rewriteBrand(p.slug));
   }
   for (const p of fourUnikEnPosts) {
+    const byFbSuffix = /^\d+$/.test(p.slug) ? yoobePosts.find((y) => y.slug.endsWith(`-fb${p.slug}`))?.slug : undefined;
     const target =
       byTitle.get(norm(p.title)) ??
+      byFbSuffix ??
       (bySlug.has(fourUnikByTitle.get(norm(p.title)) ?? "") ? fourUnikByTitle.get(norm(p.title)) : undefined);
     map[`/en/blog/${p.slug}/`] = target ? `${SITE}/blog/${target}/` : `${SITE}/blog/`;
   }
@@ -53,6 +63,8 @@ async function main() {
     .map((l) => JSON.parse(l))
     .filter((d) => d._type === "blogPost" && d.locale === "en" && !d._id.startsWith("drafts."))
     .map((d) => ({ slug: d.slug.current as string, title: d.title as string }));
+  const known = new Set(fourUnik.map((p) => p.slug));
+  for (const f of getFallbackBlogPosts("en")) if (!known.has(f.slug)) fourUnik.push({ slug: f.slug, title: f.title });
   const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
     dataset: "yoobe",

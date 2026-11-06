@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const imageUrl = getSanityImageUrl(post.seo?.openGraphImage || post.coverImage);
-  const defaultOgImage = pageAbsoluteUrl("/og/Yoobe-default.svg");
+  const defaultOgImage = pageAbsoluteUrl("/og/yoobe-default.png");
   const ogImages = imageUrl
     ? [{ url: imageUrl }]
     : [{ url: defaultOgImage, width: 1200, height: 630, alt: `${SITE_NAME} social preview` }];

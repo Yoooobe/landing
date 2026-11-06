@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { createClient } from "@sanity/client";
+import { missingBrandEnv } from "../lib/leadConfig";
 import { privateDocId } from "../lib/sanityIds";
 import { z } from "zod";
 
@@ -224,6 +225,12 @@ async function forwardWebhook(payload: LeadPayload): Promise<void> {
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  const missing = missingBrandEnv(process.env);
+  if (missing.length) {
+    console.error(`[ingest] configuração incompleta (sem fallback 4unik): ${missing.join(", ")}`);
+    return res.status(500).json({ ok: false, error: "misconfigured" });
+  }
+
   setCors(req, res);
 
   if (req.method === "OPTIONS") {

@@ -7,7 +7,8 @@
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { createClient } from "@sanity/client";
-import { rewriteDoc } from "./lib/yoobeRewrite";
+import { getFallbackBlogPosts } from "../src/lib/blogFallback";
+import { rewriteBrand, rewriteDoc } from "./lib/yoobeRewrite";
 
 export type BlogDoc = {
   _id: string;
@@ -33,6 +34,26 @@ export function selectEnglishPosts(docs: BlogDoc[], exclude: Set<string> = MISMA
     if (!prev || (d.body?.length ?? 0) > (prev.body?.length ?? 0)) byTitle.set(key, d);
   }
   return [...byTitle.values()];
+}
+
+const slugify = (t: string) => {
+  const s = t
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+  return s.length <= 80 ? s : s.slice(0, 81).replace(/-[^-]*$/, "");
+};
+
+/** Posts EN que só existem no fallback local (ex.: case Boticário), com slug real derivado do título. */
+export function pickMissingFallbackPosts(fallback: BlogDoc[], migrated: BlogDoc[], productionEnSlugs: string[] = []): BlogDoc[] {
+  const titles = new Set(migrated.map((d) => rewriteBrand(d.title).trim().toLowerCase()));
+  const covered = (n: string) => productionEnSlugs.some((s) => s === n || s.endsWith(`-fb${n}`));
+  return fallback
+    .filter((d) => !titles.has(rewriteBrand(d.title).trim().toLowerCase()))
+    .filter((d) => !(/^\d+$/.test(d.slug.current) && covered(d.slug.current)))
+    .map((d) => ({ ...d, slug: { _type: "slug" as const, current: /^\d+$/.test(d.slug.current) ? slugify(rewriteBrand(d.title)) : d.slug.current } }));
 }
 
 export function buildYoobeBlogDocs(existing: BlogDoc[], translated: BlogDoc[]): BlogDoc[] {
@@ -71,7 +92,31 @@ async function main() {
     .filter((f) => f.endsWith(".json"))
     .sort()
     .map((f) => JSON.parse(readFileSync(join(translatedDir, f), "utf8")) as BlogDoc);
-  const docs = buildYoobeBlogDocs(existing, translated);
+  const fallbackEn = getFallbackBlogPosts("en").map(
+    (f) =>
+      ({
+        _id: `fallback-en-${f.slug}`,
+        _type: "blogPost",
+        locale: "en",
+        title: f.title,
+        slug: { _type: "slug", current: f.slug },
+        excerpt: f.excerpt,
+        category: f.category,
+        publishedAt: f.publishedAt,
+        readTimeMinutes: f.readTimeMinutes,
+        author: f.author,
+        tags: f.tags,
+        relatedKeywords: f.relatedKeywords,
+        seo: f.seo,
+        body: f.body ?? [],
+        _coverUrl: f.coverImage?.asset?.url,
+        _coverAlt: f.coverImage?.alt,
+      }) as unknown as BlogDoc,
+  );
+  const base = buildYoobeBlogDocs(existing, translated);
+  const productionEnSlugs = all.filter((d) => d._type === "blogPost" && d.locale === "en").map((d) => d.slug.current);
+  const extra = buildYoobeBlogDocs([], pickMissingFallbackPosts(fallbackEn, base, productionEnSlugs));
+  const docs = [...base, ...extra];
 
   const slugs = docs.map((d) => d.slug.current);
   const dupes = slugs.filter((s, i) => slugs.indexOf(s) !== i);
@@ -91,6 +136,16 @@ async function main() {
     token: process.env.SANITY_API_WRITE_TOKEN,
     useCdn: false,
   });
+  for (const d of docs) {
+    const rec = d as BlogDoc & { _coverUrl?: string; _coverAlt?: string };
+    if (rec._coverUrl) {
+      const res = await fetch(rec._coverUrl);
+      const asset = await client.assets.upload("image", Buffer.from(await res.arrayBuffer()), { filename: `${d.slug.current}.jpg` });
+      (d as Record<string, unknown>).coverImage = { _type: "image", alt: rec._coverAlt, asset: { _type: "reference", _ref: asset._id } };
+    }
+    delete (d as Record<string, unknown>)._coverUrl;
+    delete (d as Record<string, unknown>)._coverAlt;
+  }
   const existingIds = await client.fetch<string[]>('*[_type=="blogPost"]._id');
   const tx = client.transaction();
   for (const id of existingIds) tx.delete(id);

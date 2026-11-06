@@ -5,11 +5,11 @@
   "/en/plataforma/campanhas-gamificacao/": "https://www.yoobe.co/platform/campaigns/",
   "/en/plataforma/controle-carteiras/": "https://www.yoobe.co/platform/wallets/",
   "/en/plataforma/loja-resgate/": "https://www.yoobe.co/platform/rewards-store/",
-  "/en/plataforma/logistica-integrada/": "https://www.yoobe.co/platform/logistics/",
+  "/en/plataforma/logistica-integrada/": "https://www.yoobe.co/platform/",
   "/en/plataforma/painel-gestor/": "https://www.yoobe.co/platform/manager-dashboard/",
   "/en/api-integracoes/": "https://www.yoobe.co/integrations/",
   "/en/api-integracoes/workvivo/": "https://www.yoobe.co/integrations/workvivo/",
-  "/en/workvivo/": "https://www.yoobe.co/workvivo/",
+  "/en/workvivo/": "https://www.yoobe.co/integrations/workvivo/",
   "/en/inteligencia/": "https://www.yoobe.co/intelligence/",
   "/en/reward-infrastructure/": "https://www.yoobe.co/reward-infrastructure/",
   "/en/casos-de-uso/": "https://www.yoobe.co/use-cases/",
@@ -18,7 +18,7 @@
   "/en/vendas/": "https://www.yoobe.co/solutions/sales/",
   "/en/comunidades/": "https://www.yoobe.co/solutions/communities/",
   "/en/eventos/": "https://www.yoobe.co/solutions/events/",
-  "/en/gamificacao/": "https://www.yoobe.co/gamification/",
+  "/en/gamificacao/": "https://www.yoobe.co/platform/gamification-engine/",
   "/en/gamificacao-para-rh/": "https://www.yoobe.co/gamification-for-hr/",
   "/en/calculadora-roi/": "https://www.yoobe.co/roi-calculator/",
   "/en/pricing/": "https://www.yoobe.co/pricing/",
@@ -40,5 +40,7 @@
   "/en/blog/okrs-and-gamification-linking-company-goals-to-4unik-rewards-fb5/": "https://www.yoobe.co/blog/okrs-and-gamification-linking-company-goals-to-yoobe-rewards-fb5/",
   "/en/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/": "https://www.yoobe.co/blog/people-management-and-performance-gamification-beyond-the-annual-review-fb7/",
   "/en/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/": "https://www.yoobe.co/blog/engagement-roi-metrics-hr-can-take-to-the-leadership-meeting-fb6/",
-  "/en/blog/welcome-kits-first-impression/": "https://www.yoobe.co/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/"
+  "/en/blog/welcome-kits-first-impression/": "https://www.yoobe.co/blog/gamified-welcome-kit-onboarding-people-will-talk-about-fb4/",
+  "/en/blog/5/": "https://www.yoobe.co/blog/okrs-and-gamification-linking-company-goals-to-yoobe-rewards-fb5/",
+  "/en/blog/8/": "https://www.yoobe.co/blog/grupo-boticario-case-data-security-video-training-with-gamification-and-final/"
 }

@@ -10,6 +10,9 @@ test("maps every 4unik EN page route to an absolute yoobe.co URL", () => {
   assert.equal(map["/en/"], "https://www.yoobe.co/");
   assert.equal(map["/en/blog/"], "https://www.yoobe.co/blog/");
   assert.equal(Object.keys(map).length, 25);
+  assert.equal(map["/en/gamificacao/"], "https://www.yoobe.co/platform/gamification-engine/");
+  assert.equal(map["/en/plataforma/logistica-integrada/"], "https://www.yoobe.co/platform/");
+  assert.equal(map["/en/workvivo/"], "https://www.yoobe.co/integrations/workvivo/");
   for (const v of Object.values(map)) assert.ok(v.startsWith("https://www.yoobe.co/"));
 });
 
@@ -26,4 +29,9 @@ test("maps 4unik EN posts by title, so duplicated and mismatched slugs land on t
   assert.equal(map["/en/blog/2/"], "https://www.yoobe.co/blog/yoobe-at-events-fb2/");
   assert.equal(map["/en/blog/rewards-logistics-sla-d1/"], "https://www.yoobe.co/blog/yoobe-at-events-fb2/");
   assert.equal(map["/en/blog/orphan/"], "https://www.yoobe.co/blog/");
+});
+
+test("numeric 4unik slugs fall back to the yoobe post ending in -fbN", () => {
+  const map = buildCanonicalMap([p("5", "Different wording")], [p("okrs-and-gamification-fb5", "OKRs and gamification")]);
+  assert.equal(map["/en/blog/5/"], "https://www.yoobe.co/blog/okrs-and-gamification-fb5/");
 });

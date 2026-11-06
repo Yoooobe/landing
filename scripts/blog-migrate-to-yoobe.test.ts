@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { buildYoobeBlogDocs, selectEnglishPosts, type BlogDoc } from "./blog-migrate-to-yoobe";
+import { buildYoobeBlogDocs, pickMissingFallbackPosts, selectEnglishPosts, type BlogDoc } from "./blog-migrate-to-yoobe";
 
 const post = (over: Partial<BlogDoc>): BlogDoc => ({
   _id: "x",
@@ -47,4 +47,16 @@ test("buildYoobeBlogDocs rewrites brand, slug and legacy links, and keeps transl
   assert.equal(b._id, "blogPost.yoobe.yoobe-vs-lobby");
   assert.equal(b.locale, "en");
   assert.ok(!JSON.stringify(out).match(/4\s*-?\s*unik/i));
+});
+
+test("pickMissingFallbackPosts keeps only EN fallback posts whose title is not migrated yet, with a real slug", () => {
+  const migrated = [post({ title: "Yoobe at events" })];
+  const fallback = [
+    post({ _id: "f2", title: "4unik at events", slug: { _type: "slug", current: "2" } }),
+    post({ _id: "f8", title: "Grupo Boticário Case: data security", slug: { _type: "slug", current: "8" } }),
+    post({ _id: "f5", title: "OKRs reworded title", slug: { _type: "slug", current: "5" } }),
+  ];
+  const out = pickMissingFallbackPosts(fallback, migrated, ["okrs-and-gamification-fb5", "2", "3"]);
+  assert.equal(out.length, 1);
+  assert.equal(out[0].slug.current, "grupo-boticario-case-data-security");
 });

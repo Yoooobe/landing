@@ -11,6 +11,9 @@ import {
 const FALLBACK = "https://plataforma.4unik.com.br/landing/";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (process.env.NEXT_PUBLIC_SANITY_DATASET?.trim() && process.env.NEXT_PUBLIC_SANITY_DATASET.trim() !== "production") {
+    return res.status(404).json({ ok: false, error: "email_tracking_disabled" });
+  }
   if (req.method !== "GET") return res.status(405).end();
   const payload = verifyTrackingToken(tokenFromRequest(req));
   const destination = safeDestination(payload?.u) || FALLBACK;

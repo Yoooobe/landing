@@ -12,7 +12,7 @@ const root = join(__dirname, "..");
 const ogDir = join(root, "public", "og");
 
 /** Brand domain shown on OG badge (not `.com`). */
-const OG_SITE_BADGE = "catalogo.yoobe.co";
+const OG_SITE_BADGE = "yoobe.co";
 
 const VARIANTS = [
   { id: "yoobe-default", subtitle: "Gamification, catalog, API, and fulfillment in one place." },

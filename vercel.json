@@ -5,13 +5,42 @@
   "routes": [
     {
       "src": "/(.*)",
-      "has": [{ "type": "host", "value": "yoobe.co" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "yoobe.co"
+        }
+      ],
       "status": 308,
-      "headers": { "Location": "https://www.yoobe.co/$1" }
+      "headers": {
+        "Location": "https://www.yoobe.co/$1"
+      }
     },
-    { "handle": "filesystem" },
-    { "src": "/studio/(.*)", "dest": "/studio/index.html" },
-    { "src": "/(.*[^/])", "status": 308, "headers": { "Location": "/$1/" } },
-    { "src": "/(.*)", "status": 404, "dest": "/404.html" }
+    {
+      "src": "/gamification/?",
+      "status": 308,
+      "headers": {
+        "Location": "/platform/gamification-engine/"
+      }
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/studio/(.*)",
+      "dest": "/studio/index.html"
+    },
+    {
+      "src": "/(.*[^/])",
+      "status": 308,
+      "headers": {
+        "Location": "/$1/"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/404.html"
+    }
   ]
 }

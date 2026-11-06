@@ -1,3 +1,5 @@
+import { toYoobePath } from "@/lib/routes";
+import { withBasePath } from "@/lib/basePath";
 import { createClient } from "@sanity/client";
 import type { Metadata } from "next";
 import type { Locale } from "@/lib/locale";
@@ -173,7 +175,7 @@ function rewardInfrastructureBlocks(locale: Locale): MarketingPageDoc["content"]
       items: page.audiences.items.map((item) => ({
         title: item.title,
         description: item.desc,
-        href: `${BASE_PATH}${item.href.replace(/^\//, "").replace(/\/$/, "")}`,
+        href: withBasePath(toYoobePath(item.href)),
       })),
     },
     {
@@ -184,9 +186,9 @@ function rewardInfrastructureBlocks(locale: Locale): MarketingPageDoc["content"]
       columns: "2",
       items: page.related.links.map((link) => ({
         title: link.label,
-        description: link.href,
+        description: isEn ? "Learn more" : "Saiba mais",
         icon: "arrow-right",
-        href: `${BASE_PATH}${link.href.replace(/^\//, "").replace(/\/$/, "")}`,
+        href: withBasePath(toYoobePath(link.href)),
       })),
     },
     {

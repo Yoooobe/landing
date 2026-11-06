@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import NotFoundRedirect from "@/components/NotFoundRedirect";
 import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import { withBasePath } from "@/lib/basePath";
 import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
@@ -8,14 +7,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Page not found | Yoobe",
-  description: "A página que procuras não existe ou foi movida.",
+  description: "The page you are looking for does not exist or has moved.",
   robots: { index: false, follow: false },
 };
 
 export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-brand-ink-dark px-6 py-24 text-white">
-      <NotFoundRedirect />
       {/* Brand wordmark */}
       <Link href={withBasePath("/")} className="mb-16 block opacity-90 hover:opacity-100 transition-opacity">
         <img
@@ -30,7 +28,7 @@ export default function NotFound() {
 
       {/* Error code */}
       <p className="mb-2 text-[0.7rem] font-bold uppercase tracking-[0.3em] text-brand-primary/80">
-        Erro 404
+        Error 404
       </p>
       <h1 className="mb-4 font-heading text-7xl font-black tracking-tight text-white sm:text-9xl">
         404

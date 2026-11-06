@@ -2,6 +2,9 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { decodeCursor, encodeCursor, readTrackingEvents } from "../../lib/emailTracking";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (process.env.NEXT_PUBLIC_SANITY_DATASET?.trim() && process.env.NEXT_PUBLIC_SANITY_DATASET.trim() !== "production") {
+    return res.status(404).json({ ok: false, error: "email_tracking_disabled" });
+  }
   if (req.method !== "GET") return res.status(405).end();
   if (!process.env.TRACKING_SYNC_KEY || req.headers["x-sync-key"] !== process.env.TRACKING_SYNC_KEY) {
     return res.status(401).json({ error: "invalid_sync_key" });

@@ -1,14 +1,16 @@
 #!/usr/bin/env node
 /**
- * Varre out/**\/*.html e falha se algum href/src interno não tiver arquivo
- * correspondente no export, ou se ainda apontar para prefixos legados (/en/, /landing/).
+ * Varre o export (out/) e falha se algum link interno não tiver arquivo correspondente:
+ * - href/src começando com "/" em .html (e prefixos legados /en/, /landing/);
+ * - href relativo (sem "/", "#", http, mailto:, tel:, data:, javascript:);
+ * - URLs absolutas do próprio domínio (https://www.yoobe.co/...) em .html, .txt e .xml.
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
-import { dirname, join, relative } from "node:path";
+import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const outDir = process.argv[2] ? join(process.cwd(), process.argv[2]) : join(root, "out");
+const outDir = process.argv[2] ? resolve(process.argv[2]) : join(root, "out");
 
 if (!existsSync(join(outDir, "index.html"))) {
   console.error(`check-internal-links: ${outDir}/index.html não encontrado — rode npm run build`);
@@ -19,7 +21,7 @@ function walk(dir, acc = []) {
   for (const name of readdirSync(dir)) {
     const p = join(dir, name);
     if (statSync(p).isDirectory()) walk(p, acc);
-    else if (name.endsWith(".html")) acc.push(p);
+    else if (/\.(html|txt|xml)$/.test(name) && !name.startsWith("__next.") && name !== "index.txt") acc.push(p);
   }
   return acc;
 }
@@ -31,20 +33,33 @@ function resolves(pathname) {
   return existsSync(target) || existsSync(`${target}.html`) || existsSync(join(target, "index.html"));
 }
 
-const ATTR = /\s(?:href|src)="(\/[^"]*)"/g;
+const ATTR = /\s(?:href|src)="([^"]*)"/g;
+const ABS = /https:\/\/(?:www\.)?yoobe\.co(\/[^\s"'<>)\]\\]*)?/g;
 const problems = new Map();
+const note = (key, file) => {
+  if (!problems.has(key)) problems.set(key, relative(outDir, file));
+};
+
 for (const file of walk(outDir)) {
-  const html = readFileSync(file, "utf8");
-  for (const m of html.matchAll(ATTR)) {
-    const raw = m[1].replace(/&amp;/g, "&");
-    if (raw.startsWith("//")) continue;
-    const pathname = raw.split(/[?#]/)[0];
-    if (pathname.startsWith("/_next/") || pathname.startsWith("/studio")) continue;
-    const legacy = /^\/(en|landing)(\/|$)/.test(pathname);
-    if (legacy || !resolves(pathname)) {
-      const key = `${legacy ? "LEGACY " : ""}${pathname}`;
-      if (!problems.has(key)) problems.set(key, relative(outDir, file));
+  const text = readFileSync(file, "utf8");
+  if (file.endsWith(".html")) {
+    for (const m of text.matchAll(ATTR)) {
+      const raw = m[1].replace(/&amp;/g, "&");
+      if (!raw || raw.startsWith("#") || raw.startsWith("//") || /^(https?:|mailto:|tel:|data:|javascript:|blob:)/i.test(raw)) continue;
+      if (!raw.startsWith("/")) {
+        note(`RELATIVE ${raw}`, file);
+        continue;
+      }
+      const pathname = raw.split(/[?#]/)[0];
+      if (pathname.startsWith("/_next/") || pathname.startsWith("/studio")) continue;
+      const legacy = /^\/(en|landing)(\/|$)/.test(pathname);
+      if (legacy || !resolves(pathname)) note(`${legacy ? "LEGACY " : ""}${pathname}`, file);
     }
+  }
+  for (const m of text.matchAll(ABS)) {
+    const pathname = (m[1] || "/").split(/[?#]/)[0].replace(/[.,;:]+$/, "");
+    if (pathname.startsWith("/_next/") || pathname.startsWith("/studio")) continue;
+    if (/^\/(en|landing)(\/|$)/.test(pathname) || !resolves(pathname)) note(`ABS ${pathname}`, file);
   }
 }
 
