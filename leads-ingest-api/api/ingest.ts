@@ -128,7 +128,7 @@ async function sendInternalNotification(payload: LeadPayload): Promise<string | 
   const result = await postmarkRequest("/email", {
     From: from,
     To: to,
-    Subject: `[4unik landing] ${payload.source} — ${payload.company}`,
+    Subject: `${process.env.LEADS_SUBJECT_PREFIX?.trim() || "[4unik landing]"} ${payload.source} — ${payload.company}`,
     TextBody: formatInternalEmail(payload),
     ReplyTo: payload.email,
     MessageStream: "outbound",
