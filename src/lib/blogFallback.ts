@@ -20,10 +20,10 @@ const PLATAFORMA_HREF = BASE_PATH ? `${BASE_PATH}/plataforma/` : "/plataforma/";
 const MOTOR_HREF = BASE_PATH ? `${BASE_PATH}/plataforma/motor-gamificacao/` : "/plataforma/motor-gamificacao/";
 const CALCULADORA_HREF = BASE_PATH ? `${BASE_PATH}/calculadora-roi/` : "/calculadora-roi/";
 
-const EDUCACAO_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/educacao/` : "/en/educacao/";
-const LOJA_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/plataforma/loja-resgate/` : "/en/plataforma/loja-resgate/";
-const PLATAFORMA_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/plataforma/` : "/en/plataforma/";
-const BLOG_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/blog/` : "/en/blog/";
+const EDUCACAO_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/educacao/` : "/solutions/education/";
+const LOJA_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/plataforma/loja-resgate/` : "/platform/rewards-store/";
+const PLATAFORMA_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/plataforma/` : "/platform/";
+const BLOG_HREF_EN = BASE_PATH ? `${BASE_PATH}/en/blog/` : "/blog/";
 
 const CTA_1_PT = buildBlogCtaBodyLines("1", "pt");
 const CTA_2_PT = buildBlogCtaBodyLines("2", "pt");

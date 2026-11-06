@@ -22,10 +22,10 @@ export default function ApiIntegracoesSubnav() {
     ? pathname.slice(BASE_PATH.length) || "/"
     : pathname;
   const pathNorm = pathAfterBase.replace(/\/$/, "") || "/";
-  const isEn = pathNorm.startsWith("/en/");
+  const isEn = pathNorm.startsWith("/");
   const t = isEn ? copy.en : copy.pt;
 
-  const baseOverview = isEn ? "/en/api-integracoes/" : "/api-integracoes/";
+  const baseOverview = isEn ? "/integrations/" : "/api-integracoes/";
 
   const onOverview =
     pathNorm === "/api-integracoes" ||

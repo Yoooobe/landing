@@ -59,32 +59,32 @@ export const enRewardInfrastructurePage = {
       {
         title: "HR and People teams",
         desc: "Recognition programs, welcome kits, and culture campaigns with automated delivery.",
-        href: "/en/plataforma/",
+        href: "/platform/",
       },
       {
         title: "SaaS platforms",
         desc: "Physical rewards embedded via API inside your engagement or incentive product.",
-        href: "/en/para-plataformas/",
+        href: "/for-platforms/",
       },
       {
         title: "Education and sales",
         desc: "Learning paths and commercial goals tied to prizes without operational friction.",
-        href: "/en/educacao/",
+        href: "/solutions/education/",
       },
       {
         title: "Events and communities",
         desc: "Giveaways, swag, and VIP stores with inventory and shipping managed by the platform.",
-        href: "/en/eventos/",
+        href: "/solutions/events/",
       },
     ],
   },
   related: {
     title: "Go deeper in the 4Unik ecosystem",
     links: [
-      { label: "API & integrations", href: "/en/api-integracoes/" },
-      { label: "Platform overview", href: "/en/plataforma/" },
-      { label: "Use cases", href: "/en/casos-de-uso/" },
-      { label: "For platforms & SaaS", href: "/en/para-plataformas/" },
+      { label: "API & integrations", href: "/integrations/" },
+      { label: "Platform overview", href: "/platform/" },
+      { label: "Use cases", href: "/use-cases/" },
+      { label: "For platforms & SaaS", href: "/for-platforms/" },
     ],
   },
   cta: {

@@ -13,7 +13,7 @@ type Props = {
  */
 export default function MarketingPageEmptyState({ locale }: Props) {
   const isEn = locale === "en";
-  const homeHref = withBasePath(locale === "en" ? "/en/" : "/");
+  const homeHref = withBasePath(locale === "en" ? "/" : "/");
 
   return (
     <div className="flex min-h-[70vh] flex-col items-center justify-center bg-brand-navy-dark px-4 py-24 text-center text-white">

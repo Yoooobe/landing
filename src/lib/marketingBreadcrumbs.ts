@@ -57,7 +57,7 @@ export function buildMarketingPageBreadcrumbJsonLd(
   pagePath: string,
 ) {
   const L = labels(locale);
-  const homePath = locale === "en" ? "/en/" : "/";
+  const homePath = locale === "en" ? "/" : "/";
 
   const slugToName: Record<string, string | undefined> = {
     plataforma: L.plataforma,
@@ -105,8 +105,8 @@ const API_INTEGRACOES_LABELS: Record<Locale, string> = {
 /** Breadcrumb JSON-LD for `/plataforma/motor-gamificacao/` (slug CMS: `gamificacao`). */
 export function buildGamificacaoMotorBreadcrumbJsonLd(locale: Locale, pagePath: string) {
   const L = labels(locale);
-  const homePath = locale === "en" ? "/en/" : "/";
-  const plataformaPath = locale === "en" ? "/en/plataforma/" : "/plataforma/";
+  const homePath = locale === "en" ? "/" : "/";
+  const plataformaPath = locale === "en" ? "/platform/" : "/plataforma/";
 
   return buildBreadcrumbListJsonLd([
     { name: L.home, path: homePath },
@@ -118,8 +118,8 @@ export function buildGamificacaoMotorBreadcrumbJsonLd(locale: Locale, pagePath: 
 /** Breadcrumb JSON-LD for `/plataforma/campanhas-gamificacao/`. */
 export function buildGamificacaoCampanhasBreadcrumbJsonLd(locale: Locale, pagePath: string) {
   const L = labels(locale);
-  const homePath = locale === "en" ? "/en/" : "/";
-  const plataformaPath = locale === "en" ? "/en/plataforma/" : "/plataforma/";
+  const homePath = locale === "en" ? "/" : "/";
+  const plataformaPath = locale === "en" ? "/platform/" : "/plataforma/";
 
   return buildBreadcrumbListJsonLd([
     { name: L.home, path: homePath },
@@ -131,8 +131,8 @@ export function buildGamificacaoCampanhasBreadcrumbJsonLd(locale: Locale, pagePa
 /** Breadcrumb JSON-LD for `/api-integracoes/workvivo/`. */
 export function buildWorkvivoHubBreadcrumbJsonLd(locale: Locale, pagePath: string) {
   const L = labels(locale);
-  const homePath = locale === "en" ? "/en/" : "/";
-  const apiPath = locale === "en" ? "/en/api-integracoes/" : "/api-integracoes/";
+  const homePath = locale === "en" ? "/" : "/";
+  const apiPath = locale === "en" ? "/integrations/" : "/api-integracoes/";
 
   return buildBreadcrumbListJsonLd([
     { name: L.home, path: homePath },
@@ -148,8 +148,8 @@ export function buildPlatformFeatureBreadcrumbJsonLd(
   pagePath: string,
 ) {
   const L = labels(locale);
-  const homePath = locale === "en" ? "/en/" : "/";
-  const plataformaPath = locale === "en" ? "/en/plataforma/" : "/plataforma/";
+  const homePath = locale === "en" ? "/" : "/";
+  const plataformaPath = locale === "en" ? "/platform/" : "/plataforma/";
 
   return buildBreadcrumbListJsonLd([
     { name: L.home, path: homePath },

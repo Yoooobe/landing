@@ -40,7 +40,7 @@ async function main() {
   const platformLines = platformSubpaths
     .flatMap((slug) => [
       `- ${slug} (PT): ${url(`/plataforma/${slug}`)}`,
-      `- ${slug} (EN): ${url(`/en/plataforma/${slug}`)}`,
+      `- ${slug} (EN): ${url(`/platform/${slug}`)}`,
     ])
     .join("\n");
 
@@ -55,7 +55,7 @@ async function main() {
       ? blogSlugs
           .flatMap((slug) => [
             `- ${slug} (PT): ${url(`/blog/${slug}`)}`,
-            `- ${slug} (EN): ${url(`/en/blog/${slug}`)}`,
+            `- ${slug} (EN): ${url(`/blog/${slug}`)}`,
           ])
           .join("\n")
       : "- (nenhum slug disponível no build — verifique Sanity/fallback)";
@@ -64,8 +64,8 @@ async function main() {
   const growthIndexable = isGrowthPageIndexable();
 
   const growthLines = growthIndexable
-    ? `- Pricing (PT/EN): ${url("/pricing")} | ${url("/en/pricing")}
-- Security (PT/EN): ${url("/seguranca")} | ${url("/en/seguranca")}`
+    ? `- Pricing (PT/EN): ${url("/pricing")} | ${url("/pricing/")}
+- Security (PT/EN): ${url("/seguranca")} | ${url("/security/")}`
     : "";
 
   const icpSummaries = `## Soluções por perfil (resumo citável)
@@ -98,21 +98,21 @@ A **4Unik** (marca comercial associada ao ecossistema Yoobe) posiciona-se como *
 ## URLs canónicas (derivadas do build)
 
 - Site (PT): ${url("/")}
-- Site (EN): ${url("/en")}
-- API e integrações: ${url("/api-integracoes")} | ${url("/en/api-integracoes")}
-- Hub Workvivo: ${url("/api-integracoes/workvivo")} | ${url("/en/api-integracoes/workvivo")}
-- Plataforma (overview): ${url("/plataforma")} | ${url("/en/plataforma")}
-- Inteligência: ${url("/inteligencia")} | ${url("/en/inteligencia")}
-- Infraestrutura de recompensas / Reward infrastructure (pilar AEO): ${url("/infraestrutura-de-recompensas")} | ${url("/en/reward-infrastructure")}
-- Casos de uso: ${url("/casos-de-uso")} | ${url("/en/casos-de-uso")}
-- Para plataformas e SaaS: ${url("/para-plataformas")} | ${url("/en/para-plataformas")}
-- Para educação e e-learning: ${url("/educacao")} | ${url("/en/educacao")}
-- Para times de vendas: ${url("/vendas")} | ${url("/en/vendas")}
-- Para criadores e comunidades: ${url("/comunidades")} | ${url("/en/comunidades")}
-- Para eventos: ${url("/eventos")} | ${url("/en/eventos")}
-- Gamificação para RH: ${url("/gamificacao-para-rh")} | ${url("/en/gamificacao-para-rh")}
-- Calculadora de ROI: ${url("/calculadora-roi")} | ${url("/en/calculadora-roi")}
-- Blog: ${url("/blog")} | ${url("/en/blog")}
+- Site (EN): ${url("/")}
+- API e integrações: ${url("/api-integracoes")} | ${url("/integrations/")}
+- Hub Workvivo: ${url("/api-integracoes/workvivo")} | ${url("/integrations/workvivo/")}
+- Plataforma (overview): ${url("/plataforma")} | ${url("/platform/")}
+- Inteligência: ${url("/inteligencia")} | ${url("/intelligence/")}
+- Infraestrutura de recompensas / Reward infrastructure (pilar AEO): ${url("/infraestrutura-de-recompensas")} | ${url("/reward-infrastructure/")}
+- Casos de uso: ${url("/casos-de-uso")} | ${url("/use-cases/")}
+- Para plataformas e SaaS: ${url("/para-plataformas")} | ${url("/for-platforms/")}
+- Para educação e e-learning: ${url("/educacao")} | ${url("/solutions/education/")}
+- Para times de vendas: ${url("/vendas")} | ${url("/solutions/sales/")}
+- Para criadores e comunidades: ${url("/comunidades")} | ${url("/solutions/communities/")}
+- Para eventos: ${url("/eventos")} | ${url("/solutions/events/")}
+- Gamificação para RH: ${url("/gamificacao-para-rh")} | ${url("/gamification-for-hr/")}
+- Calculadora de ROI: ${url("/calculadora-roi")} | ${url("/roi-calculator/")}
+- Blog: ${url("/blog")} | ${url("/blog/")}
 - robots.txt: ${base}/robots.txt
 - sitemap: ${base}/sitemap.xml
 ${growthLines ? `\n${growthLines}` : ""}

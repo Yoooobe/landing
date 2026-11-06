@@ -370,19 +370,19 @@ function homeBlocks(
           title: stats.platformTabs.gestao.title,
           description: stats.platformTabs.gestao.body,
           icon: "bar-chart-3",
-          href: `${BASE_PATH}${locale === "en" ? "/en/plataforma" : "/plataforma"}`,
+          href: `${BASE_PATH}${locale === "en" ? "/platform/" : "/plataforma"}`,
         },
         {
           title: stats.platformTabs.loja.title,
           description: stats.platformTabs.loja.body,
           icon: "store",
-          href: `${BASE_PATH}${locale === "en" ? "/en/plataforma/loja-resgate" : "/plataforma/loja-resgate"}`,
+          href: `${BASE_PATH}${locale === "en" ? "/platform/rewards-store/" : "/plataforma/loja-resgate"}`,
         },
         {
           title: stats.platformTabs.campanhas.title,
           description: stats.platformTabs.campanhas.body,
           icon: "target",
-          href: `${BASE_PATH}${locale === "en" ? "/en/plataforma/motor-gamificacao" : "/plataforma/motor-gamificacao"}`,
+          href: `${BASE_PATH}${locale === "en" ? "/platform/gamification-engine/" : "/plataforma/motor-gamificacao"}`,
         },
       ],
     },
@@ -435,7 +435,7 @@ function homeBlocks(
       body: portableTextParagraph("ready-to-use-body", landingMore.duality.sideA.body),
       bullets: [...landingMore.duality.sideA.bullets],
       primaryLabel: isEn ? "See the platform" : "Ver a plataforma",
-      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/plataforma" : "/plataforma"}`,
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/platform/" : "/plataforma"}`,
       imageSide: "right",
     },
     {
@@ -446,7 +446,7 @@ function homeBlocks(
       body: portableTextParagraph("invisible-integration-body", landingMore.duality.sideB.body),
       bullets: [...landingMore.duality.sideB.bullets],
       primaryLabel: isEn ? "Explore integrations" : "Explorar integracoes",
-      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/api-integracoes" : "/api-integracoes"}`,
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/integrations/" : "/api-integracoes"}`,
       imageSide: "left",
     },
     {
@@ -507,7 +507,7 @@ function homeBlocks(
       body: portableTextParagraph("api-section-body", rest.apiSection.sub),
       bullets: [...rest.apiSection.bullets.slice(0, 4)],
       primaryLabel: rest.apiSection.ctaDocs,
-      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/api-integracoes" : "/api-integracoes"}`,
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/integrations/" : "/api-integracoes"}`,
       secondaryLabel: rest.apiSection.ctaApi,
       secondaryHref: DEFAULT_CALENDLY_URL,
       imageSide: "right",
@@ -523,7 +523,7 @@ function homeBlocks(
       ),
       bullets: [...landingMore.dedicatedIntegrations.workvivo.bullets],
       primaryLabel: isEn ? "See Workvivo integration" : "Ver integracao Workvivo",
-      primaryHref: `${BASE_PATH}${locale === "en" ? "/en/api-integracoes/workvivo" : "/api-integracoes/workvivo"}`,
+      primaryHref: `${BASE_PATH}${locale === "en" ? "/integrations/workvivo/" : "/api-integracoes/workvivo"}`,
       image: showcase?.dedicatedIntegrations?.workvivo?.previewImage,
       imageSide: "right",
     },
@@ -993,7 +993,7 @@ type MarketingPageSupportData = {
 
 type MetadataOptions = {
   canonicalPath: string;
-  languages: { "pt-BR": string; en: string };
+  languages: { en: string };
   openGraphPath: string;
   ogLocale: "pt_BR" | "en_US";
   ogRouteKey?: string;

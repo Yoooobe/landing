@@ -9,38 +9,37 @@ import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const ptApp = join(root, "src/app/(pt)");
-const enApp = join(root, "src/app/(en)/en");
+const enApp = join(root, "src/app/(site)");
 
 /** Mirrors routePairs in src/app/sitemap.ts (paths without basePath). */
 const SITEMAP_ROUTE_PAIRS = [
-  ["/", "/en/"],
-  ["/api-integracoes/", "/en/api-integracoes/"],
-  ["/api-integracoes/workvivo/", "/en/api-integracoes/workvivo/"],
-  ["/plataforma/", "/en/plataforma/"],
-  ["/inteligencia/", "/en/inteligencia/"],
-  ["/infraestrutura-de-recompensas/", "/en/reward-infrastructure/"],
-  ["/casos-de-uso/", "/en/casos-de-uso/"],
-  ["/para-plataformas/", "/en/para-plataformas/"],
-  ["/educacao/", "/en/educacao/"],
-  ["/vendas/", "/en/vendas/"],
-  ["/comunidades/", "/en/comunidades/"],
-  ["/eventos/", "/en/eventos/"],
-  ["/gamificacao-para-rh/", "/en/gamificacao-para-rh/"],
-  ["/calculadora-roi/", "/en/calculadora-roi/"],
+  ["/", "/"],
+  ["/api-integracoes/", "/integrations/"],
+  ["/api-integracoes/workvivo/", "/integrations/workvivo/"],
+  ["/plataforma/", "/platform/"],
+  ["/inteligencia/", "/intelligence/"],
+  ["/infraestrutura-de-recompensas/", "/reward-infrastructure/"],
+  ["/casos-de-uso/", "/use-cases/"],
+  ["/para-plataformas/", "/for-platforms/"],
+  ["/educacao/", "/solutions/education/"],
+  ["/vendas/", "/solutions/sales/"],
+  ["/comunidades/", "/solutions/communities/"],
+  ["/eventos/", "/solutions/events/"],
+  ["/gamificacao-para-rh/", "/gamification-for-hr/"],
+  ["/calculadora-roi/", "/roi-calculator/"],
 
-  ["/blog/", "/en/blog/"],
-  ["/plataforma/motor-gamificacao/", "/en/plataforma/motor-gamificacao/"],
-  ["/plataforma/campanhas-gamificacao/", "/en/plataforma/campanhas-gamificacao/"],
-  ["/plataforma/controle-carteiras/", "/en/plataforma/controle-carteiras/"],
-  ["/plataforma/painel-gestor/", "/en/plataforma/painel-gestor/"],
-  ["/plataforma/loja-resgate/", "/en/plataforma/loja-resgate/"],
+  ["/blog/", "/blog/"],
+  ["/plataforma/motor-gamificacao/", "/platform/gamification-engine/"],
+  ["/plataforma/campanhas-gamificacao/", "/platform/campaigns/"],
+  ["/plataforma/controle-carteiras/", "/platform/wallets/"],
+  ["/plataforma/painel-gestor/", "/platform/manager-dashboard/"],
+  ["/plataforma/loja-resgate/", "/platform/rewards-store/"],
 ];
 
 /** Espelha `GROWTH_INDEX_ROUTE_PAIRS` em `src/lib/growthPagePublish.ts` — ficheiros devem existir sempre. */
 const GROWTH_ROUTE_PAIRS = [
-  ["/pricing/", "/en/pricing/"],
-  ["/seguranca/", "/en/seguranca/"],
+  ["/pricing/", "/pricing/"],
+  ["/seguranca/", "/security/"],
 ];
 
 const GAMIFICATION_PATHS = [
@@ -222,12 +221,10 @@ function main() {
   let errors = 0;
 
   for (const [pt, en] of SITEMAP_ROUTE_PAIRS) {
-    errors += assertPageExists(ptApp, pt, "PT");
     errors += assertPageExists(enApp, en.replace(/^\/en/, ""), "EN");
   }
 
   for (const [pt, en] of GROWTH_ROUTE_PAIRS) {
-    errors += assertPageExists(ptApp, pt, "PT growth");
     errors += assertPageExists(enApp, en.replace(/^\/en/, ""), "EN growth");
   }
 

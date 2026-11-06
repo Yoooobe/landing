@@ -7,7 +7,7 @@ export const BLOG_DEMO_HREF = DEFAULT_CALENDLY_URL;
 
 export type BlogFallbackSlug = "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8";
 
-/** Caminhos internos (sem `basePath`, sem `/en`) para `blogLandingHref`. */
+/** Caminhos internos (sem `basePath`, sem `/`) para `blogLandingHref`. */
 export const BLOG_CTA_PATHS_BY_SLUG: Record<
   BlogFallbackSlug,
   { platform: string; feature: string; img: keyof typeof BLOG_FALLBACK_IMG }
@@ -23,11 +23,11 @@ export const BLOG_CTA_PATHS_BY_SLUG: Record<
 };
 
 /**
- * URL pública para uma rota da landing (respeita `basePath` e locale EN com prefixo `/en`).
+ * URL pública para uma rota da landing (respeita `basePath` e locale EN com prefixo `/`).
  */
 export function blogLandingHref(locale: "pt" | "en", internalPath: string): string {
   const p = internalPath.startsWith("/") ? internalPath : `/${internalPath}`;
-  const localized = locale === "en" ? `/en${p}` : p;
+  const localized = locale === "en" ? `/${p}` : p;
   return withBasePath(localized);
 }
 

@@ -116,16 +116,6 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
             <span className="inline-flex w-fit items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-orange">
               {c.heroBadge}
             </span>
-            <div className="flex items-center gap-2 text-sm text-white/50">
-              <span className="hidden sm:inline">{c.langLabel}</span>
-              <Link
-                href={c.otherLocalePath}
-                className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-white/90 hover:bg-white/10 transition-colors"
-              >
-                {c.otherLocaleLabel}
-                <ArrowRight className="w-4 h-4 opacity-70" />
-              </Link>
-            </div>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-heading text-balance leading-tight mb-6">

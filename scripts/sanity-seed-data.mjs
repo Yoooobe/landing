@@ -1350,7 +1350,7 @@ const blogPosts = [
 
 /** Espelha `homeBlocks()` em src/sanity/lib/marketingPages.ts — composição nativa HomePage (8 secções no frontend). */
 function homeMarketingPageBlocks(isEn) {
-  const base = isEn ? "/en" : "";
+  const base = isEn ? "/" : "";
   const trustTitle = isEn ? "Companies that trust 4Unik" : "Empresas que confiam na 4Unik";
   const heroHeadline = isEn
     ? "4unik scales recognition without manual ops"

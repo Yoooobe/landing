@@ -258,7 +258,7 @@ export function homePayloadEn() {
     hero: {
       ...enHome.hero,
       ctaDemoHref: "https://calendly.com/4unik/30min",
-      ctaExploreHref: "/en/#platform",
+      ctaExploreHref: "/#platform",
       floatAdhesionValue: "92%",
       floatRhValue: "0%",
       floatEnpsValue: "+42 pts",

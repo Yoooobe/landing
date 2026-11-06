@@ -99,7 +99,7 @@ export type WorkvivoCopy = {
 export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
   pt: {
     langLabel: "Idioma",
-    otherLocalePath: "/en/api-integracoes/workvivo/",
+    otherLocalePath: "/integrations/workvivo/",
     otherLocaleLabel: "English",
     heroBadge: "API e integrações · Add-on Workvivo",
     heroTitle: "Recompensas reais para cada momento na Workvivo",

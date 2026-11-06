@@ -70,7 +70,7 @@ function normalizeFooterHref(href: string, locale: "pt" | "en"): string {
     return "/plataforma/painel-gestor/";
   }
 
-  if (locale === "en" && normalized.startsWith("/en/plataforma")) {
+  if (locale === "en" && normalized.startsWith("/platform/")) {
     return normalized.replace(/^\/en/, "");
   }
 

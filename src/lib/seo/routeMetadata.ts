@@ -100,31 +100,27 @@ function withSharedMetadata(
   };
 }
 
-function buildPtEnAlternates(ptPath: string, enPath: string): LanguageAlternates {
-  return {
-    "pt-BR": ptPath,
-    en: enPath,
-    "x-default": ptPath,
-  };
+function buildEnAlternates(path: string): LanguageAlternates {
+  return { en: path, "x-default": path };
 }
 
 /** Layout raiz (PT) e home `/` — `openGraph.url` absoluto. */
 export function buildRootLayoutMetadata(seo: PageSeoCopy): Metadata {
   return withSharedMetadata(seo, {
     canonicalPath: "/",
-    languages: buildPtEnAlternates("/", "/en/"),
+    languages: buildEnAlternates("/"),
     openGraphPath: "/",
     ogLocale: "pt_BR",
     ogRouteKey: "home",
   });
 }
 
-/** Segmento `/en/` — metadata em inglês para home e filhos sem `metadata` próprio. */
+/** Segmento `/` — metadata em inglês para home e filhos sem `metadata` próprio. */
 export function buildEnSegmentLayoutMetadata(seo: PageSeoCopy): Metadata {
   return withSharedMetadata(seo, {
-    canonicalPath: "/en/",
-    languages: buildPtEnAlternates("/", "/en/"),
-    openGraphPath: "/en/",
+    canonicalPath: "/",
+    languages: buildEnAlternates("/"),
+    openGraphPath: "/",
     ogLocale: "en_US",
     ogRouteKey: "home",
   });
@@ -136,7 +132,7 @@ export function buildRoutePageMetadata(
 ): Metadata {
   const languages = {
     ...options.languages,
-    "x-default": options.languages["x-default"] ?? options.languages["pt-BR"] ?? options.canonicalPath,
+    "x-default": options.languages["x-default"] ?? options.canonicalPath,
   };
 
   return withSharedMetadata(seo, {

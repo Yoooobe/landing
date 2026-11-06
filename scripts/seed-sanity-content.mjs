@@ -1169,25 +1169,25 @@ function buildHomeMarketingPageContent(locale) {
           title: stats.bento.card1.title,
           description: stats.bento.card1.body,
           icon: "bar-chart-3",
-          href: isEn ? "/en/plataforma" : "/plataforma",
+          href: isEn ? "/platform/" : "/plataforma",
         },
         {
           title: stats.bento.card2.title,
           description: stats.bento.card2.body,
           icon: "target",
-          href: isEn ? "/en/plataforma/motor-gamificacao" : "/plataforma/motor-gamificacao",
+          href: isEn ? "/platform/gamification-engine/" : "/plataforma/motor-gamificacao",
         },
         {
           title: stats.bento.card3.title,
           description: stats.bento.card3.body,
           icon: "store",
-          href: isEn ? "/en/plataforma/loja-resgate" : "/plataforma/loja-resgate",
+          href: isEn ? "/platform/rewards-store/" : "/plataforma/loja-resgate",
         },
         {
           title: stats.bento.card4.title,
           description: stats.bento.card4.body,
           icon: "link-2",
-          href: isEn ? "/en/api-integracoes" : "/api-integracoes",
+          href: isEn ? "/integrations/" : "/api-integracoes",
         },
       ],
     }),
@@ -1197,7 +1197,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [stats.platformTabs.gestao.body],
       bullets: stats.platformTabs.gestao.bullets,
       primaryLabel: stats.platformTabs.gestao.cta,
-      primaryHref: isEn ? "/en/plataforma" : "/plataforma",
+      primaryHref: isEn ? "/platform/" : "/plataforma",
       imagePath: "public/cms-seed/home-platform-management.svg",
       imageAlt: isEn
         ? "Manager dashboard view on 4Unik"
@@ -1210,7 +1210,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [stats.platformTabs.loja.body],
       bullets: stats.platformTabs.loja.bullets,
       primaryLabel: stats.platformTabs.loja.cta,
-      primaryHref: isEn ? "/en/plataforma/loja-resgate" : "/plataforma/loja-resgate",
+      primaryHref: isEn ? "/platform/rewards-store/" : "/plataforma/loja-resgate",
       imagePath: "public/cms-seed/home-platform-store.svg",
       imageAlt: isEn
         ? "Member store experience on 4Unik"
@@ -1223,7 +1223,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [stats.platformTabs.campanhas.body],
       bullets: stats.platformTabs.campanhas.bullets,
       primaryLabel: stats.platformTabs.campanhas.cta,
-      primaryHref: isEn ? "/en/plataforma/motor-gamificacao" : "/plataforma/motor-gamificacao",
+      primaryHref: isEn ? "/platform/gamification-engine/" : "/plataforma/motor-gamificacao",
       imagePath: "public/cms-seed/home-platform-campaigns.svg",
       imageAlt: isEn
         ? "Campaign management setup on 4Unik"
@@ -1272,7 +1272,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [landingMore.duality.sideA.body],
       bullets: landingMore.duality.sideA.bullets,
       primaryLabel: isEn ? "See the platform" : "Ver a plataforma",
-      primaryHref: isEn ? "/en/plataforma" : "/plataforma",
+      primaryHref: isEn ? "/platform/" : "/plataforma",
       imageSide: "right",
     }),
     splitContentBlock("invisible-integration", {
@@ -1281,7 +1281,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [landingMore.duality.sideB.body],
       bullets: landingMore.duality.sideB.bullets,
       primaryLabel: isEn ? "Explore integrations" : "Explorar integracoes",
-      primaryHref: isEn ? "/en/api-integracoes" : "/api-integracoes",
+      primaryHref: isEn ? "/integrations/" : "/api-integracoes",
       imageSide: "left",
     }),
     splitContentBlock("enterprise-hapvida", {
@@ -1324,7 +1324,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [landingMore.dedicatedIntegrations.workvivo.body],
       bullets: landingMore.dedicatedIntegrations.workvivo.bullets,
       primaryLabel: isEn ? "See Workvivo integration" : "Ver integracao Workvivo",
-      primaryHref: isEn ? "/en/api-integracoes/workvivo" : "/api-integracoes/workvivo",
+      primaryHref: isEn ? "/integrations/workvivo/" : "/api-integracoes/workvivo",
       imagePath: "public/cms-seed/home-integrations-workvivo.svg",
       imageAlt: isEn
         ? "Workvivo integration preview"
@@ -1369,7 +1369,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [rest.apiSection.sub],
       bullets: rest.apiSection.bullets,
       primaryLabel: rest.apiSection.ctaDocs,
-      primaryHref: isEn ? "/en/api-integracoes" : "/api-integracoes",
+      primaryHref: isEn ? "/integrations/" : "/api-integracoes",
       secondaryLabel: rest.apiSection.ctaApi,
       secondaryHref: "https://calendly.com/4unik/30min",
       imageSide: "right",

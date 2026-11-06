@@ -14,7 +14,7 @@ export const enParaPlataformasPage = {
     sub:
       "Your platform shows the catalog and checkout inside your own app. 4Unik handles inventory, shipping, and tracking. You program the behavior; physical delivery is on us.",
     ctaLabel: "See API & integrations",
-    ctaHref: "/en/api-integracoes/",
+    ctaHref: "/integrations/",
   },
   problem: {
     badge: "The pain",
@@ -122,6 +122,6 @@ export const enParaPlataformasPage = {
     primaryLabel: "Talk to engineering",
     primaryHref: "https://calendly.com/4unik/30min",
     secondaryLabel: "See API & integrations",
-    secondaryHref: "/en/api-integracoes/",
+    secondaryHref: "/integrations/",
   },
 } as const;

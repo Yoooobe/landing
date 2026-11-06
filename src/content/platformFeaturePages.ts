@@ -732,9 +732,9 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     primaryCtaLabel: "Book a demo",
     primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "View full platform",
-    secondaryCtaHref: "/plataforma",
+    secondaryCtaHref: "/platform/",
     backLabel: "Back to platform",
-    backHref: "/plataforma",
+    backHref: "/platform/",
   },
   wallets: {
     seo: {
@@ -849,9 +849,9 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     primaryCtaLabel: "Talk to the team",
     primaryCtaHref: "https://wa.me/551126844724",
     secondaryCtaLabel: "View the platform",
-    secondaryCtaHref: "/plataforma",
+    secondaryCtaHref: "/platform/",
     backLabel: "Back to platform",
-    backHref: "/plataforma",
+    backHref: "/platform/",
   },
   manager: {
     seo: {
@@ -999,9 +999,9 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     primaryCtaLabel: "Book a demo",
     primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "Explore the platform",
-    secondaryCtaHref: "/plataforma",
+    secondaryCtaHref: "/platform/",
     backLabel: "Back to platform",
-    backHref: "/plataforma",
+    backHref: "/platform/",
   },
   loja: {
     seo: {
@@ -1140,8 +1140,8 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     primaryCtaLabel: "Book a demo",
     primaryCtaHref: "https://calendly.com/4unik/30min",
     secondaryCtaLabel: "Explore the platform",
-    secondaryCtaHref: "/en/plataforma/",
+    secondaryCtaHref: "/platform/",
     backLabel: "Back to platform",
-    backHref: "/en/plataforma/",
+    backHref: "/platform/",
   },
 };

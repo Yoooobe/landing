@@ -19,7 +19,6 @@ import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
 import { normalizeWhatsappHref } from "@/lib/whatsapp";
 import { resolveRewardsCatalogProductUrl } from "@/lib/rewardsCatalog";
 import { isExternalShellHref, resolveShellHref } from "@/lib/siteShell";
-import { toggleLocalePath } from "@/lib/locale";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -599,13 +598,6 @@ export default function Header() {
 
           {/* CTAs */}
           <div className="flex items-center gap-3 z-10 shrink-0 md:gap-4">
-            <Link
-              href={toggleLocalePath(pathname)}
-              className="hidden text-[0.88rem] font-medium text-white/70 transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange/60 md:block"
-              hrefLang={locale === "pt" ? "en" : "pt-BR"}
-            >
-              {locale === "pt" ? m.nav.langToEn : m.nav.langToPt}
-            </Link>
             <TrackedOutboundLink
               href={demoUrl}
               source="header-demo"
@@ -736,16 +728,6 @@ export default function Header() {
                   {m.conversionDock.linkForm}
                 </Link>
               )}
-            </div>
-            <div className="mt-8 flex flex-col gap-4">
-              <Link
-                href={toggleLocalePath(pathname)}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full py-4 rounded-xl border border-white/20 text-white font-medium text-center hover:bg-white/5 transition-colors"
-                hrefLang={locale === "pt" ? "en" : "pt-BR"}
-              >
-                {locale === "pt" ? m.nav.langToEn : m.nav.langToPt}
-              </Link>
             </div>
           </nav>
         </div>

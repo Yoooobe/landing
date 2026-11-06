@@ -4,13 +4,13 @@ import type { Metadata } from "next";
 export const GROWTH_INDEX_ROUTE_PAIRS = [
   {
     pt: "/pricing/",
-    en: "/en/pricing/",
+    en: "/pricing/",
     priority: 0.75,
     changeFrequency: "monthly" as const,
   },
   {
     pt: "/seguranca/",
-    en: "/en/seguranca/",
+    en: "/security/",
     priority: 0.7,
     changeFrequency: "monthly" as const,
   },

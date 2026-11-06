@@ -9,7 +9,7 @@ export const REWARD_INFRASTRUCTURE_SLUG: Record<Locale, string> = {
 /** Public route path (with trailing slash, without basePath). */
 export const REWARD_INFRASTRUCTURE_PATH: Record<Locale, string> = {
   pt: "/infraestrutura-de-recompensas/",
-  en: "/en/reward-infrastructure/",
+  en: "/reward-infrastructure/",
 };
 
 export function rewardInfrastructureSlug(locale: Locale): string {

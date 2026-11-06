@@ -1,13 +1,14 @@
 {
-  "buildCommand": "npm run build && node scripts/stage-vercel-out.mjs",
-  "outputDirectory": ".vercel-out",
+  "buildCommand": "npm run build",
+  "outputDirectory": "out",
   "framework": null,
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/",
-      "destination": "/landing/",
-      "permanent": false
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "yoobe.co" }],
+      "destination": "https://www.yoobe.co/:path*",
+      "permanent": true
     }
   ]
 }

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { GROWTH_INDEX_ROUTE_PAIRS, isGrowthPageIndexable } from "@/lib/growthPagePublish";
 import { pageAbsoluteUrl } from "@/lib/site";
-import { getBlogStaticSlugs, hasBlogPostWithSlug } from "@/sanity/lib/blog";
+import { getBlogStaticSlugs } from "@/sanity/lib/blog";
 
 export const dynamic = "force-static";
 
@@ -15,75 +15,75 @@ type RoutePair = {
 /**
  * URLs canónicas indexáveis (pares PT/EN + hreflang).
  *
- * - Não listar `/gamificacao/` nem `/en/gamificacao/`: redireccionam no cliente para
+ * - Não listar `/gamificacao/` nem `/gamification/`: redireccionam no cliente para
  *   `/plataforma/motor-gamificacao/` (conteúdo unificado); a URL de motor é a canónica para SEO.
  * - Rotas stub, workvivo legacy ou `noindex` não entram aqui (ver `src/app/robots.ts`: só
  *   `disallow` explícito do Studio).
  */
 const routePairs: RoutePair[] = [
-  { pt: "/", en: "/en/", priority: 1, changeFrequency: "weekly" },
-  { pt: "/api-integracoes/", en: "/en/api-integracoes/", priority: 0.9, changeFrequency: "weekly" },
+  { pt: "/", en: "/", priority: 1, changeFrequency: "weekly" },
+  { pt: "/api-integracoes/", en: "/integrations/", priority: 0.9, changeFrequency: "weekly" },
   {
     pt: "/api-integracoes/workvivo/",
-    en: "/en/api-integracoes/workvivo/",
+    en: "/integrations/workvivo/",
     priority: 0.8,
     changeFrequency: "monthly",
   },
-  { pt: "/plataforma/", en: "/en/plataforma/", priority: 0.9, changeFrequency: "weekly" },
-  { pt: "/inteligencia/", en: "/en/inteligencia/", priority: 0.85, changeFrequency: "weekly" },
+  { pt: "/plataforma/", en: "/platform/", priority: 0.9, changeFrequency: "weekly" },
+  { pt: "/inteligencia/", en: "/intelligence/", priority: 0.85, changeFrequency: "weekly" },
   {
     pt: "/infraestrutura-de-recompensas/",
-    en: "/en/reward-infrastructure/",
+    en: "/reward-infrastructure/",
     priority: 0.88,
     changeFrequency: "monthly",
   },
-  { pt: "/casos-de-uso/", en: "/en/casos-de-uso/", priority: 0.85, changeFrequency: "weekly" },
-  { pt: "/para-plataformas/", en: "/en/para-plataformas/", priority: 0.7, changeFrequency: "weekly" },
-  { pt: "/educacao/", en: "/en/educacao/", priority: 0.7, changeFrequency: "weekly" },
-  { pt: "/vendas/", en: "/en/vendas/", priority: 0.7, changeFrequency: "weekly" },
-  { pt: "/comunidades/", en: "/en/comunidades/", priority: 0.7, changeFrequency: "weekly" },
-  { pt: "/eventos/", en: "/en/eventos/", priority: 0.7, changeFrequency: "weekly" },
+  { pt: "/casos-de-uso/", en: "/use-cases/", priority: 0.85, changeFrequency: "weekly" },
+  { pt: "/para-plataformas/", en: "/for-platforms/", priority: 0.7, changeFrequency: "weekly" },
+  { pt: "/educacao/", en: "/solutions/education/", priority: 0.7, changeFrequency: "weekly" },
+  { pt: "/vendas/", en: "/solutions/sales/", priority: 0.7, changeFrequency: "weekly" },
+  { pt: "/comunidades/", en: "/solutions/communities/", priority: 0.7, changeFrequency: "weekly" },
+  { pt: "/eventos/", en: "/solutions/events/", priority: 0.7, changeFrequency: "weekly" },
   {
     pt: "/gamificacao-para-rh/",
-    en: "/en/gamificacao-para-rh/",
+    en: "/gamification-for-hr/",
     priority: 0.75,
     changeFrequency: "weekly",
   },
   {
     pt: "/calculadora-roi/",
-    en: "/en/calculadora-roi/",
+    en: "/roi-calculator/",
     priority: 0.88,
     changeFrequency: "weekly",
   },
 
-  { pt: "/blog/", en: "/en/blog/", priority: 0.8, changeFrequency: "weekly" },
+  { pt: "/blog/", en: "/blog/", priority: 0.8, changeFrequency: "weekly" },
   {
     pt: "/plataforma/motor-gamificacao/",
-    en: "/en/plataforma/motor-gamificacao/",
+    en: "/platform/gamification-engine/",
     priority: 0.9,
     changeFrequency: "weekly",
   },
   {
     pt: "/plataforma/campanhas-gamificacao/",
-    en: "/en/plataforma/campanhas-gamificacao/",
+    en: "/platform/campaigns/",
     priority: 0.85,
     changeFrequency: "weekly",
   },
   {
     pt: "/plataforma/controle-carteiras/",
-    en: "/en/plataforma/controle-carteiras/",
+    en: "/platform/wallets/",
     priority: 0.55,
     changeFrequency: "monthly",
   },
   {
     pt: "/plataforma/painel-gestor/",
-    en: "/en/plataforma/painel-gestor/",
+    en: "/platform/manager-dashboard/",
     priority: 0.55,
     changeFrequency: "monthly",
   },
   {
     pt: "/plataforma/loja-resgate/",
-    en: "/en/plataforma/loja-resgate/",
+    en: "/platform/rewards-store/",
     priority: 0.5,
     changeFrequency: "monthly",
   },
@@ -107,83 +107,24 @@ function allRoutePairs(): RoutePair[] {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
-  const staticEntries: MetadataRoute.Sitemap = allRoutePairs().flatMap((pair) => {
-    const ptUrl = pageAbsoluteUrl(pair.pt);
-    const enUrl = pageAbsoluteUrl(pair.en);
-    const alternates = {
-      languages: {
-        "pt-BR": ptUrl,
-        en: enUrl,
-        "x-default": ptUrl,
-      },
+  const staticEntries: MetadataRoute.Sitemap = allRoutePairs().map((pair) => {
+    const url = pageAbsoluteUrl(pair.en);
+    return {
+      url,
+      lastModified,
+      changeFrequency: pair.changeFrequency,
+      priority: pair.priority,
+      alternates: { languages: { en: url, "x-default": url } },
     };
-
-    return [
-      {
-        url: ptUrl,
-        lastModified,
-        changeFrequency: pair.changeFrequency,
-        priority: pair.priority,
-        alternates,
-      },
-      {
-        url: enUrl,
-        lastModified,
-        changeFrequency: pair.changeFrequency,
-        priority: Math.max(pair.priority - 0.05, 0.1),
-        alternates,
-      },
-    ];
   });
 
-  const [ptSlugs, enSlugs] = await Promise.all([
-    getBlogStaticSlugs("pt"),
-    getBlogStaticSlugs("en"),
-  ]);
+  const enSlugs = await getBlogStaticSlugs("en");
+  const blogEntries: MetadataRoute.Sitemap = enSlugs.map((slug) => ({
+    url: pageAbsoluteUrl(`/blog/${slug}/`),
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.65,
+  }));
 
-  const ptEntries = await Promise.all(
-    ptSlugs.map(async (slug) => {
-      const hasEnglishAlternate = await hasBlogPostWithSlug("en", slug);
-
-      return {
-        url: pageAbsoluteUrl(`/blog/${slug}/`),
-        lastModified,
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-        alternates: hasEnglishAlternate
-          ? {
-              languages: {
-                "pt-BR": pageAbsoluteUrl(`/blog/${slug}/`),
-                en: pageAbsoluteUrl(`/en/blog/${slug}/`),
-                "x-default": pageAbsoluteUrl(`/blog/${slug}/`),
-              },
-            }
-          : undefined,
-      };
-    }),
-  );
-
-  const enEntries = await Promise.all(
-    enSlugs.map(async (slug) => {
-      const hasPortugueseAlternate = await hasBlogPostWithSlug("pt", slug);
-
-      return {
-        url: pageAbsoluteUrl(`/en/blog/${slug}/`),
-        lastModified,
-        changeFrequency: "monthly" as const,
-        priority: 0.65,
-        alternates: hasPortugueseAlternate
-          ? {
-              languages: {
-                "pt-BR": pageAbsoluteUrl(`/blog/${slug}/`),
-                en: pageAbsoluteUrl(`/en/blog/${slug}/`),
-                "x-default": pageAbsoluteUrl(`/blog/${slug}/`),
-              },
-            }
-          : undefined,
-      };
-    }),
-  );
-
-  return [...staticEntries, ...ptEntries, ...enEntries];
+  return [...staticEntries, ...blogEntries];
 }

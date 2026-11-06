@@ -14,16 +14,16 @@ const growthIndexEnabled = process.env.NEXT_PUBLIC_INDEX_GROWTH_PAGES === "true"
 
 const GROWTH_PATHS = [
   "/pricing/",
-  "/en/pricing/",
+  "/pricing/",
   "/seguranca/",
-  "/en/seguranca/",
+  "/security/",
 ];
 
 const GROWTH_HTML_PATHS = [
   ["pricing/index.html", "/pricing/"],
-  ["en/pricing/index.html", "/en/pricing/"],
+  ["en/pricing/index.html", "/pricing/"],
   ["seguranca/index.html", "/seguranca/"],
-  ["en/seguranca/index.html", "/en/seguranca/"],
+  ["en/seguranca/index.html", "/security/"],
 ];
 
 console.log("--- verify-growth-index-build ---");

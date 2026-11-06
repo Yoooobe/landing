@@ -98,7 +98,7 @@ async function main() {
   const urlCount = sitemap.ok ? countSitemapUrls(sitemap.text) : 0;
   add("sitemap.count", "sitemap URL count >= 50", urlCount >= 50, `count=${urlCount}`);
 
-  for (const path of ["/pricing/", "/seguranca/", "/para-plataformas/", "/en/pricing/"]) {
+  for (const path of ["/pricing/", "/seguranca/", "/para-plataformas/", "/pricing/"]) {
     const page = await fetchText(`${base}${path}`);
     const robotsMeta = extractMeta(page.text, "robots");
     const canonical = extractLink(page.text, "canonical");
