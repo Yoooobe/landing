@@ -15,20 +15,20 @@ const ogDir = join(root, "public", "og");
 const OG_SITE_BADGE = "catalogo.yoobe.co";
 
 const VARIANTS = [
-  { id: "Yoobe-default", subtitle: "Gamification, catalog, API, and fulfillment in one place." },
-  { id: "Yoobe-home", subtitle: "Reward infrastructure for teams and platforms." },
-  { id: "Yoobe-plataforma", subtitle: "Corporate store, missions, and manager dashboards." },
-  { id: "Yoobe-api", subtitle: "API, webhooks, and native integrations." },
-  { id: "Yoobe-gamificacao", subtitle: "Gamification engine for engagement programs." },
-  { id: "Yoobe-casos", subtitle: "Use cases and enterprise programs." },
-  { id: "Yoobe-inteligencia", subtitle: "AI for campaigns and recommendations." },
-  { id: "Yoobe-para-plataformas", subtitle: "Embedded physical-rewards API: catalog, checkout, fulfillment." },
-  { id: "Yoobe-educacao", subtitle: "Tangible reward on course completion, with catalog and logistics." },
-  { id: "Yoobe-vendas", subtitle: "Sales incentives integrated with your CRM: instant rewards." },
-  { id: "Yoobe-comunidades", subtitle: "A VIP store for fans and communities, fulfillment included." },
-  { id: "Yoobe-eventos", subtitle: "Event giveaways without logistics chaos: booth pickup or delivery." },
-  { id: "Yoobe-pricing", subtitle: "Enterprise reward infrastructure plans tailored to your program." },
-  { id: "Yoobe-seguranca", subtitle: "Security, governance, SSO, and LGPD for reward programs." },
+  { id: "yoobe-default", subtitle: "Gamification, catalog, API, and fulfillment in one place." },
+  { id: "yoobe-home", subtitle: "Reward infrastructure for teams and platforms." },
+  { id: "yoobe-plataforma", subtitle: "Corporate store, missions, and manager dashboards." },
+  { id: "yoobe-api", subtitle: "API, webhooks, and native integrations." },
+  { id: "yoobe-gamificacao", subtitle: "Gamification engine for engagement programs." },
+  { id: "yoobe-casos", subtitle: "Use cases and enterprise programs." },
+  { id: "yoobe-inteligencia", subtitle: "AI for campaigns and recommendations." },
+  { id: "yoobe-para-plataformas", subtitle: "Embedded physical-rewards API: catalog, checkout, fulfillment." },
+  { id: "yoobe-educacao", subtitle: "Tangible reward on course completion, with catalog and logistics." },
+  { id: "yoobe-vendas", subtitle: "Sales incentives integrated with your CRM: instant rewards." },
+  { id: "yoobe-comunidades", subtitle: "A VIP store for fans and communities, fulfillment included." },
+  { id: "yoobe-eventos", subtitle: "Event giveaways without logistics chaos: booth pickup or delivery." },
+  { id: "yoobe-pricing", subtitle: "Enterprise reward infrastructure plans tailored to your program." },
+  { id: "yoobe-seguranca", subtitle: "Security, governance, SSO, and LGPD for reward programs." },
 ];
 
 function escapeXml(text) {
@@ -74,13 +74,13 @@ async function main() {
     mkdirSync(ogDir, { recursive: true });
   }
 
-  const baseSvgPath = join(ogDir, "Yoobe-default.svg");
+  const baseSvgPath = join(ogDir, "yoobe-default.svg");
   if (existsSync(baseSvgPath)) {
     await sharp(readFileSync(baseSvgPath))
       .resize(1200, 630)
       .png()
-      .toFile(join(ogDir, "Yoobe-default.png"));
-    console.log("generate-og-images: Yoobe-default.png (from SVG)");
+      .toFile(join(ogDir, "yoobe-default.png"));
+    console.log("generate-og-images: yoobe-default.png (from SVG)");
   }
 
   for (const { id, subtitle } of VARIANTS) {
