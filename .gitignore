@@ -58,3 +58,7 @@ next-env.d.ts
 *.bak
 firebase-debug.log
 .npmrc.bak
+
+# superpowers workspaces (planos, ledgers, mockups)
+.superpowers/
+.vercel.*.bak/
