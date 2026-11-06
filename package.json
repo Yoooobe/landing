@@ -38,7 +38,7 @@
     "smoke:leads-ingest": "node scripts/smoke-leads-ingest.mjs",
     "deploy:yoobe-co": "bash scripts/deploy-yoobe-co.sh",
     "infra:apply-proxy-redirects": "bash scripts/apply-plataforma-nginx-redirects.sh",
-    "test": "tsx --test 'src/**/*.test.ts' 'scripts/**/*.test.*'",
+    "test": "tsx --test 'src/**/*.test.ts' 'scripts/**/*.test.*' 'leads-ingest-api/tests/*.test.ts'",
     "check:links": "node scripts/check-internal-links.mjs"
   },
   "dependencies": {

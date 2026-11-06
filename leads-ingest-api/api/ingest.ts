@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { createClient } from "@sanity/client";
+import { privateDocId } from "../lib/sanityIds";
 import { z } from "zod";
 
 const leadPayloadSchema = z
@@ -189,6 +190,7 @@ async function persistLeadInSanity(
   const slug = `${Date.now()}-${payload.email.replace(/[^a-z0-9]/gi, "").slice(0, 24)}`.toLowerCase();
 
   const doc = await client.create({
+    _id: privateDocId("leads"),
     _type: "leadSubmission",
     submittedAt,
     name: payload.name,

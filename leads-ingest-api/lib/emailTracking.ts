@@ -1,5 +1,6 @@
 import { createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import { createClient } from "@sanity/client";
+import { privateDocId } from "./sanityIds";
 import type { VercelRequest } from "@vercel/node";
 
 export type TrackingPayload = {
@@ -80,6 +81,7 @@ export async function persistTrackingEvent(
   const ua = safeText(req.headers["user-agent"], 600);
   const now = new Date().toISOString();
   await client.create({
+    _id: privateDocId("tracking"),
     _type: "emailTrackingEvent",
     eventId: eventId(),
     eventType: type,

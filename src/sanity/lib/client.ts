@@ -5,9 +5,9 @@ import { apiVersion, dataset, isSanityConfigured, projectId } from "../env";
 export function getSanityClient(): SanityClient | null {
   if (!isSanityConfigured()) return null;
   const token =
-    process.env.SANITY_API_WRITE_TOKEN?.trim() ||
+    process.env.SANITY_READ_TOKEN?.trim() ||
     process.env.SANITY_API_TOKEN?.trim() ||
-    process.env.SANITY_READ_TOKEN?.trim();
+    process.env.SANITY_API_WRITE_TOKEN?.trim();
   return createClient({
     projectId,
     dataset,
