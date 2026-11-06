@@ -16,7 +16,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - 4unik-legacy
   # Redeploy após publicar no Sanity (hero e conteúdo em build estático).
   workflow_dispatch:
     inputs:
