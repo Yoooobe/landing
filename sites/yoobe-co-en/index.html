@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yoobe — Corporate swag platform: catalog, customization, and logistics</title>
+    <meta
+      name="description"
+      content="Yoobe centralizes your corporate swag operation: catalog and purchasing, customization with your brand identity, tracked logistics, and API integrations."
+    />
+    <link rel="canonical" href="https://www.yoobe.co/" />
+    <link rel="icon" href="logo.png" type="image/png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Yoobe" />
+    <meta property="og:url" content="https://www.yoobe.co/" />
+    <meta
+      property="og:title"
+      content="Yoobe — Corporate swag platform"
+    />
+    <meta
+      property="og:description"
+      content="Buy, customize, and distribute swag with control: catalog, customization, tracked logistics, and API integrations."
+    />
+    <meta property="og:image" content="https://www.yoobe.co/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Yoobe — Corporate swag platform"
+    />
+    <meta
+      name="twitter:description"
+      content="Buy, customize, and distribute swag with control: catalog, customization, tracked logistics, and API integrations."
+    />
+    <meta name="twitter:image" content="https://www.yoobe.co/logo.png" />
+    <meta name="theme-color" content="#0b1020" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --ink: #0b1020;
+        --ink-soft: #1b2338;
+        --text: #333d55;
+        --text-muted: #6b7488;
+        --line: #e6e8f0;
+        --line-soft: #eef0f7;
+        --surface: #ffffff;
+        --surface-alt: #f6f7fb;
+        --indigo: #4f46e5;
+        --violet: #7c3aed;
+        --pink: #ec4899;
+        --green: #10b981;
+        --gradient: linear-gradient(115deg, #4f46e5, #7c3aed 55%, #ec4899);
+        --radius-sm: 14px;
+        --radius: 20px;
+        --radius-lg: 28px;
+        --shadow-sm: 0 1px 2px rgba(11, 16, 32, 0.06),
+          0 8px 24px -12px rgba(11, 16, 32, 0.12);
+        --shadow: 0 24px 60px -32px rgba(11, 16, 32, 0.28);
+        --ring: 0 0 0 3px rgba(79, 70, 229, 0.35);
+        --shell: 1160px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+        background: var(--surface);
+        color: var(--text);
+        font-size: 1.0625rem;
+        line-height: 1.65;
+        letter-spacing: -0.01em;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--ink);
+        line-height: 1.12;
+        letter-spacing: -0.035em;
+        font-weight: 800;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      img {
+        display: block;
+      }
+
+      :focus-visible {
+        outline: none;
+        box-shadow: var(--ring);
+        border-radius: 10px;
+      }
+
+      .shell {
+        width: 100%;
+        max-width: var(--shell);
+        margin-inline: auto;
+        padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+      }
+
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+        background: var(--ink);
+        color: #fff;
+        padding: 0.75rem 1rem;
+        border-radius: 0 0 12px 0;
+        z-index: 200;
+      }
+
+      .skip-link:focus {
+        left: 0;
+      }
+
+      /* ---------- Header ---------- */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(18px) saturate(180%);
+        -webkit-backdrop-filter: blur(18px) saturate(180%);
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .site-header[data-scrolled="true"] {
+        border-bottom-color: var(--line-soft);
+        box-shadow: 0 10px 30px -24px rgba(11, 16, 32, 0.4);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 76px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+
+      .brand img {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        object-fit: contain;
+      }
+
+      .brand span {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -0.03em;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 0.15rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        display: inline-block;
+        padding: 0.5rem 0.85rem;
+        border-radius: 999px;
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.2s ease, background-color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--ink);
+        background: rgba(11, 16, 32, 0.05);
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        flex-shrink: 0;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.7rem 1.25rem;
+        border-radius: 999px;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+      }
+
+      .btn svg {
+        width: 17px;
+        height: 17px;
+        flex-shrink: 0;
+      }
+
+      .btn-primary {
+        background-image: var(--gradient);
+        color: #fff;
+        box-shadow: 0 12px 30px -14px rgba(79, 70, 229, 0.7);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 38px -14px rgba(124, 58, 237, 0.65);
+      }
+
+      .btn-ghost {
+        background: var(--surface);
+        border-color: var(--line);
+        color: var(--ink);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .btn-ghost:hover {
+        transform: translateY(-2px);
+        border-color: #cfd3e4;
+      }
+
+      .btn-wa {
+        background: #ffffff;
+        border-color: rgba(16, 185, 129, 0.35);
+        color: #047857;
+      }
+
+      .btn-wa:hover {
+        background: #ecfdf5;
+        transform: translateY(-2px);
+      }
+
+      .btn-lg {
+        padding: 0.95rem 1.6rem;
+        font-size: 1rem;
+      }
+
+      .nav-toggle {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-toggle svg {
+        width: 20px;
+        height: 20px;
+        color: var(--ink);
+      }
+
+      @media (max-width: 1040px) {
+        .nav-links,
+        .nav-actions .btn-wa {
+          display: none;
+        }
+
+        .nav-toggle {
+          display: inline-flex;
+        }
+      }
+
+      .mobile-menu {
+        display: none;
+        border-top: 1px solid var(--line-soft);
+        background: rgba(255, 255, 255, 0.98);
+        padding-block: 1rem 1.5rem;
+      }
+
+      .mobile-menu[data-open="true"] {
+        display: block;
+      }
+
+      .mobile-menu ul {
+        list-style: none;
+        display: grid;
+        gap: 0.15rem;
+      }
+
+      .mobile-menu a {
+        display: block;
+        padding: 0.75rem 0.5rem;
+        border-radius: 12px;
+        font-weight: 500;
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .mobile-menu a:hover {
+        background: var(--surface-alt);
+        color: var(--ink);
+      }
+
+      .mobile-menu .btn {
+        width: 100%;
+        margin-top: 0.75rem;
+      }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding-block: clamp(4rem, 9vw, 7.5rem) clamp(3rem, 6vw, 5rem);
+        background: radial-gradient(
+            120% 90% at 50% -10%,
+            #eef1ff 0%,
+            #f7f8fc 45%,
+            #ffffff 100%
+          )
+          no-repeat;
+      }
+
+      .aurora {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        opacity: 0.55;
+        z-index: -1;
+        pointer-events: none;
+        animation: drift 16s ease-in-out infinite;
+      }
+
+      .aurora-1 {
+        width: 460px;
+        height: 460px;
+        top: -170px;
+        left: -90px;
+        background: radial-gradient(circle, #6366f1, transparent 68%);
+      }
+
+      .aurora-2 {
+        width: 420px;
+        height: 420px;
+        top: -120px;
+        right: -110px;
+        background: radial-gradient(circle, #ec4899, transparent 68%);
+        animation-delay: -6s;
+      }
+
+      .aurora-3 {
+        width: 380px;
+        height: 380px;
+        bottom: -220px;
+        left: 42%;
+        background: radial-gradient(circle, #8b5cf6, transparent 70%);
+        animation-delay: -11s;
+      }
+
+      @media (max-width: 640px) {
+        .aurora {
+          opacity: 0.38;
+          filter: blur(60px);
+        }
+      }
+
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        50% {
+          transform: translate3d(0, 26px, 0) scale(1.06);
+        }
+      }
+
+      .hero-inner {
+        max-width: 860px;
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.45rem 0.95rem 0.45rem 0.6rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--ink-soft);
+        letter-spacing: -0.01em;
+      }
+
+      .eyebrow .dot {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-image: var(--gradient);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .eyebrow .dot svg {
+        width: 13px;
+        height: 13px;
+        color: #fff;
+      }
+
+      .hero h1 {
+        margin-top: 1.75rem;
+        font-size: clamp(2.35rem, 6vw, 4rem);
+      }
+
+      .grad-text {
+        background-image: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .hero p.lead {
+        margin: 1.5rem auto 0;
+        max-width: 620px;
+        font-size: clamp(1.0625rem, 2.2vw, 1.25rem);
+        color: var(--text-muted);
+      }
+
+      .hero-actions {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        justify-content: center;
+      }
+
+      .hero-meta {
+        margin-top: 2.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem 1.75rem;
+        justify-content: center;
+        font-size: 0.9375rem;
+        color: var(--text-muted);
+      }
+
+      .hero-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .hero-meta svg {
+        width: 17px;
+        height: 17px;
+        color: var(--indigo);
+        flex-shrink: 0;
+      }
+
+      /* ---------- Sections ---------- */
+      section.block {
+        padding-block: clamp(3.5rem, 7vw, 6rem);
+      }
+
+      .block-alt {
+        background: linear-gradient(180deg, #ffffff, var(--surface-alt) 100%);
+        border-block: 1px solid var(--line-soft);
+      }
+
+      .section-head {
+        max-width: 660px;
+        margin-bottom: clamp(2.25rem, 4vw, 3.25rem);
+      }
+
+      .section-head.center {
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .section-label {
+        display: inline-block;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--violet);
+        margin-bottom: 0.9rem;
+      }
+
+      .section-head h2 {
+        font-size: clamp(1.85rem, 4vw, 2.6rem);
+      }
+
+      .section-head p {
+        margin-top: 1rem;
+        color: var(--text-muted);
+        font-size: 1.0625rem;
+      }
+
+      .cards {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      }
+
+      .card {
+        position: relative;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 1.75rem;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.25s ease, box-shadow 0.25s ease,
+          border-color 0.25s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(79, 70, 229, 0.28);
+        box-shadow: var(--shadow);
+      }
+
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          140deg,
+          rgba(79, 70, 229, 0.12),
+          rgba(236, 72, 153, 0.14)
+        );
+        border: 1px solid rgba(79, 70, 229, 0.16);
+        margin-bottom: 1.25rem;
+      }
+
+      .card-icon svg {
+        width: 22px;
+        height: 22px;
+        color: var(--indigo);
+      }
+
+      .card h3 {
+        font-size: 1.1875rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .card p {
+        color: var(--text-muted);
+        font-size: 1rem;
+      }
+
+      /* ---------- Split panels ---------- */
+      .panels {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      }
+
+      .panel {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+        padding: clamp(1.75rem, 3vw, 2.5rem);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .panel::after {
+        content: "";
+        position: absolute;
+        inset: auto -30% -55% auto;
+        width: 320px;
+        height: 320px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(124, 58, 237, 0.13),
+          transparent 68%
+        );
+        pointer-events: none;
+      }
+
+      .panel:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+
+      .panel h3 {
+        font-size: clamp(1.35rem, 2.4vw, 1.6rem);
+        margin-bottom: 0.85rem;
+      }
+
+      .panel p {
+        color: var(--text-muted);
+      }
+
+      .chips {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .chips li {
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        background: var(--surface-alt);
+        border: 1px solid var(--line-soft);
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--ink-soft);
+      }
+
+      /* ---------- Clients ---------- */
+      .clients-box {
+        position: relative;
+        overflow: hidden;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: clamp(1.75rem, 4vw, 3rem);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .logos-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+        margin-top: 2.25rem;
+      }
+
+      @media (min-width: 640px) {
+        .logos-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+
+      .logo-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 92px;
+        padding: 1rem;
+        border-radius: var(--radius-sm);
+        background: var(--surface-alt);
+        border: 1px solid var(--line-soft);
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          border-color 0.2s ease, background-color 0.2s ease;
+      }
+
+      .logo-card:hover {
+        transform: translateY(-3px);
+        background: var(--surface);
+        border-color: rgba(79, 70, 229, 0.24);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .logo-card img {
+        max-width: 100%;
+        max-height: 46px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        filter: grayscale(100%) opacity(0.78);
+        transition: filter 0.2s ease;
+      }
+
+      .logo-card:hover img {
+        filter: none;
+      }
+
+      /* ---------- Final CTA ---------- */
+      .cta-band {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+        padding: clamp(2.5rem, 6vw, 4rem);
+        background: linear-gradient(125deg, #171a3a, #2c1e5c 45%, #4c1d5b);
+        color: rgba(255, 255, 255, 0.82);
+        text-align: center;
+      }
+
+      .cta-band::before {
+        content: "";
+        position: absolute;
+        inset: -40% 40% 55% -20%;
+        background: radial-gradient(
+          circle,
+          rgba(99, 102, 241, 0.45),
+          transparent 62%
+        );
+        filter: blur(30px);
+        pointer-events: none;
+      }
+
+      .cta-band > * {
+        position: relative;
+      }
+
+      .cta-band h2 {
+        color: #fff;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+      }
+
+      .cta-band p {
+        margin: 1.15rem auto 0;
+        max-width: 540px;
+      }
+
+      .cta-band .hero-actions {
+        margin-top: 2.25rem;
+      }
+
+      .cta-band .btn-ghost {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.28);
+        color: #fff;
+        box-shadow: none;
+      }
+
+      .cta-band .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.18);
+      }
+
+      /* ---------- Footer ---------- */
+      .site-footer {
+        margin-top: clamp(3.5rem, 7vw, 6rem);
+        background: var(--ink);
+        color: rgba(255, 255, 255, 0.62);
+        padding-block: clamp(2.75rem, 5vw, 4rem) 2rem;
+      }
+
+      .footer-top {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .site-footer .brand span {
+        color: #fff;
+      }
+
+      .site-footer .brand img {
+        background: #fff;
+      }
+
+      .footer-tagline {
+        margin-top: 0.9rem;
+        max-width: 320px;
+        font-size: 0.9375rem;
+      }
+
+      .footer-nav {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+        gap: 2rem 3rem;
+      }
+
+      .footer-nav h4 {
+        color: #fff;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 0.9rem;
+      }
+
+      .footer-nav ul {
+        list-style: none;
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      .footer-nav a {
+        color: rgba(255, 255, 255, 0.62);
+        text-decoration: none;
+        font-size: 0.9375rem;
+        transition: color 0.2s ease;
+      }
+
+      .footer-nav a:hover {
+        color: #fff;
+      }
+
+      .footer-bottom {
+        margin-top: 1.75rem;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      /* ---------- Reveal (só com JS ativo, para não esconder conteúdo) ---------- */
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .aurora {
+          animation: none;
+        }
+
+        .js .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
+        .btn:hover,
+        .card:hover,
+        .panel:hover,
+        .logo-card:hover {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <a class="skip-link" href="#conteudo">Skip to content</a>
+
+    <header class="site-header" id="site-header">
+      <div class="shell nav">
+        <a href="/" class="brand" aria-label="Yoobe — home">
+          <img src="logo.png" alt="" width="42" height="42" />
+          <span>Yoobe</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="#solucao">Solution</a></li>
+            <li><a href="#plataforma">API &amp; Gamification</a></li>
+            <li><a href="#clientes">Clients</a></li>
+            <li>
+              <a
+                href="https://catalogo.yoobe.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Catalog</a
+              >
+            </li>
+            <li><a href="#contato">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a
+            class="btn btn-wa"
+            href="https://wa.me/5541987607512"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            WhatsApp
+          </a>
+          <a
+            class="btn btn-primary"
+            href="https://calendly.com/yoobeco/demo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book a demo
+          </a>
+          <button
+            class="nav-toggle"
+            type="button"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobile-menu" data-open="false">
+        <div class="shell">
+          <ul>
+            <li><a href="#solucao">Solution</a></li>
+            <li><a href="#plataforma">API &amp; Gamification</a></li>
+            <li><a href="#clientes">Clients</a></li>
+            <li>
+              <a
+                href="https://catalogo.yoobe.co"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Catalog</a
+              >
+            </li>
+            <li><a href="#contato">Contact</a></li>
+          </ul>
+          <a
+            class="btn btn-wa"
+            href="https://wa.me/5541987607512"
+            target="_blank"
+            rel="noopener noreferrer"
+            >WhatsApp</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <!-- Hero -->
+      <section class="hero">
+        <span class="aurora aurora-1" aria-hidden="true"></span>
+        <span class="aurora aurora-2" aria-hidden="true"></span>
+        <span class="aurora aurora-3" aria-hidden="true"></span>
+
+        <div class="shell hero-inner">
+          <p class="eyebrow">
+            <span class="dot" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </span>
+            Corporate swag, from catalog to delivery
+          </p>
+
+          <h1>
+            The complete platform for managing
+            <span class="grad-text">corporate swag</span>
+          </h1>
+
+          <p class="lead">
+            Yoobe helps your company buy, customize, and distribute swag with control and clarity — from the catalog to logistics and tracking.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary btn-lg"
+              href="https://calendly.com/yoobeco/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a demo
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a
+              class="btn btn-ghost btn-lg"
+              href="https://catalogo.yoobe.co"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Browse the catalog
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              Catalog and purchasing in one place
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              Tracked deliveries
+            </span>
+            <span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+              API integrations
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Oferecemos -->
+      <section class="block block-alt" id="solucao">
+        <div class="shell">
+          <div class="section-head center reveal">
+            <span class="section-label">What we offer</span>
+            <h2>A swag operation without the guesswork</h2>
+            <p>
+              From choosing the product to tracking the delivery, every step stays organized and visible to your team.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="card reveal">
+              <span class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 6h18l-1.6 9.2a2 2 0 0 1-2 1.8H7.6a2 2 0 0 1-2-1.8L4 6" />
+                  <path d="M9 21h.01M17 21h.01M8 6a4 4 0 0 1 8 0" />
+                </svg>
+              </span>
+              <h3>Catalog &amp; purchasing</h3>
+              <p>
+                Product selection and a simple purchasing flow, with a history of everything already ordered.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <span class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m15 5 4 4L8.5 19.5 4 20l.5-4.5L15 5Z" />
+                  <path d="m13.5 6.5 4 4" />
+                </svg>
+              </span>
+              <h3>Customization</h3>
+              <p>
+                Products with your company’s visual identity and a professional finish in every batch.
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <span class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 7h11v9H3zM14 10h3.5l2.5 3v3H14z" />
+                  <circle cx="6.5" cy="18" r="1.8" />
+                  <circle cx="17" cy="18" r="1.8" />
+                </svg>
+              </span>
+              <h3>Logistics &amp; tracking</h3>
+              <p>
+                Organized, tracked deliveries for teams and clients — across Brazil and worldwide.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- API & Gamification -->
+      <section class="block" id="plataforma">
+        <div class="shell">
+          <div class="section-head reveal">
+            <span class="section-label">Platform</span>
+            <h2>Integrations and engagement in the same flow</h2>
+          </div>
+
+          <div class="panels">
+            <article class="panel reveal" id="api">
+              <span class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m9 17-5-5 5-5M15 7l5 5-5 5" />
+                </svg>
+              </span>
+              <h3>API</h3>
+              <p>
+                Integrations and automations that connect Yoobe to the systems your company already uses — orders, records, and shipments with no manual work.
+              </p>
+              <ul class="chips">
+                <li>Automated orders</li>
+                <li>Webhooks</li>
+                <li>Delivery status</li>
+              </ul>
+            </article>
+
+            <article class="panel reveal" id="gamificacao">
+              <span class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 4h8l-.6 5.2A3.5 3.5 0 0 1 12 12a3.5 3.5 0 0 1-3.4-2.8L8 4Z" />
+                  <path d="M12 12v4M8.5 20h7M10 20l.5-4h3l.5 4" />
+                  <path d="M16 5h2.5a1.5 1.5 0 0 1 0 5H16M8 5H5.5a1.5 1.5 0 0 0 0 5H8" />
+                </svg>
+              </span>
+              <h3>Gamification</h3>
+              <p>
+                Engagement programs with rewards: points and achievements that turn into real gifts, connected to your swag operation.
+              </p>
+              <ul class="chips">
+                <li>Points & achievements</li>
+                <li>Redemptions</li>
+                <li>Campaigns</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Clients -->
+      <section class="block block-alt" id="clientes">
+        <div class="shell">
+          <div class="clients-box reveal">
+            <div class="section-head" style="margin-bottom: 0">
+              <span class="section-label">Clients</span>
+              <h2>Companies already using Yoobe</h2>
+              <p>
+                Brands running swag efficiently and with full traceability, using the platform and API integrations.
+              </p>
+            </div>
+
+            <div class="logos-grid" role="list">
+              <div class="logo-card" role="listitem" title="Yampi">
+                <img src="clients/yampi.png" alt="Yampi" loading="lazy" decoding="async" />
+              </div>
+              <div class="logo-card" role="listitem" title="PRIO">
+                <img src="clients/prio.png" alt="PRIO" loading="lazy" decoding="async" />
+              </div>
+              <div class="logo-card" role="listitem" title="Hapvida">
+                <img src="clients/hapvida.png" alt="Hapvida" loading="lazy" decoding="async" />
+              </div>
+              <div class="logo-card" role="listitem" title="Join">
+                <img src="clients/join.svg" alt="Join" loading="lazy" decoding="async" />
+              </div>
+              <div class="logo-card" role="listitem" title="Tecnospeed">
+                <img src="clients/tecnospeed.svg" alt="Tecnospeed" loading="lazy" decoding="async" />
+              </div>
+              <div class="logo-card" role="listitem" title="O Boticário">
+                <img src="clients/boticario.png" alt="O Boticário" loading="lazy" decoding="async" />
+              </div>
+              <div class="logo-card" role="listitem" title="W1 Consultoria">
+                <img src="clients/w1-consultoria.svg" alt="W1 Consultoria" loading="lazy" decoding="async" />
+              </div>
+              <div class="logo-card" role="listitem" title="Contabilizei">
+                <img src="clients/contabilizei.svg" alt="Contabilizei" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA final -->
+      <section class="block" style="padding-bottom: 0">
+        <div class="shell">
+          <div class="cta-band reveal">
+            <h2>Ready to organize your swag?</h2>
+            <p>
+              Tell us how your company distributes gifts today and we’ll show you how Yoobe simplifies the catalog, customization, and logistics.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="btn btn-primary btn-lg"
+                href="https://calendly.com/yoobeco/demo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a demo
+              </a>
+              <a
+                class="btn btn-ghost btn-lg"
+                href="https://wa.me/5541987607512"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contato">
+      <div class="shell">
+        <div class="footer-top">
+          <div>
+            <a href="/" class="brand" aria-label="Yoobe — home">
+              <img src="logo.png" alt="" width="42" height="42" />
+              <span>Yoobe</span>
+            </a>
+            <p class="footer-tagline">
+              Corporate swag platform: catalog, customization, logistics, and API integrations.
+            </p>
+          </div>
+
+          <div class="footer-nav">
+            <div>
+              <h4>Platform</h4>
+              <ul>
+                <li><a href="#solucao">Solution</a></li>
+                <li><a href="#api">API</a></li>
+                <li><a href="#gamificacao">Gamification</a></li>
+                <li>
+                  <a
+                    href="https://catalogo.yoobe.co"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Catalog</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4>Contact</h4>
+              <ul>
+                <li>
+                  <a
+                    href="https://calendly.com/yoobeco/demo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book a demo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/5541987607512"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >WhatsApp</a
+                  >
+                </li>
+                <li><a href="mailto:vendas@yoobe.co">vendas@yoobe.co</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="footer-bottom">© 2026 Yoobe Inc. · Delaware, USA. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Yoobe",
+        "url": "https://www.yoobe.co/",
+        "logo": "https://www.yoobe.co/logo.png",
+        "description": "Corporate swag management platform: catalog and purchasing, customization, tracked logistics, and API integrations.",
+        "email": "vendas@yoobe.co",
+        "sameAs": ["https://catalogo.yoobe.co"]
+      }
+    </script>
+
+    <script>
+      // Header ganha borda ao rolar
+      const header = document.getElementById("site-header");
+      const onScroll = () => {
+        header.dataset.scrolled = window.scrollY > 8 ? "true" : "false";
+      };
+      onScroll();
+      window.addEventListener("scroll", onScroll, { passive: true });
+
+      // Menu mobile
+      const toggle = document.getElementById("nav-toggle");
+      const menu = document.getElementById("mobile-menu");
+      toggle.addEventListener("click", () => {
+        const open = menu.dataset.open === "true";
+        menu.dataset.open = open ? "false" : "true";
+        toggle.setAttribute("aria-expanded", open ? "false" : "true");
+        toggle.setAttribute("aria-label", open ? "Open menu" : "Close menu");
+      });
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.dataset.open = "false";
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Open menu");
+        });
+      });
+
+      // Entrada progressiva das secções
+      const reveals = document.querySelectorAll(".reveal");
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: "0px 0px -8% 0px", threshold: 0.1 },
+        );
+        reveals.forEach((el) => observer.observe(el));
+      } else {
+        reveals.forEach((el) => el.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>

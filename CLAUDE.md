@@ -8,6 +8,9 @@ Repo: `Yoooobe/landing` · branch `main` = yoobe.co · branch `4unik-legacy` = p
 
 ## Deploy
 
+> **Produção hoje (desde 2026-11-06):** `sites/yoobe-co-en/` — página estática antiga, traduzida para inglês. O site Next novo (raiz do repo) ainda está em melhorias; só publicar em produção com ok explícito do usuário.
+> Publicar a página estática: `cd sites/yoobe-co-en && vercel deploy --prod --scope yoobe-devs-s-team` (precisa de `.vercel/project.json` do projeto `landing`).
+
 - yoobe.co: `npm run deploy:yoobe-co` (preview) / `bash scripts/deploy-yoobe-co.sh --prod` → projeto Vercel `landing` (time `yoobe-devs-s-team`).
 - Leads: projeto Vercel `yoobe-leads-ingest` (código em `leads-ingest-api/`), notifica `genau@yoobe.co`.
 
