@@ -23,7 +23,7 @@ export const ptBlogPage = {
       id: 2,
       title: "SLA de Logística em Premiações: Por que D+1 muda tudo",
       excerpt:
-        "A frustração do colaborador com o prêmio atrasado pode destruir toda a experiência. Veja como a infraestrutura 4unik resolve isso.",
+        "A frustração do colaborador com o prêmio atrasado pode destruir toda a experiência. Veja como a infraestrutura Yoobe resolve isso.",
       date: "05 Mar 2026",
       readTime: "5",
       category: "Logística",
@@ -45,7 +45,7 @@ export const ptBlogPage = {
       id: 4,
       title: "Welcome Kits: Causando a melhor primeira impressão",
       excerpt:
-        "O onboarding é crucial. Veja exemplos de cases de sucesso em kits de boas-vindas corporativos montados na plataforma 4unik V3.",
+        "O onboarding é crucial. Veja exemplos de cases de sucesso em kits de boas-vindas corporativos montados na plataforma Yoobe V3.",
       date: "15 Fev 2026",
       readTime: "4",
       category: "Kits & Eventos",

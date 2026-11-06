@@ -9,7 +9,7 @@ function blockPlainText(block: PortableTextBlock): string {
 }
 
 function findHelpsH2Index(blocks: BlogPostBodyItem[], locale: "pt" | "en"): number {
-  const needle = locale === "en" ? "How 4unik helps" : "Como a 4unik ajuda";
+  const needle = locale === "en" ? "How Yoobe helps" : "Como a Yoobe ajuda";
   for (let i = 0; i < blocks.length; i++) {
     const b = blocks[i];
     if (!isPortableTextBlock(b) || b.style !== "h2") continue;
@@ -30,7 +30,7 @@ function indexAfterBulletRun(blocks: BlogPostBodyItem[], start: number): number 
 }
 
 /**
- * Injeta o triplet (platform → após 1.º parágrafo; feature → após bullets da secção "Como a 4unik ajuda…";
+ * Injeta o triplet (platform → após 1.º parágrafo; feature → após bullets da secção "Como a Yoobe ajuda…";
  * demo → fim) no corpo gerado por IA, alinhado ao fallback em `blogFallback.ts`.
  */
 export function injectAiGeneratedBlogCtas(

@@ -77,17 +77,17 @@ export type PlatformFeaturePageContent = {
 export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeaturePageContent> = {
   motor: {
     seo: {
-      title: "Motor de Gamificação | 4unik",
+      title: "Motor de Gamificação | Yoobe",
       description:
-        "Campanhas, regras, pontuação e integrações para transformar metas e ações de engajamento em experiências de reconhecimento dentro da 4unik.",
+        "Campanhas, regras, pontuação e integrações para transformar metas e ações de engajamento em experiências de reconhecimento dentro da Yoobe.",
     },
     badge: "Motor de Gamificação",
-    title: "A 4unik conecta metas,",
+    title: "A Yoobe conecta metas,",
     highlight: "resgates e engajamento em uma só operação.",
     description:
-      "Use a 4unik como motor de gamificação e engajamento ou conecte plataformas que você já tem. A loja corporativa vira a camada de resgate com rastreio completo para presentear times, colaboradores e parceiros. Campanhas com páginas próprias ativam hackathons, desafios, onboarding e metas comerciais — sem operação paralela.",
+      "Use a Yoobe como motor de gamificação e engajamento ou conecte plataformas que você já tem. A loja corporativa vira a camada de resgate com rastreio completo para presentear times, colaboradores e parceiros. Campanhas com páginas próprias ativam hackathons, desafios, onboarding e metas comerciais — sem operação paralela.",
     imageSrc: "/screens/flows/campanha-passo-1.webp",
-    imageAlt: "Wizard de criação de campanha na 4unik — dados iniciais e slug",
+    imageAlt: "Wizard de criação de campanha na Yoobe — dados iniciais e slug",
     stats: [
       {
         label: "Campanhas publicadas",
@@ -97,7 +97,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         label: "Motor flexível",
         value: "Nativo ou integrado",
-        detail: "A 4unik atende programas próprios ou conecta stacks externas de gamificação e engajamento.",
+        detail: "A Yoobe atende programas próprios ou conecta stacks externas de gamificação e engajamento.",
       },
       {
         label: "Resgate operacional",
@@ -117,7 +117,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         icon: GitBranch,
         title: "Motor nativo ou integrado",
         body:
-          "Use o sistema de gamificação da 4unik ou conecte plataformas externas de engajamento, CRM, HRIS e outras fontes de evento por API, webhook ou ações manuais.",
+          "Use o sistema de gamificação da Yoobe ou conecte plataformas externas de engajamento, CRM, HRIS e outras fontes de evento por API, webhook ou ações manuais.",
       },
       {
         icon: Gift,
@@ -132,7 +132,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
           "Landing page, banner, carteira, notificações e operação logística seguem a mesma regra para a campanha ir do lançamento até a entrega sem quebra de contexto.",
       },
     ],
-    workflowTitle: "Como a 4unik opera uma campanha",
+    workflowTitle: "Como a Yoobe opera uma campanha",
     workflow: [
       {
         title: "Dados iniciais e slug",
@@ -192,9 +192,9 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ],
     ctaTitle: "Quer ativar campanhas e resgates com operação fim a fim?",
     ctaBody:
-      "A 4unik une motor de regras, loja corporativa, carteira, pedidos e logística para que sua ação saia do briefing e chegue até o resgate e a entrega sem fricção.",
+      "A Yoobe une motor de regras, loja corporativa, carteira, pedidos e logística para que sua ação saia do briefing e chegue até o resgate e a entrega sem fricção.",
     primaryCtaLabel: "Agendar demonstração",
-    primaryCtaHref: "https://calendly.com/4unik/30min",
+    primaryCtaHref: "https://calendly.com/yoobeco/demo",
     secondaryCtaLabel: "Ver plataforma completa",
     secondaryCtaHref: "/plataforma",
     backLabel: "Voltar para plataforma",
@@ -202,7 +202,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
   },
   wallets: {
     seo: {
-      title: "Controle de Carteiras (Wallets) | 4unik",
+      title: "Controle de Carteiras (Wallets) | Yoobe",
       description:
         "Saldo, extrato, resgates e governança de pontos em uma carteira com rastreio completo para programas de engajamento, campanhas e recompensas.",
     },
@@ -210,7 +210,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     title: "Participantes acompanham",
     highlight: "pontos, resgates e saldo com rastreio completo.",
     description:
-      "Na 4unik, colaboradores e participantes consultam saldo, verificam extrato, acompanham pedidos e usam pontos na loja corporativa com rastreabilidade total. A carteira também pode receber dados de ferramentas externas de gamificação — do crédito ao resgate.",
+      "Na Yoobe, colaboradores e participantes consultam saldo, verificam extrato, acompanham pedidos e usam pontos na loja corporativa com rastreabilidade total. A carteira também pode receber dados de ferramentas externas de gamificação — do crédito ao resgate.",
     imageSrc: "/screens/member-points.webp",
     imageAlt: "Histórico de pontos na carteira do colaborador",
     stats: [
@@ -242,7 +242,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         icon: Coins,
         title: "Pontos conectados às campanhas",
         body:
-          "A 4unik registra bônus, reconhecimento, metas batidas, ajustes operacionais e consumo na loja corporativa com contexto completo de origem e uso.",
+          "A Yoobe registra bônus, reconhecimento, metas batidas, ajustes operacionais e consumo na loja corporativa com contexto completo de origem e uso.",
       },
       {
         icon: ShieldCheck,
@@ -309,9 +309,9 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ],
     ctaTitle: "Quer uma carteira rastreável e pronta para integração?",
     ctaBody:
-      "A 4unik entrega uma carteira única para consulta, uso e rastreio de pontos dentro da loja corporativa — e também como camada conectada a outras ferramentas de gamificação e engajamento.",
+      "A Yoobe entrega uma carteira única para consulta, uso e rastreio de pontos dentro da loja corporativa — e também como camada conectada a outras ferramentas de gamificação e engajamento.",
     primaryCtaLabel: "Falar com especialista",
-    primaryCtaHref: "https://wa.me/551126844724",
+    primaryCtaHref: "https://wa.me/5541987607512",
     secondaryCtaLabel: "Ver a plataforma",
     secondaryCtaHref: "/plataforma",
     backLabel: "Voltar para plataforma",
@@ -319,17 +319,17 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
   },
   manager: {
     seo: {
-      title: "Painel do Gestor | 4unik",
+      title: "Painel do Gestor | Yoobe",
       description:
-        "Painel analítico para acompanhar campanhas, pedidos, usuários, produtos, estoque e performance operacional dentro da 4unik.",
+        "Painel analítico para acompanhar campanhas, pedidos, usuários, produtos, estoque e performance operacional dentro da Yoobe.",
     },
     badge: "Painel do Gestor",
     title: "O gestor enxerga a operação",
     highlight: "de ponta a ponta em um só painel.",
     description:
-      "O painel do gestor da 4unik reúne performance da operação, catálogo, pedidos, campanhas, usuários e indicadores críticos em uma camada de comando pensada para RH, marketing, people ops e times administrativos.",
+      "O painel do gestor da Yoobe reúne performance da operação, catálogo, pedidos, campanhas, usuários e indicadores críticos em uma camada de comando pensada para RH, marketing, people ops e times administrativos.",
     imageSrc: "/screens/dash/dashboard-geral.webp",
-    imageAlt: "Dashboard geral do painel do gestor 4unik",
+    imageAlt: "Dashboard geral do painel do gestor Yoobe",
     stats: [
       {
         label: "Visão executiva",
@@ -371,7 +371,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         icon: ScanSearch,
         title: "Leitura analítica acionável",
         body:
-          "A 4unik transforma volume operacional em sinais úteis para decidir mix de produtos, campanhas prioritárias e saúde da operação.",
+          "A Yoobe transforma volume operacional em sinais úteis para decidir mix de produtos, campanhas prioritárias e saúde da operação.",
       },
     ],
     workflowTitle: "Como o gestor usa o painel no dia a dia",
@@ -459,9 +459,9 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ],
     ctaTitle: "Quer visibilidade real sobre campanhas, pedidos e catálogo?",
     ctaBody:
-      "Com a 4unik, o gestor deixa de navegar entre sistemas isolados e passa a operar o programa inteiro a partir de um centro de comando único.",
+      "Com a Yoobe, o gestor deixa de navegar entre sistemas isolados e passa a operar o programa inteiro a partir de um centro de comando único.",
     primaryCtaLabel: "Agendar demonstração",
-    primaryCtaHref: "https://calendly.com/4unik/30min",
+    primaryCtaHref: "https://calendly.com/yoobeco/demo",
     secondaryCtaLabel: "Explorar a plataforma",
     secondaryCtaHref: "/plataforma",
     backLabel: "Voltar para plataforma",
@@ -469,9 +469,9 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
   },
   loja: {
     seo: {
-      title: "Loja Corporativa | 4Unik",
+      title: "Loja Corporativa | Yoobe",
       description:
-        "A loja corporativa da 4Unik permite que colaboradores escolham o próprio prêmio em um catálogo white-label — resgate de pontos, checkout e entrega gerenciados ponta a ponta.",
+        "A loja corporativa da Yoobe permite que colaboradores escolham o próprio prêmio em um catálogo white-label — resgate de pontos, checkout e entrega gerenciados ponta a ponta.",
     },
     badge: "Plataforma · Loja Corporativa",
     title: "A loja de recompensas onde o colaborador",
@@ -479,7 +479,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     description:
       "Uma vitrine totalmente white-label conectada ao seu programa de pontos. Colaboradores navegam pelo catálogo, resgatam pontos e recebem prêmios físicos ou digitais — sem nenhuma operação manual do RH.",
     imageSrc: "/screens/member-store-home.webp",
-    imageAlt: "Home da loja de resgate 4Unik — catálogo com produtos em pontos",
+    imageAlt: "Home da loja de resgate Yoobe — catálogo com produtos em pontos",
     stats: [
       {
         label: "Catálogo",
@@ -494,7 +494,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         label: "Entrega",
         value: "Global",
-        detail: "Fulfillment 4Unik ou integração via API com seu ERP e transportadora.",
+        detail: "Fulfillment Yoobe ou integração via API com seu ERP e transportadora.",
       },
     ],
     capabilitiesTitle: "O que a loja entrega",
@@ -517,7 +517,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         icon: Truck,
         title: "Logística integrada",
-        body: "Acompanhe cada pedido no painel de admin. Use a logística 4Unik ou conecte seu ERP e transportadora via API.",
+        body: "Acompanhe cada pedido no painel de admin. Use a logística Yoobe ou conecte seu ERP e transportadora via API.",
       },
       {
         icon: Tag,
@@ -552,7 +552,7 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       },
       {
         title: "Recebe o prêmio",
-        body: "O item é enviado para o endereço do colaborador via logística 4Unik ou parceiro de envio.",
+        body: "O item é enviado para o endereço do colaborador via logística Yoobe ou parceiro de envio.",
         imageSrc: "/screens/flows/brinde-passo-4.webp",
         imageAlt: "Confirmação de envio do brinde",
       },
@@ -600,9 +600,9 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ],
     ctaTitle: "Pronto para lançar a loja da sua empresa?",
     ctaBody:
-      "Agende uma conversa e veja como a 4Unik transforma o seu programa de reconhecimento numa loja que os colaboradores realmente usam.",
+      "Agende uma conversa e veja como a Yoobe transforma o seu programa de reconhecimento numa loja que os colaboradores realmente usam.",
     primaryCtaLabel: "Agendar demonstração",
-    primaryCtaHref: "https://calendly.com/4unik/30min",
+    primaryCtaHref: "https://calendly.com/yoobeco/demo",
     secondaryCtaLabel: "Explorar a plataforma",
     secondaryCtaHref: "/plataforma/",
     backLabel: "Voltar para plataforma",
@@ -613,17 +613,17 @@ export const ptPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
 export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeaturePageContent> = {
   motor: {
     seo: {
-      title: "Gamification Engine | 4unik",
+      title: "Gamification Engine | Yoobe",
       description:
-        "Campaigns, rules, scoring, and integrations that turn business goals into recognition experiences inside 4unik.",
+        "Campaigns, rules, scoring, and integrations that turn business goals into recognition experiences inside Yoobe.",
     },
     badge: "Gamification engine",
-    title: "4unik connects goals,",
+    title: "Yoobe connects goals,",
     highlight: "redemptions, and engagement in one operation.",
     description:
-      "4unik can run as your native gamification and engagement layer or connect to external engagement platforms. It turns the corporate store into an auditable redemption layer for teams, employees, and partners while campaign-specific landing pages support hackathons, internal challenges, recognition programs, onboarding, and performance goals.",
+      "Yoobe can run as your native gamification and engagement layer or connect to external engagement platforms. It turns the corporate store into an auditable redemption layer for teams, employees, and partners while campaign-specific landing pages support hackathons, internal challenges, recognition programs, onboarding, and performance goals.",
     imageSrc: "/screens/flows/campanha-passo-1.webp",
-    imageAlt: "4unik campaign creation wizard — initial data and slug",
+    imageAlt: "Yoobe campaign creation wizard — initial data and slug",
     stats: [
       {
         label: "Campaign launch",
@@ -633,7 +633,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         label: "Flexible engine",
         value: "Native or integrated",
-        detail: "Use 4unik as the core engine or connect external gamification and engagement stacks.",
+        detail: "Use Yoobe as the core engine or connect external gamification and engagement stacks.",
       },
       {
         label: "Redemption operations",
@@ -653,7 +653,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         icon: GitBranch,
         title: "Native engine or external integrations",
         body:
-          "Use the native 4unik gamification system or connect external engagement platforms, CRM, HRIS, and other event sources through APIs, webhooks, and manual actions.",
+          "Use the native Yoobe gamification system or connect external engagement platforms, CRM, HRIS, and other event sources through APIs, webhooks, and manual actions.",
       },
       {
         icon: Gift,
@@ -668,7 +668,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
           "Landing page, banner, wallet, notifications, and logistics stay aligned so campaigns move from launch to delivery without fragmented operations.",
       },
     ],
-    workflowTitle: "How 4unik runs a campaign",
+    workflowTitle: "How Yoobe runs a campaign",
     workflow: [
       {
         title: "Initial data and slug",
@@ -728,9 +728,9 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ],
     ctaTitle: "Need campaigns and redemptions with end-to-end operations?",
     ctaBody:
-      "4unik combines rules, wallet, corporate store, orders, and logistics so your action can move from idea to redemption and delivery without operational gaps.",
+      "Yoobe combines rules, wallet, corporate store, orders, and logistics so your action can move from idea to redemption and delivery without operational gaps.",
     primaryCtaLabel: "Book a demo",
-    primaryCtaHref: "https://calendly.com/4unik/30min",
+    primaryCtaHref: "https://calendly.com/yoobeco/demo",
     secondaryCtaLabel: "View full platform",
     secondaryCtaHref: "/platform/",
     backLabel: "Back to platform",
@@ -738,7 +738,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
   },
   wallets: {
     seo: {
-      title: "Wallet Control | 4unik",
+      title: "Wallet Control | Yoobe",
       description:
         "Balance, statements, redemptions, and points governance in an auditable wallet built for engagement campaigns and reward programs.",
     },
@@ -746,7 +746,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     title: "Participants track",
     highlight: "points, redemptions, and balance in one auditable wallet.",
     description:
-      "In 4unik, employees and campaign participants can review balances, check point history, follow redemptions, and use points inside the corporate store with full traceability. The wallet can also receive data from external gamification tools while keeping point usage auditable from credit to redemption.",
+      "In Yoobe, employees and campaign participants can review balances, check point history, follow redemptions, and use points inside the corporate store with full traceability. The wallet can also receive data from external gamification tools while keeping point usage auditable from credit to redemption.",
     imageSrc: "/screens/member-points.webp",
     imageAlt: "Employee wallet points history",
     stats: [
@@ -778,7 +778,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         icon: Coins,
         title: "Points tied to campaigns and actions",
         body:
-          "4unik records campaign bonuses, recognition points, goal achievements, order usage, and operational adjustments with full traceability.",
+          "Yoobe records campaign bonuses, recognition points, goal achievements, order usage, and operational adjustments with full traceability.",
       },
       {
         icon: ShieldCheck,
@@ -845,9 +845,9 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ],
     ctaTitle: "Need an auditable wallet ready for integrations?",
     ctaBody:
-      "4unik gives you one wallet layer for checking, spending, and auditing points inside the corporate store and across external engagement and gamification tools.",
+      "Yoobe gives you one wallet layer for checking, spending, and auditing points inside the corporate store and across external engagement and gamification tools.",
     primaryCtaLabel: "Talk to the team",
-    primaryCtaHref: "https://wa.me/551126844724",
+    primaryCtaHref: "https://wa.me/5541987607512",
     secondaryCtaLabel: "View the platform",
     secondaryCtaHref: "/platform/",
     backLabel: "Back to platform",
@@ -855,17 +855,17 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
   },
   manager: {
     seo: {
-      title: "Manager Dashboard | 4unik",
+      title: "Manager Dashboard | Yoobe",
       description:
-        "Analytics and operations dashboard for campaigns, orders, users, products, stock, and program performance inside 4unik.",
+        "Analytics and operations dashboard for campaigns, orders, users, products, stock, and program performance inside Yoobe.",
     },
     badge: "Manager dashboard",
     title: "Managers see the operation",
     highlight: "end to end in one dashboard.",
     description:
-      "4unik brings program performance, catalog, orders, campaigns, users, and operational signals into one command layer built for HR, marketing, people ops, and admin teams.",
+      "Yoobe brings program performance, catalog, orders, campaigns, users, and operational signals into one command layer built for HR, marketing, people ops, and admin teams.",
     imageSrc: "/screens/dash/dashboard-geral.webp",
-    imageAlt: "4unik manager dashboard overview",
+    imageAlt: "Yoobe manager dashboard overview",
     stats: [
       {
         label: "Executive visibility",
@@ -907,7 +907,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
         icon: ScanSearch,
         title: "Actionable analytics",
         body:
-          "4unik converts operational volume into signals that help teams decide on product mix, campaign priority, and program health.",
+          "Yoobe converts operational volume into signals that help teams decide on product mix, campaign priority, and program health.",
       },
     ],
     workflowTitle: "How managers use the dashboard",
@@ -995,9 +995,9 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ],
     ctaTitle: "Need real visibility into campaigns, orders, and catalog?",
     ctaBody:
-      "With 4unik, managers stop bouncing between disconnected tools and run the whole program from one control center.",
+      "With Yoobe, managers stop bouncing between disconnected tools and run the whole program from one control center.",
     primaryCtaLabel: "Book a demo",
-    primaryCtaHref: "https://calendly.com/4unik/30min",
+    primaryCtaHref: "https://calendly.com/yoobeco/demo",
     secondaryCtaLabel: "Explore the platform",
     secondaryCtaHref: "/platform/",
     backLabel: "Back to platform",
@@ -1005,9 +1005,9 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
   },
   loja: {
     seo: {
-      title: "Corporate store | 4Unik",
+      title: "Corporate store | Yoobe",
       description:
-        "A 4Unik corporate store lets employees choose their own reward from a fully branded catalog — points redemption, checkout, and delivery handled end to end.",
+        "A Yoobe corporate store lets employees choose their own reward from a fully branded catalog — points redemption, checkout, and delivery handled end to end.",
     },
     badge: "Platform · Corporate Store",
     title: "The reward store where employees",
@@ -1015,7 +1015,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     description:
       "A fully white-labeled storefront connected to your points program. Employees browse the catalog, redeem points, and receive physical or digital rewards — without any manual work from HR.",
     imageSrc: "/screens/member-store-home.webp",
-    imageAlt: "4Unik redemption store home — catalog with products priced in points",
+    imageAlt: "Yoobe redemption store home — catalog with products priced in points",
     stats: [
       {
         label: "Catalog",
@@ -1030,7 +1030,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         label: "Delivery",
         value: "Global",
-        detail: "4Unik logistics or API integration with your own ERP and carrier.",
+        detail: "Yoobe logistics or API integration with your own ERP and carrier.",
       },
     ],
     capabilitiesTitle: "What the store delivers",
@@ -1053,7 +1053,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       {
         icon: Truck,
         title: "Integrated logistics",
-        body: "Track every order from the admin panel. Use 4Unik logistics or connect your ERP and carrier stack via API.",
+        body: "Track every order from the admin panel. Use Yoobe logistics or connect your ERP and carrier stack via API.",
       },
       {
         icon: Tag,
@@ -1088,7 +1088,7 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
       },
       {
         title: "Receive the reward",
-        body: "The item ships to the employee's door via 4Unik logistics or your delivery partner.",
+        body: "The item ships to the employee's door via Yoobe logistics or your delivery partner.",
         imageSrc: "/screens/flows/brinde-passo-4.webp",
         imageAlt: "Gift shipping confirmation",
       },
@@ -1136,9 +1136,9 @@ export const enPlatformFeaturePages: Record<PlatformFeaturePageKey, PlatformFeat
     ],
     ctaTitle: "Ready to launch your company's reward store?",
     ctaBody:
-      "Book a call and see how 4Unik turns your recognition program into a store employees actually love using.",
+      "Book a call and see how Yoobe turns your recognition program into a store employees actually love using.",
     primaryCtaLabel: "Book a demo",
-    primaryCtaHref: "https://calendly.com/4unik/30min",
+    primaryCtaHref: "https://calendly.com/yoobeco/demo",
     secondaryCtaLabel: "Explore the platform",
     secondaryCtaHref: "/platform/",
     backLabel: "Back to platform",

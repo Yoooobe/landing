@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * Importa screenshots categorizados do zip 4unik_dashboard_screenshots_categorized:
+ * Importa screenshots categorizados do zip Yoobe_dashboard_screenshots_categorized:
  * PNG → WebP (máx. 1600px) em public/screens/dash|flows
  * GIF → webm/mp4 (+ poster) via ffmpeg; fallback WebP animado se ffmpeg falhar.
  *
  * Uso:
  *   npm run import:dash-screens
- *   npm run import:dash-screens -- /caminho/para/4unik_dashboard_screenshots_categorized.zip
+ *   npm run import:dash-screens -- /caminho/para/Yoobe_dashboard_screenshots_categorized.zip
  */
 import { execFileSync } from "child_process";
 import {
@@ -28,7 +28,7 @@ const root = join(__dirname, "..");
 const defaultZip = join(
   process.env.HOME || "",
   "Downloads",
-  "4unik_dashboard_screenshots_categorized.zip",
+  "Yoobe_dashboard_screenshots_categorized.zip",
 );
 
 const MAX_WIDTH = 1600;
@@ -211,7 +211,7 @@ async function main() {
     process.exit(1);
   }
 
-  const tmp = mkdtempSync(join(tmpdir(), "4unik-dash-screens-"));
+  const tmp = mkdtempSync(join(tmpdir(), "Yoobe-dash-screens-"));
   console.log(`import-dashboard-screens: extraindo ${basename(zipPath)} → ${tmp}`);
   try {
     extractZip(zipPath, tmp);

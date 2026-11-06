@@ -73,7 +73,7 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     accentBorderClass: "border-unik-blue/30",
     heroGlowPrimaryClass: "bg-unik-blue/20",
     heroGlowSecondaryClass: "bg-demo-cyan/12",
-    chromeLabel: "api.4unik.io",
+    chromeLabel: "api.yoobe.co",
     images: {
       hero: "/screens/icp/para-plataformas-hero.webp",
       how: "/screens/icp/para-plataformas-how.webp",
@@ -107,7 +107,7 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     accentBorderClass: "border-yoobe-purple/30",
     heroGlowPrimaryClass: "bg-yoobe-purple/22",
     heroGlowSecondaryClass: "bg-fuchsia-500/12",
-    chromeLabel: "app.4unik.io · trilha",
+    chromeLabel: "app.yoobe.co · trilha",
     images: {
       hero: "/screens/icp/educacao-hero.webp",
       how: "/screens/icp/educacao-how.webp",
@@ -141,7 +141,7 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     accentBorderClass: "border-brand-orange/30",
     heroGlowPrimaryClass: "bg-brand-orange/22",
     heroGlowSecondaryClass: "bg-yoobe-neon-pink/12",
-    chromeLabel: "gestor.4unik.io · metas",
+    chromeLabel: "admin.yoobe.co · metas",
     images: {
       hero: "/screens/icp/vendas-hero.webp",
       how: "/screens/icp/vendas-how.webp",
@@ -175,7 +175,7 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     accentBorderClass: "border-yoobe-neon-pink/30",
     heroGlowPrimaryClass: "bg-yoobe-neon-pink/20",
     heroGlowSecondaryClass: "bg-yoobe-purple/14",
-    chromeLabel: "loja.4unik.io · VIP",
+    chromeLabel: "store.yoobe.co · VIP",
     images: {
       hero: "/screens/icp/comunidades-hero.webp",
       how: "/screens/icp/comunidades-how.webp",
@@ -193,7 +193,7 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
       {
         icon: "gift",
         title: { pt: "Pedido enviado", en: "Order shipped" },
-        sub: { pt: "Fulfillment 4Unik", en: "4Unik fulfillment" },
+        sub: { pt: "Fulfillment Yoobe", en: "Yoobe fulfillment" },
         chipClass: "text-fuchsia-400 bg-fuchsia-500/15 border-fuchsia-500/30",
         delay: 0.7,
         floatDuration: 9,
@@ -209,7 +209,7 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     accentBorderClass: "border-demo-cyan/30",
     heroGlowPrimaryClass: "bg-demo-cyan/18",
     heroGlowSecondaryClass: "bg-unik-blue/14",
-    chromeLabel: "loja.4unik.io · evento",
+    chromeLabel: "store.yoobe.co · evento",
     images: {
       hero: "/screens/icp/eventos-hero.webp",
       how: "/screens/icp/eventos-how.webp",
@@ -243,7 +243,7 @@ export const ICP_PROFILE_VISUALS: Record<IcpProfileSlug, IcpProfileVisual> = {
     accentBorderClass: "border-yoobe-purple/30",
     heroGlowPrimaryClass: "bg-yoobe-purple/22",
     heroGlowSecondaryClass: "bg-fuchsia-500/12",
-    chromeLabel: "people.4unik.io",
+    chromeLabel: "people.yoobe.co",
     images: {
       hero: "/screens/gamif-regras.webp",
       how: "/screens/admin-campaign-config-desktop.webp",

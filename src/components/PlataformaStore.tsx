@@ -82,7 +82,7 @@ export default function PlataformaStore({
                       <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
                       <span className="h-2 w-2 rounded-full bg-green-500/80" />
                     </div>
-                    <span className="font-mono text-[0.6rem] text-white/45 tracking-wider">loja.4unik.io</span>
+                    <span className="font-mono text-[0.6rem] text-white/45 tracking-wider">store.yoobe.co</span>
                   </div>
                   <div className="relative h-[calc(100%-32px)] w-full">
                     <Image

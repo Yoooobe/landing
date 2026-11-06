@@ -1,20 +1,20 @@
 export const ptComunidadesPage = {
   seo: {
-    title: "Para criadores e comunidades | 4Unik — loja VIP de fãs",
+    title: "Para criadores e comunidades | Yoobe — loja VIP de fãs",
     description:
-      "Premie seus superfãs com uma loja VIP exclusiva. A 4Unik cuida de 100% da entrega — você cria, nós embalamos e enviamos.",
+      "Premie seus superfãs com uma loja VIP exclusiva. A Yoobe cuida de 100% da entrega — você cria, nós embalamos e enviamos.",
     openGraphDescription:
-      "Loja VIP para fãs e comunidades, com fulfillment 100% pela 4Unik.",
+      "Loja VIP para fãs e comunidades, com fulfillment 100% pela Yoobe.",
   },
   hero: {
     badge: "Para criadores e comunidades",
     title: "Uma loja VIP para os seus fãs",
     definitionLead:
-      "Criadores oferecem loja VIP e swag aos superfãs; a 4Unik gere inventário, embalagem e envio — sem logística própria.",
+      "Criadores oferecem loja VIP e swag aos superfãs; a Yoobe gere inventário, embalagem e envio — sem logística própria.",
     sub:
-      "Recompense quem mais engaja com produtos exclusivos. Você cuida da comunidade; a 4Unik cuida de estoque, embalagem e envio — do pedido ao rastreio.",
+      "Recompense quem mais engaja com produtos exclusivos. Você cuida da comunidade; a Yoobe cuida de estoque, embalagem e envio — do pedido ao rastreio.",
     ctaLabel: "Agendar demonstração",
-    ctaHref: "https://calendly.com/4unik/30min",
+    ctaHref: "https://calendly.com/yoobeco/demo",
   },
   problem: {
     badge: "A dor",
@@ -40,7 +40,7 @@ export const ptComunidadesPage = {
   how: {
     badge: "Como funciona",
     title: "Da comunidade ao presente na mão",
-    sub: "Engajamento vira pontos; o resto é com a 4Unik.",
+    sub: "Engajamento vira pontos; o resto é com a Yoobe.",
     columns: "3" as const,
     items: [
       {
@@ -54,14 +54,14 @@ export const ptComunidadesPage = {
         icon: "coins",
       },
       {
-        title: "Entrega com a 4Unik",
+        title: "Entrega com a Yoobe",
         desc: "Nós embalamos, enviamos e rastreamos até a casa do fã.",
         icon: "globe-2",
       },
     ],
   },
   benefits: {
-    badge: "Por que a 4Unik",
+    badge: "Por que a Yoobe",
     title: "Você cria, a entrega é com a gente",
     items: [
       {
@@ -85,11 +85,11 @@ export const ptComunidadesPage = {
     items: [
       {
         q: "Como criadores entregam recompensas sem logística própria?",
-        a: "Monte uma loja VIP com itens exclusivos; os fãs resgatam com pontos de engajamento e a 4Unik embala, envia e rastreia até à casa de cada um. Você cuida da comunidade e da marca; nós operamos catálogo, estoque e fulfillment.",
+        a: "Monte uma loja VIP com itens exclusivos; os fãs resgatam com pontos de engajamento e a Yoobe embala, envia e rastreia até à casa de cada um. Você cuida da comunidade e da marca; nós operamos catálogo, estoque e fulfillment.",
       },
       {
         q: "Preciso ter estoque?",
-        a: "Não. A 4Unik cuida de catálogo, estoque e envio. Você define os itens e as regras.",
+        a: "Não. A Yoobe cuida de catálogo, estoque e envio. Você define os itens e as regras.",
       },
       {
         q: "Como os fãs ganham pontos?",
@@ -111,6 +111,6 @@ export const ptComunidadesPage = {
     body:
       "Conte sobre a sua comunidade e o que faz sentido oferecer. Montamos a loja VIP e a operação com você.",
     primaryLabel: "Agendar demonstração",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
 } as const;

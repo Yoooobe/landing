@@ -183,7 +183,7 @@ export function normalizeBlogCategoryForFilter(category: string | undefined): st
   const cat = category.trim().toLowerCase();
   if (cat.includes("engajam") || cat.includes("engagement")) return "Engajamento";
   if (cat.includes("times") || cat.includes("team")) return "Gamificação de Times";
-  if (cat.includes("prática") || cat.includes("practice")) return "4unik na Prática";
+  if (cat.includes("prática") || cat.includes("practice")) return "Yoobe na Prática";
   if (cat.includes("eventos") || cat.includes("events") || cat.includes("brindes") || cat.includes("rewards")) return "Eventos & Brindes";
   if (cat.includes("crescimento") || cat.includes("growth")) return "Crescimento";
   if (cat.includes("pessoas") || cat.includes("people")) return "Gestão de Pessoas";
@@ -198,22 +198,22 @@ const ptSeed: readonly SeedPost[] = [
     slug: "1",
     locale: "pt",
     excerpt:
-      "Descubra como empresas líderes usam mecânicas de jogos para reduzir turnover e aumentar o engajamento com a plataforma 4unik — com pontos, missões e loja de recompensas integrada.",
+      "Descubra como empresas líderes usam mecânicas de jogos para reduzir turnover e aumentar o engajamento com a plataforma Yoobe — com pontos, missões e loja de recompensas integrada.",
     category: "Engajamento",
     publishedAt: "2026-03-20T00:00:00.000Z",
     readTimeMinutes: 12,
     featured: true,
     author: "Daniel Agrici",
-    tags: ["gamificação", "engajamento", "4unik", "RH"],
+    tags: ["gamificação", "engajamento", "Yoobe", "RH"],
     coverImage: {
       alt: "Equipe de RH e líderes celebrando metas com cultura de reconhecimento",
       asset: { url: IMG.teamRh },
     },
-    relatedKeywords: ["gamificação RH", "engajamento", "turnover", "plataforma 4unik"],
+    relatedKeywords: ["gamificação RH", "engajamento", "turnover", "plataforma Yoobe"],
     seo: {
-      metaTitle: "Gamificação no RH com 4unik | Blog Engaja, time!",
+      metaTitle: "Gamificação no RH com Yoobe | Blog Engaja, time!",
       metaDescription:
-        "Guia prático: como alinhar cultura, reconhecimento e resultados com gamificação corporativa na 4unik.",
+        "Guia prático: como alinhar cultura, reconhecimento e resultados com gamificação corporativa na Yoobe.",
     },
     bodySpec: [
       { type: "p", text: "**Gamificação corporativa** é a aplicação de mecânicas de evolução e recompensas no ambiente de trabalho." },
@@ -228,35 +228,35 @@ const ptSeed: readonly SeedPost[] = [
         { text: "." },
       ]},
       { type: "rich", segments: [
-        { text: "Artigo revisado por especialistas da 4unik. Saiba mais sobre nossa plataforma em " },
-        { text: "about the author", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Artigo revisado por especialistas da Yoobe. Saiba mais sobre nossa plataforma em " },
+        { text: "about the author", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
         type: "image",
-        alt: "Painel com campanhas, missões e visão de participação na plataforma 4unik",
+        alt: "Painel com campanhas, missões e visão de participação na plataforma Yoobe",
         asset: { url: IMG.dashboard },
       },
       CTA_1_PT[0],
       { type: "h2", text: "Análise e Síntese de Evidências" },
-      { type: "p", text: "| Metrica de Engajamento | Impacto em Retencao | Fonte de Mercado |\n|---|---|---|\n| Reconhecimento Semanal | +14% alinhamento | Harvard Business Review |\n| Missoes com Pontos | +23% rentabilidade | Gallup Global Workplace |\n| Loja de Resgate Integrada | -43% turnover | 4unik Research |" },
+      { type: "p", text: "| Metrica de Engajamento | Impacto em Retencao | Fonte de Mercado |\n|---|---|---|\n| Reconhecimento Semanal | +14% alinhamento | Harvard Business Review |\n| Missoes com Pontos | +23% rentabilidade | Gallup Global Workplace |\n| Loja de Resgate Integrada | -43% turnover | Yoobe Research |" },
       { type: "rich", segments: [
         { text: "Estudos da " },
         { text: "Harvard Business Review sobre cultura", href: "https://hbr.org" },
         { text: " mostram 14% de ganho com feedback regular. Conheça a " },
-        { text: "Plataforma 4unik", href: PLATAFORMA_HREF },
+        { text: "Plataforma Yoobe", href: PLATAFORMA_HREF },
         { text: "." },
       ]},
-      { type: "h2", text: "Por que a 4unik foi feita para o RH moderno" },
-      { type: "p", text: "A 4unik reúne missões, rankings e catálogo corporativo em um fluxo automatizado." },
+      { type: "h2", text: "Por que a Yoobe foi feita para o RH moderno" },
+      { type: "p", text: "A Yoobe reúne missões, rankings e catálogo corporativo em um fluxo automatizado." },
       { type: "ul", items: [
         "Missões estratégicas ligadas a valores e treinos.",
         "Reconhecimento transparente com regras claras.",
         "Resgate em loja com logística física garantida.",
       ]},
-      { type: "h2", text: "Como a 4unik ajuda neste cenário" },
+      { type: "h2", text: "Como a Yoobe ajuda neste cenário" },
       CTA_1_PT[1],
       { type: "ul", items: [
         "Regras objetivas de pontuação por missão.",
@@ -266,7 +266,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_1_PT[2],
       { type: "rich", segments: [
         { text: "Acesse a " },
-        { text: "Plataforma 4unik", href: PLATAFORMA_HREF },
+        { text: "Plataforma Yoobe", href: PLATAFORMA_HREF },
         { text: ", navegue pela " },
         { text: "loja de resgate", href: LOJA_HREF },
         { text: ", simule na " },
@@ -278,11 +278,11 @@ const ptSeed: readonly SeedPost[] = [
     ],
   },
   {
-    title: "4unik em eventos: pontos, QR Code e troca de brindes ao vivo",
+    title: "Yoobe em eventos: pontos, QR Code e troca de brindes ao vivo",
     slug: "2",
     locale: "pt",
     excerpt:
-      "Transforme convenções, feiras internas e workshops em experiências memoráveis: QR Codes, pontuação em tempo real e resgate na loja 4unik.",
+      "Transforme convenções, feiras internas e workshops em experiências memoráveis: QR Codes, pontuação em tempo real e resgate na loja Yoobe.",
     category: "Eventos & Brindes",
     publishedAt: "2026-03-15T00:00:00.000Z",
     readTimeMinutes: 10,
@@ -294,9 +294,9 @@ const ptSeed: readonly SeedPost[] = [
     },
     relatedKeywords: ["eventos corporativos", "QR Code", "brindes", "gamificação"],
     seo: {
-      metaTitle: "Eventos corporativos gamificados com 4unik | Blog Engaja, time!",
+      metaTitle: "Eventos corporativos gamificados com Yoobe | Blog Engaja, time!",
       metaDescription:
-        "Use pontos e QR Codes em eventos e deixe o colaborador escolher o brinde na loja 4unik.",
+        "Use pontos e QR Codes em eventos e deixe o colaborador escolher o brinde na loja Yoobe.",
     },
     bodySpec: [
       { type: "p", text: "**Gamificação de eventos** é a estratégia de transformar palestras e estandes em estações de pontos." },
@@ -311,10 +311,10 @@ const ptSeed: readonly SeedPost[] = [
         { text: "." },
       ]},
       { type: "rich", segments: [
-        { text: "Artigo revisado pela equipe de eventos da 4unik. Saiba mais em " },
-        { text: "about the author", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Artigo revisado pela equipe de eventos da Yoobe. Saiba mais em " },
+        { text: "about the author", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -325,7 +325,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_2_PT[0],
       { type: "h2", text: "Análise e Síntese de Evidências" },
       { type: "p", text: "| Etapa da Convenção | Mecânica de Pontos | Prêmio Típico |\n|---|---|---|\n| Check-in e Abertura | QR Code de Presença | 50 Pontos na Loja |\n| Workshops Técnicos | Quiz em Tempo Real | Brindes Exclusivos |\n| Encerramento | Sorteio Gamificado | Experiência Corporativa |" },
-      { type: "h2", text: "Como a 4unik ajuda neste cenário" },
+      { type: "h2", text: "Como a Yoobe ajuda neste cenário" },
       CTA_2_PT[1],
       { type: "ul", items: [
         "Escaneamento rápido de QR Codes sem atrito.",
@@ -337,7 +337,7 @@ const ptSeed: readonly SeedPost[] = [
         { text: "Confira nossa " },
         { text: "loja de resgate", href: LOJA_HREF },
         { text: " e navegue pelo " },
-        { text: "blog 4unik", href: BLOG_HREF },
+        { text: "blog Yoobe", href: BLOG_HREF },
         { text: "." },
       ]},
     ],
@@ -347,7 +347,7 @@ const ptSeed: readonly SeedPost[] = [
     slug: "3",
     locale: "pt",
     excerpt:
-      "Monte incentivo comercial com transparência: metas em missões, ranking ao vivo e regras que evitam competição tóxica — tudo na 4unik.",
+      "Monte incentivo comercial com transparência: metas em missões, ranking ao vivo e regras que evitam competição tóxica — tudo na Yoobe.",
     category: "Gamificação de Times",
     publishedAt: "2026-03-10T00:00:00.000Z",
     readTimeMinutes: 10,
@@ -359,9 +359,9 @@ const ptSeed: readonly SeedPost[] = [
     },
     relatedKeywords: ["vendas", "gamificação", "ranking", "incentivo"],
     seo: {
-      metaTitle: "Campanha de vendas gamificada | 4unik Blog",
+      metaTitle: "Campanha de vendas gamificada | Yoobe Blog",
       metaDescription:
-        "Ranking, missões e loja de prêmios para motivar o time comercial com a 4unik.",
+        "Ranking, missões e loja de prêmios para motivar o time comercial com a Yoobe.",
     },
     bodySpec: [
       { type: "p", text: "**Gamificação de vendas** é a conversão de metas comerciais em missões diárias." },
@@ -374,10 +374,10 @@ const ptSeed: readonly SeedPost[] = [
         { text: "." },
       ]},
       { type: "rich", segments: [
-        { text: "Artigo revisado pelo time de liderança de receita da 4unik. Saiba mais em " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Artigo revisado pelo time de liderança de receita da Yoobe. Saiba mais em " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -388,7 +388,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_3_PT[0],
       { type: "h2", text: "Análise e Síntese de Evidências" },
       { type: "p", text: "| Função Comercial | Missão Gamificada | Frequência de Pontos |\n|---|---|---|\n| SDR / BDR | 10 Reuniões Agendadas | Semanal |\n| Closer / AE | 3 Propostas Enviadas | Diária |\n| Gestor de Vendas | Higiene de Pipeline | Quinzenal |" },
-      { type: "h2", text: "Como a 4unik ajuda neste cenário" },
+      { type: "h2", text: "Como a Yoobe ajuda neste cenário" },
       CTA_3_PT[1],
       { type: "ul", items: [
         "Missões flexíveis para cada etapa do funil.",
@@ -398,7 +398,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_3_PT[2],
       { type: "rich", segments: [
         { text: "Veja a " },
-        { text: "Plataforma 4unik comercial", href: PLATAFORMA_HREF },
+        { text: "Plataforma Yoobe comercial", href: PLATAFORMA_HREF },
         { text: " ou leia artigos no " },
         { text: "blog", href: BLOG_HREF },
         { text: "." },
@@ -410,7 +410,7 @@ const ptSeed: readonly SeedPost[] = [
     slug: "4",
     locale: "pt",
     excerpt:
-      "Una kit físico de boas-vindas a missões digitais na 4unik nos primeiros 30 dias — integração com leveza e propósito.",
+      "Una kit físico de boas-vindas a missões digitais na Yoobe nos primeiros 30 dias — integração com leveza e propósito.",
     category: "Motivação & Reconhecimento",
     publishedAt: "2026-03-01T00:00:00.000Z",
     readTimeMinutes: 9,
@@ -422,9 +422,9 @@ const ptSeed: readonly SeedPost[] = [
     },
     relatedKeywords: ["onboarding", "welcome kit", "novos colaboradores"],
     seo: {
-      metaTitle: "Onboarding gamificado com 4unik | Blog Engaja, time!",
+      metaTitle: "Onboarding gamificado com Yoobe | Blog Engaja, time!",
       metaDescription:
-        "Combine kit físico e missões na 4unik para o primeiro mês do colaborador.",
+        "Combine kit físico e missões na Yoobe para o primeiro mês do colaborador.",
     },
     bodySpec: [
       { type: "p", text: "**Onboarding gamificado** é a integração de kits de boas-vindas físicos a missões digitais nos primeiros 30 dias." },
@@ -437,10 +437,10 @@ const ptSeed: readonly SeedPost[] = [
         { text: "." },
       ]},
       { type: "rich", segments: [
-        { text: "Artigo revisado pela equipe de People & RH da 4unik. Saiba mais em " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Artigo revisado pela equipe de People & RH da Yoobe. Saiba mais em " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -451,7 +451,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_4_PT[0],
       { type: "h2", text: "Análise e Síntese de Evidências" },
       { type: "p", text: "| Período de Onboarding | Missão Principal | Recompensa |\n|---|---|---|\n| Semana 1 (Dias 1-7) | Concluir Cadastro e Leitura de Guia | Welcome Kit Físico |\n| Semana 2 (Dias 8-14) | Reunião 1:1 com Mentor | 100 Pontos na Loja |\n| Semana 4 (Dia 30) | Apresentação de Projeto Inicial | Badge e Upgrade de Kit |" },
-      { type: "h2", text: "Como a 4unik ajuda neste cenário" },
+      { type: "h2", text: "Como a Yoobe ajuda neste cenário" },
       CTA_4_PT[1],
       { type: "ul", items: [
         "Trilhas de 7, 15 e 30 dias com metas visíveis.",
@@ -461,7 +461,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_4_PT[2],
       { type: "rich", segments: [
         { text: "Explore o " },
-        { text: "site da 4unik", href: HOME_HREF },
+        { text: "site da Yoobe", href: HOME_HREF },
         { text: " e o " },
         { text: "blog Engaja, time!", href: BLOG_HREF },
         { text: "." },
@@ -469,25 +469,25 @@ const ptSeed: readonly SeedPost[] = [
     ],
   },
   {
-    title: "OKRs e gamificação: conectar metas da empresa a recompensas na 4unik",
+    title: "OKRs e gamificação: conectar metas da empresa a recompensas na Yoobe",
     slug: "5",
     locale: "pt",
     excerpt:
       "Use campanhas e missões para traduzir resultados-chave em ações diárias — com reconhecimento contínuo, não só no fechamento do trimestre.",
-    category: "4unik na Prática",
+    category: "Yoobe na Prática",
     publishedAt: "2026-02-20T00:00:00.000Z",
     readTimeMinutes: 11,
     author: "Daniel Agrici",
-    tags: ["OKRs", "metas", "4unik", "performance"],
+    tags: ["OKRs", "metas", "Yoobe", "performance"],
     coverImage: {
       alt: "Tela de analytics e métricas de negócio",
       asset: { url: IMG.dashboard },
     },
     relatedKeywords: ["OKRs", "gamificação", "metas", "recompensas"],
     seo: {
-      metaTitle: "OKRs + gamificação na 4unik | Blog Engaja, time!",
+      metaTitle: "OKRs + gamificação na Yoobe | Blog Engaja, time!",
       metaDescription:
-        "Alinhe objetivos estratégicos a missões e recompensas com a plataforma 4unik.",
+        "Alinhe objetivos estratégicos a missões e recompensas com a plataforma Yoobe.",
     },
     bodySpec: [
       { type: "p", text: "**Gamificação de OKRs** é o mapeamento dos resultados-chave da empresa em missões quinzenais." },
@@ -500,10 +500,10 @@ const ptSeed: readonly SeedPost[] = [
         { text: "." },
       ]},
       { type: "rich", segments: [
-        { text: "Artigo revisado pelo comitê de estratégia da 4unik. Saiba mais em " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Artigo revisado pelo comitê de estratégia da Yoobe. Saiba mais em " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -514,7 +514,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_5_PT[0],
       { type: "h2", text: "Análise e Síntese de Evidências" },
       { type: "p", text: "| Ciclo de OKR | Mecânica de Gamificação | Tipo de Recompensa |\n|---|---|---|\n| Semanas 1-4 | Sprint de Entregas | Pontos Individuais |\n| Semanas 5-8 | Desafio em Equipe | Almoço de Celebração |\n| Fechamento Q | Cumprimento de KR | Resgate em Catálogo |" },
-      { type: "h2", text: "Como a 4unik ajuda neste cenário" },
+      { type: "h2", text: "Como a Yoobe ajuda neste cenário" },
       CTA_5_PT[1],
       { type: "ul", items: [
         "Missões semanais com prazos definidos por KR.",
@@ -536,7 +536,7 @@ const ptSeed: readonly SeedPost[] = [
     slug: "6",
     locale: "pt",
     excerpt:
-      "Da participação em campanhas a impacto em retenção e eNPS: como estruturar indicadores quando você usa gamificação com a 4unik.",
+      "Da participação em campanhas a impacto em retenção e eNPS: como estruturar indicadores quando você usa gamificação com a Yoobe.",
     category: "Crescimento",
     publishedAt: "2026-02-10T00:00:00.000Z",
     readTimeMinutes: 10,
@@ -548,7 +548,7 @@ const ptSeed: readonly SeedPost[] = [
     },
     relatedKeywords: ["ROI RH", "métricas", "engajamento", "dashboard"],
     seo: {
-      metaTitle: "ROI de engajamento e métricas de RH | Blog 4unik",
+      metaTitle: "ROI de engajamento e métricas de RH | Blog Yoobe",
       metaDescription:
         "Indicadores para provar o valor de programas de gamificação e recompensas.",
     },
@@ -565,10 +565,10 @@ const ptSeed: readonly SeedPost[] = [
         { text: "." },
       ]},
       { type: "rich", segments: [
-        { text: "Análise financeira revisada por especialistas da 4unik. Saiba mais em " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Análise financeira revisada por especialistas da Yoobe. Saiba mais em " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -579,7 +579,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_6_PT[0],
       { type: "h2", text: "Análise e Síntese de Evidências" },
       { type: "p", text: "| Indicador | Fórmula de Cálculo | Meta Saudável |\n|---|---|---|\n| Adesão Ativa | (Ativos / Total) * 100 | > 80% |\n| Custo por Ponto | Orçamento Total / Pontos Emitidos | R$ 0,05 a R$ 0,10 |\n| Retenção de Talentos | 1 - Turnover Voluntário | > 90% |" },
-      { type: "h2", text: "Como a 4unik ajuda neste cenário" },
+      { type: "h2", text: "Como a Yoobe ajuda neste cenário" },
       CTA_6_PT[1],
       { type: "ul", items: [
         "Relatórios de participação e adesão por setor.",
@@ -613,7 +613,7 @@ const ptSeed: readonly SeedPost[] = [
     seo: {
       metaTitle: "Gestão de pessoas e gamificação | Blog Engaja, time!",
       metaDescription:
-        "Como usar a 4unik para reforçar feedback e performance no dia a dia.",
+        "Como usar a Yoobe para reforçar feedback e performance no dia a dia.",
     },
     bodySpec: [
       { type: "p", text: "**Gestão contínua de performance** é a oferta de feedbacks semanais em vez de avaliações anuais isoladas." },
@@ -626,10 +626,10 @@ const ptSeed: readonly SeedPost[] = [
         { text: "." },
       ]},
       { type: "rich", segments: [
-        { text: "Artigo revisado pelo time de gestão de talentos da 4unik. Saiba mais em " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Artigo revisado pelo time de gestão de talentos da Yoobe. Saiba mais em " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -640,7 +640,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_7_PT[0],
       { type: "h2", text: "Análise e Síntese de Evidências" },
       { type: "p", text: "| Frequência de Avaliação | Engajamento Médio | Clima Organizacional |\n|---|---|---|\n| Anual Tradicional | 45% | Neutro / Burocrático |\n| Mensal por OKR | 72% | Colaborativo |\n| Semanal com Gamificação | 88% | Alta Performance |" },
-      { type: "h2", text: "Como a 4unik ajuda neste cenário" },
+      { type: "h2", text: "Como a Yoobe ajuda neste cenário" },
       CTA_7_PT[1],
       { type: "ul", items: [
         "Reconhecimento instantâneo entre pares e líderes.",
@@ -650,7 +650,7 @@ const ptSeed: readonly SeedPost[] = [
       CTA_7_PT[2],
       { type: "rich", segments: [
         { text: "Explore a " },
-        { text: "Plataforma 4unik", href: PLATAFORMA_HREF },
+        { text: "Plataforma Yoobe", href: PLATAFORMA_HREF },
         { text: " ou continue no " },
         { text: "blog", href: BLOG_HREF },
         { text: "." },
@@ -663,7 +663,7 @@ const ptSeed: readonly SeedPost[] = [
     slug: "8",
     locale: "pt",
     excerpt:
-      "Como o Grupo Boticário engajou colaboradores a concluir trilhas de vídeo sobre segurança de dados — com pontos, loja interna e prêmios físicos entregues pela 4Unik.",
+      "Como o Grupo Boticário engajou colaboradores a concluir trilhas de vídeo sobre segurança de dados — com pontos, loja interna e prêmios físicos entregues pela Yoobe.",
     category: "Casos de sucesso",
     publishedAt: "2026-06-10T00:00:00.000Z",
     readTimeMinutes: 11,
@@ -678,12 +678,12 @@ const ptSeed: readonly SeedPost[] = [
       "treinamento gamificado",
       "segurança de dados",
       "conclusão de cursos",
-      "4unik",
+      "Yoobe",
     ],
     seo: {
-      metaTitle: "Case Boticário: treinamento gamificado de segurança de dados | Blog 4unik",
+      metaTitle: "Case Boticário: treinamento gamificado de segurança de dados | Blog Yoobe",
       metaDescription:
-        "Trilha de vídeos, pontos e prêmios físicos: como o Grupo Boticário elevou conclusão de treinamentos com a 4unik.",
+        "Trilha de vídeos, pontos e prêmios físicos: como o Grupo Boticário elevou conclusão de treinamentos com a Yoobe.",
     },
     bodySpec: [
       {
@@ -713,10 +713,10 @@ const ptSeed: readonly SeedPost[] = [
       {
         type: "rich",
         segments: [
-          { text: "Estudo de caso revisado por especialistas em T&D da 4unik. Saiba mais em " },
-          { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+          { text: "Estudo de caso revisado por especialistas em T&D da Yoobe. Saiba mais em " },
+          { text: "about us", href: "https://www.yoobe.co/platform/" },
           { text: " or " },
-          { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+          { text: "contact", href: "https://www.yoobe.co/" },
           { text: "." },
         ],
       },
@@ -733,12 +733,12 @@ const ptSeed: readonly SeedPost[] = [
         type: "ul",
         items: [
           "+308% de abertura e conclusão de cursos no programa.",
-          "Mais de 11 mil prêmios físicos entregues diretamente pela 4unik.",
+          "Mais de 11 mil prêmios físicos entregues diretamente pela Yoobe.",
           "R$ 63 mil em investimento com retorno medido em compliance.",
           "Expansão para 6 novas áreas corporativas pós-piloto.",
         ],
       },
-      { type: "h2", text: "Como a 4unik ajuda neste cenário" },
+      { type: "h2", text: "Como a Yoobe ajuda neste cenário" },
       CTA_8_PT[1],
       {
         type: "ul",
@@ -757,7 +757,7 @@ const ptSeed: readonly SeedPost[] = [
           { text: ", veja a " },
           { text: "loja de resgate", href: LOJA_HREF },
           { text: " ou leia mais no " },
-          { text: "blog 4unik", href: BLOG_HREF },
+          { text: "blog Yoobe", href: BLOG_HREF },
           { text: "." },
         ],
       },
@@ -771,22 +771,22 @@ const enSeed: readonly SeedPost[] = [
     slug: "1",
     locale: "en",
     excerpt:
-      "Leading companies use game mechanics to cut turnover and lift engagement — with points, missions and the 4unik rewards store in one flow.",
+      "Leading companies use game mechanics to cut turnover and lift engagement — with points, missions and the Yoobe rewards store in one flow.",
     category: "Engagement",
     publishedAt: "2026-03-20T00:00:00.000Z",
     readTimeMinutes: 12,
     featured: true,
     author: "Daniel Agrici",
-    tags: ["gamification", "engagement", "4unik", "HR"],
+    tags: ["gamification", "engagement", "Yoobe", "HR"],
     coverImage: {
       alt: "HR and leaders celebrating goals with a recognition culture",
       asset: { url: IMG.teamRh },
     },
-    relatedKeywords: ["HR gamification", "engagement", "turnover", "4unik platform"],
+    relatedKeywords: ["HR gamification", "engagement", "turnover", "Yoobe platform"],
     seo: {
-      metaTitle: "HR gamification with 4unik | Engaja, time! Blog",
+      metaTitle: "HR gamification with Yoobe | Engaja, time! Blog",
       metaDescription:
-        "Align culture, recognition and outcomes with corporate gamification on 4unik.",
+        "Align culture, recognition and outcomes with corporate gamification on Yoobe.",
     },
     bodySpec: [
       { type: "p", text: "**Corporate gamification** is the application of progress mechanics and visible rewards in work environments." },
@@ -801,28 +801,28 @@ const enSeed: readonly SeedPost[] = [
         { text: " demonstrating 23% higher profitability." },
       ]},
       { type: "rich", segments: [
-        { text: "Editorial reviewed by 4unik Reward Infrastructure specialists. Learn more about us and our team on " },
-        { text: "about the author", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Editorial reviewed by Yoobe Reward Infrastructure specialists. Learn more about us and our team on " },
+        { text: "about the author", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
         type: "image",
-        alt: "Campaign and participation overview in the 4unik platform",
+        alt: "Campaign and participation overview in the Yoobe platform",
         asset: { url: IMG.dashboard },
       },
       CTA_1_EN[0],
       { type: "h2", text: "Evidence Synthesis & Benchmark Data" },
-      { type: "p", text: "| Metric | Benchmark | Market Source |\n|---|---|---|\n| Weekly Recognition | +14% performance boost | Harvard Business Review |\n| Active Gamification | +23% profitability | Gallup Global Workplace |\n| Integrated Rewards Store | 43% turnover reduction | 4unik Industry Research |" },
+      { type: "p", text: "| Metric | Benchmark | Market Source |\n|---|---|---|\n| Weekly Recognition | +14% performance boost | Harvard Business Review |\n| Active Gamification | +23% profitability | Gallup Global Workplace |\n| Integrated Rewards Store | 43% turnover reduction | Yoobe Industry Research |" },
       { type: "rich", segments: [
         { text: "Studies published in the " },
         { text: "Harvard Business Review on recognition culture", href: "https://hbr.org" },
         { text: " show that weekly feedback improves team performance by up to 14%. Learn more about the " },
-        { text: "4unik Platform", href: PLATAFORMA_HREF_EN },
+        { text: "Yoobe Platform", href: PLATAFORMA_HREF_EN },
         { text: "." },
       ]},
-      { type: "h2", text: "How 4unik helps in this scenario" },
+      { type: "h2", text: "How Yoobe helps in this scenario" },
       CTA_1_EN[1],
       { type: "ul", items: [
         "Missions engine with versionable rules and cloneable campaigns.",
@@ -832,7 +832,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_1_EN[2],
       { type: "rich", segments: [
         { text: "Learn more about the " },
-        { text: "4unik Platform", href: PLATAFORMA_HREF_EN },
+        { text: "Yoobe Platform", href: PLATAFORMA_HREF_EN },
         { text: ", explore the " },
         { text: "Rewards Store", href: LOJA_HREF_EN },
         { text: " or browse our " },
@@ -842,11 +842,11 @@ const enSeed: readonly SeedPost[] = [
     ],
   },
   {
-    title: "4unik at events: points, QR codes and live reward swaps",
+    title: "Yoobe at events: points, QR codes and live reward swaps",
     slug: "2",
     locale: "en",
     excerpt:
-      "Turn internal conferences and workshops into memorable journeys: QR codes, live scoring and redemption in the 4unik store.",
+      "Turn internal conferences and workshops into memorable journeys: QR codes, live scoring and redemption in the Yoobe store.",
     category: "Events & Rewards",
     publishedAt: "2026-03-15T00:00:00.000Z",
     readTimeMinutes: 10,
@@ -858,9 +858,9 @@ const enSeed: readonly SeedPost[] = [
     },
     relatedKeywords: ["corporate events", "QR code", "rewards", "gamification"],
     seo: {
-      metaTitle: "Gamified corporate events with 4unik | Blog",
+      metaTitle: "Gamified corporate events with Yoobe | Blog",
       metaDescription:
-        "Use points and QR codes at events; let people pick gifts in the 4unik store.",
+        "Use points and QR codes at events; let people pick gifts in the Yoobe store.",
     },
     bodySpec: [
       { type: "p", text: "**Gamificação de eventos** é a estratégia de transformar palestras e estandes em estações de pontos." },
@@ -875,10 +875,10 @@ const enSeed: readonly SeedPost[] = [
         { text: " yielding 60% higher interaction." },
       ]},
       { type: "rich", segments: [
-        { text: "Guide authored by Daniel Agrici and reviewed by 4unik event specialists. To learn more about us and our team, visit " },
-        { text: "about the author", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Guide authored by Daniel Agrici and reviewed by Yoobe event specialists. To learn more about us and our team, visit " },
+        { text: "about the author", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -889,7 +889,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_2_EN[0],
       { type: "h2", text: "Evidence Synthesis & Benchmark Data" },
       { type: "p", text: "| Event Stage | Point Mechanic | Typical Reward |\n|---|---|---|\n| Check-in & Keynote | Attendance QR Code | 50 Store Points |\n| Technical Workshops | Live Quiz Completion | Exclusive Swag |\n| Conference Closing | Gamified Raffle | Premium Experience |" },
-      { type: "h2", text: "How 4unik helps in this scenario" },
+      { type: "h2", text: "How Yoobe helps in this scenario" },
       CTA_2_EN[1],
       { type: "ul", items: [
         "Real-time QR scanning and instant points crediting.",
@@ -911,7 +911,7 @@ const enSeed: readonly SeedPost[] = [
     slug: "3",
     locale: "en",
     excerpt:
-      "Build transparent commercial incentives: weekly missions, live leaderboards and clear reward rules — powered by 4unik.",
+      "Build transparent commercial incentives: weekly missions, live leaderboards and clear reward rules — powered by Yoobe.",
     category: "Team Gamification",
     publishedAt: "2026-03-10T00:00:00.000Z",
     readTimeMinutes: 10,
@@ -921,11 +921,11 @@ const enSeed: readonly SeedPost[] = [
       alt: "Sales team celebrating quarterly achievements",
       asset: { url: IMG.salesTeam },
     },
-    relatedKeywords: ["sales incentives", "gamification", "leaderboard", "4unik"],
+    relatedKeywords: ["sales incentives", "gamification", "leaderboard", "Yoobe"],
     seo: {
-      metaTitle: "Gamified sales incentive campaigns | 4unik Blog",
+      metaTitle: "Gamified sales incentive campaigns | Yoobe Blog",
       metaDescription:
-        "Missions, leaderboards and rewards to motivate revenue teams on 4unik.",
+        "Missions, leaderboards and rewards to motivate revenue teams on Yoobe.",
     },
     bodySpec: [
       { type: "p", text: "**Gamified sales incentives** break quarterly targets into weekly operational missions." },
@@ -940,10 +940,10 @@ const enSeed: readonly SeedPost[] = [
         { text: " driving 18% higher revenue." },
       ]},
       { type: "rich", segments: [
-        { text: "Written by Daniel Agrici and reviewed by 4unik revenue leaders. Learn more about us and our team on " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Written by Daniel Agrici and reviewed by Yoobe revenue leaders. Learn more about us and our team on " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -954,7 +954,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_3_EN[0],
       { type: "h2", text: "Evidence Synthesis & Benchmark Data" },
       { type: "p", text: "| Sales Role | Gamified Mission | Point Cadence |\n|---|---|---|\n| SDR / BDR | 10 Demos Scheduled | Weekly |\n| Account Executive | 3 Proposals Sent | Daily |\n| Sales Manager | CRM Pipeline Hygiene | Bi-weekly |" },
-      { type: "h2", text: "How 4unik helps sales leaders" },
+      { type: "h2", text: "How Yoobe helps sales leaders" },
       CTA_3_EN[1],
       { type: "ul", items: [
         "Configurable missions by pipeline stage.",
@@ -964,7 +964,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_3_EN[2],
       { type: "rich", segments: [
         { text: "Explore the " },
-        { text: "4unik Platform", href: PLATAFORMA_HREF_EN },
+        { text: "Yoobe Platform", href: PLATAFORMA_HREF_EN },
         { text: " or read more on the " },
         { text: "blog", href: BLOG_HREF_EN },
         { text: "." },
@@ -976,7 +976,7 @@ const enSeed: readonly SeedPost[] = [
     slug: "4",
     locale: "en",
     excerpt:
-      "Combine physical welcome gifts with digital 30-day missions on 4unik — effortless onboarding with clear purpose.",
+      "Combine physical welcome gifts with digital 30-day missions on Yoobe — effortless onboarding with clear purpose.",
     category: "Motivation & Recognition",
     publishedAt: "2026-03-01T00:00:00.000Z",
     readTimeMinutes: 9,
@@ -988,9 +988,9 @@ const enSeed: readonly SeedPost[] = [
     },
     relatedKeywords: ["onboarding", "welcome kit", "employee experience"],
     seo: {
-      metaTitle: "Gamified onboarding with 4unik | Blog",
+      metaTitle: "Gamified onboarding with Yoobe | Blog",
       metaDescription:
-        "Pair physical gifts with 4unik digital missions for new hire retention.",
+        "Pair physical gifts with Yoobe digital missions for new hire retention.",
     },
     bodySpec: [
       { type: "p", text: "**Gamified onboarding** connects physical welcome kits to digital milestone missions." },
@@ -1005,10 +1005,10 @@ const enSeed: readonly SeedPost[] = [
         { text: " showing 82% higher retention." },
       ]},
       { type: "rich", segments: [
-        { text: "Report by Daniel Agrici and reviewed by 4unik HR specialists. Find out more about us and our team at " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Report by Daniel Agrici and reviewed by Yoobe HR specialists. Find out more about us and our team at " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -1019,7 +1019,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_4_EN[0],
       { type: "h2", text: "Evidence Synthesis & Benchmark Data" },
       { type: "p", text: "| Onboarding Period | Core Mission | Unlock Reward |\n|---|---|---|\n| Week 1 (Days 1-7) | Profile & Policy Review | Physical Welcome Kit |\n| Week 2 (Days 8-14) | Mentor 1:1 Meeting | 100 Store Points |\n| Week 4 (Day 30) | First Deliverable Review | Badge & Kit Upgrade |" },
-      { type: "h2", text: "How 4unik helps HR teams" },
+      { type: "h2", text: "How Yoobe helps HR teams" },
       CTA_4_EN[1],
       { type: "ul", items: [
         "Progressive onboarding tracks (7, 15, 30 days).",
@@ -1029,7 +1029,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_4_EN[2],
       { type: "rich", segments: [
         { text: "Learn more on the " },
-        { text: "4unik home page", href: HOME_HREF },
+        { text: "Yoobe home page", href: HOME_HREF },
         { text: " or visit the " },
         { text: "blog", href: BLOG_HREF_EN },
         { text: "." },
@@ -1037,25 +1037,25 @@ const enSeed: readonly SeedPost[] = [
     ],
   },
   {
-    title: "OKRs and gamification: linking strategic goals to rewards on 4unik",
+    title: "OKRs and gamification: linking strategic goals to rewards on Yoobe",
     slug: "5",
     locale: "en",
     excerpt:
       "Use campaigns and missions to translate Key Results into daily actions — continuous recognition throughout the quarter.",
-    category: "4unik in Practice",
+    category: "Yoobe in Practice",
     publishedAt: "2026-02-20T00:00:00.000Z",
     readTimeMinutes: 11,
     author: "Daniel Agrici",
-    tags: ["OKRs", "goals", "4unik", "performance"],
+    tags: ["OKRs", "goals", "Yoobe", "performance"],
     coverImage: {
       alt: "Business performance metrics and analytics screen",
       asset: { url: IMG.dashboard },
     },
     relatedKeywords: ["OKRs", "gamification", "goals", "rewards"],
     seo: {
-      metaTitle: "OKRs + gamification on 4unik | Blog",
+      metaTitle: "OKRs + gamification on Yoobe | Blog",
       metaDescription:
-        "Align company Key Results with gamified missions and rewards on 4unik.",
+        "Align company Key Results with gamified missions and rewards on Yoobe.",
     },
     bodySpec: [
       { type: "p", text: "**Gamificação de OKRs** é o mapeamento dos resultados-chave da empresa em missões quinzenais." },
@@ -1070,10 +1070,10 @@ const enSeed: readonly SeedPost[] = [
         { text: " lifting completion by 35%." },
       ]},
       { type: "rich", segments: [
-        { text: "Analysis by Daniel Agrici and reviewed by 4unik strategy leads. Learn more about us and our team on " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Analysis by Daniel Agrici and reviewed by Yoobe strategy leads. Learn more about us and our team on " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -1084,7 +1084,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_5_EN[0],
       { type: "h2", text: "Evidence Synthesis & Benchmark Data" },
       { type: "p", text: "| OKR Cycle | Gamification Mechanic | Reward Type |\n|---|---|---|\n| Weeks 1-4 | Sprint Deliverables | Individual Points |\n| Weeks 5-8 | Team Mission Challenge | Celebration Lunch |\n| Q Closing | KR Achievement | Store Catalog Redemption |" },
-      { type: "h2", text: "How 4unik helps align goals" },
+      { type: "h2", text: "How Yoobe helps align goals" },
       CTA_5_EN[1],
       { type: "ul", items: [
         "Quarterly OKR campaign templates with flexible scoring.",
@@ -1094,7 +1094,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_5_EN[2],
       { type: "rich", segments: [
         { text: "Explore the " },
-        { text: "4unik Platform", href: PLATAFORMA_HREF_EN },
+        { text: "Yoobe Platform", href: PLATAFORMA_HREF_EN },
         { text: " or read more on the " },
         { text: "blog", href: BLOG_HREF_EN },
         { text: "." },
@@ -1106,7 +1106,7 @@ const enSeed: readonly SeedPost[] = [
     slug: "6",
     locale: "en",
     excerpt:
-      "From campaign adoption to eNPS and retention impact: how to structure data when using 4unik gamification.",
+      "From campaign adoption to eNPS and retention impact: how to structure data when using Yoobe gamification.",
     category: "Growth",
     publishedAt: "2026-02-10T00:00:00.000Z",
     readTimeMinutes: 10,
@@ -1118,7 +1118,7 @@ const enSeed: readonly SeedPost[] = [
     },
     relatedKeywords: ["HR ROI", "metrics", "engagement", "dashboard"],
     seo: {
-      metaTitle: "Engagement ROI and HR metrics | 4unik Blog",
+      metaTitle: "Engagement ROI and HR metrics | Yoobe Blog",
       metaDescription:
         "Key metrics to prove the business ROI of gamification and rewards.",
     },
@@ -1135,10 +1135,10 @@ const enSeed: readonly SeedPost[] = [
         { text: " proving 23% profitability gains." },
       ]},
       { type: "rich", segments: [
-        { text: "Study prepared by Daniel Agrici and reviewed by 4unik financial analysts. Learn more about us and our team on " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Study prepared by Daniel Agrici and reviewed by Yoobe financial analysts. Learn more about us and our team on " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -1149,7 +1149,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_6_EN[0],
       { type: "h2", text: "Evidence Synthesis & Benchmark Data" },
       { type: "p", text: "| Key Metric | Calculation Formula | Target Threshold |\n|---|---|---|\n| Active Adoption Rate | (Active Users / Total) * 100 | > 80% |\n| Cost per Point | Total Budget / Points Issued | $0.05 - $0.10 |\n| Talent Retention Rate | 1 - Voluntary Turnover | > 90% |" },
-      { type: "h2", text: "How 4unik provides data clarity" },
+      { type: "h2", text: "How Yoobe provides data clarity" },
       CTA_6_EN[1],
       { type: "ul", items: [
         "Exportable participation and points distribution dashboards.",
@@ -1183,7 +1183,7 @@ const enSeed: readonly SeedPost[] = [
     seo: {
       metaTitle: "People management and gamification | Blog",
       metaDescription:
-        "Reinforce continuous feedback and performance with 4unik.",
+        "Reinforce continuous feedback and performance with Yoobe.",
     },
     bodySpec: [
       { type: "p", text: "**Gestão contínua de performance** é a oferta de feedbacks semanais em vez de avaliações anuais isoladas." },
@@ -1198,10 +1198,10 @@ const enSeed: readonly SeedPost[] = [
         { text: " yielding 31% higher team alignment." },
       ]},
       { type: "rich", segments: [
-        { text: "Post by Daniel Agrici and reviewed by 4unik talent leads. Learn more about us and our team on " },
-        { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+        { text: "Post by Daniel Agrici and reviewed by Yoobe talent leads. Learn more about us and our team on " },
+        { text: "about us", href: "https://www.yoobe.co/platform/" },
         { text: " or " },
-        { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+        { text: "contact", href: "https://www.yoobe.co/" },
         { text: "." },
       ]},
       {
@@ -1212,7 +1212,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_7_EN[0],
       { type: "h2", text: "Evidence Synthesis & Benchmark Data" },
       { type: "p", text: "| Review Cadence | Average Engagement | Team Alignment |\n|---|---|---|\n| Annual Performance Review | 45% | Low / Bureaucratic |\n| Monthly OKR Check-in | 72% | Moderate |\n| Weekly Gamified Feedback | 88% | High Performance |" },
-      { type: "h2", text: "How 4unik supports continuous feedback" },
+      { type: "h2", text: "How Yoobe supports continuous feedback" },
       CTA_7_EN[1],
       { type: "ul", items: [
         "Missions tied to collaboration and innovation behaviors.",
@@ -1222,7 +1222,7 @@ const enSeed: readonly SeedPost[] = [
       CTA_7_EN[2],
       { type: "rich", segments: [
         { text: "Discover the " },
-        { text: "4unik Platform", href: PLATAFORMA_HREF_EN },
+        { text: "Yoobe Platform", href: PLATAFORMA_HREF_EN },
         { text: " or return to the " },
         { text: "blog", href: BLOG_HREF_EN },
         { text: "." },
@@ -1235,7 +1235,7 @@ const enSeed: readonly SeedPost[] = [
     slug: "8",
     locale: "en",
     excerpt:
-      "How Grupo Boticário engaged employees to complete data security video courses — using points, a branded store and physical reward delivery by 4unik.",
+      "How Grupo Boticário engaged employees to complete data security video courses — using points, a branded store and physical reward delivery by Yoobe.",
     category: "Success Stories",
     publishedAt: "2026-06-10T00:00:00.000Z",
     readTimeMinutes: 11,
@@ -1250,12 +1250,12 @@ const enSeed: readonly SeedPost[] = [
       "gamified training",
       "data security",
       "course completion",
-      "4unik",
+      "Yoobe",
     ],
     seo: {
-      metaTitle: "Boticário Case: gamified data security training | 4unik Blog",
+      metaTitle: "Boticário Case: gamified data security training | Yoobe Blog",
       metaDescription:
-        "Video tracks, points and physical rewards: how Grupo Boticário boosted completion with 4unik.",
+        "Video tracks, points and physical rewards: how Grupo Boticário boosted completion with Yoobe.",
     },
     bodySpec: [
       {
@@ -1279,7 +1279,7 @@ const enSeed: readonly SeedPost[] = [
         segments: [
           { text: "Documented case at " },
           { text: "Boticário Data Center of Excellence", href: EDUCACAO_HREF_EN },
-          { text: " powered by 4unik, where our team analyzed " },
+          { text: " powered by Yoobe, where our team analyzed " },
           { text: "actual completion logs", href: EDUCACAO_HREF_EN },
           { text: "." },
         ],
@@ -1287,10 +1287,10 @@ const enSeed: readonly SeedPost[] = [
       {
         type: "rich",
         segments: [
-          { text: "Case study written by Daniel Agrici and reviewed by 4unik L&D specialists. Find out more about us and our team on " },
-          { text: "about us", href: "https://plataforma.4unik.com.br/landing/plataforma/" },
+          { text: "Case study written by Daniel Agrici and reviewed by Yoobe L&D specialists. Find out more about us and our team on " },
+          { text: "about us", href: "https://www.yoobe.co/platform/" },
           { text: " or " },
-          { text: "contact", href: "https://plataforma.4unik.com.br/landing/" },
+          { text: "contact", href: "https://www.yoobe.co/" },
           { text: "." },
         ],
       },
@@ -1312,7 +1312,7 @@ const enSeed: readonly SeedPost[] = [
           "Expanded to 6 new corporate business units post-pilot.",
         ],
       },
-      { type: "h2", text: "How 4unik powers learning campaigns" },
+      { type: "h2", text: "How Yoobe powers learning campaigns" },
       CTA_8_EN[1],
       {
         type: "ul",

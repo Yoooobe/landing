@@ -1,10 +1,10 @@
 export const enPlataforma = {
   seo: {
-    title: "Platform | 4Unik V3 — Reward Infrastructure",
+    title: "Platform | Yoobe V3 — Reward Infrastructure",
     description:
       "Analytics console, gamification engine, redemption store, logistics, and enterprise security. Reward infrastructure and delivery for engagement programs.",
     openGraphDescription:
-      "Console, gamification, catalog, logistics, and SSO: the 4Unik V3 stack to run rewards at scale.",
+      "Console, gamification, catalog, logistics, and SSO: the Yoobe V3 stack to run rewards at scale.",
   },
   hero: {
     badge: "Operations under control",
@@ -69,7 +69,7 @@ export const enPlataforma = {
     titleGradient: "heart",
     titleAfter: " of engagement.",
     body:
-      "Run 4unik as your points and campaigns engine—or plug in a platform you already use. Either way, rewards land in the same corporate store and redemption flow.",
+      "Run Yoobe as your points and campaigns engine—or plug in a platform you already use. Either way, rewards land in the same corporate store and redemption flow.",
     cards: [
       {
         title: "Campaigns with dedicated pages",
@@ -79,7 +79,7 @@ export const enPlataforma = {
       {
         title: "Native engine or integrations",
         body:
-          "Ingest events from other tools or run rules, wallet, and redemption fully on 4unik—one clean flow, fewer workarounds.",
+          "Ingest events from other tools or run rules, wallet, and redemption fully on Yoobe—one clean flow, fewer workarounds.",
       },
     ],
     flowTitle: "Logical flow (autonomous events)",
@@ -87,7 +87,7 @@ export const enPlataforma = {
       node1Title: "CRM webhook",
       node1Sub: "(target hit)",
       arrow1: "--- 500 pts --->",
-      node2Title: "4Unik engine",
+      node2Title: "Yoobe engine",
       node2Sub: "(rules applied)",
       arrow2: "--- Wallet --->",
       node3Title: "Push app",
@@ -100,7 +100,7 @@ export const enPlataforma = {
     titleGradient: "your brand",
     titleAfter: " front and center.",
     bodyBefore:
-      "Stop managing stock or buying products employees do not want. 4Unik V3 fills the store with a wide catalog of quality products featuring ",
+      "Stop managing stock or buying products employees do not want. Yoobe V3 fills the store with a wide catalog of quality products featuring ",
     bodyStrong: "YOUR BRAND",
     bodyAfter: " with on-demand shipping.",
     features: [
@@ -121,7 +121,7 @@ export const enPlataforma = {
       filter: "Filter",
       newBadge: "NEW",
       p1Category: "Apparel",
-      p1Name: "Premium hoodie with 4Unik logo",
+      p1Name: "Premium hoodie with Yoobe logo",
       p2Category: "Digital",
       p2Name: "iFood gift card R$100",
       pts: "pts",
@@ -170,12 +170,12 @@ export const enPlataforma = {
   faq: {
     badge: "FAQ",
     titleBefore: "Questions about the",
-    titleGradient: "4Unik V3 platform",
+    titleGradient: "Yoobe V3 platform",
     titleAfter: "",
     items: [
       {
-        q: "Is 4Unik V3 just a swag catalog?",
-        a: "No. 4Unik V3 is reward infrastructure: administration, a gamification engine, catalog, logistics and delivery, and integrations built for engagement and incentive programs, not a standalone storefront.",
+        q: "Is Yoobe V3 just a swag catalog?",
+        a: "No. Yoobe V3 is reward infrastructure: administration, a gamification engine, catalog, logistics and delivery, and integrations built for engagement and incentive programs, not a standalone storefront.",
       },
       {
         q: "How does reward logistics and delivery work?",

@@ -1,20 +1,20 @@
 export const enGamificacaoParaRhPage = {
   seo: {
-    title: "HR gamification | 4Unik — engagement with real rewards",
+    title: "HR gamification | Yoobe — engagement with real rewards",
     description:
-      "HR gamification programs with missions, points, and physical rewards fulfilled by 4Unik. Recognition employees can feel — without running catalog or logistics.",
+      "HR gamification programs with missions, points, and physical rewards fulfilled by Yoobe. Recognition employees can feel — without running catalog or logistics.",
     openGraphDescription:
-      "Corporate gamification for People Ops: missions, points, and reward fulfillment by 4Unik.",
+      "Corporate gamification for People Ops: missions, points, and reward fulfillment by Yoobe.",
   },
   hero: {
     badge: "HR gamification",
     title: "Engagement employees can actually feel",
     definitionLead:
-      "HR teams use 4Unik to connect missions and recognition to physical rewards delivered to employees — we handle catalog, redemption, and logistics.",
+      "HR teams use Yoobe to connect missions and recognition to physical rewards delivered to employees — we handle catalog, redemption, and logistics.",
     sub:
-      "Set missions, goals, and recognition moments. 4Unik delivers the real reward — you own culture and experience; we own prize operations.",
+      "Set missions, goals, and recognition moments. Yoobe delivers the real reward — you own culture and experience; we own prize operations.",
     ctaLabel: "Book a demo",
-    ctaHref: "https://calendly.com/4unik/30min",
+    ctaHref: "https://calendly.com/yoobeco/demo",
   },
   problem: {
     badge: "The challenge",
@@ -40,7 +40,7 @@ export const enGamificacaoParaRhPage = {
   how: {
     badge: "How it works",
     title: "From mission to doorstep",
-    sub: "You design the rules; 4Unik runs catalog, redemption, and delivery.",
+    sub: "You design the rules; Yoobe runs catalog, redemption, and delivery.",
     columns: "3" as const,
     items: [
       {
@@ -55,13 +55,13 @@ export const enGamificacaoParaRhPage = {
       },
       {
         title: "Tracked delivery",
-        desc: "4Unik ships and tracks to the door — visible to HR and managers.",
+        desc: "Yoobe ships and tracks to the door — visible to HR and managers.",
         icon: "globe-2",
       },
     ],
   },
   benefits: {
-    badge: "Why 4Unik",
+    badge: "Why Yoobe",
     title: "Gamification without the ops burden",
     items: [
       {
@@ -76,7 +76,7 @@ export const enGamificacaoParaRhPage = {
       },
       {
         title: "Outsourced operations",
-        desc: "Catalog, inventory, shipping, and employee support stay with 4Unik.",
+        desc: "Catalog, inventory, shipping, and employee support stay with Yoobe.",
         icon: "package",
       },
     ],
@@ -85,15 +85,15 @@ export const enGamificacaoParaRhPage = {
     items: [
       {
         q: "What is HR gamification in practice?",
-        a: "Programs where employees complete HR-defined missions or goals — onboarding, training, team targets — and redeem points for physical rewards. 4Unik runs the store and delivery; you define rules and cultural narrative.",
+        a: "Programs where employees complete HR-defined missions or goals — onboarding, training, team targets — and redeem points for physical rewards. Yoobe runs the store and delivery; you define rules and cultural narrative.",
       },
       {
         q: "Do I need my own gamification platform?",
-        a: "Not necessarily. Use 4Unik's engine or integrate the rewards layer with your existing engagement platform via API.",
+        a: "Not necessarily. Use Yoobe's engine or integrate the rewards layer with your existing engagement platform via API.",
       },
       {
         q: "Who ships the rewards?",
-        a: "4Unik — from catalog to tracking. HR does not pack swag or manage gift inventory.",
+        a: "Yoobe — from catalog to tracking. HR does not pack swag or manage gift inventory.",
       },
       {
         q: "Does it work for recognition and culture programs?",
@@ -111,6 +111,6 @@ export const enGamificacaoParaRhPage = {
     body:
       "Tell us about your workforce and the campaigns you want to launch. We will design the mission and reward flow with you.",
     primaryLabel: "Book a demo",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
 } as const;

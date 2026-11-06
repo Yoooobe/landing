@@ -48,49 +48,49 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
   "1": {
     pt: {
       platform: {
-        eyebrow: "Visão geral · landing 4unik",
+        eyebrow: "Visão geral · landing Yoobe",
         title: "Onde encaixa gamificação, loja e dados",
         description:
-          "Na página Plataforma vês como a 4unik une motor de missões, catálogo e integrações — ponto de partida para pedires ajuda à equipa comercial.",
+          "Na página Plataforma vês como a Yoobe une motor de missões, catálogo e integrações — ponto de partida para pedires ajuda à equipa comercial.",
         ctaLabel: "Abrir página Plataforma",
       },
       feature: {
         eyebrow: "Motor de gamificação",
-        title: "Aprofunda no motor da 4unik",
+        title: "Aprofunda no motor da Yoobe",
         description:
           "A página do motor explica missões, pontos e campanhas alinhadas ao teu RH — ideal para preparares uma conversa com representantes sobre o teu programa.",
         ctaLabel: "Ver motor de gamificação",
-        featureAlt: "Painel de métricas e gamificação na plataforma 4unik",
+        featureAlt: "Painel de métricas e gamificação na plataforma Yoobe",
       },
       demo: {
-        eyebrow: "Demo · representantes 4unik",
+        eyebrow: "Demo · representantes Yoobe",
         title: "Vê a plataforma ao vivo com a nossa equipa",
         description:
-          "Agenda uma demo no Calendly: conversa com representantes 4unik para desenhar engajamento, missões e loja ao teu ritmo.",
+          "Agenda uma demo no Calendly: conversa com representantes Yoobe para desenhar engajamento, missões e loja ao teu ritmo.",
         ctaLabel: "Marcar demo",
       },
     },
     en: {
       platform: {
-        eyebrow: "Overview · 4unik landing",
+        eyebrow: "Overview · Yoobe landing",
         title: "Where gamification, store and data meet",
         description:
-          "The Platform page shows how 4unik combines missions, catalog and integrations — your entry point to ask our team for help.",
+          "The Platform page shows how Yoobe combines missions, catalog and integrations — your entry point to ask our team for help.",
         ctaLabel: "Open Platform page",
       },
       feature: {
         eyebrow: "Gamification engine",
-        title: "Go deeper on the 4unik engine",
+        title: "Go deeper on the Yoobe engine",
         description:
-          "The engine page covers missions, points and HR campaigns — use it to brief 4unik reps before a tailored conversation.",
+          "The engine page covers missions, points and HR campaigns — use it to brief Yoobe reps before a tailored conversation.",
         ctaLabel: "View gamification engine",
-        featureAlt: "Gamification and metrics dashboard on 4unik",
+        featureAlt: "Gamification and metrics dashboard on Yoobe",
       },
       demo: {
-        eyebrow: "Demo · 4unik representatives",
+        eyebrow: "Demo · Yoobe representatives",
         title: "See the platform live with our team",
         description:
-          "Book a Calendly demo: speak with 4unik representatives to shape engagement, missions and the store for your context.",
+          "Book a Calendly demo: speak with Yoobe representatives to shape engagement, missions and the store for your context.",
         ctaLabel: "Book a demo",
       },
     },
@@ -99,31 +99,31 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
     pt: {
       platform: {
         eyebrow: "Loja corporativa · landing",
-        title: "Brindes e resgates como na 4unik",
+        title: "Brindes e resgates como na Yoobe",
         description:
-          "A página da loja mostra catálogo e resgates — o mesmo fluxo que podes combinar com eventos e QR Codes com ajuda da equipa 4unik.",
+          "A página da loja mostra catálogo e resgates — o mesmo fluxo que podes combinar com eventos e QR Codes com ajuda da equipa Yoobe.",
         ctaLabel: "Ver loja de resgate",
       },
       feature: {
         eyebrow: "Plataforma · visão geral",
         title: "Engajamento, loja e operação num só lugar",
         description:
-          "A página Plataforma resume como a 4unik une missões, catálogo e logística — útil para planear eventos e brindes com representantes.",
+          "A página Plataforma resume como a Yoobe une missões, catálogo e logística — útil para planear eventos e brindes com representantes.",
         ctaLabel: "Abrir página Plataforma",
         featureAlt: "Evento corporativo e experiência de marca",
       },
       demo: {
-        eyebrow: "Demo · representantes 4unik",
-        title: "Planeia eventos e brindes com a 4unik",
+        eyebrow: "Demo · representantes Yoobe",
+        title: "Planeia eventos e brindes com a Yoobe",
         description:
-          "Marca uma demo: representantes 4unik ajudam a ligar QR Codes, missões e loja ao teu calendário de eventos.",
+          "Marca uma demo: representantes Yoobe ajudam a ligar QR Codes, missões e loja ao teu calendário de eventos.",
         ctaLabel: "Marcar demo",
       },
     },
     en: {
       platform: {
         eyebrow: "Corporate store · landing",
-        title: "Rewards and redemption like on 4unik",
+        title: "Rewards and redemption like on Yoobe",
         description:
           "The store page shows catalog and redemption — the same flow you can pair with events and QR codes with help from our team.",
         ctaLabel: "View rewards store",
@@ -132,15 +132,15 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Platform · overview",
         title: "Engagement, store and ops in one place",
         description:
-          "The Platform page shows how 4unik combines missions, catalog and logistics — plan events and gifts with our representatives.",
+          "The Platform page shows how Yoobe combines missions, catalog and logistics — plan events and gifts with our representatives.",
         ctaLabel: "Open Platform page",
         featureAlt: "Corporate event audience and stage",
       },
       demo: {
-        eyebrow: "Demo · 4unik representatives",
-        title: "Plan events and gifts with 4unik",
+        eyebrow: "Demo · Yoobe representatives",
+        title: "Plan events and gifts with Yoobe",
         description:
-          "Book a demo: 4unik representatives help connect QR missions and the store to your event calendar.",
+          "Book a demo: Yoobe representatives help connect QR missions and the store to your event calendar.",
         ctaLabel: "Book a demo",
       },
     },
@@ -149,9 +149,9 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
     pt: {
       platform: {
         eyebrow: "Motor · landing",
-        title: "Campanhas comerciais com a 4unik",
+        title: "Campanhas comerciais com a Yoobe",
         description:
-          "O motor de gamificação na landing mostra como missões e rankings servem equipas de vendas — base para pedires um desenho com a 4unik.",
+          "O motor de gamificação na landing mostra como missões e rankings servem equipas de vendas — base para pedires um desenho com a Yoobe.",
         ctaLabel: "Ver motor de gamificação",
       },
       feature: {
@@ -163,19 +163,19 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         featureAlt: "Equipa de vendas alinhada em campanha",
       },
       demo: {
-        eyebrow: "Demo · representantes 4unik",
-        title: "Desenha incentivos com a 4unik",
+        eyebrow: "Demo · representantes Yoobe",
+        title: "Desenha incentivos com a Yoobe",
         description:
-          "Conversa com representantes 4unik numa demo: ranking, missões e orçamento de prémios para o teu time.",
+          "Conversa com representantes Yoobe numa demo: ranking, missões e orçamento de prémios para o teu time.",
         ctaLabel: "Marcar demo",
       },
     },
     en: {
       platform: {
         eyebrow: "Engine · landing",
-        title: "Sales campaigns on 4unik",
+        title: "Sales campaigns on Yoobe",
         description:
-          "The gamification engine page shows missions and rankings for sales teams — a baseline to ask 4unik for a tailored design.",
+          "The gamification engine page shows missions and rankings for sales teams — a baseline to ask Yoobe for a tailored design.",
         ctaLabel: "View gamification engine",
       },
       feature: {
@@ -187,10 +187,10 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         featureAlt: "Sales team celebrating results",
       },
       demo: {
-        eyebrow: "Demo · 4unik representatives",
-        title: "Design incentives with 4unik",
+        eyebrow: "Demo · Yoobe representatives",
+        title: "Design incentives with Yoobe",
         description:
-          "Talk to 4unik representatives in a demo: rankings, missions and incentive budget for your team.",
+          "Talk to Yoobe representatives in a demo: rankings, missions and incentive budget for your team.",
         ctaLabel: "Book a demo",
       },
     },
@@ -208,15 +208,15 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Loja de resgate",
         title: "Recompensas no primeiro contacto",
         description:
-          "A página da loja explica resgates e catálogo — combina com welcome kit e trilhas; representantes 4unik ajudam a calibrar.",
+          "A página da loja explica resgates e catálogo — combina com welcome kit e trilhas; representantes Yoobe ajudam a calibrar.",
         ctaLabel: "Ver loja de resgate",
         featureAlt: "Welcome kit e materiais de onboarding",
       },
       demo: {
-        eyebrow: "Demo · representantes 4unik",
-        title: "Monta o onboarding com a 4unik",
+        eyebrow: "Demo · representantes Yoobe",
+        title: "Monta o onboarding com a Yoobe",
         description:
-          "Agenda uma demo com representantes 4unik: trilhas, campanhas para novos contratados e boas práticas.",
+          "Agenda uma demo com representantes Yoobe: trilhas, campanhas para novos contratados e boas práticas.",
         ctaLabel: "Marcar demo",
       },
     },
@@ -232,15 +232,15 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Rewards store",
         title: "Rewards from day one",
         description:
-          "The store page explains catalog and redemption — pair with welcome kits and paths; 4unik reps help you tune it.",
+          "The store page explains catalog and redemption — pair with welcome kits and paths; Yoobe reps help you tune it.",
         ctaLabel: "View rewards store",
         featureAlt: "Welcome kit and onboarding materials",
       },
       demo: {
-        eyebrow: "Demo · 4unik representatives",
-        title: "Build onboarding with 4unik",
+        eyebrow: "Demo · Yoobe representatives",
+        title: "Build onboarding with Yoobe",
         description:
-          "Book a demo with 4unik representatives: paths, new-hire campaigns and best practices.",
+          "Book a demo with Yoobe representatives: paths, new-hire campaigns and best practices.",
         ctaLabel: "Book a demo",
       },
     },
@@ -251,7 +251,7 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Painel do gestor · landing",
         title: "Metas, OKRs e visibilidade",
         description:
-          "O painel na landing mostra como acompanhar participação e entregas — útil para alinhares com a 4unik como ligar OKRs a missões.",
+          "O painel na landing mostra como acompanhar participação e entregas — útil para alinhares com a Yoobe como ligar OKRs a missões.",
         ctaLabel: "Ver painel do gestor",
       },
       feature: {
@@ -263,10 +263,10 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         featureAlt: "Dashboard de métricas e objetivos",
       },
       demo: {
-        eyebrow: "Demo · representantes 4unik",
+        eyebrow: "Demo · representantes Yoobe",
         title: "Alinha OKRs à operação",
         description:
-          "Marca uma demo com representantes 4unik: campanhas, relatórios e ligação entre KRs e missões no teu contexto.",
+          "Marca uma demo com representantes Yoobe: campanhas, relatórios e ligação entre KRs e missões no teu contexto.",
         ctaLabel: "Marcar demo",
       },
     },
@@ -275,7 +275,7 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Manager dashboard · landing",
         title: "Goals, OKRs and visibility",
         description:
-          "The dashboard page shows how to track participation and deliveries — align with 4unik on tying OKRs to missions.",
+          "The dashboard page shows how to track participation and deliveries — align with Yoobe on tying OKRs to missions.",
         ctaLabel: "View manager dashboard",
       },
       feature: {
@@ -287,10 +287,10 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         featureAlt: "Analytics dashboard on a screen",
       },
       demo: {
-        eyebrow: "Demo · 4unik representatives",
+        eyebrow: "Demo · Yoobe representatives",
         title: "Align OKRs with operations",
         description:
-          "Book a demo with 4unik representatives: campaigns, reporting and mapping KRs to missions.",
+          "Book a demo with Yoobe representatives: campaigns, reporting and mapping KRs to missions.",
         ctaLabel: "Book a demo",
       },
     },
@@ -301,7 +301,7 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Painel do gestor · landing",
         title: "Indicadores para provar ROI de engajamento",
         description:
-          "O painel cobre adesão e distribuição de pontos — referência para pedires à 4unik relatórios prontos para diretoria.",
+          "O painel cobre adesão e distribuição de pontos — referência para pedires à Yoobe relatórios prontos para diretoria.",
         ctaLabel: "Ver painel do gestor",
       },
       feature: {
@@ -313,10 +313,10 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         featureAlt: "Análise de dados e gráficos de desempenho",
       },
       demo: {
-        eyebrow: "Demo · representantes 4unik",
-        title: "ROI e relatórios com a 4unik",
+        eyebrow: "Demo · representantes Yoobe",
+        title: "ROI e relatórios com a Yoobe",
         description:
-          "Agenda uma demo com representantes 4unik: narrativa para a diretoria, integrações e exportação de dados.",
+          "Agenda uma demo com representantes Yoobe: narrativa para a diretoria, integrações e exportação de dados.",
         ctaLabel: "Marcar demo",
       },
     },
@@ -325,7 +325,7 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Manager dashboard · landing",
         title: "Metrics to prove engagement ROI",
         description:
-          "The dashboard covers adoption and points distribution — ask 4unik for board-ready reporting.",
+          "The dashboard covers adoption and points distribution — ask Yoobe for board-ready reporting.",
         ctaLabel: "View manager dashboard",
       },
       feature: {
@@ -337,10 +337,10 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         featureAlt: "Charts and data analysis on a laptop",
       },
       demo: {
-        eyebrow: "Demo · 4unik representatives",
-        title: "ROI and reporting with 4unik",
+        eyebrow: "Demo · Yoobe representatives",
+        title: "ROI and reporting with Yoobe",
         description:
-          "Book a demo with 4unik representatives: leadership narrative, integrations and data exports.",
+          "Book a demo with Yoobe representatives: leadership narrative, integrations and data exports.",
         ctaLabel: "Book a demo",
       },
     },
@@ -351,22 +351,22 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Educação · landing",
         title: "Recompensa por conclusão de trilha",
         description:
-          "A página Educação mostra como a 4unik liga conclusão de cursos a prêmios físicos — o mesmo modelo usado em treinamentos corporativos gamificados.",
+          "A página Educação mostra como a Yoobe liga conclusão de cursos a prêmios físicos — o mesmo modelo usado em treinamentos corporativos gamificados.",
         ctaLabel: "Ver solução para educação",
       },
       feature: {
         eyebrow: "Gamificação para RH",
         title: "Reconhecimento e missões para colaboradores",
         description:
-          "A página Gamificação para RH liga cultura e performance a prémios físicos — complementa trilhas de educação e compliance com fulfillment pela 4unik.",
+          "A página Gamificação para RH liga cultura e performance a prémios físicos — complementa trilhas de educação e compliance com fulfillment pela Yoobe.",
         ctaLabel: "Ver gamificação para RH",
         featureAlt: "Profissionais em treinamento corporativo com foco em dados e cultura",
       },
       demo: {
-        eyebrow: "Demo · representantes 4unik",
+        eyebrow: "Demo · representantes Yoobe",
         title: "Desenhe sua campanha de treinamento",
         description:
-          "Agenda uma demo: representantes 4unik ajudam a ligar trilhas de vídeo, pontos e loja interna ao seu contexto de L&D ou compliance.",
+          "Agenda uma demo: representantes Yoobe ajudam a ligar trilhas de vídeo, pontos e loja interna ao seu contexto de L&D ou compliance.",
         ctaLabel: "Marcar demo",
       },
     },
@@ -375,22 +375,22 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Education · landing",
         title: "Reward when learners finish the path",
         description:
-          "The Education page shows how 4unik ties course completion to physical prizes — the same model used in gamified corporate training.",
+          "The Education page shows how Yoobe ties course completion to physical prizes — the same model used in gamified corporate training.",
         ctaLabel: "View education solution",
       },
       feature: {
         eyebrow: "HR gamification",
         title: "Recognition and missions for employees",
         description:
-          "The HR gamification page ties culture and performance to physical rewards — complements education and compliance paths with 4unik fulfillment.",
+          "The HR gamification page ties culture and performance to physical rewards — complements education and compliance paths with Yoobe fulfillment.",
         ctaLabel: "View HR gamification",
         featureAlt: "Corporate professionals in training focused on data and culture",
       },
       demo: {
-        eyebrow: "Demo · 4unik representatives",
+        eyebrow: "Demo · Yoobe representatives",
         title: "Design your training campaign",
         description:
-          "Book a demo: 4unik representatives help connect video paths, points and the internal store to your L&D or compliance context.",
+          "Book a demo: Yoobe representatives help connect video paths, points and the internal store to your L&D or compliance context.",
         ctaLabel: "Book a demo",
       },
     },
@@ -408,15 +408,15 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Motor de gamificação",
         title: "Missões e campanhas por período",
         description:
-          "O motor liga metas de equipe e reconhecimento a pontos resgatáveis — representantes 4unik ajudam a configurar regras e calendário.",
+          "O motor liga metas de equipe e reconhecimento a pontos resgatáveis — representantes Yoobe ajudam a configurar regras e calendário.",
         ctaLabel: "Ver motor de gamificação",
         featureAlt: "RH e liderança em conversa estratégica",
       },
       demo: {
-        eyebrow: "Demo · representantes 4unik",
-        title: "Cultura e performance com a 4unik",
+        eyebrow: "Demo · representantes Yoobe",
+        title: "Cultura e performance com a Yoobe",
         description:
-          "Marca uma demo: conversa com representantes 4unik sobre reconhecimento contínuo, missões e alinhamento com liderança.",
+          "Marca uma demo: conversa com representantes Yoobe sobre reconhecimento contínuo, missões e alinhamento com liderança.",
         ctaLabel: "Marcar demo",
       },
     },
@@ -432,15 +432,15 @@ const TRIPLET_COPY: Record<BlogFallbackSlug, { pt: TripletCopy; en: TripletCopy 
         eyebrow: "Gamification engine",
         title: "Missions and campaigns by period",
         description:
-          "The engine ties team goals and recognition to redeemable points — 4unik reps help configure rules and calendars.",
+          "The engine ties team goals and recognition to redeemable points — Yoobe reps help configure rules and calendars.",
         ctaLabel: "View gamification engine",
         featureAlt: "HR and leadership in strategic conversation",
       },
       demo: {
-        eyebrow: "Demo · 4unik representatives",
-        title: "Culture and performance with 4unik",
+        eyebrow: "Demo · Yoobe representatives",
+        title: "Culture and performance with Yoobe",
         description:
-          "Book a demo: talk to 4unik representatives about continuous recognition, missions and leadership alignment.",
+          "Book a demo: talk to Yoobe representatives about continuous recognition, missions and leadership alignment.",
         ctaLabel: "Book a demo",
       },
     },
@@ -481,8 +481,8 @@ export const BLOG_CATEGORY_TO_FALLBACK_SLUG: Partial<Record<string, BlogFallback
   "Team Gamification": "3",
   "Motivação & Reconhecimento": "4",
   "Motivation & Recognition": "4",
-  "4unik na Prática": "5",
-  "4unik in Practice": "5",
+  "Yoobe na Prática": "5",
+  "Yoobe in Practice": "5",
   Crescimento: "6",
   Growth: "6",
   "Gestão de Pessoas": "7",
@@ -501,15 +501,15 @@ export function resolveBlogSlugFromCategory(category: string): BlogFallbackSlug 
  */
 const PRICING_CTA_COPY: Record<"pt" | "en", CtaCopy> = {
   pt: {
-    eyebrow: "Planos & preços · 4unik",
-    title: "Veja os planos e preços da 4unik",
+    eyebrow: "Planos & preços · Yoobe",
+    title: "Veja os planos e preços da Yoobe",
     description:
       "Compare Starter, Pro e Enterprise e escolha a estrutura ideal para o tamanho do seu programa de recompensas.",
     ctaLabel: "Ver planos e preços",
   },
   en: {
-    eyebrow: "Plans & pricing · 4unik",
-    title: "See 4unik's plans and pricing",
+    eyebrow: "Plans & pricing · Yoobe",
+    title: "See Yoobe's plans and pricing",
     description: "Compare Starter, Pro and Enterprise plans and pick the right fit for your rewards program.",
     ctaLabel: "View plans & pricing",
   },

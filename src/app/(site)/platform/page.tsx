@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function EnPlataformaPage() {
   const softwareAppLd = buildSoftwareApplicationJsonLd("en", {
-    name: "4Unik V3 platform",
+    name: "Yoobe V3 platform",
     description: enPlataforma.seo.description,
     pageUrl: pageAbsoluteUrl("/platform/"),
   });

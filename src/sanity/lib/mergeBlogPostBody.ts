@@ -40,15 +40,15 @@ function matchesHelpHeading(text: string, locale: Locale): boolean {
   const t = text.toLowerCase();
   if (locale === "en") {
     return (
-      t.includes("how 4unik helps") ||
+      t.includes("how Yoobe helps") ||
       t.includes("helps in this scenario") ||
-      (t.includes("4unik") && t.includes("help"))
+      (t.includes("Yoobe") && t.includes("help"))
     );
   }
   return (
     t.includes("ajuda neste cenário") ||
-    t.includes("como a 4unik ajuda") ||
-    (t.includes("4unik") && t.includes("ajuda") && t.includes("cenário"))
+    t.includes("como a Yoobe ajuda") ||
+    (t.includes("Yoobe") && t.includes("ajuda") && t.includes("cenário"))
   );
 }
 

@@ -8,7 +8,7 @@ export const enLandingMore = {
       {
         num: "01",
         title: "Connect",
-        desc: "Plug into your intranet, HRIS, or launch the 4Unik console. Most teams are live within days—not months.",
+        desc: "Plug into your intranet, HRIS, or launch the Yoobe console. Most teams are live within days—not months.",
       },
       {
         num: "02",
@@ -87,7 +87,7 @@ export const enLandingMore = {
     badge: "How it works",
     titleBefore: "Two paths to",
     titleGradient: "engage your team",
-    sub: "You don’t have to rip and replace everything. Full platform or execution layer via API—4Unik adapts to what you already run.",
+    sub: "You don’t have to rip and replace everything. Full platform or execution layer via API—Yoobe adapts to what you already run.",
     sideA: {
       title: "Ready to use",
       body: "Branded employee portal. Missions, points, and store live from day one—with our automated logistics or yours connected by API.",
@@ -99,7 +99,7 @@ export const enLandingMore = {
     },
     sideB: {
       title: "Connect what you already run",
-      body: "Already invested in intranet, engagement, HRIS, or your own logistics? 4Unik connects by API—store, merch, and shipping inside the tools people already use. Merchandise suppliers and carrier partners can plug into the same flow.",
+      body: "Already invested in intranet, engagement, HRIS, or your own logistics? Yoobe connects by API—store, merch, and shipping inside the tools people already use. Merchandise suppliers and carrier partners can plug into the same flow.",
       bullets: [
         "No forced “yet another password” rollout",
         "Rewards surface inside everyday work tools",
@@ -173,20 +173,20 @@ export const enLandingMore = {
     badge: "Works where your team already is",
     titleBefore: "Already running an",
     titleGradient: "intranet or gamification?",
-    subBefore: "4Unik plugs in ",
+    subBefore: "Yoobe plugs in ",
     subStrong: "quietly",
     subAfter:
       ", bringing catalog, redemptions, and logistics inside leading employee experience platforms.",
     workvivo: {
       title: "Workvivo",
       body:
-        "Recognize and reward right in the social feed. 4Unik’s corporate catalog meets people where they already collaborate.",
+        "Recognize and reward right in the social feed. Yoobe’s corporate catalog meets people where they already collaborate.",
       feedAuthor: "HR Official",
       feedTime: "2 hours ago",
       feedPost:
         "Congrats sales team on hitting the goal! 🏆 Redeem your exclusive rewards on the platform.",
       feedCardTitle: "Sales celebration kit",
-      feedCardBrand: "4Unik Rewards",
+      feedCardBrand: "Yoobe Rewards",
       feedCta: "Redeem",
       realtime: "Real time",
       bullets: [
@@ -198,13 +198,13 @@ export const enLandingMore = {
     beehome: {
       title: "Beehome",
       body:
-        "The intranet people already use every day: Beehome points become physical products fulfilled by 4Unik.",
+        "The intranet people already use every day: Beehome points become physical products fulfilled by Yoobe.",
       coinsLabel: "Beehome coins",
       connectionLabel: "Active connection",
-      yoobeStore: "4Unik Store",
+      yoobeStore: "Yoobe Store",
       yoobeStoreSub: "Logistics & shipping",
       bullets: [
-        "Employees spend Beehome balance and 4Unik handles fulfillment",
+        "Employees spend Beehome balance and Yoobe handles fulfillment",
         "Platforms stay in sync continuously",
         "No more manual buying of intranet prizes",
       ],

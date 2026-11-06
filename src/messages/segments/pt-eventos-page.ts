@@ -1,6 +1,6 @@
 export const ptEventosPage = {
   seo: {
-    title: "Para eventos | 4Unik — brindes sem caos logístico",
+    title: "Para eventos | Yoobe — brindes sem caos logístico",
     description:
       "Acabe com o caos de brindes no evento. Participantes ganham pontos e fazem checkout pelo celular: retiram no estande ou recebem em casa, rastreado.",
     openGraphDescription:
@@ -12,9 +12,9 @@ export const ptEventosPage = {
     definitionLead:
       "Em eventos presenciais ou híbridos, participantes escolhem brindes no telemóvel — retirada no estande ou entrega em casa, com rastreio.",
     sub:
-      "Transportar, armazenar e distribuir brindes no local vira dor de cabeça. Com a 4Unik, o participante ganha pontos e faz checkout pelo celular: retira no estande ou recebe em casa, com rastreio.",
+      "Transportar, armazenar e distribuir brindes no local vira dor de cabeça. Com a Yoobe, o participante ganha pontos e faz checkout pelo celular: retira no estande ou recebe em casa, com rastreio.",
     ctaLabel: "Agendar demonstração",
-    ctaHref: "https://calendly.com/4unik/30min",
+    ctaHref: "https://calendly.com/yoobeco/demo",
   },
   problem: {
     badge: "A dor",
@@ -61,7 +61,7 @@ export const ptEventosPage = {
     ],
   },
   benefits: {
-    badge: "Por que a 4Unik",
+    badge: "Por que a Yoobe",
     title: "Experiência fluida, sem montanha de caixas",
     items: [
       {
@@ -111,6 +111,6 @@ export const ptEventosPage = {
     body:
       "Conte sobre o evento, público e formato. Desenhamos o fluxo de pontos e checkout com você.",
     primaryLabel: "Agendar demonstração",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
 } as const;

@@ -2,7 +2,7 @@ export const ptRest = {
   apiSection: {
     badge: "Para o time de tecnologia",
     titleBefore: "Conecte a",
-    titleBrand: "4Unik",
+    titleBrand: "Yoobe",
     titleAfter: "a qualquer sistema que vocês já usam",
     sub:
       "A API é precificada por usuário ativo — você paga conforme o tamanho real do programa. Integre gamificação, envios, HRIS, intranet ou a sua própria logística e fornecedores de brindes. Sem lock-in: o que roda por trás é o ecossistema da sua empresa.",
@@ -36,7 +36,7 @@ export const ptRest = {
       },
       {
         title: "Fornecedores & distribuidores",
-        desc: "Leve seus produtos a empresas que já usam reconhecimento e gamificação no dia a dia. A loja corporativa 4Unik é um canal B2B ativo de engajamento.",
+        desc: "Leve seus produtos a empresas que já usam reconhecimento e gamificação no dia a dia. A loja corporativa Yoobe é um canal B2B ativo de engajamento.",
       },
       {
         title: "Eventos & feiras",
@@ -72,7 +72,7 @@ export const ptRest = {
     ],
   },
   clients: {
-    badge: "Quem confia na 4Unik",
+    badge: "Quem confia na Yoobe",
     titleBefore: "Empresas que já rodam",
     titleGradient: "reconhecimento",
     titleAfter: "conosco",
@@ -87,7 +87,7 @@ export const ptRest = {
       "Depoimentos representativos para ilustrar resultados típicos. Casos auditados com autorização do cliente serão publicados com selo verificado.",
     items: [
       {
-        text: `"A 4Unik destravou nosso programa de reconhecimento. Em três meses o engajamento subiu cerca de 40% e o turnover começou a cair de forma perceptível."`,
+        text: `"A Yoobe destravou nosso programa de reconhecimento. Em três meses o engajamento subiu cerca de 40% e o turnover começou a cair de forma perceptível."`,
         author: "Marina Costa",
         role: "Head de RH",
         company: "Tech Company (500+ colaboradores)",
@@ -165,10 +165,10 @@ export const ptRest = {
     currency: "R$",
   },
   workvivoRedirect: {
-    message: "Redirecionando para API e integrações · Workvivo × 4Unik…",
+    message: "Redirecionando para API e integrações · Workvivo × Yoobe…",
   },
   enterpriseTrustStrip: {
-    ariaLabel: "Por que grandes empresas escolhem a 4Unik",
+    ariaLabel: "Por que grandes empresas escolhem a Yoobe",
     items: [
       {
         title: "Integração com o seu stack",

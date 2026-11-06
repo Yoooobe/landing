@@ -50,7 +50,7 @@ export const ptGamificacaoCampanhasPage = {
         badge: "Integração",
         title: "Conectado ao seu stack",
         description:
-          "Slack, Teams, Workday, Workvivo, Beehome, Humand e HRISs via API. A 4unik é a ponte entre o byte e o brinde.",
+          "Slack, Teams, Workday, Workvivo, Beehome, Humand e HRISs via API. A Yoobe é a ponte entre o byte e o brinde.",
         features: ["SDKs e webhooks", "OAuth 2.0", "Conectores prontos", "Sandbox para testes"],
       },
       {
@@ -143,7 +143,7 @@ export const ptGamificacaoCampanhasPage = {
     titleBefore: "Quem já uniu campanha,",
     titleGradient: "loja",
     titleAfter: "e logística",
-    sub: "Casos 4unik (Grupo Boticário, Softplan) e exemplos públicos de mercado (CaLLogix) com métricas divulgadas.",
+    sub: "Casos Yoobe (Grupo Boticário, Softplan) e exemplos públicos de mercado (CaLLogix) com métricas divulgadas.",
     challengeLabel: "Desafio",
     solutionLabel: "Solução",
     items: [
@@ -152,7 +152,7 @@ export const ptGamificacaoCampanhasPage = {
         company: "Grupo Boticário",
         industry: "Beleza & Dados",
         title: "Game de Dados — Beleza com Dados",
-        desc: "Escalar engajamento educacional no Centro de Excelência em Dados com loja interna, pontuação via 4unik e prêmios físicos brandados.",
+        desc: "Escalar engajamento educacional no Centro de Excelência em Dados com loja interna, pontuação via Yoobe e prêmios físicos brandados.",
         challenge: "Baixa adesão a treinamentos técnicos e necessidade de provar ROI em educação corporativa.",
         solution:
           "Loja interna gamificada, pontos por conclusão de cursos e resgate em prêmios físicos com logística integrada.",
@@ -252,7 +252,7 @@ export const ptGamificacaoCampanhasPage = {
     ],
   },
   stats: {
-    badge: "Por que a 4unik",
+    badge: "Por que a Yoobe",
     titleBefore: "Dados que",
     titleGradient: "comprovam",
     titleAfter: "sua escolha",
@@ -376,7 +376,7 @@ export const ptGamificacaoCampanhasPage = {
       },
       {
         q: "Preciso já ter um sistema de gamificação?",
-        a: "Não. A 4unik funciona como engine completa ou como camada de execução e resgate via API sobre o sistema que você já usa.",
+        a: "Não. A Yoobe funciona como engine completa ou como camada de execução e resgate via API sobre o sistema que você já usa.",
       },
       {
         q: "Quanto tempo leva para lançar a primeira campanha?",

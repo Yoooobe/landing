@@ -15,20 +15,22 @@ const ORGANIZATION_KNOWS_ABOUT = [
 const ORGANIZATION_ID = `${SITE_URL.replace(/\/$/, "")}/#organization`;
 
 /** Perfis canónicos da entidade (site corporativo; expandir quando houver URLs oficiais verificadas). */
-const ORGANIZATION_SAME_AS = ["https://4unik.com.br/"] as const;
+const ORGANIZATION_SAME_AS = ["https://catalogo.yoobe.co/"] as const;
 
 const ORGANIZATION_LOGO = {
   "@type": "ImageObject" as const,
-  url: pageAbsoluteUrl("/brand/4unik-mark.webp"),
+  url: pageAbsoluteUrl("/brand/yoobe-mark.webp"),
 };
 
 /** Descrição alinhada a `ptHome.seo.description` (fonte única para entidade no schema). */
-export function buildOrganizationJsonLd(description: string = ptHome.seo.description) {
+export function buildOrganizationJsonLd(description: string = enHome.seo.description) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": ORGANIZATION_ID,
     name: SITE_NAME,
+    legalName: "Yoobe Inc.",
+    foundingLocation: { "@type": "Place", name: "Delaware, USA" },
     url: SITE_URL,
     logo: ORGANIZATION_LOGO,
     description,
@@ -38,9 +40,9 @@ export function buildOrganizationJsonLd(description: string = ptHome.seo.descrip
       {
         "@type": "ContactPoint",
         contactType: "sales",
-        email: "comercial@4unik.com.br",
-        availableLanguage: ["Portuguese", "English"],
-        areaServed: "BR",
+        email: "vendas@yoobe.co",
+        telephone: "+55-41-98760-7512",
+        availableLanguage: ["English", "Portuguese"],
       },
     ],
   } as const;
@@ -52,7 +54,7 @@ export function buildWebsiteJsonLd() {
     "@type": "WebSite",
     name: SITE_NAME,
     url: SITE_URL,
-    inLanguage: ["pt-BR", "en-US"],
+    inLanguage: "en-US",
   } as const;
 }
 
@@ -168,7 +170,7 @@ export function buildBlogPostingJsonLd(
       name: SITE_NAME,
       logo: {
         "@type": "ImageObject",
-        url: pageAbsoluteUrl("/brand/4unik-mark.webp"),
+        url: pageAbsoluteUrl("/brand/yoobe-mark.webp"),
       },
     },
   } as const;

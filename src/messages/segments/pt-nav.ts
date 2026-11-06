@@ -44,7 +44,7 @@ export const ptNav = {
     desc: "Ofereça recompensas físicas dentro do seu produto, via API.",
   },
   workvivo: {
-    title: "Workvivo × 4Unik",
+    title: "Workvivo × Yoobe",
     desc: "Add-on na área de API — recompensas e loja.",
   },
   motor: {
@@ -79,7 +79,7 @@ export const ptNav = {
     },
     communities: {
       title: "Criadores e comunidades",
-      desc: "Loja VIP de fãs com entrega pela 4Unik.",
+      desc: "Loja VIP de fãs com entrega pela Yoobe.",
     },
     events: {
       title: "Eventos",

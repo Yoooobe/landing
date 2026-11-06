@@ -283,7 +283,7 @@ export const blogPostType = defineType({
       title: "Gerado por IA",
       type: "boolean",
       initialValue: false,
-      description: "Marque quando o conteúdo foi gerado automaticamente pelo agente de IA 4unik. Revise antes de publicar.",
+      description: "Marque quando o conteúdo foi gerado automaticamente pelo agente de IA Yoobe. Revise antes de publicar.",
       group: "editorial",
     }),
     defineField({

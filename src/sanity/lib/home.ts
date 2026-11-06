@@ -100,7 +100,7 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     },
     hero: {
       ...ptHome.hero,
-      ctaDemoHref: "https://calendly.com/4unik/30min",
+      ctaDemoHref: "https://calendly.com/yoobeco/demo",
       ctaExploreHref: `${BASE_PATH}/#platform`,
       floatAdhesionValue: "92%",
       floatRhValue: "0%",
@@ -108,15 +108,15 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     },
     fourUnik: {
       ...ptHome.fourUnik,
-      ctaHref: "https://4unik.com.br",
+      ctaHref: "https://catalogo.yoobe.co/",
     },
     trust: {
       ...ptHome.trust,
     },
     finalCta: {
       ...ptHome.finalCta,
-      demoHref: "https://calendly.com/4unik/30min",
-      whatsappHref: "https://wa.me/551126844724",
+      demoHref: "https://calendly.com/yoobeco/demo",
+      whatsappHref: "https://wa.me/5541987607512",
     },
   },
   en: {
@@ -126,7 +126,7 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     },
     hero: {
       ...enHome.hero,
-      ctaDemoHref: "https://calendly.com/4unik/30min",
+      ctaDemoHref: "https://calendly.com/yoobeco/demo",
       ctaExploreHref: `${BASE_PATH}/en/#platform`,
       floatAdhesionValue: "92%",
       floatRhValue: "0%",
@@ -134,15 +134,15 @@ const fallbackByLocale: Record<Locale, ResolvedHomeContent> = {
     },
     fourUnik: {
       ...enHome.fourUnik,
-      ctaHref: "https://4unik.com.br",
+      ctaHref: "https://catalogo.yoobe.co/",
     },
     trust: {
       ...enHome.trust,
     },
     finalCta: {
       ...enHome.finalCta,
-      demoHref: "https://calendly.com/4unik/30min",
-      whatsappHref: "https://wa.me/551126844724",
+      demoHref: "https://calendly.com/yoobeco/demo",
+      whatsappHref: "https://wa.me/5541987607512",
     },
   },
 };

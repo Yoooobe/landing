@@ -1,6 +1,6 @@
 export const enVendasPage = {
   seo: {
-    title: "For sales teams | 4Unik — incentives integrated with your CRM",
+    title: "For sales teams | Yoobe — incentives integrated with your CRM",
     description:
       "Hit the goal, get rewarded instantly. Connect your CRM and reward the sales team automatically, with real prizes—no spreadsheets, no waiting.",
     openGraphDescription:
@@ -10,11 +10,11 @@ export const enVendasPage = {
     badge: "For sales teams",
     title: "Hit the goal, get rewarded instantly",
     definitionLead:
-      "Sales teams connect their CRM to 4Unik to reward goals with real prizes—no spreadsheets, no delivery delays.",
+      "Sales teams connect their CRM to Yoobe to reward goals with real prizes—no spreadsheets, no delivery delays.",
     sub:
-      "Stop rewarding sales with spreadsheets and delays. Connect your CRM: when a goal is hit, 4Unik unlocks points automatically for the rep to redeem for real prizes.",
+      "Stop rewarding sales with spreadsheets and delays. Connect your CRM: when a goal is hit, Yoobe unlocks points automatically for the rep to redeem for real prizes.",
     ctaLabel: "Talk to a specialist",
-    ctaHref: "https://calendly.com/4unik/30min",
+    ctaHref: "https://calendly.com/yoobeco/demo",
   },
   problem: {
     badge: "The pain",
@@ -61,7 +61,7 @@ export const enVendasPage = {
     ],
   },
   benefits: {
-    badge: "Why 4Unik",
+    badge: "Why Yoobe",
     title: "Performance recognized at the right time",
     items: [
       {
@@ -76,7 +76,7 @@ export const enVendasPage = {
       },
       {
         title: "Delivery on us",
-        desc: "4Unik handles inventory, shipping, and tracking.",
+        desc: "Yoobe handles inventory, shipping, and tracking.",
         icon: "package",
       },
     ],
@@ -85,7 +85,7 @@ export const enVendasPage = {
     items: [
       {
         q: "How do you reward sales teams without spreadsheets?",
-        a: "Connect your CRM via API: when a goal is hit, 4Unik unlocks points automatically for the rep to redeem real prizes. No manual tallying or delays—catalog, inventory, and shipping stay with 4Unik. See integrations at /en/api-integracoes/.",
+        a: "Connect your CRM via API: when a goal is hit, Yoobe unlocks points automatically for the rep to redeem real prizes. No manual tallying or delays—catalog, inventory, and shipping stay with Yoobe. See integrations at /en/api-integracoes/.",
       },
       {
         q: "Which CRM does it integrate with?",
@@ -93,7 +93,7 @@ export const enVendasPage = {
       },
       {
         q: "Is the reward really automatic?",
-        a: "Yes. When a goal is recorded as hit, 4Unik unlocks the points automatically for redemption.",
+        a: "Yes. When a goal is recorded as hit, Yoobe unlocks the points automatically for redemption.",
       },
       {
         q: "Does it work for individual and team goals?",
@@ -111,6 +111,6 @@ export const enVendasPage = {
     body:
       "Tell us about your team, goals, and CRM. We'll set up the automatic incentive flow with you.",
     primaryLabel: "Talk to a specialist",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
 } as const;

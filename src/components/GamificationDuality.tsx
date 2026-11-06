@@ -55,7 +55,7 @@ export default function GamificationDuality() {
                   <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
                   <span className="h-2 w-2 rounded-full bg-green-500/80" />
                 </div>
-                <span className="font-mono text-[0.55rem] text-white/45 tracking-wider">gestor.4unik.io · Motor</span>
+                <span className="font-mono text-[0.55rem] text-white/45 tracking-wider">admin.yoobe.co · Motor</span>
               </div>
               <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                 <Image
@@ -102,7 +102,7 @@ export default function GamificationDuality() {
                   <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
                   <span className="h-2 w-2 rounded-full bg-green-500/80" />
                 </div>
-                <span className="font-mono text-[0.55rem] text-white/45 tracking-wider">api.4unik.io · Webhook</span>
+                <span className="font-mono text-[0.55rem] text-white/45 tracking-wider">api.yoobe.co · Webhook</span>
               </div>
               <div className="relative aspect-16/10 w-full overflow-hidden bg-slate-900">
                 <Image

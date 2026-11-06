@@ -138,7 +138,7 @@ export const contentMirrorType = defineType({
         }),
         defineField({
           name: "fourUnik",
-          title: "Faixa complementar 4unik",
+          title: "Faixa complementar Yoobe",
           type: "object",
           fields: [
             defineField({ name: "kicker", title: "Kicker", type: "string" }),

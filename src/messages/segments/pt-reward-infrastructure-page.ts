@@ -1,6 +1,6 @@
 export const ptRewardInfrastructurePage = {
   seo: {
-    title: "Infraestrutura de recompensas (Reward Infrastructure) | 4Unik",
+    title: "Infraestrutura de recompensas (Reward Infrastructure) | Yoobe",
     description:
       "O que é reward infrastructure: camada API-first de catálogo, checkout e fulfillment para programas de employee engagement e gamificação corporativa — sem operar logística interna.",
     openGraphDescription:
@@ -19,7 +19,7 @@ export const ptRewardInfrastructurePage = {
     badge: "Posicionamento",
     title: "Não é loja de brindes nem e-commerce avulso",
     body:
-      "Empresas de swag vendem produtos; plataformas de engagement precisam de uma camada que traduz pontos, metas e reconhecimento em entregas rastreáveis. A 4Unik opera nessa camada: conecta-se ao seu HRIS, intranet ou produto SaaS e assume catálogo, estoque e logística — ou encaixa fornecedores que você já usa.",
+      "Empresas de swag vendem produtos; plataformas de engagement precisam de uma camada que traduz pontos, metas e reconhecimento em entregas rastreáveis. A Yoobe opera nessa camada: conecta-se ao seu HRIS, intranet ou produto SaaS e assume catálogo, estoque e logística — ou encaixa fornecedores que você já usa.",
     bullets: [
       "Não substitui o seu HRIS, ERP ou plataforma de comunicação interna",
       "Não é marketplace B2C — é infraestrutura B2B para programas corporativos",
@@ -47,7 +47,7 @@ export const ptRewardInfrastructurePage = {
       },
       {
         title: "Motor de engajamento (opcional)",
-        desc: "Campanhas, gamificação e loja de resgates na plataforma 4unik V3 quando você quer administrar o programa, não só a entrega.",
+        desc: "Campanhas, gamificação e loja de resgates na plataforma Yoobe V3 quando você quer administrar o programa, não só a entrega.",
         icon: "target",
       },
     ],
@@ -79,7 +79,7 @@ export const ptRewardInfrastructurePage = {
     ],
   },
   related: {
-    title: "Aprofunde no ecossistema 4Unik",
+    title: "Aprofunde no ecossistema Yoobe",
     links: [
       { label: "API e integrações", href: "/api-integracoes/" },
       { label: "Visão da plataforma", href: "/plataforma/" },
@@ -100,15 +100,15 @@ export const ptRewardInfrastructurePage = {
     items: [
       {
         q: "O que é reward infrastructure?",
-        a: "Reward infrastructure (infraestrutura de recompensas) é a camada API-first que conecta programas de employee engagement e gamificação corporativa a catálogo, checkout e fulfillment. Em vez de cada empresa construir loja, estoque e logística, integra-se a um provedor como a 4Unik que opera essa camada.",
+        a: "Reward infrastructure (infraestrutura de recompensas) é a camada API-first que conecta programas de employee engagement e gamificação corporativa a catálogo, checkout e fulfillment. Em vez de cada empresa construir loja, estoque e logística, integra-se a um provedor como a Yoobe que opera essa camada.",
       },
       {
         q: "Qual a diferença entre reward infrastructure e uma loja de brindes?",
         a: "Uma loja de brindes vende produtos avulsos. Reward infrastructure traduz pontos, metas e reconhecimento em entregas rastreáveis dentro do fluxo do programa — com API, webhooks, governança e integração ao stack corporativo.",
       },
       {
-        q: "A 4Unik é só API ou também plataforma?",
-        a: "As duas coisas. Plataformas e times técnicos podem consumir só API e fulfillment; RH e operação podem usar a plataforma 4unik V3 com motor de gamificação, loja de resgates e painéis — a mesma infraestrutura por baixo.",
+        q: "A Yoobe é só API ou também plataforma?",
+        a: "As duas coisas. Plataformas e times técnicos podem consumir só API e fulfillment; RH e operação podem usar a plataforma Yoobe V3 com motor de gamificação, loja de resgates e painéis — a mesma infraestrutura por baixo.",
       },
       {
         q: "Quem precisa de reward infrastructure?",

@@ -1,27 +1,27 @@
 export const ptPricingPage = {
   seo: {
-    title: "Planos e preços | 4Unik — plataforma de recompensas corporativas",
+    title: "Planos e preços | Yoobe — plataforma de recompensas corporativas",
     description:
       "Compare planos para gamificação, loja de recompensas e API. Escale por usuários ativos sem operar logística sozinho.",
   },
   hero: {
     badge: "Planos & preços",
     title: "Escolha o plano certo para o tamanho do seu programa",
-    sub: "Sem taxa de setup surpresa. Escale quando o engajamento crescer — a 4unik cuida da operação de recompensas.",
+    sub: "Sem taxa de setup surpresa. Escale quando o engajamento crescer — a Yoobe cuida da operação de recompensas.",
   },
   faq: {
     items: [
       {
-        q: "Como funciona a cobrança pelo uso da API 4unik e integrações com plataformas de gamificação?",
-        a: "Toda e qualquer integração via API da 4unik — seja para conectar com plataformas de gamificação parceiras (como Feedz, Beehome, Catho, Workplace), ERPs, sistemas de RH (Totvs, Senior) ou canais de comunicação (Slack/Teams) — tem cobrança dimensionada conforme volume e tipo de integração no plano Enterprise. Fale com nosso time comercial para receber os valores para o seu caso.",
+        q: "Como funciona a cobrança pelo uso da API Yoobe e integrações com plataformas de gamificação?",
+        a: "Toda e qualquer integração via API da Yoobe — seja para conectar com plataformas de gamificação parceiras (como Feedz, Beehome, Catho, Workplace), ERPs, sistemas de RH (Totvs, Senior) ou canais de comunicação (Slack/Teams) — tem cobrança dimensionada conforme volume e tipo de integração no plano Enterprise. Fale com nosso time comercial para receber os valores para o seu caso.",
       },
       {
         q: "Quem é responsável pela emissão da nota fiscal e envio dos brindes?",
-        a: "A 4unik realiza toda a operação fiscal e logística de ponta a ponta. Emitimos as notas fiscais de remessa e entrega necessárias para o envio de cada produto até o endereço final do colaborador em qualquer estado do Brasil.",
+        a: "A Yoobe realiza toda a operação fiscal e logística de ponta a ponta. Emitimos as notas fiscais de remessa e entrega necessárias para o envio de cada produto até o endereço final do colaborador em qualquer estado do Brasil.",
       },
       {
         q: "Como funciona a gestão de estoque e armazenagem dos produtos?",
-        a: "Sua empresa pode utilizar nosso catálogo próprio de produtos ou enviar brindes customizados para o centro de distribuição da 4unik. Todo o inventário é controlado em tempo real no dashboard, com relatórios de giro e alertas de reposição.",
+        a: "Sua empresa pode utilizar nosso catálogo próprio de produtos ou enviar brindes customizados para o centro de distribuição da Yoobe. Todo o inventário é controlado em tempo real no dashboard, com relatórios de giro e alertas de reposição.",
       },
       {
         q: "É possível integrar a plataforma com nosso sistema de RH ou ERP?",
@@ -71,7 +71,7 @@ export const ptPricingPage = {
           },
           {
             label: "Gamificação autocontida (pontos e badges)",
-            hint: "Pontos por metas e reconhecimento entre pares, mais badges visuais para conquistas e marcos de carreira — tudo dentro da própria 4unik.",
+            hint: "Pontos por metas e reconhecimento entre pares, mais badges visuais para conquistas e marcos de carreira — tudo dentro da própria Yoobe.",
           },
           {
             label: "PIX com pontos e datas comemorativas",
@@ -79,14 +79,14 @@ export const ptPricingPage = {
           },
           {
             label: "Envio de presentes com logística própria",
-            hint: "Escolha o produto e os destinatários, agende o envio — a 4unik cuida da logística até a casa do colaborador.",
+            hint: "Escolha o produto e os destinatários, agende o envio — a Yoobe cuida da logística até a casa do colaborador.",
           },
           {
             label: "Criação de landing page de campanha de resgate",
             hint: "Crie páginas próprias para cada campanha — hackathon, meta comercial, onboarding — com identidade visual e URL amigável, em um wizard guiado.",
           },
           {
-            label: "Logística e entrega residencial 4unik",
+            label: "Logística e entrega residencial Yoobe",
             hint: "Entrega direto na casa do colaborador, com frete calculado e rastreio, em qualquer região do Brasil.",
           },
           {
@@ -122,7 +122,7 @@ export const ptPricingPage = {
           },
           {
             label: "Gamificação autocontida (pontos e badges)",
-            hint: "Pontos por metas e reconhecimento entre pares, mais badges visuais para conquistas e marcos de carreira — tudo dentro da própria 4unik.",
+            hint: "Pontos por metas e reconhecimento entre pares, mais badges visuais para conquistas e marcos de carreira — tudo dentro da própria Yoobe.",
           },
           {
             label: "PIX com pontos e datas comemorativas",
@@ -146,12 +146,12 @@ export const ptPricingPage = {
         annualPrice: "Sob consulta",
         capacity: "A partir de 499 usuários",
         description:
-          "Automação via APIs 4unik, integrações nativas com plataformas de gamificação e CSM dedicado.",
+          "Automação via APIs Yoobe, integrações nativas com plataformas de gamificação e CSM dedicado.",
         valueProposition: "Transforme sua cultura com engajamento automatizado e sem limites.",
         features: [
           { label: "Tudo do Scale e mais:" },
           {
-            label: "Uso de API 4unik: cobrança sob consulta",
+            label: "Uso de API Yoobe: cobrança sob consulta",
             hint: "Cobre tráfego de dados em tempo real, endpoints de pontos/extratos e webhooks de resgate. Fale com nosso time comercial para o valor do seu caso.",
           },
           {
@@ -164,7 +164,7 @@ export const ptPricingPage = {
           },
           {
             label: "Integração com logística terceira (gestão própria) como opção",
-            hint: "Prefere usar sua própria transportadora ou ERP de logística? A 4unik conecta com o que você já tem — ou orquestra tudo por conta própria.",
+            hint: "Prefere usar sua própria transportadora ou ERP de logística? A Yoobe conecta com o que você já tem — ou orquestra tudo por conta própria.",
           },
           {
             label: "Gerente de Sucesso (CSM) dedicado e SLA garantido",
@@ -191,7 +191,7 @@ export const ptPricingPage = {
         value: "Sob consulta",
         unit: "usuário/mês",
         description:
-          "Custo por usuário ativo para toda e qualquer integração via API 4unik (plataformas de gamificação, RHs e ERPs) — fale com nosso time comercial.",
+          "Custo por usuário ativo para toda e qualquer integração via API Yoobe (plataformas de gamificação, RHs e ERPs) — fale com nosso time comercial.",
       },
       {
         label: "Fulfillment por envio",
@@ -203,7 +203,7 @@ export const ptPricingPage = {
         label: "Armazenagem",
         value: "R$ 0,65",
         unit: "un./mês",
-        description: "Guarda segura dos itens no centro de distribuição da 4unik.",
+        description: "Guarda segura dos itens no centro de distribuição da Yoobe.",
       },
       {
         label: "Colaborador extra",
@@ -218,7 +218,7 @@ export const ptPricingPage = {
     title: "Quer um orçamento com o seu volume?",
     body: "Agende uma conversa e montamos o plano com integrações, catálogo e logística adequados ao seu caso.",
     primaryLabel: "Agendar demonstração",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
   scale: {
     name: "Scale",

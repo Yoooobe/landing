@@ -387,7 +387,7 @@ function homeBlocks(
       ],
     },
     {
-      _key: "why-4unik",
+      _key: "why-Yoobe",
       _type: "featureGridBlock",
       eyebrow: stats.why.badge,
       title: joinTitle(stats.why.titleBefore, stats.why.titleGradient),
@@ -1269,12 +1269,12 @@ async function getFallbackSeo(locale: Locale, slug: string): Promise<PageSeoCopy
     case "home":
       return locale === "en"
         ? {
-            title: "4Unik — Corporate gamification, rewards store & employee recognition",
+            title: "Yoobe — Corporate gamification, rewards store & employee recognition",
             description:
               "Recognize and reward teams with gamification, a corporate store, and automated logistics—or plug in your own fulfillment and merchandise partners. Per-user API pricing. Worldwide delivery with local production at the destination when it helps.",
           }
         : {
-            title: "4Unik — Gamificação, loja corporativa e reconhecimento para equipes",
+            title: "Yoobe — Gamificação, loja corporativa e reconhecimento para equipes",
             description:
               "Reconheça e premie colaboradores com gamificação, loja corporativa e logística automatizada — ou integre a sua operação e fornecedores. API por usuário ativo. Entregas no Brasil e no mundo, com produção local no destino quando fizer sentido.",
           };
@@ -1318,7 +1318,7 @@ async function getFallbackSeo(locale: Locale, slug: string): Promise<PageSeoCopy
         return page.seo;
       }
       return {
-        title: "4Unik",
+        title: "Yoobe",
         description: "Reward infrastructure",
       };
     }

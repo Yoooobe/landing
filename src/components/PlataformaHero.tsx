@@ -31,7 +31,7 @@ export default function PlataformaHero() {
           <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
           <span className="h-2 w-2 rounded-full bg-green-500/80" />
           <span className="ml-1.5 font-mono text-[0.52rem] tracking-wider text-white/40">
-            gestor.4unik.io
+            admin.yoobe.co
           </span>
         </div>
         <div className="relative overflow-hidden bg-slate-900" style={{ aspectRatio: "16/10" }}>
@@ -65,7 +65,7 @@ export default function PlataformaHero() {
           <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
           <span className="h-2 w-2 rounded-full bg-green-500/80" />
           <span className="ml-1.5 font-mono text-[0.52rem] tracking-wider text-white/40">
-            gestor.4unik.io · Editor
+            admin.yoobe.co · Editor
           </span>
         </div>
         <div className="relative overflow-hidden bg-slate-900" style={{ aspectRatio: "16/10" }}>

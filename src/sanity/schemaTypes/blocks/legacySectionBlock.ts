@@ -2,7 +2,7 @@ import { defineField, defineType } from "sanity";
 
 const sectionOptions = [
   { title: "Home: Hero", value: "homeHero" },
-  { title: "Home: Faixa 4Unik", value: "homeFourUnik" },
+  { title: "Home: Faixa Yoobe", value: "homeFourUnik" },
   { title: "Home: Trust Bar", value: "homeTrustBar" },
   { title: "Home: Bento Features", value: "homeBentoFeatures" },
   { title: "Home: Platform Tabs", value: "homePlatformTabs" },

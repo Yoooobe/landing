@@ -155,7 +155,7 @@ export default function DashboardPreviewSection() {
               <div className="flex items-center gap-2 rounded-full border border-white/10 bg-slate-950/80 px-4 py-1">
                 <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
                 <span className="font-mono text-[0.62rem] text-white/50 tracking-wider">
-                  gestor.4unik.io · Painel Principal
+                  admin.yoobe.co · Painel Principal
                 </span>
               </div>
               <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-3 py-1 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-brand-orange">
@@ -167,7 +167,7 @@ export default function DashboardPreviewSection() {
             <div className="relative w-full bg-slate-900" style={{ aspectRatio: "16/10" }}>
               <ZoomableScreenshot
                 src="/screens/dash/dashboard-geral.webp"
-                alt="Dashboard do gestor 4unik"
+                alt="Dashboard do gestor Yoobe"
                 sizes="(min-width: 1024px) 70vw, 100vw"
                 imgClassName="object-cover object-top"
                 className="absolute inset-0 h-full w-full"
@@ -189,7 +189,7 @@ export default function DashboardPreviewSection() {
                   </span>
                 ))}
               </div>
-              <span className="text-[0.6rem] font-mono text-white/40">Atualizado agora · 4Unik Engine v2</span>
+              <span className="text-[0.6rem] font-mono text-white/40">Atualizado agora · Yoobe Engine v2</span>
             </div>
           </motion.div>
 
@@ -210,14 +210,14 @@ export default function DashboardPreviewSection() {
 
               {/* Mobile Bar */}
               <div className="bg-slate-900 px-3 pt-6 pb-2 text-white text-center border-b border-white/10">
-                <span className="font-mono font-bold text-[0.62rem] tracking-wider uppercase text-brand-orange">loja.4unik.io</span>
+                <span className="font-mono font-bold text-[0.62rem] tracking-wider uppercase text-brand-orange">store.yoobe.co</span>
               </div>
 
               {/* Mobile Real Screenshot */}
               <div className="relative w-full bg-slate-900" style={{ aspectRatio: "9/17.5" }}>
                 <Image
                   src={withBasePath("/screens/member-store-home.webp")}
-                  alt="App Mobile 4unik com loja e recompensas"
+                  alt="App Mobile Yoobe com loja e recompensas"
                   fill
                   className="object-cover object-top"
                   sizes="230px"

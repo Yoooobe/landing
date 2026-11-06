@@ -1,10 +1,10 @@
 export const ptPlataforma = {
   seo: {
-    title: "Plataforma de gamificação e recompensas corporativas | 4Unik",
+    title: "Plataforma de gamificação e recompensas corporativas | Yoobe",
     description:
       "Painel analítico, motor de gamificação, loja de resgates, logística e segurança enterprise. Tudo para reconhecer, premiar e entregar — sem o RH virar uma operação de logística.",
     openGraphDescription:
-      "Painel, gamificação, catálogo, logística e SSO. A plataforma 4unik V3 para operar recompensas em escala.",
+      "Painel, gamificação, catálogo, logística e SSO. A plataforma Yoobe V3 para operar recompensas em escala.",
   },
   hero: {
     badge: "Operação sob controle",
@@ -69,7 +69,7 @@ export const ptPlataforma = {
     titleGradient: "coração",
     titleAfter: " do engajamento.",
     body:
-      "Você escolhe: usar a 4unik como motor de pontos e campanhas ou conectar uma ferramenta que já tem. No fim, tudo converge na loja corporativa e no resgate.",
+      "Você escolhe: usar a Yoobe como motor de pontos e campanhas ou conectar uma ferramenta que já tem. No fim, tudo converge na loja corporativa e no resgate.",
     cards: [
       {
         title: "Campanhas com páginas próprias",
@@ -79,7 +79,7 @@ export const ptPlataforma = {
       {
         title: "Integração ou motor nativo",
         body:
-          "Receba eventos de outras plataformas ou rode regras, carteira e resgate direto na 4unik — um fluxo só, sem complicação extra.",
+          "Receba eventos de outras plataformas ou rode regras, carteira e resgate direto na Yoobe — um fluxo só, sem complicação extra.",
       },
     ],
     flowTitle: "Fluxo Lógico (Eventos Autônomos)",
@@ -87,7 +87,7 @@ export const ptPlataforma = {
       node1Title: "Webhook CRM",
       node1Sub: "(Target Hit)",
       arrow1: "--- 500 Pts --->",
-      node2Title: "Motor 4unik",
+      node2Title: "Motor Yoobe",
       node2Sub: "(Regras Validadas)",
       arrow2: "--- Carteira --->",
       node3Title: "Push App",
@@ -100,7 +100,7 @@ export const ptPlataforma = {
     titleGradient: "empresa",
     titleAfter: ".",
     bodyBefore:
-      "Esqueça gerenciar estoques ou comprar produtos que seus colaboradores sequer querem. A 4unik V3 preenche automaticamente a loja com um catálogo amplo de produtos de alta qualidade com a ",
+      "Esqueça gerenciar estoques ou comprar produtos que seus colaboradores sequer querem. A Yoobe V3 preenche automaticamente a loja com um catálogo amplo de produtos de alta qualidade com a ",
     bodyStrong: "MARCA DA SUA EMPRESA",
     bodyAfter: " e envios on-demand.",
     features: [
@@ -121,7 +121,7 @@ export const ptPlataforma = {
       filter: "Filtrar",
       newBadge: "NOVO",
       p1Category: "Vestuário",
-      p1Name: "Moletom Premium Logo 4Unik",
+      p1Name: "Moletom Premium Logo Yoobe",
       p2Category: "Digital",
       p2Name: "Gift Card iFood R$ 100,00",
       pts: "Pts",
@@ -171,11 +171,11 @@ export const ptPlataforma = {
     badge: "FAQ",
     titleBefore: "Perguntas sobre a",
     titleGradient: "plataforma",
-    titleAfter: "4unik V3",
+    titleAfter: "Yoobe V3",
     items: [
       {
-        q: "A 4unik V3 é só um catálogo de brindes?",
-        a: "Não. A 4unik V3 é infraestrutura de recompensas: administração, motor de gamificação, catálogo, logística e entrega, e integrações — pensada para programas de engajamento e incentivo, não para um e‑commerce avulso.",
+        q: "A Yoobe V3 é só um catálogo de brindes?",
+        a: "Não. A Yoobe V3 é infraestrutura de recompensas: administração, motor de gamificação, catálogo, logística e entrega, e integrações — pensada para programas de engajamento e incentivo, não para um e‑commerce avulso.",
       },
       {
         q: "Como funciona a logística e a entrega das recompensas?",

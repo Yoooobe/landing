@@ -6,7 +6,7 @@ export { SITE_ORIGIN, SITE_URL } from "./publicSite";
 const ABSOLUTE_URL_PATTERN = /^https?:\/\//i;
 const FILE_PATH_PATTERN = /\/[^/?#]+\.[^/?#]+$/;
 
-export const SITE_NAME = "4Unik" as const;
+export const SITE_NAME = "Yoobe" as const;
 
 /**
  * URL absoluta de uma rota do site (inclui `BASE_PATH`, ex.: `/casos-de-uso/`).

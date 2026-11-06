@@ -42,7 +42,7 @@ export default function LogisticsFulfillment({
             </div>
             <div className="flex items-center gap-2 rounded-full bg-white/6 px-3 py-1">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-orange animate-pulse" />
-              <span className="font-mono text-[0.6rem] text-white/50 tracking-wider">gestor.4unik.io · envios</span>
+              <span className="font-mono text-[0.6rem] text-white/50 tracking-wider">admin.yoobe.co · envios</span>
             </div>
             <span className="rounded-full border border-brand-orange/30 bg-brand-orange/10 px-2 py-0.5 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-brand-orange">
               Rastreamento
@@ -53,7 +53,7 @@ export default function LogisticsFulfillment({
               src={logisticsPanelImageUrl}
               alt={
                 showcaseMedia?.logisticsPanelImage?.alt?.trim() ||
-                "Painel de pedidos e logística integrada da 4unik"
+                "Painel de pedidos e logística integrada da Yoobe"
               }
               fill
               sizes="100vw"

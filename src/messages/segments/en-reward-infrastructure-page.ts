@@ -1,6 +1,6 @@
 export const enRewardInfrastructurePage = {
   seo: {
-    title: "Reward infrastructure for employee engagement | 4Unik",
+    title: "Reward infrastructure for employee engagement | Yoobe",
     description:
       "What is reward infrastructure: an API-first layer for catalog, checkout, and fulfillment in corporate engagement and gamification programs—without running logistics in-house.",
     openGraphDescription:
@@ -19,7 +19,7 @@ export const enRewardInfrastructurePage = {
     badge: "Positioning",
     title: "Not a swag shop or standalone storefront",
     body:
-      "Swag vendors sell products; engagement platforms need a layer that turns points, goals, and recognition into trackable deliveries. 4Unik operates in that layer: it connects to your HRIS, intranet, or SaaS product and runs catalog, inventory, and logistics—or plugs into suppliers you already use.",
+      "Swag vendors sell products; engagement platforms need a layer that turns points, goals, and recognition into trackable deliveries. Yoobe operates in that layer: it connects to your HRIS, intranet, or SaaS product and runs catalog, inventory, and logistics—or plugs into suppliers you already use.",
     bullets: [
       "Does not replace your HRIS, ERP, or internal comms platform",
       "Not a B2C marketplace—B2B infrastructure for corporate programs",
@@ -47,7 +47,7 @@ export const enRewardInfrastructurePage = {
       },
       {
         title: "Engagement engine (optional)",
-        desc: "Campaigns, gamification, and a redemption store on the 4unik V3 platform when you want to run the program, not only delivery.",
+        desc: "Campaigns, gamification, and a redemption store on the Yoobe V3 platform when you want to run the program, not only delivery.",
         icon: "target",
       },
     ],
@@ -79,7 +79,7 @@ export const enRewardInfrastructurePage = {
     ],
   },
   related: {
-    title: "Go deeper in the 4Unik ecosystem",
+    title: "Go deeper in the Yoobe ecosystem",
     links: [
       { label: "API & integrations", href: "/integrations/" },
       { label: "Platform overview", href: "/platform/" },
@@ -100,15 +100,15 @@ export const enRewardInfrastructurePage = {
     items: [
       {
         q: "What is reward infrastructure?",
-        a: "Reward infrastructure is the API-first layer that connects employee engagement and corporate gamification programs to catalog, checkout, and fulfillment. Instead of every company building a store, inventory, and logistics, you integrate a provider like 4Unik that operates that layer.",
+        a: "Reward infrastructure is the API-first layer that connects employee engagement and corporate gamification programs to catalog, checkout, and fulfillment. Instead of every company building a store, inventory, and logistics, you integrate a provider like Yoobe that operates that layer.",
       },
       {
         q: "How is reward infrastructure different from a swag vendor?",
         a: "A swag vendor sells standalone products. Reward infrastructure turns points, goals, and recognition into trackable deliveries inside the program flow—with API, webhooks, governance, and integration into the corporate stack.",
       },
       {
-        q: "Is 4Unik API-only or also a platform?",
-        a: "Both. Platforms and engineering teams can consume API and fulfillment only; HR and operations can use the 4unik V3 platform with a gamification engine, redemption store, and dashboards—the same infrastructure underneath.",
+        q: "Is Yoobe API-only or also a platform?",
+        a: "Both. Platforms and engineering teams can consume API and fulfillment only; HR and operations can use the Yoobe V3 platform with a gamification engine, redemption store, and dashboards—the same infrastructure underneath.",
       },
       {
         q: "Who needs reward infrastructure?",

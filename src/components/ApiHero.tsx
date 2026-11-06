@@ -31,8 +31,8 @@ export default function ApiHero({
   const integrationVisualAlt =
     showcaseImage?.alt?.trim() ||
     (locale === "en"
-      ? "Screenshot of an HTTP POST request to the 4Unik rewards API with JSON body (issue points example)."
-      : "Captura de uma requisição HTTP POST à API de recompensas 4Unik com corpo JSON (exemplo de emissão de pontos).");
+      ? "Screenshot of an HTTP POST request to the Yoobe rewards API with JSON body (issue points example)."
+      : "Captura de uma requisição HTTP POST à API de recompensas Yoobe com corpo JSON (exemplo de emissão de pontos).");
   const heroDescription = content.description.trim();
 
   return (
@@ -112,7 +112,7 @@ export default function ApiHero({
                     <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                   </div>
                   <span className="font-mono text-[0.6rem] tracking-wider text-cyan-400/70">
-                    api.4unik.io · POST /v1/rewards/issue
+                    api.yoobe.co · POST /v1/rewards/issue
                   </span>
                   <span className="rounded-full border border-cyan-500/30 bg-cyan-500/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-cyan-300">
                     API v2

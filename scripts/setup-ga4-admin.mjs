@@ -8,8 +8,8 @@
  *
  * Usage: node scripts/setup-ga4-admin.mjs [--dry-run]
  */
-import { google } from "../mcps/4unik-marketing/node_modules/googleapis/build/src/index.js";
-import { GoogleAuth } from "../mcps/4unik-marketing/node_modules/google-auth-library/build/src/index.js";
+import { google } from "../mcps/yoobe-marketing/node_modules/googleapis/build/src/index.js";
+import { GoogleAuth } from "../mcps/yoobe-marketing/node_modules/google-auth-library/build/src/index.js";
 
 const GA_PROPERTY_ID = process.env.GA_PROPERTY_ID || "327916606";
 const SA_EMAIL =

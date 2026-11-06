@@ -44,7 +44,7 @@ export const enNav = {
     desc: "Offer physical rewards inside your own product, via API.",
   },
   workvivo: {
-    title: "Workvivo × 4Unik",
+    title: "Workvivo × Yoobe",
     desc: "Rewards and corporate store add-on.",
   },
   motor: {
@@ -79,7 +79,7 @@ export const enNav = {
     },
     communities: {
       title: "Creators & communities",
-      desc: "A VIP fan store with delivery by 4Unik.",
+      desc: "A VIP fan store with delivery by Yoobe.",
     },
     events: {
       title: "Events",

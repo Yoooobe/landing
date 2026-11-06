@@ -17,7 +17,7 @@ const CATEGORIES_PT = [
   { label: "Todos", value: "all", icon: BookOpen },
   { label: "Engajamento", value: "Engajamento", icon: Trophy },
   { label: "Gamificação de Times", value: "Gamificação de Times", icon: Zap },
-  { label: "4unik na Prática", value: "4unik na Prática", icon: Lightbulb },
+  { label: "Yoobe na Prática", value: "Yoobe na Prática", icon: Lightbulb },
   { label: "Eventos & Brindes", value: "Eventos & Brindes", icon: Gift },
   { label: "Crescimento", value: "Crescimento", icon: TrendingUp },
   { label: "Gestão de Pessoas", value: "Gestão de Pessoas", icon: Brain },
@@ -28,7 +28,7 @@ const CATEGORIES_EN = [
   { label: "All", value: "all", icon: BookOpen },
   { label: "Engagement", value: "Engajamento", icon: Trophy },
   { label: "Team gamification", value: "Gamificação de Times", icon: Zap },
-  { label: "4unik in practice", value: "4unik na Prática", icon: Lightbulb },
+  { label: "Yoobe in practice", value: "Yoobe na Prática", icon: Lightbulb },
   { label: "Events & swag", value: "Eventos & Brindes", icon: Gift },
   { label: "Growth", value: "Crescimento", icon: TrendingUp },
   { label: "People management", value: "Gestão de Pessoas", icon: Brain },
@@ -132,7 +132,7 @@ export default function BlogPageContent({ posts }: Props) {
       <div className="min-h-screen bg-surface-section px-4 pb-24 pt-32 text-white">
         <div className="container mx-auto max-w-3xl text-center">
           <span className="inline-block px-3 py-1 mb-6 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-xs font-bold tracking-widest uppercase">
-            Blog 4unik
+            Blog Yoobe
           </span>
           <h1 className="mb-4 text-4xl font-black font-heading">
             Engaja,{" "}
@@ -154,7 +154,7 @@ export default function BlogPageContent({ posts }: Props) {
       <div className="container mx-auto px-4 max-w-6xl mb-10">
         <div className="max-w-3xl">
           <span className="inline-block px-3 py-1 mb-6 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-xs font-bold tracking-widest uppercase">
-            Blog 4unik · para os heróis do RH
+            Blog Yoobe · para os heróis do RH
           </span>
           <h1 className="text-4xl md:text-6xl font-black mb-4 font-heading leading-tight">
             Engaja,{" "}

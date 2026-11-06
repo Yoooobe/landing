@@ -336,14 +336,14 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
               </ul>
             </div>
 
-            {/* Right: what 4Unik adds */}
+            {/* Right: what Yoobe adds */}
             <div className="rounded-3xl md:rounded-none border border-brand-orange/25 bg-linear-to-br from-brand-orange/10 to-yoobe-neon-pink/5 p-8 relative overflow-hidden">
               <div className="absolute top-4 right-4 rounded-full bg-brand-orange/15 border border-brand-orange/25 px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-brand-orange">
                 Add-on
               </div>
               <div className="flex items-center gap-3 mb-6">
                 <YoobeMark className="h-8 w-8" aria-hidden />
-                <span className="font-black font-heading text-white text-lg">4Unik</span>
+                <span className="font-black font-heading text-white text-lg">Yoobe</span>
               </div>
               <p className="text-xs font-bold uppercase tracking-widest text-brand-orange/70 mb-4">
                 {c.gapAddonLabel}
@@ -452,7 +452,7 @@ export default function WorkvivoLanding({ locale, apiHub = false, content, showc
           <div className="text-center max-w-2xl mx-auto mb-12">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white/50 mb-4">
               <Sparkles className="w-3.5 h-3.5" />
-              Workvivo × 4Unik
+              Workvivo × Yoobe
             </div>
             <h2 className="text-2xl md:text-4xl font-black font-heading mb-4">
               {c.integrationTitle}

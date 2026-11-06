@@ -52,20 +52,20 @@ const extraMirrorSources = [
 const homePayloadByLocale = {
   pt: {
     seo: {
-      title: "4Unik - Reward Infrastructure | Gamificacao e Recompensas",
+      title: "Yoobe - Reward Infrastructure | Gamificacao e Recompensas",
       description:
         "Infraestrutura de recompensas para plataformas de gamificacao e employee engagement. API, catalogo e fulfillment em um so lugar.",
     },
     hero: {
       badge: "Plataforma de Engajamento Corporativo",
-      brand: "4unik",
+      brand: "Yoobe",
       afterBrand: "conecta",
       line1b: "engajamento,",
       line2: "recompensas e logistica",
       sub:
         "A plataforma que transforma o dia a dia do seu time. Crie campanhas, gamifique resultados e entregue premios fisicos na porta da casa de cada colaborador, sem dar dor de cabeca para o RH.",
       ctaDemo: "Agendar Demonstracao",
-      ctaDemoHref: "https://calendly.com/4unik/30min",
+      ctaDemoHref: "https://calendly.com/yoobeco/demo",
       ctaExplore: "Explorar Beneficios",
       ctaExploreHref: "/#platform",
       floatAdhesion: "Adesao do Time",
@@ -79,19 +79,19 @@ const homePayloadByLocale = {
       floatEnpsSub: "Impacto direto no clima",
     },
     fourUnik: {
-      kicker: "Complemento ao 4unik institucional",
+      kicker: "Complemento ao Yoobe institucional",
       bodyBefore: "Em",
-      brand: "4unik.com.br",
+      brand: "catalogo.yoobe.co",
       bodyMid:
         "voce encontra o panorama de beneficios corporativos, logistica de recompensas e presenca da marca.",
       here: "Aqui",
       bodyAfter:
         "aprofundamos a plataforma: gamificacao, API, integracoes, catalogo e operacao para RH e squads tecnicos.",
-      cta: "Ver oferta completa no site 4unik",
-      ctaHref: "https://4unik.com.br",
+      cta: "Ver oferta completa no site Yoobe",
+      ctaHref: "https://catalogo.yoobe.co/",
     },
     trust: {
-      title: "Empresas que confiam na 4Unik",
+      title: "Empresas que confiam na Yoobe",
     },
     showcaseMedia: {
       _type: "reference",
@@ -100,11 +100,11 @@ const homePayloadByLocale = {
     finalCta: {
       title: "Pronto para transformar o reconhecimento na sua empresa?",
       body:
-        "Solicite uma demonstracao e veja como a 4Unik eleva o engajamento e a retencao do seu time.",
+        "Solicite uma demonstracao e veja como a Yoobe eleva o engajamento e a retencao do seu time.",
       demo: "Solicitar Demonstracao",
-      demoHref: "https://calendly.com/4unik/30min",
+      demoHref: "https://calendly.com/yoobeco/demo",
       whatsapp: "Falar com Especialista",
-      whatsappHref: "https://wa.me/551126844724",
+      whatsappHref: "https://wa.me/5541987607512",
     },
   },
   en: homePayloadEn(),
@@ -113,9 +113,9 @@ const homePayloadByLocale = {
 const apiIntegracoesPayloadByLocale = {
   pt: {
     seo: {
-      title: "API e Integracoes | 4unik",
+      title: "API e Integracoes | Yoobe",
       description:
-        "API REST, webhooks e integracoes para recompensas corporativas, catalogo e fulfillment na plataforma 4unik.",
+        "API REST, webhooks e integracoes para recompensas corporativas, catalogo e fulfillment na plataforma Yoobe.",
       openGraphDescription:
         "API REST, webhooks e integracoes para recompensas corporativas, catalogo e fulfillment.",
     },
@@ -125,14 +125,14 @@ const apiIntegracoesPayloadByLocale = {
       description:
         "API RESTful com Webhooks em tempo real, Sandbox para testes e SDKs para Node.js e Python. Endpoints dedicados para produtos, estoque, checkout e historico de resgates.",
       visualCaption:
-        "Integre sua intranet ou plataforma de engajamento com a 4unik e automatize envio de prêmios, presentes ou produtos de forma única.",
+        "Integre sua intranet ou plataforma de engajamento com a Yoobe e automatize envio de prêmios, presentes ou produtos de forma única.",
       primaryCtaLabel: "Ler a Documentacao",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Falar com Engenharia",
-      secondaryCtaHref: "https://calendly.com/4unik/30min",
+      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
-Host: api.4unik.yoobe.co
+Host: api.yoobe.co
 Authorization: Bearer sec_tok_4Uxxxxxxxxx
 
 {
@@ -163,7 +163,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
         {
           title: "Sandbox Developer",
           description:
-            "Ambiente dev.4unik para testar emissao de pontos e resgates sem gastar orcamento real do RH.",
+            "Ambiente dev.Yoobe para testar emissao de pontos e resgates sem gastar orcamento real do RH.",
           icon: "box",
           colSpan: "md:col-span-1",
         },
@@ -289,14 +289,14 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Crie chaves de API restritas e acesse a documentacao tecnica interativa hospedada no Stoplight.",
       buttonLabel: "Gerar API Keys",
-      buttonHref: "https://calendly.com/4unik/30min",
+      buttonHref: "https://calendly.com/yoobeco/demo",
     },
   },
   en: {
     seo: {
-      title: "API & Integrations | 4unik",
+      title: "API & Integrations | Yoobe",
       description:
-        "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment - aligned with the 4unik platform.",
+        "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment - aligned with the Yoobe platform.",
       openGraphDescription:
         "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment.",
     },
@@ -306,14 +306,14 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "REST API with real-time webhooks, a testing sandbox, and SDKs for Node.js and Python. Dedicated endpoints for products, inventory, checkout, and redemption history.",
       visualCaption:
-        "Connect your intranet or engagement platform with 4Unik and automate sending rewards, gifts, or products in a uniquely integrated way.",
+        "Connect your intranet or engagement platform with Yoobe and automate sending rewards, gifts, or products in a uniquely integrated way.",
       primaryCtaLabel: "Read documentation",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Talk to engineering",
-      secondaryCtaHref: "https://calendly.com/4unik/30min",
+      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
-Host: api.4unik.yoobe.co
+Host: api.yoobe.co
 Authorization: Bearer sec_tok_4Uxxxxxxxxx
 
 {
@@ -470,7 +470,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Create restricted API keys and access the interactive technical documentation hosted on Stoplight.",
       buttonLabel: "Generate API keys",
-      buttonHref: "https://calendly.com/4unik/30min",
+      buttonHref: "https://calendly.com/yoobeco/demo",
     },
   },
 };
@@ -617,7 +617,7 @@ const workvivoContent = loadNamedExportObject("src/content/workvivo.ts", "workvi
 const gamificacaoPayloadByLocale = {
   pt: {
     seo: {
-      title: "Gamificacao Corporativa | 4unik",
+      title: "Gamificacao Corporativa | Yoobe",
       description:
         "Motor de gamificacao corporativa com pontos, rankings, desafios, recompensas reais e analytics para RH e liderancas.",
       openGraphDescription:
@@ -638,7 +638,7 @@ const gamificacaoPayloadByLocale = {
     faq: ptGamificacaoPageSegment.faq,
     finalCta: {
       ...ptGamificacaoSegment.pageCta,
-      ctaHref: "https://calendly.com/4unik/30min",
+      ctaHref: "https://calendly.com/yoobeco/demo",
     },
   },
   en: gamificacaoPayloadEn(),
@@ -677,15 +677,15 @@ const routePayloadJsonBySegmentFile = {
     messagesOverride: { landingMore: { plataformaStubs: ptLandingMoreSegment.plataformaStubs } },
     stubSeo: {
       motor: {
-        title: "Motor de Gamificação | 4unik",
+        title: "Motor de Gamificação | Yoobe",
         description: ptLandingMoreSegment.plataformaStubs.motor.body,
       },
       logistica: {
-        title: "Logística Integrada | 4unik",
+        title: "Logística Integrada | Yoobe",
         description: ptLandingMoreSegment.plataformaStubs.logistica.body,
       },
       loja: {
-        title: "Loja e Resgate | 4unik",
+        title: "Loja e Resgate | Yoobe",
         description: ptLandingMoreSegment.plataformaStubs.loja.body,
       },
     },
@@ -693,7 +693,7 @@ const routePayloadJsonBySegmentFile = {
   "en-landing-more.ts": buildSegmentRoutePayload("en-landing-more.ts"),
   "pt-blog-page.ts": JSON.stringify({
     seo: {
-      title: "Blog | 4unik",
+      title: "Blog | Yoobe",
       description:
         "Insights, tendências e guias sobre employee engagement, gamificação e logística de premiações corporativas.",
       openGraphDescription:
@@ -1131,10 +1131,10 @@ function buildHomeMarketingPageContent(locale) {
       ctaLink: home.hero.ctaDemoHref,
       imagePath: "public/cms-seed/home-bento-dashboard.svg",
       imageAlt: isEn
-        ? "4Unik home hero overview dashboard"
-        : "Visao principal do dashboard da home da 4Unik",
+        ? "Yoobe home hero overview dashboard"
+        : "Visao principal do dashboard da home da Yoobe",
     }),
-    splitContentBlock("4unik-context", {
+    splitContentBlock("Yoobe-context", {
       eyebrow: home.fourUnik.kicker,
       title: home.fourUnik.brand,
       body: [
@@ -1162,8 +1162,8 @@ function buildHomeMarketingPageContent(locale) {
       columns: "2",
       imagePath: "public/cms-seed/home-bento-dashboard.svg",
       imageAlt: isEn
-        ? "Overview of the 4Unik engagement and rewards dashboard"
-        : "Visao geral do dashboard de engajamento e recompensas da 4Unik",
+        ? "Overview of the Yoobe engagement and rewards dashboard"
+        : "Visao geral do dashboard de engajamento e recompensas da Yoobe",
       items: [
         {
           title: stats.bento.card1.title,
@@ -1200,8 +1200,8 @@ function buildHomeMarketingPageContent(locale) {
       primaryHref: isEn ? "/platform/" : "/plataforma",
       imagePath: "public/cms-seed/home-platform-management.svg",
       imageAlt: isEn
-        ? "Manager dashboard view on 4Unik"
-        : "Visao de gestao da plataforma 4Unik",
+        ? "Manager dashboard view on Yoobe"
+        : "Visao de gestao da plataforma Yoobe",
       imageSide: "right",
     }),
     splitContentBlock("platform-store", {
@@ -1213,8 +1213,8 @@ function buildHomeMarketingPageContent(locale) {
       primaryHref: isEn ? "/platform/rewards-store/" : "/plataforma/loja-resgate",
       imagePath: "public/cms-seed/home-platform-store.svg",
       imageAlt: isEn
-        ? "Member store experience on 4Unik"
-        : "Experiencia da loja do colaborador na 4Unik",
+        ? "Member store experience on Yoobe"
+        : "Experiencia da loja do colaborador na Yoobe",
       imageSide: "left",
     }),
     splitContentBlock("platform-campaigns", {
@@ -1226,8 +1226,8 @@ function buildHomeMarketingPageContent(locale) {
       primaryHref: isEn ? "/platform/gamification-engine/" : "/plataforma/motor-gamificacao",
       imagePath: "public/cms-seed/home-platform-campaigns.svg",
       imageAlt: isEn
-        ? "Campaign management setup on 4Unik"
-        : "Setup de campanhas na plataforma 4Unik",
+        ? "Campaign management setup on Yoobe"
+        : "Setup de campanhas na plataforma Yoobe",
       imageSide: "right",
     }),
     statsBlock(
@@ -1240,7 +1240,7 @@ function buildHomeMarketingPageContent(locale) {
         label: item.label,
       })),
     ),
-    featureGridBlock("why-4unik", {
+    featureGridBlock("why-Yoobe", {
       eyebrow: stats.why.badge,
       title: joinTitle(stats.why.titleBefore, stats.why.titleGradient),
       description: stats.why.sub,
@@ -1337,7 +1337,7 @@ function buildHomeMarketingPageContent(locale) {
       body: [landingMore.dedicatedIntegrations.beehome.body],
       bullets: landingMore.dedicatedIntegrations.beehome.bullets,
       primaryLabel: isEn ? "Talk to engineering" : "Falar com engenharia",
-      primaryHref: "https://calendly.com/4unik/30min",
+      primaryHref: "https://calendly.com/yoobeco/demo",
       imagePath: "public/cms-seed/home-integrations-beehome.svg",
       imageAlt: isEn
         ? "Beehome integration preview"
@@ -1371,7 +1371,7 @@ function buildHomeMarketingPageContent(locale) {
       primaryLabel: rest.apiSection.ctaDocs,
       primaryHref: isEn ? "/integrations/" : "/api-integracoes",
       secondaryLabel: rest.apiSection.ctaApi,
-      secondaryHref: "https://calendly.com/4unik/30min",
+      secondaryHref: "https://calendly.com/yoobeco/demo",
       imageSide: "right",
     }),
     featureGridBlock("ai-roadmap", {
@@ -1414,8 +1414,8 @@ function buildHomeMarketingPageContent(locale) {
       columns: "4",
       imagePath: "public/cms-seed/home-how-it-works.svg",
       imageAlt: isEn
-        ? "Architecture of the 4Unik operation flow"
-        : "Arquitetura da operacao da 4Unik",
+        ? "Architecture of the Yoobe operation flow"
+        : "Arquitetura da operacao da Yoobe",
       items: landingMore.howItWorks.steps.map((step, index) => ({
         eyebrow: step.num,
         title: step.title,

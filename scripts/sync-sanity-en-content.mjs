@@ -257,7 +257,7 @@ export function homePayloadEn() {
     },
     hero: {
       ...enHome.hero,
-      ctaDemoHref: "https://calendly.com/4unik/30min",
+      ctaDemoHref: "https://calendly.com/yoobeco/demo",
       ctaExploreHref: "/#platform",
       floatAdhesionValue: "92%",
       floatRhValue: "0%",
@@ -265,15 +265,15 @@ export function homePayloadEn() {
     },
     fourUnik: {
       ...enHome.fourUnik,
-      ctaHref: "https://4unik.com.br",
+      ctaHref: "https://catalogo.yoobe.co/",
     },
     trust: {
       ...enHome.trust,
     },
     finalCta: {
       ...enHome.finalCta,
-      demoHref: "https://calendly.com/4unik/30min",
-      whatsappHref: "https://wa.me/551126844724",
+      demoHref: "https://calendly.com/yoobeco/demo",
+      whatsappHref: "https://wa.me/5541987607512",
     },
   };
 }
@@ -281,9 +281,9 @@ export function homePayloadEn() {
 export function apiIntegracoesPayloadEn() {
   return {
     seo: {
-      title: "API & Integrations | 4Unik",
+      title: "API & Integrations | Yoobe",
       description:
-        "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment, aligned with the 4Unik platform.",
+        "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment, aligned with the Yoobe platform.",
       openGraphDescription:
         "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment.",
     },
@@ -293,14 +293,14 @@ export function apiIntegracoesPayloadEn() {
       description:
         "REST API with real-time webhooks, a testing sandbox, and SDKs for Node.js and Python. Dedicated endpoints for products, inventory, checkout, and redemption history.",
       visualCaption:
-        "Connect your intranet or engagement platform with 4Unik and automate sending rewards, gifts, or products in a uniquely integrated way.",
+        "Connect your intranet or engagement platform with Yoobe and automate sending rewards, gifts, or products in a uniquely integrated way.",
       primaryCtaLabel: "Read documentation",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Talk to engineering",
-      secondaryCtaHref: "https://calendly.com/4unik/30min",
+      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
-Host: api.4unik.yoobe.co
+Host: api.yoobe.co
 Authorization: Bearer sec_tok_4Uxxxxxxxxx
 
 {
@@ -457,7 +457,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Create scoped API keys and access the interactive technical documentation hosted on Stoplight.",
       buttonLabel: "Generate API keys",
-      buttonHref: "https://calendly.com/4unik/30min",
+      buttonHref: "https://calendly.com/yoobeco/demo",
     },
   };
 }
@@ -465,7 +465,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
 export function gamificacaoPayloadEn() {
   return {
     seo: {
-      title: "Corporate Gamification | 4Unik",
+      title: "Corporate Gamification | Yoobe",
       description:
         "Corporate gamification engine with points, rankings, missions, real rewards, and analytics for HR and business leaders.",
       openGraphDescription:
@@ -486,7 +486,7 @@ export function gamificacaoPayloadEn() {
     faq: enGamificacaoPage.faq,
     finalCta: {
       ...enGamificacao.pageCta,
-      ctaHref: "https://calendly.com/4unik/30min",
+      ctaHref: "https://calendly.com/yoobeco/demo",
     },
   };
 }
@@ -500,7 +500,7 @@ function inteligenciaBlocksEn() {
       headline: `${page.hero.titleBefore} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.cta.button,
-      ctaLink: "https://calendly.com/4unik/30min",
+      ctaLink: "https://calendly.com/yoobeco/demo",
     },
     {
       _key: "core-capabilities",
@@ -548,7 +548,7 @@ function inteligenciaBlocksEn() {
       title: page.cta.title,
       description: page.cta.sub,
       primaryLabel: page.cta.button,
-      primaryHref: "https://calendly.com/4unik/30min",
+      primaryHref: "https://calendly.com/yoobeco/demo",
     },
   ];
 }
@@ -599,7 +599,7 @@ function casosBlocksEn() {
       title: enCasos.pageCta.title,
       description: enCasos.pageCta.body,
       primaryLabel: enCasos.pageCta.cta,
-      primaryHref: "https://calendly.com/4unik/30min",
+      primaryHref: "https://calendly.com/yoobeco/demo",
     },
   ];
 }
@@ -614,7 +614,7 @@ function plataformaBlocksEn() {
       headline: `${page.hero.titleLine1} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.pageCta.cta,
-      ctaLink: "https://calendly.com/4unik/30min",
+      ctaLink: "https://calendly.com/yoobeco/demo",
     },
     {
       _key: "admin-dashboard",
@@ -730,7 +730,7 @@ function plataformaBlocksEn() {
       eyebrow: "Next step",
       title: page.pageCta.title,
       primaryLabel: page.pageCta.cta,
-      primaryHref: "https://calendly.com/4unik/30min",
+      primaryHref: "https://calendly.com/yoobeco/demo",
     },
   ];
 }
@@ -789,7 +789,7 @@ export function buildCurrentEnglishMenus() {
               _key: "rewards",
               label: enNav.rewardsHub.title,
               description: enNav.rewardsHub.desc,
-              href: "https://catalogo.4unik.com.br/product",
+              href: "https://catalogo.yoobe.co/product",
               icon: "rewards",
               openInNewTab: true,
             },
@@ -842,13 +842,13 @@ export function buildCurrentEnglishMenus() {
             {
               _key: "catalog",
               label: enFooter.links.catalogo,
-              href: "https://catalogo.4unik.com.br/product",
+              href: "https://catalogo.yoobe.co/product",
               openInNewTab: true,
             },
             {
               _key: "company",
               label: enFooter.links.logistica,
-              href: "https://4unik.com.br",
+              href: "https://catalogo.yoobe.co/",
               openInNewTab: true,
             },
           ],
@@ -860,13 +860,13 @@ export function buildCurrentEnglishMenus() {
             {
               _key: "demo",
               label: enFooter.links.demo,
-              href: "https://calendly.com/4unik/30min",
+              href: "https://calendly.com/yoobeco/demo",
               openInNewTab: true,
             },
             {
               _key: "sales",
               label: enFooter.links.comercial,
-              href: "https://wa.me/551126844724",
+              href: "https://wa.me/5541987607512",
               openInNewTab: true,
             },
           ],
@@ -952,7 +952,7 @@ export function buildCurrentEnglishMarketingPages() {
         legacySectionBlock("homeFourUnik"),
         logoStripBlock("home-trust", {
           displayStyle: "compact",
-          title: "Companies that trust 4Unik",
+          title: "Companies that trust Yoobe",
           collection: { _type: "reference", _ref: "logoCollection.trustBar" },
         }),
         legacySectionBlock("homeBentoFeatures"),
@@ -973,7 +973,7 @@ export function buildCurrentEnglishMarketingPages() {
         logoStripBlock("home-clients", {
           displayStyle: "grid",
           sectionId: "clientes",
-          eyebrow: "Who trusts 4Unik",
+          eyebrow: "Who trusts Yoobe",
           title: "Companies that have already transformed their people programs",
           description:
             "From startups to large enterprises, we help HR teams run recognition programs that work.",
@@ -1104,15 +1104,15 @@ export function buildSegmentRoutePayload(fileName) {
         messagesOverride: { landingMore: { plataformaStubs: enLandingMore.plataformaStubs } },
         stubSeo: {
           motor: {
-            title: "Gamification Engine | 4Unik",
+            title: "Gamification Engine | Yoobe",
             description: enLandingMore.plataformaStubs.motor.body,
           },
           logistica: {
-            title: "Integrated Logistics | 4Unik",
+            title: "Integrated Logistics | Yoobe",
             description: enLandingMore.plataformaStubs.logistica.body,
           },
           loja: {
-            title: "Corporate Store & Redemptions | 4Unik",
+            title: "Corporate Store & Redemptions | Yoobe",
             description: enLandingMore.plataformaStubs.loja.body,
           },
         },
@@ -1120,7 +1120,7 @@ export function buildSegmentRoutePayload(fileName) {
     case "en-blog-page.ts":
       return JSON.stringify({
         seo: {
-          title: "Blog | 4Unik",
+          title: "Blog | Yoobe",
           description:
             "Insights, guides, and trends on employee engagement, gamification, and rewards logistics.",
           openGraphDescription:

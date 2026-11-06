@@ -4,11 +4,11 @@
  * Validates robots, sitemap, hreflang sample, growth pages, and key route smoke.
  *
  * Usage:
- *   node scripts/gsc-indexing-check.mjs [--base https://plataforma.4unik.com.br/landing] [--json]
+ *   node scripts/gsc-indexing-check.mjs [--base https://www.yoobe.co/] [--json]
  */
 import { writeFileSync } from "node:fs";
 
-const DEFAULT_BASE = "https://plataforma.4unik.com.br/landing";
+const DEFAULT_BASE = "https://www.yoobe.co/";
 
 function parseArgs(argv) {
   let base = DEFAULT_BASE;
@@ -160,7 +160,7 @@ async function main() {
     const res = await fetchText(`${hostBase}${path}`);
     if (res.status === 404) {
       warnings.push(
-        `Root path ${hostBase}${path} returns 404 — configure proxy 301 → ${base}${path} (see docs/proxy-redirects-4unik.md)`,
+        `Root path ${hostBase}${path} returns 404 — configure proxy 301 → ${base}${path} (see docs/proxy-redirects-Yoobe.md)`,
       );
     }
   }
@@ -179,7 +179,7 @@ async function main() {
     checks,
     warnings,
     gscConsole: {
-      property: "https://plataforma.4unik.com.br/",
+      property: "https://www.yoobe.co/",
       sitemapSubmit: `${base}/sitemap.xml`,
       baselineMetricsPending: [
         "Indexed pages (Pages report)",

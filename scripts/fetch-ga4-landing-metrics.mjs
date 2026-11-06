@@ -10,7 +10,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { fetchGa4LandingMetrics } from "../mcps/4unik-marketing/lib/ga4.js";
+import { fetchGa4LandingMetrics } from "../mcps/yoobe-marketing/lib/ga4.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(__dirname, "..");
@@ -54,7 +54,7 @@ const PERIODS = [
     startDate: "2026-06-03",
     endDate: "2026-06-09",
     filterMode: "hostname",
-    notes: "hostName = plataforma.4unik.com.br",
+    notes: "hostName = www.yoobe.co",
   },
 ];
 

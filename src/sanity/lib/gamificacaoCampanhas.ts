@@ -18,7 +18,7 @@ function toMutable<T>(value: T): MutableDeep<T> {
 const fallbackByLocale: Record<Locale, ResolvedGamificacaoContent> = {
   pt: {
     seo: {
-      title: "Campanhas de Gamificação | Do byte ao brinde | 4unik",
+      title: "Campanhas de Gamificação | Do byte ao brinde | Yoobe",
       description:
         "Campanhas de gamificação corporativa com reconhecimento, loja VIP, +5.000 prêmios e logística automatizada. Resolva o caos operacional do RH com ROI mensurável.",
       openGraphDescription:
@@ -39,12 +39,12 @@ const fallbackByLocale: Record<Locale, ResolvedGamificacaoContent> = {
     faq: toMutable(ptGamificacaoCampanhasPage.faq),
     finalCta: {
       ...toMutable(ptGamificacaoCampanhas.pageCta),
-      ctaHref: "https://calendly.com/4unik/30min",
+      ctaHref: "https://calendly.com/yoobeco/demo",
     },
   },
   en: {
     seo: {
-      title: "Gamification Campaigns | Byte to reward | 4Unik",
+      title: "Gamification Campaigns | Byte to reward | Yoobe",
       description:
         "Corporate gamification campaigns with recognition, VIP store, 5,000+ rewards, and automated logistics. Fix HR operational chaos with measurable ROI.",
       openGraphDescription:
@@ -65,7 +65,7 @@ const fallbackByLocale: Record<Locale, ResolvedGamificacaoContent> = {
     faq: toMutable(enGamificacaoCampanhasPage.faq),
     finalCta: {
       ...toMutable(enGamificacaoCampanhas.pageCta),
-      ctaHref: "https://calendly.com/4unik/30min",
+      ctaHref: "https://calendly.com/yoobeco/demo",
     },
   },
 };

@@ -10,29 +10,29 @@ export type PlataformaStubVariant = "motor" | "logistica" | "loja";
 const plataformaStubSeoByLocale: Record<Locale, Record<PlataformaStubVariant, PageSeoCopy>> = {
   pt: {
     motor: {
-      title: "Motor de gamificação corporativa | 4Unik — pontos, missões e rankings",
+      title: "Motor de gamificação corporativa | Yoobe — pontos, missões e rankings",
       description: ptLandingMore.plataformaStubs.motor.body,
     },
     logistica: {
-      title: "Logística integrada de brindes e prêmios | 4Unik",
+      title: "Logística integrada de brindes e prêmios | Yoobe",
       description: ptLandingMore.plataformaStubs.logistica.body,
     },
     loja: {
-      title: "Loja corporativa de resgates e recompensas | 4Unik",
+      title: "Loja corporativa de resgates e recompensas | Yoobe",
       description: ptLandingMore.plataformaStubs.loja.body,
     },
   },
   en: {
     motor: {
-      title: "Gamification Engine | 4Unik",
+      title: "Gamification Engine | Yoobe",
       description: enLandingMore.plataformaStubs.motor.body,
     },
     logistica: {
-      title: "Integrated Logistics | 4Unik",
+      title: "Integrated Logistics | Yoobe",
       description: enLandingMore.plataformaStubs.logistica.body,
     },
     loja: {
-      title: "Corporate Store & Redemptions | 4Unik",
+      title: "Corporate Store & Redemptions | Yoobe",
       description: enLandingMore.plataformaStubs.loja.body,
     },
   },
@@ -40,11 +40,11 @@ const plataformaStubSeoByLocale: Record<Locale, Record<PlataformaStubVariant, Pa
 
 const blogListingSeoByLocale: Record<Locale, PageSeoCopy> = {
   pt: {
-    title: "Blog 4Unik — engajamento, gamificação e reconhecimento",
+    title: "Blog Yoobe — engajamento, gamificação e reconhecimento",
     description: ptBlogPage.sub,
   },
   en: {
-    title: "Blog | 4Unik",
+    title: "Blog | Yoobe",
     description: enBlogPage.sub,
   },
 };

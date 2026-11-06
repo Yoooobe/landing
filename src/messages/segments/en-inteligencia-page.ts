@@ -1,13 +1,13 @@
 export const enInteligenciaPage = {
   seo: {
-    title: "Intelligence | 4Unik — Reward Infrastructure",
+    title: "Intelligence | Yoobe — Reward Infrastructure",
     description:
       "An intelligence layer for engagement: assisted campaigns, curated kits, recommendations, and Workvivo integration. A practical AI roadmap for HR.",
     openGraphDescription:
       "Intelligence applied to employee engagement: builders, insights, and orchestration with Workvivo.",
   },
   hero: {
-    badge: "4Unik AI Layer",
+    badge: "Yoobe AI Layer",
     titleBefore: "Intelligence applied to",
     titleGradient: "corporate programs",
     sub:
@@ -33,7 +33,7 @@ export const enInteligenciaPage = {
   ],
   workvivo: {
     titleBefore: "Workvivo",
-    titleGradient: "+ 4Unik AI Layer",
+    titleGradient: "+ Yoobe AI Layer",
     sub:
       "An intelligence layer that turns events, communications, and recognition into actionable, trackable campaigns and rewards.",
     cases: [
@@ -72,14 +72,14 @@ export const enInteligenciaPage = {
     badge: "FAQ",
     titleBefore: "Questions about",
     titleGradient: "Intelligence",
-    titleAfter: "at 4Unik",
+    titleAfter: "at Yoobe",
     items: [
       {
-        q: "What does “Intelligence” mean at 4Unik?",
-        a: "It is 4Unik's B2B framing for AI applied to engagement: campaign and kit builders, recommendations, and insights, without overpromising AGI. The focus is productivity and orchestration for HR teams.",
+        q: "What does “Intelligence” mean at Yoobe?",
+        a: "It is Yoobe's B2B framing for AI applied to engagement: campaign and kit builders, recommendations, and insights, without overpromising AGI. The focus is productivity and orchestration for HR teams.",
       },
       {
-        q: "How does 4Unik work with Workvivo?",
+        q: "How does Yoobe work with Workvivo?",
         a: "The integration pairs social feed events with actionable campaigns and rewards; the intelligence layer adds suggestions, recognition signals, and disengagement risk cues.",
       },
       {
@@ -87,8 +87,8 @@ export const enInteligenciaPage = {
         a: "Prompt-assisted campaigns, personalized kits, reward recommendations, and HR insights—progressive autonomy over time, as described on this page.",
       },
       {
-        q: "Does 4Unik replace my HRIS or ERP?",
-        a: "No. 4Unik is reward and engagement infrastructure that integrates; systems of record stay the source of truth.",
+        q: "Does Yoobe replace my HRIS or ERP?",
+        a: "No. Yoobe is reward and engagement infrastructure that integrates; systems of record stay the source of truth.",
       },
     ],
   },

@@ -149,7 +149,7 @@ async function smokeLandingWithoutTrailingSlash(baseUrl) {
       /G-[A-Z0-9]+/i.test(body);
 
     if (res.status === 404 && hasGtag) {
-      console.log(`validate-landing-routes: smoke OK ${url} → 404 fallback with gtag (apply nginx 301 — infra/plataforma-4unik-nginx-redirects.conf)`);
+      console.log(`validate-landing-routes: smoke OK ${url} → 404 fallback with gtag (apply nginx 301 — infra/plataforma-Yoobe-nginx-redirects.conf)`);
       return 0;
     }
 
@@ -195,17 +195,17 @@ async function runSmoke(baseUrl) {
   errors += await smokeLandingWithoutTrailingSlash(base);
 
   const withoutLanding = [
-    "https://plataforma.4unik.com.br/plataforma/motor-gamificacao/",
-    "https://plataforma.4unik.com.br/plataforma/campanhas-gamificacao/",
-    "https://plataforma.4unik.com.br/para-plataformas/",
-    "https://plataforma.4unik.com.br/pricing/",
+    "https://www.yoobe.co/plataforma/motor-gamificacao/",
+    "https://www.yoobe.co/plataforma/campanhas-gamificacao/",
+    "https://www.yoobe.co/para-plataformas/",
+    "https://www.yoobe.co/pricing/",
   ];
   for (const url of withoutLanding) {
     try {
       const res = await fetch(url, { method: "HEAD", redirect: "manual" });
       if (res.status === 404) {
         console.warn(
-          `validate-landing-routes: ${url} → 404 (configure proxy 301 → /landing/… — see docs/proxy-redirects-4unik.md)`,
+          `validate-landing-routes: ${url} → 404 (configure proxy 301 → /landing/… — see docs/proxy-redirects-Yoobe.md)`,
         );
       } else if (res.status >= 300 && res.status < 400) {
         console.log(`validate-landing-routes: proxy redirect OK ${url} → ${res.headers.get("location")}`);
@@ -240,7 +240,7 @@ function main() {
     const base =
       args[smokeIdx + 1] && !args[smokeIdx + 1].startsWith("-")
         ? args[smokeIdx + 1]
-        : "https://plataforma.4unik.com.br/landing";
+        : "https://www.yoobe.co/";
     runSmoke(base).then((smokeErrors) => {
       errors += smokeErrors;
       if (errors > 0) process.exit(1);

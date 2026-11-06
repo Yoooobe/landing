@@ -63,7 +63,7 @@ if (hits.length > 0) {
     console.error(`  … e mais ${hits.length - 20} ficheiro(s)`);
   }
   console.error(
-    "Defina NEXT_PUBLIC_SITE_URL=https://plataforma.4unik.com.br/landing/ no build (ver docs/site-url-migration.md).",
+    "Defina NEXT_PUBLIC_SITE_URL=https://www.yoobe.co/ no build (ver docs/site-url-migration.md).",
   );
   process.exit(1);
 }

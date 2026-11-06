@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * Agente de geração de posts do Blog Engaja, time! — 4unik
+ * Agente de geração de posts do Blog Engaja, time! — Yoobe
  *
  * Uso:
  *   npx tsx scripts/generate-blog-posts.ts [opções]
@@ -167,24 +167,24 @@ const TOPIC_SEEDS: Record<string, string[]> = {
     "Gamificação para equipes remotas: como manter a cultura viva à distância",
     "Pontos, níveis e conquistas: montando o sistema de progressão ideal para seu time",
   ],
-  "4unik na Prática": [
-    "OKRs + gamificação: como transformar metas em engajamento real com a 4unik",
+  "Yoobe na Prática": [
+    "OKRs + gamificação: como transformar metas em engajamento real com a Yoobe",
     "Como montar uma loja de recompensas que os colaboradores adoram visitar",
-    "Passo a passo: criando sua primeira campanha de gamificação na plataforma 4unik",
-    "Integrações 4unik: conectando a plataforma ao seu HRIS em menos de uma semana",
-    "Como usar os dashboards da 4unik para tomar decisões de RH baseadas em dados",
+    "Passo a passo: criando sua primeira campanha de gamificação na plataforma Yoobe",
+    "Integrações Yoobe: conectando a plataforma ao seu HRIS em menos de uma semana",
+    "Como usar os dashboards da Yoobe para tomar decisões de RH baseadas em dados",
   ],
   "Eventos & Brindes": [
     "Gamificação em eventos de RH: engajando participantes do início ao fim",
-    "Como usar QR Codes + pontos 4unik para criar experiências memoráveis em eventos",
+    "Como usar QR Codes + pontos Yoobe para criar experiências memoráveis em eventos",
     "Brindes inteligentes: como substituir kits físicos por recompensas que os colaboradores escolhem",
     "Convenção de vendas gamificada: case prático com pontuação ao vivo e premiação na hora",
-    "Hackathons internos gamificados: como a 4unik potencializa a inovação corporativa",
-    "Gamificação em convenção de vendas: como a 4unik transforma o evento em experiência",
+    "Hackathons internos gamificados: como a Yoobe potencializa a inovação corporativa",
+    "Gamificação em convenção de vendas: como a Yoobe transforma o evento em experiência",
     "Como criar desafios com pontuação em tempo real durante eventos corporativos",
     "Troca de brindes gamificada: adeus kits de brinde genéricos, olá recompensas que o colaborador escolhe",
     "Evento de final de ano gamificado: guia completo para o RH montar do zero",
-    "Premiação ao vivo: como criar momentos de reconhecimento inesquecíveis em eventos com a plataforma 4unik",
+    "Premiação ao vivo: como criar momentos de reconhecimento inesquecíveis em eventos com a plataforma Yoobe",
   ],
   Crescimento: [
     "Como o RH pode medir o ROI de iniciativas de engajamento",
@@ -197,16 +197,16 @@ const TOPIC_SEEDS: Record<string, string[]> = {
     "Como criar rituais de reconhecimento que os funcionários realmente valorizam",
   ],
   "Motivação & Reconhecimento": [
-    "5 formas de usar o 4unik para criar campanhas de reconhecimento que funcionam",
+    "5 formas de usar o Yoobe para criar campanhas de reconhecimento que funcionam",
     "Por que elogios públicos aumentam retenção — e como estruturá-los na sua empresa",
-    "Guia de onboarding gamificado para novos colaboradores com a 4unik",
+    "Guia de onboarding gamificado para novos colaboradores com a Yoobe",
     "Como criar rituais de reconhecimento que os funcionários realmente valorizam",
-    "Como criar uma campanha mensal de metas com pontos e recompensas na 4unik",
-    "Campanha de indicação interna: como a 4unik transforma seu colaborador no melhor recrutador",
+    "Como criar uma campanha mensal de metas com pontos e recompensas na Yoobe",
+    "Campanha de indicação interna: como a Yoobe transforma seu colaborador no melhor recrutador",
     "30 dias de engajamento: como montar uma campanha de bem-estar gamificada para o time",
     "Como criar uma campanha de aniversário de empresa que o colaborador realmente vai lembrar",
-    "Campanhas sazonais com a 4unik: do Dia do Trabalhador ao fim de ano, engajando em cada data",
-    "Como montar uma campanha de onboarding gamificada para novos colaboradores com a 4unik",
+    "Campanhas sazonais com a Yoobe: do Dia do Trabalhador ao fim de ano, engajando em cada data",
+    "Como montar uma campanha de onboarding gamificada para novos colaboradores com a Yoobe",
     "Campanha de metas trimestrais: como conectar OKRs da empresa a recompensas individuais na plataforma",
     "Campanha de vendas gamificada: como montar ranking, prêmios e regras que todo time aceita",
   ],
@@ -222,8 +222,8 @@ const COVER_IMAGE_URL_BY_CATEGORY: Record<string, string> = {
   "Events & Rewards": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1600&auto=format&fit=crop",
   "Gamificação de Times": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
   "Team Gamification": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop",
-  "4unik na Prática": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
-  "4unik in Practice": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+  "Yoobe na Prática": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
+  "Yoobe in Practice": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1600&auto=format&fit=crop",
   "Motivação & Reconhecimento": "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?q=80&w=1600&auto=format&fit=crop",
   "Motivation & Recognition": "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?q=80&w=1600&auto=format&fit=crop",
   Crescimento: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop",
@@ -235,10 +235,10 @@ const COVER_IMAGE_URL_BY_CATEGORY: Record<string, string> = {
 // ──────────────────────────────────────────────
 // System prompt for OpenAI
 // ──────────────────────────────────────────────
-const SYSTEM_PROMPT = `Você é um especialista em RH e engajamento corporativo, redator sênior do blog "Engaja, time! — um blog 4unik para os heróis do RH".
+const SYSTEM_PROMPT = `Você é um especialista em RH e engajamento corporativo, redator sênior do blog "Engaja, time! — um blog Yoobe para os heróis do RH".
 
-SOBRE A 4unik:
-A 4unik é uma plataforma brasileira de gamificação e reconhecimento corporativo com as seguintes funcionalidades:
+SOBRE A Yoobe:
+A Yoobe é uma plataforma brasileira de gamificação e reconhecimento corporativo com as seguintes funcionalidades:
 - Motor de gamificação: pontos, missões, rankings, badges, níveis e conquistas configuráveis
 - Loja de recompensas: catálogo digital com produtos físicos, vouchers, experiências e brindes personalizados
 - QR Codes para eventos: distribuição de pontos instantânea em stands, estações e checkpoints
@@ -255,7 +255,7 @@ ESTILO DE ESCRITA:
 - Parágrafos curtos (3-5 linhas), sem introduções genéricas ("Neste artigo vamos...")
 - Comece sempre com um gancho que conecta com a dor do leitor
 - Use exemplos práticos e números quando possível
-- Mencione funcionalidades da 4unik de forma natural, não como propaganda
+- Mencione funcionalidades da Yoobe de forma natural, não como propaganda
 - Termine com um próximo passo acionável
 
 IMPORTANTE: Retorne APENAS o JSON, sem markdown, sem \`\`\`json, sem texto antes ou depois.`;
@@ -370,7 +370,7 @@ async function generatePost(topic: string, category: string, locale: "pt" | "en"
       : "Escreva o post inteiro em português brasileiro.";
 
   const helpsTitle =
-    locale === "en" ? "How 4unik helps in this scenario" : "Como a 4unik ajuda neste cenário";
+    locale === "en" ? "How Yoobe helps in this scenario" : "Como a Yoobe ajuda neste cenário";
 
   const userPrompt = `${langInstruction}
 
@@ -384,7 +384,7 @@ Retorne um objeto JSON com exatamente esta estrutura:
   "title": "Título do post (máx 80 chars, atraente e com palavra-chave)",
   "excerpt": "Resumo de 1-2 frases (máx 220 chars) que convença o leitor a clicar",
   "category": "${category}",
-  "author": "Time 4unik",
+  "author": "Time Yoobe",
   "tags": ["tag1", "tag2", "tag3", "tag4"],
   "readTimeMinutes": 10,
   "relatedKeywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"],
@@ -410,7 +410,7 @@ REGRAS DO CAMPO "body" (Portable Text para Sanity):
 - Itens de lista: cada item é um bloco separado com "listItem": "bullet", "style": "normal", "children": [{ "_type": "span", "text": "texto do item", "marks": [] }], "markDefs": [].
 - Use "style": "h2" para secções principais e "style": "normal" para parágrafos.
 - Cada bloco deve ter "_key" único (ex: "block-0", "h2-ajuda", "li-1", etc.).
-- Conteúdo mínimo equivalente a ~900 palavras. Inclua exemplos práticos e, na secção "${helpsTitle}", bullets que liguem funcionalidades da 4unik (missões, loja, QR em eventos, campanhas, dashboards, integrações, logística) ao problema do post.`;
+- Conteúdo mínimo equivalente a ~900 palavras. Inclua exemplos práticos e, na secção "${helpsTitle}", bullets que liguem funcionalidades da Yoobe (missões, loja, QR em eventos, campanhas, dashboards, integrações, logística) ao problema do post.`;
 
   const content =
     PROVIDER === "kimi"
@@ -510,7 +510,7 @@ async function upsertToSanity(post: GeneratedAiPost) {
     locale: LOCALE,
     excerpt: post.excerpt,
     category: post.category,
-    author: post.author || "Time 4unik",
+    author: post.author || "Time Yoobe",
     tags: post.tags || [],
     aiGenerated: true,
     contentBrief: post._brief || null,
@@ -554,7 +554,7 @@ function pickTopics(count: number) {
 // Main
 // ──────────────────────────────────────────────
 async function main() {
-  console.log(`\n🚀 Blog Engaja, time! — Agente de geração de conteúdo 4unik`);
+  console.log(`\n🚀 Blog Engaja, time! — Agente de geração de conteúdo Yoobe`);
   console.log(
     `   Provedor: ${PROVIDER}${PROVIDER === "gemini" ? ` (${GEMINI_MODEL})` : PROVIDER === "kimi" ? ` (${KIMI_MODEL})` : ""} | Locale: ${LOCALE} | Posts: ${COUNT} | Dry-run: ${DRY_RUN} | Publicar: ${SHOULD_PUBLISH}\n`,
   );

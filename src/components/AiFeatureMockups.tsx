@@ -40,7 +40,7 @@ export default function AiFeatureMockups() {
             Veja a inteligência em ação
           </h2>
           <p className="text-xl text-white/70">
-            Descubra como os assistentes agênticos da 4Unik vão transformar horas de planejamento operacional em segundos de orquestração.
+            Descubra como os assistentes agênticos da Yoobe vão transformar horas de planejamento operacional em segundos de orquestração.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export default function AiFeatureMockups() {
             <div className="flex items-center gap-2 rounded-full bg-white/6 px-3 py-1">
               <span className="h-1.5 w-1.5 rounded-full bg-yoobe-purple animate-pulse" />
               <span className="font-mono text-[0.6rem] text-white/50 tracking-wider">
-                gestor.4unik.io · AI Orquestração
+                admin.yoobe.co · AI Orquestração
               </span>
             </div>
             <span className="rounded-full border border-yoobe-purple/30 bg-yoobe-purple/10 px-2 py-0.5 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-yoobe-purple">

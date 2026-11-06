@@ -1,6 +1,6 @@
 export const enEventosPage = {
   seo: {
-    title: "For events | 4Unik — giveaways without the logistics chaos",
+    title: "For events | Yoobe — giveaways without the logistics chaos",
     description:
       "End the chaos of event giveaways. Attendees earn points and check out from their phone: pick up at the booth or get it shipped home, tracked.",
     openGraphDescription:
@@ -12,9 +12,9 @@ export const enEventosPage = {
     definitionLead:
       "At in-person or hybrid events, attendees pick giveaways on their phone—booth pickup or home delivery, tracked.",
     sub:
-      "Transporting, storing, and handing out giveaways on-site is a headache. With 4Unik, attendees earn points and check out from their phone: pick up at the booth or get it shipped home, tracked.",
+      "Transporting, storing, and handing out giveaways on-site is a headache. With Yoobe, attendees earn points and check out from their phone: pick up at the booth or get it shipped home, tracked.",
     ctaLabel: "Book a demo",
-    ctaHref: "https://calendly.com/4unik/30min",
+    ctaHref: "https://calendly.com/yoobeco/demo",
   },
   problem: {
     badge: "The pain",
@@ -61,7 +61,7 @@ export const enEventosPage = {
     ],
   },
   benefits: {
-    badge: "Why 4Unik",
+    badge: "Why Yoobe",
     title: "A smooth experience, no mountain of boxes",
     items: [
       {
@@ -111,6 +111,6 @@ export const enEventosPage = {
     body:
       "Tell us about the event, audience, and format. We'll design the points and checkout flow with you.",
     primaryLabel: "Book a demo",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
 } as const;

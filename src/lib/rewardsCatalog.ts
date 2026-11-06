@@ -1,6 +1,6 @@
 /** Product listing (fallback when Sanity `rewardsCatalogUrl` is unset). */
-export const DEFAULT_REWARDS_CATALOG_PRODUCT_URL = "https://catalogo.4unik.com.br/product";
-export const DEFAULT_REWARDS_CATALOG_KITS_URL = "https://catalogo.4unik.com.br/kits";
+export const DEFAULT_REWARDS_CATALOG_PRODUCT_URL = "https://catalogo.yoobe.co/product";
+export const DEFAULT_REWARDS_CATALOG_KITS_URL = "https://catalogo.yoobe.co/kits";
 
 function catalogBaseFromProductUrl(url: string): string {
   return url.replace(/\/product\/?$/, "");

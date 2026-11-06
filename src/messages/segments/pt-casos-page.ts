@@ -1,10 +1,10 @@
 export const ptCasosPage = {
   seo: {
-    title: "Casos de uso de gamificação corporativa e recompensas | 4Unik",
+    title: "Casos de uso de gamificação corporativa e recompensas | Yoobe",
     description:
-      "Estudos de caso de empresas globais em gamificação corporativa e comunidades. Como gigantes escalam engajamento — e como a 4Unik fornece infraestrutura de recompensas.",
+      "Estudos de caso de empresas globais em gamificação corporativa e comunidades. Como gigantes escalam engajamento — e como a Yoobe fornece infraestrutura de recompensas.",
     openGraphDescription:
-      "Estudos de caso de empresas globais em gamificação corporativa e comunidades. Infraestrutura de recompensas 4Unik para programas de engajamento.",
+      "Estudos de caso de empresas globais em gamificação corporativa e comunidades. Infraestrutura de recompensas Yoobe para programas de engajamento.",
   },
   hero: {
     badge: "Exemplos de mercado",
@@ -12,7 +12,7 @@ export const ptCasosPage = {
     titleGradient: "alcançaram",
     titleAfter: " com gamificação.",
     sub:
-      "Casos públicos de SAP, Deloitte, IBM, Microsoft e CaLLogix — exemplos de mercado, não clientes 4Unik — em RH, vendas, educação e comunidade.",
+      "Casos públicos de SAP, Deloitte, IBM, Microsoft e CaLLogix — exemplos de mercado, não clientes Yoobe — em RH, vendas, educação e comunidade.",
   },
   caseStudies: {
     challengeLabel: "O desafio",
@@ -94,23 +94,23 @@ export const ptCasosPage = {
     badge: "FAQ",
     titleBefore: "Perguntas sobre",
     titleGradient: "casos de uso",
-    titleAfter: "e 4Unik",
+    titleAfter: "e Yoobe",
     items: [
       {
-        q: "O que é a 4Unik em relação à gamificação corporativa?",
-        a: "A 4Unik é uma camada de infraestrutura de recompensas (Reward Infrastructure): API, catálogo e fulfillment para quem já tem ou está construindo engajamento — frequentemente integrada à plataforma 4unik V3 para gamificação e programas de incentivo.",
+        q: "O que é a Yoobe em relação à gamificação corporativa?",
+        a: "A Yoobe é uma camada de infraestrutura de recompensas (Reward Infrastructure): API, catálogo e fulfillment para quem já tem ou está construindo engajamento — frequentemente integrada à plataforma Yoobe V3 para gamificação e programas de incentivo.",
       },
       {
-        q: "Estes casos usam a 4Unik diretamente?",
-        a: "Os estudos citam gigantes que investiram em gamificação e comunidades com resultados públicos. Eles ilustram o tipo de problema que infraestrutura de engajamento resolve; a 4Unik posiciona-se como infraestrutura de recompensas e integrações para programas semelhantes.",
+        q: "Estes casos usam a Yoobe diretamente?",
+        a: "Os estudos citam gigantes que investiram em gamificação e comunidades com resultados públicos. Eles ilustram o tipo de problema que infraestrutura de engajamento resolve; a Yoobe posiciona-se como infraestrutura de recompensas e integrações para programas semelhantes.",
       },
       {
         q: "Como escolher uma infraestrutura de recompensas para o meu programa?",
-        a: "Avalie integração por API, catálogo e cobertura logística, conformidade (LGPD), e se o modelo é catálogo avulso ou plataforma completa com motor de gamificação — critérios alinhados ao que a 4Unik oferece em conjunto com a 4unik V3.",
+        a: "Avalie integração por API, catálogo e cobertura logística, conformidade (LGPD), e se o modelo é catálogo avulso ou plataforma completa com motor de gamificação — critérios alinhados ao que a Yoobe oferece em conjunto com a Yoobe V3.",
       },
       {
         q: "Onde vejo integrações e API?",
-        a: "Na área de API e integrações do site encontram-se visão de webhooks, ecossistema e parceiros; a 4Unik enfatiza integração por API para encaixar recompensas no seu fluxo.",
+        a: "Na área de API e integrações do site encontram-se visão de webhooks, ecossistema e parceiros; a Yoobe enfatiza integração por API para encaixar recompensas no seu fluxo.",
       },
     ],
   },

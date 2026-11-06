@@ -45,7 +45,7 @@ const STEPS: Step[] = [
   {
     number: "04",
     title: "Configurações finais",
-    desc: "Publique a campanha com vigência, regras de resgate e ajustes finais. A 4unik sustenta a operação até os resgates e envios.",
+    desc: "Publique a campanha com vigência, regras de resgate e ajustes finais. A Yoobe sustenta a operação até os resgates e envios.",
     tag: "Publicação",
     tagColor: "#22d3ee",
     img: "/screens/flows/campanha-passo-4.webp",
@@ -249,7 +249,7 @@ export default function CampaignBuilderShowcase() {
                     style={{ backgroundColor: step.accentColor }}
                   />
                   <span className="font-mono text-[0.6rem] text-gray-400 tracking-wider">
-                    gestor.4unik.io · Campanha
+                    admin.yoobe.co · Campanha
                   </span>
                 </div>
                 <span

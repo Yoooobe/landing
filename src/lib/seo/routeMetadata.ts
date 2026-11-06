@@ -28,11 +28,11 @@ type RouteMetadataOptions = {
   openGraphPath: string;
   ogLocale: OgLocale;
   robots?: Metadata["robots"];
-  /** Maps to `public/og/4unik-*.png` via `resolveRouteOgImagePath`. */
+  /** Maps to `public/og/Yoobe-*.png` via `resolveRouteOgImagePath`. */
   ogRouteKey?: string;
 };
 
-/** Garante URL absoluta com origem + BASE_PATH (ex.: plataforma.4unik.com.br/landing/...). */
+/** Garante URL absoluta com origem + BASE_PATH (ex.: www.yoobe.co/landing/...). */
 function absoluteAlternateUrl(path: string): string {
   return pageAbsoluteUrl(path);
 }
@@ -60,9 +60,9 @@ function withSharedMetadata(
     icons: {
       icon: [
         { url: `${BASE_PATH}/favicon.ico` },
-        { url: `${BASE_PATH}/brand/4unik-mark.png`, type: "image/png" },
+        { url: `${BASE_PATH}/brand/yoobe-mark.png`, type: "image/png" },
       ],
-      apple: `${BASE_PATH}/brand/4unik-mark.png`,
+      apple: `${BASE_PATH}/brand/yoobe-mark.png`,
     },
     title: seo.title,
     description: seo.description,

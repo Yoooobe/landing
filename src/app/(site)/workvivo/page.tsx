@@ -5,7 +5,7 @@ import { enRest } from "@/messages/segments/en-rest";
 
 export const metadata: Metadata = buildRoutePageMetadata(
   {
-    title: "Workvivo | 4Unik",
+    title: "Workvivo | Yoobe",
     description: "Legacy redirect for the Workvivo integration page in the API & integrations hub.",
   },
   {

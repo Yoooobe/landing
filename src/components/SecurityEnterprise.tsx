@@ -43,7 +43,7 @@ export default function SecurityEnterprise({
                     <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/80" />
                     <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
                   </div>
-                  <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">gestor.4unik.io · segurança</span>
+                  <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">admin.yoobe.co · segurança</span>
                 </div>
                 <div className="relative h-[calc(100%-24px)] w-full bg-slate-900">
                   <Image

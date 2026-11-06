@@ -25,7 +25,7 @@ const client = createClient({
   useCdn: false,
 });
 
-const CATALOG = "https://catalogo.4unik.com.br/product";
+const CATALOG = "https://catalogo.yoobe.co/product";
 
 const item = (key, label, href, extra = {}) => ({
   _type: "menuItem",

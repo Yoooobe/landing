@@ -8,7 +8,7 @@ export const ptLandingMore = {
       {
         num: "01",
         title: "Conecte",
-        desc: "Integre com a intranet, HRIS ou ative o console 4unik. Na maioria dos casos, em poucos dias o time já está usando.",
+        desc: "Integre com a intranet, HRIS ou ative o console Yoobe. Na maioria dos casos, em poucos dias o time já está usando.",
       },
       {
         num: "02",
@@ -87,7 +87,7 @@ export const ptLandingMore = {
     badge: "Como funciona",
     titleBefore: "Dois caminhos para",
     titleGradient: "engajar seu time",
-    sub: "Você não precisa mudar tudo de uma vez. Plataforma completa ou camada de execução via API — a 4Unik se adapta ao que você já tem.",
+    sub: "Você não precisa mudar tudo de uma vez. Plataforma completa ou camada de execução via API — a Yoobe se adapta ao que você já tem.",
     sideA: {
       title: "Tudo pronto para usar",
       body: "Portal do colaborador com a sua marca. Missões, pontos e loja no ar desde o primeiro dia — logística própria automatizada ou conectada à sua.",
@@ -99,7 +99,7 @@ export const ptLandingMore = {
     },
     sideB: {
       title: "Integração com o que você já tem",
-      body: "Já tem intranet, plataforma de engajamento, HRIS ou logística própria? A 4Unik conecta por API — loja, brindes e envios dentro do fluxo que o time já usa. Fornecedores de brindes e transportadoras parceiras também entram no mesmo fluxo.",
+      body: "Já tem intranet, plataforma de engajamento, HRIS ou logística própria? A Yoobe conecta por API — loja, brindes e envios dentro do fluxo que o time já usa. Fornecedores de brindes e transportadoras parceiras também entram no mesmo fluxo.",
       bullets: [
         "Sem obrigar todo mundo a criar mais uma senha",
         "Recompensas aparecem onde as pessoas já trabalham",
@@ -173,20 +173,20 @@ export const ptLandingMore = {
     badge: "Funciona onde o time já está",
     titleBefore: "Sua empresa já tem",
     titleGradient: "intranet ou gamificação?",
-    subBefore: "A 4Unik entra de forma ",
+    subBefore: "A Yoobe entra de forma ",
     subStrong: "transparente",
     subAfter:
       ", levando catálogo, resgates e logística para dentro das principais plataformas de experiência do colaborador.",
     workvivo: {
       title: "Workvivo",
       body:
-        "Premie e reconheça direto no feed social. O catálogo corporativo da 4Unik aparece onde o time já conversa todos os dias.",
+        "Premie e reconheça direto no feed social. O catálogo corporativo da Yoobe aparece onde o time já conversa todos os dias.",
       feedAuthor: "RH Oficial",
       feedTime: "Há 2 horas",
       feedPost:
         "Parabéns time de vendas por bater a meta! 🏆 Resgatem seus prêmios exclusivos na plataforma.",
       feedCardTitle: "Kit Celebração Vendas",
-      feedCardBrand: "4Unik Rewards",
+      feedCardBrand: "Yoobe Rewards",
       feedCta: "Resgatar",
       realtime: "Em tempo real",
       bullets: [
@@ -198,13 +198,13 @@ export const ptLandingMore = {
     beehome: {
       title: "Beehome",
       body:
-        "Intranet que o time já usa no dia a dia: pontos na Beehome viram produtos físicos entregues pela operação 4Unik.",
+        "Intranet que o time já usa no dia a dia: pontos na Beehome viram produtos físicos entregues pela operação Yoobe.",
       coinsLabel: "Moedas Beehome",
       connectionLabel: "Conexão Ativa",
-      yoobeStore: "4Unik Store",
+      yoobeStore: "Yoobe Store",
       yoobeStoreSub: "Logística & Envios",
       bullets: [
-        "O colaborador gasta o saldo Beehome e a 4Unik faz a entrega",
+        "O colaborador gasta o saldo Beehome e a Yoobe faz a entrega",
         "Totalmente fluído, as plataformas se conversam o tempo todo",
         "Fim do processo manual de comprar prêmios para a intranet",
       ],

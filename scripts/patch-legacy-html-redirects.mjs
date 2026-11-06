@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Atualiza HTML estáticos na raiz do repo: canonical + links para plataforma.4unik.com.br.
+ * Atualiza HTML estáticos na raiz do repo: canonical + links para www.yoobe.co.
  * Não injecta meta refresh — as landings legadas permanecem visíveis.
  */
 import { readFileSync, writeFileSync, readdirSync } from "node:fs";
@@ -8,7 +8,7 @@ import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const siteBase = "https://plataforma.4unik.com.br/landing";
+const siteBase = "https://www.yoobe.co/";
 
 /** Ficheiro na raiz → path canónico (sem origin). */
 const CANONICAL_BY_FILE = {
@@ -36,8 +36,8 @@ function patchHtml(filename) {
   const canonicalUrl = `${siteBase}${canonicalPath === "/" ? "/" : canonicalPath}`;
 
   html = html.replace(/https:\/\/yoooobe\.github\.io\/landing/g, siteBase);
-  html = html.replace(/https:\/\/catalogo\.yoobe\.co/g, "https://catalogo.4unik.com.br");
-  html = html.replace(/https:\/\/yoobe\.co/g, "https://plataforma.4unik.com.br/landing");
+  html = html.replace(/https:\/\/catalogo\.yoobe\.co/g, "https://catalogo.yoobe.co");
+  html = html.replace(/https:\/\/yoobe\.co/g, "https://www.yoobe.co/");
 
   if (/<link rel="canonical"/i.test(html)) {
     html = html.replace(

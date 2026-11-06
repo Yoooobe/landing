@@ -1,8 +1,8 @@
 export const enCasosPage = {
   seo: {
-    title: "Use Cases | 4Unik — Reward Infrastructure",
+    title: "Use Cases | Yoobe — Reward Infrastructure",
     description:
-      "Global enterprise case studies in corporate gamification and communities. How market leaders scale engagement—and how 4Unik provides reward infrastructure.",
+      "Global enterprise case studies in corporate gamification and communities. How market leaders scale engagement—and how Yoobe provides reward infrastructure.",
     openGraphDescription:
       "Global enterprise case studies in corporate gamification and communities. Reward infrastructure for engagement programs.",
   },
@@ -12,7 +12,7 @@ export const enCasosPage = {
     titleGradient: "achieved",
     titleAfter: " with gamification.",
     sub:
-      "Public cases from SAP, Deloitte, IBM, Microsoft, and CaLLogix—market examples, not 4Unik customers—across HR, sales, education, and community.",
+      "Public cases from SAP, Deloitte, IBM, Microsoft, and CaLLogix—market examples, not Yoobe customers—across HR, sales, education, and community.",
   },
   caseStudies: {
     challengeLabel: "The challenge",
@@ -94,23 +94,23 @@ export const enCasosPage = {
     badge: "FAQ",
     titleBefore: "Questions on",
     titleGradient: "use cases",
-    titleAfter: "and 4Unik",
+    titleAfter: "and Yoobe",
     items: [
       {
-        q: "What is 4Unik in the context of corporate gamification?",
-        a: "4Unik is reward infrastructure: API, catalog, and fulfillment for teams that already run or are building engagement programs, often alongside the 4Unik V3 platform for gamification and incentives.",
+        q: "What is Yoobe in the context of corporate gamification?",
+        a: "Yoobe is reward infrastructure: API, catalog, and fulfillment for teams that already run or are building engagement programs, with the Yoobe V3 platform available for gamification and incentives.",
       },
       {
-        q: "Do these case studies use 4Unik directly?",
-        a: "The stories highlight enterprises that invested in gamification and community programs with public outcomes. They illustrate the class of problems engagement infrastructure solves; 4Unik positions itself as reward infrastructure and integrations for similar programs.",
+        q: "Do these case studies use Yoobe directly?",
+        a: "The stories highlight enterprises that invested in gamification and community programs with public outcomes. They illustrate the class of problems engagement infrastructure solves; Yoobe positions itself as reward infrastructure and integrations for similar programs.",
       },
       {
         q: "How should I choose reward infrastructure for my program?",
-        a: "Evaluate API-first integration, catalog depth, logistics coverage, privacy compliance, and whether you need a standalone catalog or a full platform with a gamification engine, which aligns with what 4Unik delivers alongside 4Unik V3.",
+        a: "Evaluate API-first integration, catalog depth, logistics coverage, privacy compliance, and whether you need a standalone catalog or a full platform with a gamification engine, which is what the Yoobe V3 platform delivers.",
       },
       {
         q: "Where can I read about APIs and integrations?",
-        a: "The API & integrations section covers webhooks, ecosystem, and partners; 4Unik emphasizes API integration so rewards fit your stack.",
+        a: "The API & integrations section covers webhooks, ecosystem, and partners; Yoobe emphasizes API integration so rewards fit your stack.",
       },
     ],
   },

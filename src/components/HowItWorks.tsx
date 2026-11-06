@@ -130,7 +130,7 @@ export default function HowItWorks({
                 <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
               </div>
               <span className="font-mono text-[0.62rem] text-white/50 tracking-wider">
-                gestor.4unik.io · Motor de Regras & Orquestração
+                admin.yoobe.co · Motor de Regras & Orquestração
               </span>
               <span className="rounded-full border border-yoobe-neon-pink/30 bg-yoobe-neon-pink/15 px-3 py-1 font-mono text-[0.58rem] font-bold uppercase tracking-widest text-yoobe-neon-pink">
                 Arquitetura Fim a Fim
@@ -141,7 +141,7 @@ export default function HowItWorks({
                 src={architectureImageUrl || withBasePath("/screens/admin-dashboard.webp")}
                 alt={
                   homeContent?.showcaseMedia?.howItWorks?.architectureImage?.alt?.trim() ||
-                  "Arquitetura da Plataforma 4unik — Motor de Gamificação, Carteiras e Loja Corporativa"
+                  "Arquitetura da Plataforma Yoobe — Motor de Gamificação, Carteiras e Loja Corporativa"
                 }
                 fill
                 sizes="(min-width: 1024px) 960px, 100vw"

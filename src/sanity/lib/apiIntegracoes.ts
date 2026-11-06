@@ -4,9 +4,9 @@ import type { ResolvedApiIntegracoesContent } from "@/sanity/lib/types";
 const fallbackByLocale: Record<Locale, ResolvedApiIntegracoesContent> = {
   pt: {
     seo: {
-      title: "API e Integrações | 4unik",
+      title: "API e Integrações | Yoobe",
       description:
-        "API REST, webhooks e SDKs para oferecer recompensas físicas dentro da sua plataforma: catálogo, checkout embedded, estoque e entrega pela 4unik.",
+        "API REST, webhooks e SDKs para oferecer recompensas físicas dentro da sua plataforma: catálogo, checkout embedded, estoque e entrega pela Yoobe.",
       openGraphDescription:
         "API REST, webhooks e SDKs para recompensas físicas embedded na sua plataforma — catálogo, checkout, estoque e entrega.",
     },
@@ -14,16 +14,16 @@ const fallbackByLocale: Record<Locale, ResolvedApiIntegracoesContent> = {
       badge: "API RESTful + SDK + Webhooks",
       title: "Recompensas físicas como uma chamada de API",
       description:
-        "Sua plataforma mostra o catálogo e o checkout dentro do próprio app; a 4unik cuida de estoque, envio e rastreio. API RESTful com Webhooks em tempo real, Sandbox para testes e SDKs para Node.js e Python — com endpoints dedicados de produtos, estoque, checkout e histórico de resgates.",
+        "Sua plataforma mostra o catálogo e o checkout dentro do próprio app; a Yoobe cuida de estoque, envio e rastreio. API RESTful com Webhooks em tempo real, Sandbox para testes e SDKs para Node.js e Python — com endpoints dedicados de produtos, estoque, checkout e histórico de resgates.",
       visualCaption:
-        "Plugue a API da 4unik na sua plataforma de engajamento, e-learning, vendas ou comunidade: o usuário resgata sem sair do seu produto, e a entrega física é com a gente.",
+        "Plugue a API da Yoobe na sua plataforma de engajamento, e-learning, vendas ou comunidade: o usuário resgata sem sair do seu produto, e a entrega física é com a gente.",
       primaryCtaLabel: "Ler a Documentação",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Falar com Engenharia",
-      secondaryCtaHref: "https://calendly.com/4unik/30min",
+      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
-Host: api.4unik.yoobe.co
+Host: api.yoobe.co
 Authorization: Bearer sec_tok_4Uxxxxxxxxx
 
 {
@@ -54,7 +54,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
         {
           title: "Sandbox Developer",
           description:
-            "Ambiente dev.4unik para testar emissão de pontos e resgates sem gastar orçamento real do RH.",
+            "Ambiente dev.Yoobe para testar emissão de pontos e resgates sem gastar orçamento real do RH.",
           icon: "box",
           colSpan: "md:col-span-1",
         },
@@ -180,7 +180,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Crie chaves de API restritas e acesse a documentação técnica interativa hospedada no Stoplight.",
       buttonLabel: "Gerar API Keys",
-      buttonHref: "https://calendly.com/4unik/30min",
+      buttonHref: "https://calendly.com/yoobeco/demo",
     },
     faq: [
       {
@@ -193,7 +193,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       },
       {
         q: "Tem ambiente de testes antes de ir pra produção?",
-        a: "Sim — o Sandbox dev.4unik permite testar emissão de pontos e resgates sem gastar orçamento real do programa.",
+        a: "Sim — o Sandbox dev.Yoobe permite testar emissão de pontos e resgates sem gastar orçamento real do programa.",
       },
       {
         q: "Existe limite de chamadas (rate limit)?",
@@ -203,9 +203,9 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
   },
   en: {
     seo: {
-      title: "API & Integrations | 4Unik",
+      title: "API & Integrations | Yoobe",
       description:
-        "REST API, webhooks, and SDKs to offer physical rewards inside your platform: catalog, embedded checkout, inventory, and delivery handled by 4Unik.",
+        "REST API, webhooks, and SDKs to offer physical rewards inside your platform: catalog, embedded checkout, inventory, and delivery handled by Yoobe.",
       openGraphDescription:
         "REST API, webhooks, and SDKs for physical rewards embedded in your platform—catalog, checkout, inventory, and delivery.",
     },
@@ -213,16 +213,16 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       badge: "REST API + SDK + Webhooks",
       title: "Physical rewards as an API call",
       description:
-        "Your platform shows the catalog and checkout inside your own app; 4Unik handles inventory, shipping, and tracking. REST API with real-time webhooks, a testing sandbox, and SDKs for Node.js and Python—plus dedicated endpoints for products, inventory, checkout, and redemption history.",
+        "Your platform shows the catalog and checkout inside your own app; Yoobe handles inventory, shipping, and tracking. REST API with real-time webhooks, a testing sandbox, and SDKs for Node.js and Python—plus dedicated endpoints for products, inventory, checkout, and redemption history.",
       visualCaption:
-        "Plug the 4Unik API into your engagement, e-learning, sales, or community platform: users redeem without leaving your product, and physical delivery is on us.",
+        "Plug the Yoobe API into your engagement, e-learning, sales, or community platform: users redeem without leaving your product, and physical delivery is on us.",
       primaryCtaLabel: "Read documentation",
       primaryCtaHref: "#docs",
       secondaryCtaLabel: "Talk to engineering",
-      secondaryCtaHref: "https://calendly.com/4unik/30min",
+      secondaryCtaHref: "https://calendly.com/yoobeco/demo",
       codeWindowTitle: "issue_points.ts",
       codeSnippet: `POST /v2/api/integrations/rewards HTTP/1.1
-Host: api.4unik.yoobe.co
+Host: api.yoobe.co
 Authorization: Bearer sec_tok_4Uxxxxxxxxx
 
 {
@@ -379,7 +379,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       description:
         "Create scoped API keys and access the interactive technical documentation hosted on Stoplight.",
       buttonLabel: "Generate API keys",
-      buttonHref: "https://calendly.com/4unik/30min",
+      buttonHref: "https://calendly.com/yoobeco/demo",
     },
     faq: [
       {
@@ -392,7 +392,7 @@ Authorization: Bearer sec_tok_4Uxxxxxxxxx
       },
       {
         q: "Is there a test environment before going to production?",
-        a: "Yes — the dev.4unik sandbox lets you test point issuance and redemptions without spending real program budget.",
+        a: "Yes — the dev.Yoobe sandbox lets you test point issuance and redemptions without spending real program budget.",
       },
       {
         q: "Is there a rate limit?",

@@ -8,7 +8,7 @@ import Link from "next/link";
 import { rewardInfrastructurePath } from "@/lib/rewardInfrastructurePaths";
 
 /**
- * Posiciona esta landing como complemento técnico ao site institucional 4unik.com.br.
+ * Posiciona esta landing como complemento técnico ao site institucional catalogo.yoobe.co.
  */
 export default function FourUnikComplementStrip({
   homeContent = null,
@@ -18,7 +18,7 @@ export default function FourUnikComplementStrip({
   const { m, locale } = useLocaleMessages();
   const u = homeContent?.fourUnik ?? {
     ...m.home.fourUnik,
-    ctaHref: "https://4unik.com.br",
+    ctaHref: "https://catalogo.yoobe.co/",
   };
   const pillarLinkLabel =
     "pillarLinkLabel" in u && typeof u.pillarLinkLabel === "string"

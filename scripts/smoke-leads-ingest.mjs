@@ -15,7 +15,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const config = JSON.parse(readFileSync(join(root, "config/leads-ingest.json"), "utf8"));
 
 const ingestUrl = (process.env.NEXT_PUBLIC_LEADS_INGEST_URL ?? config.defaultIngestUrl).trim();
-const origin = process.env.SMOKE_LEADS_ORIGIN?.trim() || "https://plataforma.4unik.com.br";
+const origin = process.env.SMOKE_LEADS_ORIGIN?.trim() || "https://www.yoobe.co";
 const checkProductionPages = process.argv.includes("--production-pages");
 
 const ICP_PATHS = [
@@ -49,8 +49,8 @@ console.log("Origin:", origin);
 // 1) API POST
 const body = JSON.stringify({
   name: "Smoke Test",
-  email: "smoke-leads@4unik.com.br",
-  company: "4Unik QA",
+  email: "vendas@yoobe.co",
+  company: "Yoobe QA",
   consent: true,
   source: "smoke-leads-ingest",
   locale: "pt",
@@ -102,7 +102,7 @@ if (existsSync(outDir)) {
 
 // 3) Páginas ICP em produção (opcional)
 if (checkProductionPages) {
-  const siteOrigin = process.env.SMOKE_SITE_ORIGIN?.trim() || "https://plataforma.4unik.com.br";
+  const siteOrigin = process.env.SMOKE_SITE_ORIGIN?.trim() || "https://www.yoobe.co";
   let failures = 0;
   for (const path of ICP_PATHS) {
     const pageUrl = `${siteOrigin}${path}`;

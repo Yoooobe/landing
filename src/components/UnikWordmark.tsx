@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { withBasePath } from "@/lib/basePath";
 
-/** Dimensões nativas do lockup 1× `brand/4unik-logo-lockup.webp` (187×55). */
-export const UNIK_WORDMARK_NATURAL = { w: 187, h: 55 } as const;
+/** Dimensões nativas do lockup 1× `brand/yoobe-logo-lockup.webp` (187×61). */
+export const UNIK_WORDMARK_NATURAL = { w: 187, h: 61 } as const;
 
 const variantClass = {
   /** Barra fixa: altura estável, largura pelo aspect do lockup. */
@@ -31,14 +31,14 @@ type Props = {
   alt?: string;
 };
 
-/** Lockup oficial 4Unik (mark + wordmark) usando o asset publicado. */
+/** Lockup oficial Yoobe (mark + wordmark) usando o asset publicado. */
 export default function UnikWordmark({
   variant = "header",
   className = "",
-  alt = "4Unik",
+  alt = "Yoobe",
 }: Props) {
-  const src1x = withBasePath("/brand/4unik-logo-lockup.webp");
-  const src2x = withBasePath("/brand/4unik-logo-lockup-2x.webp");
+  const src1x = withBasePath("/brand/yoobe-logo-lockup.webp");
+  const src2x = withBasePath("/brand/yoobe-logo-lockup-2x.webp");
 
   const isAboveFold = variant === "header" || variant === "hero";
 

@@ -442,11 +442,11 @@ export default function Header() {
               : "border border-white/0 bg-transparent"
           }`}
         >
-          {/* Logo — lockup 4Unik */}
+          {/* Logo — lockup Yoobe */}
           <Link href={path("/")} className="z-10 flex min-w-0 shrink-0 items-center">
             <UnikWordmark
               variant="header"
-              alt="4Unik"
+              alt="Yoobe"
               className="shrink-0"
             />
           </Link>

@@ -1,8 +1,8 @@
 export const enParaPlataformasPage = {
   seo: {
-    title: "For platforms & SaaS | 4Unik — physical rewards via API",
+    title: "For platforms & SaaS | Yoobe — physical rewards via API",
     description:
-      "Offer physical rewards inside your own product: catalog, checkout, and delivery via API. 4Unik is the execution layer—you own the experience, we handle inventory, shipping, and tracking.",
+      "Offer physical rewards inside your own product: catalog, checkout, and delivery via API. Yoobe is the execution layer—you own the experience, we handle inventory, shipping, and tracking.",
     openGraphDescription:
       "Embedded physical-rewards API: catalog, checkout in your app, fulfillment, and tracking via webhook.",
   },
@@ -10,9 +10,9 @@ export const enParaPlataformasPage = {
     badge: "For platforms & SaaS",
     title: "Physical rewards as an API call",
     definitionLead:
-      "4Unik is the layer that delivers physical rewards inside your product: you keep the experience; we handle catalog, inventory, and shipping.",
+      "Yoobe is the layer that delivers physical rewards inside your product: you keep the experience; we handle catalog, inventory, and shipping.",
     sub:
-      "Your platform shows the catalog and checkout inside your own app. 4Unik handles inventory, shipping, and tracking. You program the behavior; physical delivery is on us.",
+      "Your platform shows the catalog and checkout inside your own app. Yoobe handles inventory, shipping, and tracking. You program the behavior; physical delivery is on us.",
     ctaLabel: "See API & integrations",
     ctaHref: "/integrations/",
   },
@@ -46,7 +46,7 @@ export const enParaPlataformasPage = {
       {
         eyebrow: "01",
         title: "Onboarding + inventory",
-        desc: "Get started fast and pick products from the 4Unik catalog.",
+        desc: "Get started fast and pick products from the Yoobe catalog.",
         icon: "rocket",
       },
       {
@@ -64,13 +64,13 @@ export const enParaPlataformasPage = {
       {
         eyebrow: "04",
         title: "Delivery + tracking via webhook",
-        desc: "4Unik ships and returns real-time tracking through webhooks.",
+        desc: "Yoobe ships and returns real-time tracking through webhooks.",
         icon: "globe-2",
       },
     ],
   },
   benefits: {
-    badge: "Why 4Unik",
+    badge: "Why Yoobe",
     title: "Back-end operations",
     items: [
       {
@@ -85,7 +85,7 @@ export const enParaPlataformasPage = {
       },
       {
         title: "Operations on us",
-        desc: "Inventory, nationwide shipping, and tracking stay with 4Unik.",
+        desc: "Inventory, nationwide shipping, and tracking stay with Yoobe.",
         icon: "package",
       },
     ],
@@ -94,10 +94,10 @@ export const enParaPlataformasPage = {
     items: [
       {
         q: "What is reward infrastructure for SaaS platforms?",
-        a: "It is the execution layer that delivers physical rewards inside your product via API: catalog, embedded checkout, inventory, and shipping stay with 4Unik. You keep the experience and engagement; we run logistics. Full definition at /en/reward-infrastructure/.",
+        a: "It is the execution layer that delivers physical rewards inside your product via API: catalog, embedded checkout, inventory, and shipping stay with Yoobe. You keep the experience and engagement; we run logistics. Full definition at /en/reward-infrastructure/.",
       },
       {
-        q: "Does 4Unik compete with my platform?",
+        q: "Does Yoobe compete with my platform?",
         a: "No. We are a fulfillment partner: you own the experience and product; we handle catalog, inventory, shipping, and tracking. See the full definition at /en/reward-infrastructure/.",
       },
       {
@@ -106,7 +106,7 @@ export const enParaPlataformasPage = {
       },
       {
         q: "Does the user leave my app to redeem?",
-        a: "No. Checkout happens inside your product; 4Unik handles delivery behind the scenes.",
+        a: "No. Checkout happens inside your product; Yoobe handles delivery behind the scenes.",
       },
       {
         q: "How long does integration take?",
@@ -120,7 +120,7 @@ export const enParaPlataformasPage = {
     body:
       "Tell us about your platform and use case. We'll walk through the API, the checkout flow, and the integration model.",
     primaryLabel: "Talk to engineering",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
     secondaryLabel: "See API & integrations",
     secondaryHref: "/integrations/",
   },

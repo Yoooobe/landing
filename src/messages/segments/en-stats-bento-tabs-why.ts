@@ -51,7 +51,7 @@ export const enStatsBentoTabsWhy = {
     card4: {
       title: "Fits what you already run",
       body:
-        "Simple workflows for HR and managers; clear API docs and per-user pricing for engineering. Connect gamification, sales CRM, events, HRIS, or intranet—or offer 4Unik’s physical rewards inside your own product, without building logistics.",
+        "Simple workflows for HR and managers; clear API docs and per-user pricing for engineering. Connect gamification, sales CRM, events, HRIS, or intranet—or offer Yoobe’s physical rewards inside your own product, without building logistics.",
       cta: "Documentation",
       apiNote: "Built to integrate without the usual integration headaches.",
     },
@@ -76,7 +76,7 @@ export const enStatsBentoTabsWhy = {
     },
     loja: {
       title: "A corporate store that feels like a gift, not a generic perk",
-      body: "Employees redeem points for thousands of items from the 4Unik catalog or partners—with clear balance, filters, and delivery tracking.",
+      body: "Employees redeem points for thousands of items from the Yoobe catalog or partners—with clear balance, filters, and delivery tracking.",
       bullets: [
         "Coin balance always visible",
         "Filters by value and category",
@@ -101,7 +101,7 @@ export const enStatsBentoTabsWhy = {
     },
   },
   why: {
-    badge: "Why 4Unik",
+    badge: "Why Yoobe",
     titleBefore: "Recognition drives",
     titleGradient: "performance",
     sub:
@@ -125,7 +125,7 @@ export const enStatsBentoTabsWhy = {
     badge: "Corporate gamification",
     titleBefore: "Gamification that",
     titleGradient: "engages",
-    titleAfter: ". 4Unik delivers.",
+    titleAfter: ". Yoobe delivers.",
     sub:
       "Points, rankings, missions, and real rewards—integrated, not scattered across spreadsheets.",
     cards: [

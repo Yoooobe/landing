@@ -8,9 +8,9 @@ import type { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   return buildRoutePageMetadata(
     {
-      title: "Employee Engagement ROI Calculator | 4unik",
+      title: "Employee Engagement ROI Calculator | Yoobe",
       description:
-        "Calculate your return on investment with 4unik: reduce turnover, streamline reward logistics, and boost productivity with corporate gamification.",
+        "Calculate your return on investment with Yoobe: reduce turnover, streamline reward logistics, and boost productivity with corporate gamification.",
       openGraphDescription:
         "Estimate your annual savings with corporate gamification, talent retention, and automated reward logistics.",
     },
@@ -30,12 +30,12 @@ export default function EnCalculadoraRoiPage() {
   const pagePath = "/roi-calculator/";
   const faqItems = [
     {
-      q: "How does the 4unik ROI calculator estimate turnover savings?",
+      q: "How does the Yoobe ROI calculator estimate turnover savings?",
       a: "The estimate uses average replacement costs (1.5x monthly salary) and applies a conservative 25% turnover reduction from gamified recognition and engagement campaigns.",
     },
     {
       q: "What savings are achieved in reward logistics and inventory?",
-      a: "With 4unik digital reward store and D+1 fulfillment, companies eliminate up to 40% of costs associated with unsold physical inventory, unused swag kits, and duplicate shipping fees.",
+      a: "With Yoobe digital reward store and D+1 fulfillment, companies eliminate up to 40% of costs associated with unsold physical inventory, unused swag kits, and duplicate shipping fees.",
     },
   ];
 

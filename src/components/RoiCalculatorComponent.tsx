@@ -24,7 +24,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
   const annualDepartures = Math.round((employees * turnoverRate) / 100);
   const currentAnnualTurnoverCost = annualDepartures * replacementCostPerEmployee;
 
-  // Expected 4unik Impact:
+  // Expected Yoobe Impact:
   // 1. Turnover Reduction: -25% turnover
   const turnoverReductionPct = 25;
   const savedDepartures = Math.round((annualDepartures * turnoverReductionPct) / 100);
@@ -39,7 +39,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
   // Total Estimated Savings
   const totalAnnualSavings = turnoverSavings + productivitySavings + logisticsSavings;
 
-  // Estimated 4unik Investment (~ R$ 18 per employee/month)
+  // Estimated Yoobe Investment (~ R$ 18 per employee/month)
   const estimatedAnnualInvestment = employees * 18 * 12;
 
   // Net Annual ROI Multiple
@@ -55,7 +55,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
     }).format(val);
 
   const prefilledCalendlyUrl = `${DEFAULT_CALENDLY_URL}?text_details=${encodeURIComponent(
-    `Simulação ROI 4unik (${employees} colaboradores, ROI estimado: ${formatCurrency(netSavings)})`
+    `Simulação ROI Yoobe (${employees} colaboradores, ROI estimado: ${formatCurrency(netSavings)})`
   )}`;
 
   return (
@@ -70,11 +70,11 @@ export default function RoiCalculatorComponent({ locale }: Props) {
           <h1 className="mb-6 font-heading text-4xl font-black leading-tight md:text-6xl">
             {isPt ? (
               <>
-                Simule o impacto financeiro da <span className="text-brand-orange">4unik</span> no seu time
+                Simule o impacto financeiro da <span className="text-brand-orange">Yoobe</span> no seu time
               </>
             ) : (
               <>
-                Calculate 4unik’s financial impact on <span className="text-brand-orange">your workforce</span>
+                Calculate Yoobe’s financial impact on <span className="text-brand-orange">your workforce</span>
               </>
             )}
           </h1>
@@ -210,7 +210,7 @@ export default function RoiCalculatorComponent({ locale }: Props) {
                   {formatCurrency(netSavings)}
                 </div>
                 <span className="text-xs text-white/40">
-                  {isPt ? "*Após investimento na infraestrutura 4unik" : "*After 4unik infrastructure investment"}
+                  {isPt ? "*Após investimento na infraestrutura Yoobe" : "*After Yoobe infrastructure investment"}
                 </span>
               </div>
 

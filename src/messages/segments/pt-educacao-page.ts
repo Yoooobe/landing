@@ -1,20 +1,20 @@
 export const ptEducacaoPage = {
   seo: {
-    title: "Para educação e e-learning | 4Unik — recompensa por conclusão",
+    title: "Para educação e e-learning | Yoobe — recompensa por conclusão",
     description:
-      "Combata a evasão de cursos com recompensa real por conclusão: o aluno termina a trilha e recebe um prêmio físico em casa. A 4Unik cuida do catálogo e da entrega.",
+      "Combata a evasão de cursos com recompensa real por conclusão: o aluno termina a trilha e recebe um prêmio físico em casa. A Yoobe cuida do catálogo e da entrega.",
     openGraphDescription:
-      "Recompensa tangível por conclusão de curso, com catálogo e logística da 4Unik.",
+      "Recompensa tangível por conclusão de curso, com catálogo e logística da Yoobe.",
   },
   hero: {
     badge: "Para educação e e-learning",
     title: "Recompensa real quando o aluno conclui",
     definitionLead:
-      "Programas de e-learning usam a 4Unik para premiar conclusão de módulos com prémios físicos entregues ao aluno — sem operar catálogo nem logística.",
+      "Programas de e-learning usam a Yoobe para premiar conclusão de módulos com prémios físicos entregues ao aluno — sem operar catálogo nem logística.",
     sub:
-      "Transforme a conclusão de cursos em algo que se vê e se sente. Quando o aluno termina a trilha, a 4Unik entrega um prêmio físico — você foca no conteúdo, nós na logística.",
+      "Transforme a conclusão de cursos em algo que se vê e se sente. Quando o aluno termina a trilha, a Yoobe entrega um prêmio físico — você foca no conteúdo, nós na logística.",
     ctaLabel: "Falar com especialista",
-    ctaHref: "https://calendly.com/4unik/30min",
+    ctaHref: "https://calendly.com/yoobeco/demo",
   },
   problem: {
     badge: "A dor",
@@ -40,7 +40,7 @@ export const ptEducacaoPage = {
   how: {
     badge: "Como funciona",
     title: "Conclusão que vira recompensa",
-    sub: "Defina o marco, o aluno escolhe o prêmio e a 4Unik entrega.",
+    sub: "Defina o marco, o aluno escolhe o prêmio e a Yoobe entrega.",
     columns: "3" as const,
     items: [
       {
@@ -55,13 +55,13 @@ export const ptEducacaoPage = {
       },
       {
         title: "Entrega rastreada",
-        desc: "A 4Unik envia e acompanha a entrega até a casa do aluno.",
+        desc: "A Yoobe envia e acompanha a entrega até a casa do aluno.",
         icon: "globe-2",
       },
     ],
   },
   benefits: {
-    badge: "Por que a 4Unik",
+    badge: "Por que a Yoobe",
     title: "Mais conclusão, menos operação",
     items: [
       {
@@ -76,7 +76,7 @@ export const ptEducacaoPage = {
       },
       {
         title: "Logística com a gente",
-        desc: "Você não embala nem despacha nada — a 4Unik cuida.",
+        desc: "Você não embala nem despacha nada — a Yoobe cuida.",
         icon: "package",
       },
     ],
@@ -86,7 +86,7 @@ export const ptEducacaoPage = {
     company: "Grupo Boticário",
     title: "Gamificação que destravou treinamentos corporativos",
     body:
-      "No Centro de Excelência em Dados, o Grupo Boticário transformou a conclusão de cursos em pontos resgatáveis numa loja interna, com prêmios físicos brandados e logística automatizada da 4Unik. O resultado foi mais adesão aos treinamentos técnicos e ROI mensurável em educação corporativa.",
+      "No Centro de Excelência em Dados, o Grupo Boticário transformou a conclusão de cursos em pontos resgatáveis numa loja interna, com prêmios físicos brandados e logística automatizada da Yoobe. O resultado foi mais adesão aos treinamentos técnicos e ROI mensurável em educação corporativa.",
     logoSrc: "/clients/boticario.webp",
     logoAlt: "Logo do Grupo Boticário",
     metrics: [
@@ -98,7 +98,7 @@ export const ptEducacaoPage = {
     screenshots: [
       {
         src: "/screens/gamif-regras.webp",
-        alt: "Regras de pontuação por conclusão de curso na plataforma 4Unik",
+        alt: "Regras de pontuação por conclusão de curso na plataforma Yoobe",
         caption: "Regras de pontuação por conclusão de trilha, configuráveis por área.",
       },
       {
@@ -112,7 +112,7 @@ export const ptEducacaoPage = {
     items: [
       {
         q: "Como a gamificação com prémios físicos ajuda e-learning?",
-        a: "A recompensa tangível dá um motivo concreto para terminar a trilha: ao concluir um módulo ou curso, o aluno escolhe um prémio real e a 4Unik entrega em casa. Você define o marco; nós cuidamos do catálogo e do envio. Integre por API com o seu LMS ou plataforma.",
+        a: "A recompensa tangível dá um motivo concreto para terminar a trilha: ao concluir um módulo ou curso, o aluno escolhe um prémio real e a Yoobe entrega em casa. Você define o marco; nós cuidamos do catálogo e do envio. Integre por API com o seu LMS ou plataforma.",
       },
       {
         q: "Funciona para qualquer curso?",
@@ -120,11 +120,11 @@ export const ptEducacaoPage = {
       },
       {
         q: "Como conecta ao meu LMS ou plataforma?",
-        a: "Por API: ao registrar a conclusão, a 4Unik libera os pontos ou o resgate do prêmio.",
+        a: "Por API: ao registrar a conclusão, a Yoobe libera os pontos ou o resgate do prêmio.",
       },
       {
         q: "Quem cuida da entrega?",
-        a: "A 4Unik — catálogo, estoque, frete e rastreio. O aluno recebe em casa.",
+        a: "A Yoobe — catálogo, estoque, frete e rastreio. O aluno recebe em casa.",
       },
       {
         q: "Dá para premiar etapas, não só o fim?",
@@ -138,6 +138,6 @@ export const ptEducacaoPage = {
     body:
       "Conte sobre a sua operação de ensino e a base de alunos. Desenhamos o fluxo de recompensa por conclusão com você.",
     primaryLabel: "Falar com especialista",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
 } as const;

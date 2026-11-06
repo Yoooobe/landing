@@ -12,23 +12,23 @@ const root = join(__dirname, "..");
 const ogDir = join(root, "public", "og");
 
 /** Brand domain shown on OG badge (not `.com`). */
-const OG_SITE_BADGE = "4unik.com.br";
+const OG_SITE_BADGE = "catalogo.yoobe.co";
 
 const VARIANTS = [
-  { id: "4unik-default", subtitle: "Gamification, catalog, API, and fulfillment in one place." },
-  { id: "4unik-home", subtitle: "Reward infrastructure for teams and platforms." },
-  { id: "4unik-plataforma", subtitle: "Corporate store, missions, and manager dashboards." },
-  { id: "4unik-api", subtitle: "API, webhooks, and native integrations." },
-  { id: "4unik-gamificacao", subtitle: "Gamification engine for engagement programs." },
-  { id: "4unik-casos", subtitle: "Use cases and enterprise programs." },
-  { id: "4unik-inteligencia", subtitle: "AI for campaigns and recommendations." },
-  { id: "4unik-para-plataformas", subtitle: "Embedded physical-rewards API: catalog, checkout, fulfillment." },
-  { id: "4unik-educacao", subtitle: "Tangible reward on course completion, with catalog and logistics." },
-  { id: "4unik-vendas", subtitle: "Sales incentives integrated with your CRM: instant rewards." },
-  { id: "4unik-comunidades", subtitle: "A VIP store for fans and communities, fulfillment included." },
-  { id: "4unik-eventos", subtitle: "Event giveaways without logistics chaos: booth pickup or delivery." },
-  { id: "4unik-pricing", subtitle: "Enterprise reward infrastructure plans tailored to your program." },
-  { id: "4unik-seguranca", subtitle: "Security, governance, SSO, and LGPD for reward programs." },
+  { id: "Yoobe-default", subtitle: "Gamification, catalog, API, and fulfillment in one place." },
+  { id: "Yoobe-home", subtitle: "Reward infrastructure for teams and platforms." },
+  { id: "Yoobe-plataforma", subtitle: "Corporate store, missions, and manager dashboards." },
+  { id: "Yoobe-api", subtitle: "API, webhooks, and native integrations." },
+  { id: "Yoobe-gamificacao", subtitle: "Gamification engine for engagement programs." },
+  { id: "Yoobe-casos", subtitle: "Use cases and enterprise programs." },
+  { id: "Yoobe-inteligencia", subtitle: "AI for campaigns and recommendations." },
+  { id: "Yoobe-para-plataformas", subtitle: "Embedded physical-rewards API: catalog, checkout, fulfillment." },
+  { id: "Yoobe-educacao", subtitle: "Tangible reward on course completion, with catalog and logistics." },
+  { id: "Yoobe-vendas", subtitle: "Sales incentives integrated with your CRM: instant rewards." },
+  { id: "Yoobe-comunidades", subtitle: "A VIP store for fans and communities, fulfillment included." },
+  { id: "Yoobe-eventos", subtitle: "Event giveaways without logistics chaos: booth pickup or delivery." },
+  { id: "Yoobe-pricing", subtitle: "Enterprise reward infrastructure plans tailored to your program." },
+  { id: "Yoobe-seguranca", subtitle: "Security, governance, SSO, and LGPD for reward programs." },
 ];
 
 function escapeXml(text) {
@@ -47,7 +47,7 @@ function buildSvg(subtitle) {
   <circle cx="284" cy="542" r="226" fill="#F97316" fill-opacity="0.22"/>
   <circle cx="701" cy="484" r="167" fill="#56D5FF" fill-opacity="0.12"/>
   <rect x="72" y="72" width="1056" height="486" rx="28" fill="url(#panelGradient)" stroke="#FFFFFF" stroke-opacity="0.10"/>
-  <text x="120" y="212" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="0.2em">4UNIK</text>
+  <text x="120" y="212" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="0.2em">YOOBE</text>
   <text x="120" y="320" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">Reward infrastructure</text>
   <text x="120" y="404" fill="#A9B4C6" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500">${sub}</text>
   <rect x="120" y="458" width="340" height="56" rx="28" fill="#F97316"/>
@@ -74,13 +74,13 @@ async function main() {
     mkdirSync(ogDir, { recursive: true });
   }
 
-  const baseSvgPath = join(ogDir, "4unik-default.svg");
+  const baseSvgPath = join(ogDir, "Yoobe-default.svg");
   if (existsSync(baseSvgPath)) {
     await sharp(readFileSync(baseSvgPath))
       .resize(1200, 630)
       .png()
-      .toFile(join(ogDir, "4unik-default.png"));
-    console.log("generate-og-images: 4unik-default.png (from SVG)");
+      .toFile(join(ogDir, "Yoobe-default.png"));
+    console.log("generate-og-images: Yoobe-default.png (from SVG)");
   }
 
   for (const { id, subtitle } of VARIANTS) {

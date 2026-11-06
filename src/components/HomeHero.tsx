@@ -86,7 +86,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
   const heroHeadline = hasCmsHero ? cmsHero?.headline?.trim() || "" : "";
   const mainVisualUrl = cmsHeroImageUrl || platformImageUrl;
   const mainVisualAlt = hasCmsHero
-    ? cmsHero?.image?.alt?.trim() || heroHeadline || "Imagem principal da 4unik"
+    ? cmsHero?.image?.alt?.trim() || heroHeadline || "Imagem principal da Yoobe"
     : h.platformImage?.alt?.trim() || `${h.brand} platform preview`;
   const narrativeEyebrow =
     locale === "pt"
@@ -144,7 +144,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
           >
             <UnikWordmark
               variant="hero"
-              alt="4Unik"
+              alt="Yoobe"
               className="mx-0"
             />
           </motion.div>
@@ -245,7 +245,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
                     <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                   </div>
                   <span className="font-mono text-[0.62rem] tracking-wider text-white/45">
-                    gestor.4unik.io · Plataforma
+                    admin.yoobe.co · Plataforma
                   </span>
                   <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
                     Ao vivo
@@ -319,7 +319,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
                   <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/80" />
                   <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
                 </div>
-                <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">loja.4unik.io</span>
+                <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">store.yoobe.co</span>
               </div>
               <div className="relative aspect-16/10 overflow-hidden rounded-xl bg-slate-900">
                 <Image

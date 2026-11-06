@@ -1,6 +1,6 @@
 export const ptVendasPage = {
   seo: {
-    title: "Para times de vendas | 4Unik — incentivo integrado ao CRM",
+    title: "Para times de vendas | Yoobe — incentivo integrado ao CRM",
     description:
       "Bateu a meta, ganhou na hora. Conecte o seu CRM e premie o time de vendas automaticamente, com prêmios reais — sem planilha nem espera.",
     openGraphDescription:
@@ -10,11 +10,11 @@ export const ptVendasPage = {
     badge: "Para times de vendas",
     title: "Bateu a meta, ganhou na hora",
     definitionLead:
-      "Times comerciais conectam o CRM à 4Unik para premiar metas com prémios reais — sem planilhas, sem atraso na entrega.",
+      "Times comerciais conectam o CRM à Yoobe para premiar metas com prémios reais — sem planilhas, sem atraso na entrega.",
     sub:
-      "Pare de premiar vendas com planilha e atraso. Conecte o seu CRM: quando a meta é batida, a 4Unik libera pontos automaticamente para o vendedor trocar por prêmios reais.",
+      "Pare de premiar vendas com planilha e atraso. Conecte o seu CRM: quando a meta é batida, a Yoobe libera pontos automaticamente para o vendedor trocar por prêmios reais.",
     ctaLabel: "Falar com especialista",
-    ctaHref: "https://calendly.com/4unik/30min",
+    ctaHref: "https://calendly.com/yoobeco/demo",
   },
   problem: {
     badge: "A dor",
@@ -61,7 +61,7 @@ export const ptVendasPage = {
     ],
   },
   benefits: {
-    badge: "Por que a 4Unik",
+    badge: "Por que a Yoobe",
     title: "Performance reconhecida na hora certa",
     items: [
       {
@@ -76,7 +76,7 @@ export const ptVendasPage = {
       },
       {
         title: "Entrega por nossa conta",
-        desc: "A 4Unik cuida de estoque, envio e rastreio.",
+        desc: "A Yoobe cuida de estoque, envio e rastreio.",
         icon: "package",
       },
     ],
@@ -85,7 +85,7 @@ export const ptVendasPage = {
     items: [
       {
         q: "Como premiar equipas de vendas sem planilhas?",
-        a: "Conecte o seu CRM por API: quando a meta é batida, a 4Unik libera pontos automaticamente para o vendedor resgatar prémios reais. Sem apuração manual nem atraso — catálogo, estoque e envio ficam com a 4Unik. Veja integrações em /api-integracoes/.",
+        a: "Conecte o seu CRM por API: quando a meta é batida, a Yoobe libera pontos automaticamente para o vendedor resgatar prémios reais. Sem apuração manual nem atraso — catálogo, estoque e envio ficam com a Yoobe. Veja integrações em /api-integracoes/.",
       },
       {
         q: "Integra com qual CRM?",
@@ -93,7 +93,7 @@ export const ptVendasPage = {
       },
       {
         q: "A premiação é mesmo automática?",
-        a: "Sim. Ao registrar a meta batida, a 4Unik libera os pontos automaticamente para resgate.",
+        a: "Sim. Ao registrar a meta batida, a Yoobe libera os pontos automaticamente para resgate.",
       },
       {
         q: "Serve para metas individuais e de equipe?",
@@ -111,6 +111,6 @@ export const ptVendasPage = {
     body:
       "Conte sobre o seu time, metas e CRM. Montamos o fluxo de incentivo automático com você.",
     primaryLabel: "Falar com especialista",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
 } as const;

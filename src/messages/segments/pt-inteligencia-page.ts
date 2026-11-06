@@ -1,13 +1,13 @@
 export const ptInteligenciaPage = {
   seo: {
-    title: "IA para engajamento e reconhecimento corporativo | 4Unik",
+    title: "IA para engajamento e reconhecimento corporativo | Yoobe",
     description:
       "Camada de inteligência para engajamento: campanhas assistidas, kits, recomendações e integração com Workvivo. Roadmap de IA aplicada ao RH.",
     openGraphDescription:
       "Inteligência aplicada ao engajamento corporativo: builders, insights e orquestração com Workvivo.",
   },
   hero: {
-    badge: "4Unik AI Layer",
+    badge: "Yoobe AI Layer",
     titleBefore: "Inteligência aplicada ao",
     titleGradient: "programas corporativos",
     sub:
@@ -33,7 +33,7 @@ export const ptInteligenciaPage = {
   ],
   workvivo: {
     titleBefore: "Workvivo",
-    titleGradient: "+ 4Unik AI Layer",
+    titleGradient: "+ Yoobe AI Layer",
     sub:
       "Uma camada de inteligência para transformar eventos, comunicação e reconhecimento em campanhas e recompensas altamente acionáveis e rastreáveis.",
     cases: [
@@ -72,14 +72,14 @@ export const ptInteligenciaPage = {
     badge: "FAQ",
     titleBefore: "Dúvidas sobre",
     titleGradient: "Inteligência",
-    titleAfter: "na 4Unik",
+    titleAfter: "na Yoobe",
     items: [
       {
-        q: "O que significa “Inteligência” na 4Unik?",
-        a: "É o posicionamento B2B da 4Unik para recursos de IA aplicados ao engajamento: builders de campanha e kits, recomendações e insights — sem prometer AGI; foco em produtividade e orquestração para RH.",
+        q: "O que significa “Inteligência” na Yoobe?",
+        a: "É o posicionamento B2B da Yoobe para recursos de IA aplicados ao engajamento: builders de campanha e kits, recomendações e insights — sem prometer AGI; foco em produtividade e orquestração para RH.",
       },
       {
-        q: "Como a 4Unik se relaciona com Workvivo?",
+        q: "Como a Yoobe se relaciona com Workvivo?",
         a: "A integração combina eventos e feed social com campanhas e recompensas acionáveis; a camada de inteligência sugere reações, campanhas e sinais de desengajamento em cima desse fluxo.",
       },
       {
@@ -87,8 +87,8 @@ export const ptInteligenciaPage = {
         a: "Incluem campanhas assistidas por prompt, kits personalizados, recomendações de recompensas e insights para RH — evolução gradual até fluxos mais autônomos, conforme descrito na página.",
       },
       {
-        q: "A 4Unik substitui o meu HRIS ou ERP?",
-        a: "Não. A 4Unik é infraestrutura de recompensas e engajamento que se integra; dados mestres e folha continuam nos sistemas de origem.",
+        q: "A Yoobe substitui o meu HRIS ou ERP?",
+        a: "Não. A Yoobe é infraestrutura de recompensas e engajamento que se integra; dados mestres e folha continuam nos sistemas de origem.",
       },
     ],
   },

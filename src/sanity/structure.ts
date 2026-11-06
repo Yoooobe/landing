@@ -188,8 +188,8 @@ export const structure: StructureResolver = (S) =>
                         value: "Gamificação de Times",
                       },
                       {
-                        label: "💡 4unik na Prática",
-                        value: "4unik na Prática",
+                        label: "💡 Yoobe na Prática",
+                        value: "Yoobe na Prática",
                       },
                       {
                         label: "🎁 Eventos & Brindes",

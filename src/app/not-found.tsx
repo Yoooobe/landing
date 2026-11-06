@@ -7,7 +7,7 @@ import { DEFAULT_WHATSAPP_URL } from "@/lib/whatsapp";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Página não encontrada | 4Unik",
+  title: "Página não encontrada | Yoobe",
   description: "A página que procuras não existe ou foi movida.",
   robots: { index: false, follow: false },
 };
@@ -19,8 +19,8 @@ export default function NotFound() {
       {/* Brand wordmark */}
       <Link href={withBasePath("/")} className="mb-16 block opacity-90 hover:opacity-100 transition-opacity">
         <img
-          src={withBasePath("/brand/4unik-wordmark@2x.webp")}
-          alt="4unik"
+          src={withBasePath("/brand/yoobe-wordmark@2x.webp")}
+          alt="Yoobe"
           width={200}
           height={59}
           fetchPriority="high"

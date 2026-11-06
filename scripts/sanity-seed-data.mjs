@@ -178,7 +178,7 @@ function inteligenciaBlocks(locale) {
   const page = isEn
     ? {
         hero: {
-          badge: "4Unik AI Layer",
+          badge: "Yoobe AI Layer",
           titleBefore: "Intelligence applied to",
           titleGradient: "employee engagement",
           sub: "Turn campaigns, rewards, and journeys into more personalized, measurable, scalable actions-a new era of recognition infrastructure.",
@@ -207,7 +207,7 @@ function inteligenciaBlocks(locale) {
         ],
         workvivo: {
           titleBefore: "Workvivo",
-          titleGradient: "+ 4Unik AI Layer",
+          titleGradient: "+ Yoobe AI Layer",
           sub: "An intelligence layer that turns events, comms, and recognition into highly actionable, trackable campaigns and rewards.",
           cases: [
             {
@@ -243,15 +243,15 @@ function inteligenciaBlocks(locale) {
           ],
         },
         faq: {
-          title: "Questions about Intelligence at 4Unik",
+          title: "Questions about Intelligence at Yoobe",
           items: [
             {
-              question: "What does “Intelligence” mean at 4Unik?",
+              question: "What does “Intelligence” mean at Yoobe?",
               answer:
-                "It is 4Unik's B2B framing for AI applied to engagement: campaign and kit builders, recommendations, and insights-without overpromising AGI; the focus is productivity and orchestration for HR.",
+                "It is Yoobe's B2B framing for AI applied to engagement: campaign and kit builders, recommendations, and insights-without overpromising AGI; the focus is productivity and orchestration for HR.",
             },
             {
-              question: "How does 4Unik work with Workvivo?",
+              question: "How does Yoobe work with Workvivo?",
               answer:
                 "The integration pairs social feed events with actionable campaigns and rewards; the intelligence layer adds suggestions, recognition signals, and disengagement risk cues.",
             },
@@ -261,9 +261,9 @@ function inteligenciaBlocks(locale) {
                 "Prompt-assisted campaigns, personalized kits, reward recommendations, and HR insights-progressive autonomy over time, as described on this page.",
             },
             {
-              question: "Does 4Unik replace my HRIS or ERP?",
+              question: "Does Yoobe replace my HRIS or ERP?",
               answer:
-                "No. 4Unik is reward and engagement infrastructure that integrates; systems of record stay the source of truth.",
+                "No. Yoobe is reward and engagement infrastructure that integrates; systems of record stay the source of truth.",
             },
           ],
         },
@@ -275,7 +275,7 @@ function inteligenciaBlocks(locale) {
       }
     : {
         hero: {
-          badge: "4Unik AI Layer",
+          badge: "Yoobe AI Layer",
           titleBefore: "Inteligência aplicada ao",
           titleGradient: "engajamento corporativo",
           sub: "Transforme campanhas, recompensas e jornadas em ações mais personalizadas, mensuráveis e escaláveis. Uma nova era de infraestrutura de reconhecimento.",
@@ -304,7 +304,7 @@ function inteligenciaBlocks(locale) {
         ],
         workvivo: {
           titleBefore: "Workvivo",
-          titleGradient: "+ 4Unik AI Layer",
+          titleGradient: "+ Yoobe AI Layer",
           sub: "Uma camada de inteligência para transformar eventos, comunicação e reconhecimento em campanhas e recompensas altamente acionáveis e rastreáveis.",
           cases: [
             {
@@ -340,15 +340,15 @@ function inteligenciaBlocks(locale) {
           ],
         },
         faq: {
-          title: "Dúvidas sobre Inteligência na 4Unik",
+          title: "Dúvidas sobre Inteligência na Yoobe",
           items: [
             {
-              question: "O que significa “Inteligência” na 4Unik?",
+              question: "O que significa “Inteligência” na Yoobe?",
               answer:
-                "É o posicionamento B2B da 4Unik para recursos de IA aplicados ao engajamento: builders de campanha e kits, recomendações e insights - sem prometer AGI; foco em produtividade e orquestração para RH.",
+                "É o posicionamento B2B da Yoobe para recursos de IA aplicados ao engajamento: builders de campanha e kits, recomendações e insights - sem prometer AGI; foco em produtividade e orquestração para RH.",
             },
             {
-              question: "Como a 4Unik se relaciona com Workvivo?",
+              question: "Como a Yoobe se relaciona com Workvivo?",
               answer:
                 "A integração combina eventos e feed social com campanhas e recompensas acionáveis; a camada de inteligência sugere reações, campanhas e sinais de desengajamento em cima desse fluxo.",
             },
@@ -358,9 +358,9 @@ function inteligenciaBlocks(locale) {
                 "Incluem campanhas assistidas por prompt, kits personalizados, recomendações de recompensas e insights para RH - evolução gradual até fluxos mais autônomos, conforme descrito na página.",
             },
             {
-              question: "A 4Unik substitui o meu HRIS ou ERP?",
+              question: "A Yoobe substitui o meu HRIS ou ERP?",
               answer:
-                "Não. A 4Unik é infraestrutura de recompensas e engajamento que se integra; dados mestres e folha continuam nos sistemas de origem.",
+                "Não. A Yoobe é infraestrutura de recompensas e engajamento que se integra; dados mestres e folha continuam nos sistemas de origem.",
             },
           ],
         },
@@ -376,7 +376,7 @@ function inteligenciaBlocks(locale) {
       headline: `${page.hero.titleBefore} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.cta.button,
-      ctaLink: "https://calendly.com/4unik/30min",
+      ctaLink: "https://calendly.com/yoobeco/demo",
       imagePath: "public/cms-seed/intelligence-hero.svg",
       imageAlt: isEn
         ? "AI layer overview for employee engagement"
@@ -412,7 +412,7 @@ function inteligenciaBlocks(locale) {
       title: page.cta.title,
       description: page.cta.sub,
       primaryLabel: page.cta.button,
-      primaryHref: "https://calendly.com/4unik/30min",
+      primaryHref: "https://calendly.com/yoobeco/demo",
       imagePath: "public/cms-seed/intelligence-hero.svg",
       imageAlt: isEn
         ? "AI layer visual for the final CTA"
@@ -504,33 +504,33 @@ function casosBlocks(locale) {
           ],
         },
         faq: {
-          title: "Questions on use cases and 4Unik",
+          title: "Questions on use cases and Yoobe",
           items: [
             {
-              question: "What is 4Unik in the context of corporate gamification?",
+              question: "What is Yoobe in the context of corporate gamification?",
               answer:
-                "4Unik is reward infrastructure: API, catalog, and fulfillment for teams that already run or are building engagement-often integrated with the 4unik V3 platform for gamification and incentive programs.",
+                "Yoobe is reward infrastructure: API, catalog, and fulfillment for teams that already run or are building engagement-often integrated with the Yoobe V3 platform for gamification and incentive programs.",
             },
             {
-              question: "Do these case studies use 4Unik directly?",
+              question: "Do these case studies use Yoobe directly?",
               answer:
-                "The stories highlight enterprises that invested in gamification and community programs with public outcomes. They illustrate the class of problems engagement infrastructure solves; 4Unik positions itself as reward infrastructure and integrations for similar programs.",
+                "The stories highlight enterprises that invested in gamification and community programs with public outcomes. They illustrate the class of problems engagement infrastructure solves; Yoobe positions itself as reward infrastructure and integrations for similar programs.",
             },
             {
               question: "How should I choose reward infrastructure for my program?",
               answer:
-                "Evaluate API-first integration, catalog depth and logistics coverage, privacy compliance, and whether you need a standalone catalog or a full platform with a gamification engine-criteria aligned with what 4Unik delivers alongside 4unik V3.",
+                "Evaluate API-first integration, catalog depth and logistics coverage, privacy compliance, and whether you need a standalone catalog or a full platform with a gamification engine-criteria aligned with what Yoobe delivers alongside Yoobe V3.",
             },
             {
               question: "Where can I read about APIs and integrations?",
               answer:
-                "The API & integrations section covers webhooks, ecosystem, and partners; 4Unik emphasizes API integration so rewards fit your stack.",
+                "The API & integrations section covers webhooks, ecosystem, and partners; Yoobe emphasizes API integration so rewards fit your stack.",
             },
           ],
         },
         cta: {
           title: "Ready to be our next success story?",
-          body: "4Unik’s abstract infrastructure spans call-center engagement to software-engineer training programs.",
+          body: "Yoobe’s abstract infrastructure spans call-center engagement to software-engineer training programs.",
           button: "Discuss my use case",
         },
       }
@@ -614,33 +614,33 @@ function casosBlocks(locale) {
           ],
         },
         faq: {
-          title: "Perguntas sobre casos de uso e 4Unik",
+          title: "Perguntas sobre casos de uso e Yoobe",
           items: [
             {
-              question: "O que é a 4Unik em relação à gamificação corporativa?",
+              question: "O que é a Yoobe em relação à gamificação corporativa?",
               answer:
-                "A 4Unik é uma camada de infraestrutura de recompensas (Reward Infrastructure): API, catálogo e fulfillment para quem já tem ou está construindo engajamento - frequentemente integrada à plataforma 4unik V3 para gamificação e programas de incentivo.",
+                "A Yoobe é uma camada de infraestrutura de recompensas (Reward Infrastructure): API, catálogo e fulfillment para quem já tem ou está construindo engajamento - frequentemente integrada à plataforma Yoobe V3 para gamificação e programas de incentivo.",
             },
             {
-              question: "Estes casos usam a 4Unik diretamente?",
+              question: "Estes casos usam a Yoobe diretamente?",
               answer:
-                "Os estudos citam gigantes que investiram em gamificação e comunidades com resultados públicos. Eles ilustram o tipo de problema que infraestrutura de engajamento resolve; a 4Unik posiciona-se como infraestrutura de recompensas e integrações para programas semelhantes.",
+                "Os estudos citam gigantes que investiram em gamificação e comunidades com resultados públicos. Eles ilustram o tipo de problema que infraestrutura de engajamento resolve; a Yoobe posiciona-se como infraestrutura de recompensas e integrações para programas semelhantes.",
             },
             {
               question: "Como escolher uma infraestrutura de recompensas para o meu programa?",
               answer:
-                "Avalie integração por API, catálogo e cobertura logística, conformidade (LGPD), e se o modelo é catálogo avulso ou plataforma completa com motor de gamificação - critérios alinhados ao que a 4Unik oferece em conjunto com a 4unik V3.",
+                "Avalie integração por API, catálogo e cobertura logística, conformidade (LGPD), e se o modelo é catálogo avulso ou plataforma completa com motor de gamificação - critérios alinhados ao que a Yoobe oferece em conjunto com a Yoobe V3.",
             },
             {
               question: "Onde vejo integrações e API?",
               answer:
-                "Na área de API e integrações do site encontram-se visão de webhooks, ecossistema e parceiros; a 4Unik enfatiza integração por API para encaixar recompensas no seu fluxo.",
+                "Na área de API e integrações do site encontram-se visão de webhooks, ecossistema e parceiros; a Yoobe enfatiza integração por API para encaixar recompensas no seu fluxo.",
             },
           ],
         },
         cta: {
           title: "Pronto para ser o nosso próximo case?",
-          body: "A infraestrutura abstrata da 4Unik resolve desde engajamento de call centers até treinamento de engenheiros de software.",
+          body: "A infraestrutura abstrata da Yoobe resolve desde engajamento de call centers até treinamento de engenheiros de software.",
           button: "Discutir Meu Caso de Uso",
         },
       };
@@ -661,7 +661,7 @@ function casosBlocks(locale) {
       title: page.cta.title,
       description: page.cta.body,
       primaryLabel: page.cta.button,
-      primaryHref: "https://calendly.com/4unik/30min",
+      primaryHref: "https://calendly.com/yoobeco/demo",
     }),
   ];
 }
@@ -723,7 +723,7 @@ function plataformaBlocks(locale) {
           flowTitle: "Logical flow (autonomous events)",
           flow: {
             node1Title: "CRM webhook",
-            node2Title: "4unik engine",
+            node2Title: "Yoobe engine",
             node3Title: "Push app",
           },
         },
@@ -733,7 +733,7 @@ function plataformaBlocks(locale) {
           titleGradient: "your brand",
           titleAfter: " front and center.",
           bodyBefore:
-            "Stop managing stock or buying products employees don’t want. 4unik V3 fills the store with 5,000+ quality SWAGs featuring ",
+            "Stop managing stock or buying products employees don’t want. Yoobe V3 fills the store with 5,000+ quality SWAGs featuring ",
           bodyStrong: "YOUR BRAND",
           bodyAfter: " with on-demand shipping.",
           features: [
@@ -782,12 +782,12 @@ function plataformaBlocks(locale) {
         },
         faq: {
           titleBefore: "Questions about the",
-          titleGradient: "4unik V3 platform",
+          titleGradient: "Yoobe V3 platform",
           titleAfter: "",
           items: [
             {
-              q: "Is 4unik V3 just a swag catalog?",
-              a: "No. 4unik V3 is reward infrastructure: administration, gamification engine (on the 4unik V3 stack), catalog, fulfillment, and integrations—built for engagement and incentive programs, not a standalone storefront.",
+              q: "Is Yoobe V3 just a swag catalog?",
+              a: "No. Yoobe V3 is reward infrastructure: administration, gamification engine (on the Yoobe V3 stack), catalog, fulfillment, and integrations—built for engagement and incentive programs, not a standalone storefront.",
             },
             {
               q: "How does reward fulfillment work?",
@@ -858,7 +858,7 @@ function plataformaBlocks(locale) {
           flowTitle: "Fluxo Lógico (Eventos Autônomos)",
           flow: {
             node1Title: "Webhook CRM",
-            node2Title: "Motor 4unik",
+            node2Title: "Motor Yoobe",
             node3Title: "Push App",
           },
         },
@@ -868,7 +868,7 @@ function plataformaBlocks(locale) {
           titleGradient: "empresa",
           titleAfter: ".",
           bodyBefore:
-            "Esqueça gerenciar estoques ou comprar produtos que seus funcionários sequer querem. A 4unik V3 preenche automaticamente a loja com mais de 5.000 SWAGs de alta qualidade com a ",
+            "Esqueça gerenciar estoques ou comprar produtos que seus funcionários sequer querem. A Yoobe V3 preenche automaticamente a loja com mais de 5.000 SWAGs de alta qualidade com a ",
           bodyStrong: "MARCA DA SUA EMPRESA",
           bodyAfter: " e envios on-demand.",
           features: [
@@ -918,11 +918,11 @@ function plataformaBlocks(locale) {
         faq: {
           titleBefore: "Perguntas sobre a",
           titleGradient: "plataforma",
-          titleAfter: "4unik V3",
+          titleAfter: "Yoobe V3",
           items: [
             {
-              q: "A 4unik V3 é só um catálogo de brindes?",
-              a: "Não. A 4unik V3 é infraestrutura de recompensas: administração, motor de gamificação (na stack 4unik V3), catálogo, fulfillment e integrações — pensada para programas de engajamento e incentivo, não para um e‑commerce avulso.",
+              q: "A Yoobe V3 é só um catálogo de brindes?",
+              a: "Não. A Yoobe V3 é infraestrutura de recompensas: administração, motor de gamificação (na stack Yoobe V3), catálogo, fulfillment e integrações — pensada para programas de engajamento e incentivo, não para um e‑commerce avulso.",
             },
             {
               q: "Como funciona o fulfillment de recompensas?",
@@ -1002,11 +1002,11 @@ function plataformaBlocks(locale) {
       headline: `${page.hero.titleLine1} ${page.hero.titleGradient}`,
       subheadline: page.hero.sub,
       ctaText: page.pageCta.cta,
-      ctaLink: "https://calendly.com/4unik/30min",
+      ctaLink: "https://calendly.com/yoobeco/demo",
       imagePath: "public/screens/admin-dashboard.webp",
       imageAlt: isEn
-        ? "Manager dashboard screenshot — 4Unik platform"
-        : "Screenshot do painel do gestor da plataforma 4Unik",
+        ? "Manager dashboard screenshot — Yoobe platform"
+        : "Screenshot do painel do gestor da plataforma Yoobe",
     }),
     splitContentBlock("admin-dashboard", {
       eyebrow: page.adminDashboard.badge,
@@ -1016,8 +1016,8 @@ function plataformaBlocks(locale) {
       imageSide: "right",
       imagePath: "public/screens/admin-dashboard.webp",
       imageAlt: isEn
-        ? "Manager dashboard screenshot for the 4Unik platform"
-        : "Screenshot do painel do gestor da plataforma 4Unik",
+        ? "Manager dashboard screenshot for the Yoobe platform"
+        : "Screenshot do painel do gestor da plataforma Yoobe",
     }),
     splitContentBlock("gamification-engine-intro", {
       eyebrow: page.gamificationEngine.badge,
@@ -1029,8 +1029,8 @@ function plataformaBlocks(locale) {
       imageSide: "left",
       imagePath: "public/screens/gamif-bolsa.webp",
       imageAlt: isEn
-        ? "Gamification wallet and points — 4Unik platform"
-        : "Carteira e pontos de gamificação na plataforma 4Unik",
+        ? "Gamification wallet and points — Yoobe platform"
+        : "Carteira e pontos de gamificação na plataforma Yoobe",
     }),
     featureGridBlock("gamification-engine-cards", {
       eyebrow: isEn ? "Engine mechanics" : "Mecânicas do motor",
@@ -1052,8 +1052,8 @@ function plataformaBlocks(locale) {
       imageSide: "right",
       imagePath: "public/screens/member-store-home.webp",
       imageAlt: isEn
-        ? "Member rewards store screenshot — 4Unik platform"
-        : "Screenshot da loja de recompensas na plataforma 4Unik",
+        ? "Member rewards store screenshot — Yoobe platform"
+        : "Screenshot da loja de recompensas na plataforma Yoobe",
     }),
     featureGridBlock("store-features", {
       eyebrow: isEn ? "Store operations" : "Operação da loja",
@@ -1105,8 +1105,8 @@ function plataformaBlocks(locale) {
       imageSide: "left",
       imagePath: "public/screens/member-points.webp",
       imageAlt: isEn
-        ? "Member wallet and points security context — 4Unik"
-        : "Carteira e pontos do colaborador — contexto de segurança 4Unik",
+        ? "Member wallet and points security context — Yoobe"
+        : "Carteira e pontos do colaborador — contexto de segurança Yoobe",
     }),
     faqBlock(
       "faq",
@@ -1120,7 +1120,7 @@ function plataformaBlocks(locale) {
       eyebrow: isEn ? "Next step" : "Próximo passo",
       title: page.pageCta.title,
       primaryLabel: page.pageCta.cta,
-      primaryHref: "https://calendly.com/4unik/30min",
+      primaryHref: "https://calendly.com/yoobeco/demo",
       imagePath: "public/screens/admin-dashboard.webp",
       imageAlt: isEn
         ? "Platform dashboard screenshot for the final CTA"
@@ -1147,7 +1147,7 @@ const blogPosts = [
     imageAlt: "Equipe de RH analisando metricas de engajamento",
     relatedKeywords: ["gamificacao no RH", "engajamento", "turnover"],
     seo: {
-      metaTitle: "Guia de gamificacao para RH | 4unik",
+      metaTitle: "Guia de gamificacao para RH | Yoobe",
       metaDescription:
         "Veja como programas de gamificacao ajudam RHs modernos a reduzir turnover e elevar o engajamento.",
     },
@@ -1164,7 +1164,7 @@ const blogPosts = [
     slug: { _type: "slug", current: "sla-logistica-premiacao-d1" },
     locale: "pt",
     excerpt:
-      "A frustracao do colaborador com o premio atrasado pode destruir toda a experiencia. Veja como a infraestrutura 4unik resolve isso.",
+      "A frustracao do colaborador com o premio atrasado pode destruir toda a experiencia. Veja como a infraestrutura Yoobe resolve isso.",
     category: "Logistica",
     publishedAt: "2026-03-05T00:00:00.000Z",
     readTimeMinutes: 5,
@@ -1174,7 +1174,7 @@ const blogPosts = [
     imageAlt: "Centro logistico com pacotes e rastreamento",
     relatedKeywords: ["logistica de premiacao", "SLA", "D+1"],
     seo: {
-      metaTitle: "SLA D+1 em premiacao corporativa | 4unik",
+      metaTitle: "SLA D+1 em premiacao corporativa | Yoobe",
       metaDescription:
         "Entenda por que a velocidade de entrega muda a percepcao do colaborador sobre programas de incentivo.",
     },
@@ -1201,7 +1201,7 @@ const blogPosts = [
     imageAlt: "Colegas trocando feedback em equipe",
     relatedKeywords: ["peer-to-peer", "reconhecimento 360", "cultura"],
     seo: {
-      metaTitle: "Reconhecimento 360 e peer-to-peer | 4unik",
+      metaTitle: "Reconhecimento 360 e peer-to-peer | Yoobe",
       metaDescription:
         "Saiba como desenhar programas de reconhecimento entre pares que reforcam cultura e colaboracao.",
     },
@@ -1218,7 +1218,7 @@ const blogPosts = [
     slug: { _type: "slug", current: "welcome-kits-primeira-impressao" },
     locale: "pt",
     excerpt:
-      "O onboarding e crucial. Veja exemplos de cases de sucesso em kits de boas-vindas corporativos montados na plataforma 4unik V3.",
+      "O onboarding e crucial. Veja exemplos de cases de sucesso em kits de boas-vindas corporativos montados na plataforma Yoobe V3.",
     category: "Kits & Eventos",
     publishedAt: "2026-02-15T00:00:00.000Z",
     readTimeMinutes: 4,
@@ -1228,7 +1228,7 @@ const blogPosts = [
     imageAlt: "Kit de boas-vindas corporativo sobre uma mesa",
     relatedKeywords: ["welcome kits", "onboarding", "employee experience"],
     seo: {
-      metaTitle: "Welcome kits e onboarding | 4unik",
+      metaTitle: "Welcome kits e onboarding | Yoobe",
       metaDescription:
         "Veja como kits de boas-vindas podem reforcar branding interno e acelerar o onboarding.",
     },
@@ -1255,7 +1255,7 @@ const blogPosts = [
     imageAlt: "HR team reviewing engagement metrics",
     relatedKeywords: ["HR gamification", "engagement", "turnover"],
     seo: {
-      metaTitle: "HR gamification guide | 4unik",
+      metaTitle: "HR gamification guide | Yoobe",
       metaDescription:
         "Learn how modern HR teams use gamification to improve engagement and retention.",
     },
@@ -1272,7 +1272,7 @@ const blogPosts = [
     slug: { _type: "slug", current: "rewards-logistics-sla-d1" },
     locale: "en",
     excerpt:
-      "A late prize can ruin the experience - see how 4unik infrastructure fixes delivery expectations.",
+      "A late prize can ruin the experience - see how Yoobe infrastructure fixes delivery expectations.",
     category: "Logistics",
     publishedAt: "2026-03-05T00:00:00.000Z",
     readTimeMinutes: 5,
@@ -1282,7 +1282,7 @@ const blogPosts = [
     imageAlt: "Logistics warehouse with package tracking",
     relatedKeywords: ["rewards logistics", "SLA", "D+1"],
     seo: {
-      metaTitle: "D+1 SLA for rewards logistics | 4unik",
+      metaTitle: "D+1 SLA for rewards logistics | Yoobe",
       metaDescription:
         "See why fast delivery is a core part of the employee rewards experience.",
     },
@@ -1309,7 +1309,7 @@ const blogPosts = [
     imageAlt: "Colleagues sharing recognition in the office",
     relatedKeywords: ["peer-to-peer", "360 recognition", "culture"],
     seo: {
-      metaTitle: "Peer-to-peer recognition programs | 4unik",
+      metaTitle: "Peer-to-peer recognition programs | Yoobe",
       metaDescription:
         "Build peer recognition programs that strengthen culture without creating noise.",
     },
@@ -1326,7 +1326,7 @@ const blogPosts = [
     slug: { _type: "slug", current: "welcome-kits-first-impression" },
     locale: "en",
     excerpt:
-      "Onboarding matters - examples of standout welcome kits built on the 4unik V3 platform.",
+      "Onboarding matters - examples of standout welcome kits built on the Yoobe V3 platform.",
     category: "Kits & events",
     publishedAt: "2026-02-15T00:00:00.000Z",
     readTimeMinutes: 4,
@@ -1336,7 +1336,7 @@ const blogPosts = [
     imageAlt: "Corporate welcome kit arranged on a desk",
     relatedKeywords: ["welcome kits", "onboarding", "employee experience"],
     seo: {
-      metaTitle: "Welcome kits for onboarding | 4unik",
+      metaTitle: "Welcome kits for onboarding | Yoobe",
       metaDescription:
         "Use welcome kits to strengthen employer brand and improve the first employee experience.",
     },
@@ -1351,10 +1351,10 @@ const blogPosts = [
 /** Espelha `homeBlocks()` em src/sanity/lib/marketingPages.ts — composição nativa HomePage (8 secções no frontend). */
 function homeMarketingPageBlocks(isEn) {
   const base = isEn ? "/" : "";
-  const trustTitle = isEn ? "Companies that trust 4Unik" : "Empresas que confiam na 4Unik";
+  const trustTitle = isEn ? "Companies that trust Yoobe" : "Empresas que confiam na Yoobe";
   const heroHeadline = isEn
-    ? "4unik scales recognition without manual ops"
-    : "4unik escala reconhecimento sem operação manual";
+    ? "Yoobe scales recognition without manual ops"
+    : "Yoobe escala reconhecimento sem operação manual";
   const heroSub = isEn
     ? "Full platform or execution layer via API. You set goals and points; we handle logistics and delivery—in Brazil and worldwide."
     : "Plataforma completa ou camada de execução via API. Você define metas e pontos; nós cuidamos da logística e da entrega — no Brasil e no mundo.";
@@ -1370,7 +1370,7 @@ function homeMarketingPageBlocks(isEn) {
       headline: heroHeadline,
       subheadline: heroSub,
       ctaText: isEn ? "Book a demo" : "Agendar Demo",
-      ctaLink: "https://calendly.com/4unik/demo",
+      ctaLink: "https://calendly.com/Yoobe/demo",
     }),
     logoStripBlock("trust-bar", {
       displayStyle: "compact",
@@ -1407,8 +1407,8 @@ function homeMarketingPageBlocks(isEn) {
         },
       ],
     }),
-    featureGridBlock("why-4unik", {
-      eyebrow: isEn ? "Why 4Unik" : "Por que a 4Unik",
+    featureGridBlock("why-Yoobe", {
+      eyebrow: isEn ? "Why Yoobe" : "Por que a Yoobe",
       title: isEn ? "Recognition drives performance" : "Reconhecimento gera performance",
       description: isEn
         ? "65% of employees receive no recognition during the year; 83% feel more motivated when the program actually works. Store, points, and logistics in one flow."
@@ -1449,7 +1449,7 @@ function homeMarketingPageBlocks(isEn) {
       title: isEn ? "Four steps to get started" : "4 passos para começar",
       columns: "4",
       items: [
-        { eyebrow: "01", title: isEn ? "Connect" : "Conecte", description: isEn ? "HRIS, intranet, or 4Unik console." : "Intranet, HRIS ou console 4unik.", icon: "link-2" },
+        { eyebrow: "01", title: isEn ? "Connect" : "Conecte", description: isEn ? "HRIS, intranet, or Yoobe console." : "Intranet, HRIS ou console Yoobe.", icon: "link-2" },
         { eyebrow: "02", title: isEn ? "Configure" : "Configure", description: isEn ? "Rules, catalog, and culture fit." : "Regras, catálogo e cultura.", icon: "target" },
         { eyebrow: "03", title: isEn ? "Engage" : "Engaje", description: isEn ? "Points, missions, recognition." : "Pontos, missões e reconhecimento.", icon: "coins" },
         { eyebrow: "04", title: isEn ? "Deliver" : "Entregue", description: isEn ? "They choose; we fulfill." : "Eles escolhem; nós entregamos.", icon: "package" },
@@ -1472,8 +1472,8 @@ function homeMarketingPageBlocks(isEn) {
       eyebrow: isEn ? "Two ways to start" : "Duas formas de começar",
       title: isEn ? "Connect what you already run" : "Integração com o que você já tem",
       body: isEn
-        ? ["4Unik connects by API inside your existing stack."]
-        : ["A 4Unik conecta por API ao stack que você já usa."],
+        ? ["Yoobe connects by API inside your existing stack."]
+        : ["A Yoobe conecta por API ao stack que você já usa."],
       bullets: isEn
         ? ["No extra password rollout", "Rewards in everyday tools", "We run fulfillment"]
         : ["Sem outra senha", "Recompensas onde o time trabalha", "Operamos a entrega"],
@@ -1497,8 +1497,8 @@ function homeMarketingPageBlocks(isEn) {
     testimonialBlock("testimonials", isEn ? "What teams say" : "Depoimentos", [
       {
         quote: isEn
-          ? "4Unik unlocked our recognition program in weeks."
-          : "A 4Unik destravou nosso programa de reconhecimento em poucas semanas.",
+          ? "Yoobe unlocked our recognition program in weeks."
+          : "A Yoobe destravou nosso programa de reconhecimento em poucas semanas.",
         author: isEn ? "Marina Costa" : "Marina Costa",
         role: isEn ? "Head of HR" : "Head de RH",
         company: isEn ? "Tech company" : "Empresa de tecnologia",
@@ -1507,7 +1507,7 @@ function homeMarketingPageBlocks(isEn) {
     ]),
     splitContentBlock("api-integrations", {
       eyebrow: isEn ? "Works where your team already is" : "Funciona onde o time já está",
-      title: isEn ? "Connect 4Unik to your stack" : "Conecte a 4Unik a qualquer sistema",
+      title: isEn ? "Connect Yoobe to your stack" : "Conecte a Yoobe a qualquer sistema",
       body: isEn
         ? ["API priced per active user. Catalog, checkout, and fulfillment embedded."]
         : ["API por usuário ativo. Catálogo, checkout e fulfillment integrados."],
@@ -1523,9 +1523,9 @@ function homeMarketingPageBlocks(isEn) {
       title: finalTitle,
       description: finalBody,
       primaryLabel: isEn ? "Book a demo" : "Solicitar Demonstração",
-      primaryHref: "https://calendly.com/4unik/demo",
+      primaryHref: "https://calendly.com/Yoobe/demo",
       secondaryLabel: isEn ? "Talk to a specialist" : "Falar com Especialista",
-      secondaryHref: "https://wa.me/551126844724",
+      secondaryHref: "https://wa.me/5541987607512",
     }),
   ];
 }
@@ -1538,19 +1538,19 @@ const marketingPages = [
     slug: { _type: "slug", current: "infraestrutura-de-recompensas" },
     locale: "pt",
     summary:
-      "Landing editorial base para explicar como a 4unik V3 conecta engajamento, recompensas e logistica.",
+      "Landing editorial base para explicar como a Yoobe V3 conecta engajamento, recompensas e logistica.",
     seo: {
-      metaTitle: "Infraestrutura de recompensas e engagement | 4unik",
+      metaTitle: "Infraestrutura de recompensas e engagement | Yoobe",
       metaDescription:
         "Entenda como a plataforma conecta campanhas, API, catalogo e fulfillment para operacoes de engagement.",
     },
     content: [
       heroBlock("hero", {
-        headline: "4unik conecta engajamento, recompensas e logistica",
+        headline: "Yoobe conecta engajamento, recompensas e logistica",
         subheadline:
           "Uma base editorial para explicar a plataforma, posicionar a oferta e acelerar a migracao gradual da landing para o CMS.",
         ctaText: "Agendar demonstracao",
-        ctaLink: "https://calendly.com/4unik/30min",
+        ctaLink: "https://calendly.com/yoobeco/demo",
       }),
       richTextSection("context", "Como esta pagina deve ser usada", [
         "Esta landing page no Sanity serve como primeira fonte editorial para substituir gradualmente o conteudo estatico do site. O objetivo e testar fluxo de criacao, revisao e publicacao para o time de marketing.",
@@ -1597,7 +1597,7 @@ const marketingPages = [
         ],
         imageSide: "right",
         primaryLabel: "Abrir Studio",
-        primaryHref: "https://plataforma.4unik.com.br/landing/studio/",
+        primaryHref: "https://www.yoobe.co/studio/",
       }),
       statsBlock("stats", "Indicadores que sustentam a narrativa", [
         {
@@ -1637,16 +1637,16 @@ const marketingPages = [
         {
           quote:
             "Unificar engagement, recompensas e logistica numa narrativa so acelera vendas e reduz atrito na operacao.",
-          author: "Time 4Unik",
+          author: "Time Yoobe",
           role: "Marketing e Growth",
-          company: "4Unik / 4unik V3",
+          company: "Yoobe / Yoobe V3",
         },
         {
           quote:
             "O admin precisa funcionar como fonte unica de verdade para blog, landing pages e estrategias em evolucao.",
           author: "Time editorial",
           role: "Conteudo",
-          company: "4Unik / 4unik V3",
+          company: "Yoobe / Yoobe V3",
         },
       ]),
       logoStripBlock("logos", {
@@ -1657,8 +1657,8 @@ const marketingPages = [
         items: [
           { name: "Workvivo", href: "https://www.workvivo.com/" },
           { name: "Zoom", href: "https://www.zoom.us/" },
-          { name: "4Unik", href: "https://4unik.com.br/" },
-          { name: "Yoobe", href: "https://plataforma.4unik.com.br/landing/" },
+          { name: "Yoobe", href: "https://catalogo.yoobe.co/" },
+          { name: "Yoobe", href: "https://www.yoobe.co/" },
         ],
       }),
       ctaBlock("cta", {
@@ -1667,9 +1667,9 @@ const marketingPages = [
         description:
           "A proxima etapa e ligar as paginas de marketing do frontend a estes blocos, mantendo fallback seguro e rebuild quando necessario.",
         primaryLabel: "Agendar demonstracao",
-        primaryHref: "https://calendly.com/4unik/30min",
+        primaryHref: "https://calendly.com/yoobeco/demo",
         secondaryLabel: "Falar no WhatsApp",
-        secondaryHref: "https://wa.me/551126844724",
+        secondaryHref: "https://wa.me/5541987607512",
       }),
     ],
   },
@@ -1680,19 +1680,19 @@ const marketingPages = [
     slug: { _type: "slug", current: "reward-infrastructure" },
     locale: "en",
     summary:
-      "Initial marketing page used to explain how 4unik V3 connects engagement, rewards, and logistics.",
+      "Initial marketing page used to explain how Yoobe V3 connects engagement, rewards, and logistics.",
     seo: {
-      metaTitle: "Reward infrastructure for engagement | 4unik",
+      metaTitle: "Reward infrastructure for engagement | Yoobe",
       metaDescription:
         "See how the platform combines campaigns, API, catalog, and fulfillment in one operational layer.",
     },
     content: [
       heroBlock("hero", {
-        headline: "4unik connects engagement, rewards, and logistics",
+        headline: "Yoobe connects engagement, rewards, and logistics",
         subheadline:
           "A first editorial landing page in Sanity to support the gradual migration away from static marketing copy.",
         ctaText: "Book a demo",
-        ctaLink: "https://calendly.com/4unik/30min",
+        ctaLink: "https://calendly.com/yoobeco/demo",
       }),
       richTextSection("context", "How this page should be used", [
         "This marketing page acts as the first editorial source of truth for replacing static landing content over time. It gives the team a controlled workflow for drafting, reviewing, and publishing.",
@@ -1739,7 +1739,7 @@ const marketingPages = [
         ],
         imageSide: "right",
         primaryLabel: "Open Studio",
-        primaryHref: "https://plataforma.4unik.com.br/landing/studio/",
+        primaryHref: "https://www.yoobe.co/studio/",
       }),
       statsBlock("stats", "Numbers that support the story", [
         {
@@ -1779,9 +1779,9 @@ const marketingPages = [
         {
           quote:
             "Combining engagement, rewards, and logistics into one narrative helps both sales conversations and operational clarity.",
-          author: "4Unik team",
+          author: "Yoobe team",
           role: "Marketing and Growth",
-          company: "4Unik / 4unik V3",
+          company: "Yoobe / Yoobe V3",
         },
       ]),
       logoStripBlock("logos", {
@@ -1792,8 +1792,8 @@ const marketingPages = [
         items: [
           { name: "Workvivo", href: "https://www.workvivo.com/" },
           { name: "Zoom", href: "https://www.zoom.us/" },
-          { name: "4Unik", href: "https://4unik.com.br/" },
-          { name: "Yoobe", href: "https://plataforma.4unik.com.br/landing/" },
+          { name: "Yoobe", href: "https://catalogo.yoobe.co/" },
+          { name: "Yoobe", href: "https://www.yoobe.co/" },
         ],
       }),
       ctaBlock("cta", {
@@ -1802,9 +1802,9 @@ const marketingPages = [
         description:
           "The next milestone is wiring public marketing routes to these CMS blocks while preserving safe fallbacks and rebuild guidance.",
         primaryLabel: "Book a demo",
-        primaryHref: "https://calendly.com/4unik/30min",
+        primaryHref: "https://calendly.com/yoobeco/demo",
         secondaryLabel: "Talk on WhatsApp",
-        secondaryHref: "https://wa.me/551126844724",
+        secondaryHref: "https://wa.me/5541987607512",
       }),
     ],
   },
@@ -1817,7 +1817,7 @@ const marketingPages = [
     summary:
       "Home nativa (HomePage.tsx): 8 secoes publicas — hero, trust, tabs, why+stats, how+duality, cases, integracoes/API, CTA final. Blocos abaixo espelham o fallback editorial.",
     seo: {
-      metaTitle: "4Unik — Reconhecimento, loja corporativa e logística para equipes",
+      metaTitle: "Yoobe — Reconhecimento, loja corporativa e logística para equipes",
       metaDescription:
         "Plataforma completa ou camada de execução via API: campanhas, pontos, loja e entrega — no Brasil e no mundo.",
     },
@@ -1832,7 +1832,7 @@ const marketingPages = [
     summary:
       "Native home (HomePage.tsx): 8 public sections — hero, trust, tabs, why+stats, how+duality, cases, integrations/API, final CTA. Blocks below mirror editorial fallback.",
     seo: {
-      metaTitle: "4Unik — Recognition, corporate store & logistics for teams",
+      metaTitle: "Yoobe — Recognition, corporate store & logistics for teams",
       metaDescription:
         "Full platform or execution layer via API: campaigns, points, store, and delivery—in Brazil and worldwide.",
     },
@@ -1846,9 +1846,9 @@ const marketingPages = [
     locale: "pt",
     summary: "Pagina principal da oferta de API e integracoes, promovida para blocos nativos no marketingPage.",
     seo: {
-      metaTitle: "API e Integracoes | 4unik",
+      metaTitle: "API e Integracoes | Yoobe",
       metaDescription:
-        "API REST, webhooks e integracoes para recompensas corporativas, catalogo e fulfillment na plataforma 4unik.",
+        "API REST, webhooks e integracoes para recompensas corporativas, catalogo e fulfillment na plataforma Yoobe.",
     },
     content: [legacySectionBlock("api-full-page", "apiIntegracoesPage")],
   },
@@ -1860,9 +1860,9 @@ const marketingPages = [
     locale: "en",
     summary: "Primary API and integrations page promoted to native marketingPage blocks.",
     seo: {
-      metaTitle: "API & Integrations | 4unik",
+      metaTitle: "API & Integrations | Yoobe",
       metaDescription:
-        "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment - aligned with the 4unik platform.",
+        "REST API, webhooks, and integrations for corporate rewards, catalog, and fulfillment - aligned with the Yoobe platform.",
     },
     content: [legacySectionBlock("api-full-page", "apiIntegracoesPage")],
   },
@@ -1874,7 +1874,7 @@ const marketingPages = [
     locale: "pt",
     summary: "Pagina da oferta de gamificacao corporativa em migracao para blocos nativos do marketingPage com composicao visual editavel.",
     seo: {
-      metaTitle: "Gamificacao Corporativa | 4unik",
+      metaTitle: "Gamificacao Corporativa | Yoobe",
       metaDescription:
         "Motor de gamificacao corporativa com pontos, rankings, desafios, recompensas reais e analytics para RH e liderancas.",
     },
@@ -1900,7 +1900,7 @@ const marketingPages = [
     locale: "en",
     summary: "Gamification offer page migrating to native marketingPage blocks with editable visual composition.",
     seo: {
-      metaTitle: "Corporate Gamification | 4unik",
+      metaTitle: "Corporate Gamification | Yoobe",
       metaDescription:
         "Corporate gamification engine with points, rankings, missions, real rewards, and analytics for HR and business leaders.",
     },
@@ -1926,7 +1926,7 @@ const marketingPages = [
     locale: "pt",
     summary: "Visao geral da plataforma estruturada em blocos nativos do marketingPage, com composicao visual editavel no CMS.",
     seo: {
-      metaTitle: "Plataforma | 4unik V3 - Reward Infrastructure",
+      metaTitle: "Plataforma | Yoobe V3 - Reward Infrastructure",
       metaDescription:
         "Painel analitico, motor de gamificacao, loja de resgates, logistica e seguranca enterprise. Infraestrutura de recompensas e fulfillment para programas de engajamento.",
     },
@@ -1940,7 +1940,7 @@ const marketingPages = [
     locale: "en",
     summary: "Platform overview page modeled with native marketingPage blocks and editable visual composition in the CMS.",
     seo: {
-      metaTitle: "Platform | 4unik V3 - Reward Infrastructure",
+      metaTitle: "Platform | Yoobe V3 - Reward Infrastructure",
       metaDescription:
         "Analytics console, gamification engine, redemption store, logistics, and enterprise security. Reward infrastructure and fulfillment for engagement programs.",
     },
@@ -1954,7 +1954,7 @@ const marketingPages = [
     locale: "pt",
     summary: "Narrativa de inteligencia aplicada ao engajamento estruturada em blocos nativos com composicao visual editavel.",
     seo: {
-      metaTitle: "Inteligencia | 4Unik - Reward Infrastructure",
+      metaTitle: "Inteligencia | Yoobe - Reward Infrastructure",
       metaDescription:
         "Camada de inteligencia para engajamento: campanhas assistidas, kits, recomendacoes e integracao com Workvivo. Roadmap de IA aplicada ao RH.",
     },
@@ -1968,7 +1968,7 @@ const marketingPages = [
     locale: "en",
     summary: "AI and intelligence narrative structured with native blocks and editable visual composition.",
     seo: {
-      metaTitle: "Intelligence | 4Unik - Reward Infrastructure",
+      metaTitle: "Intelligence | Yoobe - Reward Infrastructure",
       metaDescription:
         "An intelligence layer for engagement: assisted campaigns, kits, recommendations, and Workvivo integration. A practical AI roadmap for HR.",
     },
@@ -1982,9 +1982,9 @@ const marketingPages = [
     locale: "pt",
     summary: "Pagina de estudos de caso e provas de mercado organizada com blocos nativos reutilizaveis.",
     seo: {
-      metaTitle: "Casos de uso | 4Unik - Reward Infrastructure",
+      metaTitle: "Casos de uso | Yoobe - Reward Infrastructure",
       metaDescription:
-        "Estudos de caso de empresas globais em gamificacao corporativa e comunidades. Como gigantes escalam engajamento - e como a 4Unik fornece infraestrutura de recompensas.",
+        "Estudos de caso de empresas globais em gamificacao corporativa e comunidades. Como gigantes escalam engajamento - e como a Yoobe fornece infraestrutura de recompensas.",
     },
     content: casosBlocks("pt"),
   },
@@ -1996,9 +1996,9 @@ const marketingPages = [
     locale: "en",
     summary: "Case studies and proof points page organized through reusable legacy sections.",
     seo: {
-      metaTitle: "Use cases | 4Unik - Reward Infrastructure",
+      metaTitle: "Use cases | Yoobe - Reward Infrastructure",
       metaDescription:
-        "Global enterprise case studies in corporate gamification and communities. How market leaders scale engagement-and how 4Unik provides reward infrastructure.",
+        "Global enterprise case studies in corporate gamification and communities. How market leaders scale engagement-and how Yoobe provides reward infrastructure.",
     },
     content: casosBlocks("en"),
   },
@@ -2016,7 +2016,7 @@ const marketingStrategies = [
     summary:
       "Documento base para orientar temas de blog, landing pages e campanhas sobre engagement, gamificacao e operacao de recompensas.",
     seo: {
-      metaTitle: "Pilar editorial de engajamento | 4unik",
+      metaTitle: "Pilar editorial de engajamento | Yoobe",
       metaDescription:
         "Base estrategica para conteudo de engagement, reconhecimento, recompensas e logistica.",
     },
@@ -2053,9 +2053,9 @@ const marketingStrategies = [
         eyebrow: "Acao recomendada",
         title: "Converter esta estrategia em calendario editorial",
         description:
-          "Use este documento para priorizar os proximos artigos, FAQs, paginas de oferta e campanhas da 4Unik.",
+          "Use este documento para priorizar os proximos artigos, FAQs, paginas de oferta e campanhas da Yoobe.",
         primaryLabel: "Abrir Studio",
-        primaryHref: "https://plataforma.4unik.com.br/landing/studio/",
+        primaryHref: "https://www.yoobe.co/studio/",
       }),
     ],
   },
@@ -2070,7 +2070,7 @@ const marketingStrategies = [
     summary:
       "Starter strategy document for blog themes, landing pages, and campaign narratives around engagement, gamification, and reward operations.",
     seo: {
-      metaTitle: "Engagement editorial pillar | 4unik",
+      metaTitle: "Engagement editorial pillar | Yoobe",
       metaDescription:
         "Strategic foundation for content about engagement, recognition, rewards, and logistics.",
     },
@@ -2109,7 +2109,7 @@ const marketingStrategies = [
         description:
           "Use this document to prioritize upcoming articles, FAQs, offer pages, and campaigns in Sanity.",
         primaryLabel: "Open Studio",
-        primaryHref: "https://plataforma.4unik.com.br/landing/studio/",
+        primaryHref: "https://www.yoobe.co/studio/",
       }),
     ],
   },
@@ -2121,23 +2121,23 @@ export const seedDocuments = {
     _type: "siteSettings",
     environmentLabel: "production",
     gaMeasurementId: "G-SMJDYCENBC",
-    calendlyUrl: "https://calendly.com/4unik/30min",
-    whatsappUrl: "https://wa.me/551126844724",
-    contactEmail: "comercial@4unik.com.br",
-    rewardsCatalogUrl: "https://catalogo.4unik.com.br/product",
-    companySiteUrl: "https://4unik.com.br",
-    privacyUrl: "https://4unik.com.br/politica-de-privacidade",
-    termsUrl: "https://4unik.com.br/termos-de-uso",
+    calendlyUrl: "https://calendly.com/yoobeco/demo",
+    whatsappUrl: "https://wa.me/5541987607512",
+    contactEmail: "vendas@yoobe.co",
+    rewardsCatalogUrl: "https://catalogo.yoobe.co/product",
+    companySiteUrl: "https://catalogo.yoobe.co/",
+    privacyUrl: "https://catalogo.yoobe.co/politica-de-privacidade",
+    termsUrl: "https://catalogo.yoobe.co/termos-de-uso",
     headerMenuPt: { _type: "reference", _ref: "menu.header.pt" },
     headerMenuEn: { _type: "reference", _ref: "menu.header.en" },
     footerMenuPt: { _type: "reference", _ref: "menu.footer.pt" },
     footerMenuEn: { _type: "reference", _ref: "menu.footer.en" },
     trustLogoCollection: { _type: "reference", _ref: "logoCollection.trustBar" },
     clientsLogoCollection: { _type: "reference", _ref: "logoCollection.clientsGrid" },
-    headerWordmarkPath: "public/brand/4unik-wordmark.png",
-    headerWordmarkAlt: "4Unik",
-    footerWordmarkPath: "public/brand/4unik-wordmark.png",
-    footerWordmarkAlt: "4Unik",
+    headerWordmarkPath: "public/brand/yoobe-wordmark.png",
+    headerWordmarkAlt: "Yoobe",
+    footerWordmarkPath: "public/brand/yoobe-wordmark.png",
+    footerWordmarkAlt: "Yoobe",
   },
   menus: [
     {
@@ -2192,7 +2192,7 @@ export const seedDocuments = {
               _key: "rewards",
               label: "Hub de Prêmios",
               description: "Milhares de opções incríveis para encantar.",
-              href: "https://catalogo.4unik.com.br/product",
+              href: "https://catalogo.yoobe.co/product",
               icon: "rewards",
               openInNewTab: true,
             },
@@ -2226,7 +2226,7 @@ export const seedDocuments = {
             {
               _key: "communities",
               label: "Criadores e comunidades",
-              description: "Loja VIP de fãs com entrega pela 4Unik.",
+              description: "Loja VIP de fãs com entrega pela Yoobe.",
               href: "/comunidades",
               icon: "communities",
             },
@@ -2246,13 +2246,13 @@ export const seedDocuments = {
             {
               _key: "apiHub",
               label: "API & Integrações",
-              description: "Conecte a 4Unik ao seu ecossistema.",
+              description: "Conecte a Yoobe ao seu ecossistema.",
               href: "/api-integracoes",
               icon: "api",
             },
             {
               _key: "workvivo",
-              label: "Workvivo × 4Unik",
+              label: "Workvivo × Yoobe",
               description: "Add-on na área de API — recompensas e loja.",
               href: "/api-integracoes/workvivo/",
               icon: "workvivo",
@@ -2313,7 +2313,7 @@ export const seedDocuments = {
               _key: "rewards",
               label: "Rewards hub",
               description: "Thousands of options to delight your people.",
-              href: "https://catalogo.4unik.com.br/product",
+              href: "https://catalogo.yoobe.co/product",
               icon: "rewards",
               openInNewTab: true,
             },
@@ -2347,7 +2347,7 @@ export const seedDocuments = {
             {
               _key: "communities",
               label: "Creators & communities",
-              description: "VIP fan store with 4Unik fulfillment.",
+              description: "VIP fan store with Yoobe fulfillment.",
               href: "/comunidades",
               icon: "communities",
             },
@@ -2367,13 +2367,13 @@ export const seedDocuments = {
             {
               _key: "apiHub",
               label: "API & integrations",
-              description: "Connect 4Unik to your ecosystem.",
+              description: "Connect Yoobe to your ecosystem.",
               href: "/api-integracoes",
               icon: "api",
             },
             {
               _key: "workvivo",
-              label: "Workvivo × 4Unik",
+              label: "Workvivo × Yoobe",
               description: "API-area add-on — rewards and store.",
               href: "/api-integracoes/workvivo/",
               icon: "workvivo",
@@ -2422,13 +2422,13 @@ export const seedDocuments = {
             {
               _key: "catalog",
               label: "Catálogo de Recompensas",
-              href: "https://catalogo.4unik.com.br/product",
+              href: "https://catalogo.yoobe.co/product",
               openInNewTab: true,
             },
             {
               _key: "company",
-              label: "Logística (Site 4Unik)",
-              href: "https://4unik.com.br",
+              label: "Logística (Site Yoobe)",
+              href: "https://catalogo.yoobe.co/",
               openInNewTab: true,
             },
           ],
@@ -2440,13 +2440,13 @@ export const seedDocuments = {
             {
               _key: "demo",
               label: "Agendar Demonstração",
-              href: "https://calendly.com/4unik/30min",
+              href: "https://calendly.com/yoobeco/demo",
               openInNewTab: true,
             },
             {
               _key: "sales",
               label: "Falar com Comercial",
-              href: "https://wa.me/551126844724",
+              href: "https://wa.me/5541987607512",
               openInNewTab: true,
             },
           ],
@@ -2493,13 +2493,13 @@ export const seedDocuments = {
             {
               _key: "catalog",
               label: "Rewards catalog",
-              href: "https://catalogo.4unik.com.br/product",
+              href: "https://catalogo.yoobe.co/product",
               openInNewTab: true,
             },
             {
               _key: "company",
-              label: "Logistics (4unik site)",
-              href: "https://4unik.com.br",
+              label: "Logistics (Yoobe site)",
+              href: "https://catalogo.yoobe.co/",
               openInNewTab: true,
             },
           ],
@@ -2511,13 +2511,13 @@ export const seedDocuments = {
             {
               _key: "demo",
               label: "Book a demo",
-              href: "https://calendly.com/4unik/30min",
+              href: "https://calendly.com/yoobeco/demo",
               openInNewTab: true,
             },
             {
               _key: "sales",
               label: "Talk to sales",
-              href: "https://wa.me/551126844724",
+              href: "https://wa.me/5541987607512",
               openInNewTab: true,
             },
           ],
@@ -2549,21 +2549,21 @@ export const seedDocuments = {
       mediaKey: "home-default",
       bento: {
         primaryCardImagePath: "public/screens/admin-dashboard.webp",
-        primaryCardImageAlt: "Screenshot do painel do gestor da plataforma 4Unik",
+        primaryCardImageAlt: "Screenshot do painel do gestor da plataforma Yoobe",
         storeCardImagePath: "public/screens/member-store-home.webp",
-        storeCardImageAlt: "Screenshot da loja de recompensas na plataforma 4Unik",
+        storeCardImageAlt: "Screenshot da loja de recompensas na plataforma Yoobe",
         gamificationCardImagePath: "public/screens/gamif-bolsa.webp",
-        gamificationCardImageAlt: "Screenshot da carteira e gamificação na plataforma 4Unik",
+        gamificationCardImageAlt: "Screenshot da carteira e gamificação na plataforma Yoobe",
         apiCardImagePath: "public/screens/pix-step-1-banks.webp",
-        apiCardImageAlt: "Screenshot do fluxo de integração e pagamentos (PIX) na plataforma 4Unik",
+        apiCardImageAlt: "Screenshot do fluxo de integração e pagamentos (PIX) na plataforma Yoobe",
       },
       platformTabs: {
         managementImagePath: "public/screens/admin-dashboard.webp",
-        managementImageAlt: "Screenshot da visão de gestão da plataforma 4Unik",
+        managementImageAlt: "Screenshot da visão de gestão da plataforma Yoobe",
         storeImagePath: "public/screens/member-store-home.webp",
-        storeImageAlt: "Screenshot da loja de recompensas da plataforma 4Unik",
+        storeImageAlt: "Screenshot da loja de recompensas da plataforma Yoobe",
         campaignsImagePath: "public/screens/admin-campaign-config-desktop.webp",
-        campaignsImageAlt: "Screenshot da configuração de campanhas na plataforma 4Unik",
+        campaignsImageAlt: "Screenshot da configuração de campanhas na plataforma Yoobe",
       },
       enterpriseCases: {
         hapvidaLogoImagePath: "public/clients/hapvida.png",
@@ -2629,9 +2629,9 @@ export const seedDocuments = {
       pageKey: "plataforma",
       locale: "pt",
       adminDashboardImagePath: "public/screens/admin-dashboard.webp",
-      adminDashboardImageAlt: "Screenshot do painel do gestor da plataforma 4Unik",
+      adminDashboardImageAlt: "Screenshot do painel do gestor da plataforma Yoobe",
       storeMockupImagePath: "public/screens/member-store-home.webp",
-      storeMockupImageAlt: "Screenshot da loja de recompensas da plataforma 4Unik",
+      storeMockupImageAlt: "Screenshot da loja de recompensas da plataforma Yoobe",
       storeHomeImagePath: "public/loja-corporativa/store-home.webp",
       storeHomeImageAlt: "Loja corporativa — vitrine principal",
       productDetailImagePath: "public/loja-corporativa/product-detail.webp",
@@ -2654,9 +2654,9 @@ export const seedDocuments = {
       pageKey: "plataforma",
       locale: "en",
       adminDashboardImagePath: "public/screens/admin-dashboard.webp",
-      adminDashboardImageAlt: "Manager dashboard screenshot — 4Unik platform",
+      adminDashboardImageAlt: "Manager dashboard screenshot — Yoobe platform",
       storeMockupImagePath: "public/screens/member-store-home.webp",
-      storeMockupImageAlt: "Member rewards store screenshot — 4Unik platform",
+      storeMockupImageAlt: "Member rewards store screenshot — Yoobe platform",
       storeHomeImagePath: "public/loja-corporativa/store-home.webp",
       storeHomeImageAlt: "Corporate store — catalog home",
       productDetailImagePath: "public/loja-corporativa/product-detail.webp",

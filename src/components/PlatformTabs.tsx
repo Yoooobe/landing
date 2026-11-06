@@ -115,7 +115,7 @@ export default function PlatformTabs({
                       <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                     </div>
                     <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
-                      gestor.4unik.io · Dashboard
+                      admin.yoobe.co · Dashboard
                     </span>
                     <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
                       Ao vivo
@@ -173,7 +173,7 @@ export default function PlatformTabs({
                       <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                     </div>
                     <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
-                      loja.4unik.io · Membro
+                      store.yoobe.co · Membro
                     </span>
                     <span className="rounded-full border border-yoobe-purple/30 bg-yoobe-purple/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-yoobe-purple">
                       Loja
@@ -231,7 +231,7 @@ export default function PlatformTabs({
                       <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                     </div>
                     <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
-                      gestor.4unik.io · Campanhas
+                      admin.yoobe.co · Campanhas
                     </span>
                     <span className="rounded-full border border-unik-blue/30 bg-unik-blue/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-unik-blue-soft">
                       Editor

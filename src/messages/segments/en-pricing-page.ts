@@ -1,27 +1,27 @@
 export const enPricingPage = {
   seo: {
-    title: "Plans & pricing | 4Unik",
+    title: "Plans & pricing | Yoobe",
     description:
       "Compare plans for gamification, rewards store, and API. Scale with active users without running logistics alone.",
   },
   hero: {
     badge: "Plans & pricing",
     title: "Pick the right plan for your program size",
-    sub: "No surprise setup fees. Scale as engagement grows — 4Unik runs the rewards operation.",
+    sub: "No surprise setup fees. Scale as engagement grows — Yoobe runs the rewards operation.",
   },
   faq: {
     items: [
       {
-        q: "How does billing work for 4unik API usage and gamification platform integrations?",
-        a: "Any integration via the 4unik API — whether to connect with partner gamification platforms (like Feedz, Beehome, Catho, Workplace), ERPs, HR systems (Totvs, Senior), or communication channels (Slack/Teams) — is priced based on volume and integration type on the Enterprise plan. Talk to our sales team to get pricing for your case.",
+        q: "How does billing work for Yoobe API usage and gamification platform integrations?",
+        a: "Any integration via the Yoobe API — whether to connect with partner gamification platforms (like Feedz, Beehome, Catho, Workplace), ERPs, HR systems (Totvs, Senior), or communication channels (Slack/Teams) — is priced based on volume and integration type on the Enterprise plan. Talk to our sales team to get pricing for your case.",
       },
       {
         q: "Who is responsible for issuing invoices and shipping the rewards?",
-        a: "4unik runs the entire fiscal and logistics operation end-to-end. We issue the shipping and delivery invoices required to send each product to the employee's final address anywhere in Brazil.",
+        a: "Yoobe runs the entire fiscal and logistics operation end-to-end. We issue the shipping and delivery invoices required to send each product to the employee's final address anywhere in Brazil.",
       },
       {
         q: "How does inventory and storage management work?",
-        a: "Your company can use our own product catalog or send custom gifts to 4unik's distribution center. All inventory is tracked in real time on the dashboard, with turnover reports and restock alerts.",
+        a: "Your company can use our own product catalog or send custom gifts to Yoobe's distribution center. All inventory is tracked in real time on the dashboard, with turnover reports and restock alerts.",
       },
       {
         q: "Can the platform integrate with our HR system or ERP?",
@@ -71,7 +71,7 @@ export const enPricingPage = {
           },
           {
             label: "Self-contained gamification (points and badges)",
-            hint: "Points for goals and peer recognition, plus visual badges for achievements and career milestones — all inside 4unik.",
+            hint: "Points for goals and peer recognition, plus visual badges for achievements and career milestones — all inside Yoobe.",
           },
           {
             label: "PIX with points and milestone dates",
@@ -79,14 +79,14 @@ export const enPricingPage = {
           },
           {
             label: "Gift shipping with our own logistics",
-            hint: "Pick the product and recipients, schedule the shipment — 4unik handles logistics all the way to the employee's door.",
+            hint: "Pick the product and recipients, schedule the shipment — Yoobe handles logistics all the way to the employee's door.",
           },
           {
             label: "Campaign redemption landing page builder",
             hint: "Build a dedicated page for each campaign — hackathon, sales goal, onboarding — with its own branding and friendly URL, via a guided wizard.",
           },
           {
-            label: "4unik home delivery and logistics",
+            label: "Yoobe home delivery and logistics",
             hint: "Delivered straight to the employee's home, with calculated shipping and tracking, anywhere in Brazil.",
           },
           {
@@ -122,7 +122,7 @@ export const enPricingPage = {
           },
           {
             label: "Self-contained gamification (points and badges)",
-            hint: "Points for goals and peer recognition, plus visual badges for achievements and career milestones — all inside 4unik.",
+            hint: "Points for goals and peer recognition, plus visual badges for achievements and career milestones — all inside Yoobe.",
           },
           {
             label: "PIX with points and milestone dates",
@@ -146,12 +146,12 @@ export const enPricingPage = {
         annualPrice: "Custom pricing",
         capacity: "499+ users",
         description:
-          "Automation via 4unik APIs, native integrations with gamification platforms, and a dedicated CSM.",
+          "Automation via Yoobe APIs, native integrations with gamification platforms, and a dedicated CSM.",
         valueProposition: "Transform your culture with automated, limitless engagement.",
         features: [
           { label: "Everything in Scale, plus:" },
           {
-            label: "4unik API usage: custom pricing",
+            label: "Yoobe API usage: custom pricing",
             hint: "Covers real-time data traffic, point/statement endpoints, and redemption webhooks. Talk to our sales team for pricing on your case.",
           },
           {
@@ -164,7 +164,7 @@ export const enPricingPage = {
           },
           {
             label: "Third-party logistics integration (self-managed) as an option",
-            hint: "Prefer to use your own carrier or logistics ERP? 4unik connects with what you already have — or orchestrates everything on its own.",
+            hint: "Prefer to use your own carrier or logistics ERP? Yoobe connects with what you already have — or orchestrates everything on its own.",
           },
           {
             label: "Dedicated Customer Success Manager and guaranteed SLA",
@@ -190,7 +190,7 @@ export const enPricingPage = {
         label: "API / gamification usage",
         value: "Custom pricing",
         unit: "user/month",
-        description: "Cost per active user for any integration via the 4unik API (gamification platforms, HR systems, and ERPs) — talk to our sales team.",
+        description: "Cost per active user for any integration via the Yoobe API (gamification platforms, HR systems, and ERPs) — talk to our sales team.",
       },
       {
         label: "Fulfillment per shipment",
@@ -202,7 +202,7 @@ export const enPricingPage = {
         label: "Storage",
         value: "R$ 0.65",
         unit: "unit/month",
-        description: "Secure storage of items at 4unik's distribution center.",
+        description: "Secure storage of items at Yoobe's distribution center.",
       },
       {
         label: "Extra employee",
@@ -217,7 +217,7 @@ export const enPricingPage = {
     title: "Need a quote for your volume?",
     body: "Book a call and we will shape the plan around integrations, catalog, and logistics for your case.",
     primaryLabel: "Book a demo",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
   scale: {
     name: "Scale",

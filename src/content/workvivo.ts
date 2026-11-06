@@ -2,14 +2,14 @@ export type WorkvivoLocale = "pt" | "en";
 
 export const workvivoMeta = {
   pt: {
-    title: "Workvivo × 4Unik — Add-on de Recompensas (API) | 4unik",
+    title: "Workvivo × Yoobe — Add-on de Recompensas (API) | Yoobe",
     description:
-      "Integração de recompensas Workvivo com a 4Unik: loja corporativa, pontos e automação, alinhada à API e ao ecossistema de integrações. Cobertura global — Europa, EUA e América Latina. Fulfillment 4Unik ou conexão via API/ERP.",
+      "Integração de recompensas Workvivo com a Yoobe: loja corporativa, pontos e automação, alinhada à API e ao ecossistema de integrações. Cobertura global — Europa, EUA e América Latina. Fulfillment Yoobe ou conexão via API/ERP.",
   },
   en: {
-    title: "Workvivo × 4Unik — Rewards Add-on (API) | 4Unik",
+    title: "Workvivo × Yoobe — Rewards Add-on (API) | Yoobe",
     description:
-      "Workvivo rewards integration with 4Unik: corporate store, points, and automation, aligned with the API and integrations ecosystem. Global coverage — Europe, US, and Latin America. 4Unik fulfillment or API/ERP connection.",
+      "Workvivo rewards integration with Yoobe: corporate store, points, and automation, aligned with the API and integrations ecosystem. Global coverage — Europe, US, and Latin America. Yoobe fulfillment or API/ERP connection.",
   },
 } as const;
 
@@ -42,14 +42,14 @@ export type WorkvivoCopy = {
   whatIsWorkvivoTitle: string;
   whatIsWorkvivoBody: string;
   workvivoPillars: { title: string; description: string }[];
-  /** A lacuna: Workvivo faz reconhecimento; 4Unik entrega a recompensa */
+  /** A lacuna: Workvivo faz reconhecimento; Yoobe entrega a recompensa */
   gapTitle: string;
   gapBody: string;
   gapWorkvivoLabel: string;
   gapWorkvivoItems: string[];
   gapAddonLabel: string;
   gapAddonItems: string[];
-  /** Exemplos concretos de gatilhos Workvivo → 4Unik */
+  /** Exemplos concretos de gatilhos Workvivo → Yoobe */
   triggersTitle: string;
   triggersBody: string;
   triggers: { event: string; result: string }[];
@@ -104,12 +104,12 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     heroBadge: "API e integrações · Add-on Workvivo",
     heroTitle: "Recompensas reais para cada momento na Workvivo",
     heroSubtitle:
-      "Shoutouts, badges e kudos na Workvivo geram reconhecimento. O add-on 4Unik vai além: transforma cada ação em pontos reais, com loja corporativa, checkout e entrega física — ponta a ponta, sem trabalho manual para o RH.",
+      "Shoutouts, badges e kudos na Workvivo geram reconhecimento. O add-on Yoobe vai além: transforma cada ação em pontos reais, com loja corporativa, checkout e entrega física — ponta a ponta, sem trabalho manual para o RH.",
     tagline: "Reconheça. Recompense. Retenha.",
     orchestrationEyebrow: "Automação com Floui",
     orchestrationTitle: "Orquestradores que ligam regras de gamificação ao mundo real",
     orchestrationBody:
-      "Com os orquestradores da Floui, é possível integrar e automatizar regras de gamificação em praticamente qualquer sistema — desde o registo do motivo da ação até ao crédito de pontos e ao resgate na 4Unik. A imagem ao lado ilustra como o contexto (por exemplo, o motivo do reconhecimento) acompanha o fluxo operacional.",
+      "Com os orquestradores da Floui, é possível integrar e automatizar regras de gamificação em praticamente qualquer sistema — desde o registo do motivo da ação até ao crédito de pontos e ao resgate na Yoobe. A imagem ao lado ilustra como o contexto (por exemplo, o motivo do reconhecimento) acompanha o fluxo operacional.",
     orchestrationImageAlt:
       "Interface com destaque para o campo Motivo e resumo de saldo — exemplo de registo contextual em programa de reconhecimento",
     orchestrationImageCaption:
@@ -119,15 +119,15 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     flouiSiteUrl: "https://floui.io/integracao-de-sistemas/",
     casePrioTitle: "Case de referência: PRIO",
     casePrioBody:
-      "A PRIO é referência na operação com 4Unik: programa com loja corporativa (Prio Store), reconhecimento e campanhas em escala. A camada Floui orquestra quando e como os eventos viram regras de pontos e integrações — em conjunto com o add-on Workvivo × 4Unik. Abaixo, a vitrine Prio Store mostra o lado do resgate e do catálogo.",
+      "A PRIO é referência na operação com Yoobe: programa com loja corporativa (Prio Store), reconhecimento e campanhas em escala. A camada Floui orquestra quando e como os eventos viram regras de pontos e integrações — em conjunto com o add-on Workvivo × Yoobe. Abaixo, a vitrine Prio Store mostra o lado do resgate e do catálogo.",
     caseStripEyebrow: "Case",
     partnersLabel: "Referências do ecossistema",
     partnersCaption:
-      "A Workvivo é a plataforma de experiência do colaborador no ecossistema Zoom. A Floui automatiza e orquestra integrações entre sistemas para ligar eventos às regras de recompensa. A 4Unik adiciona recompensas físicas, loja corporativa e fulfillment — para times que já usam Workvivo e querem completar o ciclo de reconhecimento.",
+      "A Workvivo é a plataforma de experiência do colaborador no ecossistema Zoom. A Floui automatiza e orquestra integrações entre sistemas para ligar eventos às regras de recompensa. A Yoobe adiciona recompensas físicas, loja corporativa e fulfillment — para times que já usam Workvivo e querem completar o ciclo de reconhecimento.",
     workvivoLogoAlt: "Logotipo Workvivo",
     zoomLogoAlt: "Logotipo Zoom",
-    yoobeMarkAlt: "Ícone 4Unik — recompensas e loja corporativa",
-    partnersStripHint: "Camada 4Unik",
+    yoobeMarkAlt: "Ícone Yoobe — recompensas e loja corporativa",
+    partnersStripHint: "Camada Yoobe",
     whatIsWorkvivoTitle: "O que é a Workvivo?",
     whatIsWorkvivoBody:
       "Workvivo by Zoom é a plataforma líder de experiência do colaborador — usada por milhões de pessoas para comunicar, engajar, colaborar e medir o clima organizacional em um único lugar.",
@@ -155,7 +155,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     ],
     gapTitle: "Workvivo já tem reconhecimento. O que falta é a recompensa.",
     gapBody:
-      "A plataforma mobiliza o time com shoutouts e badges — mas não entrega o prêmio físico. O add-on 4Unik fecha esse ciclo.",
+      "A plataforma mobiliza o time com shoutouts e badges — mas não entrega o prêmio físico. O add-on Yoobe fecha esse ciclo.",
     gapWorkvivoLabel: "O que o Workvivo entrega",
     gapWorkvivoItems: [
       "Shoutouts e kudos entre colegas",
@@ -163,7 +163,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       "Pesquisas de clima e análise de engajamento",
       "Comunicação e comunidade no app",
     ],
-    gapAddonLabel: "O que o add-on 4Unik adiciona",
+    gapAddonLabel: "O que o add-on Yoobe adiciona",
     gapAddonItems: [
       "Pontos a cada ação reconhecida na Workvivo",
       "Loja corporativa com catálogo de produtos",
@@ -172,7 +172,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     ],
     triggersTitle: "Cada momento na Workvivo pode virar um prêmio real",
     triggersBody:
-      "Você define as regras; a 4Unik cuida do crédito de pontos, da loja e da entrega.",
+      "Você define as regras; a Yoobe cuida do crédito de pontos, da loja e da entrega.",
     triggers: [
       { event: "Shoutout recebido", result: "Pontos creditados automaticamente" },
       { event: "Badge conquistado", result: "Prêmio desbloqueado na loja" },
@@ -206,7 +206,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     ctaWhatsapp: "Falar no WhatsApp",
     globalTitle: "Plataforma global",
     globalBody:
-      "A 4Unik é uma plataforma global: oferecemos soluções de integração em escala mundial para empresas com operações e times distribuídos.",
+      "A Yoobe é uma plataforma global: oferecemos soluções de integração em escala mundial para empresas com operações e times distribuídos.",
     globalRegions: ["Europa", "Estados Unidos", "América Latina"],
     pillarsTitle: "O que o add-on entrega",
     pillars: [
@@ -218,7 +218,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       {
         title: "Pontos a partir da Workvivo",
         description:
-          "Cada shoutout, badge ou ação reconhecida gera pontos. Você define as regras; a 4Unik cuida do saldo.",
+          "Cada shoutout, badge ou ação reconhecida gera pontos. Você define as regras; a Yoobe cuida do saldo.",
       },
       {
         title: "Entrega ponta a ponta",
@@ -226,13 +226,13 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
           "Fulfillment próprio ou integração com seu ERP. O brinde chega na casa do colaborador — em qualquer país.",
       },
     ],
-    pathsSectionTitle: "Duas formas de operar com a 4Unik",
+    pathsSectionTitle: "Duas formas de operar com a Yoobe",
     pathsSectionSubtitle:
       "O mesmo add-on na Workvivo pode apoiar o pós-pedido de duas maneiras — escolha o modelo que combina com sua operação hoje.",
     pathA: {
-      title: "Fulfillment 4Unik",
+      title: "Fulfillment Yoobe",
       description:
-        "Produção, armazenagem e envio de brindes e kits pela operação 4Unik: ideal quando você quer catálogo, resgate e entrega ponta a ponta em um só lugar.",
+        "Produção, armazenagem e envio de brindes e kits pela operação Yoobe: ideal quando você quer catálogo, resgate e entrega ponta a ponta em um só lugar.",
       bullets: [
         "Gestão de estoque e expedição para colaboradores",
         "Operação alinhada ao catálogo e às campanhas de resgate",
@@ -240,12 +240,12 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       ],
       whenLabel: "Faz sentido quando",
       whenText:
-        "você quer loja e logística completas na 4Unik, sem depender do seu ERP ou da sua operação de envio própria.",
+        "você quer loja e logística completas na Yoobe, sem depender do seu ERP ou da sua operação de envio própria.",
     },
     pathB: {
       title: "Loja corporativa + API e ERP",
       description:
-        "Use a 4Unik como vitrine e motor de pontos, e integre pedidos e envios ao ERP ou à stack logística que você já utiliza — inclusive se já houver API de envio ou parceiro de fulfillment.",
+        "Use a Yoobe como vitrine e motor de pontos, e integre pedidos e envios ao ERP ou à stack logística que você já utiliza — inclusive se já houver API de envio ou parceiro de fulfillment.",
       bullets: [
         "Pedidos e status conectados ao seu ecossistema",
         "Compatível com quem já tem logística ou TMS integrado",
@@ -266,7 +266,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
         icon: "megaphone",
       },
       {
-        title: "Pontos 4Unik",
+        title: "Pontos Yoobe",
         description:
           "Pontos são creditados automaticamente conforme as regras que você configurou.",
         icon: "coins",
@@ -280,27 +280,27 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       {
         title: "Entrega",
         description:
-          "O prêmio é enviado ao endereço do colaborador via fulfillment 4Unik ou integração com seu ERP.",
+          "O prêmio é enviado ao endereço do colaborador via fulfillment Yoobe ou integração com seu ERP.",
         icon: "package",
       },
     ],
     costsTitle: "Custos e modelo comercial",
     costsIntro:
-      "O investimento do add-on Workvivo depende do desenho do programa: número de colaboradores, volume de resgates, escolha entre fulfillment 4Unik ou integração via API, e personalizações. Falamos com transparência na reunião comercial.",
+      "O investimento do add-on Workvivo depende do desenho do programa: número de colaboradores, volume de resgates, escolha entre fulfillment Yoobe ou integração via API, e personalizações. Falamos com transparência na reunião comercial.",
     costsFactors: [
       "Escala de usuários e frequência de campanhas",
-      "Modelo logístico: operação 4Unik ou integração com seu ERP/API",
+      "Modelo logístico: operação Yoobe ou integração com seu ERP/API",
       "Customizações de catálogo, marcas e relatórios",
     ],
-    costsReferenceTitle: "Referência de planos 4Unik",
+    costsReferenceTitle: "Referência de planos Yoobe",
     costsReferenceBody:
       "Na página principal você encontra planos gerais da plataforma como referência de faixas — o pacote Workvivo é cotado de forma consultiva.",
     costsReferenceLink: "Ver planos na home",
     costsDisclaimer:
-      "Valores do add-on Workvivo × 4Unik: sob consulta — solicite uma proposta alinhada à sua operação.",
+      "Valores do add-on Workvivo × Yoobe: sob consulta — solicite uma proposta alinhada à sua operação.",
     finalTitle: "Pronto para ligar recompensas reais à Workvivo?",
     finalSubtitle:
-      "Agende uma conversa e veja como encaixar a 4Unik no seu programa — na Europa, nos EUA ou na América Latina.",
+      "Agende uma conversa e veja como encaixar a Yoobe no seu programa — na Europa, nos EUA ou na América Latina.",
     apiLearnMore: "Hub da API e integrações",
   },
   en: {
@@ -310,12 +310,12 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     heroBadge: "API & integrations · Workvivo add-on",
     heroTitle: "Real-world rewards for every Workvivo moment",
     heroSubtitle:
-      "Shoutouts, badges, and kudos in Workvivo create recognition. The 4Unik add-on goes further: it turns every action into real points, with a corporate store, checkout, and physical delivery — end to end, with no manual work for HR.",
+      "Shoutouts, badges, and kudos in Workvivo create recognition. The Yoobe add-on goes further: it turns every action into real points, with a corporate store, checkout, and physical delivery — end to end, with no manual work for HR.",
     tagline: "Recognize. Reward. Retain.",
     orchestrationEyebrow: "Automation with Floui",
     orchestrationTitle: "Orchestrators that connect gamification rules to real-world rewards",
     orchestrationBody:
-      "Floui's orchestrators help integrate and automate gamification rules across systems — from capturing the reason for an action to crediting points and redeeming through 4Unik. The image shows how context (such as the recognition reason) stays with the operational flow.",
+      "Floui's orchestrators help integrate and automate gamification rules across systems — from capturing the reason for an action to crediting points and redeeming through Yoobe. The image shows how context (such as the recognition reason) stays with the operational flow.",
     orchestrationImageAlt:
       "UI mockup emphasizing the Reason field and balance summary — example of contextual recognition logging",
     orchestrationImageCaption:
@@ -325,15 +325,15 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     flouiSiteUrl: "https://floui.io/integracao-de-sistemas/",
     casePrioTitle: "Reference case: PRIO",
     casePrioBody:
-      "PRIO is a flagship 4Unik operation: a corporate rewards program with Prio Store, recognition, and campaigns at scale. Floui orchestration defines when events become point rules and integrations — alongside the Workvivo × 4Unik add-on. Below, Prio Store illustrates the catalog and redemption experience.",
+      "PRIO is a flagship Yoobe operation: a corporate rewards program with Prio Store, recognition, and campaigns at scale. Floui orchestration defines when events become point rules and integrations — alongside the Workvivo × Yoobe add-on. Below, Prio Store illustrates the catalog and redemption experience.",
     caseStripEyebrow: "Case study",
     partnersLabel: "Ecosystem references",
     partnersCaption:
-      "Workvivo is the employee experience platform in the Zoom ecosystem. Floui automates and orchestrates integrations across systems to connect events with reward rules. 4Unik adds physical rewards, a corporate store, and fulfillment — for teams already using Workvivo who want to complete the recognition cycle.",
+      "Workvivo is the employee experience platform in the Zoom ecosystem. Floui automates and orchestrates integrations across systems to connect events with reward rules. Yoobe adds physical rewards, a corporate store, and fulfillment — for teams already using Workvivo who want to complete the recognition cycle.",
     workvivoLogoAlt: "Workvivo logo",
     zoomLogoAlt: "Zoom logo",
-    yoobeMarkAlt: "4Unik icon — rewards and corporate store",
-    partnersStripHint: "4Unik layer",
+    yoobeMarkAlt: "Yoobe icon — rewards and corporate store",
+    partnersStripHint: "Yoobe layer",
     whatIsWorkvivoTitle: "What is Workvivo?",
     whatIsWorkvivoBody:
       "Workvivo by Zoom is the leading employee experience platform — used by millions to communicate, engage, collaborate, and measure organizational culture in one place.",
@@ -361,7 +361,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     ],
     gapTitle: "Workvivo already has recognition. What's missing is the reward.",
     gapBody:
-      "The platform mobilizes the team with shoutouts and badges — but doesn't deliver the physical prize. The 4Unik add-on closes that loop.",
+      "The platform mobilizes the team with shoutouts and badges — but doesn't deliver the physical prize. The Yoobe add-on closes that loop.",
     gapWorkvivoLabel: "What Workvivo delivers",
     gapWorkvivoItems: [
       "Peer-to-peer shoutouts and kudos",
@@ -369,7 +369,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       "Pulse surveys and engagement analytics",
       "Communications and community in the app",
     ],
-    gapAddonLabel: "What the 4Unik add-on adds",
+    gapAddonLabel: "What the Yoobe add-on adds",
     gapAddonItems: [
       "Points for every recognized action in Workvivo",
       "Corporate store with a product catalog",
@@ -378,7 +378,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     ],
     triggersTitle: "Every Workvivo moment can become a real reward",
     triggersBody:
-      "You set the rules; 4Unik handles points, the store, and delivery.",
+      "You set the rules; Yoobe handles points, the store, and delivery.",
     triggers: [
       { event: "Shoutout received", result: "Points credited automatically" },
       { event: "Badge earned", result: "Reward unlocked in the store" },
@@ -412,7 +412,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     ctaWhatsapp: "Talk on WhatsApp",
     globalTitle: "Global platform",
     globalBody:
-      "4Unik is a global platform, delivering integration solutions for distributed teams and multi-country operations.",
+      "Yoobe is a global platform, delivering integration solutions for distributed teams and multi-country operations.",
     globalRegions: ["Europe", "United States", "Latin America"],
     pillarsTitle: "What the add-on delivers",
     pillars: [
@@ -424,21 +424,21 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       {
         title: "Points from Workvivo",
         description:
-          "Every shoutout, badge, or recognized action earns points. You set the rules; 4Unik manages the balance.",
+          "Every shoutout, badge, or recognized action earns points. You set the rules; Yoobe manages the balance.",
       },
       {
         title: "End-to-end delivery",
         description:
-          "4Unik fulfillment or ERP integration. The reward arrives at the employee's door — in any country.",
+          "Yoobe fulfillment or ERP integration. The reward arrives at the employee's door — in any country.",
       },
     ],
-    pathsSectionTitle: "Two ways to run 4Unik alongside Workvivo",
+    pathsSectionTitle: "Two ways to run Yoobe alongside Workvivo",
     pathsSectionSubtitle:
       "The same Workvivo add-on can support redemptions in two ways, so you can choose the model that fits your current operation.",
     pathA: {
-      title: "4Unik fulfillment",
+      title: "Yoobe fulfillment",
       description:
-        "Production, warehousing, and shipping for swag and kits run through 4Unik operations. It is the best fit when you want catalog, redemption, and delivery end to end in one place.",
+        "Production, warehousing, and shipping for swag and kits run through Yoobe operations. It is the best fit when you want catalog, redemption, and delivery end to end in one place.",
       bullets: [
         "Inventory and shipping to employees' addresses",
         "Operations aligned with catalog and redemption campaigns",
@@ -451,7 +451,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
     pathB: {
       title: "Corporate store + API & ERP",
       description:
-        "Use 4Unik as the storefront and points engine, then connect orders and shipments to the ERP or logistics stack you already use, including existing shipping APIs or fulfillment partners.",
+        "Use Yoobe as the storefront and points engine, then connect orders and shipments to the ERP or logistics stack you already use, including existing shipping APIs or fulfillment partners.",
       bullets: [
         "Orders and status wired into your ecosystem",
         "Fits teams that already run logistics or a TMS",
@@ -472,7 +472,7 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
         icon: "megaphone",
       },
       {
-        title: "4Unik points",
+        title: "Yoobe points",
         description:
           "Points are credited automatically according to the rules you configured.",
         icon: "coins",
@@ -486,27 +486,27 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
       {
         title: "Delivery",
         description:
-          "The reward ships to the employee's address via 4Unik fulfillment or your ERP integration.",
+          "The reward ships to the employee's address via Yoobe fulfillment or your ERP integration.",
         icon: "package",
       },
     ],
     costsTitle: "Pricing & commercial model",
     costsIntro:
-      "Workvivo add-on pricing depends on your program design: headcount, redemption volume, 4Unik fulfillment versus API-led integration, and customization. We walk through it transparently during a commercial call.",
+      "Workvivo add-on pricing depends on your program design: headcount, redemption volume, Yoobe fulfillment versus API-led integration, and customization. We walk through it transparently during a commercial call.",
     costsFactors: [
       "User scale and campaign frequency",
-      "Logistics model: 4Unik-operated vs. integration with your ERP/API",
+      "Logistics model: Yoobe-operated vs. integration with your ERP/API",
       "Catalog, branding, and reporting customization",
     ],
-    costsReferenceTitle: "4Unik plan reference",
+    costsReferenceTitle: "Yoobe plan reference",
     costsReferenceBody:
       "Our main landing page shows general platform tiers as a reference, while the Workvivo package is quoted consultatively.",
     costsReferenceLink: "View plans on homepage",
     costsDisclaimer:
-      "Workvivo × 4Unik add-on pricing is available on request. We will tailor a proposal to your operating model.",
+      "Workvivo × Yoobe add-on pricing is available on request. We will tailor a proposal to your operating model.",
     finalTitle: "Ready to connect real rewards to Workvivo?",
     finalSubtitle:
-      "Book a conversation and see how 4Unik fits your program — in Europe, the US, or Latin America.",
+      "Book a conversation and see how Yoobe fits your program — in Europe, the US, or Latin America.",
     apiLearnMore: "API & integrations hub",
   },
 };
@@ -515,16 +515,16 @@ export const workvivoContent: Record<WorkvivoLocale, WorkvivoCopy> = {
 export const workvivoFaqItems: Record<WorkvivoLocale, readonly { q: string; a: string }[]> = {
   pt: [
     {
-      q: "O que é o add-on Workvivo × 4Unik?",
+      q: "O que é o add-on Workvivo × Yoobe?",
       a: "É a camada de recompensas físicas e loja corporativa que complementa shoutouts, badges e kudos na Workvivo — com pontos, catálogo, checkout e entrega.",
     },
     {
       q: "Como a integração funciona na prática?",
-      a: "Eventos de reconhecimento na Workvivo disparam regras na 4Unik via API ou orquestradores (ex.: Floui). A 4Unik credita pontos, opera a loja e coordena fulfillment ou integração com ERP.",
+      a: "Eventos de reconhecimento na Workvivo disparam regras na Yoobe via API ou orquestradores (ex.: Floui). A Yoobe credita pontos, opera a loja e coordena fulfillment ou integração com ERP.",
     },
     {
       q: "Quem opera a entrega das recompensas?",
-      a: "Pode ser fulfillment 4Unik (catálogo e logística) ou conexão via API/ERP do cliente — conforme o modelo comercial acordado.",
+      a: "Pode ser fulfillment Yoobe (catálogo e logística) ou conexão via API/ERP do cliente — conforme o modelo comercial acordado.",
     },
     {
       q: "Há cobertura fora do Brasil?",
@@ -533,16 +533,16 @@ export const workvivoFaqItems: Record<WorkvivoLocale, readonly { q: string; a: s
   ],
   en: [
     {
-      q: "What is the Workvivo × 4Unik add-on?",
+      q: "What is the Workvivo × Yoobe add-on?",
       a: "It is the physical rewards and corporate store layer on top of Workvivo shoutouts, badges, and kudos — with points, catalog, checkout, and delivery.",
     },
     {
       q: "How does the integration work in practice?",
-      a: "Recognition events in Workvivo trigger 4Unik rules via API or orchestrators (e.g. Floui). 4Unik credits points, runs the store, and coordinates fulfillment or ERP integration.",
+      a: "Recognition events in Workvivo trigger Yoobe rules via API or orchestrators (e.g. Floui). Yoobe credits points, runs the store, and coordinates fulfillment or ERP integration.",
     },
     {
       q: "Who operates reward delivery?",
-      a: "Either 4Unik fulfillment (catalog and logistics) or a connection via the customer's ERP/API — depending on the agreed commercial model.",
+      a: "Either Yoobe fulfillment (catalog and logistics) or a connection via the customer's ERP/API — depending on the agreed commercial model.",
     },
     {
       q: "Is there coverage outside Brazil?",

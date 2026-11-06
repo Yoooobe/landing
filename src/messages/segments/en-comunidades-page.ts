@@ -1,20 +1,20 @@
 export const enComunidadesPage = {
   seo: {
-    title: "For creators & communities | 4Unik — a VIP fan store",
+    title: "For creators & communities | Yoobe — a VIP fan store",
     description:
-      "Reward your superfans with an exclusive VIP store. 4Unik handles 100% of delivery—you create, we pack and ship.",
+      "Reward your superfans with an exclusive VIP store. Yoobe handles 100% of delivery—you create, we pack and ship.",
     openGraphDescription:
-      "A VIP store for fans and communities, with fulfillment 100% handled by 4Unik.",
+      "A VIP store for fans and communities, with fulfillment 100% handled by Yoobe.",
   },
   hero: {
     badge: "For creators & communities",
     title: "A VIP store for your fans",
     definitionLead:
-      "Creators run a VIP store and swag for superfans; 4Unik handles inventory, packing, and shipping—no logistics of your own.",
+      "Creators run a VIP store and swag for superfans; Yoobe handles inventory, packing, and shipping—no logistics of your own.",
     sub:
-      "Reward the people who engage the most with exclusive products. You take care of the community; 4Unik takes care of inventory, packing, and shipping—from order to tracking.",
+      "Reward the people who engage the most with exclusive products. You take care of the community; Yoobe takes care of inventory, packing, and shipping—from order to tracking.",
     ctaLabel: "Book a demo",
-    ctaHref: "https://calendly.com/4unik/30min",
+    ctaHref: "https://calendly.com/yoobeco/demo",
   },
   problem: {
     badge: "The pain",
@@ -40,7 +40,7 @@ export const enComunidadesPage = {
   how: {
     badge: "How it works",
     title: "From community to gift in hand",
-    sub: "Engagement becomes points; the rest is on 4Unik.",
+    sub: "Engagement becomes points; the rest is on Yoobe.",
     columns: "3" as const,
     items: [
       {
@@ -54,14 +54,14 @@ export const enComunidadesPage = {
         icon: "coins",
       },
       {
-        title: "Delivery with 4Unik",
+        title: "Delivery with Yoobe",
         desc: "We pack, ship, and track all the way to the fan's home.",
         icon: "globe-2",
       },
     ],
   },
   benefits: {
-    badge: "Why 4Unik",
+    badge: "Why Yoobe",
     title: "You create, delivery is on us",
     items: [
       {
@@ -85,11 +85,11 @@ export const enComunidadesPage = {
     items: [
       {
         q: "How do creators deliver rewards without their own logistics?",
-        a: "Set up a VIP store with exclusive items; fans redeem with engagement points and 4Unik packs, ships, and tracks delivery to each home. You own the community and brand; we run catalog, inventory, and fulfillment.",
+        a: "Set up a VIP store with exclusive items; fans redeem with engagement points and Yoobe packs, ships, and tracks delivery to each home. You own the community and brand; we run catalog, inventory, and fulfillment.",
       },
       {
         q: "Do I need to hold inventory?",
-        a: "No. 4Unik handles catalog, inventory, and shipping. You define the items and the rules.",
+        a: "No. Yoobe handles catalog, inventory, and shipping. You define the items and the rules.",
       },
       {
         q: "How do fans earn points?",
@@ -111,6 +111,6 @@ export const enComunidadesPage = {
     body:
       "Tell us about your community and what makes sense to offer. We'll build the VIP store and operation with you.",
     primaryLabel: "Book a demo",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
 } as const;

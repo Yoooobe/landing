@@ -128,7 +128,7 @@ export const enGamificacaoPage = {
     titleBefore: "What gamification has",
     titleGradient: "delivered",
     titleAfter: "in the market",
-    sub: "Public cases of companies that implemented gamification—market examples, not 4unik customers.",
+    sub: "Public cases of companies that implemented gamification—market examples, not Yoobe customers.",
     challengeLabel: "Challenge",
     solutionLabel: "Solution",
     items: [
@@ -254,7 +254,7 @@ export const enGamificacaoPage = {
     titleBefore: "Measure the",
     titleGradient: "return",
     titleAfter: "of your gamification",
-    sub: "The 4Unik platform provides dashboards and reports for all these metrics in real time.",
+    sub: "The Yoobe platform provides dashboards and reports for all these metrics in real time.",
     items: [
       {
         title: "eNPS",
@@ -293,7 +293,7 @@ export const enGamificacaoPage = {
     titleBefore: "Gamification for every",
     titleGradient: "moment",
     titleAfter: "",
-    sub: "For HR, sales teams, e-learning, and events: gamification adapts to each goal—and 4Unik handles the real reward at the end.",
+    sub: "For HR, sales teams, e-learning, and events: gamification adapts to each goal—and Yoobe handles the real reward at the end.",
     items: [
       {
         icon: "🎉",
@@ -341,7 +341,7 @@ export const enGamificacaoPage = {
     items: [
       {
         q: "Does gamification work for any company size?",
-        a: "Yes. The 4Unik platform scales from 10 to 10,000+ employees. Mechanics are configurable, from lean startups to enterprises with multiple sites.",
+        a: "Yes. The Yoobe platform scales from 10 to 10,000+ employees. Mechanics are configurable, from lean startups to enterprises with multiple sites.",
       },
       {
         q: "How long is implementation?",
@@ -353,15 +353,15 @@ export const enGamificacaoPage = {
       },
       {
         q: "What integrations are supported?",
-        a: "4Unik integrates via REST API with Workvivo, Beehome, Slack, Microsoft Teams, HRIS platforms such as Workday and BambooHR, ERPs, and more, with real-time webhooks and OAuth 2.0.",
+        a: "Yoobe integrates via REST API with Workvivo, Beehome, Slack, Microsoft Teams, HRIS platforms such as Workday and BambooHR, ERPs, and more, with real-time webhooks and OAuth 2.0.",
       },
       {
         q: "How do I calculate gamification ROI?",
-        a: "ROI = (retention savings + productivity gains + absenteeism reduction) / total program cost. 4Unik provides automated reports so you can track your program's return over time.",
+        a: "ROI = (retention savings + productivity gains + absenteeism reduction) / total program cost. Yoobe provides automated reports so you can track your program's return over time.",
       },
       {
         q: "Can I use it without my own gamification engine?",
-        a: "Yes. 4Unik can be your full gamification engine, or the rewards and fulfillment layer on top of any system via API. You choose.",
+        a: "Yes. Yoobe can be your full gamification engine, or the rewards and fulfillment layer on top of any system via API. You choose.",
       },
     ],
   },

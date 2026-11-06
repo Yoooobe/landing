@@ -23,7 +23,7 @@ function BentoMediaFrame({ children, className = "" }: { children: ReactNode; cl
           <span className="h-1.5 w-1.5 rounded-full bg-yellow-500/80" />
           <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
         </div>
-        <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">gestor.4unik.io</span>
+        <span className="font-mono text-[0.52rem] text-white/45 tracking-wider">admin.yoobe.co</span>
       </div>
       <div className="relative h-[calc(100%-24px)] w-full">
         {children}

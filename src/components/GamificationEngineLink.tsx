@@ -16,7 +16,7 @@ const BULLETS_PT = [
   {
     icon: GitBranch,
     title: "Motor nativo ou integrado",
-    body: "Use a 4unik como engine principal ou conecte plataformas externas via API, webhook ou ação manual.",
+    body: "Use a Yoobe como engine principal ou conecte plataformas externas via API, webhook ou ação manual.",
   },
   {
     icon: BellRing,
@@ -34,7 +34,7 @@ const BULLETS_EN = [
   {
     icon: GitBranch,
     title: "Native or integrated engine",
-    body: "Run 4unik as the core engine or plug in external platforms via API, webhook, or manual action.",
+    body: "Run Yoobe as the core engine or plug in external platforms via API, webhook, or manual action.",
   },
   {
     icon: BellRing,
@@ -108,8 +108,8 @@ export default function GamificationEngineLink() {
               className="text-lg text-white/55 leading-relaxed mb-10 font-light"
             >
               {locale === "en"
-                ? "The Gamification Engine is the operational layer behind every campaign in 4unik — connecting goals, points, the corporate store, and delivery without parallel operations."
-                : "O Motor de Gamificação é a camada operacional por trás de cada campanha na 4unik — conectando metas, pontos, loja corporativa e entrega sem operação paralela."}
+                ? "The Gamification Engine is the operational layer behind every campaign in Yoobe — connecting goals, points, the corporate store, and delivery without parallel operations."
+                : "O Motor de Gamificação é a camada operacional por trás de cada campanha na Yoobe — conectando metas, pontos, loja corporativa e entrega sem operação paralela."}
             </motion.p>
 
             <div className="space-y-4 mb-10">

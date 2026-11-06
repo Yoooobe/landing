@@ -153,7 +153,7 @@ export default function Footer() {
           },
           {
             label: f.links.logistica,
-            href: sanity?.companySiteUrl?.trim() || "https://4unik.com.br",
+            href: sanity?.companySiteUrl?.trim() || "https://catalogo.yoobe.co/",
             openInNewTab: true,
           },
         ],
@@ -170,6 +170,10 @@ export default function Footer() {
             label: f.links.comercial,
             href: resolveWhatsappUrl(sanity?.whatsappUrl),
             openInNewTab: true,
+          },
+          {
+            label: f.links.email,
+            href: "mailto:vendas@yoobe.co",
           },
         ],
       },
@@ -201,7 +205,7 @@ export default function Footer() {
             <div className="mb-3">
               <UnikWordmark
                 variant="footer"
-                alt="4Unik"
+                alt="Yoobe"
                 className="opacity-95"
               />
             </div>

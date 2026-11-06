@@ -87,8 +87,8 @@ export default function PlatformSubFeatureCards() {
             const href = resolveShellHref(card.href, locale);
             const domainPill =
               card.titleKey === "store"
-                ? "loja.4unik.io"
-                : `gestor.4unik.io · ${title}`;
+                ? "store.yoobe.co"
+                : `admin.yoobe.co · ${title}`;
 
             return (
               <motion.div

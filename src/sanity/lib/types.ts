@@ -662,7 +662,7 @@ export type ApiIntegracoesShowcaseMediaDoc = {
   };
 };
 
-/** Documento dedicado à página Workvivo × 4Unik (`/api-integracoes/workvivo/`). */
+/** Documento dedicado à página Workvivo × Yoobe (`/api-integracoes/workvivo/`). */
 export type WorkvivoShowcaseMediaDoc = {
   _id?: string;
   title?: string;

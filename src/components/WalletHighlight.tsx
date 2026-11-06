@@ -38,7 +38,7 @@ export default function WalletHighlight() {
               viewport={{ once: true }}
               className="text-lg text-white/70 leading-relaxed"
             >
-              A 4unik permite que colaboradores e participantes de campanhas consultem saldo,
+              A Yoobe permite que colaboradores e participantes de campanhas consultem saldo,
               acompanhem extrato, utilizem pontos na loja corporativa e verifiquem seus resgates
               com total rastreabilidade. Para a operação, a wallet continua auditável e também
               pode ser conectada a outras ferramentas de gamificação e engajamento.
@@ -51,7 +51,7 @@ export default function WalletHighlight() {
               className="pt-4"
             >
               <TrackedOutboundLink href={DEFAULT_CALENDLY_URL} source="wallet-highlight-demo" target="_blank" rel="noopener noreferrer" className="text-green-400 font-medium hover:text-green-300 transition-colors flex items-center gap-2">
-                Conhecer a wallet da 4unik →
+                Conhecer a wallet da Yoobe →
               </TrackedOutboundLink>
             </motion.div>
           </div>

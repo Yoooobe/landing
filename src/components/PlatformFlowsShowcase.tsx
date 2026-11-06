@@ -376,7 +376,7 @@ export default function PlatformFlowsShowcase({ locale = "pt" }: Props) {
                     <div className="h-2.5 w-2.5 rounded-full bg-green-400/80" />
                   </div>
                   <span className="font-mono text-[0.6rem] tracking-wider text-white/40">
-                    gestor.4unik.io · {flow.id === "campanha" ? "Campanha" : "Brinde"}
+                    admin.yoobe.co · {flow.id === "campanha" ? "Campanha" : "Brinde"}
                   </span>
                   <span
                     className="rounded-full px-2 py-0.5 font-mono text-[0.58rem] font-bold uppercase tracking-widest"

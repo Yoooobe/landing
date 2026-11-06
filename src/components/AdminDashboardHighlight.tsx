@@ -37,7 +37,7 @@ export default function AdminDashboardHighlight({
                   <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
                 </div>
                 <span className="font-mono text-[0.6rem] tracking-wider text-white/45">
-                  gestor.4unik.io · Painel do Gestor
+                  admin.yoobe.co · Painel do Gestor
                 </span>
                 <span className="rounded-full border border-brand-orange/30 bg-brand-orange/15 px-2 py-0.5 font-mono text-[0.55rem] font-bold uppercase tracking-widest text-brand-orange">
                   Ao vivo
@@ -49,7 +49,7 @@ export default function AdminDashboardHighlight({
                     src={adminDashboardImageUrl}
                     alt={
                       showcaseMedia?.adminDashboardImage?.alt?.trim() ||
-                      "Painel do gestor 4unik com métricas e campanhas"
+                      "Painel do gestor Yoobe com métricas e campanhas"
                     }
                     fill
                     sizes="(min-width: 1024px) 60vw, 100vw"

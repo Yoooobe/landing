@@ -128,7 +128,7 @@ export const ptGamificacaoPage = {
     titleBefore: "O que a gamificação já",
     titleGradient: "entregou",
     titleAfter: "no mercado",
-    sub: "Casos públicos de empresas que implementaram gamificação — exemplos de mercado, não clientes 4unik.",
+    sub: "Casos públicos de empresas que implementaram gamificação — exemplos de mercado, não clientes Yoobe.",
     challengeLabel: "Desafio",
     solutionLabel: "Solução",
     items: [
@@ -255,7 +255,7 @@ export const ptGamificacaoPage = {
     titleBefore: "Meça o",
     titleGradient: "retorno",
     titleAfter: "da sua gamificação",
-    sub: "A plataforma 4unik fornece dashboards e relatórios com todas essas métricas em tempo real.",
+    sub: "A plataforma Yoobe fornece dashboards e relatórios com todas essas métricas em tempo real.",
     items: [
       {
         title: "eNPS",
@@ -294,7 +294,7 @@ export const ptGamificacaoPage = {
     titleBefore: "Gamificação para cada",
     titleGradient: "momento",
     titleAfter: "",
-    sub: "Para RH, times de vendas, e-learning e eventos: a gamificação se adapta a cada objetivo — e a 4Unik cuida da recompensa real no fim.",
+    sub: "Para RH, times de vendas, e-learning e eventos: a gamificação se adapta a cada objetivo — e a Yoobe cuida da recompensa real no fim.",
     items: [
       {
         icon: "🎉",
@@ -342,7 +342,7 @@ export const ptGamificacaoPage = {
     items: [
       {
         q: "A gamificação funciona para empresas de qualquer tamanho?",
-        a: "Sim! A plataforma 4unik escala de 10 a 10.000+ colaboradores. As mecânicas são configuráveis para cada realidade — desde startups que querem engajar times enxutos até grandes corporações com múltiplas filiais.",
+        a: "Sim! A plataforma Yoobe escala de 10 a 10.000+ colaboradores. As mecânicas são configuráveis para cada realidade — desde startups que querem engajar times enxutos até grandes corporações com múltiplas filiais.",
       },
       {
         q: "Qual o tempo de implementação?",
@@ -354,15 +354,15 @@ export const ptGamificacaoPage = {
       },
       {
         q: "Quais integrações são suportadas?",
-        a: "A 4unik integra via API RESTful com Workvivo, Beehome, Slack, Microsoft Teams, HRISs (Workday, BambooHR), ERPs e mais. Também suportamos webhooks em tempo real e autenticação via OAuth 2.0.",
+        a: "A Yoobe integra via API RESTful com Workvivo, Beehome, Slack, Microsoft Teams, HRISs (Workday, BambooHR), ERPs e mais. Também suportamos webhooks em tempo real e autenticação via OAuth 2.0.",
       },
       {
         q: "Como calcular o ROI da gamificação?",
-        a: "O ROI é calculado como: (Economia em retenção + ganho de produtividade + redução de absenteísmo) / Custo total do programa. A plataforma 4unik fornece relatórios automáticos com essas métricas para você acompanhar o retorno ao longo do tempo.",
+        a: "O ROI é calculado como: (Economia em retenção + ganho de produtividade + redução de absenteísmo) / Custo total do programa. A plataforma Yoobe fornece relatórios automáticos com essas métricas para você acompanhar o retorno ao longo do tempo.",
       },
       {
         q: "É possível usar sem engine de gamificação própria?",
-        a: "Sim! A 4unik funciona de forma independente como sua engine completa de gamificação, ou pode ser a camada de execução/resgate conectada a qualquer sistema via API. Você escolhe.",
+        a: "Sim! A Yoobe funciona de forma independente como sua engine completa de gamificação, ou pode ser a camada de execução/resgate conectada a qualquer sistema via API. Você escolhe.",
       },
     ],
   },

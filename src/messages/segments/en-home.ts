@@ -1,13 +1,13 @@
 export const enHome = {
   /** SEO/AEO: usado em `src/app/en/layout.tsx` — manter paridade de significado com `ptHome.seo`. */
   seo: {
-    title: "4Unik — Recognition, corporate store & logistics for teams",
+    title: "Yoobe — Recognition, corporate store & logistics for teams",
     description:
       "Full platform or execution layer via API: campaigns, points, store, and delivery—in Brazil and worldwide. For HR, sales, events, and platforms that embed rewards.",
   },
   hero: {
     badge: "Reward infrastructure",
-    brand: "4unik",
+    brand: "Yoobe",
     afterBrand: "scales",
     line1b: "recognition",
     line2: "without manual ops",
@@ -24,19 +24,19 @@ export const enHome = {
     floatEnpsSub: "Direct impact on culture",
   },
   fourUnik: {
-    kicker: "Complement to the corporate 4unik site",
+    kicker: "Swag & corporate gifts catalog",
     bodyBefore: "On",
-    brand: "4unik.com.br",
+    brand: "catalogo.yoobe.co",
     bodyMid:
       "you’ll find the full picture of corporate benefits, reward logistics, and brand presence.",
     here: "Here",
     bodyAfter:
       "we go deeper on the product: corporate gamification, rewards store, API integrations, catalog, and day-to-day operations for HR, sales, events, and platforms that want to offer real rewards inside their own product.",
     pillarLinkLabel: "What is reward infrastructure?",
-    cta: "See the full offer on 4unik",
+    cta: "Browse the Yoobe catalog",
   },
   trust: {
-    title: "Companies that trust 4Unik",
+    title: "Companies that trust Yoobe",
   },
   finalCta: {
     title: "Ready to simplify recognition at your company?",

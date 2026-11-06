@@ -24,7 +24,7 @@ export const enBlogPage = {
       id: 2,
       title: "Rewards logistics SLAs: why D+1 changes everything",
       excerpt:
-        "A late reward can ruin the experience. See how 4Unik infrastructure improves delivery expectations.",
+        "A late reward can ruin the experience. See how Yoobe infrastructure improves delivery expectations.",
       date: "Mar 5, 2026",
       readTime: "5",
       category: "Logistics",
@@ -46,7 +46,7 @@ export const enBlogPage = {
       id: 4,
       title: "Welcome kits: making the best first impression",
       excerpt:
-        "Onboarding matters. Here are examples of standout welcome kits built on the 4Unik V3 platform.",
+        "Onboarding matters. Here are examples of standout welcome kits built on the Yoobe V3 platform.",
       date: "Feb 15, 2026",
       readTime: "4",
       category: "Kits & events",

@@ -36,7 +36,7 @@ export default function WorkflowShowcase({
   title,
   steps,
   badge,
-  urlBar = "app.4unik.io",
+  urlBar = "app.yoobe.co",
   intervalMs = 6000,
   className = "",
 }: Props) {

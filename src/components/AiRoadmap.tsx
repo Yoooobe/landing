@@ -132,7 +132,7 @@ export default function AiRoadmap({
                         <span className="h-1.5 w-1.5 rounded-full bg-green-500/80" />
                       </div>
                       <span className="font-mono text-[0.52rem] text-white/50 tracking-wider">
-                        {["gestor.4unik.io · campanhas", "gestor.4unik.io · catálogo", "gestor.4unik.io · regras", "gestor.4unik.io · insights"][i]}
+                        {["admin.yoobe.co · campanhas", "admin.yoobe.co · catálogo", "admin.yoobe.co · regras", "admin.yoobe.co · insights"][i]}
                       </span>
                     </div>
 

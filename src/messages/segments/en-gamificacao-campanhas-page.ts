@@ -50,7 +50,7 @@ export const enGamificacaoCampanhasPage = {
         badge: "Integration",
         title: "Connected to your stack",
         description:
-          "Slack, Teams, Workday, Workvivo, Beehome, Humand, and HRISs via API. 4Unik is the bridge from byte to reward.",
+          "Slack, Teams, Workday, Workvivo, Beehome, Humand, and HRISs via API. Yoobe is the bridge from byte to reward.",
         features: ["SDKs and webhooks", "OAuth 2.0", "Ready connectors", "Sandbox for testing"],
       },
       {
@@ -143,7 +143,7 @@ export const enGamificacaoCampanhasPage = {
     titleBefore: "Who already combined campaigns,",
     titleGradient: "store",
     titleAfter: "and logistics",
-    sub: "4unik cases (Grupo Boticário, Softplan) and public market examples (CaLLogix) with published metrics.",
+    sub: "Yoobe cases (Grupo Boticário, Softplan) and public market examples (CaLLogix) with published metrics.",
     challengeLabel: "Challenge",
     solutionLabel: "Solution",
     items: [
@@ -152,7 +152,7 @@ export const enGamificacaoCampanhasPage = {
         company: "Grupo Boticário",
         industry: "Beauty & Data",
         title: "Data Game — Beauty with Data",
-        desc: "Scale educational engagement at the Data Excellence Center with an internal store, 4Unik scoring, and branded physical rewards.",
+        desc: "Scale educational engagement at the Data Excellence Center with an internal store, Yoobe scoring, and branded physical rewards.",
         challenge: "Low adoption of technical training and need to prove ROI on corporate education.",
         solution:
           "Gamified internal store, points for course completion, and integrated logistics for physical rewards.",
@@ -252,7 +252,7 @@ export const enGamificacaoCampanhasPage = {
     ],
   },
   stats: {
-    badge: "Why 4Unik",
+    badge: "Why Yoobe",
     titleBefore: "Data that",
     titleGradient: "backs",
     titleAfter: "your decision",
@@ -380,7 +380,7 @@ export const enGamificacaoCampanhasPage = {
       },
       {
         q: "Do I need an existing gamification system?",
-        a: "No. 4Unik can be your full engine or the execution and redemption layer via API on top of what you already run.",
+        a: "No. Yoobe can be your full engine or the execution and redemption layer via API on top of what you already run.",
       },
       {
         q: "How long to launch the first campaign?",

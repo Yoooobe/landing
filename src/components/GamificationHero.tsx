@@ -87,12 +87,12 @@ export default function GamificationHero({
               <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
               <span className="h-2 w-2 rounded-full bg-green-500/80" />
             </div>
-            <span className="font-mono text-[0.52rem] text-white/40 tracking-wider">gestor.4unik.io</span>
+            <span className="font-mono text-[0.52rem] text-white/40 tracking-wider">admin.yoobe.co</span>
           </div>
           <div style={{ aspectRatio: "16/10" }} className="relative overflow-hidden bg-slate-900">
             <Image
               src={withBasePath("/screens/admin-dashboard.webp")}
-              alt="Dashboard 4unik"
+              alt="Dashboard Yoobe"
               fill
               sizes="240px"
               className="object-cover object-top"
@@ -120,13 +120,13 @@ export default function GamificationHero({
               <span className="h-2 w-2 rounded-full bg-yellow-500/80" />
               <span className="h-2 w-2 rounded-full bg-green-500/80" />
             </div>
-            <span className="font-mono text-[0.52rem] text-white/40 tracking-wider">gestor.4unik.io · Editor</span>
+            <span className="font-mono text-[0.52rem] text-white/40 tracking-wider">admin.yoobe.co · Editor</span>
           </div>
           <div className="relative overflow-hidden bg-slate-900" style={{ aspectRatio: "16/10" }}>
             {showcaseImageUrl ? (
               <Image
                 src={showcaseImageUrl}
-                alt={showcaseImage?.alt?.trim() || "Screenshot da plataforma 4unik"}
+                alt={showcaseImage?.alt?.trim() || "Screenshot da plataforma Yoobe"}
                 fill
                 sizes="300px"
                 className="object-cover object-top"
@@ -135,7 +135,7 @@ export default function GamificationHero({
             ) : (
               <Image
                 src={withBasePath("/screens/admin-campaign-config-desktop.webp")}
-                alt="Editor de campanha 4unik"
+                alt="Editor de campanha Yoobe"
                 fill
                 sizes="300px"
                 className="object-cover object-top"

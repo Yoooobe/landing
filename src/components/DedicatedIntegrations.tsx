@@ -113,7 +113,7 @@ export default function DedicatedIntegrations({
               <div className="relative h-[calc(100%-26px)] w-full bg-slate-900">
                 <Image
                   src={withBasePath("/screens/dash/campanhas-landing-pages.webp")}
-                  alt="Integração Workvivo — feed e resgate 4unik"
+                  alt="Integração Workvivo — feed e resgate Yoobe"
                   fill
                   sizes="(min-width: 1024px) 384px, 100vw"
                   className="object-cover object-top"
@@ -181,7 +181,7 @@ export default function DedicatedIntegrations({
               <div className="relative h-[calc(100%-26px)] w-full bg-slate-900">
                 <Image
                   src={withBasePath("/screens/hapvida/hapvida-vendas-on-login.webp")}
-                  alt="Integração Beehome — portal corporativo e resgate 4unik"
+                  alt="Integração Beehome — portal corporativo e resgate Yoobe"
                   fill
                   sizes="(min-width: 1024px) 384px, 100vw"
                   className="object-cover object-top"

@@ -31,7 +31,7 @@ const VARIANTS: Record<string, VariantConfig> = {
       { src: "/screens/pix-step-2-form.webp", label: "Autenticação segura", step: "02", accent: "CPF + CNPJ validados" },
       { src: "/screens/pix-step-3-success.webp", label: "Pagamento confirmado", step: "03", accent: "100% automatizado" },
     ],
-    urlBar: "pay.4unik.io · Open Finance",
+    urlBar: "pay.yoobe.co · Open Finance",
     badgeText: "API Integration",
     badgeClass: "border-demo-cyan/30 bg-demo-cyan/10 text-demo-cyan",
     dotColor: "bg-demo-cyan",
@@ -45,7 +45,7 @@ const VARIANTS: Record<string, VariantConfig> = {
       { src: "/screens/member-orders.webp", label: "Minha conta", step: "02", accent: "Pedidos & devoluções" },
       { src: "/screens/member-points.webp", label: "Histórico de pontos", step: "03", accent: "Saldo em tempo real" },
     ],
-    urlBar: "loja.4unik.io",
+    urlBar: "store.yoobe.co",
     badgeText: "Colaborador",
     badgeClass: "border-brand-orange/30 bg-brand-orange/10 text-brand-orange",
     dotColor: "bg-brand-orange",
@@ -58,7 +58,7 @@ const VARIANTS: Record<string, VariantConfig> = {
       { src: "/screens/dash/produtos.webp", label: "Catálogo de produtos", step: "02", accent: "Estoque e opções" },
       { src: "/screens/dash/pedidos.webp", label: "Pedidos e envios", step: "03", accent: "Operação em tempo real" },
     ],
-    urlBar: "gestor.4unik.io",
+    urlBar: "admin.yoobe.co",
     badgeText: "Gestor",
     badgeClass: "border-yoobe-purple/30 bg-yoobe-purple/10 text-yoobe-purple",
     dotColor: "bg-yoobe-purple",
@@ -72,7 +72,7 @@ const VARIANTS: Record<string, VariantConfig> = {
       { src: "/screens/flows/campanha-passo-3.webp", label: "Empresa e produtos", step: "03", accent: "Vitrine do resgate" },
       { src: "/screens/flows/campanha-passo-4.webp", label: "Configurações finais", step: "04", accent: "Publicar campanha" },
     ],
-    urlBar: "gestor.4unik.io · Campanha",
+    urlBar: "admin.yoobe.co · Campanha",
     badgeText: "Campaign",
     badgeClass: "border-brand-orange/30 bg-brand-orange/10 text-brand-orange",
     dotColor: "bg-brand-orange",
@@ -100,7 +100,7 @@ const VARIANTS: Record<string, VariantConfig> = {
         accent: "Nome, símbolo e valor",
       },
     ],
-    urlBar: "app.4unik.io · Gamificação",
+    urlBar: "app.yoobe.co · Gamificação",
     badgeText: "Gamificação",
     badgeClass: "border-brand-orange/30 bg-brand-orange/10 text-brand-orange",
     dotColor: "bg-brand-orange",
@@ -187,7 +187,7 @@ export default function FeatureScreensCarousel({
       : cfg.demoLabel);
   const urlBar =
     urlBarOverride ??
-    (variant === "gamification" && locale === "en" ? "app.4unik.io · Gamification" : cfg.urlBar);
+    (variant === "gamification" && locale === "en" ? "app.yoobe.co · Gamification" : cfg.urlBar);
   const badgeText =
     badgeTextOverride ??
     (locale === "en" && variant === "member"

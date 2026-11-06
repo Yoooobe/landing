@@ -2,7 +2,7 @@ export const enRest = {
   apiSection: {
     badge: "For your engineering team",
     titleBefore: "Connect",
-    titleBrand: "4Unik",
+    titleBrand: "Yoobe",
     titleAfter: "to any system you already run",
     sub:
       "API pricing is based on active users—you pay for real program size, not a flat guess. Integrate gamification, shipping, HRIS, intranet, your own logistics, or merchandise suppliers. No vendor lock-in: your stack stays yours.",
@@ -36,7 +36,7 @@ export const enRest = {
       },
       {
         title: "Suppliers & distributors",
-        desc: "Put your products inside active corporate reward programs. The 4Unik store is a real B2B engagement channel—not a one-off promo.",
+        desc: "Put your products inside active corporate reward programs. The Yoobe store is a real B2B engagement channel—not a one-off promo.",
       },
       {
         title: "Events & trade shows",
@@ -72,7 +72,7 @@ export const enRest = {
     ],
   },
   clients: {
-    badge: "Who trusts 4Unik",
+    badge: "Who trusts Yoobe",
     titleBefore: "Companies already running",
     titleGradient: "recognition",
     titleAfter: "with us",
@@ -86,7 +86,7 @@ export const enRest = {
       "Representative testimonials illustrating typical outcomes. Audited client cases with formal authorization will be published with a verified badge.",
     items: [
       {
-        text: `"4Unik unlocked our recognition program. In three months engagement rose about 40% and turnover started to drop in a noticeable way."`,
+        text: `"Yoobe unlocked our recognition program. In three months engagement rose about 40% and turnover started to drop in a noticeable way."`,
         author: "Marina Costa",
         role: "Head of HR",
         company: "Tech company (500+ employees)",
@@ -164,10 +164,10 @@ export const enRest = {
     currency: "R$",
   },
   workvivoRedirect: {
-    message: "Redirecting to API & integrations, where the Workvivo × 4Unik page now lives...",
+    message: "Redirecting to API & integrations, where the Workvivo × Yoobe page now lives...",
   },
   enterpriseTrustStrip: {
-    ariaLabel: "Why enterprises choose 4Unik",
+    ariaLabel: "Why enterprises choose Yoobe",
     items: [
       {
         title: "Fits your stack",

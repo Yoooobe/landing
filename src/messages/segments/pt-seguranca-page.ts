@@ -1,6 +1,6 @@
 export const ptSegurancaPage = {
   seo: {
-    title: "Segurança e governança | 4Unik",
+    title: "Segurança e governança | Yoobe",
     description:
       "Controles de acesso, privacidade e rastreabilidade para programas de recompensas em empresas — sem promessas de certificação não publicadas.",
   },
@@ -50,6 +50,6 @@ export const ptSegurancaPage = {
     title: "Precisa de um pacote de segurança para RFP?",
     body: "Fale com o time comercial para receber o questionário e anexos alinhados ao seu processo de compra.",
     primaryLabel: "Agendar demonstração",
-    primaryHref: "https://calendly.com/4unik/30min",
+    primaryHref: "https://calendly.com/yoobeco/demo",
   },
 } as const;

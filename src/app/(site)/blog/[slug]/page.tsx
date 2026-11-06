@@ -28,13 +28,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!post) {
     return {
-      title: "Blog | 4Unik",
-      description: "4Unik blog article.",
+      title: "Blog | Yoobe",
+      description: "Yoobe blog article.",
     };
   }
 
   const imageUrl = getSanityImageUrl(post.seo?.openGraphImage || post.coverImage);
-  const defaultOgImage = pageAbsoluteUrl("/og/4unik-default.svg");
+  const defaultOgImage = pageAbsoluteUrl("/og/Yoobe-default.svg");
   const ogImages = imageUrl
     ? [{ url: imageUrl }]
     : [{ url: defaultOgImage, width: 1200, height: 630, alt: `${SITE_NAME} social preview` }];
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     metadataBase: siteMetadataBase(),
-    title: post.seo?.metaTitle || `${post.title} | 4Unik`,
+    title: post.seo?.metaTitle || `${post.title} | Yoobe`,
     description: post.seo?.metaDescription || post.excerpt,
     alternates: {
       canonical: `/blog/${post.slug}/`,
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     openGraph: {
       type: "article",
-      siteName: "4Unik",
+      siteName: "Yoobe",
       title: post.seo?.metaTitle || post.title,
       description: post.seo?.metaDescription || post.excerpt,
       url: `/blog/${post.slug}/`,

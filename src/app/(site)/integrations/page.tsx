@@ -36,7 +36,7 @@ export default async function EnApiIntegracoesOverviewPage() {
     { name: "API & Integrations", path: "/integrations/" },
   ]);
   const softwareAppLd = buildSoftwareApplicationJsonLd("en", {
-    name: "4Unik API & integrations",
+    name: "Yoobe API & integrations",
     description: apiContent.seo.description,
     pageUrl,
   });

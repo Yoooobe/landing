@@ -25,8 +25,8 @@ const PROFILES = {
     accent: "#2563eb",
     accentSoft: "#22d3ee",
     variants: [
-      { key: "hero", source: "api-integracoes-hero-composite.jpg", label: "api.4unik.io" },
-      { key: "how", source: "flows/campanha-passo-3.webp", label: "gestor.4unik.io · catálogo" },
+      { key: "hero", source: "api-integracoes-hero-composite.jpg", label: "api.yoobe.co" },
+      { key: "how", source: "flows/campanha-passo-3.webp", label: "admin.yoobe.co · catálogo" },
       { key: "benefits", source: "member-store-home.webp", label: "loja no seu app" },
     ],
   },
@@ -34,8 +34,8 @@ const PROFILES = {
     accent: "#8338ec",
     accentSoft: "#d946ef",
     variants: [
-      { key: "hero", source: "member-points.webp", label: "app.4unik.io · trilha" },
-      { key: "how", source: "gamif-niveis.webp", label: "gestor.4unik.io · níveis" },
+      { key: "hero", source: "member-points.webp", label: "app.yoobe.co · trilha" },
+      { key: "how", source: "gamif-niveis.webp", label: "admin.yoobe.co · níveis" },
       { key: "benefits", source: "dash/produtos.webp", label: "loja de recompensas" },
     ],
   },
@@ -43,8 +43,8 @@ const PROFILES = {
     accent: "#f98f16",
     accentSoft: "#ef476f",
     variants: [
-      { key: "hero", source: "dash/dashboard-geral.webp", label: "gestor.4unik.io · metas" },
-      { key: "how", source: "flows/campanha-passo-1.webp", label: "gestor.4unik.io · campanha" },
+      { key: "hero", source: "dash/dashboard-geral.webp", label: "admin.yoobe.co · metas" },
+      { key: "how", source: "flows/campanha-passo-1.webp", label: "admin.yoobe.co · campanha" },
       { key: "benefits", source: "member-points.webp", label: "premiação na hora" },
     ],
   },
@@ -52,16 +52,16 @@ const PROFILES = {
     accent: "#ef476f",
     accentSoft: "#8338ec",
     variants: [
-      { key: "hero", source: "member-store-home.webp", label: "loja.4unik.io · VIP" },
-      { key: "how", source: "dash/campanhas-landing-pages.webp", label: "loja.4unik.io · engajamento" },
-      { key: "benefits", source: "dash/detail/area-cliente-pedidos-loja.webp", label: "loja.4unik.io · pedidos" },
+      { key: "hero", source: "member-store-home.webp", label: "store.yoobe.co · VIP" },
+      { key: "how", source: "dash/campanhas-landing-pages.webp", label: "store.yoobe.co · engajamento" },
+      { key: "benefits", source: "dash/detail/area-cliente-pedidos-loja.webp", label: "store.yoobe.co · pedidos" },
     ],
   },
   eventos: {
     accent: "#22d3ee",
     accentSoft: "#2563eb",
     variants: [
-      { key: "hero", source: "dash/brindes-presentes.webp", label: "loja.4unik.io · evento" },
+      { key: "hero", source: "dash/brindes-presentes.webp", label: "store.yoobe.co · evento" },
       { key: "how", source: "flows/brinde-passo-4.webp", label: "envio e retirada" },
       { key: "benefits", source: "dash/envios.webp", label: "logística do evento" },
     ],
