@@ -3,7 +3,7 @@
 import TrackedOutboundLink from "@/components/analytics/TrackedOutboundLink";
 import FeatureScreensCarousel from "@/components/FeatureScreensCarousel";
 import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
-import UnikWordmark from "@/components/UnikWordmark";
+import YoobeMark from "@/components/YoobeMark";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { BASE_PATH, withBasePath } from "@/lib/basePath";
 import { DEFAULT_CALENDLY_URL } from "@/lib/calendly";
@@ -142,11 +142,7 @@ export default function HomeHero({ cmsHero = null, homeContent = null }: Props) 
             transition={{ ...enterTransition, delay: 0.04 }}
             className="mb-4 hidden justify-center sm:mb-6 sm:flex lg:justify-start"
           >
-            <UnikWordmark
-              variant="hero"
-              alt="Yoobe"
-              className="mx-0"
-            />
+            <YoobeMark variant="hero" />
           </motion.div>
 
           <motion.h1

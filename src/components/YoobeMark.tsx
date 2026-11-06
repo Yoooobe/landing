@@ -1,25 +1,39 @@
-/**
- * Badge textual para a marca Yoobe sem depender de asset externo.
- */
+/* eslint-disable @next/next/no-img-element */
+import { withBasePath } from "@/lib/basePath";
+
+const sizes = {
+  hero: "h-14 w-14 sm:h-16 sm:w-16 md:h-[4.5rem] md:w-[4.5rem]",
+  compact: "h-8 w-8",
+} as const;
+
 type YoobeMarkProps = {
+  variant?: keyof typeof sizes;
   className?: string;
   "aria-label"?: string;
+  "aria-hidden"?: boolean;
   title?: string;
 };
 
+/** Símbolo redondo oficial da Yoobe — usado onde o wordmark do header já aparece, para não duplicar o logo. */
 export default function YoobeMark({
+  variant,
   className = "h-12 w-12",
   "aria-label": ariaLabel = "Yoobe",
+  "aria-hidden": ariaHidden,
   title,
 }: YoobeMarkProps) {
+  const size = variant ? sizes[variant] : className;
   return (
-    <span
-      role="img"
-      aria-label={ariaLabel}
+    <img
+      src={withBasePath("/brand/yoobe-mark.webp")}
+      width={512}
+      height={512}
+      alt={ariaHidden ? "" : ariaLabel}
+      aria-hidden={ariaHidden}
       title={title}
-      className={`inline-flex items-center justify-center rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.28),rgba(255,255,255,0.08)_35%,rgba(11,92,255,0.22)_100%)] text-[0.7rem] font-black uppercase tracking-[0.16em] text-white shadow-[0_0_24px_rgba(30,58,95,0.45)] ring-2 ring-yoobe-blue/40 ${className}`}
-    >
-      Y.
-    </span>
+      className={`shrink-0 rounded-full object-contain ${size} ${variant ? className.replace("h-12 w-12", "") : ""}`}
+      decoding="async"
+      fetchPriority={variant === "hero" ? "high" : "auto"}
+    />
   );
 }

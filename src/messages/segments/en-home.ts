@@ -12,7 +12,7 @@ export const enHome = {
     line1b: "recognition",
     line2: "without manual ops",
     sub:
-      "Full platform or execution layer via API. You set goals and points; we handle logistics and delivery—in Brazil and worldwide.",
+      "Run it as a complete platform or plug it in via API. You set the goals and points; we handle the rest—from a worldwide corporate store to logistics and delivery, in Brazil and across the globe.",
     ctaDemo: "Book a demo",
     ctaExplore: "See the platform",
     ctaDemoHint: "30 min · no commitment",

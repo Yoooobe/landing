@@ -2,7 +2,7 @@
 "use client";
 
 import HeroThemeBackdrop from "@/components/HeroThemeBackdrop";
-import UnikWordmark from "@/components/UnikWordmark";
+import YoobeMark from "@/components/YoobeMark";
 import { useLocaleMessages } from "@/contexts/LocaleMessagesContext";
 import { withBasePath } from "@/lib/basePath";
 import { motion } from "framer-motion";
@@ -94,7 +94,7 @@ export default function PlataformaHero() {
             animate={{ opacity: 1, y: 0 }}
             className="mb-5 flex justify-center"
           >
-            <UnikWordmark variant="hero" className="opacity-90" />
+            <YoobeMark variant="hero" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
