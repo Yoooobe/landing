@@ -106,7 +106,7 @@ function StatsBar({ posts }: { posts: BlogPostDoc[] }) {
       <div className="w-px h-6 bg-white/10 hidden md:block" />
       <div className="flex items-center gap-2">
         <span className="text-2xl font-black text-brand-primary font-heading">{totalReadTime}</span>
-        <span className="text-sm text-white/40 font-sans">min de conteúdo</span>
+        <span className="text-sm text-white/40 font-sans">min read</span>
       </div>
     </div>
   );
@@ -154,7 +154,7 @@ export default function BlogPageContent({ posts }: Props) {
       <div className="container mx-auto px-4 max-w-6xl mb-10">
         <div className="max-w-3xl">
           <span className="inline-block px-3 py-1 mb-6 rounded-full border border-brand-primary/30 bg-brand-primary/10 text-brand-primary text-xs font-bold tracking-widest uppercase">
-            Blog Yoobe · para os heróis do RH
+            Yoobe Blog · for HR heroes
           </span>
           <h1 className="text-4xl md:text-6xl font-black mb-4 font-heading leading-tight">
             Engaja,{" "}
@@ -163,7 +163,7 @@ export default function BlogPageContent({ posts }: Props) {
             </span>
           </h1>
           <p className="text-xl text-white/60 font-sans leading-relaxed max-w-2xl">
-            Gamificação, reconhecimento, campanhas e ideias práticas para o RH que quer transformar engajamento em resultado.
+            Gamification, recognition, campaigns, and practical ideas for HR teams turning engagement into results.
           </p>
           <StatsBar posts={posts} />
         </div>

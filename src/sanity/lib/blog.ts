@@ -84,8 +84,8 @@ function enrichListItemWithFallback(
 
 /** União de slugs do CMS com slugs do fallback local — garante export estático de /blog/1 … mesmo quando o dataset só tem outros slugs. */
 function unionSlugs(cmsSlugs: string[], locale: Locale): string[] {
-  const fallbackSlugs = getFallbackBlogPosts(locale).map((p) => p.slug);
-  return [...new Set([...cmsSlugs, ...fallbackSlugs])];
+  void locale;
+  return [...new Set(cmsSlugs)];
 }
 
 export async function getBlogPosts(locale: Locale): Promise<BlogPostDoc[]> {

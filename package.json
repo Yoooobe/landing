@@ -9,7 +9,7 @@
     "generate:og": "node scripts/generate-og-images.mjs",
     "generate:icp-screens": "node scripts/generate-icp-showcase-images.mjs",
     "import:dash-screens": "node scripts/import-dashboard-screens.mjs",
-    "build": "npm run generate:llms && npm run generate:og && next build && node scripts/patch-studio-spa-fallback.mjs",
+    "build": "node scripts/check-sanity-yoobe.mjs && npm run generate:llms && npm run generate:og && next build && node scripts/patch-studio-spa-fallback.mjs && node scripts/brand-guard.mjs out && node scripts/check-internal-links.mjs",
     "start": "next start",
     "lint": "eslint",
     "seed:sanity": "node scripts/seed-sanity-content.mjs",
