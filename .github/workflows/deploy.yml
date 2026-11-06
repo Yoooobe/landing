@@ -14,9 +14,6 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - main
   # Redeploy após publicar no Sanity (hero e conteúdo em build estático).
   workflow_dispatch:
     inputs:
@@ -25,9 +22,6 @@ on:
         required: false
         type: string
   # Dispara com: POST /repos/{owner}/{repo}/dispatches (event_type sanity-publish). Requer PAT com scope repo.
-  repository_dispatch:
-    types:
-      - sanity-publish
 
 permissions:
   contents: read
@@ -40,6 +34,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.ref == 'refs/heads/4unik-legacy'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
