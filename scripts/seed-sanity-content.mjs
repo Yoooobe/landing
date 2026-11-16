@@ -104,7 +104,7 @@ const homePayloadByLocale = {
       demo: "Solicitar Demonstracao",
       demoHref: "https://calendly.com/yoobeco/demo",
       whatsapp: "Falar com Especialista",
-      whatsappHref: "https://wa.me/5541987607512",
+      whatsappHref: "https://wa.me/554163470307",
     },
   },
   en: homePayloadEn(),

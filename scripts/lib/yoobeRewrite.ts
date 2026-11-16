@@ -18,7 +18,7 @@ const RULES: Rule[] = [
   [/gestor\.4unik\.io/g, "admin.yoobe.co"],
   [/loja\.4unik\.io/g, "store.yoobe.co"],
   [/([a-z]+)\.4unik\.io/g, "$1.yoobe.co"],
-  [/551126844724/g, "5541987607512"],
+  [/551126844724/g, "554163470307"],
   [/@4unikoficial/gi, "@yoobe.co"],
   [/4\s?unik\s+by\s+yoobe/gi, "Yoobe"],
   [/yoobe\s*\/\s*4unik|4unik\s*\/\s*yoobe/gi, "Yoobe"],

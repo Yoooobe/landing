@@ -1,5 +1,5 @@
 /** Official Yoobe WhatsApp contact, digits only as required by click-to-chat. */
-export const DEFAULT_WHATSAPP_NUMBER = "5541987607512";
+export const DEFAULT_WHATSAPP_NUMBER = "554163470307";
 export const DEFAULT_WHATSAPP_URL = `https://wa.me/${DEFAULT_WHATSAPP_NUMBER}`;
 
 export function isWhatsappUrl(value?: string | null): boolean {

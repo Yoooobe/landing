@@ -42,7 +42,7 @@ export function buildOrganizationJsonLd(description: string = enHome.seo.descrip
         "@type": "ContactPoint",
         contactType: "sales",
         email: "vendas@yoobe.co",
-        telephone: "+55-41-98760-7512",
+        telephone: "+55-41-6347-0307",
         availableLanguage: ["English", "Portuguese"],
       },
     ],

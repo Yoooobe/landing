@@ -18,7 +18,7 @@ export const enFooter = {
     catalogo: "Rewards catalog",
     logistica: "Swag & logistics catalog",
     demo: "Book a demo",
-    comercial: "WhatsApp +55 41 98760-7512",
+    comercial: "WhatsApp +55 41 6347-0307",
     email: "vendas@yoobe.co",
   },
   legal: "Privacy",
