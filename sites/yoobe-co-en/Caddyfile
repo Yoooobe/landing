@@ -21,6 +21,11 @@
 		@estoqueLogistica path /estoque-e-logistica /estoque-e-logistica/
 		redir @estoqueLogistica https://corporate.yoobe.co/platform/logistics/ 308
 
+		@blogRoot path /blog /blog/
+		redir @blogRoot https://corporate.yoobe.co/blog/ 308
+		@blogPost path_regexp blog ^/blog/([^/]+)/?$
+		redir @blogPost https://corporate.yoobe.co/blog/{re.blog.1}/ 308
+
 		@indexHtml path /index.html
 		redir @indexHtml / 308
 
