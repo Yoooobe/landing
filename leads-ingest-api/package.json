@@ -6,7 +6,8 @@
   "scripts": {
     "vercel-build": "echo ok",
     "typecheck": "tsc --noEmit",
-    "test:tracking": "node --import tsx tests/emailTracking.compat.ts"
+    "test:tracking": "node --import tsx tests/emailTracking.compat.ts",
+    "start": "node --import tsx server.mjs"
   },
   "dependencies": {
     "@sanity/client": "^7.8.2",
