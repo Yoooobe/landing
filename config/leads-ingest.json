@@ -1,4 +1,4 @@
 {
-  "defaultIngestUrl": "https://yoobe-leads-ingest.vercel.app/api/ingest",
-  "note": "Fallback quando NEXT_PUBLIC_LEADS_INGEST_URL não está definido no build. Endpoint do yoobe.co (projeto Vercel yoobe-leads-ingest)."
+  "defaultIngestUrl": "https://leads-ingest-production.up.railway.app/api/ingest",
+  "note": "Fallback quando NEXT_PUBLIC_LEADS_INGEST_URL não está definido no build. Serviço leads-ingest na Railway (projeto yoobe-sites)."
 }
