@@ -19,7 +19,7 @@
 		redir @lojaCorporativa https://corporate.yoobe.co/platform/rewards-store/ 308
 
 		@estoqueLogistica path /estoque-e-logistica /estoque-e-logistica/
-		redir @estoqueLogistica https://corporate.yoobe.co/platform/logistics/ 308
+		redir @estoqueLogistica https://corporate.yoobe.co/platform/ 308
 
 		@blogRoot path /blog /blog/
 		redir @blogRoot https://corporate.yoobe.co/blog/ 308
