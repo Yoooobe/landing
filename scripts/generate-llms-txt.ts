@@ -67,7 +67,7 @@ async function main() {
     "",
     `Website: ${url("/")}`,
     "Swag & corporate gifts catalog: https://catalogo.yoobe.co/",
-    "Contact: vendas@yoobe.co · WhatsApp +55 41 98760-7512 · Book a demo: https://calendly.com/yoobeco/demo",
+    "Contact: vendas@yoobe.co · WhatsApp +55 41 6347-0307 · Book a demo: https://calendly.com/yoobeco/demo",
     "",
     ...SECTIONS.flatMap((s) => [`## ${s.title}`, "", ...s.items.map(([label, key]) => `- [${label}](${url(ROUTES[key])})`), ""]),
     "## Blog",

@@ -13,7 +13,7 @@
 		},
 		{
 			"source": "/estoque-e-logistica",
-			"destination": "https://corporate.yoobe.co/platform/logistics/",
+			"destination": "https://corporate.yoobe.co/platform/",
 			"permanent": true
 		}
 	]

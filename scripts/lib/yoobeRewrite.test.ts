@@ -17,7 +17,7 @@ test("rewriteBrand rewrites 4unik URLs, emails, calendly and whatsapp", () => {
   assert.equal(rewriteBrand("https://catalogo.4unik.com.br/product"), "https://catalogo.yoobe.co/product");
   assert.equal(rewriteBrand("fale com comercial@4unik.com.br"), "fale com vendas@yoobe.co");
   assert.equal(rewriteBrand("https://calendly.com/4unik/30min"), "https://calendly.com/yoobeco/demo");
-  assert.equal(rewriteBrand("https://wa.me/551126844724"), "https://wa.me/5541987607512");
+  assert.equal(rewriteBrand("https://wa.me/551126844724"), "https://wa.me/554163470307");
 });
 
 test("rewriteBrand turns slugs with 4unik into yoobe slugs", () => {

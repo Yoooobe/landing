@@ -1,4 +1,5 @@
 import { pageAbsoluteUrl, SITE_NAME, SITE_URL } from "@/lib/site";
+import { LINKEDIN_URL } from "@/lib/social";
 import { authorProfileForJsonLd, resolveBlogAuthor } from "@/lib/resolveBlogAuthor";
 import { enHome } from "@/messages/segments/en-home";
 import { ptHome } from "@/messages/segments/pt-home";
@@ -15,7 +16,7 @@ const ORGANIZATION_KNOWS_ABOUT = [
 const ORGANIZATION_ID = `${SITE_URL.replace(/\/$/, "")}/#organization`;
 
 /** Perfis canónicos da entidade (site corporativo; expandir quando houver URLs oficiais verificadas). */
-const ORGANIZATION_SAME_AS = ["https://catalogo.yoobe.co/"] as const;
+const ORGANIZATION_SAME_AS = ["https://catalogo.yoobe.co/", LINKEDIN_URL] as const;
 
 const ORGANIZATION_LOGO = {
   "@type": "ImageObject" as const,
@@ -41,7 +42,7 @@ export function buildOrganizationJsonLd(description: string = enHome.seo.descrip
         "@type": "ContactPoint",
         contactType: "sales",
         email: "vendas@yoobe.co",
-        telephone: "+55-41-98760-7512",
+        telephone: "+55-41-6347-0307",
         availableLanguage: ["English", "Portuguese"],
       },
     ],

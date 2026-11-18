@@ -273,7 +273,7 @@ export function homePayloadEn() {
     finalCta: {
       ...enHome.finalCta,
       demoHref: "https://calendly.com/yoobeco/demo",
-      whatsappHref: "https://wa.me/5541987607512",
+      whatsappHref: "https://wa.me/554163470307",
     },
   };
 }
@@ -866,7 +866,7 @@ export function buildCurrentEnglishMenus() {
             {
               _key: "sales",
               label: enFooter.links.comercial,
-              href: "https://wa.me/5541987607512",
+              href: "https://wa.me/554163470307",
               openInNewTab: true,
             },
           ],

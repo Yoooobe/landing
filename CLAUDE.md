@@ -27,7 +27,7 @@ NEXT_PUBLIC_GA_ID                            # GA4 da Yoobe (não usar G-SMJDYCE
 
 - Zero "4unik" no site publicado: `scripts/brand-guard.mjs` roda no `build` e falha se aparecer.
 - Rotas em inglês definidas em `src/lib/routes.ts` (`ROUTES`, `toYoobePath`); links internos checados por `scripts/check-internal-links.mjs` no `build`.
-- Não usar o domínio yoobe.me. Catálogo/swag: `catalogo.yoobe.co`. Contato: `vendas@yoobe.co`, WhatsApp +55 41 98760-7512, Calendly `yoobeco/demo`.
+- Não usar o domínio yoobe.me. Catálogo/swag: `catalogo.yoobe.co`. Contato: `vendas@yoobe.co`, WhatsApp +55 41 6347-0307, Calendly `yoobeco/demo`.
 - Leads no Sanity sempre com `_id` `leads.<uuid>` (o plano não permite dataset privado).
 
 ## Gotchas

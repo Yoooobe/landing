@@ -1,0 +1,51 @@
+{
+	admin off
+	auto_https off
+}
+
+:{$PORT:8080} {
+	root * /srv
+	encode zstd gzip
+	header Cache-Control "public, max-age=0, must-revalidate"
+
+	route {
+		@apex host yoobe.co
+		redir @apex https://www.yoobe.co{uri} 308
+
+		@legacyLocale path /en /en/* /es /es/*
+		redir @legacyLocale / 308
+
+		@lojaCorporativa path /loja-corporativa /loja-corporativa/
+		redir @lojaCorporativa https://corporate.yoobe.co/platform/rewards-store/ 308
+
+		@estoqueLogistica path /estoque-e-logistica /estoque-e-logistica/
+		redir @estoqueLogistica https://corporate.yoobe.co/platform/ 308
+
+		@blogRoot path /blog /blog/
+		redir @blogRoot https://corporate.yoobe.co/blog/ 308
+		@blogPost path_regexp blog ^/blog/([^/]+)/?$
+		redir @blogPost https://corporate.yoobe.co/blog/{re.blog.1}/ 308
+
+		@indexHtml path /index.html
+		redir @indexHtml / 308
+
+		@htmlQuery {
+			path_regexp html ^(.+)\.html$
+			expression {query} != ""
+		}
+		redir @htmlQuery {re.html.1}?{query} 308
+		@html path_regexp html ^(.+)\.html$
+		redir @html {re.html.1} 308
+
+		@slashQuery {
+			path_regexp slash ^(.+)/$
+			expression {query} != ""
+		}
+		redir @slashQuery {re.slash.1}?{query} 308
+		@slash path_regexp slash ^(.+)/$
+		redir @slash {re.slash.1} 308
+
+		try_files {path} {path}.html {path}/index.html
+		file_server
+	}
+}

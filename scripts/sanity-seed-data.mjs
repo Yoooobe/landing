@@ -1525,7 +1525,7 @@ function homeMarketingPageBlocks(isEn) {
       primaryLabel: isEn ? "Book a demo" : "Solicitar Demonstração",
       primaryHref: "https://calendly.com/Yoobe/demo",
       secondaryLabel: isEn ? "Talk to a specialist" : "Falar com Especialista",
-      secondaryHref: "https://wa.me/5541987607512",
+      secondaryHref: "https://wa.me/554163470307",
     }),
   ];
 }
@@ -1669,7 +1669,7 @@ const marketingPages = [
         primaryLabel: "Agendar demonstracao",
         primaryHref: "https://calendly.com/yoobeco/demo",
         secondaryLabel: "Falar no WhatsApp",
-        secondaryHref: "https://wa.me/5541987607512",
+        secondaryHref: "https://wa.me/554163470307",
       }),
     ],
   },
@@ -1804,7 +1804,7 @@ const marketingPages = [
         primaryLabel: "Book a demo",
         primaryHref: "https://calendly.com/yoobeco/demo",
         secondaryLabel: "Talk on WhatsApp",
-        secondaryHref: "https://wa.me/5541987607512",
+        secondaryHref: "https://wa.me/554163470307",
       }),
     ],
   },
@@ -2122,7 +2122,7 @@ export const seedDocuments = {
     environmentLabel: "production",
     gaMeasurementId: "G-SMJDYCENBC",
     calendlyUrl: "https://calendly.com/yoobeco/demo",
-    whatsappUrl: "https://wa.me/5541987607512",
+    whatsappUrl: "https://wa.me/554163470307",
     contactEmail: "vendas@yoobe.co",
     rewardsCatalogUrl: "https://catalogo.yoobe.co/product",
     companySiteUrl: "https://catalogo.yoobe.co/",
@@ -2446,7 +2446,7 @@ export const seedDocuments = {
             {
               _key: "sales",
               label: "Falar com Comercial",
-              href: "https://wa.me/5541987607512",
+              href: "https://wa.me/554163470307",
               openInNewTab: true,
             },
           ],
@@ -2517,7 +2517,7 @@ export const seedDocuments = {
             {
               _key: "sales",
               label: "Talk to sales",
-              href: "https://wa.me/5541987607512",
+              href: "https://wa.me/554163470307",
               openInNewTab: true,
             },
           ],

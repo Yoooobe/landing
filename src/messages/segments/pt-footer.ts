@@ -18,7 +18,7 @@ export const ptFooter = {
     catalogo: "Catálogo de Recompensas",
     logistica: "Logística (Site Yoobe)",
     demo: "Agendar demonstração",
-    comercial: "WhatsApp +55 41 98760-7512",
+    comercial: "WhatsApp +55 41 6347-0307",
     email: "vendas@yoobe.co",
   },
   legal: "Privacidade",
