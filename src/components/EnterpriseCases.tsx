@@ -77,14 +77,6 @@ export default function EnterpriseCases({
                 )}
                 <div>
                   <h3 className="text-3xl font-black text-white font-heading leading-none">Hapvida</h3>
-                  <a
-                    href="https://hapvida.yoobe.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 text-sm hover:underline flex items-center gap-1 font-mono mt-1"
-                  >
-                    hapvida.yoobe.app <span className="text-[10px]">↗</span>
-                  </a>
                 </div>
               </div>
 
